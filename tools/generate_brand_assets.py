@@ -192,6 +192,18 @@ def mark(size: int, inset_ratio: float = 0.08) -> Image.Image:
     return plate
 
 
+def touch_icon(size: int = 180) -> Image.Image:
+    """Opaque home-screen icon.
+
+    iOS rejects an apple-touch-icon that still has an alpha channel and keeps
+    showing the last opaque icon it accepted for that URL.
+    """
+    tile = mark(size, inset_ratio=0)
+    # Solid light plate. Corners are masked by the system squircle.
+    background = Image.new("RGBA", (size, size), (244, 248, 252, 255))
+    return Image.alpha_composite(background, tile).convert("RGB")
+
+
 def splash(width: int, height: int) -> Image.Image:
     image = Image.new("RGB", (width, height), CANVAS)
     side = max(96, int(min(width, height) * 0.22))
@@ -328,7 +340,16 @@ def main() -> None:
     # Maskable icons are cropped by the OS, so the plate fills the canvas.
     save(mark(192, 0.04), web_icons / "Icon-maskable-192.png")
     save(mark(512, 0.04), web_icons / "Icon-maskable-512.png")
-    save(mark(180), web_icons / "apple-touch-icon.png")
+    # New filename on purpose: Safari pins the previous apple-touch-icon bytes
+    # to the old URL and will not replace them in Add to Home Screen.
+    home = touch_icon(180)
+    save(home, web_icons / "apple-touch-icon-180.png")
+    save(home, web_icons / "apple-touch-icon.png")
+    save(home, ROOT / "web" / "apple-touch-icon.png")
+    save(home, ROOT / "web" / "apple-touch-icon-precomposed.png")
+    save(home, ROOT / "web" / "apple-touch-icon-180x180.png")
+    save(touch_icon(192), web_icons / "mark-192.png")
+    save(touch_icon(512), web_icons / "mark-512.png")
     save(mark(64), ROOT / "web" / "favicon.png")
 
     splash_dir = ROOT / "web" / "splash"

@@ -68,6 +68,37 @@ server {
         try_files $uri =404;
     }
 
+    # iOS pins Add to Home Screen art by URL and ignores a long max-age.
+    location = /apple-touch-icon.png {
+        default_type image/png;
+        add_header Cache-Control "no-cache";
+        try_files $uri =404;
+    }
+
+    location = /apple-touch-icon-precomposed.png {
+        default_type image/png;
+        add_header Cache-Control "no-cache";
+        try_files $uri =404;
+    }
+
+    location = /apple-touch-icon-180x180.png {
+        default_type image/png;
+        add_header Cache-Control "no-cache";
+        try_files $uri =404;
+    }
+
+    location = /icons/apple-touch-icon.png {
+        default_type image/png;
+        add_header Cache-Control "no-cache";
+        try_files $uri =404;
+    }
+
+    location = /icons/apple-touch-icon-180.png {
+        default_type image/png;
+        add_header Cache-Control "no-cache";
+        try_files $uri =404;
+    }
+
     location ^~ /icons/ {
         default_type image/png;
         add_header Cache-Control "public, max-age=86400";

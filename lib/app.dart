@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 import 'account/account_controller.dart';
+import 'billing/pack_ids.dart';
 import 'billing/purchase_service.dart';
 import 'data/catalog_store.dart';
 import 'data/learner_database.dart';
@@ -143,7 +144,7 @@ class _ElementDeckAppState extends State<ElementDeckApp>
 
   Future<void> _boot() async {
     try {
-      await catalog.load(hasCoreEntitlement: false);
+      await catalog.load(hasCoreEntitlement: !coursePacksEnabled);
     } catch (e, st) {
       debugPrint('Catalog boot failed: $e\n$st');
     }
@@ -156,7 +157,7 @@ class _ElementDeckAppState extends State<ElementDeckApp>
         await account.attachFirebase();
         await purchases.init();
       }
-      if (account.hasCore) {
+      if (coursePacksEnabled && account.hasCore) {
         await packs.downloadIfEntitled();
         await catalog.reload(hasCoreEntitlement: account.hasCore);
       }

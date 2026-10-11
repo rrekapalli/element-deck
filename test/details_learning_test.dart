@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:drift/native.dart';
 import 'package:element_deck/account/account_controller.dart';
+import 'package:element_deck/billing/pack_ids.dart';
 import 'package:element_deck/billing/purchase_service.dart';
 import 'package:element_deck/data/catalog_store.dart';
 import 'package:element_deck/data/learner_database.dart';
@@ -11,6 +12,7 @@ import 'package:element_deck/providers/catalog_controller.dart';
 import 'package:element_deck/providers/selection_controller.dart';
 import 'package:element_deck/providers/settings_controller.dart';
 import 'package:element_deck/rooms/details_room.dart';
+import 'package:element_deck/widgets/element_header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
@@ -169,7 +171,75 @@ void main() {
     await tester.pump();
 
     expect(find.textContaining('Sodium'), findsWidgets);
-    expect(find.textContaining('The table is free'), findsOneWidget);
-    expect(find.text('Sign in to buy'), findsOneWidget);
+    if (coursePacksEnabled) {
+      expect(find.textContaining('The table is free'), findsOneWidget);
+      expect(find.text('Sign in to buy'), findsOneWidget);
+    } else {
+      expect(find.textContaining('The table is free'), findsNothing);
+      expect(find.text('Sign in to buy'), findsNothing);
+    }
+  });
+
+  testWidgets('phone header is compact and every tab label fits', (tester) async {
+    final pack = CatalogPack.fromJson(
+      jsonDecode(File('assets/catalog/core.json').readAsStringSync())
+          as Map<String, dynamic>,
+    );
+    final store = CatalogStore()..pack = pack;
+    final catalog = CatalogController(store)..loading = false;
+    final db = LearnerDatabase.forTesting(NativeDatabase.memory());
+    addTearDown(db.close);
+    final settings = SettingsController(db)..depth = 'beginner';
+    final selection = SelectionController(db, catalog)..currentZ = 22;
+    await selection.select(22);
+    final account = AccountController(db, store);
+
+    Future<void> pumpAt(Size size) async {
+      tester.view.physicalSize = size;
+      tester.view.devicePixelRatio = 1;
+      await tester.pumpWidget(
+        MultiProvider(
+          providers: [
+            ChangeNotifierProvider.value(value: catalog),
+            ChangeNotifierProvider.value(value: settings),
+            ChangeNotifierProvider.value(value: selection),
+            ChangeNotifierProvider.value(value: account),
+          ],
+          child: const MaterialApp(home: Scaffold(body: DetailsRoom())),
+        ),
+      );
+      await tester.pump();
+    }
+
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+
+    for (final size in const [Size(390, 844), Size(320, 640)]) {
+      await pumpAt(size);
+      expect(tester.takeException(), isNull);
+
+      final header = tester.getSize(find.byType(ElementHeader));
+      expect(header.height, lessThan(80));
+      expect(find.text('22  Titanium'), findsOneWidget);
+      expect(find.textContaining('Stable isotope'), findsOneWidget);
+      expect(find.textContaining('Transition metal'), findsOneWidget);
+
+      final labels = ['Details', 'Data', 'History', 'Uses', 'Neighbors'];
+      final tabs = find.descendant(
+        of: find.byType(TabBar),
+        matching: find.byType(FittedBox),
+      );
+      expect(tabs, findsNWidgets(labels.length));
+      for (var i = 0; i < labels.length; i++) {
+        expect(
+          find.descendant(of: tabs.at(i), matching: find.text(labels[i])),
+          findsOneWidget,
+        );
+        final box = tester.getRect(tabs.at(i));
+        expect(box.left, greaterThanOrEqualTo(-0.5));
+        expect(box.right, lessThanOrEqualTo(size.width + 0.5));
+        expect(box.width, greaterThan(28));
+      }
+    }
   });
 }

@@ -1,3 +1,6 @@
+/// Flip to true to gate dossiers, quizzes, and depths behind IAP.
+const coursePacksEnabled = false;
+
 const packBeginner = 'pack-beginner';
 const packIntermediate = 'pack-intermediate';
 const packAdvanced = 'pack-advanced';

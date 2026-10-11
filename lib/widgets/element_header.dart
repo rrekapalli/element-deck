@@ -33,7 +33,7 @@ class ElementDossier extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Padding(
-                padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
+                padding: const EdgeInsets.fromLTRB(16, 4, 8, 0),
                 child: ElementHeader(element: element),
               ),
               ?pinned,
@@ -59,56 +59,83 @@ class ElementHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     final accent = ElementSpectrum.of(element.categoryId);
     final sel = context.watch<SelectionController>();
-    return Column(
+    final muted = theme.colorScheme.onSurface.withValues(alpha: 0.72);
+    final meta = theme.textTheme.labelSmall?.copyWith(
+      color: muted,
+      height: 1.2,
+    );
+    return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        if (element.isotopes.isNotEmpty)
-          Text(
-            _isotopeTeaser(element),
-            style: Theme.of(context).textTheme.labelSmall,
+        Text(
+          element.symbol,
+          style: theme.textTheme.headlineSmall?.copyWith(
+            color: accent,
+            fontWeight: FontWeight.w800,
+            fontSize: 28,
+            height: 1,
           ),
-        const SizedBox(height: 8),
-        Row(
-          children: [
-            Text(
-              element.symbol,
-              style: Theme.of(context).textTheme.displayMedium
-                  ?.copyWith(color: accent, fontWeight: FontWeight.w800),
-            ),
-            const SizedBox(width: 16),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    '${element.z}  ${element.name}',
-                    style: Theme.of(context).textTheme.headlineSmall,
-                  ),
-                  Text(
-                    '${element.atomicWeight} u · ${element.weightKind}',
-                    style: Mono.of(context, size: 12),
-                  ),
-                  Text(
-                    '${element.categoryLabel} · ${element.block}-block · Period ${element.period} · Grp ${element.group ?? "—"}',
-                  ),
-                ],
+        ),
+        const SizedBox(width: 10),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                '${element.z}  ${element.name}',
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: theme.textTheme.titleMedium?.copyWith(
+                  fontWeight: FontWeight.w700,
+                  height: 1.05,
+                ),
               ),
-            ),
-            IconButton(
-              icon: Icon(
-                sel.bookmarks.contains(element.z)
-                    ? Icons.bookmark
-                    : Icons.bookmark_border,
+              const SizedBox(height: 2),
+              Text(
+                '${element.atomicWeight} u · ${element.weightKind}',
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: Mono.of(context, size: 11, color: muted),
               ),
-              onPressed: () => sel.toggleBookmark(element.z),
-            ),
-          ],
+              _oneLine(
+                '${element.categoryLabel} · ${element.block}-block · Period ${element.period} · Grp ${element.group ?? "—"}',
+                meta,
+              ),
+              if (element.isotopes.isNotEmpty)
+                _oneLine(_isotopeTeaser(element), meta),
+            ],
+          ),
+        ),
+        IconButton(
+          style: IconButton.styleFrom(
+            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            minimumSize: const Size(32, 32),
+            padding: EdgeInsets.zero,
+            visualDensity: VisualDensity.compact,
+          ),
+          icon: Icon(
+            sel.bookmarks.contains(element.z)
+                ? Icons.bookmark
+                : Icons.bookmark_border,
+            size: 20,
+          ),
+          onPressed: () => sel.toggleBookmark(element.z),
         ),
       ],
     );
   }
+}
+
+/// Keeps a meta line on one row, shrinking only when the phone is too narrow.
+Widget _oneLine(String text, TextStyle? style) {
+  return FittedBox(
+    fit: BoxFit.scaleDown,
+    alignment: Alignment.centerLeft,
+    child: Text(text, maxLines: 1, softWrap: false, style: style),
+  );
 }
 
 String _isotopeTeaser(ElementRecord e) {

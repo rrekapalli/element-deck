@@ -28,6 +28,7 @@ class AccountController extends ChangeNotifier {
   bool _googleInitialized = false;
 
   bool get hasCore =>
+      !coursePacksEnabled ||
       packages.contains(packBeginner) ||
       packages.contains(packIntermediate) ||
       packages.contains(packAdvanced) ||
@@ -35,7 +36,11 @@ class AccountController extends ChangeNotifier {
       debugEntitlement;
 
   bool ownsDepth(String depth) {
-    if (debugEntitlement || packages.contains(packLegacy)) return true;
+    if (!coursePacksEnabled ||
+        debugEntitlement ||
+        packages.contains(packLegacy)) {
+      return true;
+    }
     return packages.contains(packIdForDepth(depth));
   }
 

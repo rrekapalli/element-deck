@@ -52,6 +52,33 @@ class _DetailsRoomState extends State<DetailsRoom>
     super.dispose();
   }
 
+  Widget _tabBar(BuildContext context) {
+    final base = Theme.of(context).textTheme.labelLarge?.copyWith(
+      fontSize: 13,
+      height: 1.1,
+    );
+    return TabBar(
+      controller: _tabs,
+      dividerColor: Colors.transparent,
+      dividerHeight: 0,
+      padding: const EdgeInsets.symmetric(horizontal: 2),
+      labelPadding: const EdgeInsets.symmetric(horizontal: 4),
+      labelStyle: base?.copyWith(fontWeight: FontWeight.w600),
+      unselectedLabelStyle: base?.copyWith(fontWeight: FontWeight.w500),
+      tabs: [
+        for (final label in _labels)
+          SizedBox(
+            height: 40,
+            width: double.infinity,
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(label, maxLines: 1, softWrap: false),
+            ),
+          ),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final sel = context.watch<SelectionController>();
@@ -85,11 +112,7 @@ class _DetailsRoomState extends State<DetailsRoom>
     }
     return ElementDossier(
       element: e,
-      pinned: TabBar(
-        controller: _tabs,
-        dividerColor: Colors.transparent,
-        tabs: [for (final label in _labels) Tab(text: label)],
-      ),
+      pinned: _tabBar(context),
       child: ListView(
         controller: _scroll,
         padding: const EdgeInsets.fromLTRB(16, 12, 16, 32),

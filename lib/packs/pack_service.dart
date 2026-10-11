@@ -6,6 +6,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/services.dart';
 
 import '../account/account_controller.dart';
+import '../billing/pack_ids.dart';
 import '../data/catalog_store.dart';
 
 class PackService {
@@ -18,6 +19,10 @@ class PackService {
   String? status;
 
   Future<void> downloadIfEntitled() async {
+    if (!coursePacksEnabled) {
+      await _loadFixtureJson();
+      return;
+    }
     if (!account.hasCore) {
       status = 'Preview only';
       return;

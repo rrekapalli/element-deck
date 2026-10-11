@@ -232,25 +232,28 @@ class AccountSettingsPage extends StatelessWidget {
           ListTile(
             title: const Text('Packages'),
             subtitle: Text(
-              account.packages.isEmpty
+              !coursePacksEnabled
+                  ? 'Off while we test. Learning Mode chooses the depth; every element is open.'
+                  : account.packages.isEmpty
                   ? 'Preview only · five elements at all three courses'
                   : account.packages.join(', '),
             ),
           ),
-          for (final id in storeProductIds)
-            ListTile(
-              title: Text(packTitles[id] ?? id),
-              subtitle: Text(
-                account.packages.contains(id) ||
+          if (coursePacksEnabled)
+            for (final id in storeProductIds)
+              ListTile(
+                title: Text(packTitles[id] ?? id),
+                subtitle: Text(
+                  account.packages.contains(id) ||
+                          account.packages.contains(packLegacy)
+                      ? 'Owned'
+                      : 'Buy · ${billing.priceLabel(id)}',
+                ),
+                onTap: account.packages.contains(id) ||
                         account.packages.contains(packLegacy)
-                    ? 'Owned'
-                    : 'Buy · ${billing.priceLabel(id)}',
+                    ? null
+                    : () => billing.buy(id),
               ),
-              onTap: account.packages.contains(id) ||
-                      account.packages.contains(packLegacy)
-                  ? null
-                  : () => billing.buy(id),
-            ),
           ListTile(
             title: const Text('Restore purchases'),
             onTap: billing.restore,
