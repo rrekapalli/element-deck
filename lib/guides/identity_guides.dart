@@ -9,7 +9,7 @@ const identityGuides = <PropertyGuide>[
     sections: [
       GuideSection(
         'What it counts',
-        'Chemists write the proton count as Z. One proton is hydrogen, two is helium, twenty-two is titanium. Change Z and you have a different element. Change only the neutron count and you have another isotope of the same element. The Data tab prints Z as the atomic number, then prints the same integer again as Protons and, for the neutral atom, as Electrons.\n\n'
+        'Chemists write the proton count as Z. One proton is hydrogen, two is helium, twenty-two is titanium. Change Z and you have a different element. Change only the neutron count and you have another isotope of the same element. The Properties tab prints Z as the atomic number, then prints the same integer again as Protons and, for the neutral atom, as Electrons.\n\n'
             'Z is an exact integer. There is no uncertainty and no "about 6" for carbon. A claim that a new element has been made is a claim that a nucleus with that proton count was detected, however briefly the nucleus lived. Superheavy elements are identified the same way as hydrogen.',
       ),
       GuideSection(
@@ -69,7 +69,7 @@ const identityGuides = <PropertyGuide>[
       GuideSection(
         'Who decides',
         'For elements known in antiquity or found in the nineteenth century, the surviving name is the one usage settled. Disputes were common. Columbium and niobium were the same element. Glucinium lost to beryllium. In the twentieth century, discovery claims started to overlap, and the name became a negotiation.\n\n'
-            'IUPAC now approves the official English name after priority of discovery is settled. The discoverers propose. A name should refer to a scientist, a place, a property, a mineral, or a mythological concept, and the symbol has to stay unique. Element 118 is oganesson. Until that approval, a systematic numerical name is the placeholder. The Data tab shows the approved English name once the catalog has it.',
+            'IUPAC now approves the official English name after priority of discovery is settled. The discoverers propose. A name should refer to a scientist, a place, a property, a mineral, or a mythological concept, and the symbol has to stay unique. Element 118 is oganesson. Until that approval, a systematic numerical name is the placeholder. The Properties tab shows the approved English name once the catalog has it.',
       ),
       GuideSection(
         'Why there is no unit',
@@ -127,7 +127,7 @@ const identityGuides = <PropertyGuide>[
       ),
       GuideSection(
         'Why there is no unit',
-        'This row is a count. It is dimensionless, like the proton count. The elementary charge, written e, is the unit of the electron\'s charge, and since the 2019 revision of the SI that charge is an exact defined constant. The Data tab does not print the charge. It prints how many electrons the neutral atom has.\n\n'
+        'This row is a count. It is dimensionless, like the proton count. The elementary charge, written e, is the unit of the electron\'s charge, and since the 2019 revision of the SI that charge is an exact defined constant. The Properties tab does not print the charge. It prints how many electrons the neutral atom has.\n\n'
             'Do not read the row as a mass. Electron mass in u is a tiny number, the same for every element, and it is not stored here. Do not read it as an oxidation state. Oxidation state is a bookkeeping device for compounds. The electron count is a fact about the neutral atom.',
       ),
       GuideSection(

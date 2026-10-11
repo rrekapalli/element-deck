@@ -20,7 +20,7 @@ const electronGuides = <PropertyGuide>[
       GuideSection(
         'Why there is no unit',
         'A configuration is a list, not a magnitude. There is nothing for App Config to convert. The superscripts are counts of electrons. They are dimensionless. People sometimes attach an energy to a configuration, and the orbital diagram in the Details tab does estimate a binding energy for teaching. That estimate is not this row. This row is only the list.\n\n'
-            'Term symbols such as ³P₀ are a finer description of the same electrons, including how their angular momenta couple. The Data tab does not print term symbols on this row. A spectral Transition row may use a related language, because a line is a jump between two levels, not a printing of the ground configuration.',
+            'Term symbols such as ³P₀ are a finer description of the same electrons, including how their angular momenta couple. The Properties tab does not print term symbols on this row. A spectral Transition row may use a related language, because a line is a jump between two levels, not a printing of the ground configuration.',
       ),
       GuideSection(
         'How to read the row',

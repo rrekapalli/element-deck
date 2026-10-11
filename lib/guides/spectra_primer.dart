@@ -52,7 +52,7 @@ const spectraPrimer = PropertyGuide(
     GuideSection(
       'How this reading is arranged',
       'This page is about spectra. It does not change when you change the element. The Details tab is about the element on the card: which lines matter, how they are produced, how they are told from look-alike colors that are not atomic lines, and where the pattern is used. Wavelengths printed in that tab\'s line list are the bundled dataset. Wavelengths discussed in the essay and not listed there belong to the fuller atlas, and they are labeled as such.\n\n'
-          'The phone has not measured any of this. There is no match score against a star, and there is no claim that the speaker is playing the optical frequency. Sonification, on the Spectra tab, divides that frequency down into a tone a person can hear. The numbers on the Details tab are the optical ones. Units follow the dataset: nanometres, electronvolts, terahertz. A tap on a row of the Data tab still opens the shorter reference for wavelength, energy, frequency, or the transition string. This page is the long reading about spectra themselves.',
+          'The phone has not measured any of this. There is no match score against a star, and there is no claim that the speaker is playing the optical frequency. Sonification, on the Spectra tab, divides that frequency down into a tone a person can hear. The numbers on the Details tab are the optical ones. Units follow the dataset: nanometres, electronvolts, terahertz. A tap on a row of the Properties tab still opens the shorter reference for wavelength, energy, frequency, or the transition string. This page is the long reading about spectra themselves.',
     ),
   ],
 );

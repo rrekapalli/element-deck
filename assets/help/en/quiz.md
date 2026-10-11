@@ -1,10 +1,10 @@
 # Quiz
 
-Callouts: **today's element** · **learning mode** · **50-question pool** · **XP and streak**.
+Callouts: **current element** · **change element** · **50-question pool** · **XP and streak**.
 
 ## Purpose
 
-Quiz is practice for one element at the current learning mode. The header reads **PERIODIC EXPLORER · QUIZ**. Opening the room focuses **today's element**, the same daily pick as Table, then asks from a 50-question pool.
+Quiz is practice for one element at the current learning mode. The header reads **PERIODIC EXPLORER · QUIZ**. Opening the room uses the **currently selected element** (the same Z as Details) and asks from a 50-question pool.
 
 Table, Details, Compare, and Spectra do not keep score. Quiz does, on this device only.
 
@@ -34,7 +34,7 @@ A correct answer is worth **20 XP**. XP is twenty times the number of correct an
 
 ## Switching elements
 
-Chips under the bank change Quiz focus: today, the element open in Details, and recent elements. They do not change the Details dossier by themselves.
+**Change element** at the top of the page opens a searchable list. Type a name, symbol, or atomic number, then pick a row. That choice becomes the current element for Quiz and Details.
 
 **Notes** are private text for this element. **Bookmark** is the same bookmark as Details. **Report** stores a flag on this device; nothing is uploaded.
 

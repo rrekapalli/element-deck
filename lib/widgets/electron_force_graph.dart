@@ -6,21 +6,10 @@ import 'package:flutter/scheduler.dart';
 
 import '../models/orbital_force.dart';
 
-String _diagramCaption(String depth) {
-  return switch (depth) {
-    'beginner' =>
-      'Each ring is a shell of electrons. The center is the nucleus. '
-          'Drag an electron and it is pulled back. '
-          'A dotted circle is an empty seat.',
-    'advanced' =>
-      'Each ring is a subshell. A line joins the two electrons in one orbital. '
-          'A dotted circle is an empty seat. '
-          'Pull is the Slater binding energy, and ring radius follows 1/sqrt(E).',
-    _ =>
-      'Each ring is a subshell. A line joins the two electrons in one orbital. '
-          'A dotted circle is an empty seat.',
-  };
-}
+const _diagramCaption =
+    'Each ring is a subshell. A line joins the two electrons in one orbital. '
+    'A dotted circle is an empty seat. '
+    'Pull is the Slater binding energy, and ring radius follows 1/sqrt(E).';
 
 /// Force-directed electron configuration.
 ///
@@ -35,7 +24,6 @@ class ElectronForceGraph extends StatefulWidget {
     required this.accent,
     required this.reducedMotion,
     required this.energyUnit,
-    this.depth = 'advanced',
   });
 
   final int atomicNumber;
@@ -46,9 +34,6 @@ class ElectronForceGraph extends StatefulWidget {
 
   /// `eV` or `kJ/mol`, matching App settings.
   final String energyUnit;
-
-  /// `beginner`, `intermediate`, or `advanced`. Beginner hides subshell labels.
-  final String depth;
 
   @override
   State<ElectronForceGraph> createState() => _ElectronForceGraphState();
@@ -174,17 +159,15 @@ class _ElectronForceGraphState extends State<ElectronForceGraph>
                   : _stage(context, sim, Size(width, canvas)),
             ),
             if (sim != null) ...[
-              if (widget.depth != 'beginner') ...[
-                const SizedBox(height: 8),
-                _EnergyLegend(
-                  sim: sim,
-                  unit: widget.energyUnit,
-                  color: theme.hintColor,
-                ),
-              ],
+              const SizedBox(height: 8),
+              _EnergyLegend(
+                sim: sim,
+                unit: widget.energyUnit,
+                color: theme.hintColor,
+              ),
               const SizedBox(height: 6),
               Text(
-                _diagramCaption(widget.depth),
+                _diagramCaption,
                 textAlign: TextAlign.center,
                 style: theme.textTheme.bodySmall?.copyWith(
                   color: theme.hintColor,
@@ -233,8 +216,7 @@ class _ElectronForceGraphState extends State<ElectronForceGraph>
                     ),
                     haloColor: theme.colorScheme.surface,
                     drawLinks: true,
-                    labelRings:
-                        widget.depth != 'beginner' && sim.rings.length <= 7,
+                    labelRings: sim.rings.length <= 7,
                     generation: _generation,
                   ),
                 ),
@@ -354,7 +336,8 @@ class _EnergyLegend extends StatelessWidget {
                       for (var i = 0; i < rings.length; i++) ...[
                         if (i > 0) Container(width: 1, color: border),
                         _EnergyCell(
-                          label: rings[i].label,
+                          label:
+                              '${rings[i].label}${sim.occupancy(rings[i].label)}',
                           value: formatBindingEnergy(rings[i].bindingEv, unit),
                           labelStyle: labelStyle,
                           valueStyle: valueStyle,

@@ -295,7 +295,7 @@ There is no nobelium flame, lamp, or stellar line. There is a laboratory wavelen
         'A number that chose a configuration',
         '''A naive ordering puts a d electron on lawrencium, by analogy with lutetium. Relativistic calculations preferred a 7p electron instead, the shell structure warped by the speed of the inner electrons. The measured ionization energy matches the p-electron picture better than the d-electron picture. The experiment is spectroscopy: a laser finds the threshold at which the atom lets go of an electron. The interpretation is the periodic table under a correction that is no longer optional.
 
-The card does not store the energy as a fake spectral line. Ionization energies on the Data tab, for elements that have them, are a different row. Here the point is what the measurement meant. A spectrum decided the shape of the bottom of the table.''',
+The card does not store the energy as a fake spectral line. Ionization energies on the Properties tab, for elements that have them, are a different row. Here the point is what the measurement meant. A spectrum decided the shape of the bottom of the table.''',
       ),
       spec(
         'The last actinide',

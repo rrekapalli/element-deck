@@ -2,7 +2,7 @@
 
 ![Details](asset:assets/help/images/details.png)
 
-Callouts: **identity header** · **bookmark** · **Details, Data, History, Uses, Neighbors**.
+Callouts: **identity header** · **bookmark** · **Details, Properties, History, Uses, Neighbors**.
 
 ## Purpose
 
@@ -35,9 +35,9 @@ Only the first two sentences sit above the electron picture. The rest of the exp
 - A shell diagram of the electrons. **Reduced motion** in App Config turns off extra motion in that diagram. Beginner hides the energy numbers on that diagram.
 - **Simulate Reaction**, when a known reaction is curated. It opens an illustration: reactants, products, conditions, and a teaching note at the current learning mode. It is an illustration of a published reaction, not a lab procedure to run.
 
-## Data tab
+## Properties tab
 
-**Data** lists compiled values in labeled groups: identity, electrons, physical properties, isotopes, and spectrum.
+**Properties** lists compiled values in labeled groups: identity, electrons, physical properties, isotopes, and spectrum.
 
 Units follow **App Config**. A temperature can display in °C while the stored value stays in kelvin. The same is true for energy and length.
 

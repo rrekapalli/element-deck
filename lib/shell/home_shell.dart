@@ -6,7 +6,6 @@ import '../help/help_catalog.dart';
 import '../help/help_screen.dart';
 import '../providers/catalog_controller.dart';
 import '../providers/selection_controller.dart';
-import '../quiz/quiz_controller.dart';
 import '../rooms/details_room.dart';
 import '../rooms/quiz_room.dart';
 import '../rooms/spectra_room.dart';
@@ -181,11 +180,7 @@ class _HomeShellState extends State<HomeShell> {
       case 2:
         context.go('/e/${sel.currentZ}/spectra');
       case 3:
-        final quiz = context.read<QuizController>();
-        final z = quiz.focusZ > 0
-            ? quiz.focusZ
-            : sel.elementOfTheDay().z;
-        context.go('/quiz/$z');
+        context.go('/quiz/${sel.currentZ}');
       default:
         context.go('/');
     }

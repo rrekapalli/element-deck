@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../account/account_controller.dart';
+import '../billing/pack_ids.dart';
 import '../guides/property_guide.dart';
 import '../models/catalog.dart';
 import '../models/orbital_force.dart';
@@ -25,7 +26,7 @@ class DetailsRoom extends StatefulWidget {
 
 class _DetailsRoomState extends State<DetailsRoom>
     with SingleTickerProviderStateMixin {
-  static const _labels = ['Details', 'Data', 'History', 'Uses', 'Neighbors'];
+  static const _labels = ['Details', 'Properties', 'History', 'Uses', 'Neighbors'];
 
   late final TabController _tabs;
   final _scroll = ScrollController();
@@ -115,6 +116,7 @@ class _DetailsRoomState extends State<DetailsRoom>
       pinned: _tabBar(context),
       child: ListView(
         controller: _scroll,
+        cacheExtent: 2000,
         padding: const EdgeInsets.fromLTRB(16, 12, 16, 32),
         children: [
           ...switch (_index) {
@@ -148,16 +150,33 @@ class _DetailsRoomState extends State<DetailsRoom>
       return [CoursePaywall(depth: settings.depth)];
     }
     final reading = _reading(e.summaryFor(settings.depth));
+    final picture = <String>[];
+    final lesson = <String>[
+      if (reading.lede.isNotEmpty) reading.lede,
+    ];
+    for (final paragraph in reading.body) {
+      if (_isPictureNote(paragraph)) {
+        picture.add(paragraph);
+      } else {
+        lesson.add(paragraph);
+      }
+    }
     final prose = Theme.of(context).textTheme.bodyLarge?.copyWith(height: 1.45);
+    final muted = Theme.of(context).textTheme.bodySmall?.copyWith(
+      color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.65),
+      height: 1.35,
+    );
     return [
-      Text(reading.lede, style: prose),
-      const SizedBox(height: 12),
-      _ShellDiagram(
-        element: e,
-        reducedMotion: settings.reducedMotion,
-        energyUnit: settings.energy,
-        depth: settings.depth,
+      Text('Lesson', style: Theme.of(context).textTheme.titleMedium),
+      const SizedBox(height: 4),
+      Text(
+        packCaptions[settings.depth] ?? packCaptions['intermediate']!,
+        style: muted,
       ),
+      for (final paragraph in lesson) ...[
+        const SizedBox(height: 12),
+        Text(paragraph, style: prose),
+      ],
       if (e.forms.isNotEmpty) ...[
         const SizedBox(height: 16),
         Text('Forms', style: Theme.of(context).textTheme.titleMedium),
@@ -167,15 +186,68 @@ class _DetailsRoomState extends State<DetailsRoom>
           Text(form.note.at(settings.depth), style: prose),
         ],
       ],
-      for (final paragraph in reading.body) ...[
+      const SizedBox(height: 16),
+      _ShellDiagram(
+        element: e,
+        reducedMotion: settings.reducedMotion,
+        energyUnit: settings.energy,
+      ),
+      for (final paragraph in picture) ...[
         const SizedBox(height: 12),
         Text(paragraph, style: prose),
       ],
+      ..._courseNotes(context, e, settings),
       if (e.reaction != null) ...[
-        const SizedBox(height: 8),
+        const SizedBox(height: 16),
         FilledButton(
           onPressed: () => _showReaction(context, e, settings.depth),
           child: const Text('Simulate Reaction'),
+        ),
+      ],
+    ];
+  }
+
+  List<Widget> _courseNotes(
+    BuildContext context,
+    ElementRecord e,
+    SettingsController settings,
+  ) {
+    const depths = ['beginner', 'intermediate', 'advanced'];
+    const labels = ['Beginner', 'Intermediate', 'Advanced'];
+    final theme = Theme.of(context);
+    final muted = theme.colorScheme.onSurface.withValues(alpha: 0.65);
+    final notes = [
+      for (final depth in depths) e.curriculum.at(depth).trim(),
+    ];
+    if (notes.every((note) => note.isEmpty)) return const [];
+    return [
+      const SizedBox(height: 20),
+      Text('This course', style: theme.textTheme.titleMedium),
+      const SizedBox(height: 4),
+      Text(
+        'What each depth asks you to learn about ${e.name}. Tap a course to switch.',
+        style: theme.textTheme.bodySmall?.copyWith(color: muted, height: 1.35),
+      ),
+      for (var i = 0; i < depths.length; i++) ...[
+        const SizedBox(height: 8),
+        Card(
+          color: settings.depth == depths[i]
+              ? theme.colorScheme.primary.withValues(alpha: 0.12)
+              : null,
+          child: InkWell(
+            onTap: () => settings.setDepth(depths[i]),
+            child: Padding(
+              padding: const EdgeInsets.all(12),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(labels[i], style: theme.textTheme.titleSmall),
+                  const SizedBox(height: 4),
+                  Text(notes[i], style: theme.textTheme.bodyMedium),
+                ],
+              ),
+            ),
+          ),
         ),
       ],
     ];
@@ -443,6 +515,11 @@ class _Reading {
   final List<String> body;
 }
 
+bool _isPictureNote(String paragraph) {
+  return paragraph.startsWith('The picture ') ||
+      paragraph.startsWith('The rings in the picture');
+}
+
 _Reading _reading(String text) {
   final parts = text
       .split(RegExp(r'\n\s*\n'))
@@ -465,28 +542,6 @@ String _ox(int value) {
   if (value > 0) return '+$value';
   if (value < 0) return '−${value.abs()}';
   return '0';
-}
-
-String _shellPlain(List<int> counts) {
-  const names = [
-    'first',
-    'second',
-    'third',
-    'fourth',
-    'fifth',
-    'sixth',
-    'seventh',
-  ];
-  String shell(int index) => index < names.length ? names[index] : 'next';
-  if (counts.length == 1) {
-    final n = counts.first;
-    final word = n == 1 ? 'electron' : 'electrons';
-    return '$n $word in the first shell';
-  }
-  return [
-    for (var i = 0; i < counts.length; i++)
-      '${counts[i]} in the ${shell(i)} shell',
-  ].join(', ');
 }
 
 String _shells(List<int> counts) {
@@ -557,52 +612,24 @@ class _ShellDiagram extends StatelessWidget {
     required this.element,
     required this.reducedMotion,
     required this.energyUnit,
-    required this.depth,
   });
 
   final ElementRecord element;
   final bool reducedMotion;
   final String energyUnit;
-  final String depth;
 
   @override
   Widget build(BuildContext context) {
-    final beginner = depth == 'beginner';
-    final full = ElectronCloud.expandedConfiguration(
-      element.electronConfigFull,
-    );
-    final value = beginner
-        ? _shellPlain(element.shellCounts)
-        : (depth == 'advanced' ? full : element.electronConfig);
     return Card(
       child: Padding(
         padding: const EdgeInsets.fromLTRB(12, 16, 12, 16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            ElectronForceGraph(
-              atomicNumber: element.z,
-              symbol: element.symbol,
-              configuration: element.electronConfigFull,
-              accent: ElementSpectrum.of(element.categoryId),
-              reducedMotion: reducedMotion,
-              energyUnit: energyUnit,
-              depth: depth,
-            ),
-            const SizedBox(height: 16),
-            Text(
-              beginner ? 'Electrons' : 'Configuration',
-              style: Theme.of(context).textTheme.titleSmall
-                  ?.copyWith(fontWeight: FontWeight.w700),
-            ),
-            const SizedBox(height: 4),
-            Text(
-              value,
-              style: beginner
-                  ? Theme.of(context).textTheme.bodyMedium
-                  : Mono.of(context, size: 14, weight: FontWeight.w600),
-            ),
-          ],
+        child: ElectronForceGraph(
+          atomicNumber: element.z,
+          symbol: element.symbol,
+          configuration: element.electronConfigFull,
+          accent: ElementSpectrum.of(element.categoryId),
+          reducedMotion: reducedMotion,
+          energyUnit: energyUnit,
         ),
       ),
     );

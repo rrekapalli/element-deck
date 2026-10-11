@@ -177,7 +177,7 @@ Help articles, English first:
 | Article | Covers |
 | --- | --- |
 | Table | Search, family chips, periodic table, registry |
-| Details | Identity, Details / Data / History / Uses / Neighbors, simulate |
+| Details | Identity, Details / Properties / History / Uses / Neighbors, simulate |
 | Neighbors | Pair, computed deltas, trend, PDF |
 | Spectra | Emitter, strip, sonification, isotopes |
 | Settings | This hub |

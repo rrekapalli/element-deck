@@ -66,13 +66,13 @@ class QuizController extends ChangeNotifier {
     notifyListeners();
   }
 
-  void focusToday() {
+  void focusSelected() {
     if (pack.elements.isEmpty) return;
-    focusZ = _selection.elementOfTheDay().z;
-    notifyListeners();
+    setFocus(_selection.currentZ);
   }
 
   void setFocus(int z) {
+    if (z <= 0) return;
     if (focusZ == z) return;
     focusZ = z;
     _openKey = null;
@@ -207,26 +207,4 @@ class QuizController extends ChangeNotifier {
     };
   }
 
-  List<int> switcherZs() {
-    final today = pack.elements.isEmpty ? focusZ : _selection.elementOfTheDay().z;
-    final out = <int>[];
-    void add(int z) {
-      if (pack.byZ(z) == null) return;
-      if (!out.contains(z)) out.add(z);
-    }
-
-    add(today);
-    add(_selection.currentZ);
-    for (final z in _selection.recents) {
-      add(z);
-      if (out.length >= 4) break;
-    }
-    if (out.length < 3) {
-      for (final e in pack.elements) {
-        add(e.z);
-        if (out.length >= 4) break;
-      }
-    }
-    return out;
-  }
 }

@@ -47,12 +47,15 @@ void main() {
     await tester.pump();
 
     expect(find.text('Trivia'), findsNothing);
+    expect(find.text('Lesson'), findsOneWidget);
     expect(find.textContaining('You meet it in water'), findsOneWidget);
-    expect(find.textContaining('1s1'), findsNothing);
     expect(
-      find.textContaining('1 electron in the first shell'),
+      find.textContaining('A hydrogen atom is the simplest atom'),
       findsOneWidget,
     );
+    expect(find.textContaining('1s1'), findsWidgets);
+    expect(find.textContaining('Each ring is a subshell'), findsOneWidget);
+    expect(find.text('Configuration'), findsNothing);
 
     settings.depth = 'advanced';
     settings.notifyListeners();
@@ -65,18 +68,22 @@ void main() {
     settings.depth = 'beginner';
     settings.notifyListeners();
     await tester.pump();
+    final picture = find.textContaining('The picture shows the electrons');
     await tester.scrollUntilVisible(
-      find.textContaining('The picture shows the electrons'),
-      300,
+      picture,
+      400,
+      scrollable: find.byWidgetPredicate(
+        (widget) =>
+            widget is Scrollable && widget.axisDirection == AxisDirection.down,
+      ),
     );
-    expect(
-      find.textContaining('The picture shows the electrons'),
-      findsOneWidget,
-    );
+    expect(picture, findsOneWidget);
+    expect(find.textContaining('Each ring is a subshell'), findsOneWidget);
+    expect(find.text('Configuration'), findsNothing);
 
     await tester.tap(find.text('Uses'));
     await tester.pump();
-    expect(find.text('The pure element'), findsOneWidget);
+    expect(find.text('The element itself'), findsOneWidget);
     expect(find.textContaining('CC BY-SA'), findsOneWidget);
     await tester.scrollUntilVisible(find.text('Water'), 300);
     expect(find.text('Water'), findsOneWidget);
@@ -99,6 +106,11 @@ void main() {
     await selection.select(6);
     final account = AccountController(db, store);
 
+    tester.view.physicalSize = const Size(800, 4000);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+
     await tester.pumpWidget(
       MultiProvider(
         providers: [
@@ -112,7 +124,12 @@ void main() {
     );
     await tester.pump();
 
-    await tester.scrollUntilVisible(find.text('Forms'), 400);
+    expect(pack.byZ(6)!.forms, isNotEmpty);
+    expect(find.text('Lesson'), findsOneWidget);
+    expect(
+      find.textContaining('living things are built from it'),
+      findsOneWidget,
+    );
     expect(find.text('Forms'), findsOneWidget);
     expect(find.text('Diamond'), findsOneWidget);
     expect(find.text('Graphite'), findsOneWidget);
@@ -122,7 +139,8 @@ void main() {
     );
 
     await tester.tap(find.text('Neighbors'));
-    await tester.pumpAndSettle();
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 400));
     expect(find.text('VS'), findsOneWidget);
     expect(find.textContaining('Silicon'), findsWidgets);
   });
@@ -224,7 +242,7 @@ void main() {
       expect(find.textContaining('Stable isotope'), findsOneWidget);
       expect(find.textContaining('Transition metal'), findsOneWidget);
 
-      final labels = ['Details', 'Data', 'History', 'Uses', 'Neighbors'];
+      final labels = ['Details', 'Properties', 'History', 'Uses', 'Neighbors'];
       final tabs = find.descendant(
         of: find.byType(TabBar),
         matching: find.byType(FittedBox),

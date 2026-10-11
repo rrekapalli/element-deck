@@ -35,7 +35,7 @@ Tokens and component rules: [design-system.md](./design-system.md).
 | Help | **?** opens the guide for this room. **Previous** and **Next** walk the other rooms and the settings pages. Family filtering stays on the Table chips |
 | Me | Opens **Settings**. It is not a science room |
 | Bottom nav | Phone only. Four destinations. Re-tapping the active destination scrolls that room to the top |
-| Selection | One current element for Details, Spectra, and the Neighbors tab. Quiz focus is a separate Z (today's element by default). Table selection updates the current element |
+| Selection | One current element for Details, Spectra, Neighbors, and Quiz. Table selection updates the current element. Quiz can also change it from **Change element**. |
 
 The profile glyph on the concept screens is **Me**, the door to Settings, Account, and App settings. See [settings-and-theming.md](./settings-and-theming.md).
 
@@ -96,9 +96,9 @@ Benchmark: screen 3. The dossier.
 
 On the phone the dossier scrolls as one page. Sections are headings, not a maze of tabs. The design-system note about a bottom sheet is the compact inspector while you are still on Table or the matrix. Details itself is a full destination.
 
-### Data tab
+### Properties tab
 
-The Data tab lists compiled values in labeled rows: identity, electrons, physical properties, isotopes, and spectrum. Units follow App Config. Stored values stay in the dataset's units.
+The Properties tab lists compiled values in labeled rows: identity, electrons, physical properties, isotopes, and spectrum. Units follow App Config. Stored values stay in the dataset's units.
 
 Tap a row label, or click it with a pointer, to open a reference article for that property: what it measures, how it was established, and where the unit comes from. The article is about the property, not a second measurement of the open element. Labels that have an article are drawn with a dotted underline.
 
@@ -146,17 +146,17 @@ Beginner still lands here. The strip and the glow lead. Assignments and nuclear 
 
 ## Quiz
 
-A fifth room. Practice on today's element, at the current learning mode, from a 50-question pool.
+A fifth room. Practice on the currently selected element, at the current learning mode, from a 50-question pool.
 
 1. **Learning mode.** Quiz uses the app setting from App Config, not a control on this room. The pool is the 50 questions for that depth. Progress is stored per element and depth.
 2. **Streak and XP.** Consecutive local days with at least one answer, and `20 ×` correct answers across every pool. Both stay on the device. Table's element-of-the-day card does not show them.
-3. **Element card.** Today's element (or another focus): the **name** is clear. Z, symbol, family, configuration, and state are blurred so they do not give away quiz answers. A tier name from how many pools are finished (Observer, Student, Scholar, Fellow, Master).
+3. **Element card.** The current element: the **name** is clear. Z, symbol, family, configuration, and state are blurred so they do not give away quiz answers. A tier name from how many pools are finished (Observer, Student, Scholar, Fellow, Master).
 4. **Question.** Stem, four choices, then a lock: the correct option is marked, a short explanation (and an equation only when the catalog has one). **Previous** and **Next** walk all 50 items without requiring an answer. Finishing all 50 still shows a completion card; the items remain browsable.
 5. **Notes, bookmark, report.** Notes and reports are local. Bookmark is the same element bookmark as Details.
 6. **Active element bank.** Category bars for this pool.
-7. **Switch focus.** Chips for today, the Details element, and recents. They change Quiz only.
+7. **Change element.** A button at the top opens a searchable dialog (name, symbol, or Z). Picking a row updates the current element for Quiz and Details.
 
-Deep link: `/quiz` opens today; `/quiz/22` focuses titanium.
+Deep link: `/quiz` opens the current element; `/quiz/22` focuses titanium.
 
 ## Shared behaviors
 

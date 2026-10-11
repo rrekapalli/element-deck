@@ -1,7 +1,7 @@
 name: element_deck
 description: Periodic-table explorer that teaches every element.
 publish_to: 'none'
-version: 0.26.0+26
+version: 0.27.0+27
 
 environment:
   sdk: ^3.13.5
@@ -35,6 +35,7 @@ dependencies:
   intl: any
   web: ^1.1.1
   flutter_markdown_plus: ^1.0.12
+  package_info_plus: ^9.0.1
 
 dev_dependencies:
   flutter_test:

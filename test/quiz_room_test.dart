@@ -100,4 +100,66 @@ void main() {
     expect(find.text(firstStem), findsNothing);
     expect(quiz.index, 1);
   });
+
+  testWidgets('Change element opens a searchable picker', (tester) async {
+    final pack = CatalogPack.fromJson(
+      jsonDecode(File('assets/catalog/preview.json').readAsStringSync())
+          as Map<String, dynamic>,
+    );
+    final store = CatalogStore()..pack = pack;
+    final catalog = CatalogController(store)..loading = false;
+    final db = LearnerDatabase.forTesting(NativeDatabase.memory());
+    addTearDown(db.close);
+    final settings = SettingsController(db);
+    final selection = SelectionController(db, catalog)..currentZ = 1;
+    final bank = QuizBank.fromJson(
+      jsonDecode(File('assets/catalog/quiz/1.json').readAsStringSync())
+          as Map<String, dynamic>,
+    );
+    final quiz = QuizController(
+      db,
+      catalog,
+      selection,
+      store: _MemoryStore(bank),
+    )..focusZ = 1;
+    final account = AccountController(db, store);
+    final router = GoRouter(
+      routes: [
+        GoRoute(
+          path: '/',
+          builder: (context, state) => const Scaffold(body: QuizRoom()),
+        ),
+        GoRoute(
+          path: '/quiz/:z',
+          builder: (context, state) => const Scaffold(body: QuizRoom()),
+        ),
+      ],
+    );
+    addTearDown(router.dispose);
+
+    await tester.pumpWidget(
+      MultiProvider(
+        providers: [
+          ChangeNotifierProvider.value(value: catalog),
+          ChangeNotifierProvider.value(value: settings),
+          ChangeNotifierProvider.value(value: selection),
+          ChangeNotifierProvider.value(value: quiz),
+          ChangeNotifierProvider.value(value: account),
+        ],
+        child: MaterialApp.router(routerConfig: router),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.textContaining('Change element'));
+    await tester.pumpAndSettle();
+    expect(find.text('Search name, symbol, or number'), findsOneWidget);
+    await tester.enterText(find.byType(TextField).last, 'ti');
+    await tester.pump();
+    expect(find.text('Titanium'), findsOneWidget);
+    await tester.tap(find.text('Titanium'));
+    await tester.pumpAndSettle();
+    expect(selection.currentZ, 22);
+    expect(quiz.focusZ, 22);
+  });
 }

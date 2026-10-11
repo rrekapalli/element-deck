@@ -99,7 +99,7 @@ const nuclearGuides = <PropertyGuide>[
       GuideSection(
         'How spin was measured',
         'The first evidence was extra structure in atomic spectra. A nucleus with spin splits the electronic energy levels into hyperfine components, a finer split than the electron\'s own spin produces. Isidor Rabi and his colleagues, in the 1930s, measured nuclear magnetic moments by sending molecular beams through magnetic fields and watching resonances. Felix Bloch and Edward Purcell, in 1946, detected the same resonances in bulk matter, which is NMR. The medical and chemical machines are descendants of that detection.\n\n'
-            'The value on a teaching card is the ground-state spin. Excited nuclear states have their own spins. A gamma ray between two states has to respect the change in angular momentum. The Data tab quotes the ground state, as a string such as 1/2 or 0 or 1. A fuller spectroscopic label sometimes adds a parity, plus or minus. This row may omit the parity and print only the angular-momentum number.',
+            'The value on a teaching card is the ground-state spin. Excited nuclear states have their own spins. A gamma ray between two states has to respect the change in angular momentum. The Properties tab quotes the ground state, as a string such as 1/2 or 0 or 1. A fuller spectroscopic label sometimes adds a parity, plus or minus. This row may omit the parity and print only the angular-momentum number.',
       ),
       GuideSection(
         'Where the unit comes from',

@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
 
@@ -249,7 +250,8 @@ class AccountSettingsPage extends StatelessWidget {
                       ? 'Owned'
                       : 'Buy · ${billing.priceLabel(id)}',
                 ),
-                onTap: account.packages.contains(id) ||
+                onTap:
+                    account.packages.contains(id) ||
                         account.packages.contains(packLegacy)
                     ? null
                     : () => billing.buy(id),
@@ -386,6 +388,8 @@ class AboutPage extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
           ),
+          SizedBox(height: 6),
+          _AppVersionLine(),
           SizedBox(height: 16),
           Text(
             'Element Deck explains published elemental data for learning. '
@@ -394,6 +398,36 @@ class AboutPage extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class _AppVersionLine extends StatefulWidget {
+  const _AppVersionLine();
+
+  @override
+  State<_AppVersionLine> createState() => _AppVersionLineState();
+}
+
+class _AppVersionLineState extends State<_AppVersionLine> {
+  late final Future<PackageInfo> _info = PackageInfo.fromPlatform();
+
+  @override
+  Widget build(BuildContext context) {
+    final muted = Theme.of(context).colorScheme.onSurface
+        .withValues(alpha: 0.55);
+    final style = Theme.of(context).textTheme.bodyMedium
+        ?.copyWith(color: muted);
+    return FutureBuilder<PackageInfo>(
+      future: _info,
+      builder: (context, snapshot) {
+        final version = snapshot.data?.version.trim() ?? '';
+        return Text(
+          version.isEmpty ? '' : 'Version $version',
+          textAlign: TextAlign.center,
+          style: style,
+        );
+      },
     );
   }
 }

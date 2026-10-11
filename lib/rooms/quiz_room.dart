@@ -31,8 +31,9 @@ class _QuizRoomState extends State<QuizRoom> {
     super.didChangeDependencies();
     final quiz = context.read<QuizController>();
     final settings = context.read<SettingsController>();
-    if (quiz.focusZ == 0 && quiz.pack.elements.isNotEmpty) {
-      quiz.focusToday();
+    final selected = context.read<SelectionController>().currentZ;
+    if (quiz.focusZ == 0 && selected > 0) {
+      quiz.setFocus(selected);
     }
     final z = quiz.focusZ;
     final depth = settings.depth;
@@ -71,6 +72,8 @@ class _QuizRoomState extends State<QuizRoom> {
       controller: widget.controller,
       padding: const EdgeInsets.fromLTRB(16, 8, 16, 32),
       children: [
+        _ChangeElementButton(quiz: quiz),
+        const SizedBox(height: 12),
         _StatsRow(quiz: quiz),
         const SizedBox(height: 4),
         Text(
@@ -113,8 +116,6 @@ class _QuizRoomState extends State<QuizRoom> {
           _ToolsRow(quiz: quiz),
           const SizedBox(height: 20),
           _BankCard(quiz: quiz),
-          const SizedBox(height: 16),
-          _Switcher(quiz: quiz),
         ],
       ],
     );
@@ -757,40 +758,130 @@ class _BankCard extends StatelessWidget {
   }
 }
 
-class _Switcher extends StatelessWidget {
-  const _Switcher({required this.quiz});
+class _ChangeElementButton extends StatelessWidget {
+  const _ChangeElementButton({required this.quiz});
   final QuizController quiz;
 
   @override
   Widget build(BuildContext context) {
-    final sel = context.watch<SelectionController>();
-    final today = sel.elementOfTheDay().z;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          'Switch focus element',
-          style: Theme.of(context).textTheme.labelMedium,
-        ),
-        const SizedBox(height: 8),
-        Wrap(
-          spacing: 8,
-          runSpacing: 8,
+    final element = quiz.element;
+    return OutlinedButton.icon(
+      onPressed: () => _pick(context, quiz),
+      icon: const Icon(Icons.swap_horiz),
+      label: Text(
+        element == null
+            ? 'Change element'
+            : 'Change element · ${element.name}',
+      ),
+      style: OutlinedButton.styleFrom(
+        minimumSize: const Size.fromHeight(48),
+        alignment: Alignment.centerLeft,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      ),
+    );
+  }
+
+  Future<void> _pick(BuildContext context, QuizController quiz) async {
+    final z = await showDialog<int>(
+      context: context,
+      builder: (ctx) => _ElementPickerDialog(
+        elements: quiz.pack.elements,
+        currentZ: quiz.focusZ,
+      ),
+    );
+    if (z == null || !context.mounted) return;
+    await context.read<SelectionController>().select(z);
+    quiz.setFocus(z);
+    context.go('/quiz/$z');
+  }
+}
+
+class _ElementPickerDialog extends StatefulWidget {
+  const _ElementPickerDialog({
+    required this.elements,
+    required this.currentZ,
+  });
+
+  final List<ElementRecord> elements;
+  final int currentZ;
+
+  @override
+  State<_ElementPickerDialog> createState() => _ElementPickerDialogState();
+}
+
+class _ElementPickerDialogState extends State<_ElementPickerDialog> {
+  final _query = TextEditingController();
+
+  @override
+  void dispose() {
+    _query.dispose();
+    super.dispose();
+  }
+
+  List<ElementRecord> get _filtered {
+    final q = _query.text.trim().toLowerCase();
+    if (q.isEmpty) return widget.elements;
+    final asZ = int.tryParse(q);
+    return widget.elements.where((e) {
+      if (asZ != null && e.z == asZ) return true;
+      if (e.symbol.toLowerCase() == q) return true;
+      if (e.name.toLowerCase().contains(q)) return true;
+      return false;
+    }).toList();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final hits = _filtered;
+    return AlertDialog(
+      title: const Text('Change element'),
+      content: SizedBox(
+        width: 420,
+        height: 420,
+        child: Column(
           children: [
-            for (final z in quiz.switcherZs())
-              FilterChip(
-                selected: quiz.focusZ == z,
-                label: Text(
-                  z == today
-                      ? '${quiz.pack.byZ(z)?.symbol ?? z} · Today'
-                      : '${quiz.pack.byZ(z)?.symbol ?? z} #${quiz.pack.byZ(z)?.z ?? z}',
-                ),
-                onSelected: (_) {
-                  quiz.setFocus(z);
-                  context.go('/quiz/$z');
-                },
+            TextField(
+              controller: _query,
+              autofocus: true,
+              decoration: const InputDecoration(
+                isDense: true,
+                prefixIcon: Icon(Icons.search),
+                hintText: 'Search name, symbol, or number',
               ),
+              onChanged: (_) => setState(() {}),
+            ),
+            const SizedBox(height: 12),
+            Expanded(
+              child: hits.isEmpty
+                  ? const Center(child: Text('No element matches.'))
+                  : ListView.builder(
+                      itemCount: hits.length,
+                      itemBuilder: (context, i) {
+                        final e = hits[i];
+                        final accent = ElementSpectrum.of(e.categoryId);
+                        return ListTile(
+                          selected: e.z == widget.currentZ,
+                          leading: Text(
+                            e.symbol,
+                            style: TextStyle(
+                              color: accent,
+                              fontWeight: FontWeight.w800,
+                            ),
+                          ),
+                          title: Text(e.name),
+                          subtitle: Text('Z ${e.z} · ${e.categoryLabel}'),
+                          onTap: () => Navigator.pop(context, e.z),
+                        );
+                      },
+                    ),
+            ),
           ],
+        ),
+      ),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.pop(context),
+          child: const Text('Cancel'),
         ),
       ],
     );

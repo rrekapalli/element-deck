@@ -50,7 +50,7 @@ class GuideSection {
       .toList();
 }
 
-/// Stable ids for every labeled row on the Data tab.
+/// Stable ids for every labeled row on the Properties tab.
 abstract final class GuideId {
   static const atomicNumber = 'atomic-number';
   static const symbol = 'symbol';

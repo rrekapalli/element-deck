@@ -339,6 +339,9 @@ class ElectronSim {
     return inner + (outer - inner) * t;
   }
 
+  int occupancy(String label) =>
+      electrons.where((e) => e.label == label).length;
+
   List<OrbitRing> get rings {
     final map = <String, OrbitRing>{};
     for (final e in electrons) {
