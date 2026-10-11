@@ -38,7 +38,8 @@ class QuizController extends ChangeNotifier {
   int streak = 0;
   int finishedPools = 0;
   String note = '';
-  String? _openKey;
+  String? _loadedKey;
+  var _openGen = 0;
 
   CatalogPack get pack => _catalog.pack;
 
@@ -66,27 +67,39 @@ class QuizController extends ChangeNotifier {
     notifyListeners();
   }
 
-  void focusSelected() {
-    if (pack.elements.isEmpty) return;
-    setFocus(_selection.currentZ);
-  }
+  String _key(int z, String depth) => '$z|$depth';
+
+  bool isLoaded(int z, String depth) =>
+      _loadedKey == _key(z, depth) && pool.isNotEmpty;
 
   void setFocus(int z) {
     if (z <= 0) return;
     if (focusZ == z) return;
     focusZ = z;
-    _openKey = null;
     notifyListeners();
+  }
+
+  Future<void> useElement(int z, String depth) async {
+    if (z <= 0) return;
+    focusZ = z;
+    notifyListeners();
+    await open(z: z, depth: depth);
+  }
+
+  void focusSelected() {
+    if (pack.elements.isEmpty) return;
+    setFocus(_selection.currentZ);
   }
 
   Future<void> open({required int z, required String depth}) async {
     if (z <= 0) return;
-    final key = '$z|$depth';
-    if (_openKey == key && !loading && pool.isNotEmpty) {
-      if (this.depth != depth) this.depth = depth;
+    final key = _key(z, depth);
+    if (isLoaded(z, depth)) {
+      focusZ = z;
+      this.depth = depth;
       return;
     }
-    _openKey = key;
+    final gen = ++_openGen;
     focusZ = z;
     this.depth = depth;
     loading = true;
@@ -94,25 +107,32 @@ class QuizController extends ChangeNotifier {
     picked = null;
     notifyListeners();
     try {
-      bank = await _store.load(z);
-      pool = List.of(bank!.poolFor(depth));
+      final loaded = await _store.load(z);
+      if (gen != _openGen) return;
+      bank = loaded;
+      pool = List.of(loaded.poolFor(depth));
       if (pool.length > poolSize) {
         pool = pool.take(poolSize).toList();
       }
       if (pool.isEmpty) {
-        throw StateError('empty quiz pool');
+        throw StateError('empty quiz pool for Z=$z $depth');
       }
       answered = await _db.quizAnswersFor(z, depth);
+      if (gen != _openGen) return;
       note = await _db.quizNote(z);
       index = _firstUnanswered();
       _syncPicked();
+      _loadedKey = key;
       await refreshStats();
-    } catch (e) {
-      error = 'Quiz bank unavailable for Z=$z';
+    } catch (e, st) {
+      if (gen != _openGen) return;
+      debugPrint('Quiz open failed for $key: $e\n$st');
+      error = 'Could not load questions for this element.';
       pool = const [];
       bank = null;
-      _openKey = null;
+      _loadedKey = null;
     }
+    if (gen != _openGen) return;
     loading = false;
     notifyListeners();
   }

@@ -20,9 +20,21 @@ class _MemoryStore extends QuizBankStore {
   Future<QuizBank> load(int z) async => bank;
 }
 
+class _FileQuizStore extends QuizBankStore {
+  @override
+  Future<QuizBank> load(int z) async {
+    final file = File('assets/catalog/quiz/$z.json');
+    return QuizBank.fromJson(
+      jsonDecode(file.readAsStringSync()) as Map<String, dynamic>,
+    );
+  }
+}
+
 void main() {
   late LearnerDatabase db;
   late QuizController quiz;
+  late CatalogController catalog;
+  late SelectionController selection;
   late QuizBank bank;
   var clock = DateTime(2026, 10, 11);
 
@@ -32,9 +44,8 @@ void main() {
       jsonDecode(File('assets/catalog/preview.json').readAsStringSync())
           as Map<String, dynamic>,
     );
-    final catalog = CatalogController(CatalogStore()..pack = pack)
-      ..loading = false;
-    final selection = SelectionController(db, catalog);
+    catalog = CatalogController(CatalogStore()..pack = pack)..loading = false;
+    selection = SelectionController(db, catalog);
     bank = QuizBank.fromJson(
       jsonDecode(File('assets/catalog/quiz/1.json').readAsStringSync())
           as Map<String, dynamic>,
@@ -97,6 +108,23 @@ void main() {
     quiz.next();
     await quiz.choose(quiz.current!.correctIndex);
     expect(quiz.streak, 1);
+  });
+
+  test('useElement loads questions for the chosen element', () async {
+    final files = QuizController(
+      db,
+      catalog,
+      selection,
+      store: _FileQuizStore(),
+      now: () => clock,
+    );
+    await files.useElement(1, 'beginner');
+    expect(files.current!.stem.toLowerCase(), contains('hydrogen'));
+    await files.useElement(22, 'advanced');
+    expect(files.focusZ, 22);
+    expect(files.pool, isNotEmpty);
+    expect(files.current!.stem.toLowerCase(), contains('titanium'));
+    expect(files.error, isNull);
   });
 
   test('previous and next walk the whole pool without answering', () async {

@@ -24,25 +24,28 @@ class QuizRoom extends StatefulWidget {
 }
 
 class _QuizRoomState extends State<QuizRoom> {
-  String? _syncing;
-
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
+    _ensurePool();
+  }
+
+  void _ensurePool() {
     final quiz = context.read<QuizController>();
     final settings = context.read<SettingsController>();
     final selected = context.read<SelectionController>().currentZ;
-    if (quiz.focusZ == 0 && selected > 0) {
-      quiz.setFocus(selected);
-    }
-    final z = quiz.focusZ;
-    final depth = settings.depth;
-    final key = '$z|$depth';
-    if (z <= 0 || _syncing == key) return;
-    _syncing = key;
+    final z = quiz.focusZ > 0 ? quiz.focusZ : selected;
+    if (z <= 0 || quiz.loading) return;
+    if (quiz.isLoaded(z, settings.depth)) return;
+    if (quiz.error != null && quiz.focusZ == z) return;
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
-      context.read<QuizController>().open(z: z, depth: depth);
+      final q = context.read<QuizController>();
+      final depth = context.read<SettingsController>().depth;
+      final next = q.focusZ > 0
+          ? q.focusZ
+          : context.read<SelectionController>().currentZ;
+      q.open(z: next, depth: depth);
     });
   }
 
@@ -51,17 +54,7 @@ class _QuizRoomState extends State<QuizRoom> {
     final quiz = context.watch<QuizController>();
     final settings = context.watch<SettingsController>();
     final account = context.watch<AccountController>();
-    final key = '${quiz.focusZ}|${settings.depth}';
-    if (quiz.focusZ > 0 && _syncing != key && !quiz.loading) {
-      _syncing = key;
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (!mounted) return;
-        context.read<QuizController>().open(
-          z: quiz.focusZ,
-          depth: settings.depth,
-        );
-      });
-    }
+    _ensurePool();
 
     final mode = switch (settings.depth) {
       'beginner' => 'Beginner',
@@ -101,9 +94,14 @@ class _QuizRoomState extends State<QuizRoom> {
               padding: EdgeInsets.symmetric(vertical: 32),
               child: Center(child: CircularProgressIndicator()),
             )
-          else if (quiz.error != null)
-            Text(quiz.error!)
-          else if (quiz.current == null)
+          else if (quiz.error != null) ...[
+            Text(quiz.error!),
+            const SizedBox(height: 12),
+            FilledButton(
+              onPressed: () => quiz.useElement(quiz.focusZ, settings.depth),
+              child: const Text('Retry'),
+            ),
+          ] else if (quiz.current == null)
             const Text('No questions in this pool.')
           else ...[
             if (quiz.complete) ...[
@@ -790,9 +788,10 @@ class _ChangeElementButton extends StatelessWidget {
       ),
     );
     if (z == null || !context.mounted) return;
+    final depth = context.read<SettingsController>().depth;
     await context.read<SelectionController>().select(z);
-    quiz.setFocus(z);
-    context.go('/quiz/$z');
+    await quiz.useElement(z, depth);
+    if (context.mounted) context.go('/quiz/$z');
   }
 }
 

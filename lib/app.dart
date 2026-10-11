@@ -99,7 +99,9 @@ class _ElementDeckAppState extends State<ElementDeckApp>
         GoRoute(
           path: '/quiz',
           pageBuilder: (context, state) {
-            _queue(quiz.focusSelected);
+            _queue(() {
+              quiz.useElement(selection.currentZ, settings.depth);
+            });
             return const NoTransitionPage(child: HomeShell(index: 3));
           },
         ),
@@ -108,12 +110,9 @@ class _ElementDeckAppState extends State<ElementDeckApp>
           pageBuilder: (context, state) {
             final z = int.tryParse(state.pathParameters['z'] ?? '') ?? 0;
             _queue(() {
-              if (z > 0) {
-                selection.select(z);
-                quiz.setFocus(z);
-              } else {
-                quiz.focusSelected();
-              }
+              final next = z > 0 ? z : selection.currentZ;
+              selection.select(next);
+              quiz.useElement(next, settings.depth);
             });
             return const NoTransitionPage(child: HomeShell(index: 3));
           },

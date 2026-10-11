@@ -25,7 +25,7 @@ class QuizQuestion {
       category: json['category'] as String,
       stem: json['stem'] as String,
       options: (json['options'] as List<dynamic>).map((e) => '$e').toList(),
-      correctIndex: json['correctIndex'] as int,
+      correctIndex: (json['correctIndex'] as num).toInt(),
       explanation: json['explanation'] as String? ?? '',
       equation: json['equation'] as String?,
     );
@@ -45,7 +45,7 @@ class QuizBank {
   factory QuizBank.fromJson(Map<String, dynamic> json) {
     final raw = json['levels'] as Map<String, dynamic>? ?? {};
     return QuizBank(
-      z: json['z'] as int,
+      z: (json['z'] as num).toInt(),
       levels: {
         for (final e in raw.entries)
           e.key: (e.value as List<dynamic>)
