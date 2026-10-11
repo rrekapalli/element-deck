@@ -34,6 +34,7 @@ class SelectionController extends ChangeNotifier {
   ElementRecord? get current => pack.byZ(currentZ);
 
   Future<void> select(int z, {bool openDetails = false}) async {
+    if (currentZ == z) return;
     currentZ = z;
     await _db.setPref('selection.z', '$z');
     await _db.touchRecent(z);
@@ -42,6 +43,7 @@ class SelectionController extends ChangeNotifier {
   }
 
   Future<void> setPair(int a, int b) async {
+    if (compareA == a && compareB == b) return;
     compareA = a;
     compareB = b;
     notifyListeners();

@@ -17,7 +17,7 @@ Tokens and component rules: [design-system.md](./design-system.md).
 
 ```text
 ┌──────────────────────────────────────┐
-│ Element Deck                    filter  me │
+│ Element Deck                      ?    me │
 │ PERIODIC EXPLORER · {ROOM}           │
 ├──────────────────────────────────────┤
 │                                      │
@@ -32,7 +32,7 @@ Tokens and component rules: [design-system.md](./design-system.md).
 | --- | --- |
 | Wordmark | Element Deck. Always. |
 | Eyebrow | `PERIODIC EXPLORER · TABLE` (or DETAILS, COMPARE, SPECTRA) |
-| Filter | Opens the shared filter sheet: category, block, period, group, standard state. Active filters persist until cleared |
+| Help | **?** opens the guide for this room. **Previous** and **Next** walk the other rooms and the settings pages. Family filtering stays on the Table chips |
 | Me | Opens **Settings**. It is not a fourth science room |
 | Bottom nav | Phone only. Four destinations. Re-tapping the active destination scrolls that room to the top |
 | Selection | One current element for Details and Spectra. Two current elements for Compare. Table selection updates the current element |
@@ -104,6 +104,14 @@ Tap a row label, or click it with a pointer, to open a reference article for tha
 
 Bookmark lives on the identity header.
 
+### History tab
+
+Three prose cards, in this order:
+
+1. **History of the element.** The naming story and what people did with the element afterward.
+2. **How it was discovered.** The year (or Antiquity), the people, and a short account of the material, the operation, and the evidence. Ancient elements say so, and describe the smelt or the recognition that the substance was already simple.
+3. **Formed in the Universe.** The nuclear paths thought to have assembled the element before the Earth existed: Big Bang fusion, stellar burning, cosmic-ray spallation, or neutron capture. Elements with no surviving primordial stock say which decay chain or laboratory reaction produces the atoms that exist now.
+
 ## Compare
 
 Benchmark: screen 2. Two elements, one argument.
@@ -120,7 +128,9 @@ Changing depth restates the captions. The numbers stay. Beginner hides term-symb
 
 ## Spectra
 
-Benchmark: screen 4. The bench.
+Benchmark: screen 4. The bench. Two tabs sit under the element header, the same pattern as Details.
+
+**Spectra** is the bench below. **Details** is a long reading: first a shared account of what a spectrum is, how a line is made, how it is recorded, and how an element is identified; then an essay on the selected element's own spectrum, its look-alike colors, and its uses. Every element has that essay. A line list under the essay prints the wavelengths the pack actually stores, so the prose and the strip stay tied to the same dataset. The phone is not a spectrometer in either tab.
 
 1. **Calibration line.** "Spectrometer calibrated" means the bundled dataset is the one this screen was built against, not that the phone is a spectrometer. The footer shows the dataset name and version (benchmark: NIST ASD Ref v3.1).
 2. **Target emitter chips.** Current element first, then recent emitters (Ne, Fe, H on the benchmark). Horizontal scroll.
@@ -143,7 +153,7 @@ Beginner still lands here. The strip and the glow lead. Assignments and nuclear 
 | Bookmark | Toggles on the current element. Filled state is visible on the card and the dossier |
 | Search | Available on Table. Wide shell also exposes it in the title bar |
 | Deep link | `elementdeck://element/22` and the web path `/e/22` open Details for titanium. `/e/22/spectra` and `/compare/6/14` open those rooms |
-| Help | From Settings. Short articles for each room, depth, and settings page |
+| Help | **?** on the room header, and again on each settings page. The article matches the page you opened it from. **Previous** and **Next** walk Table, Details, Compare, Spectra, then Settings and its pages |
 | On device | Preview elements ship in the app. The full pack is read from the local cache after download. Bookmarks and theme are local, and copy to Firebase when signed in |
 | Reduced motion | No pulsing glows, no scrubber inertia. See App settings |
 | Text scale | Layouts survive the OS text scale. Mono values may wrap; they do not truncate a unit |

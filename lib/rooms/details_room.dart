@@ -130,35 +130,20 @@ class _DetailsRoomState extends State<DetailsRoom>
   List<Widget> _history(BuildContext context, ElementRecord e) {
     final narrative = e.history.trim().isNotEmpty
         ? e.history.trim()
-        : (e.discovery?.text ??
-              'History for this element is not in the pack yet.');
-    final paragraphs = narrative
-        .split(RegExp(r'\n\s*\n'))
-        .map((p) => p.trim())
-        .where((p) => p.isNotEmpty);
+        : 'History for this element is not in the pack yet.';
+    final found = e.howDiscovered.trim().isNotEmpty
+        ? e.howDiscovered.trim()
+        : (e.discovery?.text ?? '');
+    final origin = e.cosmicOrigin.trim();
     return [
-      Card(
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'History of ${e.name}',
-                style: Theme.of(context).textTheme.titleMedium,
-              ),
-              const SizedBox(height: 8),
-              for (final p in paragraphs) ...[
-                Text(p),
-                const SizedBox(height: 12),
-              ],
-            ],
-          ),
-        ),
-      ),
-      if (e.discovery != null) ...[
+      _NarrativeCard(title: 'History of ${e.name}', body: narrative),
+      if (e.discovery != null || found.isNotEmpty) ...[
         const SizedBox(height: 12),
-        _Discovery(e.discovery!),
+        _HowDiscovered(element: e, body: found),
+      ],
+      if (origin.isNotEmpty) ...[
+        const SizedBox(height: 12),
+        _NarrativeCard(title: 'Formed in the Universe', body: origin),
       ],
     ];
   }
@@ -742,30 +727,79 @@ class _Spectra extends StatelessWidget {
   }
 }
 
-class _Discovery extends StatelessWidget {
-  const _Discovery(this.d);
-  final Discovery d;
+class _NarrativeCard extends StatelessWidget {
+  const _NarrativeCard({required this.title, required this.body});
+
+  final String title;
+  final String body;
 
   @override
   Widget build(BuildContext context) {
-    final year = d.year?.toString() ?? 'Antiquity';
+    final paragraphs = body
+        .split(RegExp(r'\n\s*\n'))
+        .map((p) => p.trim())
+        .where((p) => p.isNotEmpty);
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Discovery', style: Theme.of(context).textTheme.titleMedium),
+            Text(title, style: Theme.of(context).textTheme.titleMedium),
             const SizedBox(height: 8),
-            Text(
-              year,
-              style: Mono.of(context, size: 16, weight: FontWeight.w700),
-            ),
-            if (d.people.isNotEmpty) ...[
-              const SizedBox(height: 4),
-              Text(d.people),
+            for (final paragraph in paragraphs) ...[
+              Text(paragraph),
+              const SizedBox(height: 12),
             ],
-            if (d.text.isNotEmpty) ...[const SizedBox(height: 8), Text(d.text)],
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _HowDiscovered extends StatelessWidget {
+  const _HowDiscovered({required this.element, required this.body});
+
+  final ElementRecord element;
+  final String body;
+
+  @override
+  Widget build(BuildContext context) {
+    final discovery = element.discovery;
+    final year = discovery == null
+        ? null
+        : (discovery.year?.toString() ?? 'Antiquity');
+    final paragraphs = body
+        .split(RegExp(r'\n\s*\n'))
+        .map((p) => p.trim())
+        .where((p) => p.isNotEmpty);
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'How ${element.name} was discovered',
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            if (year != null) ...[
+              const SizedBox(height: 8),
+              Text(
+                year,
+                style: Mono.of(context, size: 16, weight: FontWeight.w700),
+              ),
+            ],
+            if (discovery != null && discovery.people.isNotEmpty) ...[
+              const SizedBox(height: 4),
+              Text(discovery.people),
+            ],
+            if (paragraphs.isNotEmpty) const SizedBox(height: 8),
+            for (final paragraph in paragraphs) ...[
+              Text(paragraph),
+              const SizedBox(height: 12),
+            ],
           ],
         ),
       ),

@@ -78,6 +78,16 @@ void main() {
         greaterThan(120),
         reason: 'history Z=${e.z}',
       );
+      expect(
+        e.howDiscovered.trim().length,
+        greaterThan(200),
+        reason: 'how discovered Z=${e.z}',
+      );
+      expect(
+        e.cosmicOrigin.trim().length,
+        greaterThan(200),
+        reason: 'cosmic origin Z=${e.z}',
+      );
       expect(e.trivia.length, greaterThanOrEqualTo(5), reason: 'trivia Z=${e.z}');
       for (final story in e.trivia) {
         expect(story.title.trim().length, greaterThan(8), reason: 'trivia title Z=${e.z}');

@@ -46,7 +46,7 @@ App Health stays inside Settings. It is not a permanent lamp in the title bar.
 
 Re-tapping the active rail item scrolls that room to the top and clears a temporary selection where the phone would have popped to root.
 
-Sheets that are modal on the phone (filter, a reaction illustration, erase-data confirm) open as a dialog or a right-hand pane on the wide shell. They do not cover the rail.
+Sheets that are modal on the phone (a reaction illustration, erase-data confirm) open as a dialog or a right-hand pane on the wide shell. They do not cover the rail. Help is a full page, same as on the phone.
 
 ## Per-room body
 

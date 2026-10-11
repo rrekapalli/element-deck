@@ -76,6 +76,8 @@ class ElementRecord {
     required this.sourceId,
     required this.summary,
     required this.history,
+    required this.howDiscovered,
+    required this.cosmicOrigin,
     required this.trivia,
     required this.curriculum,
     required this.properties,
@@ -109,6 +111,8 @@ class ElementRecord {
   final String sourceId;
   final DepthText summary;
   final String history;
+  final String howDiscovered;
+  final String cosmicOrigin;
   final List<TriviaStory> trivia;
   final DepthText curriculum;
   final ElementProperties properties;
@@ -153,6 +157,8 @@ class ElementRecord {
       sourceId: json['sourceId'] as String? ?? 'compiled-v1',
       summary: DepthText.fromJson(json['summary'] as Map<String, dynamic>),
       history: json['history'] as String? ?? '',
+      howDiscovered: json['howDiscovered'] as String? ?? '',
+      cosmicOrigin: json['cosmicOrigin'] as String? ?? '',
       trivia: (json['trivia'] as List<dynamic>? ?? [])
           .map((e) => TriviaStory.fromJson(e as Map<String, dynamic>))
           .toList(),

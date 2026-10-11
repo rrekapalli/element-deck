@@ -96,6 +96,8 @@
         "text": "Isolated as inflammable air; later named hydrogen by Lavoisier."
       },
       "history": "In 1766 Henry Cavendish collected a gas from metals and acids and called it inflammable air. He showed that burning it produced water. Antoine Lavoisier later named it hydrogen, from the Greek for water-former, and listed it as an element.\n\nThe common isotope, protium, is a single proton. Deuterium was identified in 1931 and tritium in 1934. In 1913 the Balmer lines of hydrogen became the first spectrum explained by Bohr\u2019s model of the atom.",
+      "howDiscovered": "Henry Cavendish collected a gas by pouring acid onto iron, zinc, and tin and catching what bubbled off. The gas burned. In 1781 he exploded measured amounts of it with air and found that the product was water, and that the gas\u2019s weight accounted for the water\u2019s weight.\n\nThat closed the argument that the gas was a modification of ordinary air. Antoine Lavoisier repeated the combination, named the gas hydrogen, and put it on his list of elements. The discovery was a weighed reaction, not a new mineral.",
+      "cosmicOrigin": "Almost every hydrogen nucleus was made in the first few minutes of the Universe, once it had cooled enough for protons and neutrons to stick and before it cooled too far for them to fuse. The common isotope, protium, is that leftover proton. Deuterium was made in the same brief window. Stars destroy deuterium, so the deuterium still around is a fossil of those minutes.\n\nStars burn hydrogen into helium. They do not replace the cosmic supply. Tritium is a different, short-lived nucleus, knocked together by cosmic rays, and it is not part of the primordial stock.",
       "trivia": [
         {
           "title": "Inflammable Air from Acids",
@@ -285,6 +287,8 @@
         "text": "Known as charcoal, soot, and diamond long before it was an element."
       },
       "history": "Charcoal, soot, and diamond were known long before anyone called them one element. In 1772 Lavoisier burned a diamond in oxygen and obtained the same gas as from burning charcoal, which tied the forms together. The name carbon is from the Latin carbo, coal.\n\nThe nineteenth century sorted the allotropes. Graphite, diamond, and later fullerenes and graphene are the same element in different networks, and organic chemistry is the chemistry of its chains.",
+      "howDiscovered": "Charcoal, soot, and diamond were familiar long before anyone treated them as one element. The experiment that tied them together was combustion. In 1772 Antoine Lavoisier burned a diamond in a closed vessel with a burning glass and collected the same fixed air that burning charcoal produced.\n\nHe weighed the vessel. The gas accounted for the diamond. Graphite later joined them. Carbon was discovered by showing that three very different solids were the same simple substance, because each of them became carbon dioxide and nothing else.",
+      "cosmicOrigin": "Carbon is built in the cores of stars that are burning helium. Three helium nuclei meet and make carbon-12, the triple-alpha step. A little of that carbon captures one more helium nucleus and becomes oxygen, so the amount of carbon a star returns depends on how the race between those two captures goes.\n\nRed giants and massive stars both run the reaction. Winds and supernovae put the carbon into space. The carbon in coal, diamond, and living tissue is that stellar ash, gathered into the cloud that became the solar system.",
       "trivia": [
         {
           "title": "The Diamond and the Charcoal",
@@ -477,6 +481,8 @@
         "text": "Isolated from liquefied air after argon and krypton."
       },
       "history": "William Ramsay and Morris Travers isolated neon in 1898 by fractional distillation of liquid air, after they had already found argon, krypton, and xenon. A new crimson glow in a discharge tube told them the fraction was a new gas. They named it neon, from the Greek neos, new.\n\nGeorges Claude turned that glow into commercial lighting in the 1910s. Neon signs made the element a public word, even when later tubes used other gases for other colors.",
+      "howDiscovered": "William Ramsay and Morris Travers liquefied air and distilled it in fractions. After argon had been removed, a light fraction sparked in a discharge tube with a crimson glow that matched no known gas. They collected it in 1898 and named it from the newness of the line.\n\nThe amount in air is small, about 18 parts per million, which is why the gas waited until liquid air could be taken apart carefully. The discovery was a boiling point and a spectrum. There was no mineral and no chemical reaction, only a fraction that glowed a color argon did not.",
+      "cosmicOrigin": "Neon-20, the common isotope, is built by carbon burning in massive stars. Two carbon nuclei fuse, and one frequent result is neon plus a helium nucleus. The supernova that ends the star returns that neon to space.\n\nNeon-22 has a second path. Helium burning on nitrogen-14 builds it in massive stars and in giants, and that neon-22 also releases neutrons those stars use for slow capture of heavier elements. The neon in air is mostly the neon-20 from massive stars.",
       "trivia": [
         {
           "title": "A Crimson Glow in Cold Air",
@@ -697,6 +703,8 @@
         "text": "Isolated from silica after earlier work by Gay-Lussac and Thenard."
       },
       "history": "Silica, as flint, quartz, and glass, is ancient. In 1824 J\u00f6ns Jacob Berzelius isolated reasonably pure silicon by reducing potassium fluorosilicate. The name, which he gave, is from the Latin silex, flint. Gay-Lussac and Th\u00e9nard had prepared an impure form earlier.\n\nSilicon was a chemical footnote until the twentieth century. Zone refining and the transistor turned the element into the semiconductor of electronics, while silica remained the network of glass and rock.",
+      "howDiscovered": "J\u00f6ns Jacob Berzelius heated potassium metal with potassium fluorosilicate in 1824, washed the mass with water until the soluble salts were gone, and was left with a brown amorphous powder. The powder burned to silica. Gay-Lussac and Th\u00e9nard had seen a similar impure material earlier and had not established it.\n\nSilica, as flint and quartz, was ancient. The element was the powder that could be burned back to silica and that was not carbon. Berzelius\u2019s washing step is what made the claim convincing: the potassium and the fluoride were gone, and the residue was still there.",
+      "cosmicOrigin": "Silicon-28 is the principal ash of oxygen burning in massive stars. Oxygen nuclei fuse, and the burning tends toward silicon, the most tightly bound nucleus the star can stockpile before the final collapse. Silicon burning then consumes part of that stock on the way to iron.\n\nWhat survives is the silicon the explosion freezes before the conversion can finish. Silicon-29 and silicon-30 take a share of neutrons during the same burning. Sand, glass, and the rocky planets are largely this frozen supernova ash.",
       "trivia": [
         {
           "title": "Named for a Piece of Flint",
@@ -896,6 +904,8 @@
         "text": "Found in Cornish ilmenite; Klaproth named it after the Titans."
       },
       "history": "William Gregor, a Cornish clergyman, found a new metal oxide in the black sand menachanite in 1791. Martin Heinrich Klaproth rediscovered it in a Hungarian ore in 1795 and named it titanium, for the Titans. Matthew Hunter isolated a pure ductile metal only in 1910.\n\nThe Kroll process of the 1940s made titanium a structural metal. Its oxide, already used as a white pigment, is still the form most people meet.",
+      "howDiscovered": "William Gregor, in Cornwall, separated the black sand menachanite from the stream with a magnet, dissolved it in acid, and removed the iron. A white oxide remained. In 1791 he reported that the oxide was not a known earth. He did not obtain the metal.\n\nMartin Heinrich Klaproth independently found the same oxide in Hungarian rutile in 1795 and gave the element its name. A ductile metal came only in 1910, when Matthew Hunter heated the chloride with sodium in a sealed bomb. The discovery was the white oxide that survived after the iron had been taken out of a magnetic sand.",
+      "cosmicOrigin": "Stable titanium, mostly titanium-48, is a product of explosive silicon burning. The supernova assembles a radioactive parent, chromium-48, which decays through vanadium-48 down to titanium-48. The hot, expanding debris, called alpha-rich freeze-out, contributes more.\n\nA radioactive cousin, titanium-44, is made in the same explosions and decays onward to calcium. Its gamma rays are still seen in the remnant Cassiopeia A. The titanium in an airframe is the stable isotope, frozen out of blasts of that kind before the Sun formed.",
       "trivia": [
         {
           "title": "Black Sand in a Cornish Stream",

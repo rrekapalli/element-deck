@@ -90,7 +90,7 @@ Baseline 4 px.
 | Sheet top radius | 16 px | Phone inspector and settings sheets |
 | Button / search radius | 12 px | |
 | Button height | 48 px | Primary actions |
-| Icon button | 40 px | Filter, bookmark, me |
+| Icon button | 40 px | Help, bookmark, me |
 
 Element cells in the matrix aim at an aspect near 1 : 1.15.
 

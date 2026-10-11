@@ -35,8 +35,7 @@ const spectraPrimer = PropertyGuide(
   id: 'spectra-primer',
   title: 'What a spectrum is',
   group: 'Spectra',
-  lede:
-      'A spectrum is light taken apart by wavelength. The Spectra tab draws a few of those wavelengths for the element on the card. This tab explains what that drawing is, how such light is made and recognized, and what this element\'s own pattern means.',
+  lede: 'A spectrum is light taken apart by wavelength. The Spectra tab draws a few of those wavelengths for the element on the card. This tab explains what that drawing is, how such light is made and recognized, and what this element\'s own pattern means.',
   sections: [
     GuideSection(
       'Light sorted by wavelength',

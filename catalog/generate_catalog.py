@@ -10,7 +10,9 @@ ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 from enrich import DISCOVERY as ENRICH_DISCOVERY
 from enrich import apps_for, curriculum, extra_props, summaries
+from found import HOW_DISCOVERED
 from history import HISTORY
+from origin import COSMIC_ORIGIN
 from trivia import TRIVIA
 from spectral_lines import LINES as EXTRA_LINES
 
@@ -448,6 +450,8 @@ def parse_all() -> list[dict]:
         year, people, text = ENRICH_DISCOVERY[z]
         el["discovery"] = {"year": year, "people": people, "text": text}
         el["history"] = HISTORY[z]
+        el["howDiscovered"] = HOW_DISCOVERED[z]
+        el["cosmicOrigin"] = COSMIC_ORIGIN[z]
         el["trivia"] = TRIVIA[z]
         el["applications"] = apps_for(z, name)
         el["spectralLines"] = _spectral_lines(z, symbol)

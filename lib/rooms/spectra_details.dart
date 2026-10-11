@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 
-import '../guides/property_guide.dart';
 import '../guides/spectra_detail.dart';
 import '../models/catalog.dart';
-import '../providers/settings_controller.dart';
 
 List<Widget> spectraDetailChildren({
   required BuildContext context,
   required ElementRecord element,
-  required SettingsController settings,
+  required bool reducedMotion,
   required String packVersion,
   required GlobalKey essayKey,
 }) {
@@ -16,7 +14,8 @@ List<Widget> spectraDetailChildren({
   final muted = theme.colorScheme.onSurface.withValues(alpha: 0.65);
   final body = theme.textTheme.bodyLarge?.copyWith(height: 1.5);
   final essay = ElementSpectra.lookup(element.z);
-  final lines = [...element.spectralLines]..sort((a, b) => a.nm.compareTo(b.nm));
+  final lines = [...element.spectralLines]
+    ..sort((a, b) => a.nm.compareTo(b.nm));
 
   return [
     Text(
@@ -34,7 +33,7 @@ List<Widget> spectraDetailChildren({
           if (target == null) return;
           Scrollable.ensureVisible(
             target,
-            duration: settings.reducedMotion
+            duration: reducedMotion
                 ? Duration.zero
                 : const Duration(milliseconds: 350),
             curve: Curves.easeOut,
@@ -97,7 +96,10 @@ List<Widget> spectraDetailChildren({
       ],
     ],
     const SizedBox(height: 8),
-    Text('Lines stored for ${element.name}', style: theme.textTheme.titleMedium),
+    Text(
+      'Lines stored for ${element.name}',
+      style: theme.textTheme.titleMedium,
+    ),
     const SizedBox(height: 8),
     if (lines.isEmpty)
       Text(
@@ -123,10 +125,7 @@ List<Widget> spectraDetailChildren({
       const SizedBox(height: 8),
       Text('Discharge color', style: theme.textTheme.titleMedium),
       const SizedBox(height: 8),
-      Text(
-        element.glow!.text,
-        style: body,
-      ),
+      Text(element.glow!.text, style: body),
       if (element.glow!.kv != null) ...[
         const SizedBox(height: 8),
         Text(
@@ -163,8 +162,7 @@ String _storedLineReading(SpectralLine line) {
   final role = switch (line.spectrum) {
     'emission' => 'The pack quotes it as an emission line.',
     'absorption' => 'The pack quotes it as an absorption line.',
-    _ =>
-      'The pack quotes it for both emission and absorption. The wavelength is the same either way. Only the direction of the jump changes.',
+    _ => 'The pack quotes it for both emission and absorption. The wavelength is the same either way. Only the direction of the jump changes.',
   };
   final assignment = line.transition.trim().isEmpty
       ? 'No assignment string is stored with it.'

@@ -305,7 +305,7 @@ In space the same resonance lines, and the stronger ionic line of Al III, appear
       ),
       spec(
         'The metal\'s shine is not the line',
-        '''Polished aluminium reflects because it is a metal with a plasma of conduction electrons, a solid-state response across the visible. That mirror color is not the 394 and 396 nm doublet. Anodized colors are dyes and interference in an oxide layer. Ruby\'s red, sometimes grown in alumina, is chromium.
+        '''Polished aluminium reflects because it is a metal with a plasma of conduction electrons, a solid-state response across the visible. That mirror color is not the 394 and 396 nm doublet. Anodized colors are dyes and interference in an oxide layer. Ruby's red, sometimes grown in alumina, is chromium.
 
 The element on the card is the free atom's spectrum. The saucepan is the solid. Both are aluminium, and only one of them has these two lines.''',
       ),

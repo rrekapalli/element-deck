@@ -164,17 +164,73 @@ def startup_links() -> str:
     return "\n".join(lines)
 
 
+def _fmt(value: float) -> str:
+    return f"{value:.2f}"
+
+
+def splash_mark_svg(size: float = 104) -> str:
+    """Inline mark for the HTML splash. Same layout as mark() and AppMark."""
+    inset = size * 0.16
+    cell = size - inset * 2
+    radius = cell * 0.18
+    stroke = min(8.0, max(1.5, size * 0.025))
+    version_size = cell * 0.14
+    version_x = inset + cell * 0.08
+    version_y = inset + cell * 0.07
+    center = inset + cell / 2
+    symbol_y = center + cell * 0.05
+    orbit_y = center + cell * 0.04
+    rx = cell * 0.36
+    ry = cell * 0.24
+    orbit_stroke = min(5.0, max(1.2, size * 0.018))
+    tilt = math.degrees(-0.32)
+    t = -0.85
+    ex = rx * math.cos(t)
+    ey = ry * math.sin(t)
+    star_r = cell * 0.055
+    star: list[str] = []
+    for i in range(8):
+        r = star_r if i % 2 == 0 else star_r * 0.38
+        a = -math.pi / 2 + i * math.pi / 4
+        star.append(f"{_fmt(ex + r * math.cos(a))},{_fmt(ey + r * math.sin(a))}")
+    points = " ".join(star)
+    return f"""    <svg width="{_fmt(size)}" height="{_fmt(size)}" viewBox="0 0 {_fmt(size)} {_fmt(size)}" aria-hidden="true">
+      <rect x="{_fmt(inset)}" y="{_fmt(inset)}" width="{_fmt(cell)}" height="{_fmt(cell)}" rx="{_fmt(radius)}" fill="#0F172A" stroke="#38BDF8" stroke-width="{_fmt(stroke)}"/>
+      <text x="{_fmt(version_x)}" y="{_fmt(version_y)}" fill="#94A3B8" font-size="{_fmt(version_size)}" font-weight="600" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" dominant-baseline="hanging">{VERSION}</text>
+      <text x="{_fmt(center)}" y="{_fmt(symbol_y)}" text-anchor="middle" dominant-baseline="central" fill="#38BDF8" font-size="{_fmt(cell * 0.5)}" font-weight="800" font-style="italic" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif">e</text>
+      <g transform="translate({_fmt(center)} {_fmt(orbit_y)}) rotate({_fmt(tilt)})">
+        <ellipse cx="0" cy="0" rx="{_fmt(rx)}" ry="{_fmt(ry)}" fill="none" stroke="#E4B84A" stroke-width="{_fmt(orbit_stroke)}"/>
+        <polygon fill="#E4B84A" points="{points}"/>
+      </g>
+    </svg>"""
+
+
+def _replace_marked(text: str, start: str, end: str, block: str, label: str) -> str:
+    if start not in text or end not in text:
+        raise SystemExit(f"index.html is missing {label} markers")
+    pre, rest = text.split(start, 1)
+    _, post = rest.split(end, 1)
+    return pre + block + post
+
+
 def patch_index(links: str) -> None:
     path = ROOT / "web" / "index.html"
     text = path.read_text(encoding="utf-8")
-    start = "<!-- apple-splash -->"
-    end = "<!-- /apple-splash -->"
-    block = f"{start}\n{links}\n  {end}"
-    if start not in text or end not in text:
-        raise SystemExit("index.html is missing apple-splash markers")
-    pre, rest = text.split(start, 1)
-    _, post = rest.split(end, 1)
-    path.write_text(pre + block + post, encoding="utf-8")
+    text = _replace_marked(
+        text,
+        "<!-- apple-splash -->",
+        "<!-- /apple-splash -->",
+        f"<!-- apple-splash -->\n{links}\n  <!-- /apple-splash -->",
+        "apple-splash",
+    )
+    text = _replace_marked(
+        text,
+        "<!-- splash-mark -->",
+        "<!-- /splash-mark -->",
+        f"<!-- splash-mark -->\n{splash_mark_svg()}\n    <!-- /splash-mark -->",
+        "splash-mark",
+    )
+    path.write_text(text, encoding="utf-8")
 
 
 def main() -> None:

@@ -74,7 +74,7 @@ class _ElementDeckAppState extends State<ElementDeckApp>
           path: '/e/:z',
           pageBuilder: (context, state) {
             final z = int.tryParse(state.pathParameters['z'] ?? '') ?? 1;
-            selection.select(z);
+            _queue(() => selection.select(z));
             return const NoTransitionPage(child: HomeShell(index: 1));
           },
         ),
@@ -82,7 +82,7 @@ class _ElementDeckAppState extends State<ElementDeckApp>
           path: '/e/:z/spectra',
           pageBuilder: (context, state) {
             final z = int.tryParse(state.pathParameters['z'] ?? '') ?? 1;
-            selection.select(z);
+            _queue(() => selection.select(z));
             return const NoTransitionPage(child: HomeShell(index: 3));
           },
         ),
@@ -91,7 +91,7 @@ class _ElementDeckAppState extends State<ElementDeckApp>
           pageBuilder: (context, state) {
             final a = int.tryParse(state.pathParameters['a'] ?? '') ?? 6;
             final b = int.tryParse(state.pathParameters['b'] ?? '') ?? 14;
-            selection.setPair(a, b);
+            _queue(() => selection.setPair(a, b));
             return const NoTransitionPage(child: HomeShell(index: 2));
           },
         ),
@@ -111,6 +111,13 @@ class _ElementDeckAppState extends State<ElementDeckApp>
     if (state == AppLifecycleState.resumed) {
       PwaUpdateService.instance.checkForUpdate();
     }
+  }
+
+  /// Route builders run during build. Apply selection on the next frame.
+  void _queue(VoidCallback action) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) action();
+    });
   }
 
   Future<void> _boot() async {

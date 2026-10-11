@@ -23,7 +23,7 @@ The visual skin is [Obsidian Orbit](./design-system.md). RxFolio's Ocean Blue pa
 | Phone | Header **Me** on every room. Also listed at the bottom of Settings only after you are inside |
 | Wide | **Settings** pinned to the bottom of the nav rail, same as RxFolio. The header Me icon is omitted so it is not duplicated |
 
-Filter stays in the room header. It is not a settings page.
+**?** sits in the room header, where the filter control was. It opens the guide for the current page. Category chips on Table still filter the registry. Help is not a science room.
 
 ## Settings hub
 
@@ -176,15 +176,18 @@ Help articles, English first:
 
 | Article | Covers |
 | --- | --- |
-| Table | Search, chips, registry, matrix, element of the day |
-| Details | Depth, dossier, simulate |
-| Compare | Pairs, deltas, PDF |
-| Spectra | Lines, sonification, isotopes |
+| Table | Search, family chips, periodic table, registry |
+| Details | Identity, Details / Data / History / Trivia, simulate |
+| Compare | Pair, computed deltas, trend, PDF |
+| Spectra | Emitter, strip, sonification, isotopes |
 | Settings | This hub |
-| App settings | Language, appearance, units |
 | Account settings | Sign-in, packages, restore, erase |
+| App Config | Learning mode, appearance, units, sound |
+| Classroom | Class name, join code, pinned elements |
+| App Health | Catalog, pack cache, Firebase, purchases |
+| About | Disclaimer |
 
-Screenshots in help should be regenerated from the real app later. The concept PNGs can stand in until then.
+Screenshots in `assets/help/images/` are captures from the Android emulator. Regenerate them when the room layout changes.
 
 ## Preference persistence
 
