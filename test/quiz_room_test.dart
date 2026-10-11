@@ -80,7 +80,7 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    expect(find.text('Hydrogen'), findsWidgets);
+    expect(find.textContaining('Change element · Hydrogen'), findsOneWidget);
     expect(find.textContaining('Question'), findsOneWidget);
 
     final q = quiz.current!;

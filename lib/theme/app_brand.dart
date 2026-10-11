@@ -189,35 +189,32 @@ class _AppMarkPainter extends CustomPainter {
   bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
 
-/// Full-screen splash shared by the HTML shell and the first Flutter frames.
+/// The only branded splash. Native and HTML shells stay on [AppBrand.canvas]
+/// until this frame is painted, so the mark is not drawn a second time.
 class AppSplash extends StatelessWidget {
-  const AppSplash({super.key, this.caption});
-
-  final String? caption;
+  const AppSplash({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ColoredBox(
+    return const ColoredBox(
       color: AppBrand.canvas,
-      child: SizedBox.expand(child: _SplashBody(caption: caption)),
+      child: SizedBox.expand(child: _SplashBody()),
     );
   }
 }
 
 class _SplashBody extends StatelessWidget {
-  const _SplashBody({this.caption});
-
-  final String? caption;
+  const _SplashBody();
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const AppMark(size: 104),
-          const SizedBox(height: 20),
-          const Text(
+          AppMark(size: 104),
+          SizedBox(height: 20),
+          Text(
             'Element Deck',
             style: TextStyle(
               color: AppBrand.text,
@@ -227,8 +224,8 @@ class _SplashBody extends StatelessWidget {
               fontFamily: 'Plus Jakarta Sans',
             ),
           ),
-          const SizedBox(height: 6),
-          const Text(
+          SizedBox(height: 6),
+          Text(
             'PERIODIC EXPLORER',
             style: TextStyle(
               color: AppBrand.muted,
@@ -238,22 +235,6 @@ class _SplashBody extends StatelessWidget {
               fontFamily: 'Plus Jakarta Sans',
             ),
           ),
-          if (caption != null) ...[
-            const SizedBox(height: 28),
-            const SizedBox(
-              width: 22,
-              height: 22,
-              child: CircularProgressIndicator(
-                strokeWidth: 2,
-                color: AppBrand.action,
-              ),
-            ),
-            const SizedBox(height: 10),
-            Text(
-              caption!,
-              style: const TextStyle(color: AppBrand.muted, fontSize: 13),
-            ),
-          ],
         ],
       ),
     );

@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
@@ -87,8 +85,6 @@ class _QuizRoomState extends State<QuizRoom> {
         else ...[
           _ProgressLine(quiz: quiz),
           const SizedBox(height: 12),
-          _ElementCard(element: quiz.element!, quiz: quiz, depth: settings.depth),
-          const SizedBox(height: 16),
           if (quiz.loading)
             const Padding(
               padding: EdgeInsets.symmetric(vertical: 32),
@@ -155,6 +151,8 @@ class _StatsRow extends StatelessWidget {
         ),
         const SizedBox(width: 6),
         Text('XP', style: TextStyle(color: muted, fontSize: 12)),
+        const SizedBox(width: 12),
+        Text('Tier: ${quiz.tierName}', style: TextStyle(color: muted, fontSize: 12)),
       ],
     );
   }
@@ -219,130 +217,6 @@ class _ProgressLine extends StatelessWidget {
           ),
         ),
       ],
-    );
-  }
-}
-
-class _ElementCard extends StatelessWidget {
-  const _ElementCard({
-    required this.element,
-    required this.quiz,
-    required this.depth,
-  });
-
-  final ElementRecord element;
-  final QuizController quiz;
-  final String depth;
-
-  @override
-  Widget build(BuildContext context) {
-    final accent = ElementSpectrum.of(element.categoryId);
-    final chrome = Theme.of(context).extension<DeckChrome>();
-    final surface = Theme.of(context).colorScheme.surface;
-    final cfg = switch (depth) {
-      'beginner' => element.shellCounts.join(', '),
-      'advanced' => element.electronConfigFull,
-      _ => element.electronConfig,
-    };
-    Widget spoiler(Widget child) {
-      return ImageFiltered(
-        imageFilter: ImageFilter.blur(sigmaX: 14, sigmaY: 14),
-        child: ExcludeSemantics(child: child),
-      );
-    }
-
-    return Container(
-      padding: const EdgeInsets.all(14),
-      decoration: BoxDecoration(
-        color: (chrome?.canvas ?? surface).withValues(alpha: 0.55),
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(
-          color: Theme.of(context).colorScheme.outline.withValues(alpha: 0.35),
-        ),
-      ),
-      child: Row(
-        children: [
-          spoiler(
-            Container(
-              width: 72,
-              height: 72,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: accent.withValues(alpha: 0.5)),
-                color: accent.withValues(alpha: 0.12),
-              ),
-              child: Text(
-                element.symbol,
-                style: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.w800,
-                  color: accent,
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(width: 14),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                spoiler(
-                  Text(
-                    '${element.z.toString().padLeft(2, '0')}  ·  ${element.atomicWeight}',
-                    style: Theme.of(context).textTheme.labelSmall,
-                  ),
-                ),
-                Text(
-                  element.name,
-                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-                spoiler(
-                  Text(
-                    '${element.categoryLabel}  ·  ${element.block.toUpperCase()}-BLOCK  Period ${element.period}'
-                    '${element.group != null ? '  ·  Grp ${element.group}' : ''}',
-                    style: Theme.of(context).textTheme.labelSmall,
-                  ),
-                ),
-                const SizedBox(height: 4),
-                spoiler(
-                  Text(
-                    cfg,
-                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                      fontFamily: 'JetBrains Mono',
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              spoiler(
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(99),
-                    color: accent.withValues(alpha: 0.16),
-                  ),
-                  child: Text(
-                    element.standardState,
-                    style: TextStyle(color: accent, fontSize: 11),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 8),
-              Text(
-                'Tier: ${quiz.tierName}',
-                style: Theme.of(context).textTheme.labelSmall,
-              ),
-            ],
-          ),
-        ],
-      ),
     );
   }
 }

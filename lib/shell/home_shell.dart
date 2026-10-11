@@ -31,7 +31,7 @@ class _HomeShellState extends State<HomeShell> {
   Widget build(BuildContext context) {
     final catalog = context.watch<CatalogController>();
     if (catalog.loading) {
-      return const AppSplash(caption: 'Loading table…');
+      return const AppSplash();
     }
     if (catalog.error != null && catalog.pack.elements.isEmpty) {
       return Scaffold(body: Center(child: Text(catalog.error!)));

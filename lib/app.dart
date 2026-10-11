@@ -189,7 +189,7 @@ class _ElementDeckAppState extends State<ElementDeckApp>
         ),
         home: const Stack(
           children: [
-            AppSplash(caption: 'Opening the table…'),
+            AppSplash(),
             PwaUpdateBanner(),
           ],
         ),

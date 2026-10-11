@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Raster Element Deck mark, PWA icons, and iOS Add-to-Home-Screen splashes.
+"""Raster the Element Deck mark for home-screen icons.
 
 The in-app mark is drawn in lib/theme/app_brand.dart. Keep the glass electron
 tile in step with that painter: transparent canvas, frosted plate, capital E,
@@ -16,35 +16,11 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 ROOT = Path(__file__).resolve().parents[1]
-CANVAS = (8, 12, 20)
 ACTION = (56, 189, 248, 255)
 GOLD = (228, 184, 74, 255)
 INK = (11, 27, 51, 255)
-MUTED = (148, 163, 184)
-TEXT = (248, 250, 252)
 
 SANS = ROOT / "assets" / "fonts" / "PlusJakartaSans.ttf"
-
-# (pixel width, pixel height, media query without orientation)
-DEVICES = [
-    (750, 1334, "(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)"),
-    (1242, 2208, "(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3)"),
-    (1125, 2436, "(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)"),
-    (828, 1792, "(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)"),
-    (1242, 2688, "(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)"),
-    (1170, 2532, "(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3)"),
-    (1284, 2778, "(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3)"),
-    (1179, 2556, "(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3)"),
-    (1290, 2796, "(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3)"),
-    (1206, 2622, "(device-width: 402px) and (device-height: 874px) and (-webkit-device-pixel-ratio: 3)"),
-    (1320, 2868, "(device-width: 440px) and (device-height: 956px) and (-webkit-device-pixel-ratio: 3)"),
-    (1488, 2266, "(device-width: 744px) and (device-height: 1133px) and (-webkit-device-pixel-ratio: 2)"),
-    (1620, 2160, "(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2)"),
-    (1640, 2360, "(device-width: 820px) and (device-height: 1180px) and (-webkit-device-pixel-ratio: 2)"),
-    (1668, 2388, "(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)"),
-    (1668, 2420, "(device-width: 834px) and (device-height: 1210px) and (-webkit-device-pixel-ratio: 2)"),
-    (2048, 2732, "(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)"),
-]
 
 
 def font(path: Path, size: int) -> ImageFont.FreeTypeFont | ImageFont.ImageFont:
@@ -204,92 +180,9 @@ def touch_icon(size: int = 180) -> Image.Image:
     return Image.alpha_composite(background, tile).convert("RGB")
 
 
-def splash(width: int, height: int) -> Image.Image:
-    image = Image.new("RGB", (width, height), CANVAS)
-    side = max(96, int(min(width, height) * 0.22))
-    tile = mark(side)
-    x = (width - side) // 2
-    y = (height - side) // 2 - int(height * 0.04)
-    image.paste(tile, (x, y), tile)
-    draw = ImageDraw.Draw(image)
-    name_font = font(SANS, max(18, int(min(width, height) * 0.028)))
-    eye_font = font(SANS, max(12, int(min(width, height) * 0.014)))
-    name = "Element Deck"
-    eye = "PERIODIC EXPLORER"
-    name_box = draw.textbbox((0, 0), name, font=name_font)
-    eye_box = draw.textbbox((0, 0), eye, font=eye_font)
-    name_w = name_box[2] - name_box[0]
-    eye_w = eye_box[2] - eye_box[0]
-    text_y = y + side + int(side * 0.18)
-    draw.text(((width - name_w) / 2, text_y), name, font=name_font, fill=TEXT)
-    draw.text(
-        ((width - eye_w) / 2, text_y + (name_box[3] - name_box[1]) + int(side * 0.08)),
-        eye,
-        font=eye_font,
-        fill=MUTED,
-    )
-    return image
-
-
 def save(image: Image.Image, path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     image.save(path, "PNG", optimize=True)
-
-
-def startup_links() -> str:
-    lines = []
-    for width, height, media in DEVICES:
-        for orientation, w, h in (("portrait", width, height), ("landscape", height, width)):
-            href = f"splash/apple-splash-{w}x{h}.png"
-            lines.append(
-                f'  <link rel="apple-touch-startup-image" href="{href}" '
-                f'media="{media} and (orientation: {orientation})">'
-            )
-    return "\n".join(lines)
-
-
-def _fmt(value: float) -> str:
-    return f"{value:.2f}"
-
-
-def splash_mark_svg(size: float = 104) -> str:
-    """Inline mark for the HTML splash. Same layout as mark() and AppMark."""
-    inset = size * 0.08
-    cell = size - inset * 2
-    radius = cell * 0.22
-    center = size / 2
-    rx = cell * 0.34
-    ry = cell * 0.21
-    tilt = math.degrees(-0.42)
-    # Local ellipse space; the group rotate applies the orbit tilt once.
-    ex = rx * math.cos(-0.55)
-    ey = ry * math.sin(-0.55)
-    electron_r = max(1.6, cell * 0.026)
-    hw = cell * 0.78
-    hh = cell * 0.34
-    return f"""    <svg width="{_fmt(size)}" height="{_fmt(size)}" viewBox="0 0 {_fmt(size)} {_fmt(size)}" aria-hidden="true">
-      <defs>
-        <clipPath id="deck-glass">
-          <rect x="{_fmt(inset)}" y="{_fmt(inset)}" width="{_fmt(cell)}" height="{_fmt(cell)}" rx="{_fmt(radius)}"/>
-        </clipPath>
-        <linearGradient id="deck-frost" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#F8FCFF" stop-opacity="0.62"/>
-          <stop offset="1" stop-color="#D2E4F2" stop-opacity="0.34"/>
-        </linearGradient>
-      </defs>
-      <g clip-path="url(#deck-glass)">
-        <rect x="{_fmt(inset)}" y="{_fmt(inset)}" width="{_fmt(cell)}" height="{_fmt(cell)}" fill="url(#deck-frost)"/>
-        <ellipse cx="{_fmt(center)}" cy="{_fmt(inset + hh * 0.15)}" rx="{_fmt(hw / 2)}" ry="{_fmt(hh / 2)}" fill="#FFFFFF" fill-opacity="0.19"/>
-      </g>
-      <rect x="{_fmt(inset)}" y="{_fmt(inset)}" width="{_fmt(cell)}" height="{_fmt(cell)}" rx="{_fmt(radius)}" fill="none" stroke="#FFFFFF" stroke-opacity="0.82" stroke-width="1"/>
-      <g transform="translate({_fmt(center)} {_fmt(center)}) rotate({_fmt(tilt)})">
-        <ellipse cx="0" cy="0" rx="{_fmt(rx)}" ry="{_fmt(ry)}" fill="none" stroke="#38BDF8" stroke-width="1" stroke-dasharray="1 2"/>
-      </g>
-      <text x="{_fmt(center)}" y="{_fmt(center)}" text-anchor="middle" dominant-baseline="central" fill="#0B1B33" font-size="{_fmt(cell * 0.5)}" font-weight="400" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif">E</text>
-      <g transform="translate({_fmt(center)} {_fmt(center)}) rotate({_fmt(tilt)})">
-        <circle cx="{_fmt(ex)}" cy="{_fmt(ey)}" r="{_fmt(electron_r)}" fill="#E4B84A"/>
-      </g>
-    </svg>"""
 
 
 def _replace_marked(text: str, start: str, end: str, block: str, label: str) -> str:
@@ -300,23 +193,22 @@ def _replace_marked(text: str, start: str, end: str, block: str, label: str) -> 
     return pre + block + post
 
 
-def patch_index(links: str) -> None:
+def patch_index() -> None:
+    """Leave the web shell on the canvas color.
+
+    AppSplash is the only branded splash. Do not link startup images or draw
+    a second mark into index.html.
+    """
     path = ROOT / "web" / "index.html"
     text = path.read_text(encoding="utf-8")
-    text = _replace_marked(
-        text,
-        "<!-- apple-splash -->",
-        "<!-- /apple-splash -->",
-        f"<!-- apple-splash -->\n{links}\n  <!-- /apple-splash -->",
-        "apple-splash",
-    )
-    text = _replace_marked(
-        text,
-        "<!-- splash-mark -->",
-        "<!-- /splash-mark -->",
-        f"<!-- splash-mark -->\n{splash_mark_svg()}\n    <!-- /splash-mark -->",
-        "splash-mark",
-    )
+    if "<!-- apple-splash -->" in text and "<!-- /apple-splash -->" in text:
+        text = _replace_marked(
+            text,
+            "<!-- apple-splash -->",
+            "<!-- /apple-splash -->",
+            "<!-- apple-splash -->\n  <!-- /apple-splash -->",
+            "apple-splash",
+        )
     path.write_text(text, encoding="utf-8")
 
 
@@ -351,11 +243,6 @@ def main() -> None:
     save(touch_icon(192), web_icons / "mark-192.png")
     save(touch_icon(512), web_icons / "mark-512.png")
     save(mark(64), ROOT / "web" / "favicon.png")
-
-    splash_dir = ROOT / "web" / "splash"
-    for width, height, _media in DEVICES:
-        save(splash(width, height), splash_dir / f"apple-splash-{width}x{height}.png")
-        save(splash(height, width), splash_dir / f"apple-splash-{height}x{width}.png")
 
     for folder, px in (
         ("mipmap-mdpi", 48),
@@ -392,8 +279,8 @@ def main() -> None:
 
     write_ico(ROOT / "windows" / "runner" / "resources" / "app_icon.ico")
 
-    patch_index(startup_links())
-    print("wrote brand icons and", len(DEVICES) * 2, "startup images")
+    patch_index()
+    print("wrote brand icons")
 
 
 if __name__ == "__main__":
