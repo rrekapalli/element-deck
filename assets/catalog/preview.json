@@ -115,13 +115,22 @@
       ],
       "spectralLines": [
         {
-          "id": "H-a",
-          "nm": 656.28,
-          "eV": 1.89,
-          "transition": "n=3 \u2192 n=2",
-          "color": "visible red",
+          "id": "H-410.17",
+          "nm": 410.17,
+          "eV": 3.023,
+          "transition": "n=6 \u2192 n=2",
+          "color": "violet",
           "spectrum": "both",
-          "frequencyHz": 456805720119461.2
+          "frequencyHz": 730898061779262.2
+        },
+        {
+          "id": "H-g",
+          "nm": 434.05,
+          "eV": 2.86,
+          "transition": "n=5 \u2192 n=2",
+          "color": "blue",
+          "spectrum": "both",
+          "frequencyHz": 690686460085243.5
         },
         {
           "id": "H-b",
@@ -133,13 +142,13 @@
           "frequencyHz": 616691950712772.4
         },
         {
-          "id": "H-g",
-          "nm": 434.05,
-          "eV": 2.86,
-          "transition": "n=5 \u2192 n=2",
-          "color": "blue",
+          "id": "H-a",
+          "nm": 656.28,
+          "eV": 1.89,
+          "transition": "n=3 \u2192 n=2",
+          "color": "visible red",
           "spectrum": "both",
-          "frequencyHz": 690686460085243.5
+          "frequencyHz": 456805720119461.2
         }
       ],
       "isotopes": [
@@ -361,6 +370,15 @@
       ],
       "spectralLines": [
         {
+          "id": "Ne-540",
+          "nm": 540.06,
+          "eV": 2.296,
+          "transition": "3s \u2192 3p",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 555109539680776.25
+        },
+        {
           "id": "Ne-585",
           "nm": 585.25,
           "eV": 2.119,
@@ -377,15 +395,6 @@
           "color": "red",
           "spectrum": "emission",
           "frequencyHz": 468264749617319.0
-        },
-        {
-          "id": "Ne-540",
-          "nm": 540.06,
-          "eV": 2.296,
-          "transition": "3s \u2192 3p",
-          "color": "green",
-          "spectrum": "emission",
-          "frequencyHz": 555109539680776.25
         }
       ],
       "isotopes": [
@@ -509,6 +518,15 @@
       ],
       "spectralLines": [
         {
+          "id": "Si-251.61",
+          "nm": 251.61,
+          "eV": 4.928,
+          "transition": "Si I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 1191496593935058.2
+        },
+        {
           "id": "Si-288",
           "nm": 288.16,
           "eV": 4.3,
@@ -516,6 +534,15 @@
           "color": "UV",
           "spectrum": "emission",
           "frequencyHz": 1040368052470849.2
+        },
+        {
+          "id": "Si-390.55",
+          "nm": 390.55,
+          "eV": 3.175,
+          "transition": "Si I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 767616074766355.1
         }
       ],
       "isotopes": [
@@ -629,6 +656,33 @@
           "color": "violet",
           "spectrum": "emission",
           "frequencyHz": 749743555244335.5
+        },
+        {
+          "id": "Ti-498.17",
+          "nm": 498.17,
+          "eV": 2.489,
+          "transition": "Ti I",
+          "color": "green",
+          "spectrum": "both",
+          "frequencyHz": 601787458096633.6
+        },
+        {
+          "id": "Ti-499.11",
+          "nm": 499.11,
+          "eV": 2.484,
+          "transition": "Ti I",
+          "color": "green",
+          "spectrum": "both",
+          "frequencyHz": 600654080262867.8
+        },
+        {
+          "id": "Ti-501.42",
+          "nm": 501.42,
+          "eV": 2.473,
+          "transition": "Ti I",
+          "color": "green",
+          "spectrum": "both",
+          "frequencyHz": 597886917155279.0
         }
       ],
       "isotopes": [

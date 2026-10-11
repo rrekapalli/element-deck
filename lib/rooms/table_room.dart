@@ -41,25 +41,32 @@ class TableRoom extends StatelessWidget {
         children: [
           const _SearchAndChips(),
           const SizedBox(height: 8),
-          Expanded(
-            flex: tablet ? 1 : 3,
-            child: PeriodicTableView(
+          if (tablet)
+            Expanded(
+              child: PeriodicTableView(
+                pack: catalog.pack,
+                selectedZ: sel.currentZ,
+                search: sel.search,
+                categoryFilter: sel.categoryFilter,
+                onOpen: onOpenElement,
+              ),
+            )
+          else
+            PeriodicTableView(
               pack: catalog.pack,
               selectedZ: sel.currentZ,
               search: sel.search,
               categoryFilter: sel.categoryFilter,
               onOpen: onOpenElement,
             ),
-          ),
           if (!tablet) ...[
-            const SizedBox(height: 8),
+            const SizedBox(height: 4),
             Text(
               'Atomic Registry · ${filtered.length} shown',
               style: Theme.of(context).textTheme.labelMedium,
             ),
             const SizedBox(height: 4),
             Expanded(
-              flex: 2,
               child: ListView(
                 children: [
                   for (final e in filtered)
@@ -107,13 +114,17 @@ class _SearchAndChips extends StatelessWidget {
                   child: FilterChip(
                     selected: sel.categoryFilter == chip.$1,
                     label: Text(
-                      chip.$1 == 'all' ? 'All (${catalog.pack.elements.length})' : chip.$2,
+                      chip.$1 == 'all'
+                          ? 'All (${catalog.pack.elements.length})'
+                          : chip.$2,
                     ),
                     avatar: chip.$1 == 'all'
                         ? null
                         : CircleAvatar(
                             backgroundColor: ElementSpectrum.of(
-                              chip.$1 == 'halogen' ? 'reactive-nonmetal' : chip.$1,
+                              chip.$1 == 'halogen'
+                                  ? 'reactive-nonmetal'
+                                  : chip.$1,
                             ),
                           ),
                     onSelected: (_) => sel.setCategory(chip.$1),

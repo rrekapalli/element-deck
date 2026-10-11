@@ -11,6 +11,7 @@ sys.path.insert(0, str(ROOT))
 from enrich import DISCOVERY as ENRICH_DISCOVERY
 from enrich import apps_for, curriculum, extra_props, summaries
 from history import HISTORY
+from spectral_lines import LINES as EXTRA_LINES
 
 # z, symbol, name, mass, cat, block, period, group, state, shells, config, ox, lattice
 # cat: alkali, alkaline, transition, post-transition, metalloid, nonmetal, halogen, noble, lanthanide, actinide
@@ -286,6 +287,27 @@ ASTRO = {
 }
 
 
+def _spectral_lines(z: int, symbol: str) -> list[dict]:
+    """Curated persistent lines, with the hand-written LINES entries winning on a clash."""
+    by_nm: dict[float, dict] = {}
+    for ln in list(EXTRA_LINES.get(z, [])) + list(LINES.get(z, [])):
+        nm = float(ln["nm"])
+        slot = next((k for k in by_nm if abs(k - nm) < 0.05), nm)
+        ident = str(ln["id"])
+        if ident.replace(".", "", 1).isdigit():
+            ident = f"{symbol}-{nm:.2f}"
+        by_nm[slot] = {
+            "id": ident,
+            "nm": nm,
+            "eV": ln.get("eV", round(1239.84193 / nm, 3)),
+            "transition": ln.get("transition", ""),
+            "color": ln.get("color", ""),
+            "spectrum": ln.get("spectrum", "both"),
+            "frequencyHz": 299792458 / (nm * 1e-9),
+        }
+    return [by_nm[k] for k in sorted(by_nm)]
+
+
 def parse_ox(s: str) -> tuple[list[int], int | None]:
     if not s.strip():
         return [], None
@@ -378,13 +400,7 @@ def parse_all() -> list[dict]:
         el["discovery"] = {"year": year, "people": people, "text": text}
         el["history"] = HISTORY[z]
         el["applications"] = apps_for(z, name)
-        el["spectralLines"] = [
-            {
-                **ln,
-                "frequencyHz": 299792458 / (ln["nm"] * 1e-9),
-            }
-            for ln in LINES.get(z, [])
-        ]
+        el["spectralLines"] = _spectral_lines(z, symbol)
         el["isotopes"] = ISOTOPES.get(z) or default_isotopes(z, mass)
         if z in GLOW:
             el["glow"] = GLOW[z]

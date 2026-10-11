@@ -115,13 +115,22 @@
       ],
       "spectralLines": [
         {
-          "id": "H-a",
-          "nm": 656.28,
-          "eV": 1.89,
-          "transition": "n=3 \u2192 n=2",
-          "color": "visible red",
+          "id": "H-410.17",
+          "nm": 410.17,
+          "eV": 3.023,
+          "transition": "n=6 \u2192 n=2",
+          "color": "violet",
           "spectrum": "both",
-          "frequencyHz": 456805720119461.2
+          "frequencyHz": 730898061779262.2
+        },
+        {
+          "id": "H-g",
+          "nm": 434.05,
+          "eV": 2.86,
+          "transition": "n=5 \u2192 n=2",
+          "color": "blue",
+          "spectrum": "both",
+          "frequencyHz": 690686460085243.5
         },
         {
           "id": "H-b",
@@ -133,13 +142,13 @@
           "frequencyHz": 616691950712772.4
         },
         {
-          "id": "H-g",
-          "nm": 434.05,
-          "eV": 2.86,
-          "transition": "n=5 \u2192 n=2",
-          "color": "blue",
+          "id": "H-a",
+          "nm": 656.28,
+          "eV": 1.89,
+          "transition": "n=3 \u2192 n=2",
+          "color": "visible red",
           "spectrum": "both",
-          "frequencyHz": 690686460085243.5
+          "frequencyHz": 456805720119461.2
         }
       ],
       "isotopes": [
@@ -234,7 +243,80 @@
           "body": "Element Deck describes published chemistry of Helium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "He-388.86",
+          "nm": 388.86,
+          "eV": 3.188,
+          "transition": "He I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 770952162732088.5
+        },
+        {
+          "id": "He-447.15",
+          "nm": 447.15,
+          "eV": 2.773,
+          "transition": "He I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 670451656043833.1
+        },
+        {
+          "id": "He-471.31",
+          "nm": 471.31,
+          "eV": 2.631,
+          "transition": "He I",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 636083380365364.5
+        },
+        {
+          "id": "He-492.19",
+          "nm": 492.19,
+          "eV": 2.519,
+          "transition": "He I",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 609099043052479.6
+        },
+        {
+          "id": "He-501.57",
+          "nm": 501.57,
+          "eV": 2.472,
+          "transition": "He I",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 597708112526666.2
+        },
+        {
+          "id": "He-587.56",
+          "nm": 587.56,
+          "eV": 2.11,
+          "transition": "He I",
+          "color": "yellow",
+          "spectrum": "emission",
+          "frequencyHz": 510232925999046.94
+        },
+        {
+          "id": "He-667.82",
+          "nm": 667.82,
+          "eV": 1.857,
+          "transition": "He I",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 448912069120421.6
+        },
+        {
+          "id": "He-706.52",
+          "nm": 706.52,
+          "eV": 1.755,
+          "transition": "He I",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 424322677348128.8
+        }
+      ],
       "isotopes": [
         {
           "a": 4,
@@ -305,7 +387,26 @@
           "body": "Element Deck describes published chemistry of Lithium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Li-610.36",
+          "nm": 610.36,
+          "eV": 2.031,
+          "transition": "Li I",
+          "color": "orange",
+          "spectrum": "both",
+          "frequencyHz": 491173173209253.5
+        },
+        {
+          "id": "Li-670.78",
+          "nm": 670.78,
+          "eV": 1.848,
+          "transition": "Li I",
+          "color": "red",
+          "spectrum": "both",
+          "frequencyHz": 446931121977399.44
+        }
+      ],
       "isotopes": [
         {
           "a": 7,
@@ -376,7 +477,26 @@
           "body": "Element Deck describes published chemistry of Beryllium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Be-234.86",
+          "nm": 234.86,
+          "eV": 5.279,
+          "transition": "Be I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 1276473039257429.8
+        },
+        {
+          "id": "Be-457.27",
+          "nm": 457.27,
+          "eV": 2.711,
+          "transition": "Be I",
+          "color": "blue",
+          "spectrum": "both",
+          "frequencyHz": 655613659325999.9
+        }
+      ],
       "isotopes": [
         {
           "a": 9,
@@ -447,7 +567,26 @@
           "body": "Element Deck describes published chemistry of Boron. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "B-249.68",
+          "nm": 249.68,
+          "eV": 4.966,
+          "transition": "B I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 1200706736622877.2
+        },
+        {
+          "id": "B-249.77",
+          "nm": 249.77,
+          "eV": 4.964,
+          "transition": "B I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 1200274084157424.5
+        }
+      ],
       "isotopes": [
         {
           "a": 11,
@@ -644,7 +783,26 @@
           "body": "Element Deck describes published chemistry of Nitrogen. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "N-744.23",
+          "nm": 744.23,
+          "eV": 1.666,
+          "transition": "N I",
+          "color": "red",
+          "spectrum": "both",
+          "frequencyHz": 402822323744003.8
+        },
+        {
+          "id": "N-746.83",
+          "nm": 746.83,
+          "eV": 1.66,
+          "transition": "N I",
+          "color": "red",
+          "spectrum": "both",
+          "frequencyHz": 401419945636891.9
+        }
+      ],
       "isotopes": [
         {
           "a": 14,
@@ -723,7 +881,35 @@
           "body": "Element Deck describes published chemistry of Oxygen. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "O-777.19",
+          "nm": 777.19,
+          "eV": 1.595,
+          "transition": "O I",
+          "color": "red",
+          "spectrum": "both",
+          "frequencyHz": 385738954438425.56
+        },
+        {
+          "id": "O-777.42",
+          "nm": 777.42,
+          "eV": 1.595,
+          "transition": "O I",
+          "color": "red",
+          "spectrum": "both",
+          "frequencyHz": 385624833423374.75
+        },
+        {
+          "id": "O-777.54",
+          "nm": 777.54,
+          "eV": 1.595,
+          "transition": "O I",
+          "color": "red",
+          "spectrum": "both",
+          "frequencyHz": 385565318826041.1
+        }
+      ],
       "isotopes": [
         {
           "a": 16,
@@ -874,6 +1060,15 @@
       ],
       "spectralLines": [
         {
+          "id": "Ne-540",
+          "nm": 540.06,
+          "eV": 2.296,
+          "transition": "3s \u2192 3p",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 555109539680776.25
+        },
+        {
           "id": "Ne-585",
           "nm": 585.25,
           "eV": 2.119,
@@ -890,15 +1085,6 @@
           "color": "red",
           "spectrum": "emission",
           "frequencyHz": 468264749617319.0
-        },
-        {
-          "id": "Ne-540",
-          "nm": 540.06,
-          "eV": 2.296,
-          "transition": "3s \u2192 3p",
-          "color": "green",
-          "spectrum": "emission",
-          "frequencyHz": 555109539680776.25
         }
       ],
       "isotopes": [
@@ -1020,7 +1206,26 @@
           "body": "Element Deck describes published chemistry of Sodium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Na-589.00",
+          "nm": 588.995,
+          "eV": 2.105,
+          "transition": "Na I",
+          "color": "yellow",
+          "spectrum": "both",
+          "frequencyHz": 508989818249730.44
+        },
+        {
+          "id": "Na-589.59",
+          "nm": 589.592,
+          "eV": 2.103,
+          "transition": "Na I",
+          "color": "yellow",
+          "spectrum": "both",
+          "frequencyHz": 508474433167342.8
+        }
+      ],
       "isotopes": [
         {
           "a": 23,
@@ -1092,7 +1297,35 @@
           "body": "Element Deck describes published chemistry of Magnesium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Mg-516.73",
+          "nm": 516.73,
+          "eV": 2.399,
+          "transition": "Mg I",
+          "color": "green",
+          "spectrum": "both",
+          "frequencyHz": 580172349195905.0
+        },
+        {
+          "id": "Mg-517.27",
+          "nm": 517.27,
+          "eV": 2.397,
+          "transition": "Mg I",
+          "color": "green",
+          "spectrum": "both",
+          "frequencyHz": 579566682776886.4
+        },
+        {
+          "id": "Mg-518.36",
+          "nm": 518.36,
+          "eV": 2.392,
+          "transition": "Mg I",
+          "color": "green",
+          "spectrum": "both",
+          "frequencyHz": 578347978239061.6
+        }
+      ],
       "isotopes": [
         {
           "a": 24,
@@ -1172,7 +1405,26 @@
           "body": "Element Deck describes published chemistry of Aluminium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Al-394.40",
+          "nm": 394.4,
+          "eV": 3.144,
+          "transition": "Al I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 760122865111561.9
+        },
+        {
+          "id": "Al-396.15",
+          "nm": 396.15,
+          "eV": 3.13,
+          "transition": "Al I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 756765008203963.1
+        }
+      ],
       "isotopes": [
         {
           "a": 27,
@@ -1254,6 +1506,15 @@
       ],
       "spectralLines": [
         {
+          "id": "Si-251.61",
+          "nm": 251.61,
+          "eV": 4.928,
+          "transition": "Si I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 1191496593935058.2
+        },
+        {
           "id": "Si-288",
           "nm": 288.16,
           "eV": 4.3,
@@ -1261,6 +1522,15 @@
           "color": "UV",
           "spectrum": "emission",
           "frequencyHz": 1040368052470849.2
+        },
+        {
+          "id": "Si-390.55",
+          "nm": 390.55,
+          "eV": 3.175,
+          "transition": "Si I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 767616074766355.1
         }
       ],
       "isotopes": [
@@ -1580,7 +1850,53 @@
           "body": "Element Deck describes published chemistry of Argon. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Ar-696.54",
+          "nm": 696.54,
+          "eV": 1.78,
+          "transition": "Ar I",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 430402357366411.1
+        },
+        {
+          "id": "Ar-706.72",
+          "nm": 706.72,
+          "eV": 1.754,
+          "transition": "Ar I",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 424202595087163.2
+        },
+        {
+          "id": "Ar-738.40",
+          "nm": 738.4,
+          "eV": 1.679,
+          "transition": "Ar I",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 406002787107258.94
+        },
+        {
+          "id": "Ar-750.39",
+          "nm": 750.39,
+          "eV": 1.652,
+          "transition": "Ar I",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 399515529258119.1
+        },
+        {
+          "id": "Ar-763.51",
+          "nm": 763.51,
+          "eV": 1.624,
+          "transition": "Ar I",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 392650335948448.56
+        }
+      ],
       "isotopes": [
         {
           "a": 40,
@@ -1653,7 +1969,44 @@
           "body": "Element Deck describes published chemistry of Potassium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "K-404.41",
+          "nm": 404.41,
+          "eV": 3.066,
+          "transition": "K I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 741308221854058.9
+        },
+        {
+          "id": "K-404.72",
+          "nm": 404.72,
+          "eV": 3.063,
+          "transition": "K I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 740740408183435.4
+        },
+        {
+          "id": "K-766.49",
+          "nm": 766.49,
+          "eV": 1.618,
+          "transition": "K I",
+          "color": "red",
+          "spectrum": "both",
+          "frequencyHz": 391123769390337.75
+        },
+        {
+          "id": "K-769.90",
+          "nm": 769.9,
+          "eV": 1.61,
+          "transition": "K I",
+          "color": "red",
+          "spectrum": "both",
+          "frequencyHz": 389391424860371.44
+        }
+      ],
       "isotopes": [
         {
           "a": 39,
@@ -1726,7 +2079,44 @@
           "body": "Element Deck describes published chemistry of Calcium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Ca-393.37",
+          "nm": 393.37,
+          "eV": 3.152,
+          "transition": "Ca II",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 762113170806111.2
+        },
+        {
+          "id": "Ca-396.85",
+          "nm": 396.85,
+          "eV": 3.124,
+          "transition": "Ca II",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 755430157490235.5
+        },
+        {
+          "id": "Ca-422.67",
+          "nm": 422.67,
+          "eV": 2.933,
+          "transition": "Ca I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 709282556131260.6
+        },
+        {
+          "id": "Ca-445.48",
+          "nm": 445.48,
+          "eV": 2.783,
+          "transition": "Ca I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 672965021998742.9
+        }
+      ],
       "isotopes": [
         {
           "a": 40,
@@ -1799,7 +2189,35 @@
           "body": "Element Deck describes published chemistry of Scandium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Sc-391.18",
+          "nm": 391.18,
+          "eV": 3.169,
+          "transition": "Sc I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 766379820031698.9
+        },
+        {
+          "id": "Sc-402.04",
+          "nm": 402.04,
+          "eV": 3.084,
+          "transition": "Sc I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 745678186250124.2
+        },
+        {
+          "id": "Sc-402.37",
+          "nm": 402.37,
+          "eV": 3.081,
+          "transition": "Sc I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 745066625245420.9
+        }
+      ],
       "isotopes": [
         {
           "a": 45,
@@ -1895,6 +2313,33 @@
           "color": "violet",
           "spectrum": "emission",
           "frequencyHz": 749743555244335.5
+        },
+        {
+          "id": "Ti-498.17",
+          "nm": 498.17,
+          "eV": 2.489,
+          "transition": "Ti I",
+          "color": "green",
+          "spectrum": "both",
+          "frequencyHz": 601787458096633.6
+        },
+        {
+          "id": "Ti-499.11",
+          "nm": 499.11,
+          "eV": 2.484,
+          "transition": "Ti I",
+          "color": "green",
+          "spectrum": "both",
+          "frequencyHz": 600654080262867.8
+        },
+        {
+          "id": "Ti-501.42",
+          "nm": 501.42,
+          "eV": 2.473,
+          "transition": "Ti I",
+          "color": "green",
+          "spectrum": "both",
+          "frequencyHz": 597886917155279.0
         }
       ],
       "isotopes": [
@@ -2003,7 +2448,35 @@
           "body": "Element Deck describes published chemistry of Vanadium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "V-437.92",
+          "nm": 437.92,
+          "eV": 2.831,
+          "transition": "V I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 684582704603580.5
+        },
+        {
+          "id": "V-438.47",
+          "nm": 438.47,
+          "eV": 2.828,
+          "transition": "V I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 683723990238784.8
+        },
+        {
+          "id": "V-440.85",
+          "nm": 440.85,
+          "eV": 2.812,
+          "transition": "V I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 680032795735510.9
+        }
+      ],
       "isotopes": [
         {
           "a": 51,
@@ -2078,7 +2551,62 @@
           "body": "Element Deck describes published chemistry of Chromium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Cr-425.43",
+          "nm": 425.43,
+          "eV": 2.914,
+          "transition": "Cr I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 704681047410854.9
+        },
+        {
+          "id": "Cr-427.48",
+          "nm": 427.48,
+          "eV": 2.9,
+          "transition": "Cr I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 701301717039393.5
+        },
+        {
+          "id": "Cr-428.97",
+          "nm": 428.97,
+          "eV": 2.89,
+          "transition": "Cr I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 698865790148495.1
+        },
+        {
+          "id": "Cr-520.45",
+          "nm": 520.45,
+          "eV": 2.382,
+          "transition": "Cr I",
+          "color": "green",
+          "spectrum": "both",
+          "frequencyHz": 576025474108944.1
+        },
+        {
+          "id": "Cr-520.60",
+          "nm": 520.6,
+          "eV": 2.382,
+          "transition": "Cr I",
+          "color": "green",
+          "spectrum": "both",
+          "frequencyHz": 575859504417979.2
+        },
+        {
+          "id": "Cr-520.84",
+          "nm": 520.84,
+          "eV": 2.38,
+          "transition": "Cr I",
+          "color": "green",
+          "spectrum": "both",
+          "frequencyHz": 575594151754857.4
+        }
+      ],
       "isotopes": [
         {
           "a": 52,
@@ -2153,7 +2681,35 @@
           "body": "Element Deck describes published chemistry of Manganese. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Mn-403.08",
+          "nm": 403.08,
+          "eV": 3.076,
+          "transition": "Mn I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 743754237372233.8
+        },
+        {
+          "id": "Mn-403.31",
+          "nm": 403.31,
+          "eV": 3.074,
+          "transition": "Mn I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 743330088517517.5
+        },
+        {
+          "id": "Mn-403.45",
+          "nm": 403.45,
+          "eV": 3.073,
+          "transition": "Mn I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 743072147725864.4
+        }
+      ],
       "isotopes": [
         {
           "a": 55,
@@ -2235,7 +2791,71 @@
           "body": "Element Deck describes published chemistry of Iron. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Fe-371.99",
+          "nm": 371.99,
+          "eV": 3.333,
+          "transition": "Fe I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 805915368692706.8
+        },
+        {
+          "id": "Fe-373.49",
+          "nm": 373.49,
+          "eV": 3.32,
+          "transition": "Fe I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 802678674127821.2
+        },
+        {
+          "id": "Fe-374.95",
+          "nm": 374.95,
+          "eV": 3.307,
+          "transition": "Fe I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 799553161754900.6
+        },
+        {
+          "id": "Fe-438.35",
+          "nm": 438.35,
+          "eV": 2.828,
+          "transition": "Fe I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 683911162313220.0
+        },
+        {
+          "id": "Fe-440.48",
+          "nm": 440.48,
+          "eV": 2.815,
+          "transition": "Fe I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 680604018343625.1
+        },
+        {
+          "id": "Fe-516.75",
+          "nm": 516.75,
+          "eV": 2.399,
+          "transition": "Fe I",
+          "color": "green",
+          "spectrum": "both",
+          "frequencyHz": 580149894533139.8
+        },
+        {
+          "id": "Fe-527.04",
+          "nm": 527.04,
+          "eV": 2.352,
+          "transition": "Fe I",
+          "color": "green",
+          "spectrum": "both",
+          "frequencyHz": 568822969793564.0
+        }
+      ],
       "isotopes": [
         {
           "a": 56,
@@ -2309,7 +2929,35 @@
           "body": "Element Deck describes published chemistry of Cobalt. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Co-340.51",
+          "nm": 340.51,
+          "eV": 3.641,
+          "transition": "Co I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 880421890693371.6
+        },
+        {
+          "id": "Co-345.35",
+          "nm": 345.35,
+          "eV": 3.59,
+          "transition": "Co I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 868082982481540.4
+        },
+        {
+          "id": "Co-399.53",
+          "nm": 399.53,
+          "eV": 3.103,
+          "transition": "Co I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 750362821315045.2
+        }
+      ],
       "isotopes": [
         {
           "a": 59,
@@ -2382,7 +3030,35 @@
           "body": "Element Deck describes published chemistry of Nickel. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Ni-341.48",
+          "nm": 341.48,
+          "eV": 3.631,
+          "transition": "Ni I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 877920985123579.5
+        },
+        {
+          "id": "Ni-351.51",
+          "nm": 351.51,
+          "eV": 3.527,
+          "transition": "Ni I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 852870353617251.2
+        },
+        {
+          "id": "Ni-352.45",
+          "nm": 352.45,
+          "eV": 3.518,
+          "transition": "Ni I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 850595710029791.4
+        }
+      ],
       "isotopes": [
         {
           "a": 59,
@@ -2464,7 +3140,53 @@
           "body": "Element Deck describes published chemistry of Copper. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Cu-324.75",
+          "nm": 324.75,
+          "eV": 3.818,
+          "transition": "Cu I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 923148446497305.5
+        },
+        {
+          "id": "Cu-327.40",
+          "nm": 327.4,
+          "eV": 3.787,
+          "transition": "Cu I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 915676414172266.4
+        },
+        {
+          "id": "Cu-510.55",
+          "nm": 510.55,
+          "eV": 2.428,
+          "transition": "Cu I",
+          "color": "green",
+          "spectrum": "both",
+          "frequencyHz": 587195099402605.0
+        },
+        {
+          "id": "Cu-515.32",
+          "nm": 515.32,
+          "eV": 2.406,
+          "transition": "Cu I",
+          "color": "green",
+          "spectrum": "both",
+          "frequencyHz": 581759795855002.6
+        },
+        {
+          "id": "Cu-521.82",
+          "nm": 521.82,
+          "eV": 2.376,
+          "transition": "Cu I",
+          "color": "green",
+          "spectrum": "both",
+          "frequencyHz": 574513161626614.5
+        }
+      ],
       "isotopes": [
         {
           "a": 64,
@@ -2537,7 +3259,44 @@
           "body": "Element Deck describes published chemistry of Zinc. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Zn-213.86",
+          "nm": 213.86,
+          "eV": 5.797,
+          "transition": "Zn I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 1401816412606377.8
+        },
+        {
+          "id": "Zn-472.22",
+          "nm": 472.22,
+          "eV": 2.626,
+          "transition": "Zn I",
+          "color": "blue",
+          "spectrum": "both",
+          "frequencyHz": 634857604506374.0
+        },
+        {
+          "id": "Zn-481.05",
+          "nm": 481.05,
+          "eV": 2.577,
+          "transition": "Zn I",
+          "color": "blue",
+          "spectrum": "both",
+          "frequencyHz": 623204361293004.9
+        },
+        {
+          "id": "Zn-636.23",
+          "nm": 636.23,
+          "eV": 1.949,
+          "transition": "Zn I",
+          "color": "red",
+          "spectrum": "both",
+          "frequencyHz": 471201386291121.1
+        }
+      ],
       "isotopes": [
         {
           "a": 65,
@@ -2610,7 +3369,26 @@
           "body": "Element Deck describes published chemistry of Gallium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Ga-403.30",
+          "nm": 403.3,
+          "eV": 3.074,
+          "transition": "Ga I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 743348519712372.9
+        },
+        {
+          "id": "Ga-417.21",
+          "nm": 417.21,
+          "eV": 2.972,
+          "transition": "Ga I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 718564890582680.1
+        }
+      ],
       "isotopes": [
         {
           "a": 70,
@@ -2683,7 +3461,26 @@
           "body": "Element Deck describes published chemistry of Germanium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Ge-265.12",
+          "nm": 265.12,
+          "eV": 4.677,
+          "transition": "Ge I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 1130780242908871.2
+        },
+        {
+          "id": "Ge-303.91",
+          "nm": 303.91,
+          "eV": 4.08,
+          "transition": "Ge I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 986451442861373.4
+        }
+      ],
       "isotopes": [
         {
           "a": 73,
@@ -2758,7 +3555,35 @@
           "body": "Element Deck describes published chemistry of Arsenic. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "As-189.04",
+          "nm": 189.04,
+          "eV": 6.559,
+          "transition": "As I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 1585867848074481.5
+        },
+        {
+          "id": "As-193.70",
+          "nm": 193.7,
+          "eV": 6.401,
+          "transition": "As I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 1547715322663913.2
+        },
+        {
+          "id": "As-228.81",
+          "nm": 228.81,
+          "eV": 5.419,
+          "transition": "As I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 1310224456973034.2
+        }
+      ],
       "isotopes": [
         {
           "a": 75,
@@ -2833,7 +3658,26 @@
           "body": "Element Deck describes published chemistry of Selenium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Se-196.03",
+          "nm": 196.03,
+          "eV": 6.325,
+          "transition": "Se I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 1529319277661582.2
+        },
+        {
+          "id": "Se-203.99",
+          "nm": 203.99,
+          "eV": 6.078,
+          "transition": "Se I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 1469642913868326.8
+        }
+      ],
       "isotopes": [
         {
           "a": 79,
@@ -2979,7 +3823,26 @@
           "body": "Element Deck describes published chemistry of Krypton. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Kr-557.03",
+          "nm": 557.03,
+          "eV": 2.226,
+          "transition": "Kr I",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 538198046783835.7
+        },
+        {
+          "id": "Kr-587.09",
+          "nm": 587.09,
+          "eV": 2.112,
+          "transition": "Kr I",
+          "color": "yellow",
+          "spectrum": "emission",
+          "frequencyHz": 510641397400739.1
+        }
+      ],
       "isotopes": [
         {
           "a": 84,
@@ -3053,7 +3916,44 @@
           "body": "Element Deck describes published chemistry of Rubidium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Rb-420.18",
+          "nm": 420.18,
+          "eV": 2.951,
+          "transition": "Rb I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 713485787043647.9
+        },
+        {
+          "id": "Rb-421.55",
+          "nm": 421.55,
+          "eV": 2.941,
+          "transition": "Rb I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 711167021705610.2
+        },
+        {
+          "id": "Rb-780.03",
+          "nm": 780.03,
+          "eV": 1.589,
+          "transition": "Rb I",
+          "color": "near-IR",
+          "spectrum": "both",
+          "frequencyHz": 384334523031165.44
+        },
+        {
+          "id": "Rb-794.76",
+          "nm": 794.76,
+          "eV": 1.56,
+          "transition": "Rb I",
+          "color": "near-IR",
+          "spectrum": "both",
+          "frequencyHz": 377211306557954.56
+        }
+      ],
       "isotopes": [
         {
           "a": 85,
@@ -3127,7 +4027,35 @@
           "body": "Element Deck describes published chemistry of Strontium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Sr-407.77",
+          "nm": 407.77,
+          "eV": 3.041,
+          "transition": "Sr II",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 735199887191308.9
+        },
+        {
+          "id": "Sr-421.55",
+          "nm": 421.55,
+          "eV": 2.941,
+          "transition": "Sr II",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 711167021705610.2
+        },
+        {
+          "id": "Sr-460.73",
+          "nm": 460.73,
+          "eV": 2.691,
+          "transition": "Sr I",
+          "color": "blue",
+          "spectrum": "both",
+          "frequencyHz": 650690117856445.1
+        }
+      ],
       "isotopes": [
         {
           "a": 88,
@@ -3201,7 +4129,44 @@
           "body": "Element Deck describes published chemistry of Yttrium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Y-407.74",
+          "nm": 407.74,
+          "eV": 3.041,
+          "transition": "Y I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 735253980477755.4
+        },
+        {
+          "id": "Y-410.24",
+          "nm": 410.24,
+          "eV": 3.022,
+          "transition": "Y I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 730773347308892.2
+        },
+        {
+          "id": "Y-412.83",
+          "nm": 412.83,
+          "eV": 3.003,
+          "transition": "Y I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 726188644236126.2
+        },
+        {
+          "id": "Y-414.28",
+          "nm": 414.28,
+          "eV": 2.993,
+          "transition": "Y I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 723646948923433.5
+        }
+      ],
       "isotopes": [
         {
           "a": 89,
@@ -3275,7 +4240,35 @@
           "body": "Element Deck describes published chemistry of Zirconium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Zr-339.20",
+          "nm": 339.2,
+          "eV": 3.655,
+          "transition": "Zr I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 883822104952830.1
+        },
+        {
+          "id": "Zr-343.82",
+          "nm": 343.82,
+          "eV": 3.606,
+          "transition": "Zr I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 871945954278401.5
+        },
+        {
+          "id": "Zr-349.62",
+          "nm": 349.62,
+          "eV": 3.546,
+          "transition": "Zr I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 857480859218580.1
+        }
+      ],
       "isotopes": [
         {
           "a": 91,
@@ -3349,7 +4342,26 @@
           "body": "Element Deck describes published chemistry of Niobium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Nb-405.89",
+          "nm": 405.89,
+          "eV": 3.055,
+          "transition": "Nb I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 738605183670452.6
+        },
+        {
+          "id": "Nb-407.97",
+          "nm": 407.97,
+          "eV": 3.039,
+          "transition": "Nb I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 734839468588376.5
+        }
+      ],
       "isotopes": [
         {
           "a": 93,
@@ -3423,7 +4435,35 @@
           "body": "Element Deck describes published chemistry of Molybdenum. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Mo-379.83",
+          "nm": 379.83,
+          "eV": 3.264,
+          "transition": "Mo I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 789280620277492.5
+        },
+        {
+          "id": "Mo-386.41",
+          "nm": 386.41,
+          "eV": 3.209,
+          "transition": "Mo I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 775840319867498.2
+        },
+        {
+          "id": "Mo-390.30",
+          "nm": 390.3,
+          "eV": 3.177,
+          "transition": "Mo I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 768107758134768.0
+        }
+      ],
       "isotopes": [
         {
           "a": 96,
@@ -3572,7 +4612,26 @@
           "body": "Element Deck describes published chemistry of Ruthenium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Ru-349.89",
+          "nm": 349.89,
+          "eV": 3.544,
+          "transition": "Ru I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 856819166023607.4
+        },
+        {
+          "id": "Ru-372.80",
+          "nm": 372.8,
+          "eV": 3.326,
+          "transition": "Ru I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 804164318669527.8
+        }
+      ],
       "isotopes": [
         {
           "a": 101,
@@ -3646,7 +4705,26 @@
           "body": "Element Deck describes published chemistry of Rhodium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Rh-343.49",
+          "nm": 343.49,
+          "eV": 3.61,
+          "transition": "Rh I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 872783656001630.2
+        },
+        {
+          "id": "Rh-369.24",
+          "nm": 369.24,
+          "eV": 3.358,
+          "transition": "Rh I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 811917609143104.6
+        }
+      ],
       "isotopes": [
         {
           "a": 103,
@@ -3720,7 +4798,26 @@
           "body": "Element Deck describes published chemistry of Palladium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Pd-340.46",
+          "nm": 340.46,
+          "eV": 3.642,
+          "transition": "Pd I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 880551189567056.2
+        },
+        {
+          "id": "Pd-363.47",
+          "nm": 363.47,
+          "eV": 3.411,
+          "transition": "Pd I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 824806608523399.2
+        }
+      ],
       "isotopes": [
         {
           "a": 106,
@@ -3802,7 +4899,44 @@
           "body": "Element Deck describes published chemistry of Silver. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Ag-328.07",
+          "nm": 328.07,
+          "eV": 3.779,
+          "transition": "Ag I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 913806376687902.0
+        },
+        {
+          "id": "Ag-338.29",
+          "nm": 338.29,
+          "eV": 3.665,
+          "transition": "Ag I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 886199586153891.5
+        },
+        {
+          "id": "Ag-520.91",
+          "nm": 520.91,
+          "eV": 2.38,
+          "transition": "Ag I",
+          "color": "green",
+          "spectrum": "both",
+          "frequencyHz": 575516803286556.2
+        },
+        {
+          "id": "Ag-546.55",
+          "nm": 546.55,
+          "eV": 2.268,
+          "transition": "Ag I",
+          "color": "green",
+          "spectrum": "both",
+          "frequencyHz": 548517899551733.6
+        }
+      ],
       "isotopes": [
         {
           "a": 108,
@@ -3876,7 +5010,35 @@
           "body": "Element Deck describes published chemistry of Cadmium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Cd-228.80",
+          "nm": 228.8,
+          "eV": 5.419,
+          "transition": "Cd I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 1310281722027971.8
+        },
+        {
+          "id": "Cd-508.58",
+          "nm": 508.58,
+          "eV": 2.438,
+          "transition": "Cd I",
+          "color": "green",
+          "spectrum": "both",
+          "frequencyHz": 589469617365999.5
+        },
+        {
+          "id": "Cd-643.85",
+          "nm": 643.85,
+          "eV": 1.926,
+          "transition": "Cd I",
+          "color": "red",
+          "spectrum": "both",
+          "frequencyHz": 465624692086666.06
+        }
+      ],
       "isotopes": [
         {
           "a": 112,
@@ -3950,7 +5112,26 @@
           "body": "Element Deck describes published chemistry of Indium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "In-410.18",
+          "nm": 410.18,
+          "eV": 3.023,
+          "transition": "In I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 730880242820225.2
+        },
+        {
+          "id": "In-451.13",
+          "nm": 451.13,
+          "eV": 2.748,
+          "transition": "In I",
+          "color": "blue",
+          "spectrum": "both",
+          "frequencyHz": 664536736639106.1
+        }
+      ],
       "isotopes": [
         {
           "a": 115,
@@ -4025,7 +5206,35 @@
           "body": "Element Deck describes published chemistry of Tin. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Sn-284.00",
+          "nm": 284.0,
+          "eV": 4.366,
+          "transition": "Sn I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 1055607246478873.2
+        },
+        {
+          "id": "Sn-317.51",
+          "nm": 317.51,
+          "eV": 3.905,
+          "transition": "Sn I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 944198475638562.6
+        },
+        {
+          "id": "Sn-326.23",
+          "nm": 326.23,
+          "eV": 3.801,
+          "transition": "Sn I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 918960420562180.0
+        }
+      ],
       "isotopes": [
         {
           "a": 119,
@@ -4101,7 +5310,35 @@
           "body": "Element Deck describes published chemistry of Antimony. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Sb-206.83",
+          "nm": 206.83,
+          "eV": 5.994,
+          "transition": "Sb I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 1449463124304984.5
+        },
+        {
+          "id": "Sb-217.58",
+          "nm": 217.58,
+          "eV": 5.698,
+          "transition": "Sb I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 1377849333578453.8
+        },
+        {
+          "id": "Sb-231.15",
+          "nm": 231.15,
+          "eV": 5.364,
+          "transition": "Sb I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 1296960666234047.0
+        }
+      ],
       "isotopes": [
         {
           "a": 122,
@@ -4177,7 +5414,26 @@
           "body": "Element Deck describes published chemistry of Tellurium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Te-214.28",
+          "nm": 214.28,
+          "eV": 5.786,
+          "transition": "Te I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 1399068779167444.5
+        },
+        {
+          "id": "Te-238.58",
+          "nm": 238.58,
+          "eV": 5.197,
+          "transition": "Te I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 1256569947187526.2
+        }
+      ],
       "isotopes": [
         {
           "a": 128,
@@ -4325,7 +5581,26 @@
           "body": "Element Deck describes published chemistry of Xenon. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Xe-462.43",
+          "nm": 462.43,
+          "eV": 2.681,
+          "transition": "Xe I",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 648298029972103.9
+        },
+        {
+          "id": "Xe-467.12",
+          "nm": 467.12,
+          "eV": 2.654,
+          "transition": "Xe I",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 641788957869498.1
+        }
+      ],
       "isotopes": [
         {
           "a": 131,
@@ -4400,7 +5675,44 @@
           "body": "Element Deck describes published chemistry of Caesium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Cs-455.53",
+          "nm": 455.53,
+          "eV": 2.722,
+          "transition": "Cs I",
+          "color": "blue",
+          "spectrum": "both",
+          "frequencyHz": 658117924176234.2
+        },
+        {
+          "id": "Cs-459.32",
+          "nm": 459.32,
+          "eV": 2.699,
+          "transition": "Cs I",
+          "color": "blue",
+          "spectrum": "both",
+          "frequencyHz": 652687577288165.1
+        },
+        {
+          "id": "Cs-852.11",
+          "nm": 852.11,
+          "eV": 1.455,
+          "transition": "Cs I",
+          "color": "near-IR",
+          "spectrum": "both",
+          "frequencyHz": 351823658917275.94
+        },
+        {
+          "id": "Cs-894.35",
+          "nm": 894.35,
+          "eV": 1.386,
+          "transition": "Cs I",
+          "color": "near-IR",
+          "spectrum": "both",
+          "frequencyHz": 335207086711019.1
+        }
+      ],
       "isotopes": [
         {
           "a": 133,
@@ -4475,7 +5787,35 @@
           "body": "Element Deck describes published chemistry of Barium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Ba-455.40",
+          "nm": 455.4,
+          "eV": 2.723,
+          "transition": "Ba II",
+          "color": "blue",
+          "spectrum": "both",
+          "frequencyHz": 658305792709705.8
+        },
+        {
+          "id": "Ba-493.41",
+          "nm": 493.41,
+          "eV": 2.513,
+          "transition": "Ba II",
+          "color": "blue",
+          "spectrum": "both",
+          "frequencyHz": 607592991629679.1
+        },
+        {
+          "id": "Ba-553.55",
+          "nm": 553.55,
+          "eV": 2.24,
+          "transition": "Ba I",
+          "color": "green",
+          "spectrum": "both",
+          "frequencyHz": 541581533736789.8
+        }
+      ],
       "isotopes": [
         {
           "a": 137,
@@ -4550,7 +5890,35 @@
           "body": "Element Deck describes published chemistry of Lanthanum. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "La-394.91",
+          "nm": 394.91,
+          "eV": 3.14,
+          "transition": "La I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 759141216986148.6
+        },
+        {
+          "id": "La-407.74",
+          "nm": 407.74,
+          "eV": 3.041,
+          "transition": "La I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 735253980477755.4
+        },
+        {
+          "id": "La-550.13",
+          "nm": 550.13,
+          "eV": 2.254,
+          "transition": "La I",
+          "color": "green",
+          "spectrum": "both",
+          "frequencyHz": 544948390380455.5
+        }
+      ],
       "isotopes": [
         {
           "a": 139,
@@ -5002,7 +6370,35 @@
           "body": "Element Deck describes published chemistry of Europium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Eu-459.40",
+          "nm": 459.4,
+          "eV": 2.699,
+          "transition": "Eu I",
+          "color": "blue",
+          "spectrum": "both",
+          "frequencyHz": 652573918154114.1
+        },
+        {
+          "id": "Eu-462.72",
+          "nm": 462.72,
+          "eV": 2.679,
+          "transition": "Eu I",
+          "color": "blue",
+          "spectrum": "both",
+          "frequencyHz": 647891722856154.9
+        },
+        {
+          "id": "Eu-466.19",
+          "nm": 466.19,
+          "eV": 2.66,
+          "transition": "Eu I",
+          "color": "blue",
+          "spectrum": "both",
+          "frequencyHz": 643069259314871.6
+        }
+      ],
       "isotopes": [
         {
           "a": 152,
@@ -5528,7 +6924,17 @@
           "body": "Element Deck describes published chemistry of Ytterbium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Yb-398.80",
+          "nm": 398.8,
+          "eV": 3.109,
+          "transition": "Yb I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 751736354062186.5
+        }
+      ],
       "isotopes": [
         {
           "a": 173,
@@ -5828,7 +7234,35 @@
           "body": "Element Deck describes published chemistry of Tungsten. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "W-400.88",
+          "nm": 400.88,
+          "eV": 3.093,
+          "transition": "W I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 747835906006785.0
+        },
+        {
+          "id": "W-407.44",
+          "nm": 407.44,
+          "eV": 3.043,
+          "transition": "W I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 735795351462792.1
+        },
+        {
+          "id": "W-429.46",
+          "nm": 429.46,
+          "eV": 2.887,
+          "transition": "W I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 698068406836492.4
+        }
+      ],
       "isotopes": [
         {
           "a": 184,
@@ -5903,7 +7337,26 @@
           "body": "Element Deck describes published chemistry of Rhenium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Re-346.05",
+          "nm": 346.05,
+          "eV": 3.583,
+          "transition": "Re I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 866326998988585.4
+        },
+        {
+          "id": "Re-346.47",
+          "nm": 346.47,
+          "eV": 3.578,
+          "transition": "Re I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 865276814731434.0
+        }
+      ],
       "isotopes": [
         {
           "a": 186,
@@ -5979,7 +7432,17 @@
           "body": "Element Deck describes published chemistry of Osmium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Os-290.91",
+          "nm": 290.91,
+          "eV": 4.262,
+          "transition": "Os I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 1030533353958268.6
+        }
+      ],
       "isotopes": [
         {
           "a": 190,
@@ -6131,7 +7594,26 @@
           "body": "Element Deck describes published chemistry of Platinum. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Pt-265.95",
+          "nm": 265.95,
+          "eV": 4.662,
+          "transition": "Pt I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 1127251205113743.0
+        },
+        {
+          "id": "Pt-306.47",
+          "nm": 306.47,
+          "eV": 4.046,
+          "transition": "Pt I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 978211433419257.8
+        }
+      ],
       "isotopes": [
         {
           "a": 195,
@@ -6215,7 +7697,26 @@
           "body": "Element Deck describes published chemistry of Gold. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Au-242.80",
+          "nm": 242.8,
+          "eV": 5.106,
+          "transition": "Au I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 1234730057660626.0
+        },
+        {
+          "id": "Au-267.60",
+          "nm": 267.6,
+          "eV": 4.633,
+          "transition": "Au I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 1120300665171898.1
+        }
+      ],
       "isotopes": [
         {
           "a": 197,
@@ -6291,7 +7792,62 @@
           "body": "Element Deck describes published chemistry of Mercury. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Hg-253.65",
+          "nm": 253.65,
+          "eV": 4.888,
+          "transition": "Hg I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 1181913889217425.5
+        },
+        {
+          "id": "Hg-404.66",
+          "nm": 404.66,
+          "eV": 3.064,
+          "transition": "Hg I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 740850239707408.6
+        },
+        {
+          "id": "Hg-435.83",
+          "nm": 435.83,
+          "eV": 2.845,
+          "transition": "Hg I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 687865585205240.6
+        },
+        {
+          "id": "Hg-546.07",
+          "nm": 546.07,
+          "eV": 2.27,
+          "transition": "Hg I",
+          "color": "green",
+          "spectrum": "both",
+          "frequencyHz": 549000051275477.44
+        },
+        {
+          "id": "Hg-576.96",
+          "nm": 576.96,
+          "eV": 2.149,
+          "transition": "Hg I",
+          "color": "yellow",
+          "spectrum": "both",
+          "frequencyHz": 519607005684969.4
+        },
+        {
+          "id": "Hg-579.07",
+          "nm": 579.07,
+          "eV": 2.141,
+          "transition": "Hg I",
+          "color": "yellow",
+          "spectrum": "both",
+          "frequencyHz": 517713675376033.9
+        }
+      ],
       "isotopes": [
         {
           "a": 201,
@@ -6367,7 +7923,44 @@
           "body": "Element Deck describes published chemistry of Thallium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Tl-276.79",
+          "nm": 276.79,
+          "eV": 4.479,
+          "transition": "Tl I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 1083104367932367.4
+        },
+        {
+          "id": "Tl-351.92",
+          "nm": 351.92,
+          "eV": 3.523,
+          "transition": "Tl I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 851876727665378.4
+        },
+        {
+          "id": "Tl-377.57",
+          "nm": 377.57,
+          "eV": 3.284,
+          "transition": "Tl I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 794004973912122.2
+        },
+        {
+          "id": "Tl-535.05",
+          "nm": 535.05,
+          "eV": 2.317,
+          "transition": "Tl I",
+          "color": "green",
+          "spectrum": "both",
+          "frequencyHz": 560307369404728.56
+        }
+      ],
       "isotopes": [
         {
           "a": 204,
@@ -6451,7 +8044,44 @@
           "body": "Element Deck describes published chemistry of Lead. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Pb-217.00",
+          "nm": 217.0,
+          "eV": 5.714,
+          "transition": "Pb I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 1381532064516129.0
+        },
+        {
+          "id": "Pb-283.31",
+          "nm": 283.31,
+          "eV": 4.376,
+          "transition": "Pb I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 1058178172320073.4
+        },
+        {
+          "id": "Pb-368.35",
+          "nm": 368.35,
+          "eV": 3.366,
+          "transition": "Pb I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 813879348445771.6
+        },
+        {
+          "id": "Pb-405.78",
+          "nm": 405.78,
+          "eV": 3.055,
+          "transition": "Pb I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 738805406870718.1
+        }
+      ],
       "isotopes": [
         {
           "a": 207,
@@ -6527,7 +8157,26 @@
           "body": "Element Deck describes published chemistry of Bismuth. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Bi-222.82",
+          "nm": 222.82,
+          "eV": 5.564,
+          "transition": "Bi I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 1345446809083565.2
+        },
+        {
+          "id": "Bi-306.77",
+          "nm": 306.77,
+          "eV": 4.042,
+          "transition": "Bi I",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 977254809792352.6
+        }
+      ],
       "isotopes": [
         {
           "a": 209,
@@ -7057,7 +8706,17 @@
           "body": "Element Deck describes published chemistry of Thorium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Th-401.91",
+          "nm": 401.91,
+          "eV": 3.085,
+          "transition": "Th I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 745919379960687.6
+        }
+      ],
       "isotopes": [
         {
           "a": 232,
@@ -7218,7 +8877,17 @@
           "body": "Element Deck describes published chemistry of Uranium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "U-591.54",
+          "nm": 591.54,
+          "eV": 2.096,
+          "transition": "U I",
+          "color": "orange",
+          "spectrum": "both",
+          "frequencyHz": 506799976332961.44
+        }
+      ],
       "isotopes": [
         {
           "a": 238,

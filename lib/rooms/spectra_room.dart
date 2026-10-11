@@ -36,9 +36,12 @@ class _SpectraRoomState extends State<SpectraRoom> {
     final lines = e.spectralLines
         .where((l) => l.spectrum == 'both' || l.spectrum == mode)
         .toList();
-    selected ??= lines.isEmpty ? null : lines.first;
+    final visible = lines
+        .where((l) => l.nm >= _visMin && l.nm <= _visMax)
+        .toList();
+    selected ??= _preferVisible(lines);
     if (selected != null && !lines.any((l) => l.id == selected!.id)) {
-      selected = lines.isEmpty ? null : lines.first;
+      selected = _preferVisible(lines);
     }
     return ListView(
       padding: const EdgeInsets.fromLTRB(16, 8, 16, 32),
@@ -88,41 +91,70 @@ class _SpectraRoomState extends State<SpectraRoom> {
         ),
         const SizedBox(height: 12),
         SizedBox(
-          height: 88,
-          child: CustomPaint(
-            painter: _StripPainter(lines, selected),
-            child: GestureDetector(
-              onTapDown: (d) {
-                if (lines.isEmpty) return;
-                final box = context.findRenderObject() as RenderBox?;
-                if (box == null) return;
-              },
-            ),
+          height: 96,
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              return GestureDetector(
+                onTapDown: visible.isEmpty
+                    ? null
+                    : (d) {
+                        final width = constraints.maxWidth <= 0
+                            ? 1.0
+                            : constraints.maxWidth;
+                        final nm =
+                            _visMin +
+                            d.localPosition.dx / width * (_visMax - _visMin);
+                        setState(() => selected = _nearest(visible, nm));
+                      },
+                child: CustomPaint(
+                  painter: _StripPainter(visible, selected),
+                  child: const SizedBox.expand(),
+                ),
+              );
+            },
           ),
         ),
-        Slider(
-          min: 380,
-          max: 750,
-          value: (selected?.nm ?? 500).clamp(380, 750),
-          onChanged: lines.isEmpty
-              ? null
-              : (v) {
-                  SpectralLine nearest = lines.first;
-                  var best = 1e9;
-                  for (final l in lines) {
-                    final d = (l.nm - v).abs();
-                    if (d < best) {
-                      best = d;
-                      nearest = l;
-                    }
-                  }
-                  setState(() => selected = nearest);
-                },
-        ),
+        if (visible.isNotEmpty)
+          Slider(
+            min: _visMin,
+            max: _visMax,
+            value: (selected?.nm ?? 550).clamp(_visMin, _visMax),
+            onChanged: (v) => setState(() => selected = _nearest(visible, v)),
+          ),
         Text(
-          'Wavelength scrubber · stops only on stored lines',
+          _stripCaption(e, lines, visible),
           style: Theme.of(context).textTheme.bodySmall,
         ),
+        if (lines.isNotEmpty) ...[
+          const SizedBox(height: 8),
+          Text(
+            'Spectral lines',
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
+          for (final line in lines)
+            ListTile(
+              dense: true,
+              contentPadding: EdgeInsets.zero,
+              selected: selected?.id == line.id,
+              title: Text(
+                '${line.nm.toStringAsFixed(2)} nm',
+                style: Mono.of(context, size: 14, weight: FontWeight.w700),
+              ),
+              subtitle: Text(
+                [
+                  if (line.transition.isNotEmpty) line.transition,
+                  line.color,
+                  if (line.nm < _visMin || line.nm > _visMax)
+                    'outside 380–780 nm',
+                ].join(' · '),
+              ),
+              trailing: Text(
+                '${line.eV.toStringAsFixed(2)} eV',
+                style: Mono.of(context, size: 12),
+              ),
+              onTap: () => setState(() => selected = line),
+            ),
+        ],
         if (selected != null) ...[
           const SizedBox(height: 8),
           Text(
@@ -203,6 +235,54 @@ class _SpectraRoomState extends State<SpectraRoom> {
   }
 }
 
+const _visMin = 380.0;
+const _visMax = 780.0;
+
+SpectralLine? _preferVisible(List<SpectralLine> lines) {
+  for (final line in lines) {
+    if (line.nm >= _visMin && line.nm <= _visMax) return line;
+  }
+  return lines.isEmpty ? null : lines.first;
+}
+
+SpectralLine _nearest(List<SpectralLine> lines, double nm) {
+  var best = lines.first;
+  var score = double.infinity;
+  for (final line in lines) {
+    final d = (line.nm - nm).abs();
+    if (d < score) {
+      score = d;
+      best = line;
+    }
+  }
+  return best;
+}
+
+String _stripCaption(
+  ElementRecord e,
+  List<SpectralLine> lines,
+  List<SpectralLine> visible,
+) {
+  if (lines.isEmpty) {
+    return 'No spectral lines are stored for ${e.name}.';
+  }
+  if (visible.isEmpty) {
+    return 'Stored lines for ${e.name} are outside the 380–780 nm window.';
+  }
+  final noun = visible.length == 1 ? 'line' : 'lines';
+  return 'Visible window 380–780 nm · ${visible.length} $noun. The scrubber stops on stored lines.';
+}
+
+Color _lineColor(double nm) {
+  if (nm < 420) return const Color(0xFF7C3AED);
+  if (nm < 450) return const Color(0xFF2563EB);
+  if (nm < 495) return const Color(0xFF0891B2);
+  if (nm < 570) return const Color(0xFF22C55E);
+  if (nm < 590) return const Color(0xFFFACC15);
+  if (nm < 620) return const Color(0xFFF97316);
+  return const Color(0xFFEF4444);
+}
+
 class _StripPainter extends CustomPainter {
   _StripPainter(this.lines, this.selected);
 
@@ -211,27 +291,27 @@ class _StripPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    final bg = Paint()
-      ..shader = const LinearGradient(
-        colors: [
-          Color(0xFF4C1D95),
-          Color(0xFF1D4ED8),
-          Color(0xFF059669),
-          Color(0xFFFBBF24),
-          Color(0xFFEF4444),
-        ],
-      ).createShader(Offset.zero & size);
+    final bg = Paint()..color = const Color(0xFF0B1220);
     canvas.drawRRect(
       RRect.fromRectAndRadius(Offset.zero & size, const Radius.circular(12)),
       bg,
     );
-    for (final l in lines) {
-      if (l.nm < 380 || l.nm > 750) continue;
-      final x = (l.nm - 380) / (750 - 380) * size.width;
-      final p = Paint()
-        ..color = l.id == selected?.id ? Colors.white : Colors.white70
-        ..strokeWidth = l.id == selected?.id ? 3 : 1.5;
-      canvas.drawLine(Offset(x, 8), Offset(x, size.height - 8), p);
+    if (lines.isEmpty || size.width <= 0) return;
+    for (final line in lines) {
+      final x = (line.nm - _visMin) / (_visMax - _visMin) * size.width;
+      final chosen = line.id == selected?.id;
+      final color = _lineColor(line.nm);
+      final glow = Paint()
+        ..color = color.withValues(alpha: chosen ? 0.55 : 0.28)
+        ..strokeWidth = chosen ? 8 : 5
+        ..strokeCap = StrokeCap.round
+        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 2);
+      final core = Paint()
+        ..color = chosen ? Colors.white : color
+        ..strokeWidth = chosen ? 2.5 : 1.8
+        ..strokeCap = StrokeCap.round;
+      canvas.drawLine(Offset(x, 10), Offset(x, size.height - 10), glow);
+      canvas.drawLine(Offset(x, 8), Offset(x, size.height - 8), core);
     }
   }
 

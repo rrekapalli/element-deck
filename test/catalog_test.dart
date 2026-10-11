@@ -78,6 +78,23 @@ void main() {
     expect(file.lengthSync(), greaterThan(100000));
   });
 
+  test('visible teaching lines are stored for common elements', () {
+    final file = File('assets/catalog/core.json');
+    final pack = CatalogPack.fromJson(
+      jsonDecode(file.readAsStringSync()) as Map<String, dynamic>,
+    );
+    expect(pack.byZ(2)!.spectralLines, isNotEmpty);
+    expect(
+      pack.byZ(11)!.spectralLines.map((l) => l.nm),
+      containsAll([588.995, 589.592]),
+    );
+    expect(
+      pack.byZ(80)!.spectralLines.any((l) => (l.nm - 546.07).abs() < 0.02),
+      isTrue,
+    );
+    expect(pack.byZ(1)!.spectralLines.length, greaterThanOrEqualTo(4));
+  });
+
   test('sonification divisor is 1e12', () {
     final file = File('assets/catalog/preview.json');
     final pack = CatalogPack.fromJson(

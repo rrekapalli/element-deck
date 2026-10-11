@@ -30,14 +30,16 @@ class PeriodicTableView extends StatelessWidget {
         final maxW = constraints.maxWidth.isFinite && constraints.maxWidth > 0
             ? constraints.maxWidth
             : MediaQuery.sizeOf(context).width - 32;
-        final maxH = constraints.maxHeight.isFinite && constraints.maxHeight > 40
+        final maxH =
+            constraints.maxHeight.isFinite && constraints.maxHeight > 40
             ? constraints.maxHeight
             : math.max(220.0, maxW * 0.52);
         const gap = 2.0;
         const labelH = 16.0;
         // 7 main periods + 2 f-block rows
         const bodyRows = 9;
-        var cellW = (maxW - gap * (PeriodicLayout.cols - 1)) / PeriodicLayout.cols;
+        var cellW =
+            (maxW - gap * (PeriodicLayout.cols - 1)) / PeriodicLayout.cols;
         var cellH = (maxH - labelH - gap * bodyRows) / bodyRows;
         cellW = math.max(18.0, math.min(cellW, cellH / 1.05));
         cellH = math.max(22.0, math.min(cellH, cellW * 1.25));
@@ -91,11 +93,16 @@ class PeriodicTableView extends StatelessWidget {
           ],
         );
 
-        return Align(
-          alignment: Alignment.topCenter,
-          child: SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: table,
+        // 7 period rows, each followed by a gap, then the f-block label and two rows.
+        final tableHeight = 9 * cellH + 8 * gap + labelH;
+        return SizedBox(
+          height: tableHeight,
+          child: Align(
+            alignment: Alignment.topCenter,
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: table,
+            ),
           ),
         );
       },
@@ -136,7 +143,9 @@ class _Cell extends StatelessWidget {
     return Opacity(
       opacity: match ? (inPack ? 1 : 0.45) : 0.14,
       child: Material(
-        color: selected ? accent.withValues(alpha: 0.2) : Theme.of(context).colorScheme.surface,
+        color: selected
+            ? accent.withValues(alpha: 0.2)
+            : Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(4),
         child: InkWell(
           onTap: () => onOpen(slot!.z),
@@ -154,7 +163,11 @@ class _Cell extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('${id.z}', style: Mono.of(context, size: zSize, color: muted), maxLines: 1),
+                  Text(
+                    '${id.z}',
+                    style: Mono.of(context, size: zSize, color: muted),
+                    maxLines: 1,
+                  ),
                   Expanded(
                     child: Center(
                       child: Text(
