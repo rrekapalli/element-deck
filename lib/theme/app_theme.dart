@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'ambient_background.dart';
+
 enum ColorThemeId { blue, obsidianOrbit, deepSea, graphite, chalk, custom }
 
 extension ColorThemeIdX on ColorThemeId {
@@ -135,11 +137,18 @@ class AppTheme {
       onSurface: chrome.text,
       outline: chrome.border,
     );
+    final dark = brightness == Brightness.dark;
+    final frost = dark
+        ? Colors.white.withValues(alpha: 0.10)
+        : Colors.white.withValues(alpha: 0.62);
+    final bar = dark
+        ? chrome.surface.withValues(alpha: 0.55)
+        : Colors.white.withValues(alpha: 0.58);
     final base = ThemeData(
       useMaterial3: true,
       brightness: brightness,
       colorScheme: scheme,
-      scaffoldBackgroundColor: chrome.canvas,
+      scaffoldBackgroundColor: Colors.transparent,
       fontFamily: 'Plus Jakarta Sans',
       textTheme: ThemeData(brightness: brightness).textTheme.apply(
         fontFamily: 'Plus Jakarta Sans',
@@ -148,28 +157,48 @@ class AppTheme {
       ),
     );
     return base.copyWith(
+      extensions: <ThemeExtension<dynamic>>[
+        DeckChrome(canvas: chrome.canvas, accent: chrome.action, glass: glass),
+      ],
+      pageTransitionsTheme: const PageTransitionsTheme(
+        builders: {
+          TargetPlatform.android: DeckPageTransitionsBuilder(),
+          TargetPlatform.iOS: DeckPageTransitionsBuilder(),
+          TargetPlatform.macOS: DeckPageTransitionsBuilder(),
+          TargetPlatform.windows: DeckPageTransitionsBuilder(),
+          TargetPlatform.linux: DeckPageTransitionsBuilder(),
+          TargetPlatform.fuchsia: DeckPageTransitionsBuilder(),
+        },
+      ),
       appBarTheme: AppBarTheme(
-        backgroundColor: glass
-            ? chrome.surface.withValues(alpha: 0.7)
-            : chrome.surface,
+        backgroundColor: glass ? bar : chrome.surface,
         foregroundColor: chrome.text,
+        surfaceTintColor: Colors.transparent,
+        scrolledUnderElevation: 0,
         elevation: 0,
       ),
       navigationBarTheme: NavigationBarThemeData(
-        backgroundColor: chrome.surface,
-        indicatorColor: chrome.action.withValues(alpha: 0.2),
+        backgroundColor: glass ? bar : chrome.surface,
+        surfaceTintColor: Colors.transparent,
+        elevation: 0,
+        indicatorColor: chrome.action.withValues(alpha: 0.16),
       ),
       navigationRailTheme: NavigationRailThemeData(
-        backgroundColor: chrome.surface,
-        indicatorColor: chrome.action.withValues(alpha: 0.2),
+        backgroundColor: glass ? bar : chrome.surface,
+        indicatorColor: chrome.action.withValues(alpha: 0.16),
         selectedIconTheme: IconThemeData(color: chrome.action),
         selectedLabelTextStyle: TextStyle(color: chrome.action),
       ),
       cardTheme: CardThemeData(
-        color: glass ? chrome.surface.withValues(alpha: 0.72) : chrome.surface,
+        elevation: 0,
+        color: glass ? frost : chrome.surface,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8),
-          side: BorderSide(color: chrome.border.withValues(alpha: 0.5)),
+          borderRadius: BorderRadius.circular(glass ? 16 : 8),
+          side: BorderSide(
+            color: glass
+                ? Colors.white.withValues(alpha: dark ? 0.14 : 0.72)
+                : chrome.border.withValues(alpha: 0.5),
+          ),
         ),
       ),
       inputDecorationTheme: InputDecorationTheme(

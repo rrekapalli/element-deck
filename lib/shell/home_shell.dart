@@ -9,6 +9,7 @@ import '../rooms/details_room.dart';
 import '../rooms/spectra_room.dart';
 import '../rooms/table_room.dart';
 import '../settings/settings_screens.dart';
+import '../theme/ambient_background.dart';
 import '../theme/app_brand.dart';
 import '../theme/element_deck_ui.dart';
 
@@ -55,14 +56,27 @@ class _HomeShellState extends State<HomeShell> {
               child: Row(
                 children: [
                   NavigationRail(
+                    backgroundColor: _barColor(context),
                     selectedIndex: widget.index,
                     onDestinationSelected: _go,
                     labelType: NavigationRailLabelType.all,
                     destinations: const [
-                      NavigationRailDestination(icon: Icon(Icons.grid_view), label: Text('Table')),
-                      NavigationRailDestination(icon: Icon(Icons.science_outlined), label: Text('Details')),
-                      NavigationRailDestination(icon: Icon(Icons.compare_arrows), label: Text('Compare')),
-                      NavigationRailDestination(icon: Icon(Icons.graphic_eq), label: Text('Spectra')),
+                      NavigationRailDestination(
+                        icon: Icon(Icons.grid_view),
+                        label: Text('Table'),
+                      ),
+                      NavigationRailDestination(
+                        icon: Icon(Icons.science_outlined),
+                        label: Text('Details'),
+                      ),
+                      NavigationRailDestination(
+                        icon: Icon(Icons.compare_arrows),
+                        label: Text('Compare'),
+                      ),
+                      NavigationRailDestination(
+                        icon: Icon(Icons.graphic_eq),
+                        label: Text('Spectra'),
+                      ),
                     ],
                     trailing: Expanded(
                       child: Align(
@@ -99,15 +113,23 @@ class _HomeShellState extends State<HomeShell> {
           children: [
             const AppMark(size: 36),
             const SizedBox(width: 10),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text('Element Deck'),
-                Text(
-                  'PERIODIC EXPLORER · ${titles[widget.index]}',
-                  style: Theme.of(context).textTheme.labelSmall,
-                ),
-              ],
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    'Element Deck',
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  Text(
+                    'PERIODIC EXPLORER · ${titles[widget.index]}',
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: Theme.of(context).textTheme.labelSmall,
+                  ),
+                ],
+              ),
             ),
           ],
         ),
@@ -132,17 +154,29 @@ class _HomeShellState extends State<HomeShell> {
       ),
       body: rooms[widget.index],
       bottomNavigationBar: NavigationBar(
+        backgroundColor: _barColor(context),
+        surfaceTintColor: Colors.transparent,
         selectedIndex: widget.index,
         onDestinationSelected: (i) {
           if (i == widget.index && _scroll[i].hasClients) {
-            _scroll[i].animateTo(0, duration: const Duration(milliseconds: 200), curve: Curves.easeOut);
+            _scroll[i].animateTo(
+              0,
+              duration: const Duration(milliseconds: 200),
+              curve: Curves.easeOut,
+            );
           }
           _go(i);
         },
         destinations: const [
           NavigationDestination(icon: Icon(Icons.grid_view), label: 'Table'),
-          NavigationDestination(icon: Icon(Icons.science_outlined), label: 'Details'),
-          NavigationDestination(icon: Icon(Icons.compare_arrows), label: 'Compare'),
+          NavigationDestination(
+            icon: Icon(Icons.science_outlined),
+            label: 'Details',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.compare_arrows),
+            label: 'Compare',
+          ),
           NavigationDestination(icon: Icon(Icons.graphic_eq), label: 'Spectra'),
         ],
       ),
@@ -168,7 +202,9 @@ class _HomeShellState extends State<HomeShell> {
       context: context,
       builder: (context) => const Padding(
         padding: EdgeInsets.all(16),
-        child: Text('Use category chips on Table to filter by family, including Halogen as a tag.'),
+        child: Text(
+          'Use category chips on Table to filter by family, including Halogen as a tag.',
+        ),
       ),
     );
   }
@@ -182,14 +218,18 @@ class _TitleBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final sel = context.watch<SelectionController>();
     return Material(
-      elevation: 1,
+      color: _barColor(context),
+      elevation: 0,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
         child: Row(
           children: [
             const AppMark(size: 32),
             const SizedBox(width: 10),
-            const Text('Element Deck', style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18)),
+            const Text(
+              'Element Deck',
+              style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18),
+            ),
             const SizedBox(width: 16),
             Text(title),
             const Spacer(),
@@ -206,13 +246,27 @@ class _TitleBar extends StatelessWidget {
             ),
             IconButton(
               icon: const Icon(Icons.help_outline),
-              onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const HelpPage())),
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const HelpPage()),
+              ),
             ),
           ],
         ),
       ),
     );
   }
+}
+
+Color _barColor(BuildContext context) {
+  final chrome = Theme.of(context).extension<DeckChrome>();
+  if (chrome == null || !chrome.glass) {
+    return Theme.of(context).colorScheme.surface;
+  }
+  final dark = Theme.of(context).brightness == Brightness.dark;
+  return dark
+      ? Colors.white.withValues(alpha: 0.08)
+      : Colors.white.withValues(alpha: 0.58);
 }
 
 class _Footer extends StatelessWidget {
@@ -222,6 +276,8 @@ class _Footer extends StatelessWidget {
   Widget build(BuildContext context) {
     final settings = context.watch<CatalogController>();
     return Material(
+      color: _barColor(context),
+      elevation: 0,
       child: Padding(
         padding: const EdgeInsets.all(8),
         child: Row(

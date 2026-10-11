@@ -6,6 +6,37 @@ import '../providers/selection_controller.dart';
 import '../theme/app_theme.dart';
 import '../theme/element_spectrum.dart';
 
+/// Pins [ElementHeader] and lets [child] scroll beneath it.
+class ElementDossier extends StatelessWidget {
+  const ElementDossier({super.key, required this.element, required this.child});
+
+  final ElementRecord element;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Material(
+          color: theme.scaffoldBackgroundColor,
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
+            child: ElementHeader(element: element),
+          ),
+        ),
+        Divider(
+          height: 1,
+          thickness: 1,
+          color: theme.colorScheme.outline.withValues(alpha: 0.35),
+        ),
+        Expanded(child: child),
+      ],
+    );
+  }
+}
+
 /// Identity block shared by Details and Spectra: isotope line, symbol, name, mass, classification.
 class ElementHeader extends StatelessWidget {
   const ElementHeader({super.key, required this.element});

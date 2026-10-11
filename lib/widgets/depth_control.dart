@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/settings_controller.dart';
+import '../theme/ambient_background.dart';
 import '../theme/app_theme.dart';
 
 class DepthControl extends StatelessWidget {
@@ -71,7 +72,9 @@ extension on BuildContext {
     // Avoid circular import by reading Theme.
     final cs = Theme.of(this).colorScheme;
     return ChromePalette(
-      canvas: Theme.of(this).scaffoldBackgroundColor,
+      canvas:
+          Theme.of(this).extension<DeckChrome>()?.canvas ??
+          Theme.of(this).scaffoldBackgroundColor,
       surface: cs.surface,
       raised: cs.surface,
       border: cs.outline,

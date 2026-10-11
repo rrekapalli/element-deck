@@ -80,6 +80,16 @@ class ElectronCloud {
   static const _nStar = <double>[0, 1, 2, 3, 3.7, 4.0, 4.2, 4.4];
   static const _lOf = <String, int>{'s': 0, 'p': 1, 'd': 2, 'f': 3};
 
+  /// Every subshell, with a noble-gas core such as `[He]` written out.
+  ///
+  /// `[He] 2s2 2p1` becomes `1s2 2s2 2p1`. Order follows the shorthand:
+  /// the core, then the valence terms as written.
+  static String expandedConfiguration(String configuration) {
+    final subs = _expand(configuration);
+    if (subs.isEmpty) return configuration.trim();
+    return subs.map((s) => '${s.label}${s.count}').join(' ');
+  }
+
   /// Parses a full or noble-gas configuration into one node per electron.
   /// Returns null when the string yields no electrons.
   static ElectronCloud? fromConfiguration({

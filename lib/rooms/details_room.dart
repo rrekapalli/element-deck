@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../models/catalog.dart';
+import '../models/orbital_force.dart';
 import '../models/periodic_layout.dart';
 import '../providers/selection_controller.dart';
 import '../providers/settings_controller.dart';
@@ -57,22 +58,23 @@ class _DetailsRoomState extends State<DetailsRoom> {
         ],
       );
     }
-    return ListView(
-      controller: _scroll,
-      padding: const EdgeInsets.fromLTRB(16, 8, 16, 32),
-      children: [
-        ElementHeader(element: e),
-        const SizedBox(height: 8),
-        _DossierTabs(tab: _tab, onChanged: _selectTab),
-        const SizedBox(height: 8),
-        Text(_caption(_tab), style: Theme.of(context).textTheme.bodySmall),
-        const SizedBox(height: 12),
-        ...switch (_tab) {
-          _DossierTab.details => _details(context, e, settings),
-          _DossierTab.history => _history(context, e),
-          _DossierTab.data => _data(context, e, settings),
-        },
-      ],
+    return ElementDossier(
+      element: e,
+      child: ListView(
+        controller: _scroll,
+        padding: const EdgeInsets.fromLTRB(16, 12, 16, 32),
+        children: [
+          _DossierTabs(tab: _tab, onChanged: _selectTab),
+          const SizedBox(height: 8),
+          Text(_caption(_tab), style: Theme.of(context).textTheme.bodySmall),
+          const SizedBox(height: 12),
+          ...switch (_tab) {
+            _DossierTab.details => _details(context, e, settings),
+            _DossierTab.history => _history(context, e),
+            _DossierTab.data => _data(context, e, settings),
+          },
+        ],
+      ),
     );
   }
 
@@ -86,7 +88,6 @@ class _DetailsRoomState extends State<DetailsRoom> {
       const SizedBox(height: 12),
       _ShellDiagram(
         element: e,
-        shorthand: settings.configShorthand,
         reducedMotion: settings.reducedMotion,
         energyUnit: settings.energy,
       ),
@@ -176,8 +177,12 @@ class _DetailsRoomState extends State<DetailsRoom> {
       _DataCard(
         title: 'Electrons',
         rows: [
-          _Row('Configuration', e.electronConfigFull),
-          if (e.electronConfig != e.electronConfigFull)
+          _Row(
+            'Configuration',
+            ElectronCloud.expandedConfiguration(e.electronConfigFull),
+          ),
+          if (e.electronConfig !=
+              ElectronCloud.expandedConfiguration(e.electronConfigFull))
             _Row('Shorthand', e.electronConfig),
           _Row('Shells', _shells(e.shellCounts)),
           _Row(
@@ -381,22 +386,24 @@ class _DossierTabs extends StatelessWidget {
 class _ShellDiagram extends StatelessWidget {
   const _ShellDiagram({
     required this.element,
-    required this.shorthand,
     required this.reducedMotion,
     required this.energyUnit,
   });
 
   final ElementRecord element;
-  final bool shorthand;
   final bool reducedMotion;
   final String energyUnit;
 
   @override
   Widget build(BuildContext context) {
+    final full = ElectronCloud.expandedConfiguration(
+      element.electronConfigFull,
+    );
     return Card(
       child: Padding(
         padding: const EdgeInsets.fromLTRB(12, 16, 12, 16),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             ElectronForceGraph(
               atomicNumber: element.z,
@@ -406,10 +413,16 @@ class _ShellDiagram extends StatelessWidget {
               reducedMotion: reducedMotion,
               energyUnit: energyUnit,
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 16),
             Text(
-              element.configFor(shorthand: shorthand),
-              style: Mono.of(context, size: 13),
+              'Configuration',
+              style: Theme.of(context).textTheme.titleSmall
+                  ?.copyWith(fontWeight: FontWeight.w700),
+            ),
+            const SizedBox(height: 4),
+            Text(
+              full,
+              style: Mono.of(context, size: 14, weight: FontWeight.w600),
             ),
           ],
         ),

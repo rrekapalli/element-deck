@@ -295,22 +295,115 @@ class _EnergyLegend extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final border = theme.colorScheme.outline.withValues(alpha: 0.4);
+    final headerBg = theme.colorScheme.surfaceContainerHighest.withValues(
+      alpha: 0.7,
+    );
     final rings = sim.rings;
-    return Wrap(
-      spacing: 12,
-      runSpacing: 4,
-      alignment: WrapAlignment.center,
-      children: [
-        for (final ring in rings)
-          Text(
-            '${ring.label}  ${formatBindingEnergy(ring.bindingEv, unit)}',
-            style: TextStyle(
-              fontFamily: 'JetBrains Mono',
-              fontSize: 11,
-              color: color,
+    final labelStyle = TextStyle(
+      fontFamily: 'JetBrains Mono',
+      fontSize: 12,
+      fontWeight: FontWeight.w700,
+      color: theme.colorScheme.onSurface,
+    );
+    final valueStyle = TextStyle(
+      fontFamily: 'JetBrains Mono',
+      fontSize: 11,
+      color: color,
+    );
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: ConstrainedBox(
+            constraints: BoxConstraints(minWidth: constraints.maxWidth),
+            child: Center(
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  border: Border.all(color: border),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(7),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      for (var i = 0; i < rings.length; i++) ...[
+                        if (i > 0) Container(width: 1, color: border),
+                        _EnergyCell(
+                          label: rings[i].label,
+                          value: formatBindingEnergy(rings[i].bindingEv, unit),
+                          labelStyle: labelStyle,
+                          valueStyle: valueStyle,
+                          headerColor: headerBg,
+                          dividerColor: border,
+                        ),
+                      ],
+                    ],
+                  ),
+                ),
+              ),
             ),
           ),
-      ],
+        );
+      },
+    );
+  }
+}
+
+class _EnergyCell extends StatelessWidget {
+  const _EnergyCell({
+    required this.label,
+    required this.value,
+    required this.labelStyle,
+    required this.valueStyle,
+    required this.headerColor,
+    required this.dividerColor,
+  });
+
+  final String label;
+  final String value;
+  final TextStyle labelStyle;
+  final TextStyle valueStyle;
+  final Color headerColor;
+  final Color dividerColor;
+
+  @override
+  Widget build(BuildContext context) {
+    return ConstrainedBox(
+      constraints: const BoxConstraints(minWidth: 84),
+      child: IntrinsicWidth(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            ColoredBox(
+              color: headerColor,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 6,
+                ),
+                child: Text(
+                  label,
+                  textAlign: TextAlign.center,
+                  style: labelStyle,
+                ),
+              ),
+            ),
+            Container(height: 1, color: dividerColor),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+              child: Text(
+                value,
+                textAlign: TextAlign.center,
+                style: valueStyle,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

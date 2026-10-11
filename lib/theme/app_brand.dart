@@ -33,7 +33,12 @@ class _AppMarkPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final side = size.shortestSide;
     final inset = side * 0.16;
-    final rect = Rect.fromLTWH(inset, inset, side - inset * 2, side - inset * 2);
+    final rect = Rect.fromLTWH(
+      inset,
+      inset,
+      side - inset * 2,
+      side - inset * 2,
+    );
     final radius = Radius.circular(rect.width * 0.18);
     final rrect = RRect.fromRectAndRadius(rect, radius);
 
@@ -58,7 +63,10 @@ class _AppMarkPainter extends CustomPainter {
       ),
       textDirection: TextDirection.ltr,
     )..layout();
-    z.paint(canvas, Offset(rect.left + rect.width * 0.1, rect.top + rect.height * 0.08));
+    z.paint(
+      canvas,
+      Offset(rect.left + rect.width * 0.1, rect.top + rect.height * 0.08),
+    );
 
     final symbol = TextPainter(
       text: TextSpan(
@@ -147,7 +155,7 @@ class _SplashBody extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             Text(
-              caption,
+              caption!,
               style: const TextStyle(color: AppBrand.muted, fontSize: 13),
             ),
           ],

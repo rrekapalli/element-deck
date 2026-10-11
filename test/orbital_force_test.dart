@@ -9,6 +9,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
+  test('noble-gas shorthand expands to every subshell', () {
+    expect(ElectronCloud.expandedConfiguration('[He] 2s2 2p1'), '1s2 2s2 2p1');
+    expect(
+      ElectronCloud.expandedConfiguration('[Ar] 3d5 4s1'),
+      '1s2 2s2 2p6 3s2 3p6 3d5 4s1',
+    );
+    expect(
+      ElectronCloud.expandedConfiguration('[Kr] 4d10'),
+      '1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 4d10',
+    );
+    expect(ElectronCloud.expandedConfiguration('1s1'), '1s1');
+  });
+
   test('hydrogen binding energy is the Rydberg energy', () {
     final cloud = ElectronCloud.fromConfiguration(z: 1, configuration: '1s1');
     expect(cloud, isNotNull);

@@ -14,6 +14,7 @@ import 'providers/selection_controller.dart';
 import 'providers/settings_controller.dart';
 import 'providers/theme_controller.dart';
 import 'shell/home_shell.dart';
+import 'theme/ambient_background.dart';
 import 'theme/app_brand.dart';
 
 class ElementDeckApp extends StatefulWidget {
@@ -59,31 +60,32 @@ class _ElementDeckAppState extends State<ElementDeckApp> {
       routes: [
         GoRoute(
           path: '/',
-          builder: (context, state) => const HomeShell(index: 0),
+          pageBuilder: (context, state) =>
+              const NoTransitionPage(child: HomeShell(index: 0)),
         ),
         GoRoute(
           path: '/e/:z',
-          builder: (context, state) {
+          pageBuilder: (context, state) {
             final z = int.tryParse(state.pathParameters['z'] ?? '') ?? 1;
             selection.select(z);
-            return const HomeShell(index: 1);
+            return const NoTransitionPage(child: HomeShell(index: 1));
           },
         ),
         GoRoute(
           path: '/e/:z/spectra',
-          builder: (context, state) {
+          pageBuilder: (context, state) {
             final z = int.tryParse(state.pathParameters['z'] ?? '') ?? 1;
             selection.select(z);
-            return const HomeShell(index: 3);
+            return const NoTransitionPage(child: HomeShell(index: 3));
           },
         ),
         GoRoute(
           path: '/compare/:a/:b',
-          builder: (context, state) {
+          pageBuilder: (context, state) {
             final a = int.tryParse(state.pathParameters['a'] ?? '') ?? 6;
             final b = int.tryParse(state.pathParameters['b'] ?? '') ?? 14;
             selection.setPair(a, b);
-            return const HomeShell(index: 2);
+            return const NoTransitionPage(child: HomeShell(index: 2));
           },
         ),
       ],
@@ -153,6 +155,11 @@ class _ElementDeckAppState extends State<ElementDeckApp> {
             darkTheme: theme.dark,
             themeMode: theme.mode,
             routerConfig: router,
+            builder: (context, child) {
+              return AmbientBackground(
+                child: child ?? const SizedBox.shrink(),
+              );
+            },
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
           );
