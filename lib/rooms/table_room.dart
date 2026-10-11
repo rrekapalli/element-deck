@@ -33,66 +33,50 @@ class TableRoom extends StatelessWidget {
     final catalog = context.watch<CatalogController>();
     final sel = context.watch<SelectionController>();
     final tablet = ElementDeckUi.isTabletOrWider(context);
-    final table = PeriodicTableView(
-      pack: catalog.pack,
-      selectedZ: sel.currentZ,
-      search: sel.search,
-      categoryFilter: sel.categoryFilter,
-      onOpen: onOpenElement,
-      fit: tablet,
-    );
-
-    if (tablet) {
-      return Padding(
-        padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            const DepthControl(),
-            const SizedBox(height: 8),
-            const _SearchAndChips(),
-            const SizedBox(height: 12),
-            Expanded(child: table),
-          ],
-        ),
-      );
-    }
-
     final filtered = sel.filtered;
-    return ListView(
-      padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
-      children: [
-        const DepthControl(),
-        const SizedBox(height: 12),
-        table,
-        const SizedBox(height: 12),
-        const _SearchAndChips(),
-        const SizedBox(height: 8),
-        Text(
-          filtered.isEmpty
-              ? 'Atomic Registry · 0 shown'
-              : 'Atomic Registry · ${filtered.length} shown',
-          style: Theme.of(context).textTheme.labelMedium,
-        ),
-        if (filtered.isEmpty && sel.search.isNotEmpty) ...[
-          Text(
-            catalog.isPreview &&
-                    (int.tryParse(sel.search.trim()) ?? 0) >= 1 &&
-                    (int.tryParse(sel.search.trim()) ?? 0) <= 118 &&
-                    catalog.pack.byZ(int.parse(sel.search.trim())) == null
-                ? 'In the full pack'
-                : 'No element matches "${sel.search}"',
+
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 8, 16, 12),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          const DepthControl(),
+          const SizedBox(height: 8),
+          const _SearchAndChips(),
+          const SizedBox(height: 8),
+          Expanded(
+            flex: tablet ? 1 : 3,
+            child: PeriodicTableView(
+              pack: catalog.pack,
+              selectedZ: sel.currentZ,
+              search: sel.search,
+              categoryFilter: sel.categoryFilter,
+              onOpen: onOpenElement,
+            ),
           ),
-          TextButton(onPressed: () => sel.setSearch(''), child: const Text('Clear search')),
+          if (!tablet) ...[
+            const SizedBox(height: 8),
+            Text(
+              'Atomic Registry · ${filtered.length} shown',
+              style: Theme.of(context).textTheme.labelMedium,
+            ),
+            const SizedBox(height: 4),
+            Expanded(
+              flex: 2,
+              child: ListView(
+                children: [
+                  for (final e in filtered)
+                    ElementRowCard(
+                      element: e,
+                      selected: e.z == sel.currentZ,
+                      onTap: () => onOpenElement(e.z),
+                    ),
+                ],
+              ),
+            ),
+          ],
         ],
-        const SizedBox(height: 8),
-        for (final e in filtered)
-          ElementRowCard(
-            element: e,
-            selected: e.z == sel.currentZ,
-            onTap: () => onOpenElement(e.z),
-          ),
-      ],
+      ),
     );
   }
 }
@@ -108,12 +92,13 @@ class _SearchAndChips extends StatelessWidget {
       children: [
         TextField(
           decoration: const InputDecoration(
+            isDense: true,
             prefixIcon: Icon(Icons.search),
             hintText: 'Search element by name, symbol, or number',
           ),
           onChanged: sel.setSearch,
         ),
-        const SizedBox(height: 10),
+        const SizedBox(height: 8),
         SizedBox(
           height: 40,
           child: ListView(
