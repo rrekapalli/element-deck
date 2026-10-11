@@ -2,7 +2,8 @@
   "id": "core",
   "version": "1.1.0",
   "sciencePins": [
-    "compiled-v1.1"
+    "compiled-v1.1",
+    "NIST ASD"
   ],
   "trendNotes": [
     {
@@ -141,6 +142,24 @@
         }
       ],
       "spectralLines": [
+        {
+          "id": "H-383.54",
+          "nm": 383.54,
+          "eV": 3.233,
+          "transition": "n=9 \u2192 n=2",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 781645872659957.1
+        },
+        {
+          "id": "H-388.90",
+          "nm": 388.9,
+          "eV": 3.188,
+          "transition": "n=8 \u2192 n=2",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 770872867060941.1
+        },
         {
           "id": "H-410.17",
           "nm": 410.17,
@@ -302,7 +321,7 @@
           "id": "He-388.86",
           "nm": 388.86,
           "eV": 3.188,
-          "transition": "He I",
+          "transition": "He I 3S \u2192 3P*",
           "color": "violet",
           "spectrum": "emission",
           "frequencyHz": 770952162732088.5
@@ -311,7 +330,7 @@
           "id": "He-447.15",
           "nm": 447.15,
           "eV": 2.773,
-          "transition": "He I",
+          "transition": "He I 3P* \u2192 3D",
           "color": "violet",
           "spectrum": "emission",
           "frequencyHz": 670451656043833.1
@@ -338,7 +357,7 @@
           "id": "He-501.57",
           "nm": 501.57,
           "eV": 2.472,
-          "transition": "He I",
+          "transition": "He I 1S \u2192 1P*",
           "color": "green",
           "spectrum": "emission",
           "frequencyHz": 597708112526666.2
@@ -347,7 +366,7 @@
           "id": "He-587.56",
           "nm": 587.56,
           "eV": 2.11,
-          "transition": "He I",
+          "transition": "He I 3P* \u2192 3D",
           "color": "yellow",
           "spectrum": "emission",
           "frequencyHz": 510232925999046.94
@@ -356,7 +375,7 @@
           "id": "He-667.82",
           "nm": 667.82,
           "eV": 1.857,
-          "transition": "He I",
+          "transition": "He I 1P* \u2192 1D",
           "color": "red",
           "spectrum": "emission",
           "frequencyHz": 448912069120421.6
@@ -365,7 +384,7 @@
           "id": "He-706.52",
           "nm": 706.52,
           "eV": 1.755,
-          "transition": "He I",
+          "transition": "He I 3P* \u2192 3S",
           "color": "red",
           "spectrum": "emission",
           "frequencyHz": 424322677348128.8
@@ -470,10 +489,46 @@
       ],
       "spectralLines": [
         {
+          "id": "Li-391.53",
+          "nm": 391.53,
+          "eV": 3.167,
+          "transition": "Li I 2P* \u2192 2D",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 765694730927387.4
+        },
+        {
+          "id": "Li-413.26",
+          "nm": 413.26,
+          "eV": 3.0,
+          "transition": "Li I 2P* \u2192 2D",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 725433039732855.8
+        },
+        {
+          "id": "Li-427.31",
+          "nm": 427.31,
+          "eV": 2.902,
+          "transition": "Li I 2P* \u2192 2S",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 701580721256230.8
+        },
+        {
+          "id": "Li-460.28",
+          "nm": 460.28,
+          "eV": 2.694,
+          "transition": "Li I 2P* \u2192 2D",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 651326275310680.5
+        },
+        {
           "id": "Li-610.36",
           "nm": 610.36,
           "eV": 2.031,
-          "transition": "Li I",
+          "transition": "Li I 2P* \u2192 2D",
           "color": "orange",
           "spectrum": "both",
           "frequencyHz": 491173173209253.5
@@ -482,7 +537,7 @@
           "id": "Li-670.78",
           "nm": 670.78,
           "eV": 1.848,
-          "transition": "Li I",
+          "transition": "Li I 2S \u2192 2P*",
           "color": "red",
           "spectrum": "both",
           "frequencyHz": 446931121977399.44
@@ -596,13 +651,58 @@
           "frequencyHz": 1276473039257429.8
         },
         {
+          "id": "Be-381.35",
+          "nm": 381.35,
+          "eV": 3.251,
+          "transition": "Be I 1P* \u2192 1D",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 786134674183820.5
+        },
+        {
+          "id": "Be-440.79",
+          "nm": 440.79,
+          "eV": 2.813,
+          "transition": "Be I 1P* \u2192 1S",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 680125361283150.6
+        },
+        {
           "id": "Be-457.27",
           "nm": 457.27,
           "eV": 2.711,
-          "transition": "Be I",
+          "transition": "Be I 1P* \u2192 1D",
           "color": "blue",
           "spectrum": "both",
           "frequencyHz": 655613659325999.9
+        },
+        {
+          "id": "Be-656.45",
+          "nm": 656.45,
+          "eV": 1.889,
+          "transition": "Be I 1D \u2192 1F*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 456687421738136.9
+        },
+        {
+          "id": "Be-698.27",
+          "nm": 698.27,
+          "eV": 1.776,
+          "transition": "Be I 1P* \u2192 1D",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 429336013289988.06
+        },
+        {
+          "id": "Be-720.91",
+          "nm": 720.91,
+          "eV": 1.72,
+          "transition": "Be I 1D \u2192 1F*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 415852822127588.75
         }
       ],
       "isotopes": [
@@ -720,6 +820,60 @@
           "color": "UV",
           "spectrum": "both",
           "frequencyHz": 1200274084157424.5
+        },
+        {
+          "id": "B-576.19",
+          "nm": 576.19,
+          "eV": 2.152,
+          "transition": "B I 2D \u2192 2F*",
+          "color": "yellow",
+          "spectrum": "emission",
+          "frequencyHz": 520301390166438.06
+        },
+        {
+          "id": "B-581.84",
+          "nm": 581.84,
+          "eV": 2.131,
+          "transition": "B I 2P \u2192 2D*",
+          "color": "yellow",
+          "spectrum": "emission",
+          "frequencyHz": 515248965351299.3
+        },
+        {
+          "id": "B-582.11",
+          "nm": 582.11,
+          "eV": 2.13,
+          "transition": "B I 2P \u2192 2D*",
+          "color": "yellow",
+          "spectrum": "emission",
+          "frequencyHz": 515009977495662.25
+        },
+        {
+          "id": "B-582.23",
+          "nm": 582.23,
+          "eV": 2.129,
+          "transition": "B I 2P \u2192 2D*",
+          "color": "yellow",
+          "spectrum": "emission",
+          "frequencyHz": 514903831819040.5
+        },
+        {
+          "id": "B-594.26",
+          "nm": 594.26,
+          "eV": 2.086,
+          "transition": "B I 2D \u2192 2F*",
+          "color": "orange",
+          "spectrum": "emission",
+          "frequencyHz": 504480291454918.7
+        },
+        {
+          "id": "B-624.46",
+          "nm": 624.46,
+          "eV": 1.985,
+          "transition": "B I 2D \u2192 2F*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 480082724273772.5
         }
       ],
       "isotopes": [
@@ -838,6 +992,60 @@
           "color": "UV",
           "spectrum": "emission",
           "frequencyHz": 1552604785333264.2
+        },
+        {
+          "id": "C-493.20",
+          "nm": 493.2,
+          "eV": 2.514,
+          "transition": "C I 1P* \u2192 1S",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 607851699107867.0
+        },
+        {
+          "id": "C-505.21",
+          "nm": 505.21,
+          "eV": 2.454,
+          "transition": "C I 1P* \u2192 1D",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 593401670592426.9
+        },
+        {
+          "id": "C-538.03",
+          "nm": 538.03,
+          "eV": 2.304,
+          "transition": "C I 1P* \u2192 1P",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 557203981190640.0
+        },
+        {
+          "id": "C-601.32",
+          "nm": 601.32,
+          "eV": 2.062,
+          "transition": "C I 3D \u2192 3P*",
+          "color": "orange",
+          "spectrum": "emission",
+          "frequencyHz": 498557270671190.0
+        },
+        {
+          "id": "C-711.32",
+          "nm": 711.32,
+          "eV": 1.743,
+          "transition": "C I 3D \u2192 3F*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 421459340381262.94
+        },
+        {
+          "id": "C-711.52",
+          "nm": 711.52,
+          "eV": 1.743,
+          "transition": "C I 3D \u2192 3P*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 421340873060490.2
         }
       ],
       "isotopes": [
@@ -974,10 +1182,46 @@
       ],
       "spectralLines": [
         {
+          "id": "N-496.40",
+          "nm": 496.4,
+          "eV": 2.498,
+          "transition": "N I",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 603933235294117.6
+        },
+        {
+          "id": "N-575.25",
+          "nm": 575.25,
+          "eV": 2.155,
+          "transition": "N I 4P* \u2192 4D",
+          "color": "yellow",
+          "spectrum": "emission",
+          "frequencyHz": 521151600173837.44
+        },
+        {
+          "id": "N-648.27",
+          "nm": 648.27,
+          "eV": 1.913,
+          "transition": "N I 4D* \u2192 4F",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 462449994601015.0
+        },
+        {
+          "id": "N-742.36",
+          "nm": 742.36,
+          "eV": 1.67,
+          "transition": "N I 4P \u2192 4S*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 403837030551215.0
+        },
+        {
           "id": "N-744.23",
           "nm": 744.23,
           "eV": 1.666,
-          "transition": "N I",
+          "transition": "N I 4P \u2192 4S*",
           "color": "red",
           "spectrum": "both",
           "frequencyHz": 402822323744003.8
@@ -986,7 +1230,7 @@
           "id": "N-746.83",
           "nm": 746.83,
           "eV": 1.66,
-          "transition": "N I",
+          "transition": "N I 4P \u2192 4S*",
           "color": "red",
           "spectrum": "both",
           "frequencyHz": 401419945636891.9
@@ -1099,10 +1343,37 @@
       ],
       "spectralLines": [
         {
+          "id": "O-615.68",
+          "nm": 615.68,
+          "eV": 2.014,
+          "transition": "O I 5P \u2192 5D*",
+          "color": "orange",
+          "spectrum": "emission",
+          "frequencyHz": 486929018321205.9
+        },
+        {
+          "id": "O-615.82",
+          "nm": 615.82,
+          "eV": 2.013,
+          "transition": "O I 5P \u2192 5D*",
+          "color": "orange",
+          "spectrum": "emission",
+          "frequencyHz": 486818320288395.9
+        },
+        {
+          "id": "O-700.22",
+          "nm": 700.22,
+          "eV": 1.771,
+          "transition": "O I 3P \u2192 3D*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 428140381594356.0
+        },
+        {
           "id": "O-777.19",
           "nm": 777.19,
           "eV": 1.595,
-          "transition": "O I",
+          "transition": "O I 5S* \u2192 5P",
           "color": "red",
           "spectrum": "both",
           "frequencyHz": 385738954438425.56
@@ -1111,7 +1382,7 @@
           "id": "O-777.42",
           "nm": 777.42,
           "eV": 1.595,
-          "transition": "O I",
+          "transition": "O I 5S* \u2192 5P",
           "color": "red",
           "spectrum": "both",
           "frequencyHz": 385624833423374.75
@@ -1120,7 +1391,7 @@
           "id": "O-777.54",
           "nm": 777.54,
           "eV": 1.595,
-          "transition": "O I",
+          "transition": "O I 5S* \u2192 5P",
           "color": "red",
           "spectrum": "both",
           "frequencyHz": 385565318826041.1
@@ -1225,7 +1496,62 @@
           "body": "Element Deck describes published chemistry of Fluorine. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "F-685.60",
+          "nm": 685.6,
+          "eV": 1.808,
+          "transition": "F I 4P \u2192 4D*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 437270212952158.7
+        },
+        {
+          "id": "F-690.25",
+          "nm": 690.25,
+          "eV": 1.796,
+          "transition": "F I 4P \u2192 4D*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 434324459253893.44
+        },
+        {
+          "id": "F-703.75",
+          "nm": 703.75,
+          "eV": 1.762,
+          "transition": "F I 2P \u2192 2P*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 425992835523978.7
+        },
+        {
+          "id": "F-712.79",
+          "nm": 712.79,
+          "eV": 1.739,
+          "transition": "F I 2P \u2192 2P*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 420590156988734.4
+        },
+        {
+          "id": "F-720.24",
+          "nm": 720.24,
+          "eV": 1.721,
+          "transition": "F I 2P \u2192 2P*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 416239667333111.2
+        },
+        {
+          "id": "F-775.47",
+          "nm": 775.47,
+          "eV": 1.599,
+          "transition": "F I 2P \u2192 2D*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 386594527189962.2
+        }
+      ],
       "isotopes": [
         {
           "a": 19,
@@ -1355,6 +1681,51 @@
           "color": "red",
           "spectrum": "emission",
           "frequencyHz": 468264749617319.0
+        },
+        {
+          "id": "Ne-692.95",
+          "nm": 692.95,
+          "eV": 1.789,
+          "transition": "Ne I 2[1/2]* \u2192 2[3/2]",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 432632163936791.94
+        },
+        {
+          "id": "Ne-702.40",
+          "nm": 702.4,
+          "eV": 1.765,
+          "transition": "Ne I 2[1/2]* \u2192 2[3/2]",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 426811585990888.4
+        },
+        {
+          "id": "Ne-703.24",
+          "nm": 703.24,
+          "eV": 1.763,
+          "transition": "Ne I 2[3/2]* \u2192 2[1/2]",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 426301771799101.25
+        },
+        {
+          "id": "Ne-717.39",
+          "nm": 717.39,
+          "eV": 1.728,
+          "transition": "Ne I 2[1/2]* \u2192 2[5/2]",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 417893277018079.4
+        },
+        {
+          "id": "Ne-724.52",
+          "nm": 724.52,
+          "eV": 1.711,
+          "transition": "Ne I 2[3/2]* \u2192 2[1/2]",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 413780790040302.5
         }
       ],
       "isotopes": [
@@ -1505,10 +1876,46 @@
       ],
       "spectralLines": [
         {
+          "id": "Na-388.18",
+          "nm": 388.18,
+          "eV": 3.194,
+          "transition": "Na I 4D \u2192 4F*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 772302689473955.4
+        },
+        {
+          "id": "Na-391.79",
+          "nm": 391.79,
+          "eV": 3.165,
+          "transition": "Na I 4D \u2192 4F*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 765186599964266.5
+        },
+        {
+          "id": "Na-443.23",
+          "nm": 443.23,
+          "eV": 2.797,
+          "transition": "Na I 4S \u2192 4P*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 676381242244432.9
+        },
+        {
+          "id": "Na-507.12",
+          "nm": 507.12,
+          "eV": 2.445,
+          "transition": "Na I 4D \u2192 4P*",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 591166702161224.1
+        },
+        {
           "id": "Na-589.00",
           "nm": 588.995,
           "eV": 2.105,
-          "transition": "Na I",
+          "transition": "Na I 2S \u2192 2P*",
           "color": "yellow",
           "spectrum": "both",
           "frequencyHz": 508989818249730.44
@@ -1517,7 +1924,7 @@
           "id": "Na-589.59",
           "nm": 589.592,
           "eV": 2.103,
-          "transition": "Na I",
+          "transition": "Na I 2S \u2192 2P*",
           "color": "yellow",
           "spectrum": "both",
           "frequencyHz": 508474433167342.8
@@ -1623,10 +2030,28 @@
       ],
       "spectralLines": [
         {
+          "id": "Mg-383.23",
+          "nm": 383.23,
+          "eV": 3.235,
+          "transition": "Mg I 3P* \u2192 3D",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 782278156720507.2
+        },
+        {
+          "id": "Mg-383.83",
+          "nm": 383.83,
+          "eV": 3.23,
+          "transition": "Mg I 3P* \u2192 3D",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 781055305734309.4
+        },
+        {
           "id": "Mg-516.73",
           "nm": 516.73,
           "eV": 2.399,
-          "transition": "Mg I",
+          "transition": "Mg I 3P* \u2192 3S",
           "color": "green",
           "spectrum": "both",
           "frequencyHz": 580172349195905.0
@@ -1635,7 +2060,7 @@
           "id": "Mg-517.27",
           "nm": 517.27,
           "eV": 2.397,
-          "transition": "Mg I",
+          "transition": "Mg I 3P* \u2192 3S",
           "color": "green",
           "spectrum": "both",
           "frequencyHz": 579566682776886.4
@@ -1644,10 +2069,19 @@
           "id": "Mg-518.36",
           "nm": 518.36,
           "eV": 2.392,
-          "transition": "Mg I",
+          "transition": "Mg I 3P* \u2192 3S",
           "color": "green",
           "spectrum": "both",
           "frequencyHz": 578347978239061.6
+        },
+        {
+          "id": "Mg-552.84",
+          "nm": 552.84,
+          "eV": 2.243,
+          "transition": "Mg I 1P* \u2192 1D",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 542277074741335.56
         }
       ],
       "isotopes": [
@@ -1761,7 +2195,7 @@
           "id": "Al-394.40",
           "nm": 394.4,
           "eV": 3.144,
-          "transition": "Al I",
+          "transition": "Al I 2P* \u2192 2S",
           "color": "violet",
           "spectrum": "both",
           "frequencyHz": 760122865111561.9
@@ -1770,10 +2204,46 @@
           "id": "Al-396.15",
           "nm": 396.15,
           "eV": 3.13,
-          "transition": "Al I",
+          "transition": "Al I 2P* \u2192 2S",
           "color": "violet",
           "spectrum": "both",
           "frequencyHz": 756765008203963.1
+        },
+        {
+          "id": "Al-555.71",
+          "nm": 555.71,
+          "eV": 2.231,
+          "transition": "Al I 2S \u2192 2P*",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 539476449946914.7
+        },
+        {
+          "id": "Al-669.60",
+          "nm": 669.6,
+          "eV": 1.852,
+          "transition": "Al I 2S \u2192 2P*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 447718724611708.5
+        },
+        {
+          "id": "Al-669.87",
+          "nm": 669.87,
+          "eV": 1.851,
+          "transition": "Al I 2S \u2192 2P*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 447538265633630.4
+        },
+        {
+          "id": "Al-736.23",
+          "nm": 736.23,
+          "eV": 1.684,
+          "transition": "Al I 2D \u2192 2F*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 407199459408065.4
         }
       ],
       "isotopes": [
@@ -1905,10 +2375,55 @@
           "id": "Si-390.55",
           "nm": 390.55,
           "eV": 3.175,
-          "transition": "Si I",
+          "transition": "Si I 1S \u2192 1P*",
           "color": "violet",
           "spectrum": "both",
           "frequencyHz": 767616074766355.1
+        },
+        {
+          "id": "Si-703.49",
+          "nm": 703.49,
+          "eV": 1.762,
+          "transition": "Si I",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 426150276478699.0
+        },
+        {
+          "id": "Si-728.92",
+          "nm": 728.92,
+          "eV": 1.701,
+          "transition": "Si I",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 411283073588322.44
+        },
+        {
+          "id": "Si-740.58",
+          "nm": 740.58,
+          "eV": 1.674,
+          "transition": "Si I",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 404807661562559.0
+        },
+        {
+          "id": "Si-741.59",
+          "nm": 741.59,
+          "eV": 1.672,
+          "transition": "Si I",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 404256338408015.2
+        },
+        {
+          "id": "Si-742.35",
+          "nm": 742.35,
+          "eV": 1.67,
+          "transition": "Si I",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 403842470532767.5
         }
       ],
       "isotopes": [
@@ -2027,7 +2542,62 @@
           "body": "Element Deck describes published chemistry of Phosphorus. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "P-516.23",
+          "nm": 516.23,
+          "eV": 2.402,
+          "transition": "P I",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 580734281231234.1
+        },
+        {
+          "id": "P-534.59",
+          "nm": 534.59,
+          "eV": 2.319,
+          "transition": "P I 2P \u2192 2P*",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 560789498494173.0
+        },
+        {
+          "id": "P-547.77",
+          "nm": 547.77,
+          "eV": 2.263,
+          "transition": "P I 2P \u2192 2D*",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 547296233820764.2
+        },
+        {
+          "id": "P-609.77",
+          "nm": 609.77,
+          "eV": 2.033,
+          "transition": "P I",
+          "color": "orange",
+          "spectrum": "emission",
+          "frequencyHz": 491648421535989.0
+        },
+        {
+          "id": "P-619.90",
+          "nm": 619.9,
+          "eV": 2.0,
+          "transition": "P I",
+          "color": "orange",
+          "spectrum": "emission",
+          "frequencyHz": 483614224874979.9
+        },
+        {
+          "id": "P-621.05",
+          "nm": 621.05,
+          "eV": 1.996,
+          "transition": "P I",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 482718715079301.2
+        }
+      ],
       "isotopes": [
         {
           "a": 31,
@@ -2128,7 +2698,62 @@
           "body": "Element Deck describes published chemistry of Sulfur. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "S-469.41",
+          "nm": 469.41,
+          "eV": 2.641,
+          "transition": "S I 5S* \u2192 5P",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 638658013250676.2
+        },
+        {
+          "id": "S-605.27",
+          "nm": 605.27,
+          "eV": 2.048,
+          "transition": "S I 5P \u2192 5D*",
+          "color": "orange",
+          "spectrum": "emission",
+          "frequencyHz": 495303679349711.6
+        },
+        {
+          "id": "S-674.88",
+          "nm": 674.88,
+          "eV": 1.837,
+          "transition": "S I 5P \u2192 5D*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 444215946538643.9
+        },
+        {
+          "id": "S-675.72",
+          "nm": 675.72,
+          "eV": 1.835,
+          "transition": "S I 5P \u2192 5D*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 443663733499082.44
+        },
+        {
+          "id": "S-768.61",
+          "nm": 768.61,
+          "eV": 1.613,
+          "transition": "S I 5P \u2192 5S*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 390044961684079.0
+        },
+        {
+          "id": "S-769.67",
+          "nm": 769.67,
+          "eV": 1.611,
+          "transition": "S I 5P \u2192 5S*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 389507786453934.8
+        }
+      ],
       "isotopes": [
         {
           "a": 32,
@@ -2240,7 +2865,62 @@
           "body": "Element Deck describes published chemistry of Chlorine. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Cl-725.66",
+          "nm": 725.66,
+          "eV": 1.709,
+          "transition": "Cl I 4P \u2192 4S*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 413130747181875.75
+        },
+        {
+          "id": "Cl-741.41",
+          "nm": 741.41,
+          "eV": 1.672,
+          "transition": "Cl I 4P \u2192 2P*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 404354484023684.6
+        },
+        {
+          "id": "Cl-754.71",
+          "nm": 754.71,
+          "eV": 1.643,
+          "transition": "Cl I 4P \u2192 4S*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 397228681215301.2
+        },
+        {
+          "id": "Cl-767.24",
+          "nm": 767.24,
+          "eV": 1.616,
+          "transition": "Cl I",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 390741434231791.8
+        },
+        {
+          "id": "Cl-771.76",
+          "nm": 771.76,
+          "eV": 1.607,
+          "transition": "Cl I 4P \u2192 2P*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 388452962060744.25
+        },
+        {
+          "id": "Cl-774.50",
+          "nm": 774.5,
+          "eV": 1.601,
+          "transition": "Cl I 4P \u2192 4S*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 387078706262104.56
+        }
+      ],
       "isotopes": [
         {
           "a": 35,
@@ -2341,7 +3021,7 @@
           "id": "Ar-696.54",
           "nm": 696.54,
           "eV": 1.78,
-          "transition": "Ar I",
+          "transition": "Ar I 2[3/2]* \u2192 2[1/2]",
           "color": "red",
           "spectrum": "emission",
           "frequencyHz": 430402357366411.1
@@ -2350,7 +3030,7 @@
           "id": "Ar-706.72",
           "nm": 706.72,
           "eV": 1.754,
-          "transition": "Ar I",
+          "transition": "Ar I 2[3/2]* \u2192 2[3/2]",
           "color": "red",
           "spectrum": "emission",
           "frequencyHz": 424202595087163.2
@@ -2368,19 +3048,37 @@
           "id": "Ar-750.39",
           "nm": 750.39,
           "eV": 1.652,
-          "transition": "Ar I",
+          "transition": "Ar I 2[1/2]* \u2192 2[1/2]",
           "color": "red",
           "spectrum": "emission",
           "frequencyHz": 399515529258119.1
         },
         {
+          "id": "Ar-751.47",
+          "nm": 751.47,
+          "eV": 1.65,
+          "transition": "Ar I 2[3/2]* \u2192 2[1/2]",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 398941352282858.9
+        },
+        {
           "id": "Ar-763.51",
           "nm": 763.51,
           "eV": 1.624,
-          "transition": "Ar I",
+          "transition": "Ar I 2[3/2]* \u2192 2[3/2]",
           "color": "red",
           "spectrum": "emission",
           "frequencyHz": 392650335948448.56
+        },
+        {
+          "id": "Ar-772.38",
+          "nm": 772.38,
+          "eV": 1.605,
+          "transition": "Ar I 2[3/2]* \u2192 2[3/2]",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 388141145550117.75
         }
       ],
       "isotopes": [
@@ -2487,7 +3185,7 @@
           "id": "K-404.41",
           "nm": 404.41,
           "eV": 3.066,
-          "transition": "K I",
+          "transition": "K I 2S \u2192 2P*",
           "color": "violet",
           "spectrum": "both",
           "frequencyHz": 741308221854058.9
@@ -2496,16 +3194,34 @@
           "id": "K-404.72",
           "nm": 404.72,
           "eV": 3.063,
-          "transition": "K I",
+          "transition": "K I 2S \u2192 2P*",
           "color": "violet",
           "spectrum": "both",
           "frequencyHz": 740740408183435.4
         },
         {
+          "id": "K-691.11",
+          "nm": 691.11,
+          "eV": 1.794,
+          "transition": "K I 2P* \u2192 2S",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 433783996758837.2
+        },
+        {
+          "id": "K-693.88",
+          "nm": 693.88,
+          "eV": 1.787,
+          "transition": "K I 2P* \u2192 2S",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 432052311638900.06
+        },
+        {
           "id": "K-766.49",
           "nm": 766.49,
           "eV": 1.618,
-          "transition": "K I",
+          "transition": "K I 2S \u2192 2P*",
           "color": "red",
           "spectrum": "both",
           "frequencyHz": 391123769390337.75
@@ -2514,7 +3230,7 @@
           "id": "K-769.90",
           "nm": 769.9,
           "eV": 1.61,
-          "transition": "K I",
+          "transition": "K I 2S \u2192 2P*",
           "color": "red",
           "spectrum": "both",
           "frequencyHz": 389391424860371.44
@@ -2642,7 +3358,7 @@
           "id": "Ca-422.67",
           "nm": 422.67,
           "eV": 2.933,
-          "transition": "Ca I",
+          "transition": "Ca I 1S \u2192 1P*",
           "color": "violet",
           "spectrum": "both",
           "frequencyHz": 709282556131260.6
@@ -2655,6 +3371,42 @@
           "color": "violet",
           "spectrum": "both",
           "frequencyHz": 672965021998742.9
+        },
+        {
+          "id": "Ca-643.91",
+          "nm": 643.91,
+          "eV": 1.925,
+          "transition": "Ca I 3D \u2192 3F*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 465581304840738.56
+        },
+        {
+          "id": "Ca-646.26",
+          "nm": 646.26,
+          "eV": 1.918,
+          "transition": "Ca I 3D \u2192 3F*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 463888308111286.44
+        },
+        {
+          "id": "Ca-649.38",
+          "nm": 649.38,
+          "eV": 1.909,
+          "transition": "Ca I 3D \u2192 3F*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 461659518309772.4
+        },
+        {
+          "id": "Ca-714.82",
+          "nm": 714.82,
+          "eV": 1.734,
+          "transition": "Ca I",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 419395733191572.7
         }
       ],
       "isotopes": [
@@ -2783,6 +3535,51 @@
           "color": "violet",
           "spectrum": "both",
           "frequencyHz": 745066625245420.9
+        },
+        {
+          "id": "Sc-673.79",
+          "nm": 673.79,
+          "eV": 1.84,
+          "transition": "Sc I 2F* \u2192 2G",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 444934561213434.44
+        },
+        {
+          "id": "Sc-673.95",
+          "nm": 673.95,
+          "eV": 1.84,
+          "transition": "Sc I 2F* \u2192 2G",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 444828930929594.1
+        },
+        {
+          "id": "Sc-681.71",
+          "nm": 681.71,
+          "eV": 1.819,
+          "transition": "Sc I 2P \u2192 2S*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 439765381173812.9
+        },
+        {
+          "id": "Sc-681.95",
+          "nm": 681.95,
+          "eV": 1.818,
+          "transition": "Sc I 2F* \u2192 2D",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 439610613681354.9
+        },
+        {
+          "id": "Sc-682.95",
+          "nm": 682.95,
+          "eV": 1.815,
+          "transition": "Sc I 2F* \u2192 2D",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 438966919979500.6
         }
       ],
       "isotopes": [
@@ -2912,7 +3709,7 @@
           "id": "Ti-498.17",
           "nm": 498.17,
           "eV": 2.489,
-          "transition": "Ti I",
+          "transition": "Ti I a 5F \u2192 y 5G*",
           "color": "green",
           "spectrum": "both",
           "frequencyHz": 601787458096633.6
@@ -2934,6 +3731,42 @@
           "color": "green",
           "spectrum": "both",
           "frequencyHz": 597886917155279.0
+        },
+        {
+          "id": "Ti-504.00",
+          "nm": 504.0,
+          "eV": 2.46,
+          "transition": "Ti I a 3F \u2192 z 3D*",
+          "color": "green",
+          "spectrum": "both",
+          "frequencyHz": 594826305555555.5
+        },
+        {
+          "id": "Ti-506.47",
+          "nm": 506.47,
+          "eV": 2.448,
+          "transition": "Ti I a 3F \u2192 z 3D*",
+          "color": "green",
+          "spectrum": "both",
+          "frequencyHz": 591925401307086.2
+        },
+        {
+          "id": "Ti-517.37",
+          "nm": 517.37,
+          "eV": 2.396,
+          "transition": "Ti I a 3F \u2192 z 3F*",
+          "color": "green",
+          "spectrum": "both",
+          "frequencyHz": 579454661074279.5
+        },
+        {
+          "id": "Ti-519.30",
+          "nm": 519.3,
+          "eV": 2.388,
+          "transition": "Ti I a 3F \u2192 z 3F*",
+          "color": "green",
+          "spectrum": "both",
+          "frequencyHz": 577301093780088.6
         }
       ],
       "isotopes": [
@@ -3071,10 +3904,28 @@
       ],
       "spectralLines": [
         {
+          "id": "V-411.18",
+          "nm": 411.18,
+          "eV": 3.015,
+          "transition": "V I a 6D \u2192 y 6D*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 729102723867892.4
+        },
+        {
+          "id": "V-411.52",
+          "nm": 411.52,
+          "eV": 3.013,
+          "transition": "V I a 6D \u2192 y 6D*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 728500335342146.1
+        },
+        {
           "id": "V-437.92",
           "nm": 437.92,
           "eV": 2.831,
-          "transition": "V I",
+          "transition": "V I a 6D \u2192 y 6F*",
           "color": "violet",
           "spectrum": "both",
           "frequencyHz": 684582704603580.5
@@ -3083,16 +3934,25 @@
           "id": "V-438.47",
           "nm": 438.47,
           "eV": 2.828,
-          "transition": "V I",
+          "transition": "V I a 6D \u2192 y 6F*",
           "color": "violet",
           "spectrum": "both",
           "frequencyHz": 683723990238784.8
         },
         {
+          "id": "V-439.00",
+          "nm": 439.0,
+          "eV": 2.824,
+          "transition": "V I a 6D \u2192 y 6F*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 682898537585421.4
+        },
+        {
           "id": "V-440.85",
           "nm": 440.85,
           "eV": 2.812,
-          "transition": "V I",
+          "transition": "V I a 6D \u2192 y 6F*",
           "color": "violet",
           "spectrum": "both",
           "frequencyHz": 680032795735510.9
@@ -3231,7 +4091,7 @@
           "id": "Cr-520.45",
           "nm": 520.45,
           "eV": 2.382,
-          "transition": "Cr I",
+          "transition": "Cr I a 5S \u2192 z 5P*",
           "color": "green",
           "spectrum": "both",
           "frequencyHz": 576025474108944.1
@@ -3240,7 +4100,7 @@
           "id": "Cr-520.60",
           "nm": 520.6,
           "eV": 2.382,
-          "transition": "Cr I",
+          "transition": "Cr I a 5S \u2192 z 5P*",
           "color": "green",
           "spectrum": "both",
           "frequencyHz": 575859504417979.2
@@ -3249,10 +4109,28 @@
           "id": "Cr-520.84",
           "nm": 520.84,
           "eV": 2.38,
-          "transition": "Cr I",
+          "transition": "Cr I a 5S \u2192 z 5P*",
           "color": "green",
           "spectrum": "both",
           "frequencyHz": 575594151754857.4
+        },
+        {
+          "id": "Cr-529.83",
+          "nm": 529.83,
+          "eV": 2.34,
+          "transition": "Cr I a 5D \u2192 z 5P*",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 565827639054036.1
+        },
+        {
+          "id": "Cr-534.58",
+          "nm": 534.58,
+          "eV": 2.319,
+          "transition": "Cr I a 5D \u2192 z 5P*",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 560799988776235.44
         }
       ],
       "isotopes": [
@@ -3358,10 +4236,28 @@
       ],
       "spectralLines": [
         {
+          "id": "Mn-380.67",
+          "nm": 380.67,
+          "eV": 3.257,
+          "transition": "Mn I a 6D \u2192 z 6F*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 787538965508182.9
+        },
+        {
+          "id": "Mn-382.35",
+          "nm": 382.35,
+          "eV": 3.243,
+          "transition": "Mn I a 6D \u2192 z 6F*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 784078613835491.0
+        },
+        {
           "id": "Mn-403.08",
           "nm": 403.08,
           "eV": 3.076,
-          "transition": "Mn I",
+          "transition": "Mn I a 6S \u2192 z 6P*",
           "color": "violet",
           "spectrum": "both",
           "frequencyHz": 743754237372233.8
@@ -3370,7 +4266,7 @@
           "id": "Mn-403.31",
           "nm": 403.31,
           "eV": 3.074,
-          "transition": "Mn I",
+          "transition": "Mn I a 6S \u2192 z 6P*",
           "color": "violet",
           "spectrum": "both",
           "frequencyHz": 743330088517517.5
@@ -3379,10 +4275,19 @@
           "id": "Mn-403.45",
           "nm": 403.45,
           "eV": 3.073,
-          "transition": "Mn I",
+          "transition": "Mn I a 6S \u2192 z 6P*",
           "color": "violet",
           "spectrum": "both",
           "frequencyHz": 743072147725864.4
+        },
+        {
+          "id": "Mn-404.14",
+          "nm": 404.14,
+          "eV": 3.068,
+          "transition": "Mn I a 6D \u2192 z 6D*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 741803478992428.4
         }
       ],
       "isotopes": [
@@ -3520,6 +4425,15 @@
           "color": "UV",
           "spectrum": "both",
           "frequencyHz": 799553161754900.6
+        },
+        {
+          "id": "Fe-382.44",
+          "nm": 382.44,
+          "eV": 3.242,
+          "transition": "Fe I a 5D \u2192 z 5D*",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 783894095805878.0
         },
         {
           "id": "Fe-438.35",
@@ -3678,13 +4592,58 @@
           "frequencyHz": 868082982481540.4
         },
         {
+          "id": "Co-384.55",
+          "nm": 384.55,
+          "eV": 3.224,
+          "transition": "Co I a 2F \u2192 y 2G*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 779592921596671.4
+        },
+        {
+          "id": "Co-387.31",
+          "nm": 387.31,
+          "eV": 3.201,
+          "transition": "Co I b 4F \u2192 z 4D*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 774037484185794.2
+        },
+        {
+          "id": "Co-387.40",
+          "nm": 387.4,
+          "eV": 3.2,
+          "transition": "Co I b 4F \u2192 z 4D*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 773857661331956.6
+        },
+        {
+          "id": "Co-389.41",
+          "nm": 389.41,
+          "eV": 3.184,
+          "transition": "Co I a 2F \u2192 y 2G*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 769863275211216.9
+        },
+        {
           "id": "Co-399.53",
           "nm": 399.53,
           "eV": 3.103,
-          "transition": "Co I",
+          "transition": "Co I a 2F \u2192 y 4G*",
           "color": "violet",
           "spectrum": "both",
           "frequencyHz": 750362821315045.2
+        },
+        {
+          "id": "Co-412.13",
+          "nm": 412.13,
+          "eV": 3.008,
+          "transition": "Co I a 2F \u2192 z 2G*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 727422070705845.2
         }
       ],
       "isotopes": [
@@ -3813,6 +4772,51 @@
           "color": "UV",
           "spectrum": "both",
           "frequencyHz": 850595710029791.4
+        },
+        {
+          "id": "Ni-380.71",
+          "nm": 380.71,
+          "eV": 3.257,
+          "transition": "Ni I 1D \u2192 *",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 787456221270783.5
+        },
+        {
+          "id": "Ni-383.17",
+          "nm": 383.17,
+          "eV": 3.236,
+          "transition": "Ni I 1D \u2192 3P*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 782400652451914.1
+        },
+        {
+          "id": "Ni-385.83",
+          "nm": 385.83,
+          "eV": 3.213,
+          "transition": "Ni I 1D \u2192 3F*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 777006603944742.5
+        },
+        {
+          "id": "Ni-397.36",
+          "nm": 397.36,
+          "eV": 3.12,
+          "transition": "Ni I 1D \u2192 3P*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 754460584860076.4
+        },
+        {
+          "id": "Ni-440.15",
+          "nm": 440.15,
+          "eV": 2.817,
+          "transition": "Ni I 5D* \u2192 5F",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 681114297398614.1
         }
       ],
       "isotopes": [
@@ -3943,10 +4947,28 @@
           "frequencyHz": 915676414172266.4
         },
         {
+          "id": "Cu-406.26",
+          "nm": 406.26,
+          "eV": 3.052,
+          "transition": "Cu I 2P* \u2192 2D",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 737932501353812.8
+        },
+        {
+          "id": "Cu-465.11",
+          "nm": 465.11,
+          "eV": 2.666,
+          "transition": "Cu I 4F* \u2192 4D",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 644562486293564.9
+        },
+        {
           "id": "Cu-510.55",
           "nm": 510.55,
           "eV": 2.428,
-          "transition": "Cu I",
+          "transition": "Cu I 2D \u2192 2P*",
           "color": "green",
           "spectrum": "both",
           "frequencyHz": 587195099402605.0
@@ -3955,7 +4977,7 @@
           "id": "Cu-515.32",
           "nm": 515.32,
           "eV": 2.406,
-          "transition": "Cu I",
+          "transition": "Cu I 2P* \u2192 2D",
           "color": "green",
           "spectrum": "both",
           "frequencyHz": 581759795855002.6
@@ -3964,10 +4986,19 @@
           "id": "Cu-521.82",
           "nm": 521.82,
           "eV": 2.376,
-          "transition": "Cu I",
+          "transition": "Cu I 2P* \u2192 2D",
           "color": "green",
           "spectrum": "both",
           "frequencyHz": 574513161626614.5
+        },
+        {
+          "id": "Cu-529.25",
+          "nm": 529.25,
+          "eV": 2.343,
+          "transition": "Cu I 4D* \u2192 4D",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 566447724137931.0
         }
       ],
       "isotopes": [
@@ -4080,10 +5111,28 @@
           "frequencyHz": 1401816412606377.8
         },
         {
+          "id": "Zn-462.98",
+          "nm": 462.98,
+          "eV": 2.678,
+          "transition": "Zn I 1P* \u2192 1D",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 647527880254006.6
+        },
+        {
+          "id": "Zn-468.01",
+          "nm": 468.01,
+          "eV": 2.649,
+          "transition": "Zn I 3P* \u2192 3S",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 640568487852823.6
+        },
+        {
           "id": "Zn-472.22",
           "nm": 472.22,
           "eV": 2.626,
-          "transition": "Zn I",
+          "transition": "Zn I 3P* \u2192 3S",
           "color": "blue",
           "spectrum": "both",
           "frequencyHz": 634857604506374.0
@@ -4092,10 +5141,28 @@
           "id": "Zn-481.05",
           "nm": 481.05,
           "eV": 2.577,
-          "transition": "Zn I",
+          "transition": "Zn I 3P* \u2192 3S",
           "color": "blue",
           "spectrum": "both",
           "frequencyHz": 623204361293004.9
+        },
+        {
+          "id": "Zn-530.86",
+          "nm": 530.86,
+          "eV": 2.336,
+          "transition": "Zn I 3S \u2192 3P*",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 564729793165806.4
+        },
+        {
+          "id": "Zn-577.21",
+          "nm": 577.21,
+          "eV": 2.148,
+          "transition": "Zn I 3S \u2192 3P*",
+          "color": "yellow",
+          "spectrum": "emission",
+          "frequencyHz": 519381954574591.44
         },
         {
           "id": "Zn-636.23",
@@ -4224,6 +5291,60 @@
           "color": "violet",
           "spectrum": "both",
           "frequencyHz": 718564890582680.1
+        },
+        {
+          "id": "Ga-639.66",
+          "nm": 639.66,
+          "eV": 1.938,
+          "transition": "Ga I 2S \u2192 2P*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 468674699058875.0
+        },
+        {
+          "id": "Ga-725.14",
+          "nm": 725.14,
+          "eV": 1.71,
+          "transition": "Ga I 2P* \u2192 2D",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 413427004440521.8
+        },
+        {
+          "id": "Ga-740.30",
+          "nm": 740.3,
+          "eV": 1.675,
+          "transition": "Ga I 2P* \u2192 2D",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 404960769958125.06
+        },
+        {
+          "id": "Ga-746.40",
+          "nm": 746.4,
+          "eV": 1.661,
+          "transition": "Ga I 2P* \u2192 2D",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 401651203108252.94
+        },
+        {
+          "id": "Ga-762.05",
+          "nm": 762.05,
+          "eV": 1.627,
+          "transition": "Ga I 2P* \u2192 2S",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 393402608752706.5
+        },
+        {
+          "id": "Ga-773.48",
+          "nm": 773.48,
+          "eV": 1.603,
+          "transition": "Ga I 2P* \u2192 2D",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 387589152919273.9
         }
       ],
       "isotopes": [
@@ -4343,6 +5464,60 @@
           "color": "UV",
           "spectrum": "both",
           "frequencyHz": 986451442861373.4
+        },
+        {
+          "id": "Ge-422.66",
+          "nm": 422.66,
+          "eV": 2.933,
+          "transition": "Ge I 1S \u2192 1P*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 709299337528983.0
+        },
+        {
+          "id": "Ge-468.58",
+          "nm": 468.58,
+          "eV": 2.646,
+          "transition": "Ge I 1S \u2192 3P*",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 639789273976695.5
+        },
+        {
+          "id": "Ge-556.47",
+          "nm": 556.47,
+          "eV": 2.228,
+          "transition": "Ge I 3P* \u2192 3S",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 538739658921415.25
+        },
+        {
+          "id": "Ge-560.70",
+          "nm": 560.7,
+          "eV": 2.211,
+          "transition": "Ge I 3P* \u2192 3P",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 534675330836454.4
+        },
+        {
+          "id": "Ge-569.20",
+          "nm": 569.2,
+          "eV": 2.178,
+          "transition": "Ge I 3P* \u2192 3D",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 526690895994378.0
+        },
+        {
+          "id": "Ge-580.21",
+          "nm": 580.21,
+          "eV": 2.137,
+          "transition": "Ge I 1P* \u2192 1D",
+          "color": "yellow",
+          "spectrum": "emission",
+          "frequencyHz": 516696468520018.56
         }
       ],
       "isotopes": [
@@ -4473,6 +5648,51 @@
           "color": "UV",
           "spectrum": "both",
           "frequencyHz": 1310224456973034.2
+        },
+        {
+          "id": "As-506.90",
+          "nm": 506.9,
+          "eV": 2.446,
+          "transition": "As I 4P \u2192 4S*",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 591423274807654.4
+        },
+        {
+          "id": "As-512.13",
+          "nm": 512.13,
+          "eV": 2.421,
+          "transition": "As I 4P \u2192 4D*",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 585383511998906.5
+        },
+        {
+          "id": "As-514.16",
+          "nm": 514.16,
+          "eV": 2.411,
+          "transition": "As I 4P \u2192 26*",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 583072308230900.9
+        },
+        {
+          "id": "As-540.81",
+          "nm": 540.81,
+          "eV": 2.293,
+          "transition": "As I 2P \u2192 2D*",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 554339708955085.94
+        },
+        {
+          "id": "As-545.13",
+          "nm": 545.13,
+          "eV": 2.274,
+          "transition": "As I 2P \u2192 2D*",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 549946724634490.8
         }
       ],
       "isotopes": [
@@ -4594,6 +5814,60 @@
           "color": "UV",
           "spectrum": "both",
           "frequencyHz": 1469642913868326.8
+        },
+        {
+          "id": "Se-473.08",
+          "nm": 473.08,
+          "eV": 2.621,
+          "transition": "Se I",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 633703513147882.0
+        },
+        {
+          "id": "Se-473.90",
+          "nm": 473.9,
+          "eV": 2.616,
+          "transition": "Se I",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 632607001477104.9
+        },
+        {
+          "id": "Se-474.22",
+          "nm": 474.22,
+          "eV": 2.614,
+          "transition": "Se I",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 632180123149592.9
+        },
+        {
+          "id": "Se-632.56",
+          "nm": 632.56,
+          "eV": 1.96,
+          "transition": "Se I",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 473935212469963.4
+        },
+        {
+          "id": "Se-706.21",
+          "nm": 706.21,
+          "eV": 1.756,
+          "transition": "Se I",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 424508939267356.7
+        },
+        {
+          "id": "Se-758.34",
+          "nm": 758.34,
+          "eV": 1.635,
+          "transition": "Se I",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 395327238441859.8
         }
       ],
       "isotopes": [
@@ -4697,7 +5971,62 @@
           "body": "Element Deck describes published chemistry of Bromine. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Br-447.77",
+          "nm": 447.77,
+          "eV": 2.769,
+          "transition": "Br I 2[2] \u2192 2[3]*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 669523322241329.2
+        },
+        {
+          "id": "Br-614.86",
+          "nm": 614.86,
+          "eV": 2.016,
+          "transition": "Br I 2[2] \u2192 2[1]*",
+          "color": "orange",
+          "spectrum": "emission",
+          "frequencyHz": 487578404840126.1
+        },
+        {
+          "id": "Br-635.07",
+          "nm": 635.07,
+          "eV": 1.952,
+          "transition": "Br I 2[2] \u2192 2[1]*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 472062068748326.9
+        },
+        {
+          "id": "Br-655.98",
+          "nm": 655.98,
+          "eV": 1.89,
+          "transition": "Br I 2[2] \u2192 2[2]*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 457014631543644.6
+        },
+        {
+          "id": "Br-663.16",
+          "nm": 663.16,
+          "eV": 1.87,
+          "transition": "Br I 2[2] \u2192 2[2]*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 452066557090294.94
+        },
+        {
+          "id": "Br-751.30",
+          "nm": 751.3,
+          "eV": 1.65,
+          "transition": "Br I 2[2] \u2192 2[1]*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 399031622520963.7
+        }
+      ],
       "isotopes": [
         {
           "a": 80,
@@ -4797,10 +6126,28 @@
       ],
       "spectralLines": [
         {
+          "id": "Kr-427.40",
+          "nm": 427.4,
+          "eV": 2.901,
+          "transition": "Kr I 2[3/2]* \u2192 2[3/2]",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 701432985493682.6
+        },
+        {
+          "id": "Kr-431.96",
+          "nm": 431.96,
+          "eV": 2.87,
+          "transition": "Kr I 2[3/2]* \u2192 2[5/2]",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 694028285026391.4
+        },
+        {
           "id": "Kr-557.03",
           "nm": 557.03,
           "eV": 2.226,
-          "transition": "Kr I",
+          "transition": "Kr I 2[3/2]* \u2192 2[1/2]",
           "color": "green",
           "spectrum": "emission",
           "frequencyHz": 538198046783835.7
@@ -4809,10 +6156,28 @@
           "id": "Kr-587.09",
           "nm": 587.09,
           "eV": 2.112,
-          "transition": "Kr I",
+          "transition": "Kr I 2[3/2]* \u2192 2[3/2]",
           "color": "yellow",
           "spectrum": "emission",
           "frequencyHz": 510641397400739.1
+        },
+        {
+          "id": "Kr-758.74",
+          "nm": 758.74,
+          "eV": 1.634,
+          "transition": "Kr I 2[3/2]* \u2192 2[1/2]",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 395118825948282.6
+        },
+        {
+          "id": "Kr-760.15",
+          "nm": 760.15,
+          "eV": 1.631,
+          "transition": "Kr I 2[3/2]* \u2192 2[3/2]",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 394385921199763.2
         }
       ],
       "isotopes": [
@@ -4920,7 +6285,7 @@
           "id": "Rb-420.18",
           "nm": 420.18,
           "eV": 2.951,
-          "transition": "Rb I",
+          "transition": "Rb I 2S \u2192 2P*",
           "color": "violet",
           "spectrum": "both",
           "frequencyHz": 713485787043647.9
@@ -4929,10 +6294,46 @@
           "id": "Rb-421.55",
           "nm": 421.55,
           "eV": 2.941,
-          "transition": "Rb I",
+          "transition": "Rb I 2S \u2192 2P*",
           "color": "violet",
           "spectrum": "both",
           "frequencyHz": 711167021705610.2
+        },
+        {
+          "id": "Rb-629.83",
+          "nm": 629.83,
+          "eV": 1.969,
+          "transition": "Rb I 2P* \u2192 2D",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 475989486051791.7
+        },
+        {
+          "id": "Rb-740.82",
+          "nm": 740.82,
+          "eV": 1.674,
+          "transition": "Rb I 2P* \u2192 2S",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 404676517912583.3
+        },
+        {
+          "id": "Rb-761.89",
+          "nm": 761.89,
+          "eV": 1.627,
+          "transition": "Rb I 2P* \u2192 2D",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 393485224901232.44
+        },
+        {
+          "id": "Rb-775.77",
+          "nm": 775.77,
+          "eV": 1.598,
+          "transition": "Rb I 2P* \u2192 2D",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 386445026232001.7
         },
         {
           "id": "Rb-780.03",
@@ -5076,10 +6477,55 @@
           "id": "Sr-460.73",
           "nm": 460.73,
           "eV": 2.691,
-          "transition": "Sr I",
+          "transition": "Sr I 1S \u2192 1P*",
           "color": "blue",
           "spectrum": "both",
           "frequencyHz": 650690117856445.1
+        },
+        {
+          "id": "Sr-525.69",
+          "nm": 525.69,
+          "eV": 2.359,
+          "transition": "Sr I 3D \u2192 3P*",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 570283737563963.5
+        },
+        {
+          "id": "Sr-640.85",
+          "nm": 640.85,
+          "eV": 1.935,
+          "transition": "Sr I 3D \u2192 3F*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 467804412889131.56
+        },
+        {
+          "id": "Sr-679.10",
+          "nm": 679.1,
+          "eV": 1.826,
+          "transition": "Sr I 3P* \u2192 3S",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 441455541157414.2
+        },
+        {
+          "id": "Sr-687.83",
+          "nm": 687.83,
+          "eV": 1.803,
+          "transition": "Sr I 3P* \u2192 3S",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 435852547867932.44
+        },
+        {
+          "id": "Sr-707.01",
+          "nm": 707.01,
+          "eV": 1.754,
+          "transition": "Sr I 3P* \u2192 3S",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 424028596483783.8
         }
       ],
       "isotopes": [
@@ -5184,10 +6630,19 @@
       ],
       "spectralLines": [
         {
+          "id": "Y-404.76",
+          "nm": 404.76,
+          "eV": 3.063,
+          "transition": "Y I a 2D \u2192 y 2P*",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 740667205257436.5
+        },
+        {
           "id": "Y-407.74",
           "nm": 407.74,
           "eV": 3.041,
-          "transition": "Y I",
+          "transition": "Y I a 2D \u2192 y 2F*",
           "color": "violet",
           "spectrum": "both",
           "frequencyHz": 735253980477755.4
@@ -5196,7 +6651,7 @@
           "id": "Y-410.24",
           "nm": 410.24,
           "eV": 3.022,
-          "transition": "Y I",
+          "transition": "Y I a 2D \u2192 y 2F*",
           "color": "violet",
           "spectrum": "both",
           "frequencyHz": 730773347308892.2
@@ -5205,7 +6660,7 @@
           "id": "Y-412.83",
           "nm": 412.83,
           "eV": 3.003,
-          "transition": "Y I",
+          "transition": "Y I a 2D \u2192 y 2D*",
           "color": "violet",
           "spectrum": "both",
           "frequencyHz": 726188644236126.2
@@ -5214,10 +6669,19 @@
           "id": "Y-414.28",
           "nm": 414.28,
           "eV": 2.993,
-          "transition": "Y I",
+          "transition": "Y I a 2D \u2192 y 2D*",
           "color": "violet",
           "spectrum": "both",
           "frequencyHz": 723646948923433.5
+        },
+        {
+          "id": "Y-416.75",
+          "nm": 416.75,
+          "eV": 2.975,
+          "transition": "Y I a 2D \u2192 y 2F*",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 719358027594481.1
         }
       ],
       "isotopes": [
@@ -5347,6 +6811,51 @@
           "color": "UV",
           "spectrum": "both",
           "frequencyHz": 857480859218580.1
+        },
+        {
+          "id": "Zr-383.60",
+          "nm": 383.6,
+          "eV": 3.232,
+          "transition": "Zr I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 781523613138686.1
+        },
+        {
+          "id": "Zr-386.39",
+          "nm": 386.39,
+          "eV": 3.209,
+          "transition": "Zr I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 775880478273247.2
+        },
+        {
+          "id": "Zr-389.03",
+          "nm": 389.03,
+          "eV": 3.187,
+          "transition": "Zr I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 770615268745341.0
+        },
+        {
+          "id": "Zr-389.14",
+          "nm": 389.14,
+          "eV": 3.186,
+          "transition": "Zr I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 770397435370303.8
+        },
+        {
+          "id": "Zr-407.27",
+          "nm": 407.27,
+          "eV": 3.044,
+          "transition": "Zr I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 736102482382694.5
         }
       ],
       "isotopes": [
@@ -5467,6 +6976,42 @@
           "color": "violet",
           "spectrum": "both",
           "frequencyHz": 734839468588376.5
+        },
+        {
+          "id": "Nb-410.09",
+          "nm": 410.09,
+          "eV": 3.023,
+          "transition": "Nb I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 731040644736521.2
+        },
+        {
+          "id": "Nb-412.38",
+          "nm": 412.38,
+          "eV": 3.007,
+          "transition": "Nb I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 726981080556768.0
+        },
+        {
+          "id": "Nb-415.26",
+          "nm": 415.26,
+          "eV": 2.986,
+          "transition": "Nb I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 721939165823821.1
+        },
+        {
+          "id": "Nb-416.37",
+          "nm": 416.37,
+          "eV": 2.978,
+          "transition": "Nb I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 720014549559286.1
         }
       ],
       "isotopes": [
@@ -5583,7 +7128,7 @@
           "id": "Mo-386.41",
           "nm": 386.41,
           "eV": 3.209,
-          "transition": "Mo I",
+          "transition": "Mo I a 7S \u2192 z 7P*",
           "color": "violet",
           "spectrum": "both",
           "frequencyHz": 775840319867498.2
@@ -5592,10 +7137,46 @@
           "id": "Mo-390.30",
           "nm": 390.3,
           "eV": 3.177,
-          "transition": "Mo I",
+          "transition": "Mo I a 7S \u2192 z 7P*",
           "color": "violet",
           "spectrum": "both",
           "frequencyHz": 768107758134768.0
+        },
+        {
+          "id": "Mo-414.36",
+          "nm": 414.36,
+          "eV": 2.992,
+          "transition": "Mo I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 723507235254368.1
+        },
+        {
+          "id": "Mo-418.83",
+          "nm": 418.83,
+          "eV": 2.96,
+          "transition": "Mo I a 5G \u2192 z 5H*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 715785540672826.6
+        },
+        {
+          "id": "Mo-550.65",
+          "nm": 550.65,
+          "eV": 2.252,
+          "transition": "Mo I a 5S \u2192 z 5P*",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 544433774629982.75
+        },
+        {
+          "id": "Mo-553.30",
+          "nm": 553.3,
+          "eV": 2.241,
+          "transition": "Mo I a 5S \u2192 z 5P*",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 541826238930056.06
         }
       ],
       "isotopes": [
@@ -5698,7 +7279,62 @@
           "body": "Element Deck describes published chemistry of Technetium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Tc-398.50",
+          "nm": 398.5,
+          "eV": 3.111,
+          "transition": "Tc I 6D \u2192 6D*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 752302278544542.0
+        },
+        {
+          "id": "Tc-403.16",
+          "nm": 403.16,
+          "eV": 3.075,
+          "transition": "Tc I 6D \u2192 6D*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 743606652445679.0
+        },
+        {
+          "id": "Tc-404.91",
+          "nm": 404.91,
+          "eV": 3.062,
+          "transition": "Tc I 6D \u2192 6D*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 740392823096490.5
+        },
+        {
+          "id": "Tc-408.87",
+          "nm": 408.87,
+          "eV": 3.032,
+          "transition": "Tc I 6D \u2192 6D*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 733221948296524.5
+        },
+        {
+          "id": "Tc-409.57",
+          "nm": 409.57,
+          "eV": 3.027,
+          "transition": "Tc I 6D \u2192 6D*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 731968791659545.4
+        },
+        {
+          "id": "Tc-485.36",
+          "nm": 485.36,
+          "eV": 2.554,
+          "transition": "Tc I 4D \u2192 4F*",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 617670302455909.0
+        }
+      ],
       "isotopes": [
         {
           "a": 98,
@@ -5818,6 +7454,60 @@
           "color": "UV",
           "spectrum": "both",
           "frequencyHz": 804164318669527.8
+        },
+        {
+          "id": "Ru-392.59",
+          "nm": 392.59,
+          "eV": 3.158,
+          "transition": "Ru I a 5F \u2192 z 7D*",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 763627341501311.8
+        },
+        {
+          "id": "Ru-408.06",
+          "nm": 408.06,
+          "eV": 3.038,
+          "transition": "Ru I a 3F \u2192 z 3D*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 734677395481056.6
+        },
+        {
+          "id": "Ru-419.99",
+          "nm": 419.99,
+          "eV": 2.952,
+          "transition": "Ru I a 3F \u2192 z 3F*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 713808562108621.5
+        },
+        {
+          "id": "Ru-421.21",
+          "nm": 421.21,
+          "eV": 2.944,
+          "transition": "Ru I a 3F \u2192 z 5G*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 711741074523396.9
+        },
+        {
+          "id": "Ru-429.77",
+          "nm": 429.77,
+          "eV": 2.885,
+          "transition": "Ru I a 3F \u2192 z 5G*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 697564878888707.9
+        },
+        {
+          "id": "Ru-455.45",
+          "nm": 455.45,
+          "eV": 2.722,
+          "transition": "Ru I a 3F \u2192 z 3G*",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 658233522889450.0
         }
       ],
       "isotopes": [
@@ -5938,6 +7628,60 @@
           "color": "UV",
           "spectrum": "both",
           "frequencyHz": 811917609143104.6
+        },
+        {
+          "id": "Rh-382.23",
+          "nm": 382.23,
+          "eV": 3.244,
+          "transition": "Rh I a 2F \u2192 z 2F*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 784324773042408.9
+        },
+        {
+          "id": "Rh-382.85",
+          "nm": 382.85,
+          "eV": 3.238,
+          "transition": "Rh I a 4P \u2192 z 4P*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 783054611466631.8
+        },
+        {
+          "id": "Rh-385.65",
+          "nm": 385.65,
+          "eV": 3.215,
+          "transition": "Rh I a 2F \u2192 z 2G*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 777369267470504.2
+        },
+        {
+          "id": "Rh-395.89",
+          "nm": 395.89,
+          "eV": 3.132,
+          "transition": "Rh I a 2F \u2192 z 2G*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 757262012175099.1
+        },
+        {
+          "id": "Rh-421.11",
+          "nm": 421.11,
+          "eV": 2.944,
+          "transition": "Rh I a 2F \u2192 z 4F*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 711910090000237.4
+        },
+        {
+          "id": "Rh-437.48",
+          "nm": 437.48,
+          "eV": 2.834,
+          "transition": "Rh I a 2F \u2192 z 4G*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 685271230684831.2
         }
       ],
       "isotopes": [
@@ -6058,6 +7802,60 @@
           "color": "UV",
           "spectrum": "both",
           "frequencyHz": 824806608523399.2
+        },
+        {
+          "id": "Pd-383.23",
+          "nm": 383.23,
+          "eV": 3.235,
+          "transition": "Pd I 2[3/2] \u2192 2[3/2]*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 782278156720507.2
+        },
+        {
+          "id": "Pd-389.42",
+          "nm": 389.42,
+          "eV": 3.184,
+          "transition": "Pd I 2[3/2] \u2192 2[5/2]*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 769843505726464.9
+        },
+        {
+          "id": "Pd-395.86",
+          "nm": 395.86,
+          "eV": 3.132,
+          "transition": "Pd I 2[3/2] \u2192 2[5/2]*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 757319400798261.9
+        },
+        {
+          "id": "Pd-408.73",
+          "nm": 408.73,
+          "eV": 3.033,
+          "transition": "Pd I 2[3/2] \u2192 2[3/2]*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 733473094707997.9
+        },
+        {
+          "id": "Pd-421.30",
+          "nm": 421.3,
+          "eV": 2.943,
+          "transition": "Pd I 2[3/2] \u2192 2[7/2]*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 711589029195347.6
+        },
+        {
+          "id": "Pd-447.36",
+          "nm": 447.36,
+          "eV": 2.771,
+          "transition": "Pd I 2[3/2] \u2192 2[3/2]*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 670136932224606.5
         }
       ],
       "isotopes": [
@@ -6188,10 +7986,37 @@
           "frequencyHz": 886199586153891.5
         },
         {
+          "id": "Ag-381.09",
+          "nm": 381.09,
+          "eV": 3.253,
+          "transition": "Ag I 2P* \u2192 2D",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 786671017344984.1
+        },
+        {
+          "id": "Ag-405.55",
+          "nm": 405.55,
+          "eV": 3.057,
+          "transition": "Ag I 2P* \u2192 2D",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 739224406361730.9
+        },
+        {
+          "id": "Ag-421.10",
+          "nm": 421.1,
+          "eV": 2.944,
+          "transition": "Ag I 2P* \u2192 2D",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 711926995962954.1
+        },
+        {
           "id": "Ag-520.91",
           "nm": 520.91,
           "eV": 2.38,
-          "transition": "Ag I",
+          "transition": "Ag I 2P* \u2192 2D",
           "color": "green",
           "spectrum": "both",
           "frequencyHz": 575516803286556.2
@@ -6200,10 +8025,19 @@
           "id": "Ag-546.55",
           "nm": 546.55,
           "eV": 2.268,
-          "transition": "Ag I",
+          "transition": "Ag I 2P* \u2192 2D",
           "color": "green",
           "spectrum": "both",
           "frequencyHz": 548517899551733.6
+        },
+        {
+          "id": "Ag-768.78",
+          "nm": 768.78,
+          "eV": 1.613,
+          "transition": "Ag I 2P* \u2192 2S",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 389958711204766.0
         }
       ],
       "isotopes": [
@@ -6317,22 +8151,58 @@
           "frequencyHz": 1310281722027971.8
         },
         {
+          "id": "Cd-467.81",
+          "nm": 467.81,
+          "eV": 2.65,
+          "transition": "Cd I 3P* \u2192 3S",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 640842346251683.2
+        },
+        {
+          "id": "Cd-479.99",
+          "nm": 479.99,
+          "eV": 2.583,
+          "transition": "Cd I 3P* \u2192 3S",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 624580632929852.8
+        },
+        {
           "id": "Cd-508.58",
           "nm": 508.58,
           "eV": 2.438,
-          "transition": "Cd I",
+          "transition": "Cd I 3P* \u2192 3S",
           "color": "green",
           "spectrum": "both",
           "frequencyHz": 589469617365999.5
         },
         {
+          "id": "Cd-609.91",
+          "nm": 609.91,
+          "eV": 2.033,
+          "transition": "Cd I 3S \u2192 3P*",
+          "color": "orange",
+          "spectrum": "emission",
+          "frequencyHz": 491535567542752.2
+        },
+        {
           "id": "Cd-643.85",
           "nm": 643.85,
           "eV": 1.926,
-          "transition": "Cd I",
+          "transition": "Cd I 1P* \u2192 1D",
           "color": "red",
           "spectrum": "both",
           "frequencyHz": 465624692086666.06
+        },
+        {
+          "id": "Cd-734.57",
+          "nm": 734.57,
+          "eV": 1.688,
+          "transition": "Cd I 3S \u2192 3P*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 408119659120301.6
         }
       ],
       "isotopes": [
@@ -6440,7 +8310,7 @@
           "id": "In-410.18",
           "nm": 410.18,
           "eV": 3.023,
-          "transition": "In I",
+          "transition": "In I 2P* \u2192 2S",
           "color": "violet",
           "spectrum": "both",
           "frequencyHz": 730880242820225.2
@@ -6449,10 +8319,46 @@
           "id": "In-451.13",
           "nm": 451.13,
           "eV": 2.748,
-          "transition": "In I",
+          "transition": "In I 2P* \u2192 2S",
           "color": "blue",
           "spectrum": "both",
           "frequencyHz": 664536736639106.1
+        },
+        {
+          "id": "In-525.43",
+          "nm": 525.43,
+          "eV": 2.36,
+          "transition": "In I 2S \u2192 2P*",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 570565932664674.8
+        },
+        {
+          "id": "In-526.27",
+          "nm": 526.27,
+          "eV": 2.356,
+          "transition": "In I 2S \u2192 2P*",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 569655230205027.8
+        },
+        {
+          "id": "In-570.99",
+          "nm": 570.99,
+          "eV": 2.171,
+          "transition": "In I 2S \u2192 2P*",
+          "color": "yellow",
+          "spectrum": "emission",
+          "frequencyHz": 525039769523108.94
+        },
+        {
+          "id": "In-572.77",
+          "nm": 572.77,
+          "eV": 2.165,
+          "transition": "In I 2S \u2192 2P*",
+          "color": "yellow",
+          "spectrum": "emission",
+          "frequencyHz": 523408100982942.5
         }
       ],
       "isotopes": [
@@ -6583,6 +8489,51 @@
           "color": "UV",
           "spectrum": "both",
           "frequencyHz": 918960420562180.0
+        },
+        {
+          "id": "Sn-380.10",
+          "nm": 380.1,
+          "eV": 3.262,
+          "transition": "Sn I 1D \u2192 3P*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 788719963167587.4
+        },
+        {
+          "id": "Sn-452.47",
+          "nm": 452.47,
+          "eV": 2.74,
+          "transition": "Sn I 1S \u2192 1P*",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 662568696267155.8
+        },
+        {
+          "id": "Sn-563.17",
+          "nm": 563.17,
+          "eV": 2.202,
+          "transition": "Sn I 1S \u2192 3P*",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 532330305236429.5
+        },
+        {
+          "id": "Sn-605.47",
+          "nm": 605.47,
+          "eV": 2.048,
+          "transition": "Sn I 3P* \u2192 3D",
+          "color": "orange",
+          "spectrum": "emission",
+          "frequencyHz": 495140069697920.56
+        },
+        {
+          "id": "Sn-606.91",
+          "nm": 606.91,
+          "eV": 2.043,
+          "transition": "Sn I 3P* \u2192 3P",
+          "color": "orange",
+          "spectrum": "emission",
+          "frequencyHz": 493965263383368.2
         }
       ],
       "isotopes": [
@@ -6714,6 +8665,51 @@
           "color": "UV",
           "spectrum": "both",
           "frequencyHz": 1296960666234047.0
+        },
+        {
+          "id": "Sb-403.35",
+          "nm": 403.35,
+          "eV": 3.074,
+          "transition": "Sb I 2P* \u2192 4P",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 743256372877153.8
+        },
+        {
+          "id": "Sb-549.02",
+          "nm": 549.02,
+          "eV": 2.258,
+          "transition": "Sb I 4P \u2192 (2,1/2)*",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 546050158464172.56
+        },
+        {
+          "id": "Sb-555.60",
+          "nm": 555.6,
+          "eV": 2.232,
+          "transition": "Sb I 2P \u2192 (2,1/2)*",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 539583257739380.8
+        },
+        {
+          "id": "Sb-560.21",
+          "nm": 560.21,
+          "eV": 2.213,
+          "transition": "Sb I 4P \u2192 (1,3/2)*",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 535142996376358.75
+        },
+        {
+          "id": "Sb-563.19",
+          "nm": 563.19,
+          "eV": 2.201,
+          "transition": "Sb I 4P \u2192 (0,3/2)*",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 532311401125730.1
         }
       ],
       "isotopes": [
@@ -6836,6 +8832,60 @@
           "color": "UV",
           "spectrum": "both",
           "frequencyHz": 1256569947187526.2
+        },
+        {
+          "id": "Te-634.95",
+          "nm": 634.95,
+          "eV": 1.953,
+          "transition": "Te I",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 472151284353098.6
+        },
+        {
+          "id": "Te-679.00",
+          "nm": 679.0,
+          "eV": 1.826,
+          "transition": "Te I 5P \u2192 3D*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 441520556701030.9
+        },
+        {
+          "id": "Te-683.76",
+          "nm": 683.76,
+          "eV": 1.813,
+          "transition": "Te I 5P \u2192 5D*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 438446908271908.25
+        },
+        {
+          "id": "Te-719.11",
+          "nm": 719.11,
+          "eV": 1.724,
+          "transition": "Te I",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 416893740874136.06
+        },
+        {
+          "id": "Te-726.38",
+          "nm": 726.38,
+          "eV": 1.707,
+          "transition": "Te I",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 412721245078333.6
+        },
+        {
+          "id": "Te-775.91",
+          "nm": 775.91,
+          "eV": 1.598,
+          "transition": "Te I 5P \u2192 5D*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 386375298681548.1
         }
       ],
       "isotopes": [
@@ -6940,7 +8990,62 @@
           "body": "Element Deck describes published chemistry of Iodine. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "I-511.93",
+          "nm": 511.93,
+          "eV": 2.422,
+          "transition": "I I 2[2] \u2192 2[1]*",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 585612208700408.2
+        },
+        {
+          "id": "I-661.96",
+          "nm": 661.96,
+          "eV": 1.873,
+          "transition": "I I 2[3]* \u2192 2[4]",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 452886062601969.9
+        },
+        {
+          "id": "I-723.68",
+          "nm": 723.68,
+          "eV": 1.713,
+          "transition": "I I 2[3] \u2192 2[4]*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 414261079482644.25
+        },
+        {
+          "id": "I-723.78",
+          "nm": 723.78,
+          "eV": 1.713,
+          "transition": "I I 2[3] \u2192 2[4]*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 414203843709414.44
+        },
+        {
+          "id": "I-740.20",
+          "nm": 740.2,
+          "eV": 1.675,
+          "transition": "I I 2[3]* \u2192 2[4]",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 405015479600108.0
+        },
+        {
+          "id": "I-746.90",
+          "nm": 746.9,
+          "eV": 1.66,
+          "transition": "I I 2[3]* \u2192 2[4]",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 401382324273664.5
+        }
+      ],
       "isotopes": [
         {
           "a": 127,
@@ -7057,6 +9162,60 @@
           "color": "blue",
           "spectrum": "emission",
           "frequencyHz": 641788957869498.1
+        },
+        {
+          "id": "Xe-473.42",
+          "nm": 473.42,
+          "eV": 2.619,
+          "transition": "Xe I 2[3/2]* \u2192 2[3/2]",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 633248400997000.5
+        },
+        {
+          "id": "Xe-480.70",
+          "nm": 480.7,
+          "eV": 2.579,
+          "transition": "Xe I 2[3/2]* \u2192 2[1/2]",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 623658119409194.9
+        },
+        {
+          "id": "Xe-491.65",
+          "nm": 491.65,
+          "eV": 2.522,
+          "transition": "Xe I 2[3/2]* \u2192 2[3/2]",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 609768042306518.9
+        },
+        {
+          "id": "Xe-492.32",
+          "nm": 492.32,
+          "eV": 2.518,
+          "transition": "Xe I 2[3/2]* \u2192 2[5/2]",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 608938206857328.5
+        },
+        {
+          "id": "Xe-631.81",
+          "nm": 631.81,
+          "eV": 1.962,
+          "transition": "Xe I 2[5/2] \u2192 2[7/2]*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 474497804719773.4
+        },
+        {
+          "id": "Xe-711.96",
+          "nm": 711.96,
+          "eV": 1.741,
+          "transition": "Xe I 2[5/2] \u2192 2[7/2]*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 421080479240406.7
         }
       ],
       "isotopes": [
@@ -7162,6 +9321,24 @@
       ],
       "spectralLines": [
         {
+          "id": "Cs-387.61",
+          "nm": 387.61,
+          "eV": 3.199,
+          "transition": "Cs I 2S \u2192 2P*",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 773438399422099.5
+        },
+        {
+          "id": "Cs-388.86",
+          "nm": 388.86,
+          "eV": 3.188,
+          "transition": "Cs I 2S \u2192 2P*",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 770952162732088.5
+        },
+        {
           "id": "Cs-455.53",
           "nm": 455.53,
           "eV": 2.722,
@@ -7178,6 +9355,24 @@
           "color": "blue",
           "spectrum": "both",
           "frequencyHz": 652687577288165.1
+        },
+        {
+          "id": "Cs-672.33",
+          "nm": 672.33,
+          "eV": 1.844,
+          "transition": "Cs I 2P* \u2192 2D",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 445900760043431.0
+        },
+        {
+          "id": "Cs-706.18",
+          "nm": 706.18,
+          "eV": 1.756,
+          "transition": "Cs I 2D \u2192 2P*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 424526973292928.1
         },
         {
           "id": "Cs-852.11",
@@ -7322,10 +9517,55 @@
           "id": "Ba-553.55",
           "nm": 553.55,
           "eV": 2.24,
-          "transition": "Ba I",
+          "transition": "Ba I 1S \u2192 1P*",
           "color": "green",
           "spectrum": "both",
           "frequencyHz": 541581533736789.8
+        },
+        {
+          "id": "Ba-634.17",
+          "nm": 634.17,
+          "eV": 1.955,
+          "transition": "Ba I 3D \u2192 3D*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 472732008767365.2
+        },
+        {
+          "id": "Ba-648.29",
+          "nm": 648.29,
+          "eV": 1.912,
+          "transition": "Ba I 1D \u2192 1F*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 462435727837850.3
+        },
+        {
+          "id": "Ba-649.88",
+          "nm": 649.88,
+          "eV": 1.908,
+          "transition": "Ba I 3D \u2192 3D*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 461304330030159.44
+        },
+        {
+          "id": "Ba-652.73",
+          "nm": 652.73,
+          "eV": 1.899,
+          "transition": "Ba I 3D \u2192 3D*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 459290147534202.44
+        },
+        {
+          "id": "Ba-728.03",
+          "nm": 728.03,
+          "eV": 1.703,
+          "transition": "Ba I 3D \u2192 3F*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 411785857725643.1
         }
       ],
       "isotopes": [
@@ -7449,13 +9689,58 @@
           "frequencyHz": 735253980477755.4
         },
         {
+          "id": "La-517.73",
+          "nm": 517.73,
+          "eV": 2.395,
+          "transition": "La I 4F \u2192 4D*",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 579051741255094.4
+        },
+        {
+          "id": "La-521.19",
+          "nm": 521.19,
+          "eV": 2.379,
+          "transition": "La I 4F \u2192 4D*",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 575207617183752.4
+        },
+        {
+          "id": "La-523.43",
+          "nm": 523.43,
+          "eV": 2.369,
+          "transition": "La I 4F \u2192 *",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 572746036719332.1
+        },
+        {
+          "id": "La-545.51",
+          "nm": 545.51,
+          "eV": 2.273,
+          "transition": "La I 2D \u2192 2D*",
+          "color": "green",
+          "spectrum": "both",
+          "frequencyHz": 549563634030540.1
+        },
+        {
           "id": "La-550.13",
           "nm": 550.13,
           "eV": 2.254,
-          "transition": "La I",
+          "transition": "La I 2D \u2192 2D*",
           "color": "green",
           "spectrum": "both",
           "frequencyHz": 544948390380455.5
+        },
+        {
+          "id": "La-624.99",
+          "nm": 624.99,
+          "eV": 1.984,
+          "transition": "La I 4F \u2192 4G*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 479675607609721.7
         }
       ],
       "isotopes": [
@@ -7560,7 +9845,62 @@
           "body": "Element Deck describes published chemistry of Cerium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Ce-515.97",
+          "nm": 515.97,
+          "eV": 2.403,
+          "transition": "Ce I",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 581026916293582.9
+        },
+        {
+          "id": "Ce-516.15",
+          "nm": 516.15,
+          "eV": 2.402,
+          "transition": "Ce I",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 580824291388162.4
+        },
+        {
+          "id": "Ce-522.35",
+          "nm": 522.35,
+          "eV": 2.374,
+          "transition": "Ce I 3H \u2192 (4,1)*",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 573930234517086.1
+        },
+        {
+          "id": "Ce-524.59",
+          "nm": 524.59,
+          "eV": 2.363,
+          "transition": "Ce I 3H \u2192 (4,1)*",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 571479551649859.9
+        },
+        {
+          "id": "Ce-569.70",
+          "nm": 569.7,
+          "eV": 2.176,
+          "transition": "Ce I 5I* \u2192 5K",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 526228643145515.06
+        },
+        {
+          "id": "Ce-569.92",
+          "nm": 569.92,
+          "eV": 2.175,
+          "transition": "Ce I 5I* \u2192 5K",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 526025508843346.5
+        }
+      ],
       "isotopes": [
         {
           "a": 140,
@@ -7662,7 +10002,62 @@
           "body": "Element Deck describes published chemistry of Praseodymium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Pr-469.58",
+          "nm": 469.58,
+          "eV": 2.64,
+          "transition": "Pr I",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 638426802674730.6
+        },
+        {
+          "id": "Pr-473.67",
+          "nm": 473.67,
+          "eV": 2.618,
+          "transition": "Pr I",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 632914176536407.1
+        },
+        {
+          "id": "Pr-493.97",
+          "nm": 493.97,
+          "eV": 2.51,
+          "transition": "Pr I",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 606904180415814.6
+        },
+        {
+          "id": "Pr-495.14",
+          "nm": 495.14,
+          "eV": 2.504,
+          "transition": "Pr I",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 605470085228420.2
+        },
+        {
+          "id": "Pr-504.55",
+          "nm": 504.55,
+          "eV": 2.457,
+          "transition": "Pr I",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 594177897136061.9
+        },
+        {
+          "id": "Pr-513.34",
+          "nm": 513.34,
+          "eV": 2.415,
+          "transition": "Pr I",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 584003697354579.8
+        }
+      ],
       "isotopes": [
         {
           "a": 141,
@@ -7764,7 +10159,62 @@
           "body": "Element Deck describes published chemistry of Neodymium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Nd-462.19",
+          "nm": 462.19,
+          "eV": 2.683,
+          "transition": "Nd I 5I \u2192 *",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 648634669724572.1
+        },
+        {
+          "id": "Nd-463.42",
+          "nm": 463.42,
+          "eV": 2.675,
+          "transition": "Nd I 5I \u2192 5H*",
+          "color": "blue",
+          "spectrum": "both",
+          "frequencyHz": 646913076690690.9
+        },
+        {
+          "id": "Nd-464.11",
+          "nm": 464.11,
+          "eV": 2.671,
+          "transition": "Nd I",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 645951300338281.8
+        },
+        {
+          "id": "Nd-468.35",
+          "nm": 468.35,
+          "eV": 2.647,
+          "transition": "Nd I 5I \u2192 *",
+          "color": "blue",
+          "spectrum": "both",
+          "frequencyHz": 640103465357104.6
+        },
+        {
+          "id": "Nd-488.38",
+          "nm": 488.38,
+          "eV": 2.539,
+          "transition": "Nd I 5I \u2192 5K*",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 613850808796429.0
+        },
+        {
+          "id": "Nd-492.45",
+          "nm": 492.45,
+          "eV": 2.518,
+          "transition": "Nd I 5I \u2192 5K*",
+          "color": "blue",
+          "spectrum": "both",
+          "frequencyHz": 608777455579246.6
+        }
+      ],
       "isotopes": [
         {
           "a": 144,
@@ -7866,7 +10316,62 @@
           "body": "Element Deck describes published chemistry of Promethium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Pm-462.44",
+          "nm": 462.44,
+          "eV": 2.681,
+          "transition": "Pm I",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 648284010898711.1
+        },
+        {
+          "id": "Pm-472.84",
+          "nm": 472.84,
+          "eV": 2.622,
+          "transition": "Pm I",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 634025162845783.0
+        },
+        {
+          "id": "Pm-478.13",
+          "nm": 478.13,
+          "eV": 2.593,
+          "transition": "Pm I",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 627010348649948.8
+        },
+        {
+          "id": "Pm-480.14",
+          "nm": 480.14,
+          "eV": 2.582,
+          "transition": "Pm I",
+          "color": "blue",
+          "spectrum": "both",
+          "frequencyHz": 624385508393385.2
+        },
+        {
+          "id": "Pm-481.20",
+          "nm": 481.2,
+          "eV": 2.577,
+          "transition": "Pm I",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 623010095594347.4
+        },
+        {
+          "id": "Pm-652.04",
+          "nm": 652.04,
+          "eV": 1.901,
+          "transition": "Pm I",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 459776176308201.94
+        }
+      ],
       "isotopes": [
         {
           "a": 145,
@@ -7968,7 +10473,62 @@
           "body": "Element Deck describes published chemistry of Samarium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Sm-429.67",
+          "nm": 429.67,
+          "eV": 2.886,
+          "transition": "Sm I 7F \u2192 7G*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 697727227872553.2
+        },
+        {
+          "id": "Sm-433.61",
+          "nm": 433.61,
+          "eV": 2.859,
+          "transition": "Sm I 7F \u2192 *",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 691387325015566.9
+        },
+        {
+          "id": "Sm-447.09",
+          "nm": 447.09,
+          "eV": 2.773,
+          "transition": "Sm I 7F \u2192 *",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 670541631438860.1
+        },
+        {
+          "id": "Sm-471.61",
+          "nm": 471.61,
+          "eV": 2.629,
+          "transition": "Sm I 7F \u2192 7D*",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 635678755751574.4
+        },
+        {
+          "id": "Sm-472.84",
+          "nm": 472.84,
+          "eV": 2.622,
+          "transition": "Sm I 7F \u2192 7D*",
+          "color": "blue",
+          "spectrum": "both",
+          "frequencyHz": 634025162845783.0
+        },
+        {
+          "id": "Sm-484.17",
+          "nm": 484.17,
+          "eV": 2.561,
+          "transition": "Sm I 7F \u2192 *",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 619188421422227.6
+        }
+      ],
       "isotopes": [
         {
           "a": 150,
@@ -8076,7 +10636,7 @@
           "id": "Eu-459.40",
           "nm": 459.4,
           "eV": 2.699,
-          "transition": "Eu I",
+          "transition": "Eu I a 8S* \u2192 y 8P",
           "color": "blue",
           "spectrum": "both",
           "frequencyHz": 652573918154114.1
@@ -8085,7 +10645,7 @@
           "id": "Eu-462.72",
           "nm": 462.72,
           "eV": 2.679,
-          "transition": "Eu I",
+          "transition": "Eu I a 8S* \u2192 y 8P",
           "color": "blue",
           "spectrum": "both",
           "frequencyHz": 647891722856154.9
@@ -8094,10 +10654,37 @@
           "id": "Eu-466.19",
           "nm": 466.19,
           "eV": 2.66,
-          "transition": "Eu I",
+          "transition": "Eu I a 8S* \u2192 y 8P",
           "color": "blue",
           "spectrum": "both",
           "frequencyHz": 643069259314871.6
+        },
+        {
+          "id": "Eu-521.51",
+          "nm": 521.51,
+          "eV": 2.377,
+          "transition": "Eu I a 10D* \u2192 y 10P",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 574854668175106.9
+        },
+        {
+          "id": "Eu-535.76",
+          "nm": 535.76,
+          "eV": 2.314,
+          "transition": "Eu I b 8D* \u2192 148",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 559564838733761.44
+        },
+        {
+          "id": "Eu-583.10",
+          "nm": 583.1,
+          "eV": 2.126,
+          "transition": "Eu I a 10D* \u2192 z 10F",
+          "color": "yellow",
+          "spectrum": "emission",
+          "frequencyHz": 514135582232893.06
         }
       ],
       "isotopes": [
@@ -8201,7 +10788,62 @@
           "body": "Element Deck describes published chemistry of Gadolinium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Gd-405.36",
+          "nm": 405.36,
+          "eV": 3.059,
+          "transition": "Gd I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 739570895006907.4
+        },
+        {
+          "id": "Gd-405.82",
+          "nm": 405.82,
+          "eV": 3.055,
+          "transition": "Gd I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 738732585875511.2
+        },
+        {
+          "id": "Gd-407.87",
+          "nm": 407.87,
+          "eV": 3.04,
+          "transition": "Gd I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 735019633706818.4
+        },
+        {
+          "id": "Gd-417.55",
+          "nm": 417.55,
+          "eV": 2.969,
+          "transition": "Gd I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 717979782062028.5
+        },
+        {
+          "id": "Gd-419.08",
+          "nm": 419.08,
+          "eV": 2.958,
+          "transition": "Gd I 9D* \u2192 9G",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 715358542521714.2
+        },
+        {
+          "id": "Gd-422.58",
+          "nm": 422.58,
+          "eV": 2.934,
+          "transition": "Gd I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 709433617303232.5
+        }
+      ],
       "isotopes": [
         {
           "a": 157,
@@ -8303,7 +10945,62 @@
           "body": "Element Deck describes published chemistry of Terbium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Tb-383.03",
+          "nm": 383.03,
+          "eV": 3.237,
+          "transition": "Tb I 8G \u2192 *",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 782686625068532.5
+        },
+        {
+          "id": "Tb-390.13",
+          "nm": 390.13,
+          "eV": 3.178,
+          "transition": "Tb I 8G \u2192 *",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 768442462768820.6
+        },
+        {
+          "id": "Tb-406.16",
+          "nm": 406.16,
+          "eV": 3.053,
+          "transition": "Tb I 8G \u2192 *",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 738114186527476.8
+        },
+        {
+          "id": "Tb-431.88",
+          "nm": 431.88,
+          "eV": 2.871,
+          "transition": "Tb I 6H* \u2192 (15/2,1)",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 694156844493840.9
+        },
+        {
+          "id": "Tb-432.64",
+          "nm": 432.64,
+          "eV": 2.866,
+          "transition": "Tb I 6H* \u2192 (15/2,1)",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 692937449149408.2
+        },
+        {
+          "id": "Tb-433.84",
+          "nm": 433.84,
+          "eV": 2.858,
+          "transition": "Tb I 6H* \u2192 (15/2,1)",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 691020786465056.2
+        }
+      ],
       "isotopes": [
         {
           "a": 159,
@@ -8405,7 +11102,62 @@
           "body": "Element Deck describes published chemistry of Dysprosium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Dy-404.60",
+          "nm": 404.6,
+          "eV": 3.064,
+          "transition": "Dy I 5I \u2192 (8,1)*",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 740960103806228.2
+        },
+        {
+          "id": "Dy-416.80",
+          "nm": 416.8,
+          "eV": 2.975,
+          "transition": "Dy I 5I \u2192 (7,1)*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 719271732245681.4
+        },
+        {
+          "id": "Dy-418.68",
+          "nm": 418.68,
+          "eV": 2.961,
+          "transition": "Dy I 5I \u2192 (8,1)*",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 716041984331709.1
+        },
+        {
+          "id": "Dy-419.48",
+          "nm": 419.48,
+          "eV": 2.956,
+          "transition": "Dy I 5I \u2192 *",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 714676404119385.9
+        },
+        {
+          "id": "Dy-421.17",
+          "nm": 421.17,
+          "eV": 2.944,
+          "transition": "Dy I 5I \u2192 (8,1)*",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 711808671082935.5
+        },
+        {
+          "id": "Dy-421.81",
+          "nm": 421.81,
+          "eV": 2.939,
+          "transition": "Dy I 5I \u2192 (7,1)*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 710728664564614.4
+        }
+      ],
       "isotopes": [
         {
           "a": 162,
@@ -8507,7 +11259,62 @@
           "body": "Element Deck describes published chemistry of Holmium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Ho-404.08",
+          "nm": 404.08,
+          "eV": 3.068,
+          "transition": "Ho I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 741913626014650.5
+        },
+        {
+          "id": "Ho-405.39",
+          "nm": 405.39,
+          "eV": 3.058,
+          "transition": "Ho I 4I* \u2192 (15/2,1)",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 739516164680924.5
+        },
+        {
+          "id": "Ho-410.38",
+          "nm": 410.38,
+          "eV": 3.021,
+          "transition": "Ho I 4I* \u2192 (15/2,1)",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 730524046006140.6
+        },
+        {
+          "id": "Ho-410.86",
+          "nm": 410.86,
+          "eV": 3.018,
+          "transition": "Ho I 4I* \u2192 (13/2,1)",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 729670588521637.5
+        },
+        {
+          "id": "Ho-412.72",
+          "nm": 412.72,
+          "eV": 3.004,
+          "transition": "Ho I 4I* \u2192 (13/2,1)",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 726382191316146.4
+        },
+        {
+          "id": "Ho-416.30",
+          "nm": 416.3,
+          "eV": 2.978,
+          "transition": "Ho I 4I* \u2192 (15/2,1)",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 720135618544318.9
+        }
+      ],
       "isotopes": [
         {
           "a": 165,
@@ -8609,7 +11416,62 @@
           "body": "Element Deck describes published chemistry of Erbium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Er-386.29",
+          "nm": 386.29,
+          "eV": 3.21,
+          "transition": "Er I 3H \u2192 *",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 776081332677522.0
+        },
+        {
+          "id": "Er-389.27",
+          "nm": 389.27,
+          "eV": 3.185,
+          "transition": "Er I 3H \u2192 *",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 770140154648444.5
+        },
+        {
+          "id": "Er-393.70",
+          "nm": 393.7,
+          "eV": 3.149,
+          "transition": "Er I 3H \u2192 *",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 761474366268732.5
+        },
+        {
+          "id": "Er-400.80",
+          "nm": 400.8,
+          "eV": 3.093,
+          "transition": "Er I 3H \u2192 *",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 747985174650698.5
+        },
+        {
+          "id": "Er-408.76",
+          "nm": 408.76,
+          "eV": 3.033,
+          "transition": "Er I 3H \u2192 *",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 733419263137293.2
+        },
+        {
+          "id": "Er-415.11",
+          "nm": 415.11,
+          "eV": 2.987,
+          "transition": "Er I 3H \u2192 *",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 722200038544000.4
+        }
+      ],
       "isotopes": [
         {
           "a": 167,
@@ -8711,7 +11573,62 @@
           "body": "Element Deck describes published chemistry of Thulium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Tm-388.31",
+          "nm": 388.31,
+          "eV": 3.193,
+          "transition": "Tm I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 772044134840720.0
+        },
+        {
+          "id": "Tm-388.73",
+          "nm": 388.73,
+          "eV": 3.189,
+          "transition": "Tm I 2F* \u2192 (5,5/2)",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 771209986365857.9
+        },
+        {
+          "id": "Tm-409.42",
+          "nm": 409.42,
+          "eV": 3.028,
+          "transition": "Tm I 2F* \u2192 (7/2,1)",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 732236964486346.5
+        },
+        {
+          "id": "Tm-410.58",
+          "nm": 410.58,
+          "eV": 3.02,
+          "transition": "Tm I 2F* \u2192 (5,3/2)",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 730168196210239.1
+        },
+        {
+          "id": "Tm-418.76",
+          "nm": 418.76,
+          "eV": 2.961,
+          "transition": "Tm I",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 715905191517814.5
+        },
+        {
+          "id": "Tm-420.37",
+          "nm": 420.37,
+          "eV": 2.949,
+          "transition": "Tm I 2F* \u2192 (4,5/2)",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 713163303756214.6
+        }
+      ],
       "isotopes": [
         {
           "a": 169,
@@ -8819,10 +11736,55 @@
           "id": "Yb-398.80",
           "nm": 398.8,
           "eV": 3.109,
-          "transition": "Yb I",
+          "transition": "Yb I 1S \u2192 1P*",
           "color": "violet",
           "spectrum": "both",
           "frequencyHz": 751736354062186.5
+        },
+        {
+          "id": "Yb-399.09",
+          "nm": 399.09,
+          "eV": 3.107,
+          "transition": "Yb I 3P* \u2192 3P",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 751190102483149.1
+        },
+        {
+          "id": "Yb-493.55",
+          "nm": 493.55,
+          "eV": 2.512,
+          "transition": "Yb I 3P* \u2192 3D",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 607420642285482.8
+        },
+        {
+          "id": "Yb-555.65",
+          "nm": 555.65,
+          "eV": 2.231,
+          "transition": "Yb I 1S \u2192 3P*",
+          "color": "green",
+          "spectrum": "both",
+          "frequencyHz": 539534703500404.9
+        },
+        {
+          "id": "Yb-679.96",
+          "nm": 679.96,
+          "eV": 1.823,
+          "transition": "Yb I 3P* \u2192 3S",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 440897196893934.9
+        },
+        {
+          "id": "Yb-769.95",
+          "nm": 769.95,
+          "eV": 1.61,
+          "transition": "Yb I 3P* \u2192 3S",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 389366138060913.0
         }
       ],
       "isotopes": [
@@ -8926,7 +11888,62 @@
           "body": "Element Deck describes published chemistry of Lutetium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Lu-384.12",
+          "nm": 384.12,
+          "eV": 3.228,
+          "transition": "Lu I 2D \u2192 2F*",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 780465630532125.4
+        },
+        {
+          "id": "Lu-412.47",
+          "nm": 412.47,
+          "eV": 3.006,
+          "transition": "Lu I 2P* \u2192 2D",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 726822454966421.8
+        },
+        {
+          "id": "Lu-451.86",
+          "nm": 451.86,
+          "eV": 2.744,
+          "transition": "Lu I 2D \u2192 2D*",
+          "color": "blue",
+          "spectrum": "both",
+          "frequencyHz": 663463147877661.1
+        },
+        {
+          "id": "Lu-465.80",
+          "nm": 465.8,
+          "eV": 2.662,
+          "transition": "Lu I 2D \u2192 2D*",
+          "color": "blue",
+          "spectrum": "both",
+          "frequencyHz": 643607681408329.6
+        },
+        {
+          "id": "Lu-513.51",
+          "nm": 513.51,
+          "eV": 2.414,
+          "transition": "Lu I 2D \u2192 2D*",
+          "color": "green",
+          "spectrum": "both",
+          "frequencyHz": 583810360070884.8
+        },
+        {
+          "id": "Lu-600.45",
+          "nm": 600.45,
+          "eV": 2.065,
+          "transition": "Lu I 2P* \u2192 2S",
+          "color": "orange",
+          "spectrum": "emission",
+          "frequencyHz": 499279636938962.4
+        }
+      ],
       "isotopes": [
         {
           "a": 175,
@@ -9028,7 +12045,62 @@
           "body": "Element Deck describes published chemistry of Hafnium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Hf-380.04",
+          "nm": 380.04,
+          "eV": 3.262,
+          "transition": "Hf I a 3F \u2192 z 5D*",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 788844484791074.5
+        },
+        {
+          "id": "Hf-382.07",
+          "nm": 382.07,
+          "eV": 3.245,
+          "transition": "Hf I a 3F \u2192 y 3F*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 784653225848666.4
+        },
+        {
+          "id": "Hf-384.92",
+          "nm": 384.92,
+          "eV": 3.221,
+          "transition": "Hf I a 1D \u2192 y 1D*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 778843546711004.9
+        },
+        {
+          "id": "Hf-417.43",
+          "nm": 417.43,
+          "eV": 2.97,
+          "transition": "Hf I a 3F \u2192 z 5D*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 718186182114366.4
+        },
+        {
+          "id": "Hf-713.18",
+          "nm": 713.18,
+          "eV": 1.738,
+          "transition": "Hf I a 3F \u2192 z 3D*",
+          "color": "red",
+          "spectrum": "both",
+          "frequencyHz": 420360158725707.4
+        },
+        {
+          "id": "Hf-723.71",
+          "nm": 723.71,
+          "eV": 1.713,
+          "transition": "Hf I a 3F \u2192 z 3D*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 414243907089856.4
+        }
+      ],
       "isotopes": [
         {
           "a": 178,
@@ -9130,7 +12202,62 @@
           "body": "Element Deck describes published chemistry of Tantalum. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Ta-406.14",
+          "nm": 406.14,
+          "eV": 3.053,
+          "transition": "Ta I a 4P \u2192 y 6D*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 738150534298517.8
+        },
+        {
+          "id": "Ta-451.10",
+          "nm": 451.1,
+          "eV": 2.748,
+          "transition": "Ta I a 4F \u2192 277*",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 664580931057415.1
+        },
+        {
+          "id": "Ta-457.43",
+          "nm": 457.43,
+          "eV": 2.71,
+          "transition": "Ta I a 4F \u2192 z 4F*",
+          "color": "blue",
+          "spectrum": "both",
+          "frequencyHz": 655384338587324.8
+        },
+        {
+          "id": "Ta-468.19",
+          "nm": 468.19,
+          "eV": 2.648,
+          "transition": "Ta I a 4F \u2192 z 4F*",
+          "color": "blue",
+          "spectrum": "both",
+          "frequencyHz": 640322215339926.1
+        },
+        {
+          "id": "Ta-515.66",
+          "nm": 515.66,
+          "eV": 2.404,
+          "transition": "Ta I a 4F \u2192 z 6G*",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 581376213008571.5
+        },
+        {
+          "id": "Ta-648.54",
+          "nm": 648.54,
+          "eV": 1.912,
+          "transition": "Ta I a 6D \u2192 z 6D*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 462257467542480.06
+        }
+      ],
       "isotopes": [
         {
           "a": 181,
@@ -9234,10 +12361,28 @@
       ],
       "spectralLines": [
         {
+          "id": "W-381.75",
+          "nm": 381.75,
+          "eV": 3.248,
+          "transition": "W I 7S \u2192 5F*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 785310957432874.9
+        },
+        {
+          "id": "W-386.80",
+          "nm": 386.8,
+          "eV": 3.205,
+          "transition": "W I 7S \u2192 7D*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 775058061013443.5
+        },
+        {
           "id": "W-400.88",
           "nm": 400.88,
           "eV": 3.093,
-          "transition": "W I",
+          "transition": "W I 7S \u2192 7P*",
           "color": "violet",
           "spectrum": "both",
           "frequencyHz": 747835906006785.0
@@ -9246,7 +12391,7 @@
           "id": "W-407.44",
           "nm": 407.44,
           "eV": 3.043,
-          "transition": "W I",
+          "transition": "W I 7S \u2192 7P*",
           "color": "violet",
           "spectrum": "both",
           "frequencyHz": 735795351462792.1
@@ -9255,10 +12400,19 @@
           "id": "W-429.46",
           "nm": 429.46,
           "eV": 2.887,
-          "transition": "W I",
+          "transition": "W I 7S \u2192 7P*",
           "color": "violet",
           "spectrum": "both",
           "frequencyHz": 698068406836492.4
+        },
+        {
+          "id": "W-484.38",
+          "nm": 484.38,
+          "eV": 2.56,
+          "transition": "W I 5D \u2192 7D*",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 618919976051860.0
         }
       ],
       "isotopes": [
@@ -9380,6 +12534,60 @@
           "color": "UV",
           "spectrum": "both",
           "frequencyHz": 865276814731434.0
+        },
+        {
+          "id": "Re-413.64",
+          "nm": 413.64,
+          "eV": 2.997,
+          "transition": "Re I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 724766603810076.4
+        },
+        {
+          "id": "Re-422.75",
+          "nm": 422.75,
+          "eV": 2.933,
+          "transition": "Re I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 709148333530455.2
+        },
+        {
+          "id": "Re-451.33",
+          "nm": 451.33,
+          "eV": 2.747,
+          "transition": "Re I",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 664242257328340.6
+        },
+        {
+          "id": "Re-488.91",
+          "nm": 488.91,
+          "eV": 2.536,
+          "transition": "Re I",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 613185367450041.9
+        },
+        {
+          "id": "Re-527.10",
+          "nm": 527.1,
+          "eV": 2.352,
+          "transition": "Re I",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 568758220451527.1
+        },
+        {
+          "id": "Re-527.56",
+          "nm": 527.56,
+          "eV": 2.35,
+          "transition": "Re I",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 568262298127227.2
         }
       ],
       "isotopes": [
@@ -9493,6 +12701,60 @@
           "color": "UV",
           "spectrum": "both",
           "frequencyHz": 1030533353958268.6
+        },
+        {
+          "id": "Os-411.20",
+          "nm": 411.2,
+          "eV": 3.015,
+          "transition": "Os I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 729067261673151.8
+        },
+        {
+          "id": "Os-413.58",
+          "nm": 413.58,
+          "eV": 2.998,
+          "transition": "Os I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 724871749117462.1
+        },
+        {
+          "id": "Os-417.32",
+          "nm": 417.32,
+          "eV": 2.971,
+          "transition": "Os I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 718375486437266.2
+        },
+        {
+          "id": "Os-421.19",
+          "nm": 421.19,
+          "eV": 2.944,
+          "transition": "Os I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 711774871198271.5
+        },
+        {
+          "id": "Os-426.08",
+          "nm": 426.08,
+          "eV": 2.91,
+          "transition": "Os I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 703606031731130.2
+        },
+        {
+          "id": "Os-442.05",
+          "nm": 442.05,
+          "eV": 2.805,
+          "transition": "Os I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 678186761678543.1
         }
       ],
       "isotopes": [
@@ -9597,7 +12859,62 @@
           "body": "Element Deck describes published chemistry of Iridium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Ir-380.01",
+          "nm": 380.01,
+          "eV": 3.263,
+          "transition": "Ir I a 4F \u2192 z 6D*",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 788906760348411.9
+        },
+        {
+          "id": "Ir-390.25",
+          "nm": 390.25,
+          "eV": 3.177,
+          "transition": "Ir I b 4F \u2192 z 6F*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 768206170403587.4
+        },
+        {
+          "id": "Ir-391.54",
+          "nm": 391.54,
+          "eV": 3.167,
+          "transition": "Ir I a 4P \u2192 3848*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 765675174950196.6
+        },
+        {
+          "id": "Ir-393.48",
+          "nm": 393.48,
+          "eV": 3.151,
+          "transition": "Ir I b 4F \u2192 z 6F*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 761900116905560.5
+        },
+        {
+          "id": "Ir-397.63",
+          "nm": 397.63,
+          "eV": 3.118,
+          "transition": "Ir I a 2F \u2192 3822*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 753948288610014.4
+        },
+        {
+          "id": "Ir-399.21",
+          "nm": 399.21,
+          "eV": 3.106,
+          "transition": "Ir I b 4F \u2192 z 6F*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 750964299491495.8
+        }
+      ],
       "isotopes": [
         {
           "a": 192,
@@ -9718,6 +13035,60 @@
           "color": "UV",
           "spectrum": "both",
           "frequencyHz": 978211433419257.8
+        },
+        {
+          "id": "Pt-381.87",
+          "nm": 381.87,
+          "eV": 3.247,
+          "transition": "Pt I 3F \u2192 a 5G*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 785064178909052.8
+        },
+        {
+          "id": "Pt-396.64",
+          "nm": 396.64,
+          "eV": 3.126,
+          "transition": "Pt I 3F \u2192 a 5D*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 755830117991125.4
+        },
+        {
+          "id": "Pt-416.45",
+          "nm": 416.45,
+          "eV": 2.977,
+          "transition": "Pt I 3F \u2192 3F*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 719876234842117.9
+        },
+        {
+          "id": "Pt-443.02",
+          "nm": 443.02,
+          "eV": 2.799,
+          "transition": "Pt I b 3P* \u2192 a 1D",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 676701859961175.5
+        },
+        {
+          "id": "Pt-530.10",
+          "nm": 530.1,
+          "eV": 2.339,
+          "transition": "Pt I 5G* \u2192 (4,1)",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 565539441614789.6
+        },
+        {
+          "id": "Pt-676.00",
+          "nm": 676.0,
+          "eV": 1.834,
+          "transition": "Pt I 3F* \u2192 3D",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 443479967455621.25
         }
       ],
       "isotopes": [
@@ -9848,6 +13219,60 @@
           "color": "UV",
           "spectrum": "both",
           "frequencyHz": 1120300665171898.1
+        },
+        {
+          "id": "Au-389.79",
+          "nm": 389.79,
+          "eV": 3.181,
+          "transition": "Au I 4P* \u2192 4D",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 769112747889889.4
+        },
+        {
+          "id": "Au-406.51",
+          "nm": 406.51,
+          "eV": 3.05,
+          "transition": "Au I 2P* \u2192 2D",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 737478679491279.4
+        },
+        {
+          "id": "Au-460.75",
+          "nm": 460.75,
+          "eV": 2.691,
+          "transition": "Au I 4P* \u2192 4D",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 650661873033098.1
+        },
+        {
+          "id": "Au-479.26",
+          "nm": 479.26,
+          "eV": 2.587,
+          "transition": "Au I 2P* \u2192 2D",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 625531982639903.1
+        },
+        {
+          "id": "Au-627.82",
+          "nm": 627.82,
+          "eV": 1.975,
+          "transition": "Au I 2D \u2192 2P*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 477513392373610.2
+        },
+        {
+          "id": "Au-751.07",
+          "nm": 751.07,
+          "eV": 1.651,
+          "transition": "Au I 2P* \u2192 2S",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 399153817886481.9
         }
       ],
       "isotopes": [
@@ -9966,16 +13391,25 @@
           "id": "Hg-404.66",
           "nm": 404.66,
           "eV": 3.064,
-          "transition": "Hg I",
+          "transition": "Hg I 3P* \u2192 3S",
           "color": "violet",
           "spectrum": "both",
           "frequencyHz": 740850239707408.6
         },
         {
+          "id": "Hg-407.78",
+          "nm": 407.78,
+          "eV": 3.04,
+          "transition": "Hg I 3P* \u2192 1S",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 735181857864534.8
+        },
+        {
           "id": "Hg-435.83",
           "nm": 435.83,
           "eV": 2.845,
-          "transition": "Hg I",
+          "transition": "Hg I 3P* \u2192 3S",
           "color": "violet",
           "spectrum": "both",
           "frequencyHz": 687865585205240.6
@@ -9984,7 +13418,7 @@
           "id": "Hg-546.07",
           "nm": 546.07,
           "eV": 2.27,
-          "transition": "Hg I",
+          "transition": "Hg I 3P* \u2192 3S",
           "color": "green",
           "spectrum": "both",
           "frequencyHz": 549000051275477.44
@@ -9993,7 +13427,7 @@
           "id": "Hg-576.96",
           "nm": 576.96,
           "eV": 2.149,
-          "transition": "Hg I",
+          "transition": "Hg I 1P* \u2192 3D",
           "color": "yellow",
           "spectrum": "both",
           "frequencyHz": 519607005684969.4
@@ -10006,6 +13440,15 @@
           "color": "yellow",
           "spectrum": "both",
           "frequencyHz": 517713675376033.9
+        },
+        {
+          "id": "Hg-690.75",
+          "nm": 690.75,
+          "eV": 1.795,
+          "transition": "Hg I 3S \u2192 3P*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 434010073108939.56
         }
       ],
       "isotopes": [
@@ -10139,13 +13582,49 @@
           "frequencyHz": 794004973912122.2
         },
         {
+          "id": "Tl-435.99",
+          "nm": 435.99,
+          "eV": 2.844,
+          "transition": "Tl I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 687613151677790.8
+        },
+        {
           "id": "Tl-535.05",
           "nm": 535.05,
           "eV": 2.317,
-          "transition": "Tl I",
+          "transition": "Tl I 2P* \u2192 2S",
           "color": "green",
           "spectrum": "both",
           "frequencyHz": 560307369404728.56
+        },
+        {
+          "id": "Tl-654.98",
+          "nm": 654.98,
+          "eV": 1.893,
+          "transition": "Tl I",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 457712385110995.7
+        },
+        {
+          "id": "Tl-671.38",
+          "nm": 671.38,
+          "eV": 1.847,
+          "transition": "Tl I",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 446531707825672.5
+        },
+        {
+          "id": "Tl-749.36",
+          "nm": 749.36,
+          "eV": 1.655,
+          "transition": "Tl I",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 400064665848190.44
         }
       ],
       "isotopes": [
@@ -10287,13 +13766,49 @@
           "frequencyHz": 813879348445771.6
         },
         {
+          "id": "Pb-401.96",
+          "nm": 401.96,
+          "eV": 3.084,
+          "transition": "Pb I (3/2,3/2) \u2192 2[5/2]*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 745826594686038.5
+        },
+        {
           "id": "Pb-405.78",
           "nm": 405.78,
           "eV": 3.055,
-          "transition": "Pb I",
+          "transition": "Pb I (3/2,1/2) \u2192 (1/2,1/2)*",
           "color": "violet",
           "spectrum": "both",
           "frequencyHz": 738805406870718.1
+        },
+        {
+          "id": "Pb-406.21",
+          "nm": 406.21,
+          "eV": 3.052,
+          "transition": "Pb I (3/2,3/2) \u2192 2[3/2]*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 738023332758917.9
+        },
+        {
+          "id": "Pb-416.80",
+          "nm": 416.8,
+          "eV": 2.975,
+          "transition": "Pb I (3/2,3/2) \u2192 2[5/2]*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 719271732245681.4
+        },
+        {
+          "id": "Pb-520.14",
+          "nm": 520.14,
+          "eV": 2.384,
+          "transition": "Pb I (3/2,3/2) \u2192 (1/2,1/2)*",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 576368781481908.6
         }
       ],
       "isotopes": [
@@ -10416,6 +13931,60 @@
           "color": "UV",
           "spectrum": "both",
           "frequencyHz": 977254809792352.6
+        },
+        {
+          "id": "Bi-388.82",
+          "nm": 388.82,
+          "eV": 3.189,
+          "transition": "Bi I 2P* \u2192 2[0]",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 771031474718378.6
+        },
+        {
+          "id": "Bi-412.17",
+          "nm": 412.17,
+          "eV": 3.008,
+          "transition": "Bi I 2P* \u2192 2[1]",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 727351476332581.1
+        },
+        {
+          "id": "Bi-430.84",
+          "nm": 430.84,
+          "eV": 2.878,
+          "transition": "Bi I 2P* \u2192 2[1]",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 695832462166929.8
+        },
+        {
+          "id": "Bi-449.30",
+          "nm": 449.3,
+          "eV": 2.759,
+          "transition": "Bi I 2P* \u2192 2[2]",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 667243396394391.2
+        },
+        {
+          "id": "Bi-472.25",
+          "nm": 472.25,
+          "eV": 2.625,
+          "transition": "Bi I 2D* \u2192 2[0]",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 634817274748544.2
+        },
+        {
+          "id": "Bi-555.21",
+          "nm": 555.21,
+          "eV": 2.233,
+          "transition": "Bi I 2[0] \u2192 2[1]*",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 539962280938743.8
         }
       ],
       "isotopes": [
@@ -10520,7 +14089,62 @@
           "body": "Element Deck describes published chemistry of Polonium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Po-386.19",
+          "nm": 386.19,
+          "eV": 3.21,
+          "transition": "Po I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 776282291100235.5
+        },
+        {
+          "id": "Po-417.05",
+          "nm": 417.05,
+          "eV": 2.973,
+          "transition": "Po I 3P \u2192 3S*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 718840565879390.9
+        },
+        {
+          "id": "Po-449.32",
+          "nm": 449.32,
+          "eV": 2.759,
+          "transition": "Po I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 667213696252114.2
+        },
+        {
+          "id": "Po-461.14",
+          "nm": 461.14,
+          "eV": 2.689,
+          "transition": "Po I",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 650111588671553.1
+        },
+        {
+          "id": "Po-487.62",
+          "nm": 487.62,
+          "eV": 2.543,
+          "transition": "Po I",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 614807550961814.5
+        },
+        {
+          "id": "Po-532.32",
+          "nm": 532.32,
+          "eV": 2.329,
+          "transition": "Po I",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 563180902464682.8
+        }
+      ],
       "isotopes": [
         {
           "a": 209,
@@ -10624,7 +14248,26 @@
           "body": "Element Deck describes published chemistry of Astatine. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "At-216.22",
+          "nm": 216.22,
+          "eV": 5.734,
+          "transition": "At I 2P* \u2192 4P",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 1386515854222551.0
+        },
+        {
+          "id": "At-224.40",
+          "nm": 224.4,
+          "eV": 5.525,
+          "transition": "At I 2P* \u2192 4P",
+          "color": "UV",
+          "spectrum": "both",
+          "frequencyHz": 1335973520499108.5
+        }
+      ],
       "isotopes": [
         {
           "a": 210,
@@ -10724,7 +14367,62 @@
           "body": "Element Deck describes published chemistry of Radon. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Rn-430.78",
+          "nm": 430.78,
+          "eV": 2.878,
+          "transition": "Rn I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 695929379265518.4
+        },
+        {
+          "id": "Rn-434.96",
+          "nm": 434.96,
+          "eV": 2.85,
+          "transition": "Rn I 2[3/2]* \u2192 2[5/2]",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 689241442891300.2
+        },
+        {
+          "id": "Rn-445.93",
+          "nm": 445.93,
+          "eV": 2.78,
+          "transition": "Rn I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 672285914829681.8
+        },
+        {
+          "id": "Rn-705.54",
+          "nm": 705.54,
+          "eV": 1.757,
+          "transition": "Rn I 2[3/2]* \u2192 2[3/2]",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 424912064517957.9
+        },
+        {
+          "id": "Rn-726.81",
+          "nm": 726.81,
+          "eV": 1.706,
+          "transition": "Rn I 2[3/2]* \u2192 2[1/2]",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 412477068284696.1
+        },
+        {
+          "id": "Rn-745.00",
+          "nm": 745.0,
+          "eV": 1.664,
+          "transition": "Rn I 2[3/2]* \u2192 2[5/2]",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 402405983892617.44
+        }
+      ],
       "isotopes": [
         {
           "a": 222,
@@ -10827,7 +14525,62 @@
           "body": "Element Deck describes published chemistry of Francium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Fr-585.35",
+          "nm": 585.35,
+          "eV": 2.118,
+          "transition": "Fr I 2P* \u2192 2D",
+          "color": "yellow",
+          "spectrum": "emission",
+          "frequencyHz": 512159320064918.4
+        },
+        {
+          "id": "Fr-609.53",
+          "nm": 609.53,
+          "eV": 2.034,
+          "transition": "Fr I 2P* \u2192 2D",
+          "color": "orange",
+          "spectrum": "emission",
+          "frequencyHz": 491842006135875.2
+        },
+        {
+          "id": "Fr-648.42",
+          "nm": 648.42,
+          "eV": 1.912,
+          "transition": "Fr I 2P* \u2192 2D",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 462343015329570.3
+        },
+        {
+          "id": "Fr-650.72",
+          "nm": 650.72,
+          "eV": 1.905,
+          "transition": "Fr I 2P* \u2192 2D",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 460708842512908.7
+        },
+        {
+          "id": "Fr-717.99",
+          "nm": 717.99,
+          "eV": 1.727,
+          "transition": "Fr I 2S \u2192 2P*",
+          "color": "red",
+          "spectrum": "both",
+          "frequencyHz": 417544057716681.25
+        },
+        {
+          "id": "Fr-728.59",
+          "nm": 728.59,
+          "eV": 1.702,
+          "transition": "Fr I 2P* \u2192 2D",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 411469355879163.8
+        }
+      ],
       "isotopes": [
         {
           "a": 223,
@@ -10930,7 +14683,62 @@
           "body": "Element Deck describes published chemistry of Radium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Ra-482.59",
+          "nm": 482.59,
+          "eV": 2.569,
+          "transition": "Ra I 1S \u2192 1P*",
+          "color": "blue",
+          "spectrum": "both",
+          "frequencyHz": 621215644750202.0
+        },
+        {
+          "id": "Ra-540.02",
+          "nm": 540.02,
+          "eV": 2.296,
+          "transition": "Ra I 3D \u2192 3D*",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 555150657383059.9
+        },
+        {
+          "id": "Ra-540.68",
+          "nm": 540.68,
+          "eV": 2.293,
+          "transition": "Ra I 3D \u2192 3D*",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 554472993267737.0
+        },
+        {
+          "id": "Ra-566.08",
+          "nm": 566.08,
+          "eV": 2.19,
+          "transition": "Ra I 3D \u2192 3F*",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 529593799462973.4
+        },
+        {
+          "id": "Ra-620.03",
+          "nm": 620.03,
+          "eV": 2.0,
+          "transition": "Ra I 3D \u2192 3F*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 483512826798703.3
+        },
+        {
+          "id": "Ra-714.12",
+          "nm": 714.12,
+          "eV": 1.736,
+          "transition": "Ra I 1S \u2192 3P*",
+          "color": "red",
+          "spectrum": "both",
+          "frequencyHz": 419806836386041.5
+        }
+      ],
       "isotopes": [
         {
           "a": 226,
@@ -11033,7 +14841,62 @@
           "body": "Element Deck describes published chemistry of Actinium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Ac-384.30",
+          "nm": 384.3,
+          "eV": 3.226,
+          "transition": "Ac I 2D \u2192 2P*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 780100072859745.0
+        },
+        {
+          "id": "Ac-388.56",
+          "nm": 388.56,
+          "eV": 3.191,
+          "transition": "Ac I 2D \u2192 2P*",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 771547400658842.9
+        },
+        {
+          "id": "Ac-418.00",
+          "nm": 418.0,
+          "eV": 2.966,
+          "transition": "Ac I 2D \u2192 2D*",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 717206837320574.1
+        },
+        {
+          "id": "Ac-446.27",
+          "nm": 446.27,
+          "eV": 2.778,
+          "transition": "Ac I 2D \u2192 2F*",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 671773719945324.6
+        },
+        {
+          "id": "Ac-471.66",
+          "nm": 471.66,
+          "eV": 2.629,
+          "transition": "Ac I 2D \u2192 2F*",
+          "color": "blue",
+          "spectrum": "both",
+          "frequencyHz": 635611368358563.4
+        },
+        {
+          "id": "Ac-525.82",
+          "nm": 525.82,
+          "eV": 2.358,
+          "transition": "Ac I 2D \u2192 2D*",
+          "color": "green",
+          "spectrum": "both",
+          "frequencyHz": 570142744665474.9
+        }
+      ],
       "isotopes": [
         {
           "a": 227,
@@ -11138,6 +15001,15 @@
       ],
       "spectralLines": [
         {
+          "id": "Th-395.04",
+          "nm": 395.04,
+          "eV": 3.139,
+          "transition": "Th I 3F \u2192 *",
+          "color": "violet",
+          "spectrum": "both",
+          "frequencyHz": 758891398339408.6
+        },
+        {
           "id": "Th-401.91",
           "nm": 401.91,
           "eV": 3.085,
@@ -11145,6 +15017,51 @@
           "color": "violet",
           "spectrum": "both",
           "frequencyHz": 745919379960687.6
+        },
+        {
+          "id": "Th-571.96",
+          "nm": 571.96,
+          "eV": 2.168,
+          "transition": "Th I 5F \u2192 *",
+          "color": "yellow",
+          "spectrum": "emission",
+          "frequencyHz": 524149342611371.4
+        },
+        {
+          "id": "Th-576.06",
+          "nm": 576.06,
+          "eV": 2.152,
+          "transition": "Th I 3F \u2192 3D*",
+          "color": "yellow",
+          "spectrum": "both",
+          "frequencyHz": 520418807068708.2
+        },
+        {
+          "id": "Th-618.26",
+          "nm": 618.26,
+          "eV": 2.005,
+          "transition": "Th I 3F \u2192 3P*",
+          "color": "orange",
+          "spectrum": "emission",
+          "frequencyHz": 484897062724420.1
+        },
+        {
+          "id": "Th-645.73",
+          "nm": 645.73,
+          "eV": 1.92,
+          "transition": "Th I 3H* \u2192 5I",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 464269056726495.5
+        },
+        {
+          "id": "Th-658.39",
+          "nm": 658.39,
+          "eV": 1.883,
+          "transition": "Th I 3F \u2192 3F*",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 455341754886921.06
         }
       ],
       "isotopes": [
@@ -11249,7 +15166,62 @@
           "body": "Element Deck describes published chemistry of Protactinium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Pa-398.22",
+          "nm": 398.22,
+          "eV": 3.113,
+          "transition": "Pa I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 752831244035960.0
+        },
+        {
+          "id": "Pa-694.57",
+          "nm": 694.57,
+          "eV": 1.785,
+          "transition": "Pa I",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 431623102063146.94
+        },
+        {
+          "id": "Pa-711.49",
+          "nm": 711.49,
+          "eV": 1.743,
+          "transition": "Pa I",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 421358638912704.3
+        },
+        {
+          "id": "Pa-736.83",
+          "nm": 736.83,
+          "eV": 1.683,
+          "transition": "Pa I",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 406867877257983.5
+        },
+        {
+          "id": "Pa-749.32",
+          "nm": 749.32,
+          "eV": 1.655,
+          "transition": "Pa I",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 400086021993273.9
+        },
+        {
+          "id": "Pa-760.82",
+          "nm": 760.82,
+          "eV": 1.63,
+          "transition": "Pa I",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 394038613601114.5
+        }
+      ],
       "isotopes": [
         {
           "a": 231,
@@ -11363,6 +15335,60 @@
       ],
       "spectralLines": [
         {
+          "id": "U-381.20",
+          "nm": 381.2,
+          "eV": 3.252,
+          "transition": "U I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 786444013641133.2
+        },
+        {
+          "id": "U-383.96",
+          "nm": 383.96,
+          "eV": 3.229,
+          "transition": "U I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 780790858422752.4
+        },
+        {
+          "id": "U-387.10",
+          "nm": 387.1,
+          "eV": 3.203,
+          "transition": "U I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 774457396021699.6
+        },
+        {
+          "id": "U-394.38",
+          "nm": 394.38,
+          "eV": 3.144,
+          "transition": "U I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 760161412850550.2
+        },
+        {
+          "id": "U-404.27",
+          "nm": 404.27,
+          "eV": 3.067,
+          "transition": "U I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 741564939273258.0
+        },
+        {
+          "id": "U-415.40",
+          "nm": 415.4,
+          "eV": 2.985,
+          "transition": "U I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 721695854597977.8
+        },
+        {
           "id": "U-591.54",
           "nm": 591.54,
           "eV": 2.096,
@@ -11474,7 +15500,62 @@
           "body": "Element Deck describes published chemistry of Neptunium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Np-398.69",
+          "nm": 398.69,
+          "eV": 3.11,
+          "transition": "Np I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 751943760816674.5
+        },
+        {
+          "id": "Np-693.03",
+          "nm": 693.03,
+          "eV": 1.789,
+          "transition": "Np I",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 432582222991789.6
+        },
+        {
+          "id": "Np-697.21",
+          "nm": 697.21,
+          "eV": 1.778,
+          "transition": "Np I",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 429988752312789.5
+        },
+        {
+          "id": "Np-773.51",
+          "nm": 773.51,
+          "eV": 1.603,
+          "transition": "Np I",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 387574120567284.2
+        },
+        {
+          "id": "Np-776.58",
+          "nm": 776.58,
+          "eV": 1.597,
+          "transition": "Np I",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 386041950603930.0
+        },
+        {
+          "id": "Np-779.14",
+          "nm": 779.14,
+          "eV": 1.591,
+          "transition": "Np I",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 384773542623918.7
+        }
+      ],
       "isotopes": [
         {
           "a": 237,
@@ -11577,7 +15658,62 @@
           "body": "Element Deck describes published chemistry of Plutonium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Pu-380.59",
+          "nm": 380.59,
+          "eV": 3.258,
+          "transition": "Pu I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 787704506161486.1
+        },
+        {
+          "id": "Pu-381.14",
+          "nm": 381.14,
+          "eV": 3.253,
+          "transition": "Pu I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 786567817599832.1
+        },
+        {
+          "id": "Pu-382.76",
+          "nm": 382.76,
+          "eV": 3.239,
+          "transition": "Pu I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 783238734455010.9
+        },
+        {
+          "id": "Pu-383.55",
+          "nm": 383.55,
+          "eV": 3.233,
+          "transition": "Pu I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 781625493416764.4
+        },
+        {
+          "id": "Pu-383.70",
+          "nm": 383.7,
+          "eV": 3.231,
+          "transition": "Pu I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 781319932238728.1
+        },
+        {
+          "id": "Pu-383.89",
+          "nm": 383.89,
+          "eV": 3.23,
+          "transition": "Pu I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 780933230873427.2
+        }
+      ],
       "isotopes": [
         {
           "a": 244,
@@ -11680,7 +15816,62 @@
           "body": "Element Deck describes published chemistry of Americium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Am-426.56",
+          "nm": 426.56,
+          "eV": 2.907,
+          "transition": "Am I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 702814277006751.6
+        },
+        {
+          "id": "Am-428.93",
+          "nm": 428.93,
+          "eV": 2.891,
+          "transition": "Am I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 698930963094211.1
+        },
+        {
+          "id": "Am-466.28",
+          "nm": 466.28,
+          "eV": 2.659,
+          "transition": "Am I",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 642945135969803.5
+        },
+        {
+          "id": "Am-468.17",
+          "nm": 468.17,
+          "eV": 2.648,
+          "transition": "Am I",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 640349569600786.0
+        },
+        {
+          "id": "Am-470.68",
+          "nm": 470.68,
+          "eV": 2.634,
+          "transition": "Am I",
+          "color": "blue",
+          "spectrum": "emission",
+          "frequencyHz": 636934770969660.9
+        },
+        {
+          "id": "Am-605.46",
+          "nm": 605.46,
+          "eV": 2.048,
+          "transition": "Am I",
+          "color": "orange",
+          "spectrum": "emission",
+          "frequencyHz": 495148247613384.9
+        }
+      ],
       "isotopes": [
         {
           "a": 243,
@@ -11783,7 +15974,62 @@
           "body": "Element Deck describes published chemistry of Curium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Cm-381.63",
+          "nm": 381.63,
+          "eV": 3.249,
+          "transition": "Cm I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 785557891151114.9
+        },
+        {
+          "id": "Cm-382.51",
+          "nm": 382.51,
+          "eV": 3.241,
+          "transition": "Cm I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 783750641813285.9
+        },
+        {
+          "id": "Cm-383.33",
+          "nm": 383.33,
+          "eV": 3.234,
+          "transition": "Cm I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 782074082383325.0
+        },
+        {
+          "id": "Cm-383.76",
+          "nm": 383.76,
+          "eV": 3.231,
+          "transition": "Cm I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 781197774650823.5
+        },
+        {
+          "id": "Cm-384.20",
+          "nm": 384.2,
+          "eV": 3.227,
+          "transition": "Cm I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 780303118167621.0
+        },
+        {
+          "id": "Cm-384.99",
+          "nm": 384.99,
+          "eV": 3.22,
+          "transition": "Cm I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 778701935115197.8
+        }
+      ],
       "isotopes": [
         {
           "a": 247,
@@ -11886,7 +16132,62 @@
           "body": "Element Deck describes published chemistry of Berkelium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Bk-380.24",
+          "nm": 380.24,
+          "eV": 3.261,
+          "transition": "Bk I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 788429565537555.1
+        },
+        {
+          "id": "Bk-381.53",
+          "nm": 381.53,
+          "eV": 3.25,
+          "transition": "Bk I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 785763787906586.6
+        },
+        {
+          "id": "Bk-382.52",
+          "nm": 382.52,
+          "eV": 3.241,
+          "transition": "Bk I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 783730152671755.8
+        },
+        {
+          "id": "Bk-382.74",
+          "nm": 382.74,
+          "eV": 3.239,
+          "transition": "Bk I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 783279662434028.2
+        },
+        {
+          "id": "Bk-383.06",
+          "nm": 383.06,
+          "eV": 3.237,
+          "transition": "Bk I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 782625327624915.1
+        },
+        {
+          "id": "Bk-384.22",
+          "nm": 384.22,
+          "eV": 3.227,
+          "transition": "Bk I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 780262500650668.9
+        }
+      ],
       "isotopes": [
         {
           "a": 247,
@@ -11989,7 +16290,62 @@
           "body": "Element Deck describes published chemistry of Californium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Cf-409.91",
+          "nm": 409.91,
+          "eV": 3.025,
+          "transition": "Cf I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 731361659876558.1
+        },
+        {
+          "id": "Cf-424.24",
+          "nm": 424.24,
+          "eV": 2.923,
+          "transition": "Cf I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 706657689043937.4
+        },
+        {
+          "id": "Cf-432.90",
+          "nm": 432.9,
+          "eV": 2.864,
+          "transition": "Cf I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 692521270501270.5
+        },
+        {
+          "id": "Cf-433.52",
+          "nm": 433.52,
+          "eV": 2.86,
+          "transition": "Cf I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 691530859014578.2
+        },
+        {
+          "id": "Cf-517.40",
+          "nm": 517.4,
+          "eV": 2.396,
+          "transition": "Cf I",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 579421063007344.4
+        },
+        {
+          "id": "Cf-517.91",
+          "nm": 517.91,
+          "eV": 2.394,
+          "transition": "Cf I",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 578850491398119.4
+        }
+      ],
       "isotopes": [
         {
           "a": 251,
@@ -12092,7 +16448,44 @@
           "body": "Element Deck describes published chemistry of Einsteinium. It is not a protocol for handling the element."
         }
       ],
-      "spectralLines": [],
+      "spectralLines": [
+        {
+          "id": "Es-342.85",
+          "nm": 342.85,
+          "eV": 3.616,
+          "transition": "Es I",
+          "color": "UV",
+          "spectrum": "emission",
+          "frequencyHz": 874412886101793.8
+        },
+        {
+          "id": "Es-516.17",
+          "nm": 516.17,
+          "eV": 2.402,
+          "transition": "Es I",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 580801786233217.8
+        },
+        {
+          "id": "Es-520.44",
+          "nm": 520.44,
+          "eV": 2.382,
+          "transition": "Es I",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 576036542156636.6
+        },
+        {
+          "id": "Es-561.55",
+          "nm": 561.55,
+          "eV": 2.208,
+          "transition": "Es I",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 533866010150476.44
+        }
+      ],
       "isotopes": [
         {
           "a": 252,

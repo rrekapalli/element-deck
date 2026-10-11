@@ -138,13 +138,20 @@ def _parse(text: str, symbol: str, stage: str) -> list[dict]:
     return parsed
 
 
+def _named(line: dict) -> bool:
+    return "→" in line["transition"]
+
+
 def _pick(lines: list[dict], limit: int = 8) -> list[dict]:
-    # Drop near-duplicates, keeping the stronger one.
+    # Drop near-duplicates. Prefer a classified transition, then the stronger line.
     kept: list[dict] = []
     for line in sorted(lines, key=lambda item: item["score"], reverse=True):
-        if any(abs(line["nm"] - other["nm"]) < 0.08 for other in kept):
+        match = next((other for other in kept if abs(line["nm"] - other["nm"]) < 0.08), None)
+        if match is None:
+            kept.append(line)
             continue
-        kept.append(line)
+        if _named(line) and not _named(match):
+            kept[kept.index(match)] = line
     visible = [line for line in kept if line["visible"]]
     other = [line for line in kept if not line["visible"]]
     chosen = visible[:6]
@@ -178,6 +185,24 @@ def _one(z: int, symbol: str) -> tuple[int, list[dict], str]:
             notes.append(f"II failed: {exc}")
         time.sleep(0.25)
     picked = _pick(neutral + ionic)
+    if z == 1:
+        balmer = {
+            656.28: "n=3 → n=2",
+            486.13: "n=4 → n=2",
+            434.05: "n=5 → n=2",
+            410.17: "n=6 → n=2",
+            397.01: "n=7 → n=2",
+            388.91: "n=8 → n=2",
+            383.54: "n=9 → n=2",
+        }
+        for line in picked:
+            label = next(
+                (text for nm, text in balmer.items() if abs(line["nm"] - nm) < 0.08),
+                None,
+            )
+            if label:
+                line["transition"] = label
+                line["spectrum"] = "both"
     return z, picked, "; ".join(notes)
 
 

@@ -8,6 +8,8 @@ import '../account/account_controller.dart';
 import '../billing/purchase_service.dart';
 import '../classroom/classroom_controller.dart';
 import '../data/learner_database.dart';
+import '../help/help_catalog.dart';
+import '../help/help_screen.dart';
 import '../packs/pack_service.dart';
 import '../providers/catalog_controller.dart';
 import '../providers/settings_controller.dart';
@@ -71,10 +73,7 @@ class SettingsHub extends StatelessWidget {
         ListTile(
           leading: const Icon(Icons.help_outline),
           title: const Text('Help'),
-          onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(builder: (_) => const HelpPage()),
-          ),
+          onTap: () => openHelp(context, HelpCatalog.settings),
         ),
         ListTile(
           leading: const Icon(Icons.info_outline),
@@ -97,7 +96,11 @@ class AppSettingsPage extends StatelessWidget {
     final theme = context.watch<ThemeController>();
     final settings = context.watch<SettingsController>();
     return Scaffold(
-      appBar: AppBar(title: const Text('App Config')),
+      appBar: helpAppBar(
+        context,
+        title: 'App Config',
+        topicId: HelpCatalog.appSettings,
+      ),
       body: ListView(
         padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
         children: [
@@ -212,7 +215,11 @@ class AccountSettingsPage extends StatelessWidget {
     final billing = context.read<PurchaseService>();
     final db = context.read<LearnerDatabase>();
     return Scaffold(
-      appBar: AppBar(title: const Text('Account settings')),
+      appBar: helpAppBar(
+        context,
+        title: 'Account settings',
+        topicId: HelpCatalog.accountSettings,
+      ),
       body: ListView(
         children: [
           if (account.user == null)
@@ -319,7 +326,11 @@ class AppHealthPage extends StatelessWidget {
     final catalog = context.watch<CatalogController>();
     final account = context.watch<AccountController>();
     return Scaffold(
-      appBar: AppBar(title: const Text('App Health')),
+      appBar: helpAppBar(
+        context,
+        title: 'App Health',
+        topicId: HelpCatalog.appHealth,
+      ),
       body: ListView(
         children: [
           ListTile(
@@ -354,44 +365,13 @@ class AppHealthPage extends StatelessWidget {
   }
 }
 
-class HelpPage extends StatelessWidget {
-  const HelpPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Help')),
-      body: ListView(
-        padding: const EdgeInsets.all(16),
-        children: const [
-          Text('Table', style: TextStyle(fontWeight: FontWeight.bold)),
-          Text(
-            'Periodic table, search, and family chips. Learning mode is in App Config.',
-          ),
-          SizedBox(height: 12),
-          Text('Details', style: TextStyle(fontWeight: FontWeight.bold)),
-          Text('Dossier, curriculum, simulate reaction when curated.'),
-          SizedBox(height: 12),
-          Text('Compare', style: TextStyle(fontWeight: FontWeight.bold)),
-          Text('Pairs, computed deltas, PDF dossier.'),
-          SizedBox(height: 12),
-          Text('Spectra', style: TextStyle(fontWeight: FontWeight.bold)),
-          Text(
-            'Lines, sonification (divided by 10^12), isotopes. No match percentages.',
-          ),
-        ],
-      ),
-    );
-  }
-}
-
 class AboutPage extends StatelessWidget {
   const AboutPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('About')),
+      appBar: helpAppBar(context, title: 'About', topicId: HelpCatalog.about),
       body: ListView(
         padding: const EdgeInsets.all(24),
         children: const [
@@ -430,7 +410,11 @@ class _ClassroomPageState extends State<ClassroomPage> {
     final room = context.watch<ClassroomController>();
     final account = context.watch<AccountController>();
     return Scaffold(
-      appBar: AppBar(title: const Text('Classroom')),
+      appBar: helpAppBar(
+        context,
+        title: 'Classroom',
+        topicId: HelpCatalog.classroom,
+      ),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [

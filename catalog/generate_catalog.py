@@ -288,25 +288,73 @@ ASTRO = {
 }
 
 
+def _load_nist() -> dict[int, list[dict]]:
+    path = ROOT / "nist_lines.json"
+    if not path.exists():
+        return {}
+    raw = json.loads(path.read_text(encoding="utf-8"))
+    return {int(z): lines for z, lines in raw.get("elements", {}).items()}
+
+
+NIST_LINES = _load_nist()
+
+
+def _line_record(ln: dict, symbol: str) -> dict:
+    nm = float(ln["nm"])
+    ident = str(ln.get("id", f"{symbol}-{nm:.2f}"))
+    if ident.replace(".", "", 1).isdigit():
+        ident = f"{symbol}-{nm:.2f}"
+    return {
+        "id": ident,
+        "nm": nm,
+        "eV": ln.get("eV", round(1239.84193 / nm, 3)),
+        "transition": ln.get("transition", ""),
+        "color": ln.get("color", ""),
+        "spectrum": ln.get("spectrum", "both"),
+        "frequencyHz": 299792458 / (nm * 1e-9),
+    }
+
+
 def _spectral_lines(z: int, symbol: str) -> list[dict]:
-    """Curated persistent lines, with the hand-written LINES entries winning on a clash."""
+    """NIST teaching lines, with the hand-written entries winning on a clash."""
+    curated = list(EXTRA_LINES.get(z, [])) + list(LINES.get(z, []))
     by_nm: dict[float, dict] = {}
-    for ln in list(EXTRA_LINES.get(z, [])) + list(LINES.get(z, [])):
+
+    def place(ln: dict, overwrite: bool) -> None:
         nm = float(ln["nm"])
-        slot = next((k for k in by_nm if abs(k - nm) < 0.05), nm)
-        ident = str(ln["id"])
-        if ident.replace(".", "", 1).isdigit():
-            ident = f"{symbol}-{nm:.2f}"
-        by_nm[slot] = {
-            "id": ident,
-            "nm": nm,
-            "eV": ln.get("eV", round(1239.84193 / nm, 3)),
-            "transition": ln.get("transition", ""),
-            "color": ln.get("color", ""),
-            "spectrum": ln.get("spectrum", "both"),
-            "frequencyHz": 299792458 / (nm * 1e-9),
-        }
-    return [by_nm[k] for k in sorted(by_nm)]
+        slot = next((key for key in by_nm if abs(key - nm) < 0.08), None)
+        if slot is not None:
+            if overwrite:
+                record = _line_record(ln, symbol)
+                previous = by_nm[slot]
+                if "→" not in record["transition"] and "→" in previous["transition"]:
+                    record["transition"] = previous["transition"]
+                by_nm[slot] = record
+            return
+        by_nm[nm] = _line_record(ln, symbol)
+
+    for ln in NIST_LINES.get(z, []):
+        place(ln, False)
+    for ln in curated:
+        place(ln, True)
+    rows = [by_nm[key] for key in sorted(by_nm)]
+    if len(rows) <= 8:
+        return rows
+    curated_nm = [float(ln["nm"]) for ln in curated]
+
+    def is_curated(row: dict) -> bool:
+        return any(abs(row["nm"] - nm) < 0.08 for nm in curated_nm)
+
+    keep = [row for row in rows if is_curated(row)]
+    rest = [row for row in rows if not is_curated(row)]
+    visible = [row for row in rest if 380 <= row["nm"] <= 780]
+    other = [row for row in rest if row not in visible]
+    for bucket in (visible, other):
+        for row in bucket:
+            if len(keep) >= 8:
+                break
+            keep.append(row)
+    return sorted(keep, key=lambda row: row["nm"])
 
 
 def parse_ox(s: str) -> tuple[list[int], int | None]:
@@ -420,7 +468,7 @@ def main() -> None:
     pack = {
         "id": "core",
         "version": "1.1.0",
-        "sciencePins": ["compiled-v1.1"],
+        "sciencePins": ["compiled-v1.1", "NIST ASD"],
         "trendNotes": TRENDS,
         "elements": elements,
     }

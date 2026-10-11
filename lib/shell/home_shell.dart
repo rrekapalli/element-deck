@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
+import '../help/help_catalog.dart';
+import '../help/help_screen.dart';
 import '../providers/catalog_controller.dart';
 import '../providers/selection_controller.dart';
 import '../rooms/compare_room.dart';
@@ -46,12 +48,13 @@ class _HomeShellState extends State<HomeShell> {
       const CompareRoom(),
       const SpectraRoom(),
     ];
-    final titles = ['TABLE', 'DETAILS', 'COMPARE', 'SPECTRA'];
+    const titles = ['TABLE', 'DETAILS', 'COMPARE', 'SPECTRA'];
+    final topicId = HelpCatalog.roomTopics[widget.index];
     if (wide) {
       return Scaffold(
         body: Column(
           children: [
-            _TitleBar(title: titles[widget.index]),
+            _TitleBar(title: titles[widget.index], topicId: topicId),
             Expanded(
               child: Row(
                 children: [
@@ -84,15 +87,7 @@ class _HomeShellState extends State<HomeShell> {
                         child: IconButton(
                           tooltip: 'Settings',
                           icon: const Icon(Icons.settings),
-                          onPressed: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (_) => Scaffold(
-                                appBar: AppBar(title: const Text('Settings')),
-                                body: const SettingsHub(),
-                              ),
-                            ),
-                          ),
+                          onPressed: () => _openSettings(context),
                         ),
                       ),
                     ),
@@ -135,20 +130,14 @@ class _HomeShellState extends State<HomeShell> {
         ),
         actions: [
           IconButton(
-            icon: const Icon(Icons.tune),
-            onPressed: () => _filter(context),
+            tooltip: 'Help',
+            icon: const Icon(Icons.help_outline),
+            onPressed: () => openHelp(context, topicId),
           ),
           IconButton(
+            tooltip: 'Settings',
             icon: const Icon(Icons.person_outline),
-            onPressed: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (_) => Scaffold(
-                  appBar: AppBar(title: const Text('Settings')),
-                  body: const SettingsHub(),
-                ),
-              ),
-            ),
+            onPressed: () => _openSettings(context),
           ),
         ],
       ),
@@ -197,13 +186,17 @@ class _HomeShellState extends State<HomeShell> {
     }
   }
 
-  void _filter(BuildContext context) {
-    showModalBottomSheet<void>(
-      context: context,
-      builder: (context) => const Padding(
-        padding: EdgeInsets.all(16),
-        child: Text(
-          'Use category chips on Table to filter by family, including Halogen as a tag.',
+  void _openSettings(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute<void>(
+        builder: (context) => Scaffold(
+          appBar: helpAppBar(
+            context,
+            title: 'Settings',
+            topicId: HelpCatalog.settings,
+          ),
+          body: const SettingsHub(),
         ),
       ),
     );
@@ -211,8 +204,9 @@ class _HomeShellState extends State<HomeShell> {
 }
 
 class _TitleBar extends StatelessWidget {
-  const _TitleBar({required this.title});
+  const _TitleBar({required this.title, required this.topicId});
   final String title;
+  final String topicId;
 
   @override
   Widget build(BuildContext context) {
@@ -245,11 +239,9 @@ class _TitleBar extends StatelessWidget {
               ),
             ),
             IconButton(
+              tooltip: 'Help',
               icon: const Icon(Icons.help_outline),
-              onPressed: () => Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => const HelpPage()),
-              ),
+              onPressed: () => openHelp(context, topicId),
             ),
           ],
         ),

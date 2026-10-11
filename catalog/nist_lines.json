@@ -6,39 +6,39 @@
     "1": [
       {
         "nm": 383.54,
-        "transition": "H I",
+        "transition": "n=9 \u2192 n=2",
         "color": "violet",
-        "spectrum": "emission"
+        "spectrum": "both"
       },
       {
-        "nm": 388.91,
-        "transition": "H I",
+        "nm": 388.9,
+        "transition": "n=8 \u2192 n=2",
         "color": "violet",
-        "spectrum": "emission"
+        "spectrum": "both"
       },
       {
         "nm": 410.17,
-        "transition": "H I",
+        "transition": "n=6 \u2192 n=2",
         "color": "violet",
-        "spectrum": "emission"
+        "spectrum": "both"
       },
       {
         "nm": 434.05,
-        "transition": "H I",
+        "transition": "n=5 \u2192 n=2",
         "color": "violet",
-        "spectrum": "emission"
+        "spectrum": "both"
       },
       {
         "nm": 486.13,
-        "transition": "H I",
+        "transition": "n=4 \u2192 n=2",
         "color": "blue",
-        "spectrum": "emission"
+        "spectrum": "both"
       },
       {
-        "nm": 656.28,
-        "transition": "H I",
+        "nm": 656.29,
+        "transition": "n=3 \u2192 n=2",
         "color": "red",
-        "spectrum": "emission"
+        "spectrum": "both"
       }
     ],
     "2": [
@@ -119,44 +119,118 @@
     ],
     "4": [
       {
-        "nm": 436.1,
-        "transition": "Be II 2P* \u2192 2D",
+        "nm": 381.35,
+        "transition": "Be I 1P* \u2192 1D",
         "color": "violet",
         "spectrum": "emission"
       },
       {
-        "nm": 467.34,
-        "transition": "Be II 2D \u2192 2F*",
+        "nm": 440.79,
+        "transition": "Be I 1P* \u2192 1S",
+        "color": "violet",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 457.27,
+        "transition": "Be I 1P* \u2192 1D",
         "color": "blue",
         "spectrum": "emission"
       },
       {
-        "nm": 482.82,
-        "transition": "Be II 2D \u2192 2P*",
-        "color": "blue",
-        "spectrum": "emission"
-      },
-      {
-        "nm": 527.08,
-        "transition": "Be II 2P* \u2192 2S",
-        "color": "green",
-        "spectrum": "emission"
-      },
-      {
-        "nm": 654.79,
-        "transition": "Be II 2D \u2192 2F*",
+        "nm": 656.45,
+        "transition": "Be I 1D \u2192 1F*",
         "color": "red",
         "spectrum": "emission"
       },
       {
-        "nm": 655.84,
-        "transition": "Be II 2F* \u2192 2G",
+        "nm": 698.27,
+        "transition": "Be I 1P* \u2192 1D",
+        "color": "red",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 720.91,
+        "transition": "Be I 1D \u2192 1F*",
         "color": "red",
         "spectrum": "emission"
       }
     ],
-    "5": [],
-    "6": [],
+    "5": [
+      {
+        "nm": 576.19,
+        "transition": "B I 2D \u2192 2F*",
+        "color": "yellow",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 581.84,
+        "transition": "B I 2P \u2192 2D*",
+        "color": "yellow",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 582.11,
+        "transition": "B I 2P \u2192 2D*",
+        "color": "yellow",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 582.23,
+        "transition": "B I 2P \u2192 2D*",
+        "color": "yellow",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 594.26,
+        "transition": "B I 2D \u2192 2F*",
+        "color": "orange",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 624.46,
+        "transition": "B I 2D \u2192 2F*",
+        "color": "red",
+        "spectrum": "emission"
+      }
+    ],
+    "6": [
+      {
+        "nm": 493.2,
+        "transition": "C I 1P* \u2192 1S",
+        "color": "blue",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 505.21,
+        "transition": "C I 1P* \u2192 1D",
+        "color": "green",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 538.03,
+        "transition": "C I 1P* \u2192 1P",
+        "color": "green",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 601.32,
+        "transition": "C I 3D \u2192 3P*",
+        "color": "orange",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 711.32,
+        "transition": "C I 3D \u2192 3F*",
+        "color": "red",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 711.52,
+        "transition": "C I 3D \u2192 3P*",
+        "color": "red",
+        "spectrum": "emission"
+      }
+    ],
     "7": [
       {
         "nm": 496.4,
@@ -347,48 +421,196 @@
         "spectrum": "both"
       }
     ],
-    "12": [],
-    "13": [],
-    "14": [],
-    "15": [
+    "12": [
       {
-        "nm": 458.8,
-        "transition": "P II 3D \u2192 3F*",
-        "color": "blue",
+        "nm": 383.23,
+        "transition": "Mg I 3P* \u2192 3D",
+        "color": "violet",
         "spectrum": "emission"
       },
       {
-        "nm": 458.99,
-        "transition": "P II 3D \u2192 3F*",
-        "color": "blue",
+        "nm": 383.83,
+        "transition": "Mg I 3P* \u2192 3D",
+        "color": "violet",
         "spectrum": "emission"
       },
       {
-        "nm": 460.21,
-        "transition": "P II 3D \u2192 3F*",
-        "color": "blue",
+        "nm": 516.73,
+        "transition": "Mg I 3P* \u2192 3S",
+        "color": "green",
         "spectrum": "emission"
       },
       {
-        "nm": 646.0,
-        "transition": "P II",
+        "nm": 517.27,
+        "transition": "Mg I 3P* \u2192 3S",
+        "color": "green",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 518.36,
+        "transition": "Mg I 3P* \u2192 3S",
+        "color": "green",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 552.84,
+        "transition": "Mg I 1P* \u2192 1D",
+        "color": "green",
+        "spectrum": "emission"
+      }
+    ],
+    "13": [
+      {
+        "nm": 394.4,
+        "transition": "Al I 2P* \u2192 2S",
+        "color": "violet",
+        "spectrum": "both"
+      },
+      {
+        "nm": 396.15,
+        "transition": "Al I 2P* \u2192 2S",
+        "color": "violet",
+        "spectrum": "both"
+      },
+      {
+        "nm": 555.71,
+        "transition": "Al I 2S \u2192 2P*",
+        "color": "green",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 669.6,
+        "transition": "Al I 2S \u2192 2P*",
         "color": "red",
         "spectrum": "emission"
       },
       {
-        "nm": 650.35,
-        "transition": "P II",
+        "nm": 669.87,
+        "transition": "Al I 2S \u2192 2P*",
         "color": "red",
         "spectrum": "emission"
       },
       {
-        "nm": 650.8,
-        "transition": "P II",
+        "nm": 736.23,
+        "transition": "Al I 2D \u2192 2F*",
         "color": "red",
         "spectrum": "emission"
       }
     ],
-    "16": [],
+    "14": [
+      {
+        "nm": 390.55,
+        "transition": "Si I 1S \u2192 1P*",
+        "color": "violet",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 703.49,
+        "transition": "Si I",
+        "color": "red",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 728.92,
+        "transition": "Si I",
+        "color": "red",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 740.58,
+        "transition": "Si I",
+        "color": "red",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 741.59,
+        "transition": "Si I",
+        "color": "red",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 742.35,
+        "transition": "Si I",
+        "color": "red",
+        "spectrum": "emission"
+      }
+    ],
+    "15": [
+      {
+        "nm": 516.23,
+        "transition": "P I",
+        "color": "green",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 534.59,
+        "transition": "P I 2P \u2192 2P*",
+        "color": "green",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 547.77,
+        "transition": "P I 2P \u2192 2D*",
+        "color": "green",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 609.77,
+        "transition": "P I",
+        "color": "orange",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 619.9,
+        "transition": "P I",
+        "color": "orange",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 621.05,
+        "transition": "P I",
+        "color": "red",
+        "spectrum": "emission"
+      }
+    ],
+    "16": [
+      {
+        "nm": 469.41,
+        "transition": "S I 5S* \u2192 5P",
+        "color": "blue",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 605.27,
+        "transition": "S I 5P \u2192 5D*",
+        "color": "orange",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 674.88,
+        "transition": "S I 5P \u2192 5D*",
+        "color": "red",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 675.72,
+        "transition": "S I 5P \u2192 5D*",
+        "color": "red",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 768.61,
+        "transition": "S I 5P \u2192 5S*",
+        "color": "red",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 769.67,
+        "transition": "S I 5P \u2192 5S*",
+        "color": "red",
+        "spectrum": "emission"
+      }
+    ],
     "17": [
       {
         "nm": 725.66,
@@ -541,7 +763,44 @@
         "spectrum": "emission"
       }
     ],
-    "21": [],
+    "21": [
+      {
+        "nm": 673.79,
+        "transition": "Sc I 2F* \u2192 2G",
+        "color": "red",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 673.95,
+        "transition": "Sc I 2F* \u2192 2G",
+        "color": "red",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 681.71,
+        "transition": "Sc I 2P \u2192 2S*",
+        "color": "red",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 681.95,
+        "transition": "Sc I 2F* \u2192 2D",
+        "color": "red",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 682.95,
+        "transition": "Sc I 2F* \u2192 2D",
+        "color": "red",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 683.5,
+        "transition": "Sc I 2P \u2192 2S*",
+        "color": "red",
+        "spectrum": "emission"
+      }
+    ],
     "22": [
       {
         "nm": 498.17,
@@ -580,11 +839,196 @@
         "spectrum": "both"
       }
     ],
-    "23": [],
-    "24": [],
-    "25": [],
-    "26": [],
-    "27": [],
+    "23": [
+      {
+        "nm": 411.18,
+        "transition": "V I a 6D \u2192 y 6D*",
+        "color": "violet",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 411.52,
+        "transition": "V I a 6D \u2192 y 6D*",
+        "color": "violet",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 437.92,
+        "transition": "V I a 6D \u2192 y 6F*",
+        "color": "violet",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 438.47,
+        "transition": "V I a 6D \u2192 y 6F*",
+        "color": "violet",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 439.0,
+        "transition": "V I a 6D \u2192 y 6F*",
+        "color": "violet",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 440.85,
+        "transition": "V I a 6D \u2192 y 6F*",
+        "color": "violet",
+        "spectrum": "emission"
+      }
+    ],
+    "24": [
+      {
+        "nm": 520.45,
+        "transition": "Cr I a 5S \u2192 z 5P*",
+        "color": "green",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 520.6,
+        "transition": "Cr I a 5S \u2192 z 5P*",
+        "color": "green",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 520.84,
+        "transition": "Cr I a 5S \u2192 z 5P*",
+        "color": "green",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 529.83,
+        "transition": "Cr I a 5D \u2192 z 5P*",
+        "color": "green",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 534.58,
+        "transition": "Cr I a 5D \u2192 z 5P*",
+        "color": "green",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 540.98,
+        "transition": "Cr I a 5D \u2192 z 5P*",
+        "color": "green",
+        "spectrum": "emission"
+      }
+    ],
+    "25": [
+      {
+        "nm": 380.67,
+        "transition": "Mn I a 6D \u2192 z 6F*",
+        "color": "violet",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 382.35,
+        "transition": "Mn I a 6D \u2192 z 6F*",
+        "color": "violet",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 403.08,
+        "transition": "Mn I a 6S \u2192 z 6P*",
+        "color": "violet",
+        "spectrum": "both"
+      },
+      {
+        "nm": 403.31,
+        "transition": "Mn I a 6S \u2192 z 6P*",
+        "color": "violet",
+        "spectrum": "both"
+      },
+      {
+        "nm": 403.45,
+        "transition": "Mn I a 6S \u2192 z 6P*",
+        "color": "violet",
+        "spectrum": "both"
+      },
+      {
+        "nm": 404.14,
+        "transition": "Mn I a 6D \u2192 z 6D*",
+        "color": "violet",
+        "spectrum": "emission"
+      }
+    ],
+    "26": [
+      {
+        "nm": 382.44,
+        "transition": "Fe I a 5D \u2192 z 5D*",
+        "color": "violet",
+        "spectrum": "both"
+      },
+      {
+        "nm": 385.64,
+        "transition": "Fe I a 5D \u2192 z 5D*",
+        "color": "violet",
+        "spectrum": "both"
+      },
+      {
+        "nm": 387.86,
+        "transition": "Fe I a 5D \u2192 z 5D*",
+        "color": "violet",
+        "spectrum": "both"
+      },
+      {
+        "nm": 389.97,
+        "transition": "Fe I a 5D \u2192 z 5D*",
+        "color": "violet",
+        "spectrum": "both"
+      },
+      {
+        "nm": 393.03,
+        "transition": "Fe I a 5D \u2192 z 5D*",
+        "color": "violet",
+        "spectrum": "both"
+      },
+      {
+        "nm": 526.95,
+        "transition": "Fe I a 5F \u2192 z 5D*",
+        "color": "green",
+        "spectrum": "emission"
+      }
+    ],
+    "27": [
+      {
+        "nm": 384.55,
+        "transition": "Co I a 2F \u2192 y 2G*",
+        "color": "violet",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 387.31,
+        "transition": "Co I b 4F \u2192 z 4D*",
+        "color": "violet",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 387.4,
+        "transition": "Co I b 4F \u2192 z 4D*",
+        "color": "violet",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 389.41,
+        "transition": "Co I a 2F \u2192 y 2G*",
+        "color": "violet",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 399.53,
+        "transition": "Co I a 2F \u2192 y 4G*",
+        "color": "violet",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 412.13,
+        "transition": "Co I a 2F \u2192 z 2G*",
+        "color": "violet",
+        "spectrum": "emission"
+      }
+    ],
     "28": [
       {
         "nm": 380.71,
@@ -623,7 +1067,44 @@
         "spectrum": "emission"
       }
     ],
-    "29": [],
+    "29": [
+      {
+        "nm": 406.26,
+        "transition": "Cu I 2P* \u2192 2D",
+        "color": "violet",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 465.11,
+        "transition": "Cu I 4F* \u2192 4D",
+        "color": "blue",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 510.55,
+        "transition": "Cu I 2D \u2192 2P*",
+        "color": "green",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 515.32,
+        "transition": "Cu I 2P* \u2192 2D",
+        "color": "green",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 521.82,
+        "transition": "Cu I 2P* \u2192 2D",
+        "color": "green",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 529.25,
+        "transition": "Cu I 4D* \u2192 4D",
+        "color": "green",
+        "spectrum": "emission"
+      }
+    ],
     "30": [
       {
         "nm": 462.98,
@@ -662,44 +1143,149 @@
         "spectrum": "emission"
       }
     ],
-    "31": [],
-    "32": [],
-    "33": [],
-    "34": [
+    "31": [
       {
-        "nm": 417.53,
-        "transition": "Se II",
+        "nm": 639.66,
+        "transition": "Ga I 2S \u2192 2P*",
+        "color": "red",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 725.14,
+        "transition": "Ga I 2P* \u2192 2D",
+        "color": "red",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 740.3,
+        "transition": "Ga I 2P* \u2192 2D",
+        "color": "red",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 746.4,
+        "transition": "Ga I 2P* \u2192 2D",
+        "color": "red",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 762.05,
+        "transition": "Ga I 2P* \u2192 2S",
+        "color": "red",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 773.48,
+        "transition": "Ga I 2P* \u2192 2D",
+        "color": "red",
+        "spectrum": "emission"
+      }
+    ],
+    "32": [
+      {
+        "nm": 422.66,
+        "transition": "Ge I 1S \u2192 1P*",
         "color": "violet",
         "spectrum": "emission"
       },
       {
-        "nm": 418.09,
-        "transition": "Se II",
-        "color": "violet",
-        "spectrum": "emission"
-      },
-      {
-        "nm": 484.5,
-        "transition": "Se II",
+        "nm": 468.58,
+        "transition": "Ge I 1S \u2192 3P*",
         "color": "blue",
         "spectrum": "emission"
       },
       {
-        "nm": 522.75,
-        "transition": "Se II",
+        "nm": 556.47,
+        "transition": "Ge I 3P* \u2192 3S",
         "color": "green",
         "spectrum": "emission"
       },
       {
-        "nm": 530.54,
-        "transition": "Se II",
+        "nm": 560.7,
+        "transition": "Ge I 3P* \u2192 3P",
         "color": "green",
         "spectrum": "emission"
       },
       {
-        "nm": 605.6,
-        "transition": "Se II",
-        "color": "orange",
+        "nm": 569.2,
+        "transition": "Ge I 3P* \u2192 3D",
+        "color": "green",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 580.21,
+        "transition": "Ge I 1P* \u2192 1D",
+        "color": "yellow",
+        "spectrum": "emission"
+      }
+    ],
+    "33": [
+      {
+        "nm": 506.9,
+        "transition": "As I 4P \u2192 4S*",
+        "color": "green",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 512.13,
+        "transition": "As I 4P \u2192 4D*",
+        "color": "green",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 514.16,
+        "transition": "As I 4P \u2192 26*",
+        "color": "green",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 540.81,
+        "transition": "As I 2P \u2192 2D*",
+        "color": "green",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 545.13,
+        "transition": "As I 2P \u2192 2D*",
+        "color": "green",
+        "spectrum": "emission"
+      }
+    ],
+    "34": [
+      {
+        "nm": 473.08,
+        "transition": "Se I",
+        "color": "blue",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 473.9,
+        "transition": "Se I",
+        "color": "blue",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 474.22,
+        "transition": "Se I",
+        "color": "blue",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 632.56,
+        "transition": "Se I",
+        "color": "red",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 706.21,
+        "transition": "Se I",
+        "color": "red",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 758.34,
+        "transition": "Se I",
+        "color": "red",
         "spectrum": "emission"
       }
     ],
@@ -817,7 +1403,44 @@
         "spectrum": "emission"
       }
     ],
-    "38": [],
+    "38": [
+      {
+        "nm": 460.73,
+        "transition": "Sr I 1S \u2192 1P*",
+        "color": "blue",
+        "spectrum": "both"
+      },
+      {
+        "nm": 525.69,
+        "transition": "Sr I 3D \u2192 3P*",
+        "color": "green",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 640.85,
+        "transition": "Sr I 3D \u2192 3F*",
+        "color": "red",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 679.1,
+        "transition": "Sr I 3P* \u2192 3S",
+        "color": "red",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 687.83,
+        "transition": "Sr I 3P* \u2192 3S",
+        "color": "red",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 707.01,
+        "transition": "Sr I 3P* \u2192 3S",
+        "color": "red",
+        "spectrum": "emission"
+      }
+    ],
     "39": [
       {
         "nm": 404.76,
@@ -1122,7 +1745,44 @@
         "spectrum": "emission"
       }
     ],
-    "47": [],
+    "47": [
+      {
+        "nm": 381.09,
+        "transition": "Ag I 2P* \u2192 2D",
+        "color": "violet",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 405.55,
+        "transition": "Ag I 2P* \u2192 2D",
+        "color": "violet",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 421.1,
+        "transition": "Ag I 2P* \u2192 2D",
+        "color": "violet",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 520.91,
+        "transition": "Ag I 2P* \u2192 2D",
+        "color": "green",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 546.55,
+        "transition": "Ag I 2P* \u2192 2D",
+        "color": "green",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 768.78,
+        "transition": "Ag I 2P* \u2192 2S",
+        "color": "red",
+        "spectrum": "emission"
+      }
+    ],
     "48": [
       {
         "nm": 467.81,
@@ -1199,43 +1859,154 @@
         "spectrum": "emission"
       }
     ],
-    "50": [],
-    "51": [],
-    "52": [],
-    "53": [
+    "50": [
       {
-        "nm": 533.82,
-        "transition": "I II 3D* \u2192 3F",
+        "nm": 380.1,
+        "transition": "Sn I 1D \u2192 3P*",
+        "color": "violet",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 452.47,
+        "transition": "Sn I 1S \u2192 1P*",
+        "color": "blue",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 563.17,
+        "transition": "Sn I 1S \u2192 3P*",
         "color": "green",
         "spectrum": "emission"
       },
       {
-        "nm": 534.51,
-        "transition": "I II 3D* \u2192 3F",
-        "color": "green",
-        "spectrum": "emission"
-      },
-      {
-        "nm": 562.57,
-        "transition": "I II 3S* \u2192 3P",
-        "color": "green",
-        "spectrum": "emission"
-      },
-      {
-        "nm": 571.05,
-        "transition": "I II 3D* \u2192 1F",
-        "color": "yellow",
-        "spectrum": "emission"
-      },
-      {
-        "nm": 595.02,
-        "transition": "I II 3S* \u2192 3P",
+        "nm": 605.47,
+        "transition": "Sn I 3P* \u2192 3D",
         "color": "orange",
         "spectrum": "emission"
       },
       {
-        "nm": 681.26,
-        "transition": "I II 5D* \u2192 5P",
+        "nm": 606.91,
+        "transition": "Sn I 3P* \u2192 3P",
+        "color": "orange",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 614.96,
+        "transition": "Sn I 3P* \u2192 3D",
+        "color": "orange",
+        "spectrum": "emission"
+      }
+    ],
+    "51": [
+      {
+        "nm": 403.35,
+        "transition": "Sb I 2P* \u2192 4P",
+        "color": "violet",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 549.02,
+        "transition": "Sb I 4P \u2192 (2,1/2)*",
+        "color": "green",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 555.6,
+        "transition": "Sb I 2P \u2192 (2,1/2)*",
+        "color": "green",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 560.21,
+        "transition": "Sb I 4P \u2192 (1,3/2)*",
+        "color": "green",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 563.19,
+        "transition": "Sb I 4P \u2192 (0,3/2)*",
+        "color": "green",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 573.03,
+        "transition": "Sb I 2P \u2192 (2,3/2)*",
+        "color": "yellow",
+        "spectrum": "emission"
+      }
+    ],
+    "52": [
+      {
+        "nm": 634.95,
+        "transition": "Te I",
+        "color": "red",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 679.0,
+        "transition": "Te I 5P \u2192 3D*",
+        "color": "red",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 683.76,
+        "transition": "Te I 5P \u2192 5D*",
+        "color": "red",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 719.11,
+        "transition": "Te I",
+        "color": "red",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 726.38,
+        "transition": "Te I",
+        "color": "red",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 775.91,
+        "transition": "Te I 5P \u2192 5D*",
+        "color": "red",
+        "spectrum": "emission"
+      }
+    ],
+    "53": [
+      {
+        "nm": 511.93,
+        "transition": "I I 2[2] \u2192 2[1]*",
+        "color": "green",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 661.96,
+        "transition": "I I 2[3]* \u2192 2[4]",
+        "color": "red",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 723.68,
+        "transition": "I I 2[3] \u2192 2[4]*",
+        "color": "red",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 723.78,
+        "transition": "I I 2[3] \u2192 2[4]*",
+        "color": "red",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 740.2,
+        "transition": "I I 2[3]* \u2192 2[4]",
+        "color": "red",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 746.9,
+        "transition": "I I 2[3]* \u2192 2[4]",
         "color": "red",
         "spectrum": "emission"
       }
@@ -1585,9 +2356,9 @@
     "63": [
       {
         "nm": 459.4,
-        "transition": "Eu I",
+        "transition": "Eu I a 8S* \u2192 y 8P",
         "color": "blue",
-        "spectrum": "emission"
+        "spectrum": "both"
       },
       {
         "nm": 462.72,
@@ -2152,12 +2923,234 @@
         "spectrum": "emission"
       }
     ],
-    "78": [],
-    "79": [],
-    "80": [],
-    "81": [],
-    "82": [],
-    "83": [],
+    "78": [
+      {
+        "nm": 381.87,
+        "transition": "Pt I 3F \u2192 a 5G*",
+        "color": "violet",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 396.64,
+        "transition": "Pt I 3F \u2192 a 5D*",
+        "color": "violet",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 416.45,
+        "transition": "Pt I 3F \u2192 3F*",
+        "color": "violet",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 443.02,
+        "transition": "Pt I b 3P* \u2192 a 1D",
+        "color": "violet",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 530.1,
+        "transition": "Pt I 5G* \u2192 (4,1)",
+        "color": "green",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 676.0,
+        "transition": "Pt I 3F* \u2192 3D",
+        "color": "red",
+        "spectrum": "emission"
+      }
+    ],
+    "79": [
+      {
+        "nm": 389.79,
+        "transition": "Au I 4P* \u2192 4D",
+        "color": "violet",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 406.51,
+        "transition": "Au I 2P* \u2192 2D",
+        "color": "violet",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 460.75,
+        "transition": "Au I 4P* \u2192 4D",
+        "color": "blue",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 479.26,
+        "transition": "Au I 2P* \u2192 2D",
+        "color": "blue",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 627.82,
+        "transition": "Au I 2D \u2192 2P*",
+        "color": "red",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 751.07,
+        "transition": "Au I 2P* \u2192 2S",
+        "color": "red",
+        "spectrum": "emission"
+      }
+    ],
+    "80": [
+      {
+        "nm": 404.66,
+        "transition": "Hg I 3P* \u2192 3S",
+        "color": "violet",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 407.78,
+        "transition": "Hg I 3P* \u2192 1S",
+        "color": "violet",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 435.83,
+        "transition": "Hg I 3P* \u2192 3S",
+        "color": "violet",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 546.08,
+        "transition": "Hg I 3P* \u2192 3S",
+        "color": "green",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 576.96,
+        "transition": "Hg I 1P* \u2192 3D",
+        "color": "yellow",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 690.75,
+        "transition": "Hg I 3S \u2192 3P*",
+        "color": "red",
+        "spectrum": "emission"
+      }
+    ],
+    "81": [
+      {
+        "nm": 435.99,
+        "transition": "Tl I",
+        "color": "violet",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 535.05,
+        "transition": "Tl I 2P* \u2192 2S",
+        "color": "green",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 654.98,
+        "transition": "Tl I",
+        "color": "red",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 671.38,
+        "transition": "Tl I",
+        "color": "red",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 749.36,
+        "transition": "Tl I",
+        "color": "red",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 767.89,
+        "transition": "Tl I",
+        "color": "red",
+        "spectrum": "emission"
+      }
+    ],
+    "82": [
+      {
+        "nm": 401.96,
+        "transition": "Pb I (3/2,3/2) \u2192 2[5/2]*",
+        "color": "violet",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 405.78,
+        "transition": "Pb I (3/2,1/2) \u2192 (1/2,1/2)*",
+        "color": "violet",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 406.21,
+        "transition": "Pb I (3/2,3/2) \u2192 2[3/2]*",
+        "color": "violet",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 416.8,
+        "transition": "Pb I (3/2,3/2) \u2192 2[5/2]*",
+        "color": "violet",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 520.14,
+        "transition": "Pb I (3/2,3/2) \u2192 (1/2,1/2)*",
+        "color": "green",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 722.9,
+        "transition": "Pb I (3/2,3/2) \u2192 (1/2,1/2)*",
+        "color": "red",
+        "spectrum": "emission"
+      }
+    ],
+    "83": [
+      {
+        "nm": 388.82,
+        "transition": "Bi I 2P* \u2192 2[0]",
+        "color": "violet",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 412.17,
+        "transition": "Bi I 2P* \u2192 2[1]",
+        "color": "violet",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 430.84,
+        "transition": "Bi I 2P* \u2192 2[1]",
+        "color": "violet",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 449.3,
+        "transition": "Bi I 2P* \u2192 2[2]",
+        "color": "violet",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 472.25,
+        "transition": "Bi I 2D* \u2192 2[0]",
+        "color": "blue",
+        "spectrum": "emission"
+      },
+      {
+        "nm": 555.21,
+        "transition": "Bi I 2[0] \u2192 2[1]*",
+        "color": "green",
+        "spectrum": "emission"
+      }
+    ],
     "84": [
       {
         "nm": 386.19,
@@ -2370,8 +3363,8 @@
         "spectrum": "both"
       },
       {
-        "nm": 572.02,
-        "transition": "Th I",
+        "nm": 571.96,
+        "transition": "Th I 5F \u2192 *",
         "color": "yellow",
         "spectrum": "emission"
       },
