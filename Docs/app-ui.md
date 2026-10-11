@@ -96,6 +96,12 @@ Benchmark: screen 3. The dossier.
 
 On the phone the dossier scrolls as one page. Sections are headings, not a maze of tabs. The design-system note about a bottom sheet is the compact inspector while you are still on Table or the matrix. Details itself is a full destination.
 
+### Data tab
+
+The Data tab lists compiled values in labeled rows: identity, electrons, physical properties, isotopes, and spectrum. Units follow App Config. Stored values stay in the dataset's units.
+
+Double-tap a row label, or double-click it with a pointer, to open a reference article for that property: what it measures, how it was established, and where the unit comes from. The article is about the property, not a second measurement of the open element. A single tap does not leave the table. Labels that have an article are drawn with a dotted underline.
+
 Bookmark lives on the identity header.
 
 ## Compare

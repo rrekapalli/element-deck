@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../guides/property_guide.dart';
 import '../models/catalog.dart';
 import '../models/orbital_force.dart';
 import '../models/periodic_layout.dart';
@@ -10,6 +11,7 @@ import '../theme/app_theme.dart';
 import '../theme/element_spectrum.dart';
 import '../widgets/electron_force_graph.dart';
 import '../widgets/element_header.dart';
+import '../widgets/property_label.dart';
 
 class DetailsRoom extends StatefulWidget {
   const DetailsRoom({super.key});
@@ -204,24 +206,37 @@ class _DetailsRoomState extends State<DetailsRoom>
     SettingsController settings,
   ) {
     final p = e.properties;
+    final muted = Theme.of(context).colorScheme.onSurface
+        .withValues(alpha: 0.65);
     return [
+      Text(
+        'Compiled values for this element. Units follow App Config. '
+        'Double-tap a label to open its reference article.',
+        style: Theme.of(context).textTheme.bodySmall
+            ?.copyWith(color: muted, height: 1.35),
+      ),
+      const SizedBox(height: 12),
       _DataCard(
         title: 'Identity',
         rows: [
-          _Row('Atomic number', '${e.z}'),
-          _Row('Symbol', e.symbol),
-          _Row('Name', e.name),
-          _Row('Protons', '${e.z}'),
-          _Row('Electrons', '${e.z}'),
-          _Row('Atomic weight', '${_mass(e.atomicWeight)} u'),
-          _Row('Weight basis', _weightKind(e.weightKind)),
-          _Row('Category', e.categoryLabel),
-          if (e.tags.isNotEmpty) _Row('Tags', e.tags.join(', ')),
-          _Row('Block', '${e.block}-block'),
-          _Row('Period', '${e.period}'),
-          _Row('Group', e.group?.toString() ?? 'f-block row'),
-          _Row('Standard state', e.standardState),
-          _Row('Dataset', e.sourceId),
+          _Row('Atomic number', '${e.z}', GuideId.atomicNumber),
+          _Row('Symbol', e.symbol, GuideId.symbol),
+          _Row('Name', e.name, GuideId.name),
+          _Row('Protons', '${e.z}', GuideId.protons),
+          _Row('Electrons', '${e.z}', GuideId.electrons),
+          _Row(
+            'Atomic weight',
+            '${_mass(e.atomicWeight)} u',
+            GuideId.atomicWeight,
+          ),
+          _Row('Weight basis', _weightKind(e.weightKind), GuideId.weightBasis),
+          _Row('Category', e.categoryLabel, GuideId.category),
+          if (e.tags.isNotEmpty) _Row('Tags', e.tags.join(', '), GuideId.tags),
+          _Row('Block', '${e.block}-block', GuideId.block),
+          _Row('Period', '${e.period}', GuideId.period),
+          _Row('Group', e.group?.toString() ?? 'f-block row', GuideId.group),
+          _Row('Standard state', e.standardState, GuideId.standardState),
+          _Row('Dataset', e.sourceId, GuideId.dataset),
         ],
       ),
       const SizedBox(height: 12),
@@ -231,22 +246,25 @@ class _DetailsRoomState extends State<DetailsRoom>
           _Row(
             'Configuration',
             ElectronCloud.expandedConfiguration(e.electronConfigFull),
+            GuideId.configuration,
           ),
           if (e.electronConfig !=
               ElectronCloud.expandedConfiguration(e.electronConfigFull))
-            _Row('Shorthand', e.electronConfig),
-          _Row('Shells', _shells(e.shellCounts)),
+            _Row('Shorthand', e.electronConfig, GuideId.shorthand),
+          _Row('Shells', _shells(e.shellCounts), GuideId.shells),
           _Row(
             'Oxidation states',
             e.oxidationStates.isEmpty
                 ? 'Not reported'
                 : e.oxidationStates.map(_ox).join(', '),
+            GuideId.oxidationStates,
           ),
           _Row(
             'Primary oxidation',
             e.primaryOxidation == null
                 ? 'Not reported'
                 : _ox(e.primaryOxidation!),
+            GuideId.primaryOxidation,
           ),
         ],
       ),
@@ -259,32 +277,42 @@ class _DetailsRoomState extends State<DetailsRoom>
             p.covalentRadiusPm == null
                 ? 'Not reported'
                 : settings.lengthValue(p.covalentRadiusPm!),
+            GuideId.covalentRadius,
           ),
           _Row(
             'Electronegativity',
             p.paulingEn == null
                 ? 'Not reported'
                 : '${_trim(p.paulingEn!)} Pauling',
+            GuideId.electronegativity,
           ),
           _Row(
             'First ionization',
             p.ionizationEv == null
                 ? 'Not reported'
                 : settings.energyValue(p.ionizationEv!),
+            GuideId.firstIonization,
           ),
           _Row(
             'Melting point',
             p.meltingK == null ? 'Not reported' : settings.temp(p.meltingK!),
+            GuideId.meltingPoint,
           ),
           _Row(
             'Boiling point',
             p.boilingK == null ? 'Not reported' : settings.temp(p.boilingK!),
+            GuideId.boilingPoint,
           ),
           _Row(
             'Density',
             p.density == null ? 'Not reported' : _density(p.density!),
+            GuideId.density,
           ),
-          _Row('Crystal lattice', e.lattice ?? 'Not reported'),
+          _Row(
+            'Crystal lattice',
+            e.lattice ?? 'Not reported',
+            GuideId.crystalLattice,
+          ),
         ],
       ),
       const SizedBox(height: 12),
@@ -451,9 +479,10 @@ class _ShellDiagram extends StatelessWidget {
 }
 
 class _Row {
-  const _Row(this.label, this.value);
+  const _Row(this.label, this.value, this.guideId);
   final String label;
   final String value;
+  final String guideId;
 }
 
 class _DataCard extends StatelessWidget {
@@ -480,8 +509,6 @@ class _DataCard extends StatelessWidget {
   }
 
   Widget _line(BuildContext context, _Row row) {
-    final muted = Theme.of(context).colorScheme.onSurface
-        .withValues(alpha: 0.65);
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 6),
       child: Row(
@@ -489,7 +516,7 @@ class _DataCard extends StatelessWidget {
         children: [
           Expanded(
             flex: 5,
-            child: Text(row.label, style: TextStyle(color: muted)),
+            child: PropertyLabel(label: row.label, guideId: row.guideId),
           ),
           const SizedBox(width: 12),
           Expanded(
@@ -531,25 +558,38 @@ class _Isotopes extends StatelessWidget {
                   style: Mono.of(context, size: 14, weight: FontWeight.w700),
                 ),
                 const SizedBox(height: 4),
-                _fact(context, 'Mass number', '${iso.a}'),
-                _fact(context, 'Neutrons', '${iso.neutrons(element.z)}'),
-                _fact(context, 'Mass', '${_mass(iso.mass)} u'),
+                _fact(context, 'Mass number', '${iso.a}', GuideId.massNumber),
+                _fact(
+                  context,
+                  'Neutrons',
+                  '${iso.neutrons(element.z)}',
+                  GuideId.neutrons,
+                ),
+                _fact(
+                  context,
+                  'Mass',
+                  '${_mass(iso.mass)} u',
+                  GuideId.isotopicMass,
+                ),
                 _fact(
                   context,
                   'Spin',
                   iso.spin.isEmpty ? 'Not reported' : iso.spin,
+                  GuideId.nuclearSpin,
                 ),
-                _fact(context, 'Stability', iso.stability),
+                _fact(context, 'Stability', iso.stability, GuideId.stability),
                 _fact(
                   context,
                   'Abundance',
                   iso.abundance == null
                       ? 'Not reported'
                       : _percent(iso.abundance),
+                  GuideId.abundance,
                 ),
                 if (iso.halfLife != null)
-                  _fact(context, 'Half-life', iso.halfLife!),
-                if (iso.decay != null) _fact(context, 'Decay', iso.decay!),
+                  _fact(context, 'Half-life', iso.halfLife!, GuideId.halfLife),
+                if (iso.decay != null)
+                  _fact(context, 'Decay', iso.decay!, GuideId.decay),
               ],
           ],
         ),
@@ -557,12 +597,25 @@ class _Isotopes extends StatelessWidget {
     );
   }
 
-  Widget _fact(BuildContext context, String label, String value) {
+  Widget _fact(
+    BuildContext context,
+    String label,
+    String value,
+    String guideId,
+  ) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 2),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Expanded(child: Text(label)),
+          Expanded(
+            child: PropertyLabel(
+              label: label,
+              guideId: guideId,
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+          ),
+          const SizedBox(width: 12),
           Text(
             value,
             style: Mono.of(context, size: 13, weight: FontWeight.w600),
@@ -598,24 +651,50 @@ class _Spectra extends StatelessWidget {
                   style: Mono.of(context, size: 14, weight: FontWeight.w700),
                 ),
                 const SizedBox(height: 4),
-                Text('Wavelength  ${_trim(line.nm)} nm'),
-                Text('Energy  ${settings.energyValue(line.eV)}'),
-                Text('Frequency  ${_hz(line.frequencyHz)}'),
-                if (line.transition.isNotEmpty) Text(line.transition),
+                _lineFact(
+                  context,
+                  'Wavelength',
+                  '${_trim(line.nm)} nm',
+                  GuideId.wavelength,
+                ),
+                _lineFact(
+                  context,
+                  'Energy',
+                  settings.energyValue(line.eV),
+                  GuideId.photonEnergy,
+                ),
+                _lineFact(
+                  context,
+                  'Frequency',
+                  _hz(line.frequencyHz),
+                  GuideId.frequency,
+                ),
+                if (line.transition.isNotEmpty)
+                  _lineFact(
+                    context,
+                    'Transition',
+                    line.transition,
+                    GuideId.transition,
+                  ),
                 if (line.color.isNotEmpty)
                   Text('${line.spectrum} · ${line.color}'),
                 const SizedBox(height: 10),
               ],
             if (element.glow != null) ...[
-              Text('Discharge', style: Theme.of(context).textTheme.titleSmall),
+              PropertyLabel(
+                label: 'Discharge',
+                guideId: GuideId.discharge,
+                style: Theme.of(context).textTheme.titleSmall,
+              ),
               const SizedBox(height: 4),
               Text(element.glow!.text),
               if (element.glow!.kv != null) Text(element.glow!.kv!),
               const SizedBox(height: 8),
             ],
             if (element.astro != null) ...[
-              Text(
-                'Astrophysics',
+              PropertyLabel(
+                label: 'Astrophysics',
+                guideId: GuideId.astrophysics,
                 style: Theme.of(context).textTheme.titleSmall,
               ),
               const SizedBox(height: 4),
@@ -623,6 +702,35 @@ class _Spectra extends StatelessWidget {
             ],
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _lineFact(
+    BuildContext context,
+    String label,
+    String value,
+    String guideId,
+  ) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 2),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(
+            flex: 4,
+            child: PropertyLabel(label: label, guideId: guideId),
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            flex: 6,
+            child: Text(
+              value,
+              textAlign: TextAlign.end,
+              style: Mono.of(context, size: 13, weight: FontWeight.w600),
+            ),
+          ),
+        ],
       ),
     );
   }
