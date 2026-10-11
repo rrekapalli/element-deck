@@ -5,11 +5,11 @@ Refinement list. Do not block the concept on answers. Do not write application c
 ## Product
 
 - The product name is **Element Deck**. The concept PNGs still say ATOMIQ; that wordmark is retired. Closed.
-- Four rooms and three depths are the product. Closed.
+- Five rooms (Table, Details, Compare, Spectra, Quiz) and three depths are the product. Closed.
 - The preview opens with no account and no network. The full pack is a purchase plus a download, then offline from the cache. Closed.
 - Packages are `preview`, `element-deck`, and `classroom`. Prices are open. Closed as the set.
 - A purchase is recorded in Firestore only after a Cloud Function accepts the store receipt. The client cannot grant itself a package. Closed.
-- v1 has no chat tutor, no quiz, no general reaction solver. Closed.
+- v1 has no chat tutor and no general reaction solver. Quiz is a fifth room with on-device XP and streak. Closed.
 - Classroom is later, and not for minors until the terms exist. Closed as sequencing. The terms themselves are open.
 - Store-listing collision check for "Element Deck" before release. Open.
 

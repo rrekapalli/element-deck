@@ -8,6 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
+from element_samples import sample_for
 from enrich import DISCOVERY as ENRICH_DISCOVERY
 from enrich import apps_for, curriculum, extra_props, summaries
 from found import HOW_DISCOVERED
@@ -442,7 +443,7 @@ def parse_all() -> list[dict]:
             "oxidationStates": oxs,
             "primaryOxidation": primary,
             "lattice": LATTICE.get(z),
-            "sourceId": "compiled-v1.2",
+            "sourceId": "compiled-v1.3",
         }
         el["summary"] = summaries(el)
         el["curriculum"] = curriculum(el)
@@ -469,10 +470,12 @@ def parse_all() -> list[dict]:
 def main() -> None:
     elements = parse_all()
     assert len(elements) == 118, len(elements)
+    for el in elements:
+        el["sample"] = sample_for(el["z"], el["name"], el["standardState"])
     pack = {
         "id": "core",
-        "version": "1.2.0",
-        "sciencePins": ["compiled-v1.2", "NIST ASD"],
+        "version": "1.3.0",
+        "sciencePins": ["compiled-v1.3", "NIST ASD"],
         "trendNotes": TRENDS,
         "elements": elements,
     }

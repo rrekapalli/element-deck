@@ -1260,6 +1260,1182 @@ class EntitlementRowsCompanion extends UpdateCompanion<EntitlementRow> {
   }
 }
 
+class $QuizAnswersTable extends QuizAnswers
+    with TableInfo<$QuizAnswersTable, QuizAnswer> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $QuizAnswersTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _zMeta = const VerificationMeta('z');
+  @override
+  late final GeneratedColumn<int> z = GeneratedColumn<int>(
+    'z',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _depthMeta = const VerificationMeta('depth');
+  @override
+  late final GeneratedColumn<String> depth = GeneratedColumn<String>(
+    'depth',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _questionIdMeta = const VerificationMeta(
+    'questionId',
+  );
+  @override
+  late final GeneratedColumn<String> questionId = GeneratedColumn<String>(
+    'question_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _correctMeta = const VerificationMeta(
+    'correct',
+  );
+  @override
+  late final GeneratedColumn<bool> correct = GeneratedColumn<bool>(
+    'correct',
+    aliasedName,
+    false,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: true,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("correct" IN (0, 1))',
+    ),
+  );
+  static const VerificationMeta _answeredAtMeta = const VerificationMeta(
+    'answeredAt',
+  );
+  @override
+  late final GeneratedColumn<int> answeredAt = GeneratedColumn<int>(
+    'answered_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [
+    z,
+    depth,
+    questionId,
+    correct,
+    answeredAt,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'quiz_answers';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<QuizAnswer> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('z')) {
+      context.handle(_zMeta, z.isAcceptableOrUnknown(data['z']!, _zMeta));
+    } else if (isInserting) {
+      context.missing(_zMeta);
+    }
+    if (data.containsKey('depth')) {
+      context.handle(
+        _depthMeta,
+        depth.isAcceptableOrUnknown(data['depth']!, _depthMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_depthMeta);
+    }
+    if (data.containsKey('question_id')) {
+      context.handle(
+        _questionIdMeta,
+        questionId.isAcceptableOrUnknown(data['question_id']!, _questionIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_questionIdMeta);
+    }
+    if (data.containsKey('correct')) {
+      context.handle(
+        _correctMeta,
+        correct.isAcceptableOrUnknown(data['correct']!, _correctMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_correctMeta);
+    }
+    if (data.containsKey('answered_at')) {
+      context.handle(
+        _answeredAtMeta,
+        answeredAt.isAcceptableOrUnknown(data['answered_at']!, _answeredAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_answeredAtMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {z, depth, questionId};
+  @override
+  QuizAnswer map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return QuizAnswer(
+      z: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}z'],
+      )!,
+      depth: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}depth'],
+      )!,
+      questionId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}question_id'],
+      )!,
+      correct: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}correct'],
+      )!,
+      answeredAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}answered_at'],
+      )!,
+    );
+  }
+
+  @override
+  $QuizAnswersTable createAlias(String alias) {
+    return $QuizAnswersTable(attachedDatabase, alias);
+  }
+}
+
+class QuizAnswer extends DataClass implements Insertable<QuizAnswer> {
+  final int z;
+  final String depth;
+  final String questionId;
+  final bool correct;
+  final int answeredAt;
+  const QuizAnswer({
+    required this.z,
+    required this.depth,
+    required this.questionId,
+    required this.correct,
+    required this.answeredAt,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['z'] = Variable<int>(z);
+    map['depth'] = Variable<String>(depth);
+    map['question_id'] = Variable<String>(questionId);
+    map['correct'] = Variable<bool>(correct);
+    map['answered_at'] = Variable<int>(answeredAt);
+    return map;
+  }
+
+  QuizAnswersCompanion toCompanion(bool nullToAbsent) {
+    return QuizAnswersCompanion(
+      z: Value(z),
+      depth: Value(depth),
+      questionId: Value(questionId),
+      correct: Value(correct),
+      answeredAt: Value(answeredAt),
+    );
+  }
+
+  factory QuizAnswer.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return QuizAnswer(
+      z: serializer.fromJson<int>(json['z']),
+      depth: serializer.fromJson<String>(json['depth']),
+      questionId: serializer.fromJson<String>(json['questionId']),
+      correct: serializer.fromJson<bool>(json['correct']),
+      answeredAt: serializer.fromJson<int>(json['answeredAt']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'z': serializer.toJson<int>(z),
+      'depth': serializer.toJson<String>(depth),
+      'questionId': serializer.toJson<String>(questionId),
+      'correct': serializer.toJson<bool>(correct),
+      'answeredAt': serializer.toJson<int>(answeredAt),
+    };
+  }
+
+  QuizAnswer copyWith({
+    int? z,
+    String? depth,
+    String? questionId,
+    bool? correct,
+    int? answeredAt,
+  }) => QuizAnswer(
+    z: z ?? this.z,
+    depth: depth ?? this.depth,
+    questionId: questionId ?? this.questionId,
+    correct: correct ?? this.correct,
+    answeredAt: answeredAt ?? this.answeredAt,
+  );
+  QuizAnswer copyWithCompanion(QuizAnswersCompanion data) {
+    return QuizAnswer(
+      z: data.z.present ? data.z.value : this.z,
+      depth: data.depth.present ? data.depth.value : this.depth,
+      questionId: data.questionId.present
+          ? data.questionId.value
+          : this.questionId,
+      correct: data.correct.present ? data.correct.value : this.correct,
+      answeredAt: data.answeredAt.present
+          ? data.answeredAt.value
+          : this.answeredAt,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('QuizAnswer(')
+          ..write('z: $z, ')
+          ..write('depth: $depth, ')
+          ..write('questionId: $questionId, ')
+          ..write('correct: $correct, ')
+          ..write('answeredAt: $answeredAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(z, depth, questionId, correct, answeredAt);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is QuizAnswer &&
+          other.z == this.z &&
+          other.depth == this.depth &&
+          other.questionId == this.questionId &&
+          other.correct == this.correct &&
+          other.answeredAt == this.answeredAt);
+}
+
+class QuizAnswersCompanion extends UpdateCompanion<QuizAnswer> {
+  final Value<int> z;
+  final Value<String> depth;
+  final Value<String> questionId;
+  final Value<bool> correct;
+  final Value<int> answeredAt;
+  final Value<int> rowid;
+  const QuizAnswersCompanion({
+    this.z = const Value.absent(),
+    this.depth = const Value.absent(),
+    this.questionId = const Value.absent(),
+    this.correct = const Value.absent(),
+    this.answeredAt = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  QuizAnswersCompanion.insert({
+    required int z,
+    required String depth,
+    required String questionId,
+    required bool correct,
+    required int answeredAt,
+    this.rowid = const Value.absent(),
+  }) : z = Value(z),
+       depth = Value(depth),
+       questionId = Value(questionId),
+       correct = Value(correct),
+       answeredAt = Value(answeredAt);
+  static Insertable<QuizAnswer> custom({
+    Expression<int>? z,
+    Expression<String>? depth,
+    Expression<String>? questionId,
+    Expression<bool>? correct,
+    Expression<int>? answeredAt,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (z != null) 'z': z,
+      if (depth != null) 'depth': depth,
+      if (questionId != null) 'question_id': questionId,
+      if (correct != null) 'correct': correct,
+      if (answeredAt != null) 'answered_at': answeredAt,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  QuizAnswersCompanion copyWith({
+    Value<int>? z,
+    Value<String>? depth,
+    Value<String>? questionId,
+    Value<bool>? correct,
+    Value<int>? answeredAt,
+    Value<int>? rowid,
+  }) {
+    return QuizAnswersCompanion(
+      z: z ?? this.z,
+      depth: depth ?? this.depth,
+      questionId: questionId ?? this.questionId,
+      correct: correct ?? this.correct,
+      answeredAt: answeredAt ?? this.answeredAt,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (z.present) {
+      map['z'] = Variable<int>(z.value);
+    }
+    if (depth.present) {
+      map['depth'] = Variable<String>(depth.value);
+    }
+    if (questionId.present) {
+      map['question_id'] = Variable<String>(questionId.value);
+    }
+    if (correct.present) {
+      map['correct'] = Variable<bool>(correct.value);
+    }
+    if (answeredAt.present) {
+      map['answered_at'] = Variable<int>(answeredAt.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('QuizAnswersCompanion(')
+          ..write('z: $z, ')
+          ..write('depth: $depth, ')
+          ..write('questionId: $questionId, ')
+          ..write('correct: $correct, ')
+          ..write('answeredAt: $answeredAt, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $QuizDaysTable extends QuizDays with TableInfo<$QuizDaysTable, QuizDay> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $QuizDaysTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _dayMeta = const VerificationMeta('day');
+  @override
+  late final GeneratedColumn<String> day = GeneratedColumn<String>(
+    'day',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _answeredAtMeta = const VerificationMeta(
+    'answeredAt',
+  );
+  @override
+  late final GeneratedColumn<int> answeredAt = GeneratedColumn<int>(
+    'answered_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [day, answeredAt];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'quiz_days';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<QuizDay> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('day')) {
+      context.handle(
+        _dayMeta,
+        day.isAcceptableOrUnknown(data['day']!, _dayMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_dayMeta);
+    }
+    if (data.containsKey('answered_at')) {
+      context.handle(
+        _answeredAtMeta,
+        answeredAt.isAcceptableOrUnknown(data['answered_at']!, _answeredAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_answeredAtMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {day};
+  @override
+  QuizDay map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return QuizDay(
+      day: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}day'],
+      )!,
+      answeredAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}answered_at'],
+      )!,
+    );
+  }
+
+  @override
+  $QuizDaysTable createAlias(String alias) {
+    return $QuizDaysTable(attachedDatabase, alias);
+  }
+}
+
+class QuizDay extends DataClass implements Insertable<QuizDay> {
+  final String day;
+  final int answeredAt;
+  const QuizDay({required this.day, required this.answeredAt});
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['day'] = Variable<String>(day);
+    map['answered_at'] = Variable<int>(answeredAt);
+    return map;
+  }
+
+  QuizDaysCompanion toCompanion(bool nullToAbsent) {
+    return QuizDaysCompanion(day: Value(day), answeredAt: Value(answeredAt));
+  }
+
+  factory QuizDay.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return QuizDay(
+      day: serializer.fromJson<String>(json['day']),
+      answeredAt: serializer.fromJson<int>(json['answeredAt']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'day': serializer.toJson<String>(day),
+      'answeredAt': serializer.toJson<int>(answeredAt),
+    };
+  }
+
+  QuizDay copyWith({String? day, int? answeredAt}) =>
+      QuizDay(day: day ?? this.day, answeredAt: answeredAt ?? this.answeredAt);
+  QuizDay copyWithCompanion(QuizDaysCompanion data) {
+    return QuizDay(
+      day: data.day.present ? data.day.value : this.day,
+      answeredAt: data.answeredAt.present
+          ? data.answeredAt.value
+          : this.answeredAt,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('QuizDay(')
+          ..write('day: $day, ')
+          ..write('answeredAt: $answeredAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(day, answeredAt);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is QuizDay &&
+          other.day == this.day &&
+          other.answeredAt == this.answeredAt);
+}
+
+class QuizDaysCompanion extends UpdateCompanion<QuizDay> {
+  final Value<String> day;
+  final Value<int> answeredAt;
+  final Value<int> rowid;
+  const QuizDaysCompanion({
+    this.day = const Value.absent(),
+    this.answeredAt = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  QuizDaysCompanion.insert({
+    required String day,
+    required int answeredAt,
+    this.rowid = const Value.absent(),
+  }) : day = Value(day),
+       answeredAt = Value(answeredAt);
+  static Insertable<QuizDay> custom({
+    Expression<String>? day,
+    Expression<int>? answeredAt,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (day != null) 'day': day,
+      if (answeredAt != null) 'answered_at': answeredAt,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  QuizDaysCompanion copyWith({
+    Value<String>? day,
+    Value<int>? answeredAt,
+    Value<int>? rowid,
+  }) {
+    return QuizDaysCompanion(
+      day: day ?? this.day,
+      answeredAt: answeredAt ?? this.answeredAt,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (day.present) {
+      map['day'] = Variable<String>(day.value);
+    }
+    if (answeredAt.present) {
+      map['answered_at'] = Variable<int>(answeredAt.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('QuizDaysCompanion(')
+          ..write('day: $day, ')
+          ..write('answeredAt: $answeredAt, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $QuizNotesTable extends QuizNotes
+    with TableInfo<$QuizNotesTable, QuizNote> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $QuizNotesTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _zMeta = const VerificationMeta('z');
+  @override
+  late final GeneratedColumn<int> z = GeneratedColumn<int>(
+    'z',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _noteMeta = const VerificationMeta('note');
+  @override
+  late final GeneratedColumn<String> note = GeneratedColumn<String>(
+    'note',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _updatedAtMeta = const VerificationMeta(
+    'updatedAt',
+  );
+  @override
+  late final GeneratedColumn<int> updatedAt = GeneratedColumn<int>(
+    'updated_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [z, note, updatedAt];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'quiz_notes';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<QuizNote> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('z')) {
+      context.handle(_zMeta, z.isAcceptableOrUnknown(data['z']!, _zMeta));
+    }
+    if (data.containsKey('note')) {
+      context.handle(
+        _noteMeta,
+        note.isAcceptableOrUnknown(data['note']!, _noteMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_noteMeta);
+    }
+    if (data.containsKey('updated_at')) {
+      context.handle(
+        _updatedAtMeta,
+        updatedAt.isAcceptableOrUnknown(data['updated_at']!, _updatedAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_updatedAtMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {z};
+  @override
+  QuizNote map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return QuizNote(
+      z: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}z'],
+      )!,
+      note: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}note'],
+      )!,
+      updatedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}updated_at'],
+      )!,
+    );
+  }
+
+  @override
+  $QuizNotesTable createAlias(String alias) {
+    return $QuizNotesTable(attachedDatabase, alias);
+  }
+}
+
+class QuizNote extends DataClass implements Insertable<QuizNote> {
+  final int z;
+  final String note;
+  final int updatedAt;
+  const QuizNote({
+    required this.z,
+    required this.note,
+    required this.updatedAt,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['z'] = Variable<int>(z);
+    map['note'] = Variable<String>(note);
+    map['updated_at'] = Variable<int>(updatedAt);
+    return map;
+  }
+
+  QuizNotesCompanion toCompanion(bool nullToAbsent) {
+    return QuizNotesCompanion(
+      z: Value(z),
+      note: Value(note),
+      updatedAt: Value(updatedAt),
+    );
+  }
+
+  factory QuizNote.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return QuizNote(
+      z: serializer.fromJson<int>(json['z']),
+      note: serializer.fromJson<String>(json['note']),
+      updatedAt: serializer.fromJson<int>(json['updatedAt']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'z': serializer.toJson<int>(z),
+      'note': serializer.toJson<String>(note),
+      'updatedAt': serializer.toJson<int>(updatedAt),
+    };
+  }
+
+  QuizNote copyWith({int? z, String? note, int? updatedAt}) => QuizNote(
+    z: z ?? this.z,
+    note: note ?? this.note,
+    updatedAt: updatedAt ?? this.updatedAt,
+  );
+  QuizNote copyWithCompanion(QuizNotesCompanion data) {
+    return QuizNote(
+      z: data.z.present ? data.z.value : this.z,
+      note: data.note.present ? data.note.value : this.note,
+      updatedAt: data.updatedAt.present ? data.updatedAt.value : this.updatedAt,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('QuizNote(')
+          ..write('z: $z, ')
+          ..write('note: $note, ')
+          ..write('updatedAt: $updatedAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(z, note, updatedAt);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is QuizNote &&
+          other.z == this.z &&
+          other.note == this.note &&
+          other.updatedAt == this.updatedAt);
+}
+
+class QuizNotesCompanion extends UpdateCompanion<QuizNote> {
+  final Value<int> z;
+  final Value<String> note;
+  final Value<int> updatedAt;
+  const QuizNotesCompanion({
+    this.z = const Value.absent(),
+    this.note = const Value.absent(),
+    this.updatedAt = const Value.absent(),
+  });
+  QuizNotesCompanion.insert({
+    this.z = const Value.absent(),
+    required String note,
+    required int updatedAt,
+  }) : note = Value(note),
+       updatedAt = Value(updatedAt);
+  static Insertable<QuizNote> custom({
+    Expression<int>? z,
+    Expression<String>? note,
+    Expression<int>? updatedAt,
+  }) {
+    return RawValuesInsertable({
+      if (z != null) 'z': z,
+      if (note != null) 'note': note,
+      if (updatedAt != null) 'updated_at': updatedAt,
+    });
+  }
+
+  QuizNotesCompanion copyWith({
+    Value<int>? z,
+    Value<String>? note,
+    Value<int>? updatedAt,
+  }) {
+    return QuizNotesCompanion(
+      z: z ?? this.z,
+      note: note ?? this.note,
+      updatedAt: updatedAt ?? this.updatedAt,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (z.present) {
+      map['z'] = Variable<int>(z.value);
+    }
+    if (note.present) {
+      map['note'] = Variable<String>(note.value);
+    }
+    if (updatedAt.present) {
+      map['updated_at'] = Variable<int>(updatedAt.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('QuizNotesCompanion(')
+          ..write('z: $z, ')
+          ..write('note: $note, ')
+          ..write('updatedAt: $updatedAt')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $QuizReportsTable extends QuizReports
+    with TableInfo<$QuizReportsTable, QuizReport> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $QuizReportsTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _zMeta = const VerificationMeta('z');
+  @override
+  late final GeneratedColumn<int> z = GeneratedColumn<int>(
+    'z',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _depthMeta = const VerificationMeta('depth');
+  @override
+  late final GeneratedColumn<String> depth = GeneratedColumn<String>(
+    'depth',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _questionIdMeta = const VerificationMeta(
+    'questionId',
+  );
+  @override
+  late final GeneratedColumn<String> questionId = GeneratedColumn<String>(
+    'question_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _noteMeta = const VerificationMeta('note');
+  @override
+  late final GeneratedColumn<String> note = GeneratedColumn<String>(
+    'note',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _createdAtMeta = const VerificationMeta(
+    'createdAt',
+  );
+  @override
+  late final GeneratedColumn<int> createdAt = GeneratedColumn<int>(
+    'created_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [z, depth, questionId, note, createdAt];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'quiz_reports';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<QuizReport> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('z')) {
+      context.handle(_zMeta, z.isAcceptableOrUnknown(data['z']!, _zMeta));
+    } else if (isInserting) {
+      context.missing(_zMeta);
+    }
+    if (data.containsKey('depth')) {
+      context.handle(
+        _depthMeta,
+        depth.isAcceptableOrUnknown(data['depth']!, _depthMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_depthMeta);
+    }
+    if (data.containsKey('question_id')) {
+      context.handle(
+        _questionIdMeta,
+        questionId.isAcceptableOrUnknown(data['question_id']!, _questionIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_questionIdMeta);
+    }
+    if (data.containsKey('note')) {
+      context.handle(
+        _noteMeta,
+        note.isAcceptableOrUnknown(data['note']!, _noteMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_noteMeta);
+    }
+    if (data.containsKey('created_at')) {
+      context.handle(
+        _createdAtMeta,
+        createdAt.isAcceptableOrUnknown(data['created_at']!, _createdAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_createdAtMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {z, depth, questionId};
+  @override
+  QuizReport map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return QuizReport(
+      z: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}z'],
+      )!,
+      depth: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}depth'],
+      )!,
+      questionId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}question_id'],
+      )!,
+      note: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}note'],
+      )!,
+      createdAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}created_at'],
+      )!,
+    );
+  }
+
+  @override
+  $QuizReportsTable createAlias(String alias) {
+    return $QuizReportsTable(attachedDatabase, alias);
+  }
+}
+
+class QuizReport extends DataClass implements Insertable<QuizReport> {
+  final int z;
+  final String depth;
+  final String questionId;
+  final String note;
+  final int createdAt;
+  const QuizReport({
+    required this.z,
+    required this.depth,
+    required this.questionId,
+    required this.note,
+    required this.createdAt,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['z'] = Variable<int>(z);
+    map['depth'] = Variable<String>(depth);
+    map['question_id'] = Variable<String>(questionId);
+    map['note'] = Variable<String>(note);
+    map['created_at'] = Variable<int>(createdAt);
+    return map;
+  }
+
+  QuizReportsCompanion toCompanion(bool nullToAbsent) {
+    return QuizReportsCompanion(
+      z: Value(z),
+      depth: Value(depth),
+      questionId: Value(questionId),
+      note: Value(note),
+      createdAt: Value(createdAt),
+    );
+  }
+
+  factory QuizReport.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return QuizReport(
+      z: serializer.fromJson<int>(json['z']),
+      depth: serializer.fromJson<String>(json['depth']),
+      questionId: serializer.fromJson<String>(json['questionId']),
+      note: serializer.fromJson<String>(json['note']),
+      createdAt: serializer.fromJson<int>(json['createdAt']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'z': serializer.toJson<int>(z),
+      'depth': serializer.toJson<String>(depth),
+      'questionId': serializer.toJson<String>(questionId),
+      'note': serializer.toJson<String>(note),
+      'createdAt': serializer.toJson<int>(createdAt),
+    };
+  }
+
+  QuizReport copyWith({
+    int? z,
+    String? depth,
+    String? questionId,
+    String? note,
+    int? createdAt,
+  }) => QuizReport(
+    z: z ?? this.z,
+    depth: depth ?? this.depth,
+    questionId: questionId ?? this.questionId,
+    note: note ?? this.note,
+    createdAt: createdAt ?? this.createdAt,
+  );
+  QuizReport copyWithCompanion(QuizReportsCompanion data) {
+    return QuizReport(
+      z: data.z.present ? data.z.value : this.z,
+      depth: data.depth.present ? data.depth.value : this.depth,
+      questionId: data.questionId.present
+          ? data.questionId.value
+          : this.questionId,
+      note: data.note.present ? data.note.value : this.note,
+      createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('QuizReport(')
+          ..write('z: $z, ')
+          ..write('depth: $depth, ')
+          ..write('questionId: $questionId, ')
+          ..write('note: $note, ')
+          ..write('createdAt: $createdAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(z, depth, questionId, note, createdAt);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is QuizReport &&
+          other.z == this.z &&
+          other.depth == this.depth &&
+          other.questionId == this.questionId &&
+          other.note == this.note &&
+          other.createdAt == this.createdAt);
+}
+
+class QuizReportsCompanion extends UpdateCompanion<QuizReport> {
+  final Value<int> z;
+  final Value<String> depth;
+  final Value<String> questionId;
+  final Value<String> note;
+  final Value<int> createdAt;
+  final Value<int> rowid;
+  const QuizReportsCompanion({
+    this.z = const Value.absent(),
+    this.depth = const Value.absent(),
+    this.questionId = const Value.absent(),
+    this.note = const Value.absent(),
+    this.createdAt = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  QuizReportsCompanion.insert({
+    required int z,
+    required String depth,
+    required String questionId,
+    required String note,
+    required int createdAt,
+    this.rowid = const Value.absent(),
+  }) : z = Value(z),
+       depth = Value(depth),
+       questionId = Value(questionId),
+       note = Value(note),
+       createdAt = Value(createdAt);
+  static Insertable<QuizReport> custom({
+    Expression<int>? z,
+    Expression<String>? depth,
+    Expression<String>? questionId,
+    Expression<String>? note,
+    Expression<int>? createdAt,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (z != null) 'z': z,
+      if (depth != null) 'depth': depth,
+      if (questionId != null) 'question_id': questionId,
+      if (note != null) 'note': note,
+      if (createdAt != null) 'created_at': createdAt,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  QuizReportsCompanion copyWith({
+    Value<int>? z,
+    Value<String>? depth,
+    Value<String>? questionId,
+    Value<String>? note,
+    Value<int>? createdAt,
+    Value<int>? rowid,
+  }) {
+    return QuizReportsCompanion(
+      z: z ?? this.z,
+      depth: depth ?? this.depth,
+      questionId: questionId ?? this.questionId,
+      note: note ?? this.note,
+      createdAt: createdAt ?? this.createdAt,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (z.present) {
+      map['z'] = Variable<int>(z.value);
+    }
+    if (depth.present) {
+      map['depth'] = Variable<String>(depth.value);
+    }
+    if (questionId.present) {
+      map['question_id'] = Variable<String>(questionId.value);
+    }
+    if (note.present) {
+      map['note'] = Variable<String>(note.value);
+    }
+    if (createdAt.present) {
+      map['created_at'] = Variable<int>(createdAt.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('QuizReportsCompanion(')
+          ..write('z: $z, ')
+          ..write('depth: $depth, ')
+          ..write('questionId: $questionId, ')
+          ..write('note: $note, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
 abstract class _$LearnerDatabase extends GeneratedDatabase {
   _$LearnerDatabase(QueryExecutor e) : super(e);
   $LearnerDatabaseManager get managers => $LearnerDatabaseManager(this);
@@ -1272,6 +2448,10 @@ abstract class _$LearnerDatabase extends GeneratedDatabase {
   late final $EntitlementRowsTable entitlementRows = $EntitlementRowsTable(
     this,
   );
+  late final $QuizAnswersTable quizAnswers = $QuizAnswersTable(this);
+  late final $QuizDaysTable quizDays = $QuizDaysTable(this);
+  late final $QuizNotesTable quizNotes = $QuizNotesTable(this);
+  late final $QuizReportsTable quizReports = $QuizReportsTable(this);
   @override
   Iterable<TableInfo<Table, Object?>> get allTables =>
       allSchemaEntities.whereType<TableInfo<Table, Object?>>();
@@ -1282,6 +2462,10 @@ abstract class _$LearnerDatabase extends GeneratedDatabase {
     recents,
     savedComparisons,
     entitlementRows,
+    quizAnswers,
+    quizDays,
+    quizNotes,
+    quizReports,
   ];
 }
 
@@ -1429,7 +2613,16 @@ class $$PreferenceRowsTableTableManager
                 rowid: rowid,
               ),
           withReferenceMapper: (p0) => p0
-              .map((e) => (e.readTable(table), BaseReferences(db, table, e)))
+              .map(
+                (e) => (
+                  e.readTable<$PreferenceRowsTable, PreferenceRow>(table),
+                  BaseReferences<
+                    _$LearnerDatabase,
+                    $PreferenceRowsTable,
+                    PreferenceRow
+                  >(db, table, e),
+                ),
+              )
               .toList(),
           prefetchHooksCallback: null,
         ),
@@ -1453,10 +2646,14 @@ typedef $$PreferenceRowsTableProcessedTableManager =
       PreferenceRow,
       PrefetchHooks Function()
     >;
-typedef $$BookmarksTableCreateCompanionBuilder =
-    BookmarksCompanion Function({Value<int> z, required int createdAt});
-typedef $$BookmarksTableUpdateCompanionBuilder =
-    BookmarksCompanion Function({Value<int> z, Value<int> createdAt});
+typedef $$BookmarksTableCreateCompanionBuilder = BookmarksCompanion Function({
+  Value<int> z,
+  required int createdAt,
+});
+typedef $$BookmarksTableUpdateCompanionBuilder = BookmarksCompanion Function({
+  Value<int> z,
+  Value<int> createdAt,
+});
 
 class $$BookmarksTableFilterComposer
     extends Composer<_$LearnerDatabase, $BookmarksTable> {
@@ -1543,16 +2740,25 @@ class $$BookmarksTableTableManager
               $$BookmarksTableOrderingComposer($db: db, $table: table),
           createComputedFieldComposer: () =>
               $$BookmarksTableAnnotationComposer($db: db, $table: table),
-          updateCompanionCallback:
-              ({
-                Value<int> z = const Value.absent(),
-                Value<int> createdAt = const Value.absent(),
-              }) => BookmarksCompanion(z: z, createdAt: createdAt),
-          createCompanionCallback:
-              ({Value<int> z = const Value.absent(), required int createdAt}) =>
-                  BookmarksCompanion.insert(z: z, createdAt: createdAt),
+          updateCompanionCallback: ({
+            Value<int> z = const Value.absent(),
+            Value<int> createdAt = const Value.absent(),
+          }) => BookmarksCompanion(z: z, createdAt: createdAt),
+          createCompanionCallback: ({
+            Value<int> z = const Value.absent(),
+            required int createdAt,
+          }) => BookmarksCompanion.insert(z: z, createdAt: createdAt),
           withReferenceMapper: (p0) => p0
-              .map((e) => (e.readTable(table), BaseReferences(db, table, e)))
+              .map(
+                (e) => (
+                  e.readTable<$BookmarksTable, Bookmark>(table),
+                  BaseReferences<_$LearnerDatabase, $BookmarksTable, Bookmark>(
+                    db,
+                    table,
+                    e,
+                  ),
+                ),
+              )
               .toList(),
           prefetchHooksCallback: null,
         ),
@@ -1573,10 +2779,14 @@ typedef $$BookmarksTableProcessedTableManager =
       Bookmark,
       PrefetchHooks Function()
     >;
-typedef $$RecentsTableCreateCompanionBuilder =
-    RecentsCompanion Function({Value<int> z, required int viewedAt});
-typedef $$RecentsTableUpdateCompanionBuilder =
-    RecentsCompanion Function({Value<int> z, Value<int> viewedAt});
+typedef $$RecentsTableCreateCompanionBuilder = RecentsCompanion Function({
+  Value<int> z,
+  required int viewedAt,
+});
+typedef $$RecentsTableUpdateCompanionBuilder = RecentsCompanion Function({
+  Value<int> z,
+  Value<int> viewedAt,
+});
 
 class $$RecentsTableFilterComposer
     extends Composer<_$LearnerDatabase, $RecentsTable> {
@@ -1660,16 +2870,25 @@ class $$RecentsTableTableManager
               $$RecentsTableOrderingComposer($db: db, $table: table),
           createComputedFieldComposer: () =>
               $$RecentsTableAnnotationComposer($db: db, $table: table),
-          updateCompanionCallback:
-              ({
-                Value<int> z = const Value.absent(),
-                Value<int> viewedAt = const Value.absent(),
-              }) => RecentsCompanion(z: z, viewedAt: viewedAt),
-          createCompanionCallback:
-              ({Value<int> z = const Value.absent(), required int viewedAt}) =>
-                  RecentsCompanion.insert(z: z, viewedAt: viewedAt),
+          updateCompanionCallback: ({
+            Value<int> z = const Value.absent(),
+            Value<int> viewedAt = const Value.absent(),
+          }) => RecentsCompanion(z: z, viewedAt: viewedAt),
+          createCompanionCallback: ({
+            Value<int> z = const Value.absent(),
+            required int viewedAt,
+          }) => RecentsCompanion.insert(z: z, viewedAt: viewedAt),
           withReferenceMapper: (p0) => p0
-              .map((e) => (e.readTable(table), BaseReferences(db, table, e)))
+              .map(
+                (e) => (
+                  e.readTable<$RecentsTable, Recent>(table),
+                  BaseReferences<_$LearnerDatabase, $RecentsTable, Recent>(
+                    db,
+                    table,
+                    e,
+                  ),
+                ),
+              )
               .toList(),
           prefetchHooksCallback: null,
         ),
@@ -1872,7 +3091,16 @@ class $$SavedComparisonsTableTableManager
                 rowid: rowid,
               ),
           withReferenceMapper: (p0) => p0
-              .map((e) => (e.readTable(table), BaseReferences(db, table, e)))
+              .map(
+                (e) => (
+                  e.readTable<$SavedComparisonsTable, SavedComparison>(table),
+                  BaseReferences<
+                    _$LearnerDatabase,
+                    $SavedComparisonsTable,
+                    SavedComparison
+                  >(db, table, e),
+                ),
+              )
               .toList(),
           prefetchHooksCallback: null,
         ),
@@ -2044,7 +3272,16 @@ class $$EntitlementRowsTableTableManager
                 rowid: rowid,
               ),
           withReferenceMapper: (p0) => p0
-              .map((e) => (e.readTable(table), BaseReferences(db, table, e)))
+              .map(
+                (e) => (
+                  e.readTable<$EntitlementRowsTable, EntitlementRow>(table),
+                  BaseReferences<
+                    _$LearnerDatabase,
+                    $EntitlementRowsTable,
+                    EntitlementRow
+                  >(db, table, e),
+                ),
+              )
               .toList(),
           prefetchHooksCallback: null,
         ),
@@ -2072,6 +3309,731 @@ typedef $$EntitlementRowsTableProcessedTableManager =
       EntitlementRow,
       PrefetchHooks Function()
     >;
+typedef $$QuizAnswersTableCreateCompanionBuilder =
+    QuizAnswersCompanion Function({
+      required int z,
+      required String depth,
+      required String questionId,
+      required bool correct,
+      required int answeredAt,
+      Value<int> rowid,
+    });
+typedef $$QuizAnswersTableUpdateCompanionBuilder =
+    QuizAnswersCompanion Function({
+      Value<int> z,
+      Value<String> depth,
+      Value<String> questionId,
+      Value<bool> correct,
+      Value<int> answeredAt,
+      Value<int> rowid,
+    });
+
+class $$QuizAnswersTableFilterComposer
+    extends Composer<_$LearnerDatabase, $QuizAnswersTable> {
+  $$QuizAnswersTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<int> get z => $composableBuilder(
+    column: $table.z,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get depth => $composableBuilder(
+    column: $table.depth,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get questionId => $composableBuilder(
+    column: $table.questionId,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<bool> get correct => $composableBuilder(
+    column: $table.correct,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get answeredAt => $composableBuilder(
+    column: $table.answeredAt,
+    builder: (column) => ColumnFilters(column),
+  );
+}
+
+class $$QuizAnswersTableOrderingComposer
+    extends Composer<_$LearnerDatabase, $QuizAnswersTable> {
+  $$QuizAnswersTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<int> get z => $composableBuilder(
+    column: $table.z,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get depth => $composableBuilder(
+    column: $table.depth,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get questionId => $composableBuilder(
+    column: $table.questionId,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<bool> get correct => $composableBuilder(
+    column: $table.correct,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get answeredAt => $composableBuilder(
+    column: $table.answeredAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+}
+
+class $$QuizAnswersTableAnnotationComposer
+    extends Composer<_$LearnerDatabase, $QuizAnswersTable> {
+  $$QuizAnswersTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<int> get z =>
+      $composableBuilder(column: $table.z, builder: (column) => column);
+
+  GeneratedColumn<String> get depth =>
+      $composableBuilder(column: $table.depth, builder: (column) => column);
+
+  GeneratedColumn<String> get questionId => $composableBuilder(
+    column: $table.questionId,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<bool> get correct =>
+      $composableBuilder(column: $table.correct, builder: (column) => column);
+
+  GeneratedColumn<int> get answeredAt => $composableBuilder(
+    column: $table.answeredAt,
+    builder: (column) => column,
+  );
+}
+
+class $$QuizAnswersTableTableManager
+    extends
+        RootTableManager<
+          _$LearnerDatabase,
+          $QuizAnswersTable,
+          QuizAnswer,
+          $$QuizAnswersTableFilterComposer,
+          $$QuizAnswersTableOrderingComposer,
+          $$QuizAnswersTableAnnotationComposer,
+          $$QuizAnswersTableCreateCompanionBuilder,
+          $$QuizAnswersTableUpdateCompanionBuilder,
+          (
+            QuizAnswer,
+            BaseReferences<_$LearnerDatabase, $QuizAnswersTable, QuizAnswer>,
+          ),
+          QuizAnswer,
+          PrefetchHooks Function()
+        > {
+  $$QuizAnswersTableTableManager(_$LearnerDatabase db, $QuizAnswersTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$QuizAnswersTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$QuizAnswersTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$QuizAnswersTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<int> z = const Value.absent(),
+                Value<String> depth = const Value.absent(),
+                Value<String> questionId = const Value.absent(),
+                Value<bool> correct = const Value.absent(),
+                Value<int> answeredAt = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => QuizAnswersCompanion(
+                z: z,
+                depth: depth,
+                questionId: questionId,
+                correct: correct,
+                answeredAt: answeredAt,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required int z,
+                required String depth,
+                required String questionId,
+                required bool correct,
+                required int answeredAt,
+                Value<int> rowid = const Value.absent(),
+              }) => QuizAnswersCompanion.insert(
+                z: z,
+                depth: depth,
+                questionId: questionId,
+                correct: correct,
+                answeredAt: answeredAt,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map(
+                (e) => (
+                  e.readTable<$QuizAnswersTable, QuizAnswer>(table),
+                  BaseReferences<
+                    _$LearnerDatabase,
+                    $QuizAnswersTable,
+                    QuizAnswer
+                  >(db, table, e),
+                ),
+              )
+              .toList(),
+          prefetchHooksCallback: null,
+        ),
+      );
+}
+
+typedef $$QuizAnswersTableProcessedTableManager =
+    ProcessedTableManager<
+      _$LearnerDatabase,
+      $QuizAnswersTable,
+      QuizAnswer,
+      $$QuizAnswersTableFilterComposer,
+      $$QuizAnswersTableOrderingComposer,
+      $$QuizAnswersTableAnnotationComposer,
+      $$QuizAnswersTableCreateCompanionBuilder,
+      $$QuizAnswersTableUpdateCompanionBuilder,
+      (
+        QuizAnswer,
+        BaseReferences<_$LearnerDatabase, $QuizAnswersTable, QuizAnswer>,
+      ),
+      QuizAnswer,
+      PrefetchHooks Function()
+    >;
+typedef $$QuizDaysTableCreateCompanionBuilder = QuizDaysCompanion Function({
+  required String day,
+  required int answeredAt,
+  Value<int> rowid,
+});
+typedef $$QuizDaysTableUpdateCompanionBuilder = QuizDaysCompanion Function({
+  Value<String> day,
+  Value<int> answeredAt,
+  Value<int> rowid,
+});
+
+class $$QuizDaysTableFilterComposer
+    extends Composer<_$LearnerDatabase, $QuizDaysTable> {
+  $$QuizDaysTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get day => $composableBuilder(
+    column: $table.day,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get answeredAt => $composableBuilder(
+    column: $table.answeredAt,
+    builder: (column) => ColumnFilters(column),
+  );
+}
+
+class $$QuizDaysTableOrderingComposer
+    extends Composer<_$LearnerDatabase, $QuizDaysTable> {
+  $$QuizDaysTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get day => $composableBuilder(
+    column: $table.day,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get answeredAt => $composableBuilder(
+    column: $table.answeredAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+}
+
+class $$QuizDaysTableAnnotationComposer
+    extends Composer<_$LearnerDatabase, $QuizDaysTable> {
+  $$QuizDaysTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get day =>
+      $composableBuilder(column: $table.day, builder: (column) => column);
+
+  GeneratedColumn<int> get answeredAt => $composableBuilder(
+    column: $table.answeredAt,
+    builder: (column) => column,
+  );
+}
+
+class $$QuizDaysTableTableManager
+    extends
+        RootTableManager<
+          _$LearnerDatabase,
+          $QuizDaysTable,
+          QuizDay,
+          $$QuizDaysTableFilterComposer,
+          $$QuizDaysTableOrderingComposer,
+          $$QuizDaysTableAnnotationComposer,
+          $$QuizDaysTableCreateCompanionBuilder,
+          $$QuizDaysTableUpdateCompanionBuilder,
+          (QuizDay, BaseReferences<_$LearnerDatabase, $QuizDaysTable, QuizDay>),
+          QuizDay,
+          PrefetchHooks Function()
+        > {
+  $$QuizDaysTableTableManager(_$LearnerDatabase db, $QuizDaysTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$QuizDaysTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$QuizDaysTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$QuizDaysTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<String> day = const Value.absent(),
+                Value<int> answeredAt = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => QuizDaysCompanion(
+                day: day,
+                answeredAt: answeredAt,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required String day,
+                required int answeredAt,
+                Value<int> rowid = const Value.absent(),
+              }) => QuizDaysCompanion.insert(
+                day: day,
+                answeredAt: answeredAt,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map(
+                (e) => (
+                  e.readTable<$QuizDaysTable, QuizDay>(table),
+                  BaseReferences<_$LearnerDatabase, $QuizDaysTable, QuizDay>(
+                    db,
+                    table,
+                    e,
+                  ),
+                ),
+              )
+              .toList(),
+          prefetchHooksCallback: null,
+        ),
+      );
+}
+
+typedef $$QuizDaysTableProcessedTableManager =
+    ProcessedTableManager<
+      _$LearnerDatabase,
+      $QuizDaysTable,
+      QuizDay,
+      $$QuizDaysTableFilterComposer,
+      $$QuizDaysTableOrderingComposer,
+      $$QuizDaysTableAnnotationComposer,
+      $$QuizDaysTableCreateCompanionBuilder,
+      $$QuizDaysTableUpdateCompanionBuilder,
+      (QuizDay, BaseReferences<_$LearnerDatabase, $QuizDaysTable, QuizDay>),
+      QuizDay,
+      PrefetchHooks Function()
+    >;
+typedef $$QuizNotesTableCreateCompanionBuilder = QuizNotesCompanion Function({
+  Value<int> z,
+  required String note,
+  required int updatedAt,
+});
+typedef $$QuizNotesTableUpdateCompanionBuilder = QuizNotesCompanion Function({
+  Value<int> z,
+  Value<String> note,
+  Value<int> updatedAt,
+});
+
+class $$QuizNotesTableFilterComposer
+    extends Composer<_$LearnerDatabase, $QuizNotesTable> {
+  $$QuizNotesTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<int> get z => $composableBuilder(
+    column: $table.z,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get note => $composableBuilder(
+    column: $table.note,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+}
+
+class $$QuizNotesTableOrderingComposer
+    extends Composer<_$LearnerDatabase, $QuizNotesTable> {
+  $$QuizNotesTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<int> get z => $composableBuilder(
+    column: $table.z,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get note => $composableBuilder(
+    column: $table.note,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+}
+
+class $$QuizNotesTableAnnotationComposer
+    extends Composer<_$LearnerDatabase, $QuizNotesTable> {
+  $$QuizNotesTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<int> get z =>
+      $composableBuilder(column: $table.z, builder: (column) => column);
+
+  GeneratedColumn<String> get note =>
+      $composableBuilder(column: $table.note, builder: (column) => column);
+
+  GeneratedColumn<int> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
+}
+
+class $$QuizNotesTableTableManager
+    extends
+        RootTableManager<
+          _$LearnerDatabase,
+          $QuizNotesTable,
+          QuizNote,
+          $$QuizNotesTableFilterComposer,
+          $$QuizNotesTableOrderingComposer,
+          $$QuizNotesTableAnnotationComposer,
+          $$QuizNotesTableCreateCompanionBuilder,
+          $$QuizNotesTableUpdateCompanionBuilder,
+          (
+            QuizNote,
+            BaseReferences<_$LearnerDatabase, $QuizNotesTable, QuizNote>,
+          ),
+          QuizNote,
+          PrefetchHooks Function()
+        > {
+  $$QuizNotesTableTableManager(_$LearnerDatabase db, $QuizNotesTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$QuizNotesTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$QuizNotesTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$QuizNotesTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback: ({
+            Value<int> z = const Value.absent(),
+            Value<String> note = const Value.absent(),
+            Value<int> updatedAt = const Value.absent(),
+          }) => QuizNotesCompanion(z: z, note: note, updatedAt: updatedAt),
+          createCompanionCallback:
+              ({
+                Value<int> z = const Value.absent(),
+                required String note,
+                required int updatedAt,
+              }) => QuizNotesCompanion.insert(
+                z: z,
+                note: note,
+                updatedAt: updatedAt,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map(
+                (e) => (
+                  e.readTable<$QuizNotesTable, QuizNote>(table),
+                  BaseReferences<_$LearnerDatabase, $QuizNotesTable, QuizNote>(
+                    db,
+                    table,
+                    e,
+                  ),
+                ),
+              )
+              .toList(),
+          prefetchHooksCallback: null,
+        ),
+      );
+}
+
+typedef $$QuizNotesTableProcessedTableManager =
+    ProcessedTableManager<
+      _$LearnerDatabase,
+      $QuizNotesTable,
+      QuizNote,
+      $$QuizNotesTableFilterComposer,
+      $$QuizNotesTableOrderingComposer,
+      $$QuizNotesTableAnnotationComposer,
+      $$QuizNotesTableCreateCompanionBuilder,
+      $$QuizNotesTableUpdateCompanionBuilder,
+      (QuizNote, BaseReferences<_$LearnerDatabase, $QuizNotesTable, QuizNote>),
+      QuizNote,
+      PrefetchHooks Function()
+    >;
+typedef $$QuizReportsTableCreateCompanionBuilder =
+    QuizReportsCompanion Function({
+      required int z,
+      required String depth,
+      required String questionId,
+      required String note,
+      required int createdAt,
+      Value<int> rowid,
+    });
+typedef $$QuizReportsTableUpdateCompanionBuilder =
+    QuizReportsCompanion Function({
+      Value<int> z,
+      Value<String> depth,
+      Value<String> questionId,
+      Value<String> note,
+      Value<int> createdAt,
+      Value<int> rowid,
+    });
+
+class $$QuizReportsTableFilterComposer
+    extends Composer<_$LearnerDatabase, $QuizReportsTable> {
+  $$QuizReportsTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<int> get z => $composableBuilder(
+    column: $table.z,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get depth => $composableBuilder(
+    column: $table.depth,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get questionId => $composableBuilder(
+    column: $table.questionId,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get note => $composableBuilder(
+    column: $table.note,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnFilters(column),
+  );
+}
+
+class $$QuizReportsTableOrderingComposer
+    extends Composer<_$LearnerDatabase, $QuizReportsTable> {
+  $$QuizReportsTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<int> get z => $composableBuilder(
+    column: $table.z,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get depth => $composableBuilder(
+    column: $table.depth,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get questionId => $composableBuilder(
+    column: $table.questionId,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get note => $composableBuilder(
+    column: $table.note,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+}
+
+class $$QuizReportsTableAnnotationComposer
+    extends Composer<_$LearnerDatabase, $QuizReportsTable> {
+  $$QuizReportsTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<int> get z =>
+      $composableBuilder(column: $table.z, builder: (column) => column);
+
+  GeneratedColumn<String> get depth =>
+      $composableBuilder(column: $table.depth, builder: (column) => column);
+
+  GeneratedColumn<String> get questionId => $composableBuilder(
+    column: $table.questionId,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get note =>
+      $composableBuilder(column: $table.note, builder: (column) => column);
+
+  GeneratedColumn<int> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
+}
+
+class $$QuizReportsTableTableManager
+    extends
+        RootTableManager<
+          _$LearnerDatabase,
+          $QuizReportsTable,
+          QuizReport,
+          $$QuizReportsTableFilterComposer,
+          $$QuizReportsTableOrderingComposer,
+          $$QuizReportsTableAnnotationComposer,
+          $$QuizReportsTableCreateCompanionBuilder,
+          $$QuizReportsTableUpdateCompanionBuilder,
+          (
+            QuizReport,
+            BaseReferences<_$LearnerDatabase, $QuizReportsTable, QuizReport>,
+          ),
+          QuizReport,
+          PrefetchHooks Function()
+        > {
+  $$QuizReportsTableTableManager(_$LearnerDatabase db, $QuizReportsTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$QuizReportsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$QuizReportsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$QuizReportsTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<int> z = const Value.absent(),
+                Value<String> depth = const Value.absent(),
+                Value<String> questionId = const Value.absent(),
+                Value<String> note = const Value.absent(),
+                Value<int> createdAt = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => QuizReportsCompanion(
+                z: z,
+                depth: depth,
+                questionId: questionId,
+                note: note,
+                createdAt: createdAt,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required int z,
+                required String depth,
+                required String questionId,
+                required String note,
+                required int createdAt,
+                Value<int> rowid = const Value.absent(),
+              }) => QuizReportsCompanion.insert(
+                z: z,
+                depth: depth,
+                questionId: questionId,
+                note: note,
+                createdAt: createdAt,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map(
+                (e) => (
+                  e.readTable<$QuizReportsTable, QuizReport>(table),
+                  BaseReferences<
+                    _$LearnerDatabase,
+                    $QuizReportsTable,
+                    QuizReport
+                  >(db, table, e),
+                ),
+              )
+              .toList(),
+          prefetchHooksCallback: null,
+        ),
+      );
+}
+
+typedef $$QuizReportsTableProcessedTableManager =
+    ProcessedTableManager<
+      _$LearnerDatabase,
+      $QuizReportsTable,
+      QuizReport,
+      $$QuizReportsTableFilterComposer,
+      $$QuizReportsTableOrderingComposer,
+      $$QuizReportsTableAnnotationComposer,
+      $$QuizReportsTableCreateCompanionBuilder,
+      $$QuizReportsTableUpdateCompanionBuilder,
+      (
+        QuizReport,
+        BaseReferences<_$LearnerDatabase, $QuizReportsTable, QuizReport>,
+      ),
+      QuizReport,
+      PrefetchHooks Function()
+    >;
 
 class $LearnerDatabaseManager {
   final _$LearnerDatabase _db;
@@ -2086,4 +4048,12 @@ class $LearnerDatabaseManager {
       $$SavedComparisonsTableTableManager(_db, _db.savedComparisons);
   $$EntitlementRowsTableTableManager get entitlementRows =>
       $$EntitlementRowsTableTableManager(_db, _db.entitlementRows);
+  $$QuizAnswersTableTableManager get quizAnswers =>
+      $$QuizAnswersTableTableManager(_db, _db.quizAnswers);
+  $$QuizDaysTableTableManager get quizDays =>
+      $$QuizDaysTableTableManager(_db, _db.quizDays);
+  $$QuizNotesTableTableManager get quizNotes =>
+      $$QuizNotesTableTableManager(_db, _db.quizNotes);
+  $$QuizReportsTableTableManager get quizReports =>
+      $$QuizReportsTableTableManager(_db, _db.quizReports);
 }

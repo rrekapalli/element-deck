@@ -14,6 +14,7 @@ class HelpCatalog {
   static const details = 'details';
   static const compare = 'compare';
   static const spectra = 'spectra';
+  static const quiz = 'quiz';
   static const settings = 'settings';
   static const accountSettings = 'account_settings';
   static const appSettings = 'app_settings';
@@ -26,6 +27,7 @@ class HelpCatalog {
     HelpTopic(id: details, title: 'Details'),
     HelpTopic(id: compare, title: 'Compare'),
     HelpTopic(id: spectra, title: 'Spectra'),
+    HelpTopic(id: quiz, title: 'Quiz'),
     HelpTopic(id: settings, title: 'Settings'),
     HelpTopic(id: accountSettings, title: 'Account settings'),
     HelpTopic(id: appSettings, title: 'App Config'),
@@ -34,7 +36,7 @@ class HelpCatalog {
     HelpTopic(id: about, title: 'About'),
   ];
 
-  static const roomTopics = [table, details, compare, spectra];
+  static const roomTopics = [table, details, compare, spectra, quiz];
 
   static final Map<String, HelpTopic> _byId = {
     for (final topic in guideOrder) topic.id: topic,

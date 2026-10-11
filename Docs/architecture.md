@@ -7,7 +7,7 @@ Element Deck is a Flutter app with **no custom API and no server we operate**. F
 1. **Purchases.** Who bought which package, verified against the store.
 2. **Content.** The full element pack lives in Firebase Storage. The app downloads it and caches it in SQLite.
 
-SQLite on the device is what the four rooms read. Firebase is where the pack is published and where a purchase is recorded.
+SQLite on the device is what the rooms read. Firebase is where the pack is published and where a purchase is recorded.
 
 ## System sketch
 

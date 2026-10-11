@@ -128,6 +128,25 @@ void main() {
           expect(File(image).existsSync(), isTrue, reason: image);
         }
       }
+      final sample = e.sample;
+      expect(sample, isNotNull, reason: 'sample Z=${e.z}');
+      expect(
+        sample!.body.trim().length,
+        greaterThan(80),
+        reason: 'sample Z=${e.z}',
+      );
+      expect(
+        sample.image,
+        startsWith('assets/samples/'),
+        reason: 'sample Z=${e.z}',
+      );
+      expect(File(sample.image!).existsSync(), isTrue, reason: sample.image);
+      expect(sample.credit, isNotNull, reason: 'sample credit Z=${e.z}');
+      expect(
+        sample.credit!.trim(),
+        isNotEmpty,
+        reason: 'sample credit Z=${e.z}',
+      );
       expect(
         e.summary.beginner,
         isNot(contains('configuration')),

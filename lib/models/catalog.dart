@@ -83,6 +83,7 @@ class ElementRecord {
     required this.properties,
     required this.discovery,
     required this.applications,
+    this.sample,
     required this.spectralLines,
     required this.isotopes,
     required this.glow,
@@ -118,6 +119,10 @@ class ElementRecord {
   final ElementProperties properties;
   final Discovery? discovery;
   final List<ApplicationNote> applications;
+
+  /// Photograph of the element itself, or an honest stand-in when no free photo exists.
+  final ApplicationNote? sample;
+
   final List<SpectralLine> spectralLines;
   final List<IsotopeRecord> isotopes;
   final GlowNote? glow;
@@ -174,6 +179,9 @@ class ElementRecord {
       applications: (json['applications'] as List<dynamic>? ?? [])
           .map((e) => ApplicationNote.fromJson(e as Map<String, dynamic>))
           .toList(),
+      sample: json['sample'] is Map<String, dynamic>
+          ? ApplicationNote.fromJson(json['sample'] as Map<String, dynamic>)
+          : null,
       spectralLines: (json['spectralLines'] as List<dynamic>? ?? [])
           .map((e) => SpectralLine.fromJson(e as Map<String, dynamic>))
           .toList(),

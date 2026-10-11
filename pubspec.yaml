@@ -1,7 +1,7 @@
 name: element_deck
 description: Periodic-table explorer that teaches every element.
 publish_to: 'none'
-version: 0.16.0+16
+version: 0.17.0+17
 
 environment:
   sdk: ^3.13.5
@@ -48,9 +48,11 @@ flutter:
   generate: true
   assets:
     - assets/catalog/
+    - assets/catalog/quiz/
     - assets/help/en/
     - assets/help/images/
     - assets/uses/
+    - assets/samples/
   fonts:
     - family: Plus Jakarta Sans
       fonts:

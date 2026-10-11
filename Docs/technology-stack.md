@@ -103,7 +103,7 @@ Off until a privacy note exists. The purchases collection is the commercial reco
 
 ## First scaffold (when authorized)
 
-1. Flutter shell: four rooms, phone nav, wide rail, theme provider.
+1. Flutter shell: five rooms, phone nav, wide rail, theme provider.
 2. Preview SQLite with H, C, Si, Ne, Ti. Learner SQLite for settings and bookmarks.
 3. Firebase project: Auth, Firestore package and purchase documents, Storage slot for a fixture pack, and the receipt function sketched but not required to judge the rooms.
 4. Download that fixture pack over the preview only after a mocked entitlement, and read the rooms from the cache.

@@ -164,7 +164,18 @@ class _DetailsRoomState extends State<DetailsRoom>
     }
     final muted = Theme.of(context).colorScheme.onSurface
         .withValues(alpha: 0.65);
+    final sample = e.sample;
     return [
+      if (sample != null) ...[
+        Text(
+          'The element itself',
+          style: Theme.of(context).textTheme.bodySmall
+              ?.copyWith(color: muted, height: 1.35),
+        ),
+        const SizedBox(height: 12),
+        _UseCard(use: sample, fit: BoxFit.contain),
+        const SizedBox(height: 20),
+      ],
       Text(
         'Ways people use ${e.name}.',
         style: Theme.of(context).textTheme.bodySmall
@@ -542,9 +553,10 @@ class _ShellDiagram extends StatelessWidget {
 }
 
 class _UseCard extends StatelessWidget {
-  const _UseCard({required this.use});
+  const _UseCard({required this.use, this.fit = BoxFit.cover});
 
   final ApplicationNote use;
+  final BoxFit fit;
 
   @override
   Widget build(BuildContext context) {
@@ -558,13 +570,16 @@ class _UseCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           if (image != null && image.isNotEmpty)
-            Image.asset(
-              image,
-              height: 180,
-              width: double.infinity,
-              fit: BoxFit.cover,
-              errorBuilder: (context, error, stackTrace) =>
-                  const SizedBox.shrink(),
+            ColoredBox(
+              color: const Color(0xFF12141A),
+              child: Image.asset(
+                image,
+                height: 180,
+                width: double.infinity,
+                fit: fit,
+                errorBuilder: (context, error, stackTrace) =>
+                    const SizedBox.shrink(),
+              ),
             ),
           Padding(
             padding: const EdgeInsets.all(16),

@@ -4,6 +4,8 @@
 
 `generate_catalog.py` writes `assets/catalog/core.json` (118 elements) and `assets/catalog/preview.json` (five-element fixture).
 
+`generate_quiz.py` writes `assets/catalog/quiz/{z}.json` — 50 questions per learning depth for each element, with optional overlays in `catalog/quiz_curated/`.
+
 `json_to_sqlite.py` compiles SQLite to:
 
 - `assets/catalog/catalog.sqlite` — bundled on-device catalog the app loads first

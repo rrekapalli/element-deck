@@ -1,6 +1,6 @@
 # Element Deck
 
-A periodic-table explorer that teaches every element at three depths — Beginner, Intermediate, and Advanced — in four rooms: **Table**, **Details**, **Compare**, and **Spectra**.
+A periodic-table explorer that teaches every element at three depths — Beginner, Intermediate, and Advanced — in five rooms: **Table**, **Details**, **Compare**, **Spectra**, and **Quiz**.
 
 The app is a Flutter client for phone, tablet, web, and desktop. Firebase stores the full content pack and who bought which package. The app caches that pack in SQLite and reads it locally. There is no custom API. Settings, appearance, and the wide layout follow the same product shape as [RxFolio](https://github.com/rrekapalli/Hi-Doc).
 

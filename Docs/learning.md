@@ -93,11 +93,17 @@ Examples that fit the product, to be chosen when the catalog is written: hydroge
 
 This is not an AI feature.
 
+## Quiz
+
+Quiz is the only scored room. Table, Details, Compare, and Spectra still do not grade the learner. Opening Advanced is not a level-up. Bookmarks and recents are memory, not a grade.
+
+The Quiz pool is 50 questions for the focused element at the current depth. A correct answer is worth 20 XP. A day streak counts consecutive local calendar days with at least one answer. Tiers count finished pools (all 50 answered), not XP: Observer, Student, Scholar, Fellow, Master.
+
+Element of the day on Table stays a door with no points.
+
 ## What we do not do with mastery
 
-v1 does not score the learner. Opening Advanced is not a level-up. Bookmarks and recents are memory, not a grade.
-
-A later practice mode can ask the learner to predict a neighbor's radius direction or a family's state, then reveal the catalog value. That mode is out of v1. See [open-questions.md](./open-questions.md).
+Outside Quiz, v1 does not score the learner. See [open-questions.md](./open-questions.md).
 
 ## Educator use of depth
 

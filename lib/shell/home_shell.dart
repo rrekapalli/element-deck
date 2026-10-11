@@ -6,8 +6,10 @@ import '../help/help_catalog.dart';
 import '../help/help_screen.dart';
 import '../providers/catalog_controller.dart';
 import '../providers/selection_controller.dart';
+import '../quiz/quiz_controller.dart';
 import '../rooms/compare_room.dart';
 import '../rooms/details_room.dart';
+import '../rooms/quiz_room.dart';
 import '../rooms/spectra_room.dart';
 import '../rooms/table_room.dart';
 import '../settings/settings_screens.dart';
@@ -25,7 +27,7 @@ class HomeShell extends StatefulWidget {
 }
 
 class _HomeShellState extends State<HomeShell> {
-  final _scroll = [for (var i = 0; i < 4; i++) ScrollController()];
+  final _scroll = [for (var i = 0; i < 5; i++) ScrollController()];
 
   @override
   Widget build(BuildContext context) {
@@ -47,8 +49,9 @@ class _HomeShellState extends State<HomeShell> {
       const DetailsRoom(),
       const CompareRoom(),
       const SpectraRoom(),
+      QuizRoom(controller: _scroll[4]),
     ];
-    const titles = ['TABLE', 'DETAILS', 'COMPARE', 'SPECTRA'];
+    const titles = ['TABLE', 'DETAILS', 'COMPARE', 'SPECTRA', 'QUIZ'];
     final topicId = HelpCatalog.roomTopics[widget.index];
     if (wide) {
       return Scaffold(
@@ -79,6 +82,10 @@ class _HomeShellState extends State<HomeShell> {
                       NavigationRailDestination(
                         icon: Icon(Icons.graphic_eq),
                         label: Text('Spectra'),
+                      ),
+                      NavigationRailDestination(
+                        icon: Icon(Icons.quiz_outlined),
+                        label: Text('Quiz'),
                       ),
                     ],
                     trailing: Expanded(
@@ -167,6 +174,10 @@ class _HomeShellState extends State<HomeShell> {
             label: 'Compare',
           ),
           NavigationDestination(icon: Icon(Icons.graphic_eq), label: 'Spectra'),
+          NavigationDestination(
+            icon: Icon(Icons.quiz_outlined),
+            label: 'Quiz',
+          ),
         ],
       ),
     );
@@ -181,6 +192,12 @@ class _HomeShellState extends State<HomeShell> {
         context.go('/compare/${sel.compareA}/${sel.compareB}');
       case 3:
         context.go('/e/${sel.currentZ}/spectra');
+      case 4:
+        final quiz = context.read<QuizController>();
+        final z = quiz.focusZ > 0
+            ? quiz.focusZ
+            : sel.elementOfTheDay().z;
+        context.go('/quiz/$z');
       default:
         context.go('/');
     }

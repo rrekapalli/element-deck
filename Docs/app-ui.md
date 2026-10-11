@@ -1,6 +1,6 @@
 # App UI
 
-The first shell is the four concept screens, made to behave. Phone is the benchmark. Tablet and web use the same rooms in the wide shell ([wide-layout.md](./wide-layout.md)).
+The first shell is the four concept science screens plus **Quiz**. Phone is the benchmark. Tablet and web use the same rooms in the wide shell ([wide-layout.md](./wide-layout.md)).
 
 Visuals:
 
@@ -24,18 +24,18 @@ Tokens and component rules: [design-system.md](./design-system.md).
 │              room body               │
 │                                      │
 ├──────────────────────────────────────┤
-│  TABLE   DETAILS   COMPARE   SPECTRA │
-└──────────────────────────────────────┘
+│  TABLE  DETAILS  COMPARE  SPECTRA  QUIZ │
+└─────────────────────────────────────────┘
 ```
 
 | Chrome | Behavior |
 | --- | --- |
 | Wordmark | Element Deck. Always. |
-| Eyebrow | `PERIODIC EXPLORER · TABLE` (or DETAILS, COMPARE, SPECTRA) |
+| Eyebrow | `PERIODIC EXPLORER · TABLE` (or DETAILS, COMPARE, SPECTRA, QUIZ) |
 | Help | **?** opens the guide for this room. **Previous** and **Next** walk the other rooms and the settings pages. Family filtering stays on the Table chips |
-| Me | Opens **Settings**. It is not a fourth science room |
-| Bottom nav | Phone only. Four destinations. Re-tapping the active destination scrolls that room to the top |
-| Selection | One current element for Details and Spectra. Two current elements for Compare. Table selection updates the current element |
+| Me | Opens **Settings**. It is not a science room |
+| Bottom nav | Phone only. Five destinations. Re-tapping the active destination scrolls that room to the top |
+| Selection | One current element for Details and Spectra. Two current elements for Compare. Quiz focus is a separate Z (today's element by default). Table selection updates the current element |
 
 The profile glyph on the concept screens is **Me**, the door to Settings, Account, and App settings. See [settings-and-theming.md](./settings-and-theming.md).
 
@@ -144,6 +144,20 @@ Benchmark: screen 4. The bench. Two tabs sit under the element header, the same 
 
 Beginner still lands here. The strip and the glow lead. Assignments and nuclear spin sit under an Advanced disclosure that is open when depth is Advanced and collapsed otherwise. The data is one scroll away at every depth.
 
+## Quiz
+
+A fifth room. Practice on today's element, at the current learning mode, from a 50-question pool.
+
+1. **Complexity.** The same Beginner / Intermediate / Advanced control. Changing it loads that depth's pool. Progress is stored per element and depth.
+2. **Streak and XP.** Consecutive local days with at least one answer, and `20 ×` correct answers across every pool. Both stay on the device. Table's element-of-the-day card does not show them.
+3. **Element card.** Today's element (or another focus): Z, symbol, name, family, configuration at this depth, and a tier name from how many pools are finished (Observer, Student, Scholar, Fellow, Master).
+4. **Question.** Stem, four choices, then a lock: the correct option is marked, a short explanation (and an equation only when the catalog has one). **Next question** advances. Finishing all 50 shows a completion card.
+5. **Notes, bookmark, report.** Notes and reports are local. Bookmark is the same element bookmark as Details.
+6. **Active element bank.** Category bars for this pool.
+7. **Switch focus.** Chips for today, the Details element, and recents. They change Quiz only.
+
+Deep link: `/quiz` opens today; `/quiz/22` focuses titanium.
+
 ## Shared behaviors
 
 | Behavior | Rule |
@@ -152,15 +166,15 @@ Beginner still lands here. The strip and the glow lead. Assignments and nuclear 
 | Family color | Tile symbol, chip dot, and compare accent. Never the only signal: the category name is always printed |
 | Bookmark | Toggles on the current element. Filled state is visible on the card and the dossier |
 | Search | Available on Table. Wide shell also exposes it in the title bar |
-| Deep link | `elementdeck://element/22` and the web path `/e/22` open Details for titanium. `/e/22/spectra` and `/compare/6/14` open those rooms |
-| Help | **?** on the room header, and again on each settings page. The article matches the page you opened it from. **Previous** and **Next** walk Table, Details, Compare, Spectra, then Settings and its pages |
+| Deep link | `elementdeck://element/22` and the web path `/e/22` open Details for titanium. `/e/22/spectra`, `/compare/6/14`, `/quiz`, and `/quiz/22` open those rooms |
+| Help | **?** on the room header, and again on each settings page. The article matches the page you opened it from. **Previous** and **Next** walk Table, Details, Compare, Spectra, Quiz, then Settings and its pages |
 | On device | Preview elements ship in the app. The full pack is read from the local cache after download. Bookmarks and theme are local, and copy to Firebase when signed in |
 | Reduced motion | No pulsing glows, no scrubber inertia. See App settings |
 | Text scale | Layouts survive the OS text scale. Mono values may wrap; they do not truncate a unit |
 
 ## What the first UI is not
 
-- Not a feed, a streak, or a points game.
+- Not a feed. Streak and XP exist only in Quiz, on the device.
 - Not a chat column beside the dossier.
 - Not a different navigation for educators.
 - Not a light theme in the concept PNGs. Light theme is still required; it is specified in [settings-and-theming.md](./settings-and-theming.md) and skinned from the same components.

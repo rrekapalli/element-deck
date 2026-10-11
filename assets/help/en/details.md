@@ -53,7 +53,9 @@ Missing values say **Not reported**. They are not filled in with a guess.
 
 ## Uses tab
 
-**Uses** lists what people do with this element. A card may include a photograph when a public-domain or CC0 picture is part of the pack. The credit line under the picture names the source. A use with no picture is text only.
+**Uses** opens with a picture of the element itself. Most cards show the pure element, or the small sample a laboratory actually keeps. The credit under the picture names the photographer and the license. A few elements have never been gathered into a visible piece. Those cards say so, and they do not invent a lump of metal.
+
+Below that, the tab lists what people do with the element. A use may include its own photograph. The credit line names the source. A use with no picture is text only.
 
 ## Try this
 

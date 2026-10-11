@@ -1,0 +1,47 @@
+{
+  "beginner": [
+    {
+      "id": "6-beginner-use-0",
+      "category": "engineering_uses",
+      "stem": "Why is carbon special for living things and for pencils?",
+      "options": [
+        "It links to itself in long chains, and graphite is a form of carbon",
+        "It is a noble gas that will not bond",
+        "It is the metal in steel rails",
+        "It is the yellow in street lamps"
+      ],
+      "correctIndex": 0,
+      "explanation": "Carbon atoms share electrons with other carbon atoms, which is how organic chains form. Graphite in a pencil is one solid form of carbon."
+    }
+  ],
+  "intermediate": [
+    {
+      "id": "6-intermediate-congener",
+      "category": "neighbor_compare",
+      "stem": "Silicon sits under carbon in group 14. What does the course comparison stress?",
+      "options": [
+        "Carbon is smaller and holds electrons more tightly, so its bonds to itself are stronger",
+        "Silicon atoms are smaller than carbon atoms",
+        "Both have the same covalent radius in this catalog",
+        "Carbon is a metal and silicon is a noble gas"
+      ],
+      "correctIndex": 0,
+      "explanation": "Group 14 steps from carbon to silicon add a shell. Carbon stays smaller and more electronegative, which is why its network is a covalent-insulator story and silicon's is a semiconductor."
+    }
+  ],
+  "advanced": [
+    {
+      "id": "6-advanced-ox",
+      "category": "electron_orbitals",
+      "stem": "Which oxidation picture does this catalog emphasize for carbon?",
+      "options": [
+        "+4, +2, -4",
+        "+1 only",
+        "-1, like a halogen",
+        "0 only, never compounds"
+      ],
+      "correctIndex": 0,
+      "explanation": "The dossier lists +4, +2, and -4. Carbon dioxide is the +4 story; methane is the -4 story."
+    }
+  ]
+}

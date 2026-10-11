@@ -30,7 +30,7 @@ The color chips are the chrome themes: Obsidian Orbit and the other presets. Fam
 
 ## Persona
 
-**Student**, **Educator**, and **Enthusiast** record who the device is set up for. The four rooms stay the same. Persona does not hide elements or replace the navigation.
+**Student**, **Educator**, and **Enthusiast** record who the device is set up for. The five rooms stay the same. Persona does not hide elements or replace the navigation.
 
 ## Units
 

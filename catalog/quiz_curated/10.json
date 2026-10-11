@@ -1,0 +1,47 @@
+{
+  "beginner": [
+    {
+      "id": "10-beginner-glow",
+      "category": "light_reactions",
+      "stem": "What color does neon make in a discharge tube, in this catalog?",
+      "options": [
+        "orange-red",
+        "green",
+        "deep blue",
+        "pure white with no color"
+      ],
+      "correctIndex": 0,
+      "explanation": "Neon is the classic orange-red glow. The Spectra room shows that color as teaching copy, not as a phone spectrometer."
+    }
+  ],
+  "intermediate": [
+    {
+      "id": "10-intermediate-config",
+      "category": "electron_orbitals",
+      "stem": "Why is neon unreactive in this catalog's picture?",
+      "options": [
+        "Its outer shell is full: [He] 2s2 2p6",
+        "It has one valence electron like sodium",
+        "It is a halogen seeking one more electron",
+        "It has an incomplete d shell"
+      ],
+      "correctIndex": 0,
+      "explanation": "Neon is a noble gas with a filled n = 2 shell. The catalog configuration is [He] 2s2 2p6, which is also 2, 8 as shell counts."
+    }
+  ],
+  "advanced": [
+    {
+      "id": "10-advanced-line-nm",
+      "category": "light_reactions",
+      "stem": "A neon line in the pack is a wavelength in nm. What does that number measure?",
+      "options": [
+        "The stored emission wavelength of that line",
+        "The melting point of neon ice",
+        "The atomic number of neon",
+        "The sonified audible frequency in hertz"
+      ],
+      "correctIndex": 0,
+      "explanation": "Wavelengths in the pack are optical lines. Sonification divides frequency by 1e12 so you can hear a stand-in tone; that audible number is not the nm value."
+    }
+  ]
+}

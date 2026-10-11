@@ -146,7 +146,7 @@ Full width on the phone where the benchmark shows it: **Explore** actions, **Sim
 
 ### Bottom navigation
 
-Four items: Table, Details, Compare, Spectra. Icon plus label. Active item uses the action cyan. Family color does not move into the nav, or the nav would change hue every time the learner opens neon.
+Five items: Table, Details, Compare, Spectra, Quiz. Icon plus label. Active item uses the action cyan. Family color does not move into the nav, or the nav would change hue every time the learner opens neon.
 
 ### Settings rows
 

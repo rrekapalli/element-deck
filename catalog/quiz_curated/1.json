@@ -1,0 +1,42 @@
+{
+  "beginner": [
+    {
+      "id": "1-beginner-use-0",
+      "category": "engineering_uses",
+      "stem": "Where do people meet hydrogen most often?",
+      "options": [
+        "As the light gas that lifts a balloon, and as part of water",
+        "As the yellow glow in street lamps",
+        "As the white pigment in house paint",
+        "As table salt on food"
+      ],
+      "correctIndex": 0,
+      "explanation": "Hydrogen is the lightest element. Water is H2O, so every water molecule holds two hydrogen atoms. Balloons that float often use this light gas."
+    }
+  ],
+  "intermediate": [
+    {
+      "id": "1-intermediate-config",
+      "category": "electron_orbitals",
+      "stem": "What is the ground-state configuration of hydrogen?",
+      "options": ["1s1", "1s2", "[He] 2s1", "2p1"],
+      "correctIndex": 0,
+      "explanation": "Hydrogen has one electron. The catalog writes that as 1s1."
+    }
+  ],
+  "advanced": [
+    {
+      "id": "1-advanced-summary",
+      "category": "light_reactions",
+      "stem": "Why is hydrogen's spectrum a teaching standard?",
+      "options": [
+        "Its lines come from one electron changing shells, so the pattern is simple to assign",
+        "It has no spectral lines in this catalog",
+        "Every line is a nuclear gamma ray, not an electron jump",
+        "The catalog stores only infrared rotation bands"
+      ],
+      "correctIndex": 0,
+      "explanation": "A hydrogen atom has one electron. Visible lines such as the Balmer series are electron jumps between shells, which is why courses start here."
+    }
+  ]
+}

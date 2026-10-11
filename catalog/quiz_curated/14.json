@@ -1,0 +1,42 @@
+{
+  "beginner": [
+    {
+      "id": "14-beginner-use-0",
+      "category": "engineering_uses",
+      "stem": "What is silicon known for in everyday technology?",
+      "options": [
+        "Computer chips and other semiconductors",
+        "The gas in party balloons",
+        "The orange-red of neon signs",
+        "Table salt"
+      ],
+      "correctIndex": 0,
+      "explanation": "Silicon is the semiconductor in chips. Sand is largely silicon dioxide, but the catalog's featured use is the electronic crystal."
+    }
+  ],
+  "intermediate": [
+    {
+      "id": "14-intermediate-congener",
+      "category": "neighbor_compare",
+      "stem": "Compared with carbon above it, what extra shell does silicon add?",
+      "options": [
+        "A 3p shell that makes the atom larger and the network looser",
+        "No extra shell; they have the same shell counts",
+        "A filled 4f shell",
+        "Only a neutron, with the same electron count"
+      ],
+      "correctIndex": 0,
+      "explanation": "Silicon is [Ne] 3s2 3p2. The extra 3p shell increases radius relative to carbon and loosens the covalent network toward a semiconductor."
+    }
+  ],
+  "advanced": [
+    {
+      "id": "14-advanced-curriculum",
+      "category": "electron_orbitals",
+      "stem": "Which configuration does this catalog give silicon?",
+      "options": ["[Ne] 3s2 3p2", "[He] 2s2 2p2", "[Ar] 3d2 4s2", "1s1"],
+      "correctIndex": 0,
+      "explanation": "Silicon is period 3, group 14: [Ne] 3s2 3p2. Carbon, the congener above, is [He] 2s2 2p2."
+    }
+  ]
+}

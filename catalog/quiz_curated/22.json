@@ -1,0 +1,43 @@
+{
+  "beginner": [
+    {
+      "id": "22-beginner-use-0",
+      "category": "engineering_uses",
+      "stem": "Which listed use belongs to titanium?",
+      "options": [
+        "Aircraft",
+        "Neon advertising tubes",
+        "Pencil graphite",
+        "Table salt"
+      ],
+      "correctIndex": 0,
+      "explanation": "Titanium is light and strong. Airframes and engine parts use the metal. The white in paint is titanium dioxide, a powder, not the metal."
+    }
+  ],
+  "intermediate": [
+    {
+      "id": "22-intermediate-ox-primary",
+      "category": "electron_orbitals",
+      "stem": "What is the primary oxidation state of titanium in this dossier?",
+      "options": ["+4", "+1", "-1", "+7"],
+      "correctIndex": 0,
+      "explanation": "Oxidation states in this dossier are +4, +3, +2. The one courses meet most often is +4, as in TiO2."
+    }
+  ],
+  "advanced": [
+    {
+      "id": "22-advanced-passivation",
+      "category": "engineering_uses",
+      "stem": "Why does titanium possess exceptional corrosion resistance even in harsh marine and acidic environments, unlike iron?",
+      "options": [
+        "It forms a persistent, spontaneous passive oxide film (TiO2) upon exposure to oxygen",
+        "Its d-orbitals completely repel halogen anions in solution",
+        "It has zero electronegativity differential with oxygen atoms",
+        "It undergoes continuous cathodic galvanic self-healing"
+      ],
+      "correctIndex": 0,
+      "explanation": "Titanium rapidly passivates in air or water, creating a thin layer of TiO2 that shields the bulk metal from chloride ions and oxidizing acids. If the layer is scratched, it heals in oxygen or moisture.",
+      "equation": "Ti + O2 → TiO2"
+    }
+  ]
+}

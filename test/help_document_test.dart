@@ -53,7 +53,13 @@ Body copy.
     expect(HelpCatalog.previous(HelpCatalog.about)?.id, HelpCatalog.appHealth);
     expect(
       HelpCatalog.roomTopics,
-      [HelpCatalog.table, HelpCatalog.details, HelpCatalog.compare, HelpCatalog.spectra],
+      [
+        HelpCatalog.table,
+        HelpCatalog.details,
+        HelpCatalog.compare,
+        HelpCatalog.spectra,
+        HelpCatalog.quiz,
+      ],
     );
   });
 }

@@ -22,7 +22,7 @@ Nothing remembers the depth they were reading at, the pair they were comparing, 
 
 ## Product
 
-**Element Deck** is a periodic explorer. The learner opens an element, chooses a depth, and moves among four rooms: **Table**, **Details**, **Compare**, and **Spectra**.
+**Element Deck** is a periodic explorer. The learner opens an element, chooses a depth, and moves among five rooms: **Table**, **Details**, **Compare**, **Spectra**, and **Quiz**.
 
 The app shell is Flutter. A small preview catalog (hydrogen, carbon, silicon, neon, titanium) ships inside it so the rooms can open immediately. The **full content pack** — all 118 elements — is a SQLite file in Firebase Storage. After a person buys a package, the app downloads that file and reads it locally.
 

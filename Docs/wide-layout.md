@@ -38,7 +38,7 @@ Name the gate `ElementDeckUi.isWideShell` when the app exists. Do not copy RxFol
 | Region | Contents |
 | --- | --- |
 | Title bar | Wordmark, active room, search field, Help |
-| Nav rail | The four rooms. **Settings** pinned at the bottom |
+| Nav rail | The five rooms. **Settings** pinned at the bottom |
 | Body | Room-specific, below |
 | Footer | Persona and "On this device", plus the product name |
 

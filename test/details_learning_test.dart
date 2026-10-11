@@ -70,6 +70,9 @@ void main() {
 
     await tester.tap(find.text('Uses'));
     await tester.pump();
+    expect(find.text('The pure element'), findsOneWidget);
+    expect(find.textContaining('CC BY-SA'), findsOneWidget);
+    await tester.scrollUntilVisible(find.text('Water'), 300);
     expect(find.text('Water'), findsOneWidget);
     await tester.scrollUntilVisible(find.text('Stars'), 300);
     expect(find.text('Stars'), findsOneWidget);

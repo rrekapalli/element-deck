@@ -16,6 +16,7 @@ import 'providers/catalog_controller.dart';
 import 'providers/selection_controller.dart';
 import 'providers/settings_controller.dart';
 import 'providers/theme_controller.dart';
+import 'quiz/quiz_controller.dart';
 import 'shell/home_shell.dart';
 import 'theme/ambient_background.dart';
 import 'theme/app_brand.dart';
@@ -46,6 +47,7 @@ class _ElementDeckAppState extends State<ElementDeckApp>
   late final PackService packs;
   late final PurchaseService purchases;
   late final ClassroomController classroom;
+  late final QuizController quiz;
   late final GoRouter router;
   var _ready = false;
 
@@ -63,6 +65,7 @@ class _ElementDeckAppState extends State<ElementDeckApp>
     packs = PackService(widget.store, account);
     purchases = PurchaseService(account);
     classroom = ClassroomController(account);
+    quiz = QuizController(widget.db, catalog, selection);
     router = GoRouter(
       routes: [
         GoRoute(
@@ -93,6 +96,27 @@ class _ElementDeckAppState extends State<ElementDeckApp>
             final b = int.tryParse(state.pathParameters['b'] ?? '') ?? 14;
             _queue(() => selection.setPair(a, b));
             return const NoTransitionPage(child: HomeShell(index: 2));
+          },
+        ),
+        GoRoute(
+          path: '/quiz',
+          pageBuilder: (context, state) {
+            _queue(quiz.focusToday);
+            return const NoTransitionPage(child: HomeShell(index: 4));
+          },
+        ),
+        GoRoute(
+          path: '/quiz/:z',
+          pageBuilder: (context, state) {
+            final z = int.tryParse(state.pathParameters['z'] ?? '') ?? 0;
+            _queue(() {
+              if (z > 0) {
+                quiz.setFocus(z);
+              } else {
+                quiz.focusToday();
+              }
+            });
+            return const NoTransitionPage(child: HomeShell(index: 4));
           },
         ),
       ],
@@ -178,6 +202,7 @@ class _ElementDeckAppState extends State<ElementDeckApp>
         Provider.value(value: packs),
         Provider.value(value: purchases),
         ChangeNotifierProvider.value(value: classroom),
+        ChangeNotifierProvider.value(value: quiz),
       ],
       child: Consumer<ThemeController>(
         builder: (context, theme, _) {
