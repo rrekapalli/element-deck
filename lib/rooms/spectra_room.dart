@@ -7,6 +7,7 @@ import '../providers/catalog_controller.dart';
 import '../providers/selection_controller.dart';
 import '../providers/settings_controller.dart';
 import '../theme/app_theme.dart';
+import '../widgets/element_header.dart';
 
 class SpectraRoom extends StatefulWidget {
   const SpectraRoom({super.key});
@@ -42,12 +43,19 @@ class _SpectraRoomState extends State<SpectraRoom> {
     return ListView(
       padding: const EdgeInsets.fromLTRB(16, 8, 16, 32),
       children: [
+        ElementHeader(element: e),
+        const SizedBox(height: 12),
         Row(
           children: [
-            Text('TARGET EMITTER', style: Theme.of(context).textTheme.labelSmall),
+            Text(
+              'TARGET EMITTER',
+              style: Theme.of(context).textTheme.labelSmall,
+            ),
             const Spacer(),
-            Text('Dataset ${catalog.pack.sciencePins.join(", ")}',
-                style: Theme.of(context).textTheme.labelSmall),
+            Text(
+              'Dataset ${catalog.pack.sciencePins.join(", ")}',
+              style: Theme.of(context).textTheme.labelSmall,
+            ),
           ],
         ),
         const SizedBox(height: 8),
@@ -62,9 +70,7 @@ class _SpectraRoomState extends State<SpectraRoom> {
                     padding: const EdgeInsets.only(right: 8),
                     child: ChoiceChip(
                       selected: z == e.z,
-                      label: Text(
-                        '${catalog.pack.byZ(z)!.symbol} #$z',
-                      ),
+                      label: Text('${catalog.pack.byZ(z)!.symbol} #$z'),
                       onSelected: (_) => sel.select(z),
                     ),
                   ),
@@ -113,12 +119,19 @@ class _SpectraRoomState extends State<SpectraRoom> {
                   setState(() => selected = nearest);
                 },
         ),
-        Text('Wavelength scrubber · stops only on stored lines',
-            style: Theme.of(context).textTheme.bodySmall),
+        Text(
+          'Wavelength scrubber · stops only on stored lines',
+          style: Theme.of(context).textTheme.bodySmall,
+        ),
         if (selected != null) ...[
           const SizedBox(height: 8),
-          Text('Selected λ  ${selected!.nm} nm', style: Mono.of(context, size: 14)),
-          Text('ν  ${(selected!.frequencyHz / 1e12).toStringAsFixed(2)} THz · ${selected!.color}'),
+          Text(
+            'Selected λ  ${selected!.nm} nm',
+            style: Mono.of(context, size: 14),
+          ),
+          Text(
+            'ν  ${(selected!.frequencyHz / 1e12).toStringAsFixed(2)} THz · ${selected!.color}',
+          ),
           Text('E  ${selected!.eV} eV'),
           if (settings.depth == 'advanced')
             Text(selected!.transition, style: Mono.of(context, size: 12)),
@@ -131,8 +144,8 @@ class _SpectraRoomState extends State<SpectraRoom> {
             label: Text(
               settings.sonification
                   ? (settings.depth == 'beginner'
-                      ? 'Play the color as a tone'
-                      : 'Listen to spectral frequency (${(selected!.frequencyHz / 1e12).toStringAsFixed(2)} THz sonified)')
+                        ? 'Play the color as a tone'
+                        : 'Listen to spectral frequency (${(selected!.frequencyHz / 1e12).toStringAsFixed(2)} THz sonified)')
                   : 'Sound is off in App Config',
             ),
           ),
@@ -157,12 +170,17 @@ class _SpectraRoomState extends State<SpectraRoom> {
           ),
         ],
         const SizedBox(height: 12),
-        Text('Isotopes & decay modes', style: Theme.of(context).textTheme.titleMedium),
+        Text(
+          'Isotopes & decay modes',
+          style: Theme.of(context).textTheme.titleMedium,
+        ),
         for (final iso in e.isotopes)
           ListTile(
             dense: true,
-            title: Text('${iso.a}${e.symbol}  ·  ${iso.neutrons(e.z)} n',
-                style: Mono.of(context, size: 13)),
+            title: Text(
+              '${iso.a}${e.symbol}  ·  ${iso.neutrons(e.z)} n',
+              style: Mono.of(context, size: 13),
+            ),
             subtitle: Text(
               [
                 'mass ${iso.mass} u',
@@ -193,13 +211,16 @@ class _StripPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    final bg = Paint()..shader = const LinearGradient(colors: [
-      Color(0xFF4C1D95),
-      Color(0xFF1D4ED8),
-      Color(0xFF059669),
-      Color(0xFFFBBF24),
-      Color(0xFFEF4444),
-    ]).createShader(Offset.zero & size);
+    final bg = Paint()
+      ..shader = const LinearGradient(
+        colors: [
+          Color(0xFF4C1D95),
+          Color(0xFF1D4ED8),
+          Color(0xFF059669),
+          Color(0xFFFBBF24),
+          Color(0xFFEF4444),
+        ],
+      ).createShader(Offset.zero & size);
     canvas.drawRRect(
       RRect.fromRectAndRadius(Offset.zero & size, const Radius.circular(12)),
       bg,

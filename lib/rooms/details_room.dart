@@ -8,6 +8,7 @@ import '../providers/settings_controller.dart';
 import '../theme/app_theme.dart';
 import '../theme/element_spectrum.dart';
 import '../widgets/electron_force_graph.dart';
+import '../widgets/element_header.dart';
 
 enum _DossierTab { details, history, data }
 
@@ -56,22 +57,15 @@ class _DetailsRoomState extends State<DetailsRoom> {
         ],
       );
     }
-    final accent = ElementSpectrum.of(e.categoryId);
     return ListView(
       controller: _scroll,
       padding: const EdgeInsets.fromLTRB(16, 8, 16, 32),
       children: [
-        if (e.isotopes.isNotEmpty)
-          Text(
-            _isotopeTeaser(e),
-            style: Theme.of(context).textTheme.labelSmall,
-          ),
+        ElementHeader(element: e),
         const SizedBox(height: 8),
         _DossierTabs(tab: _tab, onChanged: _selectTab),
         const SizedBox(height: 8),
         Text(_caption(_tab), style: Theme.of(context).textTheme.bodySmall),
-        const SizedBox(height: 8),
-        _Identity(element: e, accent: accent),
         const SizedBox(height: 12),
         ...switch (_tab) {
           _DossierTab.details => _details(context, e, settings),
@@ -275,12 +269,6 @@ class _DetailsRoomState extends State<DetailsRoom> {
   }
 }
 
-String _isotopeTeaser(ElementRecord e) {
-  final iso = e.isotopes.first;
-  final kind = iso.stability == 'stable' ? 'Stable isotope' : 'Isotope';
-  return '$kind · ${iso.a}${e.symbol}  (${_percent(iso.abundance)})';
-}
-
 String _caption(_DossierTab tab) {
   return switch (tab) {
     _DossierTab.details =>
@@ -386,54 +374,6 @@ class _DossierTabs extends StatelessWidget {
             ),
         ],
       ),
-    );
-  }
-}
-
-class _Identity extends StatelessWidget {
-  const _Identity({required this.element, required this.accent});
-
-  final ElementRecord element;
-  final Color accent;
-
-  @override
-  Widget build(BuildContext context) {
-    final sel = context.watch<SelectionController>();
-    return Row(
-      children: [
-        Text(
-          element.symbol,
-          style: Theme.of(context).textTheme.displayMedium
-              ?.copyWith(color: accent, fontWeight: FontWeight.w800),
-        ),
-        const SizedBox(width: 16),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                '${element.z}  ${element.name}',
-                style: Theme.of(context).textTheme.headlineSmall,
-              ),
-              Text(
-                '${element.atomicWeight} u · ${element.weightKind}',
-                style: Mono.of(context, size: 12),
-              ),
-              Text(
-                '${element.categoryLabel} · ${element.block}-block · Period ${element.period} · Grp ${element.group ?? "—"}',
-              ),
-            ],
-          ),
-        ),
-        IconButton(
-          icon: Icon(
-            sel.bookmarks.contains(element.z)
-                ? Icons.bookmark
-                : Icons.bookmark_border,
-          ),
-          onPressed: () => sel.toggleBookmark(element.z),
-        ),
-      ],
     );
   }
 }
