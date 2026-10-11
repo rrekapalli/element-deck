@@ -20,13 +20,16 @@ class SettingsHub extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final account = context.watch<AccountController>();
+    final catalog = context.watch<CatalogController>();
     return ListView(
       children: [
         ListTile(
           title: Text(account.user?.displayName ?? 'On this device'),
           subtitle: Text(
             account.user?.email ??
-                (account.hasCore ? 'Element Deck pack entitled' : 'Preview · five elements'),
+                (catalog.isPreview
+                    ? 'Preview catalog'
+                    : 'On-device catalog · ${catalog.pack.elements.length} elements'),
           ),
         ),
         ListTile(
@@ -284,13 +287,14 @@ class AppHealthPage extends StatelessWidget {
       appBar: AppBar(title: const Text('App Health')),
       body: ListView(
         children: [
-          ListTile(title: const Text('Preview'), subtitle: const Text('Bundled five-element file')),
           ListTile(
-            title: const Text('Content pack'),
+            title: const Text('On-device catalog'),
+            subtitle: Text('${catalog.pack.elements.length} elements · ${catalog.pack.version}'),
+          ),
+          ListTile(
+            title: const Text('Content pack cache'),
             subtitle: Text(
-              catalog.isPreview
-                  ? 'not downloaded'
-                  : 'cached ${catalog.pack.version}',
+              catalog.isPreview ? 'using bundled file' : 'loaded ${catalog.pack.version}',
             ),
           ),
           ListTile(

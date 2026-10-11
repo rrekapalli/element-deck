@@ -1,5 +1,10 @@
 # Catalog source
 
-`generate_catalog.py` writes `assets/catalog/preview.json` (five elements) and `assets/catalog/core.json` (118 elements).
+`enrich.py` holds properties, discovery, uses, and the three teaching depths for all 118 elements.
 
-`json_to_sqlite.py` compiles `catalog/output/catalog.sqlite` for Firebase Storage at `packs/core/1.0.0/catalog.sqlite`.
+`generate_catalog.py` writes `assets/catalog/core.json` (118 elements) and `assets/catalog/preview.json` (five-element fixture).
+
+`json_to_sqlite.py` compiles SQLite to:
+
+- `assets/catalog/catalog.sqlite` — bundled on-device catalog the app loads first
+- `catalog/output/catalog.sqlite` — same file for Firebase Storage at `packs/core/{version}/catalog.sqlite`

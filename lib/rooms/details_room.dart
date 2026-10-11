@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 
 import '../models/catalog.dart';
 import '../models/periodic_layout.dart';
-import '../providers/catalog_controller.dart';
 import '../providers/selection_controller.dart';
 import '../providers/settings_controller.dart';
 import '../theme/app_theme.dart';
@@ -16,7 +15,6 @@ class DetailsRoom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final catalog = context.watch<CatalogController>();
     final sel = context.watch<SelectionController>();
     final settings = context.watch<SettingsController>();
     final e = sel.current;
@@ -36,9 +34,7 @@ class DetailsRoom extends StatelessWidget {
           const SizedBox(height: 12),
           const Text('In the full pack'),
           Text(
-            catalog.isPreview
-                ? 'This preview includes hydrogen, carbon, neon, silicon, and titanium.'
-                : 'Not in the downloaded catalog.',
+            'This element is not in the on-device catalog.',
           ),
         ],
       );
@@ -90,6 +86,8 @@ class DetailsRoom extends StatelessWidget {
             ),
           ],
         ),
+        const SizedBox(height: 12),
+        Text(e.summaryFor(settings.depth)),
         const SizedBox(height: 12),
         _ShellDiagram(
           element: e,

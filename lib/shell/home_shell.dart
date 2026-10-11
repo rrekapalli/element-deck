@@ -229,7 +229,11 @@ class _Footer extends StatelessWidget {
         padding: const EdgeInsets.all(8),
         child: Row(
           children: [
-            Text(settings.isPreview ? 'Preview · on this device' : 'Pack ${settings.pack.version}'),
+            Text(
+              settings.isPreview
+                  ? 'Preview catalog'
+                  : 'On-device · ${settings.pack.elements.length} elements · ${settings.pack.version}',
+            ),
             const Spacer(),
             const Text('Element Deck'),
           ],

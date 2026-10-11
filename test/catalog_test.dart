@@ -26,6 +26,29 @@ void main() {
     expect(pack.byZ(9)!.categoryId, 'reactive-nonmetal');
   });
 
+  test('every element has beginner, intermediate, and advanced copy', () {
+    final file = File('assets/catalog/core.json');
+    final pack = CatalogPack.fromJson(
+      jsonDecode(file.readAsStringSync()) as Map<String, dynamic>,
+    );
+    for (final e in pack.elements) {
+      expect(e.summary.beginner.length, greaterThan(80), reason: 'summary beginner Z=${e.z}');
+      expect(e.summary.intermediate.length, greaterThan(80), reason: 'summary intermediate Z=${e.z}');
+      expect(e.summary.advanced.length, greaterThan(80), reason: 'summary advanced Z=${e.z}');
+      expect(e.curriculum.beginner.length, greaterThan(60), reason: 'curriculum beginner Z=${e.z}');
+      expect(e.curriculum.intermediate.length, greaterThan(60), reason: 'curriculum intermediate Z=${e.z}');
+      expect(e.curriculum.advanced.length, greaterThan(80), reason: 'curriculum advanced Z=${e.z}');
+      expect(e.applications, isNotEmpty, reason: 'apps Z=${e.z}');
+      expect(e.discovery, isNotNull, reason: 'discovery Z=${e.z}');
+    }
+  });
+
+  test('bundled sqlite catalog exists', () {
+    final file = File('assets/catalog/catalog.sqlite');
+    expect(file.existsSync(), isTrue);
+    expect(file.lengthSync(), greaterThan(100000));
+  });
+
   test('sonification divisor is 1e12', () {
     final file = File('assets/catalog/preview.json');
     final pack = CatalogPack.fromJson(

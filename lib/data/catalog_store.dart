@@ -32,8 +32,21 @@ class CatalogStore {
         return;
       }
     }
-    pack = await _loadAsset('assets/catalog/preview.json');
+    pack = await _loadBundled();
     fromCache = false;
+  }
+
+  Future<CatalogPack> _loadBundled() async {
+    try {
+      final data = await rootBundle.load('assets/catalog/catalog.sqlite');
+      await _cache.writeSqlite(data.buffer.asUint8List());
+      final sqliteJson = await _cache.readSqliteJson();
+      if (sqliteJson != null) {
+        cachePath = _cache.sqlitePath;
+        return CatalogPack.fromJson(jsonDecode(sqliteJson) as Map<String, dynamic>);
+      }
+    } catch (_) {}
+    return _loadAsset('assets/catalog/core.json');
   }
 
   Future<CatalogPack> _loadAsset(String asset) async {
@@ -61,6 +74,6 @@ class CatalogStore {
     await _cache.deleteFiles();
     fromCache = false;
     cachePath = null;
-    pack = await _loadAsset('assets/catalog/preview.json');
+    pack = await _loadBundled();
   }
 }

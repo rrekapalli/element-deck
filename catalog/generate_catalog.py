@@ -3,9 +3,13 @@
 from __future__ import annotations
 
 import json
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
+sys.path.insert(0, str(ROOT))
+from enrich import DISCOVERY as ENRICH_DISCOVERY
+from enrich import apps_for, curriculum, extra_props, summaries
 
 # z, symbol, name, mass, cat, block, period, group, state, shells, config, ox, lattice
 # cat: alkali, alkaline, transition, post-transition, metalloid, nonmetal, halogen, noble, lanthanide, actinide
@@ -155,57 +159,17 @@ LABEL = {
     "actinide": "Actinide",
 }
 
-# Approximate properties: radius pm, EN, IE eV, mp K, bp K, density g/cm3
-PROPS = {
-    1: (31, 2.20, 13.598, 13.99, 20.27, 0.000089),
-    2: (28, 0, 24.587, 0.95, 4.22, 0.0001785),
-    6: (70, 2.55, 11.260, 3823, 4098, 2.26),
-    10: (38, 0, 21.565, 24.56, 27.07, 0.000900),
-    14: (111, 1.90, 8.152, 1687, 3538, 2.33),
-    22: (147, 1.54, 6.828, 1941, 3560, 4.506),
-    8: (66, 3.44, 13.618, 54.36, 90.20, 0.001429),
-    7: (56, 3.04, 14.534, 63.15, 77.36, 0.001251),
-    9: (42, 3.98, 17.423, 53.48, 85.03, 0.001696),
-    11: (166, 0.93, 5.139, 370.87, 1156, 0.968),
-    26: (132, 1.83, 7.902, 1811, 3134, 7.874),
-    79: (136, 2.54, 9.226, 1337, 3129, 19.3),
-    92: (196, 1.38, 6.194, 1405, 4404, 19.1),
+LATTICE = {
+    6: "Hexagonal (graphite)",
+    14: "Diamond cubic",
+    22: "Hexagonal (HCP)",
+    26: "BCC",
+    13: "FCC",
+    29: "FCC",
+    47: "FCC",
+    79: "FCC",
+    82: "FCC",
 }
-
-DISCOVERY = {
-    1: (1766, "Henry Cavendish", "Isolated as inflammable air; later named hydrogen."),
-    6: (None, "Ancient", "Known as charcoal and diamond since antiquity."),
-    10: (1898, "Ramsay and Travers", "Isolated from liquefied air after argon and krypton."),
-    14: (1824, "Jöns Jacob Berzelius", "Isolated from silica after earlier work by Gay-Lussac and Thenard."),
-    22: (1791, "William Gregor", "Discovered in Cornwall; independently isolated by Klaproth, who named it after the Titans."),
-}
-
-APPS = {
-    1: [
-        ("Fuel and feedstock", "Ammonia, hydrogenation, and a clean-burning energy carrier."),
-        ("Stars", "The proton–proton chain that lights the Sun."),
-    ],
-    6: [
-        ("Life", "Backbone of organic molecules."),
-        ("Materials", "Graphite, diamond, and carbon fiber."),
-    ],
-    10: [
-        ("Lighting", "Neon discharge tubes."),
-        ("Cryogenics", "A refrigerant and inert atmosphere."),
-    ],
-    14: [
-        ("Electronics", "The elemental semiconductor of chips."),
-        ("Glass", "Silica networks in glass and concrete."),
-    ],
-    22: [
-        ("Aerospace frames", "High strength-to-weight in jet engines and airframes."),
-        ("Medical implants", "Complete bio-inertness, used in bone work."),
-        ("Sub-sea", "Immunity to saltwater corrosion."),
-        ("Pigments", "Titanium dioxide white pigment."),
-    ],
-}
-
-LATTICE = {6: "Hexagonal (graphite)", 14: "Diamond cubic", 22: "Hexagonal (HCP)", 26: "BCC", 13: "FCC"}
 
 # radius, EN, IE already in PROPS. Fill remaining with None via lookup miss.
 
@@ -216,7 +180,28 @@ TRENDS = [
         "label": "Group 14",
         "essay": "Descending from Carbon (C) to Silicon (Si) exhibits the classic inner-core shielding effect. The additional 3s²3p² shell increases the atomic radius significantly (+58%), causing valence electrons to experience a diminished effective nuclear charge (Z_eff). C–C bonds drastically outlast weaker Si–Si bonds. Silicon's network is an intrinsic semiconductor.",
         "swaps": [32, 8],
-    }
+    },
+    {
+        "zA": 9,
+        "zB": 17,
+        "label": "Group 17",
+        "essay": "Fluorine to chlorine is the textbook halogen step: both want one electron, but fluorine is a much fiercer oxidizer because it is smaller and more electronegative. Chlorine still disinfects and forms a wide oxo-anion ladder (ClO⁻ to ClO₄⁻) that fluorine barely copies.",
+        "swaps": [35, 8],
+    },
+    {
+        "zA": 3,
+        "zB": 11,
+        "label": "Group 1",
+        "essay": "Lithium to sodium keeps the ns¹ pattern, but sodium’s extra shell makes the atom larger and easier to oxidize. Lithium’s small Li⁺ ion polarizes anions and dominates battery electrochemistry; sodium remains the everyday salt cation.",
+        "swaps": [19, 12],
+    },
+    {
+        "zA": 10,
+        "zB": 18,
+        "label": "Group 18",
+        "essay": "Neon and argon are both closed-shell gases, but argon is denser and far more abundant in air. Neither forms ordinary molecules; argon’s chemistry, like krypton’s, is a specialist topic, while neon is the lighting benchmark.",
+        "swaps": [36, 2],
+    },
 ]
 
 REACTIONS = {
@@ -309,38 +294,19 @@ def parse_ox(s: str) -> tuple[list[int], int | None]:
     return vals, vals[0]
 
 
-def curriculum(el: dict) -> dict:
-    name, z, sym = el["name"], el["z"], el["symbol"]
-    return {
-        "beginner": f"{name} is element {z}. Remember the symbol {sym}, where it sits, and one everyday use.",
-        "intermediate": f"Course facts for {name}: configuration {el['electronConfig']}, oxidation {el['oxidationStates']}, and the headline measurements.",
-        "advanced": f"Go deeper on {name}: why neighbors differ, isotopes, and any spectral assignments in Spectra.",
-    }
-
-
-def summaries(el: dict) -> dict:
-    name = el["name"]
-    return {
-        "beginner": f"{name} is a {el['categoryLabel'].lower()} in period {el['period']}.",
-        "intermediate": f"{el.get('lattice') or el['standardState'].title()} {el['categoryLabel'].lower()}; {el['electronConfig']}.",
-        "advanced": f"Z={el['z']}, {el['electronConfigFull']}, group {el['group'] or 'n/a'}.",
-    }
-
-
-def extra_props(z: int) -> dict:
-    p = PROPS.get(z)
-    if not p:
-        return {}
-    r, en, ie, mp, bp, dens = p
-    out = {
-        "covalentRadiusPm": r,
-        "paulingEn": en or None,
-        "ionizationEv": ie,
-        "meltingK": mp,
-        "boilingK": bp,
-        "density": dens,
-    }
-    return {k: v for k, v in out.items() if v not in (None, 0)}
+def default_isotopes(z: int, mass: float) -> list[dict]:
+    a = int(round(mass))
+    radioactive = z >= 84 or z in {43, 61}
+    return [
+        {
+            "a": a,
+            "mass": mass,
+            "spin": "",
+            "abundance": None if radioactive else 1.0,
+            "stability": "radioactive" if radioactive else "stable",
+            "note": "Representative isotope for teaching. Not a full natural-abundance table.",
+        }
+    ]
 
 
 def parse_all() -> list[dict]:
@@ -402,15 +368,14 @@ def parse_all() -> list[dict]:
             "oxidationStates": oxs,
             "primaryOxidation": primary,
             "lattice": LATTICE.get(z),
-            "sourceId": "compiled-v1",
+            "sourceId": "compiled-v1.1",
         }
         el["summary"] = summaries(el)
         el["curriculum"] = curriculum(el)
         el["properties"] = extra_props(z)
-        if z in DISCOVERY:
-            year, people, text = DISCOVERY[z]
-            el["discovery"] = {"year": year, "people": people, "text": text}
-        el["applications"] = [{"title": t, "body": b} for t, b in APPS.get(z, [])]
+        year, people, text = ENRICH_DISCOVERY[z]
+        el["discovery"] = {"year": year, "people": people, "text": text}
+        el["applications"] = apps_for(z, name)
         el["spectralLines"] = [
             {
                 **ln,
@@ -418,7 +383,7 @@ def parse_all() -> list[dict]:
             }
             for ln in LINES.get(z, [])
         ]
-        el["isotopes"] = ISOTOPES.get(z, [])
+        el["isotopes"] = ISOTOPES.get(z) or default_isotopes(z, mass)
         if z in GLOW:
             el["glow"] = GLOW[z]
         if z in ASTRO:
@@ -434,8 +399,8 @@ def main() -> None:
     assert len(elements) == 118, len(elements)
     pack = {
         "id": "core",
-        "version": "1.0.0",
-        "sciencePins": ["compiled-v1"],
+        "version": "1.1.0",
+        "sciencePins": ["compiled-v1.1"],
         "trendNotes": TRENDS,
         "elements": elements,
     }

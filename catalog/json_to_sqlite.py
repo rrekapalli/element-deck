@@ -8,15 +8,17 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SRC = ROOT / "assets" / "catalog" / "core.json"
-OUT = ROOT / "catalog" / "output" / "catalog.sqlite"
+OUTS = [
+    ROOT / "catalog" / "output" / "catalog.sqlite",
+    ROOT / "assets" / "catalog" / "catalog.sqlite",
+]
 
 
-def main() -> None:
-    pack = json.loads(SRC.read_text(encoding="utf-8"))
-    OUT.parent.mkdir(parents=True, exist_ok=True)
-    if OUT.exists():
-        OUT.unlink()
-    db = sqlite3.connect(OUT)
+def write_db(pack: dict, out: Path) -> None:
+    out.parent.mkdir(parents=True, exist_ok=True)
+    if out.exists():
+        out.unlink()
+    db = sqlite3.connect(out)
     db.executescript(
         """
         CREATE TABLE pack_meta (
@@ -48,7 +50,13 @@ def main() -> None:
         )
     db.commit()
     db.close()
-    print("wrote", OUT, "bytes", OUT.stat().st_size)
+    print("wrote", out, "bytes", out.stat().st_size)
+
+
+def main() -> None:
+    pack = json.loads(SRC.read_text(encoding="utf-8"))
+    for path in OUTS:
+        write_db(pack, path)
 
 
 if __name__ == "__main__":
