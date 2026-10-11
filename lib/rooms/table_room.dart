@@ -114,9 +114,7 @@ class _SearchAndChips extends StatelessWidget {
                   child: FilterChip(
                     selected: sel.categoryFilter == chip.$1,
                     label: Text(
-                      chip.$1 == 'all'
-                          ? 'All (${catalog.pack.elements.length})'
-                          : chip.$2,
+                      '${chip.$2} (${catalog.pack.countInCategory(chip.$1)})',
                     ),
                     avatar: chip.$1 == 'all'
                         ? null

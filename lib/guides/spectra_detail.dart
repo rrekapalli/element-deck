@@ -1,0 +1,97 @@
+import 'property_guide.dart';
+import 'spectra_essays_01_30.dart';
+import 'spectra_essays_31_60.dart';
+import 'spectra_essays_61_90.dart';
+import 'spectra_essays_91_118.dart';
+
+/// Teaching article for one element's spectrum.
+///
+/// The primer explains spectra in general. This essay is the part that
+/// changes when the selected element changes.
+class ElementSpectrumEssay {
+  const ElementSpectrumEssay({
+    required this.z,
+    required this.lede,
+    required this.sections,
+  });
+
+  final int z;
+  final String lede;
+  final List<GuideSection> sections;
+}
+
+ElementSpectrumEssay spectrumEssay(
+  int z,
+  String lede,
+  List<GuideSection> sections,
+) {
+  return ElementSpectrumEssay(z: z, lede: lede, sections: sections);
+}
+
+GuideSection spec(String heading, String body) => GuideSection(heading, body);
+
+/// Shared explanation shown at the top of the Spectra Details tab.
+const spectraPrimer = PropertyGuide(
+  id: 'spectra-primer',
+  title: 'What a spectrum is',
+  group: 'Spectra',
+  lede:
+      'A spectrum is light taken apart by wavelength. The Spectra tab draws a few of those wavelengths for the element on the card. This tab explains what that drawing is, how such light is made and recognized, and what this element\'s own pattern means.',
+  sections: [
+    GuideSection(
+      'Light sorted by wavelength',
+      'A lamp, a flame, a star, or a spark sends out a mixture of wavelengths. A prism or a diffraction grating spreads that mixture into an ordered band, short wavelengths at one end and long wavelengths at the other. The spread band is a spectrum. Where the source is bright at one precise wavelength, the spectrum has a line. Where a whole stretch is bright, the spectrum is continuous. Where a wavelength has been removed from a beam, the spectrum has a dark line. Color is the eye\'s coarse summary of the same information. Wavelength is the measurement.\n\n'
+          'Three patterns are taught together, and they come from three kinds of source. A hot solid, a hot liquid, or a dense plasma shines a continuous spectrum, a smooth rainbow, because so many motions overlap that no single jump stands clear. A thin gas of atoms shines, or absorbs, a line spectrum: sharp wavelengths fixed by the atom. A gas of molecules shines or absorbs a band spectrum, a forest of lines packed so tightly that a small instrument draws them as shaded fluting. The lines belong to electronic jumps. The fluting belongs to the vibrations and rotations that split each jump. Element Deck\'s strip is the atomic line spectrum. When a flame looks green because of a molecule, this tab says so, and it does not pretend the molecule is a line of the free atom.',
+    ),
+    GuideSection(
+      'How a line is created',
+      'Electrons in an atom occupy levels of definite energy. A spectral line is one electron moving from one level to another, with the difference carried by a single photon. If the electron falls, the atom emits a photon and the line is bright against a dark background. If the electron climbs, the atom absorbs a photon from a beam passing through, and the same wavelength goes dark against a bright background. The energy, the frequency, and the wavelength are one fact in three units: E = h f, and f = c / λ for a vacuum wavelength. Change one and the others must follow. The Spectra tab prints all three beside a selected line.\n\n'
+          'The line is sharp because the levels are sharp. A collision, a strong electric field, or a high pressure can blur a level, and the line grows wide. In a solid the levels of the outer electrons smear into bands, and the line spectrum of the free atom is gone. That is why a tungsten filament shines a continuous glow, while tungsten vapor in a spark shines lines. The atom has not changed its identity. Its surroundings have changed which spectrum it is allowed to show.\n\n'
+          'The energy of a line is the gap between two levels. It is not, by itself, the energy needed to tear the electron off the atom. That larger step is the ionization energy, and it equals a line energy only when the upper level is the ionization limit, the place where the lines of a series crowd together and stop. Most lines on these cards are smaller jumps between two bound levels. The electron has moved house inside the atom. It has not left.',
+    ),
+    GuideSection(
+      'Emission and absorption',
+      'The segmented control on the Spectra tab switches the drawing, not the atom. Emission is painted as bright marks on a dark field, the way a discharge tube looks. Absorption is painted as dark marks on a rainbow, the way sunlight looks after it has passed through a cooler gas. Kirchhoff\'s law, set down around 1859, is the link. A thin gas absorbs the wavelengths it would emit if it were excited, and it does so at the same wavelengths. The sodium that paints a flame yellow is the sodium that cuts the dark D lines out of the Sun.\n\n'
+          'Which lines are strong depends on the conditions, not on a second copy of the periodic table. A hot star and a cool star contain hydrogen, but the Balmer lines are strong only when enough electrons are already sitting on the second level, ready to absorb. A spark promotes electrons farther, and it knocks some atoms into ions, so the spark spectrum is richer than the flame spectrum of the same element. The labels I, II, and III record that. I is the neutral atom, II the singly charged ion, III the ion that has lost two electrons. They are different spectra of the same element, because the level ladders are different once the charge changes. A line marked Na I is neutral sodium. A line marked Ca II is calcium that has already lost one electron.',
+    ),
+    GuideSection(
+      'How the light is generated',
+      'A flame is the gentlest common source. A salt held in a Bunsen flame gives the alkali metals and the alkaline earths their textbook colors, usually from one or two strong lines, sometimes helped by a molecule of the oxide or the chloride. An electric arc or a spark is hotter. It wakes many more lines and many ionic lines, which is why a steel mill can read an alloy from the spark struck off a sample. A discharge tube is a glass vessel of gas at low pressure with a voltage across it. Electrons accelerated in the tube strike atoms, the atoms re-emit their lines, and the eye sees the blend. Neon looks orange-red. Sodium looks yellow. Mercury looks cold and bluish until a phosphor paints the ultraviolet into white.\n\n'
+          'Analytical instruments specialize the same idea. A hollow-cathode lamp glows with the lines of one element, so an atomic-absorption spectrometer can measure how much of that element in a flame is drinking those exact wavelengths. An inductively coupled plasma is a hot argon fire that will excite almost any element sprayed into it, and the strength of a chosen line is read as a concentration. A laser is one transition, amplified, so the spectrum has collapsed to a single wavelength on purpose. None of these devices is inside the phone. The strip is a drawing of a compiled list.',
+    ),
+    GuideSection(
+      'How a spectrum is recorded and an element is identified',
+      'A spectrograph is a slit, a collimator, a prism or a grating, and a detector. The slit makes the source into a narrow image. The grating sends each wavelength to a different angle. The detector, once a photographic plate and now a sensor, records where the light landed. Calibration against known lines turns a position into a wavelength. After that, identification is a comparison. If the wavelengths match the wavelengths of iron, the source contains iron. Color is not the test. Two elements can look alike to the eye and be unmistakable once the light is spread out.\n\n'
+          'The method is older than the Bohr atom. Fraunhofer, in 1814, labeled the dark lines of the Sun with letters. Kirchhoff and Bunsen showed that those letters belong to elements, by matching them to flames and sparks in the laboratory. Helium was named from a yellow line in the Sun\'s outer atmosphere, in 1868, decades before a flask of it existed on Earth. The same habit now reads nebulae, galaxies, and the atmospheres of planets. A match can fail in honest ways. A coarse instrument blends two close lines into one. A blend of two elements can pile lines on top of each other. A missing line can mean the element is absent, or that the temperature was wrong for that line, or that the line lies outside the window the instrument recorded. Identification is an argument from several lines, not a glance at one color.',
+    ),
+    GuideSection(
+      'What the pattern means',
+      'A series is a family of lines that share a lower level. Hydrogen\'s Balmer series all land on the second level, and the lines march toward a limit as the upper level climbs toward freedom. A multiplet is one jump split into several close lines by the way the electron\'s spin and its orbit couple. A forbidden line is a jump the usual selection rules discourage. It is faint in a lamp, where the atom is bumped again before it can radiate, and it can be bright in a nebula, where the atom is left alone long enough. The little brackets in a label such as [O I] or [Ne III] mean that kind of line.\n\n'
+          'The transition string on the Spectra tab is the name of the two levels. For hydrogen it is a pair of n values. For neon it is a coupling scheme that a single n cannot capture. The string is not a chemical reaction. The nucleus does not change. Selection rules decide which pairs are allowed, so the spectrum is not every conceivable gap. It is the gaps the atom is willing to cross. Reading a spectrum is reading that willingness, and then reading the conditions that decided which of the willing jumps actually happened.',
+    ),
+    GuideSection(
+      'Why spectra matter',
+      'Spectra are how a laboratory element is recognized at a distance, and how a trace of an element is recognized in a sample that cannot be weighed. Flame photometry, atomic absorption, and plasma emission turn line strength into a concentration of sodium in a serum or of chromium in a steel. Astronomy turns the same wavelengths into a composition, a temperature, a velocity from the Doppler shift, and sometimes a magnetic field from the Zeeman split. The quantum theory of the atom was built to explain these lines, beginning with hydrogen and then failing, usefully, on the alkalis and the iron group, until a better theory caught up.\n\n'
+          'The practical objects sit on the same physics. A neon sign, a sodium street lamp, a mercury fluorescent tube, a helium-neon laser, and the phosphor in a screen are chosen lines, or chosen blends of lines, put to work. A spectrum is a fingerprint of the atom rather than of the place, which is why a line measured in a discharge tube can be trusted in a star. The card keeps a teaching selection of persistent lines, not a complete atlas. "No spectral lines are stored" means the pack has a gap. Every element has a spectrum. For the heaviest elements the spectrum may never have been recorded, because the atoms do not live long enough, and this tab says that plainly.',
+    ),
+    GuideSection(
+      'How to read this tab',
+      'The essay above is about spectra. It does not change when you change the element. The essay below is about the element on the card: which lines matter, how they are produced, how they are told from look-alike colors that are not atomic lines, and where the pattern is used. Wavelengths printed in the line list are the bundled dataset. Wavelengths discussed in the essay and not listed there belong to the fuller atlas, and they are labeled as such.\n\n'
+          'The phone has not measured any of this. There is no match score against a star, and there is no claim that the speaker is playing the optical frequency. Sonification, on the Spectra tab, divides that frequency down into a tone a person can hear. The numbers here are the optical ones. Units follow the dataset: nanometres, electronvolts, terahertz. A tap on a row of the Data tab still opens the shorter reference for wavelength, energy, frequency, or the transition string. This tab is the long reading.',
+    ),
+  ],
+);
+
+abstract final class ElementSpectra {
+  static final byZ = <int, ElementSpectrumEssay>{
+    for (final essay in [
+      ...spectraEssays01,
+      ...spectraEssays31,
+      ...spectraEssays61,
+      ...spectraEssays91,
+    ])
+      essay.z: essay,
+  };
+
+  static ElementSpectrumEssay? lookup(int z) => byZ[z];
+}

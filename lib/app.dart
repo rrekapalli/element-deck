@@ -9,6 +9,9 @@ import 'data/catalog_store.dart';
 import 'data/learner_database.dart';
 import 'l10n/app_localizations.dart';
 import 'packs/pack_service.dart';
+import 'pwa/pwa_update_banner.dart';
+import 'pwa/pwa_update_service.dart';
+import 'pwa/web_foreground.dart';
 import 'providers/catalog_controller.dart';
 import 'providers/selection_controller.dart';
 import 'providers/settings_controller.dart';
@@ -33,7 +36,8 @@ class ElementDeckApp extends StatefulWidget {
   State<ElementDeckApp> createState() => _ElementDeckAppState();
 }
 
-class _ElementDeckAppState extends State<ElementDeckApp> {
+class _ElementDeckAppState extends State<ElementDeckApp>
+    with WidgetsBindingObserver {
   late final ThemeController theme;
   late final SettingsController settings;
   late final CatalogController catalog;
@@ -48,6 +52,9 @@ class _ElementDeckAppState extends State<ElementDeckApp> {
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
+    PwaUpdateService.instance.start();
+    bindWebForeground(PwaUpdateService.instance.checkForUpdate);
     theme = ThemeController(widget.db);
     settings = SettingsController(widget.db);
     catalog = CatalogController(widget.store);
@@ -93,6 +100,19 @@ class _ElementDeckAppState extends State<ElementDeckApp> {
     _boot();
   }
 
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed) {
+      PwaUpdateService.instance.checkForUpdate();
+    }
+  }
+
   Future<void> _boot() async {
     try {
       await catalog.load(hasCoreEntitlement: false);
@@ -132,7 +152,12 @@ class _ElementDeckAppState extends State<ElementDeckApp> {
             primary: AppBrand.action,
           ),
         ),
-        home: const AppSplash(caption: 'Opening the table…'),
+        home: const Stack(
+          children: [
+            AppSplash(caption: 'Opening the table…'),
+            PwaUpdateBanner(),
+          ],
+        ),
       );
     }
     return MultiProvider(
@@ -157,7 +182,12 @@ class _ElementDeckAppState extends State<ElementDeckApp> {
             routerConfig: router,
             builder: (context, child) {
               return AmbientBackground(
-                child: child ?? const SizedBox.shrink(),
+                child: Stack(
+                  children: [
+                    child ?? const SizedBox.shrink(),
+                    const PwaUpdateBanner(),
+                  ],
+                ),
               );
             },
             localizationsDelegates: AppLocalizations.localizationsDelegates,

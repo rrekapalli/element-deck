@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../guides/property_guide_page.dart';
 
-/// A Data-tab label. Double-tap, or double-click, opens its reference article.
-///
-/// A single tap does nothing, so scrolling the table does not leave the page.
-/// Screen-reader activation opens the article directly.
+/// A Data-tab label. A tap, or a click, opens its reference article.
 class PropertyLabel extends StatelessWidget {
   const PropertyLabel({
     super.key,
@@ -30,13 +27,13 @@ class PropertyLabel extends StatelessWidget {
     return Semantics(
       button: true,
       label: label,
-      hint: 'Double tap to open the reference article',
+      hint: 'Opens the reference article',
       onTap: () => openPropertyGuide(context, guideId),
       child: Tooltip(
-        message: 'Double-tap to read about $label',
+        message: 'Read about $label',
         child: GestureDetector(
           behavior: HitTestBehavior.opaque,
-          onDoubleTap: () => openPropertyGuide(context, guideId),
+          onTap: () => openPropertyGuide(context, guideId),
           child: MouseRegion(
             cursor: SystemMouseCursors.click,
             child: SizedBox(

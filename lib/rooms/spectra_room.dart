@@ -8,6 +8,7 @@ import '../providers/selection_controller.dart';
 import '../providers/settings_controller.dart';
 import '../theme/app_theme.dart';
 import '../widgets/element_header.dart';
+import 'spectra_details.dart';
 
 class SpectraRoom extends StatefulWidget {
   const SpectraRoom({super.key});
@@ -16,13 +17,36 @@ class SpectraRoom extends StatefulWidget {
   State<SpectraRoom> createState() => _SpectraRoomState();
 }
 
-class _SpectraRoomState extends State<SpectraRoom> {
+class _SpectraRoomState extends State<SpectraRoom>
+    with SingleTickerProviderStateMixin {
+  static const _labels = ['Spectra', 'Details'];
+
   String mode = 'emission';
   SpectralLine? selected;
   final sonify = Sonify();
+  late final TabController _tabs;
+  final _scroll = ScrollController();
+  final _essayKey = GlobalKey();
+  int _index = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabs = TabController(length: _labels.length, vsync: this);
+    _tabs.addListener(_onTab);
+  }
+
+  void _onTab() {
+    if (_tabs.index == _index) return;
+    setState(() => _index = _tabs.index);
+    if (_scroll.hasClients) _scroll.jumpTo(0);
+  }
 
   @override
   void dispose() {
+    _tabs.removeListener(_onTab);
+    _tabs.dispose();
+    _scroll.dispose();
     sonify.stop();
     super.dispose();
   }
@@ -45,9 +69,16 @@ class _SpectraRoomState extends State<SpectraRoom> {
     }
     return ElementDossier(
       element: e,
+      pinned: TabBar(
+        controller: _tabs,
+        dividerColor: Colors.transparent,
+        tabs: [for (final label in _labels) Tab(text: label)],
+      ),
       child: ListView(
+        controller: _scroll,
         padding: const EdgeInsets.fromLTRB(16, 12, 16, 32),
         children: [
+          if (_index == 0) ...[
           Row(
             children: [
               Text(
@@ -237,6 +268,14 @@ class _SpectraRoomState extends State<SpectraRoom> {
             'Pack ${catalog.pack.version} · noble-gas tile color is not the neon discharge glow.',
             style: Theme.of(context).textTheme.bodySmall,
           ),
+          ] else
+            ...spectraDetailChildren(
+              context: context,
+              element: e,
+              settings: settings,
+              packVersion: catalog.pack.version,
+              essayKey: _essayKey,
+            ),
         ],
       ),
     );

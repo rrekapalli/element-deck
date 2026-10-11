@@ -8,6 +8,7 @@ if (-not $Root) { $Root = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path }
 $Artifacts = Join-Path $Root "deployment\artifacts"
 $BuildDir = Join-Path $Root "build\web"
 $ZipPath = Join-Path $Artifacts "pwa-dist.zip"
+$SwScript = Join-Path $Root "scripts\generate_offline_sw.py"
 
 Write-Host "[INFO] Building Element Deck PWA (Flutter web)..."
 
@@ -22,6 +23,28 @@ try {
 
     if (-not (Test-Path (Join-Path $BuildDir "index.html"))) {
         throw "Build dir missing index.html: $BuildDir"
+    }
+
+    if (Test-Path $SwScript) {
+        Write-Host "[INFO] Generating offline/update service worker (content-hash cache)..."
+        $python = $null
+        foreach ($candidate in @("python", "python3", "py")) {
+            if (Get-Command $candidate -ErrorAction SilentlyContinue) {
+                $python = $candidate
+                break
+            }
+        }
+        if (-not $python) {
+            throw "Python not found — required for scripts/generate_offline_sw.py (PWA updates)"
+        }
+        if ($python -eq "py") {
+            & $python -3 $SwScript $BuildDir
+        } else {
+            & $python $SwScript $BuildDir
+        }
+        if ($LASTEXITCODE -ne 0) { throw "generate_offline_sw.py failed" }
+    } else {
+        throw "Missing generate_offline_sw.py — Flutter stub SW will unregister (A2HS updates break)"
     }
 
     New-Item -ItemType Directory -Force -Path $Artifacts | Out-Null

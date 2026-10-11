@@ -32,22 +32,7 @@ void main() {
     }
   });
 
-  testWidgets('a single tap does not open the article', (tester) async {
-    await tester.pumpWidget(
-      const MaterialApp(
-        home: Scaffold(
-          body: PropertyLabel(label: 'Period', guideId: GuideId.period),
-        ),
-      ),
-    );
-
-    await tester.tap(find.text('Period'));
-    await tester.pump(const Duration(milliseconds: 400));
-
-    expect(find.text('How the rows were drawn'), findsNothing);
-  });
-
-  testWidgets('a double tap opens the reference article', (tester) async {
+  testWidgets('a single tap opens the reference article', (tester) async {
     await tester.pumpWidget(
       MaterialApp(
         home: Scaffold(
@@ -60,8 +45,6 @@ void main() {
       ),
     );
 
-    await tester.tap(find.text('Period'));
-    await tester.pump(const Duration(milliseconds: 50));
     await tester.tap(find.text('Period'));
     await tester.pumpAndSettle();
 

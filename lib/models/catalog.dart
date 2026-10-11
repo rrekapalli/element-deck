@@ -41,6 +41,16 @@ class CatalogPack {
     }
     return null;
   }
+
+  /// How many elements a Table category chip selects.
+  /// Halogen is a tag, so it can overlap a family.
+  int countInCategory(String categoryId) {
+    if (categoryId == 'all') return elements.length;
+    if (categoryId == 'halogen') {
+      return elements.where((e) => e.isHalogen).length;
+    }
+    return elements.where((e) => e.categoryId == categoryId).length;
+  }
 }
 
 class ElementRecord {

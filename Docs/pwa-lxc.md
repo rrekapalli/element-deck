@@ -84,4 +84,10 @@ bash deployment/proxmox/enable-tailscale-funnel.sh
 
 `deploy-ui.sh` clones VMID 6101 if it is missing, unpacks the zip into nginx, joins Tailscale, and enables Funnel. A Windows-built zip is repacked when its paths use backslashes, so Linux `unzip` can read it.
 
-The web build uses `--no-web-resources-cdn` so CanvasKit is inside the zip. A device does not have to reach gstatic. Service-worker and `index.html` responses are not cached by nginx. Hashed assets are.
+The web build uses `--no-web-resources-cdn` so CanvasKit is inside the zip. A device does not have to reach gstatic. Service-worker, `pwa_update.js`, `version.json`, and `index.html` responses are not cached by nginx. Hashed assets are.
+
+## Updates
+
+Each deploy runs `scripts/generate_offline_sw.py` after `flutter build web`. That replaces Flutter's unregister stub with a service worker whose cache name is a hash of `main.dart.js`. Opening the app (or bringing it back to the foreground) calls `registration.update()`. When a new build is installed, a bottom strip offers **Update** and **Later**. Update reloads into the new build. The page does not reload by itself, so the first precache can finish.
+
+The semver in `pubspec.yaml` is what humans and the Play Store see. The PWA treats a new `main.dart.js` hash as the version change.

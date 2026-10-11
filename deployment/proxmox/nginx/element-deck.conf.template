@@ -38,6 +38,18 @@ server {
         try_files $uri =404;
     }
 
+    location = /pwa_update.js {
+        default_type application/javascript;
+        add_header Cache-Control "no-cache, no-store, must-revalidate";
+        try_files $uri =404;
+    }
+
+    location = /version.json {
+        default_type application/json;
+        add_header Cache-Control "no-cache, no-store, must-revalidate";
+        try_files $uri =404;
+    }
+
     location = /sqlite3.wasm {
         default_type application/wasm;
         add_header Cache-Control "public, max-age=86400";

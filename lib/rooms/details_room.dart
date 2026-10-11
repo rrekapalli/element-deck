@@ -211,7 +211,7 @@ class _DetailsRoomState extends State<DetailsRoom>
     return [
       Text(
         'Compiled values for this element. Units follow App Config. '
-        'Double-tap a label to open its reference article.',
+        'Tap a label to open its reference article.',
         style: Theme.of(context).textTheme.bodySmall
             ?.copyWith(color: muted, height: 1.35),
       ),

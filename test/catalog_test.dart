@@ -24,6 +24,17 @@ void main() {
     expect(pack.elements, hasLength(118));
     expect(pack.byZ(9)!.isHalogen, isTrue);
     expect(pack.byZ(9)!.categoryId, 'reactive-nonmetal');
+    expect(pack.countInCategory('all'), 118);
+    expect(pack.countInCategory('reactive-nonmetal'), 13);
+    expect(pack.countInCategory('noble-gas'), 7);
+    expect(pack.countInCategory('alkali-metal'), 6);
+    expect(pack.countInCategory('alkaline-earth'), 6);
+    expect(pack.countInCategory('transition-metal'), 38);
+    expect(pack.countInCategory('post-transition'), 12);
+    expect(pack.countInCategory('metalloid'), 6);
+    expect(pack.countInCategory('lanthanide'), 15);
+    expect(pack.countInCategory('actinide'), 15);
+    expect(pack.countInCategory('halogen'), 6);
   });
 
   test('every element has beginner, intermediate, and advanced copy', () {

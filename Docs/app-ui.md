@@ -73,7 +73,7 @@ Top to bottom:
 1. **Complexity.** Segmented control: Beginner, Intermediate, Advanced. A one-line caption states what this depth is showing. On the benchmark, Intermediate says it shows atomic mass, shell counts, and oxidation states, and points at Beginner and Advanced.
 2. **Element of the day.** A glass card: Z, symbol, name, mass, category chip, period, group, lattice, a short character line, **Explore Orbitals**, and a bookmark.
 3. **Search.** Name, symbol, or atomic number. A numeric query jumps to Z. A symbol query prefers an exact symbol match.
-4. **Category chips.** All, then the families (reactive nonmetals, noble gases, alkali, alkaline earth, transition, post-transition, metalloids, lanthanides, actinides, halogens as a filter that can overlap a family). The count on All is 118.
+4. **Category chips.** All, then the families (reactive nonmetals, noble gases, alkali, alkaline earth, transition, post-transition, metalloids, lanthanides, actinides, halogens as a filter that can overlap a family). Every chip shows how many elements it selects, as in All (118) and Reactive Nonmetals (13). Halogen counts the tag, so it overlaps the reactive-nonmetal family.
 5. **Registry.** Cards in a two-column grid on the phone benchmark. Each card: Z, mass, symbol in the family color, name, category, standard state, a short configuration or shell summary appropriate to the depth.
 6. **View toggle.** List/registry versus **matrix**. The benchmark is the registry ("Atomic Registry · 12 shown" when a filter or search is narrowing). Matrix is the classic 18-column table, pan and zoom, lanthanide and actinide rows called out. Minimum cell about 64×74 px when zoomed; the phone matrix scrolls. It does not shrink 118 cells under a thumb.
 7. **Sparkline.** A small trend for the current filter or period, such as the ionization-energy curve on the benchmark (H, He, Li, Ne called out). It is a teaching hint into Compare, not a dashboard widget.
@@ -100,7 +100,7 @@ On the phone the dossier scrolls as one page. Sections are headings, not a maze 
 
 The Data tab lists compiled values in labeled rows: identity, electrons, physical properties, isotopes, and spectrum. Units follow App Config. Stored values stay in the dataset's units.
 
-Double-tap a row label, or double-click it with a pointer, to open a reference article for that property: what it measures, how it was established, and where the unit comes from. The article is about the property, not a second measurement of the open element. A single tap does not leave the table. Labels that have an article are drawn with a dotted underline.
+Tap a row label, or click it with a pointer, to open a reference article for that property: what it measures, how it was established, and where the unit comes from. The article is about the property, not a second measurement of the open element. Labels that have an article are drawn with a dotted underline.
 
 Bookmark lives on the identity header.
 
