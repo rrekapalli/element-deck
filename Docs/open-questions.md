@@ -16,12 +16,12 @@ Refinement list. Do not block the concept on answers. Do not write application c
 ## Science content
 
 - Freeze the property `kind` list, the v1 `TrendNote` pairs, and the dataset licenses before generating the full catalog. Open until that list is written.
-- Halogen: a tag on the nonmetal color, or its own accent? The PNGs call fluorine a halogen. Open.
-- Standard atomic weight versus a single representative isotope on the header. The screens show one number. The model has `weightKind`. Open how the header reads when IUPAC gives an interval.
-- Fraunhofer "99.4%" on the neon concept: define the method or drop the percent. Open, defaulting to drop if the method is not real.
-- Which single `ReactionIllustration` exists per element, and which elements have none. Open.
-- Sonification divisor (power of ten into ~200–800 Hz). Open the exact divisor; closed that the UI must say "sonified."
-- Light theme hex values. Closed that Chalk is a designed preset and that family colors survive it. Open the actual ramp.
+- Halogen is a **tag** on the reactive-nonmetal color. The chip still says Halogen. Closed.
+- The header shows **one** atomic-weight number. `weightKind` records whether it is a standard weight or a representative isotope. An IUPAC interval is an Advanced disclosure. Closed.
+- Fraunhofer match percentages do **not** ship. Closed.
+- Which single `ReactionIllustration` exists per element, and which elements have none. Open until the pack is written; omit the button when none.
+- Sonification divisor is **10^12** (`audibleHz = lineFrequencyHz / 1e12`). The button still says sonified. Closed.
+- Light theme hex values. Closed that Chalk is a designed preset and that family colors survive it. Dark Obsidian Orbit is the first pixel target. The Chalk ramp is designed after the dark phone screens match.
 - Element-of-the-day timezone: the device's local civil date. Closed unless testing shows classroom confusion across a timezone boundary. A traveling student seeing a different element than their class is acceptable.
 
 ## Shell and settings
@@ -40,9 +40,9 @@ Refinement list. Do not block the concept on answers. Do not write application c
 - The content pack is a SQLite file in Storage. The rooms read a local cache. Closed.
 - Purchases store uid, package id, store, transaction id, status, and time. Closed.
 - Preview of H, C, Si, Ne, Ti stays in the app binary. Closed.
-- Web and desktop billing (the stores cover Android and iOS). Open.
-- Whether a Classroom purchase covers every joined learner, or each learner also buys Element Deck. Open.
-- Web SQLite package. Closed as "same schema via WebAssembly." Open the library at scaffold time.
+- Web and desktop can sign in and download a pack the account already owns. Selling on web and desktop waits. Android and iOS use the stores. Closed.
+- Each learner buys Element Deck. A Classroom purchase does not silently cover a roster until terms exist. Closed.
+- SQLite access is **Drift**, with the web build on Drift's SQLite WASM. One schema for phone, desktop, and web. Closed.
 - Catalog corrections ship as a new pack version, not as an app update, unless the shell changed. Closed.
 
 ## Next refinement sessions

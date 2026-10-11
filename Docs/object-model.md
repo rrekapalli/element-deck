@@ -32,7 +32,7 @@ Renaming a label ("sulfur" / "sulphur") does not mint a new element. A dataset u
 | z | 1–118, primary key |
 | symbol | `Ti` |
 | name | English IUPAC name. Other languages live on `Label` |
-| atomicWeight | Standard atomic weight or the most stable mass, with `weightKind` so the UI does not pretend an interval is a single number |
+| atomicWeight | One number on the header, as the screens draw. `weightKind` is `standard` or `representative-isotope`. An IUPAC interval is an Advanced disclosure, not a second header figure |
 | categoryId | Family used for color and chips |
 | block | s, p, d, f |
 | period | 1–7 |
@@ -60,7 +60,7 @@ The chip and tile color. Fixed palette from [design-system.md](./design-system.m
 | lanthanide | La row | Crimson |
 | actinide | U | Crimson, separate chip |
 
-Halogen is a **tag** on a reactive nonmetal so the color stays honest and the filter can still say Halogen. The benchmark colors fluorine as halogen and oxygen as nonmetal; both may share the nonmetal hue if we refuse two cyans. Open: whether halogens get a distinct accent. See [open-questions.md](./open-questions.md).
+Halogen is a **tag** on a reactive nonmetal. The family color is cyan. The chip still says Halogen so the filter can be narrower than the color family. Fluorine and oxygen share the nonmetal hue.
 
 ### Property
 
@@ -274,9 +274,9 @@ Kinds are not a separate database if the table already implies them. They are a 
 
 Before scaffolding, freeze:
 
-1. The property `kind` list the four screens need.
-2. Whether halogen is a tag or its own color.
-3. The curated `TrendNote` pairs for v1.
-4. The dataset releases we are allowed to bundle.
+1. The property `kind` list the four screens need. Closed as the v0 list in the build plan.
+2. Halogen is a tag. Closed.
+3. The curated `TrendNote` pairs for v1. Carbon–silicon ships first.
+4. The dataset releases we are allowed to bundle. Pin on each value.
 
 Until that list is written down, do not generate 118 JSON files by scraping a page into the repo.

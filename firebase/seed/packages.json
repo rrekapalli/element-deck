@@ -1,0 +1,32 @@
+{
+  "packages": {
+    "element-deck": {
+      "title": "Element Deck",
+      "packIds": ["core"],
+      "includesClassroom": false,
+      "storeProductIds": {
+        "google_play": "element-deck",
+        "app_store": "element-deck"
+      }
+    },
+    "classroom": {
+      "title": "Classroom",
+      "packIds": ["core"],
+      "includesClassroom": true,
+      "storeProductIds": {
+        "google_play": "classroom",
+        "app_store": "classroom"
+      }
+    }
+  },
+  "contentPacks": {
+    "core": {
+      "version": "1.0.0",
+      "storagePath": "packs/core/1.0.0/catalog.sqlite",
+      "sha256": "17072ce0b2837fe9aaca86cd7364256b72cf70af88f06cbee6bb15fb03cce95f",
+      "bytes": 184320,
+      "publishedAt": "2026-10-11",
+      "sciencePins": ["compiled-v1"]
+    }
+  }
+}

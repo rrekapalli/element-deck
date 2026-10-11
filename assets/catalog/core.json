@@ -1,0 +1,5605 @@
+{
+  "id": "core",
+  "version": "1.0.0",
+  "sciencePins": [
+    "compiled-v1"
+  ],
+  "trendNotes": [
+    {
+      "zA": 6,
+      "zB": 14,
+      "label": "Group 14",
+      "essay": "Descending from Carbon (C) to Silicon (Si) exhibits the classic inner-core shielding effect. The additional 3s\u00b23p\u00b2 shell increases the atomic radius significantly (+58%), causing valence electrons to experience a diminished effective nuclear charge (Z_eff). C\u2013C bonds drastically outlast weaker Si\u2013Si bonds. Silicon's network is an intrinsic semiconductor.",
+      "swaps": [
+        32,
+        8
+      ]
+    }
+  ],
+  "elements": [
+    {
+      "z": 1,
+      "symbol": "H",
+      "name": "Hydrogen",
+      "atomicWeight": 1.008,
+      "weightKind": "standard",
+      "categoryId": "reactive-nonmetal",
+      "categoryLabel": "Nonmetal",
+      "tags": [],
+      "block": "s",
+      "period": 1,
+      "group": 1,
+      "standardState": "gas",
+      "electronConfig": "1s1",
+      "electronConfigFull": "1s1",
+      "shellCounts": [
+        1
+      ],
+      "oxidationStates": [
+        1
+      ],
+      "primaryOxidation": 1,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Hydrogen is a nonmetal in period 1.",
+        "intermediate": "Gas nonmetal; 1s1.",
+        "advanced": "Z=1, 1s1, group 1."
+      },
+      "curriculum": {
+        "beginner": "Hydrogen is element 1. Remember the symbol H, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Hydrogen: configuration 1s1, oxidation [1], and the headline measurements.",
+        "advanced": "Go deeper on Hydrogen: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {
+        "covalentRadiusPm": 31,
+        "paulingEn": 2.2,
+        "ionizationEv": 13.598,
+        "meltingK": 13.99,
+        "boilingK": 20.27,
+        "density": 8.9e-05
+      },
+      "discovery": {
+        "year": 1766,
+        "people": "Henry Cavendish",
+        "text": "Isolated as inflammable air; later named hydrogen."
+      },
+      "applications": [
+        {
+          "title": "Fuel and feedstock",
+          "body": "Ammonia, hydrogenation, and a clean-burning energy carrier."
+        },
+        {
+          "title": "Stars",
+          "body": "The proton\u2013proton chain that lights the Sun."
+        }
+      ],
+      "spectralLines": [
+        {
+          "id": "H-a",
+          "nm": 656.28,
+          "eV": 1.89,
+          "transition": "n=3 \u2192 n=2",
+          "color": "visible red",
+          "spectrum": "both",
+          "frequencyHz": 456805720119461.2
+        },
+        {
+          "id": "H-b",
+          "nm": 486.13,
+          "eV": 2.55,
+          "transition": "n=4 \u2192 n=2",
+          "color": "blue-green",
+          "spectrum": "both",
+          "frequencyHz": 616691950712772.4
+        },
+        {
+          "id": "H-g",
+          "nm": 434.05,
+          "eV": 2.86,
+          "transition": "n=5 \u2192 n=2",
+          "color": "blue",
+          "spectrum": "both",
+          "frequencyHz": 690686460085243.5
+        }
+      ],
+      "isotopes": [
+        {
+          "a": 1,
+          "mass": 1.0078,
+          "spin": "1/2",
+          "abundance": 0.99985,
+          "stability": "stable",
+          "note": "Protium"
+        },
+        {
+          "a": 2,
+          "mass": 2.0141,
+          "spin": "1",
+          "abundance": 0.00015,
+          "stability": "stable",
+          "note": "Deuterium"
+        },
+        {
+          "a": 3,
+          "mass": 3.016,
+          "spin": "1/2",
+          "halfLife": "12.32 y",
+          "decay": "\u03b2\u2212",
+          "stability": "trace",
+          "note": "Tritium"
+        }
+      ],
+      "astro": "The Balmer series is the fingerprint of stellar atmospheres.",
+      "reaction": {
+        "reactants": "2 H\u2082 + O\u2082",
+        "products": "2 H\u2082O",
+        "conditions": "Spark or flame",
+        "beginner": "Hydrogen burns with oxygen to make water.",
+        "intermediate": "A highly exothermic combustion used as a teaching reaction and a rocket reaction.",
+        "advanced": "Illustration of a known reaction. \u0394H is large and negative; it is not a lab result from this device."
+      }
+    },
+    {
+      "z": 2,
+      "symbol": "He",
+      "name": "Helium",
+      "atomicWeight": 4.0026,
+      "weightKind": "standard",
+      "categoryId": "noble-gas",
+      "categoryLabel": "Noble gas",
+      "tags": [],
+      "block": "s",
+      "period": 1,
+      "group": 18,
+      "standardState": "gas",
+      "electronConfig": "1s2",
+      "electronConfigFull": "1s2",
+      "shellCounts": [
+        2
+      ],
+      "oxidationStates": [],
+      "primaryOxidation": null,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Helium is a noble gas in period 1.",
+        "intermediate": "Gas noble gas; 1s2.",
+        "advanced": "Z=2, 1s2, group 18."
+      },
+      "curriculum": {
+        "beginner": "Helium is element 2. Remember the symbol He, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Helium: configuration 1s2, oxidation [], and the headline measurements.",
+        "advanced": "Go deeper on Helium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {
+        "covalentRadiusPm": 28,
+        "ionizationEv": 24.587,
+        "meltingK": 0.95,
+        "boilingK": 4.22,
+        "density": 0.0001785
+      },
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 3,
+      "symbol": "Li",
+      "name": "Lithium",
+      "atomicWeight": 6.94,
+      "weightKind": "standard",
+      "categoryId": "alkali-metal",
+      "categoryLabel": "Alkali metal",
+      "tags": [],
+      "block": "s",
+      "period": 2,
+      "group": 1,
+      "standardState": "solid",
+      "electronConfig": "[He] 2s1",
+      "electronConfigFull": "[He] 2s1",
+      "shellCounts": [
+        2,
+        1
+      ],
+      "oxidationStates": [
+        1
+      ],
+      "primaryOxidation": 1,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Lithium is a alkali metal in period 2.",
+        "intermediate": "Solid alkali metal; [He] 2s1.",
+        "advanced": "Z=3, [He] 2s1, group 1."
+      },
+      "curriculum": {
+        "beginner": "Lithium is element 3. Remember the symbol Li, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Lithium: configuration [He] 2s1, oxidation [1], and the headline measurements.",
+        "advanced": "Go deeper on Lithium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 4,
+      "symbol": "Be",
+      "name": "Beryllium",
+      "atomicWeight": 9.0122,
+      "weightKind": "standard",
+      "categoryId": "alkaline-earth",
+      "categoryLabel": "Alk. earth",
+      "tags": [],
+      "block": "s",
+      "period": 2,
+      "group": 2,
+      "standardState": "solid",
+      "electronConfig": "[He] 2s2",
+      "electronConfigFull": "[He] 2s2",
+      "shellCounts": [
+        2,
+        2
+      ],
+      "oxidationStates": [
+        2
+      ],
+      "primaryOxidation": 2,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Beryllium is a alk. earth in period 2.",
+        "intermediate": "Solid alk. earth; [He] 2s2.",
+        "advanced": "Z=4, [He] 2s2, group 2."
+      },
+      "curriculum": {
+        "beginner": "Beryllium is element 4. Remember the symbol Be, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Beryllium: configuration [He] 2s2, oxidation [2], and the headline measurements.",
+        "advanced": "Go deeper on Beryllium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 5,
+      "symbol": "B",
+      "name": "Boron",
+      "atomicWeight": 10.81,
+      "weightKind": "standard",
+      "categoryId": "metalloid",
+      "categoryLabel": "Metalloid",
+      "tags": [],
+      "block": "p",
+      "period": 2,
+      "group": 13,
+      "standardState": "solid",
+      "electronConfig": "[He] 2s2 2p1",
+      "electronConfigFull": "[He] 2s2 2p1",
+      "shellCounts": [
+        2,
+        3
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Boron is a metalloid in period 2.",
+        "intermediate": "Solid metalloid; [He] 2s2 2p1.",
+        "advanced": "Z=5, [He] 2s2 2p1, group 13."
+      },
+      "curriculum": {
+        "beginner": "Boron is element 5. Remember the symbol B, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Boron: configuration [He] 2s2 2p1, oxidation [3], and the headline measurements.",
+        "advanced": "Go deeper on Boron: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 6,
+      "symbol": "C",
+      "name": "Carbon",
+      "atomicWeight": 12.011,
+      "weightKind": "standard",
+      "categoryId": "reactive-nonmetal",
+      "categoryLabel": "Nonmetal",
+      "tags": [],
+      "block": "p",
+      "period": 2,
+      "group": 14,
+      "standardState": "solid",
+      "electronConfig": "[He] 2s2 2p2",
+      "electronConfigFull": "[He] 2s2 2p2",
+      "shellCounts": [
+        2,
+        4
+      ],
+      "oxidationStates": [
+        4,
+        2,
+        -4
+      ],
+      "primaryOxidation": 4,
+      "lattice": "Hexagonal (graphite)",
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Carbon is a nonmetal in period 2.",
+        "intermediate": "Hexagonal (graphite) nonmetal; [He] 2s2 2p2.",
+        "advanced": "Z=6, [He] 2s2 2p2, group 14."
+      },
+      "curriculum": {
+        "beginner": "Carbon is element 6. Remember the symbol C, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Carbon: configuration [He] 2s2 2p2, oxidation [4, 2, -4], and the headline measurements.",
+        "advanced": "Go deeper on Carbon: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {
+        "covalentRadiusPm": 70,
+        "paulingEn": 2.55,
+        "ionizationEv": 11.26,
+        "meltingK": 3823,
+        "boilingK": 4098,
+        "density": 2.26
+      },
+      "discovery": {
+        "year": null,
+        "people": "Ancient",
+        "text": "Known as charcoal and diamond since antiquity."
+      },
+      "applications": [
+        {
+          "title": "Life",
+          "body": "Backbone of organic molecules."
+        },
+        {
+          "title": "Materials",
+          "body": "Graphite, diamond, and carbon fiber."
+        }
+      ],
+      "spectralLines": [
+        {
+          "id": "C-193",
+          "nm": 193.09,
+          "eV": 6.42,
+          "transition": "C I",
+          "color": "UV",
+          "spectrum": "emission",
+          "frequencyHz": 1552604785333264.2
+        }
+      ],
+      "isotopes": [
+        {
+          "a": 12,
+          "mass": 12.0,
+          "spin": "0",
+          "abundance": 0.9893,
+          "stability": "stable",
+          "note": "Primary"
+        },
+        {
+          "a": 13,
+          "mass": 13.0034,
+          "spin": "1/2",
+          "abundance": 0.0107,
+          "stability": "stable",
+          "note": ""
+        },
+        {
+          "a": 14,
+          "mass": 14.0032,
+          "spin": "0",
+          "halfLife": "5700 y",
+          "decay": "\u03b2\u2212",
+          "stability": "trace",
+          "note": "Radiocarbon"
+        }
+      ],
+      "reaction": {
+        "reactants": "C + O\u2082",
+        "products": "CO\u2082",
+        "conditions": "Heat, excess air",
+        "beginner": "Carbon burns in air to carbon dioxide.",
+        "intermediate": "Complete combustion of carbon. Incomplete combustion yields CO.",
+        "advanced": "Illustration of a known reaction. Graphite and diamond both oxidize; kinetics differ."
+      }
+    },
+    {
+      "z": 7,
+      "symbol": "N",
+      "name": "Nitrogen",
+      "atomicWeight": 14.007,
+      "weightKind": "standard",
+      "categoryId": "reactive-nonmetal",
+      "categoryLabel": "Nonmetal",
+      "tags": [],
+      "block": "p",
+      "period": 2,
+      "group": 15,
+      "standardState": "gas",
+      "electronConfig": "[He] 2s2 2p3",
+      "electronConfigFull": "[He] 2s2 2p3",
+      "shellCounts": [
+        2,
+        5
+      ],
+      "oxidationStates": [
+        -3,
+        3,
+        5
+      ],
+      "primaryOxidation": -3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Nitrogen is a nonmetal in period 2.",
+        "intermediate": "Gas nonmetal; [He] 2s2 2p3.",
+        "advanced": "Z=7, [He] 2s2 2p3, group 15."
+      },
+      "curriculum": {
+        "beginner": "Nitrogen is element 7. Remember the symbol N, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Nitrogen: configuration [He] 2s2 2p3, oxidation [-3, 3, 5], and the headline measurements.",
+        "advanced": "Go deeper on Nitrogen: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {
+        "covalentRadiusPm": 56,
+        "paulingEn": 3.04,
+        "ionizationEv": 14.534,
+        "meltingK": 63.15,
+        "boilingK": 77.36,
+        "density": 0.001251
+      },
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 8,
+      "symbol": "O",
+      "name": "Oxygen",
+      "atomicWeight": 15.999,
+      "weightKind": "standard",
+      "categoryId": "reactive-nonmetal",
+      "categoryLabel": "Nonmetal",
+      "tags": [],
+      "block": "p",
+      "period": 2,
+      "group": 16,
+      "standardState": "gas",
+      "electronConfig": "[He] 2s2 2p4",
+      "electronConfigFull": "[He] 2s2 2p4",
+      "shellCounts": [
+        2,
+        6
+      ],
+      "oxidationStates": [
+        -2
+      ],
+      "primaryOxidation": -2,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Oxygen is a nonmetal in period 2.",
+        "intermediate": "Gas nonmetal; [He] 2s2 2p4.",
+        "advanced": "Z=8, [He] 2s2 2p4, group 16."
+      },
+      "curriculum": {
+        "beginner": "Oxygen is element 8. Remember the symbol O, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Oxygen: configuration [He] 2s2 2p4, oxidation [-2], and the headline measurements.",
+        "advanced": "Go deeper on Oxygen: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {
+        "covalentRadiusPm": 66,
+        "paulingEn": 3.44,
+        "ionizationEv": 13.618,
+        "meltingK": 54.36,
+        "boilingK": 90.2,
+        "density": 0.001429
+      },
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 9,
+      "symbol": "F",
+      "name": "Fluorine",
+      "atomicWeight": 18.998,
+      "weightKind": "standard",
+      "categoryId": "reactive-nonmetal",
+      "categoryLabel": "Halogen",
+      "tags": [
+        "halogen"
+      ],
+      "block": "p",
+      "period": 2,
+      "group": 17,
+      "standardState": "gas",
+      "electronConfig": "[He] 2s2 2p5",
+      "electronConfigFull": "[He] 2s2 2p5",
+      "shellCounts": [
+        2,
+        7
+      ],
+      "oxidationStates": [
+        -1
+      ],
+      "primaryOxidation": -1,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Fluorine is a halogen in period 2.",
+        "intermediate": "Gas halogen; [He] 2s2 2p5.",
+        "advanced": "Z=9, [He] 2s2 2p5, group 17."
+      },
+      "curriculum": {
+        "beginner": "Fluorine is element 9. Remember the symbol F, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Fluorine: configuration [He] 2s2 2p5, oxidation [-1], and the headline measurements.",
+        "advanced": "Go deeper on Fluorine: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {
+        "covalentRadiusPm": 42,
+        "paulingEn": 3.98,
+        "ionizationEv": 17.423,
+        "meltingK": 53.48,
+        "boilingK": 85.03,
+        "density": 0.001696
+      },
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 10,
+      "symbol": "Ne",
+      "name": "Neon",
+      "atomicWeight": 20.18,
+      "weightKind": "standard",
+      "categoryId": "noble-gas",
+      "categoryLabel": "Noble gas",
+      "tags": [],
+      "block": "p",
+      "period": 2,
+      "group": 18,
+      "standardState": "gas",
+      "electronConfig": "[He] 2s2 2p6",
+      "electronConfigFull": "[He] 2s2 2p6",
+      "shellCounts": [
+        2,
+        8
+      ],
+      "oxidationStates": [],
+      "primaryOxidation": null,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Neon is a noble gas in period 2.",
+        "intermediate": "Gas noble gas; [He] 2s2 2p6.",
+        "advanced": "Z=10, [He] 2s2 2p6, group 18."
+      },
+      "curriculum": {
+        "beginner": "Neon is element 10. Remember the symbol Ne, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Neon: configuration [He] 2s2 2p6, oxidation [], and the headline measurements.",
+        "advanced": "Go deeper on Neon: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {
+        "covalentRadiusPm": 38,
+        "ionizationEv": 21.565,
+        "meltingK": 24.56,
+        "boilingK": 27.07,
+        "density": 0.0009
+      },
+      "discovery": {
+        "year": 1898,
+        "people": "Ramsay and Travers",
+        "text": "Isolated from liquefied air after argon and krypton."
+      },
+      "applications": [
+        {
+          "title": "Lighting",
+          "body": "Neon discharge tubes."
+        },
+        {
+          "title": "Cryogenics",
+          "body": "A refrigerant and inert atmosphere."
+        }
+      ],
+      "spectralLines": [
+        {
+          "id": "Ne-585",
+          "nm": 585.25,
+          "eV": 2.119,
+          "transition": "3s[3/2]\u00b0 \u2192 3p[1/2]",
+          "color": "visible red",
+          "spectrum": "emission",
+          "frequencyHz": 512246831268688.56
+        },
+        {
+          "id": "Ne-640",
+          "nm": 640.22,
+          "eV": 1.937,
+          "transition": "3s \u2192 3p",
+          "color": "red",
+          "spectrum": "emission",
+          "frequencyHz": 468264749617319.0
+        },
+        {
+          "id": "Ne-540",
+          "nm": 540.06,
+          "eV": 2.296,
+          "transition": "3s \u2192 3p",
+          "color": "green",
+          "spectrum": "emission",
+          "frequencyHz": 555109539680776.25
+        }
+      ],
+      "isotopes": [
+        {
+          "a": 20,
+          "mass": 19.9924,
+          "spin": "0",
+          "abundance": 0.9048,
+          "stability": "stable",
+          "note": "Primary terrestrial"
+        },
+        {
+          "a": 21,
+          "mass": 20.9938,
+          "spin": "3/2",
+          "abundance": 0.0027,
+          "stability": "stable",
+          "note": "Nucleogenic origin"
+        },
+        {
+          "a": 22,
+          "mass": 21.9914,
+          "spin": "0",
+          "abundance": 0.0925,
+          "stability": "stable",
+          "note": "Stellar He burning"
+        },
+        {
+          "a": 19,
+          "mass": 19.0019,
+          "spin": "1/2",
+          "halfLife": "17.22 s",
+          "decay": "\u03b2+",
+          "stability": "trace",
+          "note": "Positron emitter"
+        },
+        {
+          "a": 24,
+          "mass": 24.0,
+          "spin": "0",
+          "halfLife": "3.38 min",
+          "decay": "\u03b2\u2212",
+          "stability": "synthetic",
+          "note": "Cluster decay product"
+        }
+      ],
+      "glow": {
+        "color": "#FF6A3D",
+        "text": "Pure orange-red ionization. High emission coefficient across 600\u2013660 nm bands.",
+        "kv": "1.2 kV Glow"
+      },
+      "astro": "Identified in planetary nebulae (e.g. NGC 6543) via [Ne III] forbidden lines. Teaching note, not a match score."
+    },
+    {
+      "z": 11,
+      "symbol": "Na",
+      "name": "Sodium",
+      "atomicWeight": 22.99,
+      "weightKind": "standard",
+      "categoryId": "alkali-metal",
+      "categoryLabel": "Alkali metal",
+      "tags": [],
+      "block": "s",
+      "period": 3,
+      "group": 1,
+      "standardState": "solid",
+      "electronConfig": "[Ne] 3s1",
+      "electronConfigFull": "[Ne] 3s1",
+      "shellCounts": [
+        2,
+        8,
+        1
+      ],
+      "oxidationStates": [
+        1
+      ],
+      "primaryOxidation": 1,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Sodium is a alkali metal in period 3.",
+        "intermediate": "Solid alkali metal; [Ne] 3s1.",
+        "advanced": "Z=11, [Ne] 3s1, group 1."
+      },
+      "curriculum": {
+        "beginner": "Sodium is element 11. Remember the symbol Na, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Sodium: configuration [Ne] 3s1, oxidation [1], and the headline measurements.",
+        "advanced": "Go deeper on Sodium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {
+        "covalentRadiusPm": 166,
+        "paulingEn": 0.93,
+        "ionizationEv": 5.139,
+        "meltingK": 370.87,
+        "boilingK": 1156,
+        "density": 0.968
+      },
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 12,
+      "symbol": "Mg",
+      "name": "Magnesium",
+      "atomicWeight": 24.305,
+      "weightKind": "standard",
+      "categoryId": "alkaline-earth",
+      "categoryLabel": "Alk. earth",
+      "tags": [],
+      "block": "s",
+      "period": 3,
+      "group": 2,
+      "standardState": "solid",
+      "electronConfig": "[Ne] 3s2",
+      "electronConfigFull": "[Ne] 3s2",
+      "shellCounts": [
+        2,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        2
+      ],
+      "primaryOxidation": 2,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Magnesium is a alk. earth in period 3.",
+        "intermediate": "Solid alk. earth; [Ne] 3s2.",
+        "advanced": "Z=12, [Ne] 3s2, group 2."
+      },
+      "curriculum": {
+        "beginner": "Magnesium is element 12. Remember the symbol Mg, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Magnesium: configuration [Ne] 3s2, oxidation [2], and the headline measurements.",
+        "advanced": "Go deeper on Magnesium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 13,
+      "symbol": "Al",
+      "name": "Aluminium",
+      "atomicWeight": 26.982,
+      "weightKind": "standard",
+      "categoryId": "post-transition",
+      "categoryLabel": "Post-transition",
+      "tags": [],
+      "block": "p",
+      "period": 3,
+      "group": 13,
+      "standardState": "solid",
+      "electronConfig": "[Ne] 3s2 3p1",
+      "electronConfigFull": "[Ne] 3s2 3p1",
+      "shellCounts": [
+        2,
+        8,
+        3
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": "FCC",
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Aluminium is a post-transition in period 3.",
+        "intermediate": "FCC post-transition; [Ne] 3s2 3p1.",
+        "advanced": "Z=13, [Ne] 3s2 3p1, group 13."
+      },
+      "curriculum": {
+        "beginner": "Aluminium is element 13. Remember the symbol Al, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Aluminium: configuration [Ne] 3s2 3p1, oxidation [3], and the headline measurements.",
+        "advanced": "Go deeper on Aluminium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 14,
+      "symbol": "Si",
+      "name": "Silicon",
+      "atomicWeight": 28.085,
+      "weightKind": "standard",
+      "categoryId": "metalloid",
+      "categoryLabel": "Metalloid",
+      "tags": [],
+      "block": "p",
+      "period": 3,
+      "group": 14,
+      "standardState": "solid",
+      "electronConfig": "[Ne] 3s2 3p2",
+      "electronConfigFull": "[Ne] 3s2 3p2",
+      "shellCounts": [
+        2,
+        8,
+        4
+      ],
+      "oxidationStates": [
+        4
+      ],
+      "primaryOxidation": 4,
+      "lattice": "Diamond cubic",
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Silicon is a metalloid in period 3.",
+        "intermediate": "Diamond cubic metalloid; [Ne] 3s2 3p2.",
+        "advanced": "Z=14, [Ne] 3s2 3p2, group 14."
+      },
+      "curriculum": {
+        "beginner": "Silicon is element 14. Remember the symbol Si, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Silicon: configuration [Ne] 3s2 3p2, oxidation [4], and the headline measurements.",
+        "advanced": "Go deeper on Silicon: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {
+        "covalentRadiusPm": 111,
+        "paulingEn": 1.9,
+        "ionizationEv": 8.152,
+        "meltingK": 1687,
+        "boilingK": 3538,
+        "density": 2.33
+      },
+      "discovery": {
+        "year": 1824,
+        "people": "J\u00f6ns Jacob Berzelius",
+        "text": "Isolated from silica after earlier work by Gay-Lussac and Thenard."
+      },
+      "applications": [
+        {
+          "title": "Electronics",
+          "body": "The elemental semiconductor of chips."
+        },
+        {
+          "title": "Glass",
+          "body": "Silica networks in glass and concrete."
+        }
+      ],
+      "spectralLines": [
+        {
+          "id": "Si-288",
+          "nm": 288.16,
+          "eV": 4.3,
+          "transition": "Si I",
+          "color": "UV",
+          "spectrum": "emission",
+          "frequencyHz": 1040368052470849.2
+        }
+      ],
+      "isotopes": [
+        {
+          "a": 28,
+          "mass": 27.9769,
+          "spin": "0",
+          "abundance": 0.9222,
+          "stability": "stable",
+          "note": "Primary"
+        },
+        {
+          "a": 29,
+          "mass": 28.9765,
+          "spin": "1/2",
+          "abundance": 0.0468,
+          "stability": "stable",
+          "note": ""
+        },
+        {
+          "a": 30,
+          "mass": 29.9738,
+          "spin": "0",
+          "abundance": 0.0309,
+          "stability": "stable",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "z": 15,
+      "symbol": "P",
+      "name": "Phosphorus",
+      "atomicWeight": 30.974,
+      "weightKind": "standard",
+      "categoryId": "reactive-nonmetal",
+      "categoryLabel": "Nonmetal",
+      "tags": [],
+      "block": "p",
+      "period": 3,
+      "group": 15,
+      "standardState": "solid",
+      "electronConfig": "[Ne] 3s2 3p3",
+      "electronConfigFull": "[Ne] 3s2 3p3",
+      "shellCounts": [
+        2,
+        8,
+        5
+      ],
+      "oxidationStates": [
+        -3,
+        3,
+        5
+      ],
+      "primaryOxidation": -3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Phosphorus is a nonmetal in period 3.",
+        "intermediate": "Solid nonmetal; [Ne] 3s2 3p3.",
+        "advanced": "Z=15, [Ne] 3s2 3p3, group 15."
+      },
+      "curriculum": {
+        "beginner": "Phosphorus is element 15. Remember the symbol P, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Phosphorus: configuration [Ne] 3s2 3p3, oxidation [-3, 3, 5], and the headline measurements.",
+        "advanced": "Go deeper on Phosphorus: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 16,
+      "symbol": "S",
+      "name": "Sulfur",
+      "atomicWeight": 32.06,
+      "weightKind": "standard",
+      "categoryId": "reactive-nonmetal",
+      "categoryLabel": "Nonmetal",
+      "tags": [],
+      "block": "p",
+      "period": 3,
+      "group": 16,
+      "standardState": "solid",
+      "electronConfig": "[Ne] 3s2 3p4",
+      "electronConfigFull": "[Ne] 3s2 3p4",
+      "shellCounts": [
+        2,
+        8,
+        6
+      ],
+      "oxidationStates": [
+        -2,
+        4,
+        6
+      ],
+      "primaryOxidation": -2,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Sulfur is a nonmetal in period 3.",
+        "intermediate": "Solid nonmetal; [Ne] 3s2 3p4.",
+        "advanced": "Z=16, [Ne] 3s2 3p4, group 16."
+      },
+      "curriculum": {
+        "beginner": "Sulfur is element 16. Remember the symbol S, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Sulfur: configuration [Ne] 3s2 3p4, oxidation [-2, 4, 6], and the headline measurements.",
+        "advanced": "Go deeper on Sulfur: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 17,
+      "symbol": "Cl",
+      "name": "Chlorine",
+      "atomicWeight": 35.45,
+      "weightKind": "standard",
+      "categoryId": "reactive-nonmetal",
+      "categoryLabel": "Halogen",
+      "tags": [
+        "halogen"
+      ],
+      "block": "p",
+      "period": 3,
+      "group": 17,
+      "standardState": "gas",
+      "electronConfig": "[Ne] 3s2 3p5",
+      "electronConfigFull": "[Ne] 3s2 3p5",
+      "shellCounts": [
+        2,
+        8,
+        7
+      ],
+      "oxidationStates": [
+        -1,
+        1,
+        5,
+        7
+      ],
+      "primaryOxidation": -1,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Chlorine is a halogen in period 3.",
+        "intermediate": "Gas halogen; [Ne] 3s2 3p5.",
+        "advanced": "Z=17, [Ne] 3s2 3p5, group 17."
+      },
+      "curriculum": {
+        "beginner": "Chlorine is element 17. Remember the symbol Cl, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Chlorine: configuration [Ne] 3s2 3p5, oxidation [-1, 1, 5, 7], and the headline measurements.",
+        "advanced": "Go deeper on Chlorine: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 18,
+      "symbol": "Ar",
+      "name": "Argon",
+      "atomicWeight": 39.948,
+      "weightKind": "standard",
+      "categoryId": "noble-gas",
+      "categoryLabel": "Noble gas",
+      "tags": [],
+      "block": "p",
+      "period": 3,
+      "group": 18,
+      "standardState": "gas",
+      "electronConfig": "[Ne] 3s2 3p6",
+      "electronConfigFull": "[Ne] 3s2 3p6",
+      "shellCounts": [
+        2,
+        8,
+        8
+      ],
+      "oxidationStates": [],
+      "primaryOxidation": null,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Argon is a noble gas in period 3.",
+        "intermediate": "Gas noble gas; [Ne] 3s2 3p6.",
+        "advanced": "Z=18, [Ne] 3s2 3p6, group 18."
+      },
+      "curriculum": {
+        "beginner": "Argon is element 18. Remember the symbol Ar, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Argon: configuration [Ne] 3s2 3p6, oxidation [], and the headline measurements.",
+        "advanced": "Go deeper on Argon: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 19,
+      "symbol": "K",
+      "name": "Potassium",
+      "atomicWeight": 39.098,
+      "weightKind": "standard",
+      "categoryId": "alkali-metal",
+      "categoryLabel": "Alkali metal",
+      "tags": [],
+      "block": "s",
+      "period": 4,
+      "group": 1,
+      "standardState": "solid",
+      "electronConfig": "[Ar] 4s1",
+      "electronConfigFull": "[Ar] 4s1",
+      "shellCounts": [
+        2,
+        8,
+        8,
+        1
+      ],
+      "oxidationStates": [
+        1
+      ],
+      "primaryOxidation": 1,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Potassium is a alkali metal in period 4.",
+        "intermediate": "Solid alkali metal; [Ar] 4s1.",
+        "advanced": "Z=19, [Ar] 4s1, group 1."
+      },
+      "curriculum": {
+        "beginner": "Potassium is element 19. Remember the symbol K, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Potassium: configuration [Ar] 4s1, oxidation [1], and the headline measurements.",
+        "advanced": "Go deeper on Potassium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 20,
+      "symbol": "Ca",
+      "name": "Calcium",
+      "atomicWeight": 40.078,
+      "weightKind": "standard",
+      "categoryId": "alkaline-earth",
+      "categoryLabel": "Alk. earth",
+      "tags": [],
+      "block": "s",
+      "period": 4,
+      "group": 2,
+      "standardState": "solid",
+      "electronConfig": "[Ar] 4s2",
+      "electronConfigFull": "[Ar] 4s2",
+      "shellCounts": [
+        2,
+        8,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        2
+      ],
+      "primaryOxidation": 2,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Calcium is a alk. earth in period 4.",
+        "intermediate": "Solid alk. earth; [Ar] 4s2.",
+        "advanced": "Z=20, [Ar] 4s2, group 2."
+      },
+      "curriculum": {
+        "beginner": "Calcium is element 20. Remember the symbol Ca, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Calcium: configuration [Ar] 4s2, oxidation [2], and the headline measurements.",
+        "advanced": "Go deeper on Calcium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 21,
+      "symbol": "Sc",
+      "name": "Scandium",
+      "atomicWeight": 44.956,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 4,
+      "group": 3,
+      "standardState": "solid",
+      "electronConfig": "[Ar] 3d1 4s2",
+      "electronConfigFull": "[Ar] 3d1 4s2",
+      "shellCounts": [
+        2,
+        8,
+        9,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Scandium is a transition metal in period 4.",
+        "intermediate": "Solid transition metal; [Ar] 3d1 4s2.",
+        "advanced": "Z=21, [Ar] 3d1 4s2, group 3."
+      },
+      "curriculum": {
+        "beginner": "Scandium is element 21. Remember the symbol Sc, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Scandium: configuration [Ar] 3d1 4s2, oxidation [3], and the headline measurements.",
+        "advanced": "Go deeper on Scandium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 22,
+      "symbol": "Ti",
+      "name": "Titanium",
+      "atomicWeight": 47.867,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 4,
+      "group": 4,
+      "standardState": "solid",
+      "electronConfig": "[Ar] 3d2 4s2",
+      "electronConfigFull": "[Ar] 3d2 4s2",
+      "shellCounts": [
+        2,
+        8,
+        10,
+        2
+      ],
+      "oxidationStates": [
+        4,
+        3,
+        2
+      ],
+      "primaryOxidation": 4,
+      "lattice": "Hexagonal (HCP)",
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Titanium is a transition metal in period 4.",
+        "intermediate": "Hexagonal (HCP) transition metal; [Ar] 3d2 4s2.",
+        "advanced": "Z=22, [Ar] 3d2 4s2, group 4."
+      },
+      "curriculum": {
+        "beginner": "Titanium is element 22. Remember the symbol Ti, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Titanium: configuration [Ar] 3d2 4s2, oxidation [4, 3, 2], and the headline measurements.",
+        "advanced": "Go deeper on Titanium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {
+        "covalentRadiusPm": 147,
+        "paulingEn": 1.54,
+        "ionizationEv": 6.828,
+        "meltingK": 1941,
+        "boilingK": 3560,
+        "density": 4.506
+      },
+      "discovery": {
+        "year": 1791,
+        "people": "William Gregor",
+        "text": "Discovered in Cornwall; independently isolated by Klaproth, who named it after the Titans."
+      },
+      "applications": [
+        {
+          "title": "Aerospace frames",
+          "body": "High strength-to-weight in jet engines and airframes."
+        },
+        {
+          "title": "Medical implants",
+          "body": "Complete bio-inertness, used in bone work."
+        },
+        {
+          "title": "Sub-sea",
+          "body": "Immunity to saltwater corrosion."
+        },
+        {
+          "title": "Pigments",
+          "body": "Titanium dioxide white pigment."
+        }
+      ],
+      "spectralLines": [
+        {
+          "id": "Ti-399",
+          "nm": 399.86,
+          "eV": 3.1,
+          "transition": "Ti I",
+          "color": "violet",
+          "spectrum": "emission",
+          "frequencyHz": 749743555244335.5
+        }
+      ],
+      "isotopes": [
+        {
+          "a": 46,
+          "mass": 45.9526,
+          "spin": "0",
+          "abundance": 0.0825,
+          "stability": "stable",
+          "note": ""
+        },
+        {
+          "a": 47,
+          "mass": 46.9518,
+          "spin": "5/2",
+          "abundance": 0.0744,
+          "stability": "stable",
+          "note": ""
+        },
+        {
+          "a": 48,
+          "mass": 47.9479,
+          "spin": "0",
+          "abundance": 0.7372,
+          "stability": "stable",
+          "note": "Primary"
+        },
+        {
+          "a": 49,
+          "mass": 48.9479,
+          "spin": "7/2",
+          "abundance": 0.0541,
+          "stability": "stable",
+          "note": ""
+        },
+        {
+          "a": 50,
+          "mass": 49.9448,
+          "spin": "0",
+          "abundance": 0.0518,
+          "stability": "stable",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "z": 23,
+      "symbol": "V",
+      "name": "Vanadium",
+      "atomicWeight": 50.942,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 4,
+      "group": 5,
+      "standardState": "solid",
+      "electronConfig": "[Ar] 3d3 4s2",
+      "electronConfigFull": "[Ar] 3d3 4s2",
+      "shellCounts": [
+        2,
+        8,
+        11,
+        2
+      ],
+      "oxidationStates": [
+        5,
+        4,
+        3
+      ],
+      "primaryOxidation": 5,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Vanadium is a transition metal in period 4.",
+        "intermediate": "Solid transition metal; [Ar] 3d3 4s2.",
+        "advanced": "Z=23, [Ar] 3d3 4s2, group 5."
+      },
+      "curriculum": {
+        "beginner": "Vanadium is element 23. Remember the symbol V, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Vanadium: configuration [Ar] 3d3 4s2, oxidation [5, 4, 3], and the headline measurements.",
+        "advanced": "Go deeper on Vanadium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 24,
+      "symbol": "Cr",
+      "name": "Chromium",
+      "atomicWeight": 51.996,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 4,
+      "group": 6,
+      "standardState": "solid",
+      "electronConfig": "[Ar] 3d5 4s1",
+      "electronConfigFull": "[Ar] 3d5 4s1",
+      "shellCounts": [
+        2,
+        8,
+        13,
+        1
+      ],
+      "oxidationStates": [
+        6,
+        3,
+        2
+      ],
+      "primaryOxidation": 6,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Chromium is a transition metal in period 4.",
+        "intermediate": "Solid transition metal; [Ar] 3d5 4s1.",
+        "advanced": "Z=24, [Ar] 3d5 4s1, group 6."
+      },
+      "curriculum": {
+        "beginner": "Chromium is element 24. Remember the symbol Cr, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Chromium: configuration [Ar] 3d5 4s1, oxidation [6, 3, 2], and the headline measurements.",
+        "advanced": "Go deeper on Chromium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 25,
+      "symbol": "Mn",
+      "name": "Manganese",
+      "atomicWeight": 54.938,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 4,
+      "group": 7,
+      "standardState": "solid",
+      "electronConfig": "[Ar] 3d5 4s2",
+      "electronConfigFull": "[Ar] 3d5 4s2",
+      "shellCounts": [
+        2,
+        8,
+        13,
+        2
+      ],
+      "oxidationStates": [
+        7,
+        4,
+        2
+      ],
+      "primaryOxidation": 7,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Manganese is a transition metal in period 4.",
+        "intermediate": "Solid transition metal; [Ar] 3d5 4s2.",
+        "advanced": "Z=25, [Ar] 3d5 4s2, group 7."
+      },
+      "curriculum": {
+        "beginner": "Manganese is element 25. Remember the symbol Mn, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Manganese: configuration [Ar] 3d5 4s2, oxidation [7, 4, 2], and the headline measurements.",
+        "advanced": "Go deeper on Manganese: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 26,
+      "symbol": "Fe",
+      "name": "Iron",
+      "atomicWeight": 55.845,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 4,
+      "group": 8,
+      "standardState": "solid",
+      "electronConfig": "[Ar] 3d6 4s2",
+      "electronConfigFull": "[Ar] 3d6 4s2",
+      "shellCounts": [
+        2,
+        8,
+        14,
+        2
+      ],
+      "oxidationStates": [
+        3,
+        2
+      ],
+      "primaryOxidation": 3,
+      "lattice": "BCC",
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Iron is a transition metal in period 4.",
+        "intermediate": "BCC transition metal; [Ar] 3d6 4s2.",
+        "advanced": "Z=26, [Ar] 3d6 4s2, group 8."
+      },
+      "curriculum": {
+        "beginner": "Iron is element 26. Remember the symbol Fe, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Iron: configuration [Ar] 3d6 4s2, oxidation [3, 2], and the headline measurements.",
+        "advanced": "Go deeper on Iron: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {
+        "covalentRadiusPm": 132,
+        "paulingEn": 1.83,
+        "ionizationEv": 7.902,
+        "meltingK": 1811,
+        "boilingK": 3134,
+        "density": 7.874
+      },
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 27,
+      "symbol": "Co",
+      "name": "Cobalt",
+      "atomicWeight": 58.933,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 4,
+      "group": 9,
+      "standardState": "solid",
+      "electronConfig": "[Ar] 3d7 4s2",
+      "electronConfigFull": "[Ar] 3d7 4s2",
+      "shellCounts": [
+        2,
+        8,
+        15,
+        2
+      ],
+      "oxidationStates": [
+        3,
+        2
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Cobalt is a transition metal in period 4.",
+        "intermediate": "Solid transition metal; [Ar] 3d7 4s2.",
+        "advanced": "Z=27, [Ar] 3d7 4s2, group 9."
+      },
+      "curriculum": {
+        "beginner": "Cobalt is element 27. Remember the symbol Co, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Cobalt: configuration [Ar] 3d7 4s2, oxidation [3, 2], and the headline measurements.",
+        "advanced": "Go deeper on Cobalt: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 28,
+      "symbol": "Ni",
+      "name": "Nickel",
+      "atomicWeight": 58.693,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 4,
+      "group": 10,
+      "standardState": "solid",
+      "electronConfig": "[Ar] 3d8 4s2",
+      "electronConfigFull": "[Ar] 3d8 4s2",
+      "shellCounts": [
+        2,
+        8,
+        16,
+        2
+      ],
+      "oxidationStates": [
+        2
+      ],
+      "primaryOxidation": 2,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Nickel is a transition metal in period 4.",
+        "intermediate": "Solid transition metal; [Ar] 3d8 4s2.",
+        "advanced": "Z=28, [Ar] 3d8 4s2, group 10."
+      },
+      "curriculum": {
+        "beginner": "Nickel is element 28. Remember the symbol Ni, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Nickel: configuration [Ar] 3d8 4s2, oxidation [2], and the headline measurements.",
+        "advanced": "Go deeper on Nickel: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 29,
+      "symbol": "Cu",
+      "name": "Copper",
+      "atomicWeight": 63.546,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 4,
+      "group": 11,
+      "standardState": "solid",
+      "electronConfig": "[Ar] 3d10 4s1",
+      "electronConfigFull": "[Ar] 3d10 4s1",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        1
+      ],
+      "oxidationStates": [
+        2,
+        1
+      ],
+      "primaryOxidation": 2,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Copper is a transition metal in period 4.",
+        "intermediate": "Solid transition metal; [Ar] 3d10 4s1.",
+        "advanced": "Z=29, [Ar] 3d10 4s1, group 11."
+      },
+      "curriculum": {
+        "beginner": "Copper is element 29. Remember the symbol Cu, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Copper: configuration [Ar] 3d10 4s1, oxidation [2, 1], and the headline measurements.",
+        "advanced": "Go deeper on Copper: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 30,
+      "symbol": "Zn",
+      "name": "Zinc",
+      "atomicWeight": 65.38,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 4,
+      "group": 12,
+      "standardState": "solid",
+      "electronConfig": "[Ar] 3d10 4s2",
+      "electronConfigFull": "[Ar] 3d10 4s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        2
+      ],
+      "oxidationStates": [
+        2
+      ],
+      "primaryOxidation": 2,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Zinc is a transition metal in period 4.",
+        "intermediate": "Solid transition metal; [Ar] 3d10 4s2.",
+        "advanced": "Z=30, [Ar] 3d10 4s2, group 12."
+      },
+      "curriculum": {
+        "beginner": "Zinc is element 30. Remember the symbol Zn, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Zinc: configuration [Ar] 3d10 4s2, oxidation [2], and the headline measurements.",
+        "advanced": "Go deeper on Zinc: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 31,
+      "symbol": "Ga",
+      "name": "Gallium",
+      "atomicWeight": 69.723,
+      "weightKind": "standard",
+      "categoryId": "post-transition",
+      "categoryLabel": "Post-transition",
+      "tags": [],
+      "block": "p",
+      "period": 4,
+      "group": 13,
+      "standardState": "solid",
+      "electronConfig": "[Ar] 3d10 4s2 4p1",
+      "electronConfigFull": "[Ar] 3d10 4s2 4p1",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        3
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Gallium is a post-transition in period 4.",
+        "intermediate": "Solid post-transition; [Ar] 3d10 4s2 4p1.",
+        "advanced": "Z=31, [Ar] 3d10 4s2 4p1, group 13."
+      },
+      "curriculum": {
+        "beginner": "Gallium is element 31. Remember the symbol Ga, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Gallium: configuration [Ar] 3d10 4s2 4p1, oxidation [3], and the headline measurements.",
+        "advanced": "Go deeper on Gallium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 32,
+      "symbol": "Ge",
+      "name": "Germanium",
+      "atomicWeight": 72.63,
+      "weightKind": "standard",
+      "categoryId": "metalloid",
+      "categoryLabel": "Metalloid",
+      "tags": [],
+      "block": "p",
+      "period": 4,
+      "group": 14,
+      "standardState": "solid",
+      "electronConfig": "[Ar] 3d10 4s2 4p2",
+      "electronConfigFull": "[Ar] 3d10 4s2 4p2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        4
+      ],
+      "oxidationStates": [
+        4
+      ],
+      "primaryOxidation": 4,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Germanium is a metalloid in period 4.",
+        "intermediate": "Solid metalloid; [Ar] 3d10 4s2 4p2.",
+        "advanced": "Z=32, [Ar] 3d10 4s2 4p2, group 14."
+      },
+      "curriculum": {
+        "beginner": "Germanium is element 32. Remember the symbol Ge, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Germanium: configuration [Ar] 3d10 4s2 4p2, oxidation [4], and the headline measurements.",
+        "advanced": "Go deeper on Germanium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 33,
+      "symbol": "As",
+      "name": "Arsenic",
+      "atomicWeight": 74.922,
+      "weightKind": "standard",
+      "categoryId": "metalloid",
+      "categoryLabel": "Metalloid",
+      "tags": [],
+      "block": "p",
+      "period": 4,
+      "group": 15,
+      "standardState": "solid",
+      "electronConfig": "[Ar] 3d10 4s2 4p3",
+      "electronConfigFull": "[Ar] 3d10 4s2 4p3",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        5
+      ],
+      "oxidationStates": [
+        -3,
+        3,
+        5
+      ],
+      "primaryOxidation": -3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Arsenic is a metalloid in period 4.",
+        "intermediate": "Solid metalloid; [Ar] 3d10 4s2 4p3.",
+        "advanced": "Z=33, [Ar] 3d10 4s2 4p3, group 15."
+      },
+      "curriculum": {
+        "beginner": "Arsenic is element 33. Remember the symbol As, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Arsenic: configuration [Ar] 3d10 4s2 4p3, oxidation [-3, 3, 5], and the headline measurements.",
+        "advanced": "Go deeper on Arsenic: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 34,
+      "symbol": "Se",
+      "name": "Selenium",
+      "atomicWeight": 78.971,
+      "weightKind": "standard",
+      "categoryId": "reactive-nonmetal",
+      "categoryLabel": "Nonmetal",
+      "tags": [],
+      "block": "p",
+      "period": 4,
+      "group": 16,
+      "standardState": "solid",
+      "electronConfig": "[Ar] 3d10 4s2 4p4",
+      "electronConfigFull": "[Ar] 3d10 4s2 4p4",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        6
+      ],
+      "oxidationStates": [
+        -2,
+        4,
+        6
+      ],
+      "primaryOxidation": -2,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Selenium is a nonmetal in period 4.",
+        "intermediate": "Solid nonmetal; [Ar] 3d10 4s2 4p4.",
+        "advanced": "Z=34, [Ar] 3d10 4s2 4p4, group 16."
+      },
+      "curriculum": {
+        "beginner": "Selenium is element 34. Remember the symbol Se, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Selenium: configuration [Ar] 3d10 4s2 4p4, oxidation [-2, 4, 6], and the headline measurements.",
+        "advanced": "Go deeper on Selenium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 35,
+      "symbol": "Br",
+      "name": "Bromine",
+      "atomicWeight": 79.904,
+      "weightKind": "standard",
+      "categoryId": "reactive-nonmetal",
+      "categoryLabel": "Halogen",
+      "tags": [
+        "halogen"
+      ],
+      "block": "p",
+      "period": 4,
+      "group": 17,
+      "standardState": "liquid",
+      "electronConfig": "[Ar] 3d10 4s2 4p5",
+      "electronConfigFull": "[Ar] 3d10 4s2 4p5",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        7
+      ],
+      "oxidationStates": [
+        -1
+      ],
+      "primaryOxidation": -1,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Bromine is a halogen in period 4.",
+        "intermediate": "Liquid halogen; [Ar] 3d10 4s2 4p5.",
+        "advanced": "Z=35, [Ar] 3d10 4s2 4p5, group 17."
+      },
+      "curriculum": {
+        "beginner": "Bromine is element 35. Remember the symbol Br, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Bromine: configuration [Ar] 3d10 4s2 4p5, oxidation [-1], and the headline measurements.",
+        "advanced": "Go deeper on Bromine: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 36,
+      "symbol": "Kr",
+      "name": "Krypton",
+      "atomicWeight": 83.798,
+      "weightKind": "standard",
+      "categoryId": "noble-gas",
+      "categoryLabel": "Noble gas",
+      "tags": [],
+      "block": "p",
+      "period": 4,
+      "group": 18,
+      "standardState": "gas",
+      "electronConfig": "[Ar] 3d10 4s2 4p6",
+      "electronConfigFull": "[Ar] 3d10 4s2 4p6",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        8
+      ],
+      "oxidationStates": [],
+      "primaryOxidation": null,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Krypton is a noble gas in period 4.",
+        "intermediate": "Gas noble gas; [Ar] 3d10 4s2 4p6.",
+        "advanced": "Z=36, [Ar] 3d10 4s2 4p6, group 18."
+      },
+      "curriculum": {
+        "beginner": "Krypton is element 36. Remember the symbol Kr, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Krypton: configuration [Ar] 3d10 4s2 4p6, oxidation [], and the headline measurements.",
+        "advanced": "Go deeper on Krypton: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 37,
+      "symbol": "Rb",
+      "name": "Rubidium",
+      "atomicWeight": 85.468,
+      "weightKind": "standard",
+      "categoryId": "alkali-metal",
+      "categoryLabel": "Alkali metal",
+      "tags": [],
+      "block": "s",
+      "period": 5,
+      "group": 1,
+      "standardState": "solid",
+      "electronConfig": "[Kr] 5s1",
+      "electronConfigFull": "[Kr] 5s1",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        8,
+        1
+      ],
+      "oxidationStates": [
+        1
+      ],
+      "primaryOxidation": 1,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Rubidium is a alkali metal in period 5.",
+        "intermediate": "Solid alkali metal; [Kr] 5s1.",
+        "advanced": "Z=37, [Kr] 5s1, group 1."
+      },
+      "curriculum": {
+        "beginner": "Rubidium is element 37. Remember the symbol Rb, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Rubidium: configuration [Kr] 5s1, oxidation [1], and the headline measurements.",
+        "advanced": "Go deeper on Rubidium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 38,
+      "symbol": "Sr",
+      "name": "Strontium",
+      "atomicWeight": 87.62,
+      "weightKind": "standard",
+      "categoryId": "alkaline-earth",
+      "categoryLabel": "Alk. earth",
+      "tags": [],
+      "block": "s",
+      "period": 5,
+      "group": 2,
+      "standardState": "solid",
+      "electronConfig": "[Kr] 5s2",
+      "electronConfigFull": "[Kr] 5s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        2
+      ],
+      "primaryOxidation": 2,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Strontium is a alk. earth in period 5.",
+        "intermediate": "Solid alk. earth; [Kr] 5s2.",
+        "advanced": "Z=38, [Kr] 5s2, group 2."
+      },
+      "curriculum": {
+        "beginner": "Strontium is element 38. Remember the symbol Sr, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Strontium: configuration [Kr] 5s2, oxidation [2], and the headline measurements.",
+        "advanced": "Go deeper on Strontium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 39,
+      "symbol": "Y",
+      "name": "Yttrium",
+      "atomicWeight": 88.906,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 5,
+      "group": 3,
+      "standardState": "solid",
+      "electronConfig": "[Kr] 4d1 5s2",
+      "electronConfigFull": "[Kr] 4d1 5s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        9,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Yttrium is a transition metal in period 5.",
+        "intermediate": "Solid transition metal; [Kr] 4d1 5s2.",
+        "advanced": "Z=39, [Kr] 4d1 5s2, group 3."
+      },
+      "curriculum": {
+        "beginner": "Yttrium is element 39. Remember the symbol Y, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Yttrium: configuration [Kr] 4d1 5s2, oxidation [3], and the headline measurements.",
+        "advanced": "Go deeper on Yttrium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 40,
+      "symbol": "Zr",
+      "name": "Zirconium",
+      "atomicWeight": 91.224,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 5,
+      "group": 4,
+      "standardState": "solid",
+      "electronConfig": "[Kr] 4d2 5s2",
+      "electronConfigFull": "[Kr] 4d2 5s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        10,
+        2
+      ],
+      "oxidationStates": [
+        4
+      ],
+      "primaryOxidation": 4,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Zirconium is a transition metal in period 5.",
+        "intermediate": "Solid transition metal; [Kr] 4d2 5s2.",
+        "advanced": "Z=40, [Kr] 4d2 5s2, group 4."
+      },
+      "curriculum": {
+        "beginner": "Zirconium is element 40. Remember the symbol Zr, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Zirconium: configuration [Kr] 4d2 5s2, oxidation [4], and the headline measurements.",
+        "advanced": "Go deeper on Zirconium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 41,
+      "symbol": "Nb",
+      "name": "Niobium",
+      "atomicWeight": 92.906,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 5,
+      "group": 5,
+      "standardState": "solid",
+      "electronConfig": "[Kr] 4d4 5s1",
+      "electronConfigFull": "[Kr] 4d4 5s1",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        12,
+        1
+      ],
+      "oxidationStates": [
+        5
+      ],
+      "primaryOxidation": 5,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Niobium is a transition metal in period 5.",
+        "intermediate": "Solid transition metal; [Kr] 4d4 5s1.",
+        "advanced": "Z=41, [Kr] 4d4 5s1, group 5."
+      },
+      "curriculum": {
+        "beginner": "Niobium is element 41. Remember the symbol Nb, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Niobium: configuration [Kr] 4d4 5s1, oxidation [5], and the headline measurements.",
+        "advanced": "Go deeper on Niobium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 42,
+      "symbol": "Mo",
+      "name": "Molybdenum",
+      "atomicWeight": 95.95,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 5,
+      "group": 6,
+      "standardState": "solid",
+      "electronConfig": "[Kr] 4d5 5s1",
+      "electronConfigFull": "[Kr] 4d5 5s1",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        13,
+        1
+      ],
+      "oxidationStates": [
+        6
+      ],
+      "primaryOxidation": 6,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Molybdenum is a transition metal in period 5.",
+        "intermediate": "Solid transition metal; [Kr] 4d5 5s1.",
+        "advanced": "Z=42, [Kr] 4d5 5s1, group 6."
+      },
+      "curriculum": {
+        "beginner": "Molybdenum is element 42. Remember the symbol Mo, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Molybdenum: configuration [Kr] 4d5 5s1, oxidation [6], and the headline measurements.",
+        "advanced": "Go deeper on Molybdenum: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 43,
+      "symbol": "Tc",
+      "name": "Technetium",
+      "atomicWeight": 98.0,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 5,
+      "group": 7,
+      "standardState": "solid",
+      "electronConfig": "[Kr] 4d5 5s2",
+      "electronConfigFull": "[Kr] 4d5 5s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        13,
+        2
+      ],
+      "oxidationStates": [
+        7
+      ],
+      "primaryOxidation": 7,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Technetium is a transition metal in period 5.",
+        "intermediate": "Solid transition metal; [Kr] 4d5 5s2.",
+        "advanced": "Z=43, [Kr] 4d5 5s2, group 7."
+      },
+      "curriculum": {
+        "beginner": "Technetium is element 43. Remember the symbol Tc, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Technetium: configuration [Kr] 4d5 5s2, oxidation [7], and the headline measurements.",
+        "advanced": "Go deeper on Technetium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 44,
+      "symbol": "Ru",
+      "name": "Ruthenium",
+      "atomicWeight": 101.07,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 5,
+      "group": 8,
+      "standardState": "solid",
+      "electronConfig": "[Kr] 4d7 5s1",
+      "electronConfigFull": "[Kr] 4d7 5s1",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        15,
+        1
+      ],
+      "oxidationStates": [
+        4,
+        3
+      ],
+      "primaryOxidation": 4,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Ruthenium is a transition metal in period 5.",
+        "intermediate": "Solid transition metal; [Kr] 4d7 5s1.",
+        "advanced": "Z=44, [Kr] 4d7 5s1, group 8."
+      },
+      "curriculum": {
+        "beginner": "Ruthenium is element 44. Remember the symbol Ru, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Ruthenium: configuration [Kr] 4d7 5s1, oxidation [4, 3], and the headline measurements.",
+        "advanced": "Go deeper on Ruthenium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 45,
+      "symbol": "Rh",
+      "name": "Rhodium",
+      "atomicWeight": 102.91,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 5,
+      "group": 9,
+      "standardState": "solid",
+      "electronConfig": "[Kr] 4d8 5s1",
+      "electronConfigFull": "[Kr] 4d8 5s1",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        16,
+        1
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Rhodium is a transition metal in period 5.",
+        "intermediate": "Solid transition metal; [Kr] 4d8 5s1.",
+        "advanced": "Z=45, [Kr] 4d8 5s1, group 9."
+      },
+      "curriculum": {
+        "beginner": "Rhodium is element 45. Remember the symbol Rh, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Rhodium: configuration [Kr] 4d8 5s1, oxidation [3], and the headline measurements.",
+        "advanced": "Go deeper on Rhodium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 46,
+      "symbol": "Pd",
+      "name": "Palladium",
+      "atomicWeight": 106.42,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 5,
+      "group": 10,
+      "standardState": "solid",
+      "electronConfig": "[Kr] 4d10",
+      "electronConfigFull": "[Kr] 4d10",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        18
+      ],
+      "oxidationStates": [
+        2,
+        4
+      ],
+      "primaryOxidation": 2,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Palladium is a transition metal in period 5.",
+        "intermediate": "Solid transition metal; [Kr] 4d10.",
+        "advanced": "Z=46, [Kr] 4d10, group 10."
+      },
+      "curriculum": {
+        "beginner": "Palladium is element 46. Remember the symbol Pd, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Palladium: configuration [Kr] 4d10, oxidation [2, 4], and the headline measurements.",
+        "advanced": "Go deeper on Palladium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 47,
+      "symbol": "Ag",
+      "name": "Silver",
+      "atomicWeight": 107.87,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 5,
+      "group": 11,
+      "standardState": "solid",
+      "electronConfig": "[Kr] 4d10 5s1",
+      "electronConfigFull": "[Kr] 4d10 5s1",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        18,
+        1
+      ],
+      "oxidationStates": [
+        1
+      ],
+      "primaryOxidation": 1,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Silver is a transition metal in period 5.",
+        "intermediate": "Solid transition metal; [Kr] 4d10 5s1.",
+        "advanced": "Z=47, [Kr] 4d10 5s1, group 11."
+      },
+      "curriculum": {
+        "beginner": "Silver is element 47. Remember the symbol Ag, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Silver: configuration [Kr] 4d10 5s1, oxidation [1], and the headline measurements.",
+        "advanced": "Go deeper on Silver: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 48,
+      "symbol": "Cd",
+      "name": "Cadmium",
+      "atomicWeight": 112.41,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 5,
+      "group": 12,
+      "standardState": "solid",
+      "electronConfig": "[Kr] 4d10 5s2",
+      "electronConfigFull": "[Kr] 4d10 5s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        18,
+        2
+      ],
+      "oxidationStates": [
+        2
+      ],
+      "primaryOxidation": 2,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Cadmium is a transition metal in period 5.",
+        "intermediate": "Solid transition metal; [Kr] 4d10 5s2.",
+        "advanced": "Z=48, [Kr] 4d10 5s2, group 12."
+      },
+      "curriculum": {
+        "beginner": "Cadmium is element 48. Remember the symbol Cd, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Cadmium: configuration [Kr] 4d10 5s2, oxidation [2], and the headline measurements.",
+        "advanced": "Go deeper on Cadmium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 49,
+      "symbol": "In",
+      "name": "Indium",
+      "atomicWeight": 114.82,
+      "weightKind": "standard",
+      "categoryId": "post-transition",
+      "categoryLabel": "Post-transition",
+      "tags": [],
+      "block": "p",
+      "period": 5,
+      "group": 13,
+      "standardState": "solid",
+      "electronConfig": "[Kr] 4d10 5s2 5p1",
+      "electronConfigFull": "[Kr] 4d10 5s2 5p1",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        18,
+        3
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Indium is a post-transition in period 5.",
+        "intermediate": "Solid post-transition; [Kr] 4d10 5s2 5p1.",
+        "advanced": "Z=49, [Kr] 4d10 5s2 5p1, group 13."
+      },
+      "curriculum": {
+        "beginner": "Indium is element 49. Remember the symbol In, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Indium: configuration [Kr] 4d10 5s2 5p1, oxidation [3], and the headline measurements.",
+        "advanced": "Go deeper on Indium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 50,
+      "symbol": "Sn",
+      "name": "Tin",
+      "atomicWeight": 118.71,
+      "weightKind": "standard",
+      "categoryId": "post-transition",
+      "categoryLabel": "Post-transition",
+      "tags": [],
+      "block": "p",
+      "period": 5,
+      "group": 14,
+      "standardState": "solid",
+      "electronConfig": "[Kr] 4d10 5s2 5p2",
+      "electronConfigFull": "[Kr] 4d10 5s2 5p2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        18,
+        4
+      ],
+      "oxidationStates": [
+        4,
+        2
+      ],
+      "primaryOxidation": 4,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Tin is a post-transition in period 5.",
+        "intermediate": "Solid post-transition; [Kr] 4d10 5s2 5p2.",
+        "advanced": "Z=50, [Kr] 4d10 5s2 5p2, group 14."
+      },
+      "curriculum": {
+        "beginner": "Tin is element 50. Remember the symbol Sn, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Tin: configuration [Kr] 4d10 5s2 5p2, oxidation [4, 2], and the headline measurements.",
+        "advanced": "Go deeper on Tin: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 51,
+      "symbol": "Sb",
+      "name": "Antimony",
+      "atomicWeight": 121.76,
+      "weightKind": "standard",
+      "categoryId": "metalloid",
+      "categoryLabel": "Metalloid",
+      "tags": [],
+      "block": "p",
+      "period": 5,
+      "group": 15,
+      "standardState": "solid",
+      "electronConfig": "[Kr] 4d10 5s2 5p3",
+      "electronConfigFull": "[Kr] 4d10 5s2 5p3",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        18,
+        5
+      ],
+      "oxidationStates": [
+        -3,
+        3,
+        5
+      ],
+      "primaryOxidation": -3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Antimony is a metalloid in period 5.",
+        "intermediate": "Solid metalloid; [Kr] 4d10 5s2 5p3.",
+        "advanced": "Z=51, [Kr] 4d10 5s2 5p3, group 15."
+      },
+      "curriculum": {
+        "beginner": "Antimony is element 51. Remember the symbol Sb, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Antimony: configuration [Kr] 4d10 5s2 5p3, oxidation [-3, 3, 5], and the headline measurements.",
+        "advanced": "Go deeper on Antimony: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 52,
+      "symbol": "Te",
+      "name": "Tellurium",
+      "atomicWeight": 127.6,
+      "weightKind": "standard",
+      "categoryId": "metalloid",
+      "categoryLabel": "Metalloid",
+      "tags": [],
+      "block": "p",
+      "period": 5,
+      "group": 16,
+      "standardState": "solid",
+      "electronConfig": "[Kr] 4d10 5s2 5p4",
+      "electronConfigFull": "[Kr] 4d10 5s2 5p4",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        18,
+        6
+      ],
+      "oxidationStates": [
+        -2,
+        4,
+        6
+      ],
+      "primaryOxidation": -2,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Tellurium is a metalloid in period 5.",
+        "intermediate": "Solid metalloid; [Kr] 4d10 5s2 5p4.",
+        "advanced": "Z=52, [Kr] 4d10 5s2 5p4, group 16."
+      },
+      "curriculum": {
+        "beginner": "Tellurium is element 52. Remember the symbol Te, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Tellurium: configuration [Kr] 4d10 5s2 5p4, oxidation [-2, 4, 6], and the headline measurements.",
+        "advanced": "Go deeper on Tellurium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 53,
+      "symbol": "I",
+      "name": "Iodine",
+      "atomicWeight": 126.9,
+      "weightKind": "standard",
+      "categoryId": "reactive-nonmetal",
+      "categoryLabel": "Halogen",
+      "tags": [
+        "halogen"
+      ],
+      "block": "p",
+      "period": 5,
+      "group": 17,
+      "standardState": "solid",
+      "electronConfig": "[Kr] 4d10 5s2 5p5",
+      "electronConfigFull": "[Kr] 4d10 5s2 5p5",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        18,
+        7
+      ],
+      "oxidationStates": [
+        -1
+      ],
+      "primaryOxidation": -1,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Iodine is a halogen in period 5.",
+        "intermediate": "Solid halogen; [Kr] 4d10 5s2 5p5.",
+        "advanced": "Z=53, [Kr] 4d10 5s2 5p5, group 17."
+      },
+      "curriculum": {
+        "beginner": "Iodine is element 53. Remember the symbol I, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Iodine: configuration [Kr] 4d10 5s2 5p5, oxidation [-1], and the headline measurements.",
+        "advanced": "Go deeper on Iodine: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 54,
+      "symbol": "Xe",
+      "name": "Xenon",
+      "atomicWeight": 131.29,
+      "weightKind": "standard",
+      "categoryId": "noble-gas",
+      "categoryLabel": "Noble gas",
+      "tags": [],
+      "block": "p",
+      "period": 5,
+      "group": 18,
+      "standardState": "gas",
+      "electronConfig": "[Kr] 4d10 5s2 5p6",
+      "electronConfigFull": "[Kr] 4d10 5s2 5p6",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        18,
+        8
+      ],
+      "oxidationStates": [],
+      "primaryOxidation": null,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Xenon is a noble gas in period 5.",
+        "intermediate": "Gas noble gas; [Kr] 4d10 5s2 5p6.",
+        "advanced": "Z=54, [Kr] 4d10 5s2 5p6, group 18."
+      },
+      "curriculum": {
+        "beginner": "Xenon is element 54. Remember the symbol Xe, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Xenon: configuration [Kr] 4d10 5s2 5p6, oxidation [], and the headline measurements.",
+        "advanced": "Go deeper on Xenon: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 55,
+      "symbol": "Cs",
+      "name": "Caesium",
+      "atomicWeight": 132.91,
+      "weightKind": "standard",
+      "categoryId": "alkali-metal",
+      "categoryLabel": "Alkali metal",
+      "tags": [],
+      "block": "s",
+      "period": 6,
+      "group": 1,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 6s1",
+      "electronConfigFull": "[Xe] 6s1",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        18,
+        8,
+        1
+      ],
+      "oxidationStates": [
+        1
+      ],
+      "primaryOxidation": 1,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Caesium is a alkali metal in period 6.",
+        "intermediate": "Solid alkali metal; [Xe] 6s1.",
+        "advanced": "Z=55, [Xe] 6s1, group 1."
+      },
+      "curriculum": {
+        "beginner": "Caesium is element 55. Remember the symbol Cs, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Caesium: configuration [Xe] 6s1, oxidation [1], and the headline measurements.",
+        "advanced": "Go deeper on Caesium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 56,
+      "symbol": "Ba",
+      "name": "Barium",
+      "atomicWeight": 137.33,
+      "weightKind": "standard",
+      "categoryId": "alkaline-earth",
+      "categoryLabel": "Alk. earth",
+      "tags": [],
+      "block": "s",
+      "period": 6,
+      "group": 2,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 6s2",
+      "electronConfigFull": "[Xe] 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        18,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        2
+      ],
+      "primaryOxidation": 2,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Barium is a alk. earth in period 6.",
+        "intermediate": "Solid alk. earth; [Xe] 6s2.",
+        "advanced": "Z=56, [Xe] 6s2, group 2."
+      },
+      "curriculum": {
+        "beginner": "Barium is element 56. Remember the symbol Ba, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Barium: configuration [Xe] 6s2, oxidation [2], and the headline measurements.",
+        "advanced": "Go deeper on Barium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 57,
+      "symbol": "La",
+      "name": "Lanthanum",
+      "atomicWeight": 138.91,
+      "weightKind": "standard",
+      "categoryId": "lanthanide",
+      "categoryLabel": "Lanthanide",
+      "tags": [],
+      "block": "d",
+      "period": 6,
+      "group": 3,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 5d1 6s2",
+      "electronConfigFull": "[Xe] 5d1 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        18,
+        9,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Lanthanum is a lanthanide in period 6.",
+        "intermediate": "Solid lanthanide; [Xe] 5d1 6s2.",
+        "advanced": "Z=57, [Xe] 5d1 6s2, group 3."
+      },
+      "curriculum": {
+        "beginner": "Lanthanum is element 57. Remember the symbol La, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Lanthanum: configuration [Xe] 5d1 6s2, oxidation [3], and the headline measurements.",
+        "advanced": "Go deeper on Lanthanum: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 58,
+      "symbol": "Ce",
+      "name": "Cerium",
+      "atomicWeight": 140.12,
+      "weightKind": "standard",
+      "categoryId": "lanthanide",
+      "categoryLabel": "Lanthanide",
+      "tags": [],
+      "block": "f",
+      "period": 6,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f1 5d1 6s2",
+      "electronConfigFull": "[Xe] 4f1 5d1 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        19,
+        9,
+        2
+      ],
+      "oxidationStates": [
+        3,
+        4
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Cerium is a lanthanide in period 6.",
+        "intermediate": "Solid lanthanide; [Xe] 4f1 5d1 6s2.",
+        "advanced": "Z=58, [Xe] 4f1 5d1 6s2, group n/a."
+      },
+      "curriculum": {
+        "beginner": "Cerium is element 58. Remember the symbol Ce, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Cerium: configuration [Xe] 4f1 5d1 6s2, oxidation [3, 4], and the headline measurements.",
+        "advanced": "Go deeper on Cerium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 59,
+      "symbol": "Pr",
+      "name": "Praseodymium",
+      "atomicWeight": 140.91,
+      "weightKind": "standard",
+      "categoryId": "lanthanide",
+      "categoryLabel": "Lanthanide",
+      "tags": [],
+      "block": "f",
+      "period": 6,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f3 6s2",
+      "electronConfigFull": "[Xe] 4f3 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        21,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Praseodymium is a lanthanide in period 6.",
+        "intermediate": "Solid lanthanide; [Xe] 4f3 6s2.",
+        "advanced": "Z=59, [Xe] 4f3 6s2, group n/a."
+      },
+      "curriculum": {
+        "beginner": "Praseodymium is element 59. Remember the symbol Pr, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Praseodymium: configuration [Xe] 4f3 6s2, oxidation [3], and the headline measurements.",
+        "advanced": "Go deeper on Praseodymium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 60,
+      "symbol": "Nd",
+      "name": "Neodymium",
+      "atomicWeight": 144.24,
+      "weightKind": "standard",
+      "categoryId": "lanthanide",
+      "categoryLabel": "Lanthanide",
+      "tags": [],
+      "block": "f",
+      "period": 6,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f4 6s2",
+      "electronConfigFull": "[Xe] 4f4 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        22,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Neodymium is a lanthanide in period 6.",
+        "intermediate": "Solid lanthanide; [Xe] 4f4 6s2.",
+        "advanced": "Z=60, [Xe] 4f4 6s2, group n/a."
+      },
+      "curriculum": {
+        "beginner": "Neodymium is element 60. Remember the symbol Nd, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Neodymium: configuration [Xe] 4f4 6s2, oxidation [3], and the headline measurements.",
+        "advanced": "Go deeper on Neodymium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 61,
+      "symbol": "Pm",
+      "name": "Promethium",
+      "atomicWeight": 145.0,
+      "weightKind": "standard",
+      "categoryId": "lanthanide",
+      "categoryLabel": "Lanthanide",
+      "tags": [],
+      "block": "f",
+      "period": 6,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f5 6s2",
+      "electronConfigFull": "[Xe] 4f5 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        23,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Promethium is a lanthanide in period 6.",
+        "intermediate": "Solid lanthanide; [Xe] 4f5 6s2.",
+        "advanced": "Z=61, [Xe] 4f5 6s2, group n/a."
+      },
+      "curriculum": {
+        "beginner": "Promethium is element 61. Remember the symbol Pm, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Promethium: configuration [Xe] 4f5 6s2, oxidation [3], and the headline measurements.",
+        "advanced": "Go deeper on Promethium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 62,
+      "symbol": "Sm",
+      "name": "Samarium",
+      "atomicWeight": 150.36,
+      "weightKind": "standard",
+      "categoryId": "lanthanide",
+      "categoryLabel": "Lanthanide",
+      "tags": [],
+      "block": "f",
+      "period": 6,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f6 6s2",
+      "electronConfigFull": "[Xe] 4f6 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        24,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Samarium is a lanthanide in period 6.",
+        "intermediate": "Solid lanthanide; [Xe] 4f6 6s2.",
+        "advanced": "Z=62, [Xe] 4f6 6s2, group n/a."
+      },
+      "curriculum": {
+        "beginner": "Samarium is element 62. Remember the symbol Sm, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Samarium: configuration [Xe] 4f6 6s2, oxidation [3], and the headline measurements.",
+        "advanced": "Go deeper on Samarium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 63,
+      "symbol": "Eu",
+      "name": "Europium",
+      "atomicWeight": 151.96,
+      "weightKind": "standard",
+      "categoryId": "lanthanide",
+      "categoryLabel": "Lanthanide",
+      "tags": [],
+      "block": "f",
+      "period": 6,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f7 6s2",
+      "electronConfigFull": "[Xe] 4f7 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        25,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        3,
+        2
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Europium is a lanthanide in period 6.",
+        "intermediate": "Solid lanthanide; [Xe] 4f7 6s2.",
+        "advanced": "Z=63, [Xe] 4f7 6s2, group n/a."
+      },
+      "curriculum": {
+        "beginner": "Europium is element 63. Remember the symbol Eu, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Europium: configuration [Xe] 4f7 6s2, oxidation [3, 2], and the headline measurements.",
+        "advanced": "Go deeper on Europium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 64,
+      "symbol": "Gd",
+      "name": "Gadolinium",
+      "atomicWeight": 157.25,
+      "weightKind": "standard",
+      "categoryId": "lanthanide",
+      "categoryLabel": "Lanthanide",
+      "tags": [],
+      "block": "f",
+      "period": 6,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f7 5d1 6s2",
+      "electronConfigFull": "[Xe] 4f7 5d1 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        25,
+        9,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Gadolinium is a lanthanide in period 6.",
+        "intermediate": "Solid lanthanide; [Xe] 4f7 5d1 6s2.",
+        "advanced": "Z=64, [Xe] 4f7 5d1 6s2, group n/a."
+      },
+      "curriculum": {
+        "beginner": "Gadolinium is element 64. Remember the symbol Gd, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Gadolinium: configuration [Xe] 4f7 5d1 6s2, oxidation [3], and the headline measurements.",
+        "advanced": "Go deeper on Gadolinium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 65,
+      "symbol": "Tb",
+      "name": "Terbium",
+      "atomicWeight": 158.93,
+      "weightKind": "standard",
+      "categoryId": "lanthanide",
+      "categoryLabel": "Lanthanide",
+      "tags": [],
+      "block": "f",
+      "period": 6,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f9 6s2",
+      "electronConfigFull": "[Xe] 4f9 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        27,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Terbium is a lanthanide in period 6.",
+        "intermediate": "Solid lanthanide; [Xe] 4f9 6s2.",
+        "advanced": "Z=65, [Xe] 4f9 6s2, group n/a."
+      },
+      "curriculum": {
+        "beginner": "Terbium is element 65. Remember the symbol Tb, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Terbium: configuration [Xe] 4f9 6s2, oxidation [3], and the headline measurements.",
+        "advanced": "Go deeper on Terbium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 66,
+      "symbol": "Dy",
+      "name": "Dysprosium",
+      "atomicWeight": 162.5,
+      "weightKind": "standard",
+      "categoryId": "lanthanide",
+      "categoryLabel": "Lanthanide",
+      "tags": [],
+      "block": "f",
+      "period": 6,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f10 6s2",
+      "electronConfigFull": "[Xe] 4f10 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        28,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Dysprosium is a lanthanide in period 6.",
+        "intermediate": "Solid lanthanide; [Xe] 4f10 6s2.",
+        "advanced": "Z=66, [Xe] 4f10 6s2, group n/a."
+      },
+      "curriculum": {
+        "beginner": "Dysprosium is element 66. Remember the symbol Dy, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Dysprosium: configuration [Xe] 4f10 6s2, oxidation [3], and the headline measurements.",
+        "advanced": "Go deeper on Dysprosium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 67,
+      "symbol": "Ho",
+      "name": "Holmium",
+      "atomicWeight": 164.93,
+      "weightKind": "standard",
+      "categoryId": "lanthanide",
+      "categoryLabel": "Lanthanide",
+      "tags": [],
+      "block": "f",
+      "period": 6,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f11 6s2",
+      "electronConfigFull": "[Xe] 4f11 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        29,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Holmium is a lanthanide in period 6.",
+        "intermediate": "Solid lanthanide; [Xe] 4f11 6s2.",
+        "advanced": "Z=67, [Xe] 4f11 6s2, group n/a."
+      },
+      "curriculum": {
+        "beginner": "Holmium is element 67. Remember the symbol Ho, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Holmium: configuration [Xe] 4f11 6s2, oxidation [3], and the headline measurements.",
+        "advanced": "Go deeper on Holmium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 68,
+      "symbol": "Er",
+      "name": "Erbium",
+      "atomicWeight": 167.26,
+      "weightKind": "standard",
+      "categoryId": "lanthanide",
+      "categoryLabel": "Lanthanide",
+      "tags": [],
+      "block": "f",
+      "period": 6,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f12 6s2",
+      "electronConfigFull": "[Xe] 4f12 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        30,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Erbium is a lanthanide in period 6.",
+        "intermediate": "Solid lanthanide; [Xe] 4f12 6s2.",
+        "advanced": "Z=68, [Xe] 4f12 6s2, group n/a."
+      },
+      "curriculum": {
+        "beginner": "Erbium is element 68. Remember the symbol Er, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Erbium: configuration [Xe] 4f12 6s2, oxidation [3], and the headline measurements.",
+        "advanced": "Go deeper on Erbium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 69,
+      "symbol": "Tm",
+      "name": "Thulium",
+      "atomicWeight": 168.93,
+      "weightKind": "standard",
+      "categoryId": "lanthanide",
+      "categoryLabel": "Lanthanide",
+      "tags": [],
+      "block": "f",
+      "period": 6,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f13 6s2",
+      "electronConfigFull": "[Xe] 4f13 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        31,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Thulium is a lanthanide in period 6.",
+        "intermediate": "Solid lanthanide; [Xe] 4f13 6s2.",
+        "advanced": "Z=69, [Xe] 4f13 6s2, group n/a."
+      },
+      "curriculum": {
+        "beginner": "Thulium is element 69. Remember the symbol Tm, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Thulium: configuration [Xe] 4f13 6s2, oxidation [3], and the headline measurements.",
+        "advanced": "Go deeper on Thulium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 70,
+      "symbol": "Yb",
+      "name": "Ytterbium",
+      "atomicWeight": 173.05,
+      "weightKind": "standard",
+      "categoryId": "lanthanide",
+      "categoryLabel": "Lanthanide",
+      "tags": [],
+      "block": "f",
+      "period": 6,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f14 6s2",
+      "electronConfigFull": "[Xe] 4f14 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        3,
+        2
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Ytterbium is a lanthanide in period 6.",
+        "intermediate": "Solid lanthanide; [Xe] 4f14 6s2.",
+        "advanced": "Z=70, [Xe] 4f14 6s2, group n/a."
+      },
+      "curriculum": {
+        "beginner": "Ytterbium is element 70. Remember the symbol Yb, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Ytterbium: configuration [Xe] 4f14 6s2, oxidation [3, 2], and the headline measurements.",
+        "advanced": "Go deeper on Ytterbium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 71,
+      "symbol": "Lu",
+      "name": "Lutetium",
+      "atomicWeight": 174.97,
+      "weightKind": "standard",
+      "categoryId": "lanthanide",
+      "categoryLabel": "Lanthanide",
+      "tags": [],
+      "block": "d",
+      "period": 6,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f14 5d1 6s2",
+      "electronConfigFull": "[Xe] 4f14 5d1 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        9,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Lutetium is a lanthanide in period 6.",
+        "intermediate": "Solid lanthanide; [Xe] 4f14 5d1 6s2.",
+        "advanced": "Z=71, [Xe] 4f14 5d1 6s2, group n/a."
+      },
+      "curriculum": {
+        "beginner": "Lutetium is element 71. Remember the symbol Lu, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Lutetium: configuration [Xe] 4f14 5d1 6s2, oxidation [3], and the headline measurements.",
+        "advanced": "Go deeper on Lutetium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 72,
+      "symbol": "Hf",
+      "name": "Hafnium",
+      "atomicWeight": 178.49,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 6,
+      "group": 4,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f14 5d2 6s2",
+      "electronConfigFull": "[Xe] 4f14 5d2 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        10,
+        2
+      ],
+      "oxidationStates": [
+        4
+      ],
+      "primaryOxidation": 4,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Hafnium is a transition metal in period 6.",
+        "intermediate": "Solid transition metal; [Xe] 4f14 5d2 6s2.",
+        "advanced": "Z=72, [Xe] 4f14 5d2 6s2, group 4."
+      },
+      "curriculum": {
+        "beginner": "Hafnium is element 72. Remember the symbol Hf, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Hafnium: configuration [Xe] 4f14 5d2 6s2, oxidation [4], and the headline measurements.",
+        "advanced": "Go deeper on Hafnium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 73,
+      "symbol": "Ta",
+      "name": "Tantalum",
+      "atomicWeight": 180.95,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 6,
+      "group": 5,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f14 5d3 6s2",
+      "electronConfigFull": "[Xe] 4f14 5d3 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        11,
+        2
+      ],
+      "oxidationStates": [
+        5
+      ],
+      "primaryOxidation": 5,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Tantalum is a transition metal in period 6.",
+        "intermediate": "Solid transition metal; [Xe] 4f14 5d3 6s2.",
+        "advanced": "Z=73, [Xe] 4f14 5d3 6s2, group 5."
+      },
+      "curriculum": {
+        "beginner": "Tantalum is element 73. Remember the symbol Ta, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Tantalum: configuration [Xe] 4f14 5d3 6s2, oxidation [5], and the headline measurements.",
+        "advanced": "Go deeper on Tantalum: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 74,
+      "symbol": "W",
+      "name": "Tungsten",
+      "atomicWeight": 183.84,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 6,
+      "group": 6,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f14 5d4 6s2",
+      "electronConfigFull": "[Xe] 4f14 5d4 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        12,
+        2
+      ],
+      "oxidationStates": [
+        6
+      ],
+      "primaryOxidation": 6,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Tungsten is a transition metal in period 6.",
+        "intermediate": "Solid transition metal; [Xe] 4f14 5d4 6s2.",
+        "advanced": "Z=74, [Xe] 4f14 5d4 6s2, group 6."
+      },
+      "curriculum": {
+        "beginner": "Tungsten is element 74. Remember the symbol W, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Tungsten: configuration [Xe] 4f14 5d4 6s2, oxidation [6], and the headline measurements.",
+        "advanced": "Go deeper on Tungsten: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 75,
+      "symbol": "Re",
+      "name": "Rhenium",
+      "atomicWeight": 186.21,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 6,
+      "group": 7,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f14 5d5 6s2",
+      "electronConfigFull": "[Xe] 4f14 5d5 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        13,
+        2
+      ],
+      "oxidationStates": [
+        7
+      ],
+      "primaryOxidation": 7,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Rhenium is a transition metal in period 6.",
+        "intermediate": "Solid transition metal; [Xe] 4f14 5d5 6s2.",
+        "advanced": "Z=75, [Xe] 4f14 5d5 6s2, group 7."
+      },
+      "curriculum": {
+        "beginner": "Rhenium is element 75. Remember the symbol Re, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Rhenium: configuration [Xe] 4f14 5d5 6s2, oxidation [7], and the headline measurements.",
+        "advanced": "Go deeper on Rhenium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 76,
+      "symbol": "Os",
+      "name": "Osmium",
+      "atomicWeight": 190.23,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 6,
+      "group": 8,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f14 5d6 6s2",
+      "electronConfigFull": "[Xe] 4f14 5d6 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        14,
+        2
+      ],
+      "oxidationStates": [
+        4,
+        8
+      ],
+      "primaryOxidation": 4,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Osmium is a transition metal in period 6.",
+        "intermediate": "Solid transition metal; [Xe] 4f14 5d6 6s2.",
+        "advanced": "Z=76, [Xe] 4f14 5d6 6s2, group 8."
+      },
+      "curriculum": {
+        "beginner": "Osmium is element 76. Remember the symbol Os, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Osmium: configuration [Xe] 4f14 5d6 6s2, oxidation [4, 8], and the headline measurements.",
+        "advanced": "Go deeper on Osmium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 77,
+      "symbol": "Ir",
+      "name": "Iridium",
+      "atomicWeight": 192.22,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 6,
+      "group": 9,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f14 5d7 6s2",
+      "electronConfigFull": "[Xe] 4f14 5d7 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        15,
+        2
+      ],
+      "oxidationStates": [
+        4,
+        3
+      ],
+      "primaryOxidation": 4,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Iridium is a transition metal in period 6.",
+        "intermediate": "Solid transition metal; [Xe] 4f14 5d7 6s2.",
+        "advanced": "Z=77, [Xe] 4f14 5d7 6s2, group 9."
+      },
+      "curriculum": {
+        "beginner": "Iridium is element 77. Remember the symbol Ir, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Iridium: configuration [Xe] 4f14 5d7 6s2, oxidation [4, 3], and the headline measurements.",
+        "advanced": "Go deeper on Iridium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 78,
+      "symbol": "Pt",
+      "name": "Platinum",
+      "atomicWeight": 195.08,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 6,
+      "group": 10,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f14 5d9 6s1",
+      "electronConfigFull": "[Xe] 4f14 5d9 6s1",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        17,
+        1
+      ],
+      "oxidationStates": [
+        2,
+        4
+      ],
+      "primaryOxidation": 2,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Platinum is a transition metal in period 6.",
+        "intermediate": "Solid transition metal; [Xe] 4f14 5d9 6s1.",
+        "advanced": "Z=78, [Xe] 4f14 5d9 6s1, group 10."
+      },
+      "curriculum": {
+        "beginner": "Platinum is element 78. Remember the symbol Pt, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Platinum: configuration [Xe] 4f14 5d9 6s1, oxidation [2, 4], and the headline measurements.",
+        "advanced": "Go deeper on Platinum: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 79,
+      "symbol": "Au",
+      "name": "Gold",
+      "atomicWeight": 196.97,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 6,
+      "group": 11,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f14 5d10 6s1",
+      "electronConfigFull": "[Xe] 4f14 5d10 6s1",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        18,
+        1
+      ],
+      "oxidationStates": [
+        3,
+        1
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Gold is a transition metal in period 6.",
+        "intermediate": "Solid transition metal; [Xe] 4f14 5d10 6s1.",
+        "advanced": "Z=79, [Xe] 4f14 5d10 6s1, group 11."
+      },
+      "curriculum": {
+        "beginner": "Gold is element 79. Remember the symbol Au, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Gold: configuration [Xe] 4f14 5d10 6s1, oxidation [3, 1], and the headline measurements.",
+        "advanced": "Go deeper on Gold: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {
+        "covalentRadiusPm": 136,
+        "paulingEn": 2.54,
+        "ionizationEv": 9.226,
+        "meltingK": 1337,
+        "boilingK": 3129,
+        "density": 19.3
+      },
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 80,
+      "symbol": "Hg",
+      "name": "Mercury",
+      "atomicWeight": 200.59,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 6,
+      "group": 12,
+      "standardState": "liquid",
+      "electronConfig": "[Xe] 4f14 5d10 6s2",
+      "electronConfigFull": "[Xe] 4f14 5d10 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        18,
+        2
+      ],
+      "oxidationStates": [
+        2,
+        1
+      ],
+      "primaryOxidation": 2,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Mercury is a transition metal in period 6.",
+        "intermediate": "Liquid transition metal; [Xe] 4f14 5d10 6s2.",
+        "advanced": "Z=80, [Xe] 4f14 5d10 6s2, group 12."
+      },
+      "curriculum": {
+        "beginner": "Mercury is element 80. Remember the symbol Hg, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Mercury: configuration [Xe] 4f14 5d10 6s2, oxidation [2, 1], and the headline measurements.",
+        "advanced": "Go deeper on Mercury: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 81,
+      "symbol": "Tl",
+      "name": "Thallium",
+      "atomicWeight": 204.38,
+      "weightKind": "standard",
+      "categoryId": "post-transition",
+      "categoryLabel": "Post-transition",
+      "tags": [],
+      "block": "p",
+      "period": 6,
+      "group": 13,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f14 5d10 6s2 6p1",
+      "electronConfigFull": "[Xe] 4f14 5d10 6s2 6p1",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        18,
+        3
+      ],
+      "oxidationStates": [
+        1,
+        3
+      ],
+      "primaryOxidation": 1,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Thallium is a post-transition in period 6.",
+        "intermediate": "Solid post-transition; [Xe] 4f14 5d10 6s2 6p1.",
+        "advanced": "Z=81, [Xe] 4f14 5d10 6s2 6p1, group 13."
+      },
+      "curriculum": {
+        "beginner": "Thallium is element 81. Remember the symbol Tl, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Thallium: configuration [Xe] 4f14 5d10 6s2 6p1, oxidation [1, 3], and the headline measurements.",
+        "advanced": "Go deeper on Thallium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 82,
+      "symbol": "Pb",
+      "name": "Lead",
+      "atomicWeight": 207.2,
+      "weightKind": "standard",
+      "categoryId": "post-transition",
+      "categoryLabel": "Post-transition",
+      "tags": [],
+      "block": "p",
+      "period": 6,
+      "group": 14,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f14 5d10 6s2 6p2",
+      "electronConfigFull": "[Xe] 4f14 5d10 6s2 6p2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        18,
+        4
+      ],
+      "oxidationStates": [
+        2,
+        4
+      ],
+      "primaryOxidation": 2,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Lead is a post-transition in period 6.",
+        "intermediate": "Solid post-transition; [Xe] 4f14 5d10 6s2 6p2.",
+        "advanced": "Z=82, [Xe] 4f14 5d10 6s2 6p2, group 14."
+      },
+      "curriculum": {
+        "beginner": "Lead is element 82. Remember the symbol Pb, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Lead: configuration [Xe] 4f14 5d10 6s2 6p2, oxidation [2, 4], and the headline measurements.",
+        "advanced": "Go deeper on Lead: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 83,
+      "symbol": "Bi",
+      "name": "Bismuth",
+      "atomicWeight": 208.98,
+      "weightKind": "standard",
+      "categoryId": "post-transition",
+      "categoryLabel": "Post-transition",
+      "tags": [],
+      "block": "p",
+      "period": 6,
+      "group": 15,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f14 5d10 6s2 6p3",
+      "electronConfigFull": "[Xe] 4f14 5d10 6s2 6p3",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        18,
+        5
+      ],
+      "oxidationStates": [
+        3,
+        5
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Bismuth is a post-transition in period 6.",
+        "intermediate": "Solid post-transition; [Xe] 4f14 5d10 6s2 6p3.",
+        "advanced": "Z=83, [Xe] 4f14 5d10 6s2 6p3, group 15."
+      },
+      "curriculum": {
+        "beginner": "Bismuth is element 83. Remember the symbol Bi, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Bismuth: configuration [Xe] 4f14 5d10 6s2 6p3, oxidation [3, 5], and the headline measurements.",
+        "advanced": "Go deeper on Bismuth: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 84,
+      "symbol": "Po",
+      "name": "Polonium",
+      "atomicWeight": 209.0,
+      "weightKind": "standard",
+      "categoryId": "post-transition",
+      "categoryLabel": "Post-transition",
+      "tags": [],
+      "block": "p",
+      "period": 6,
+      "group": 16,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f14 5d10 6s2 6p4",
+      "electronConfigFull": "[Xe] 4f14 5d10 6s2 6p4",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        18,
+        6
+      ],
+      "oxidationStates": [
+        2,
+        4
+      ],
+      "primaryOxidation": 2,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Polonium is a post-transition in period 6.",
+        "intermediate": "Solid post-transition; [Xe] 4f14 5d10 6s2 6p4.",
+        "advanced": "Z=84, [Xe] 4f14 5d10 6s2 6p4, group 16."
+      },
+      "curriculum": {
+        "beginner": "Polonium is element 84. Remember the symbol Po, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Polonium: configuration [Xe] 4f14 5d10 6s2 6p4, oxidation [2, 4], and the headline measurements.",
+        "advanced": "Go deeper on Polonium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 85,
+      "symbol": "At",
+      "name": "Astatine",
+      "atomicWeight": 210.0,
+      "weightKind": "standard",
+      "categoryId": "reactive-nonmetal",
+      "categoryLabel": "Halogen",
+      "tags": [
+        "halogen"
+      ],
+      "block": "p",
+      "period": 6,
+      "group": 17,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f14 5d10 6s2 6p5",
+      "electronConfigFull": "[Xe] 4f14 5d10 6s2 6p5",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        18,
+        7
+      ],
+      "oxidationStates": [
+        -1
+      ],
+      "primaryOxidation": -1,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Astatine is a halogen in period 6.",
+        "intermediate": "Solid halogen; [Xe] 4f14 5d10 6s2 6p5.",
+        "advanced": "Z=85, [Xe] 4f14 5d10 6s2 6p5, group 17."
+      },
+      "curriculum": {
+        "beginner": "Astatine is element 85. Remember the symbol At, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Astatine: configuration [Xe] 4f14 5d10 6s2 6p5, oxidation [-1], and the headline measurements.",
+        "advanced": "Go deeper on Astatine: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 86,
+      "symbol": "Rn",
+      "name": "Radon",
+      "atomicWeight": 222.0,
+      "weightKind": "standard",
+      "categoryId": "noble-gas",
+      "categoryLabel": "Noble gas",
+      "tags": [],
+      "block": "p",
+      "period": 6,
+      "group": 18,
+      "standardState": "gas",
+      "electronConfig": "[Xe] 4f14 5d10 6s2 6p6",
+      "electronConfigFull": "[Xe] 4f14 5d10 6s2 6p6",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        18,
+        8
+      ],
+      "oxidationStates": [],
+      "primaryOxidation": null,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Radon is a noble gas in period 6.",
+        "intermediate": "Gas noble gas; [Xe] 4f14 5d10 6s2 6p6.",
+        "advanced": "Z=86, [Xe] 4f14 5d10 6s2 6p6, group 18."
+      },
+      "curriculum": {
+        "beginner": "Radon is element 86. Remember the symbol Rn, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Radon: configuration [Xe] 4f14 5d10 6s2 6p6, oxidation [], and the headline measurements.",
+        "advanced": "Go deeper on Radon: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 87,
+      "symbol": "Fr",
+      "name": "Francium",
+      "atomicWeight": 223.0,
+      "weightKind": "standard",
+      "categoryId": "alkali-metal",
+      "categoryLabel": "Alkali metal",
+      "tags": [],
+      "block": "s",
+      "period": 7,
+      "group": 1,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 7s1",
+      "electronConfigFull": "[Rn] 7s1",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        18,
+        8,
+        1
+      ],
+      "oxidationStates": [
+        1
+      ],
+      "primaryOxidation": 1,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Francium is a alkali metal in period 7.",
+        "intermediate": "Solid alkali metal; [Rn] 7s1.",
+        "advanced": "Z=87, [Rn] 7s1, group 1."
+      },
+      "curriculum": {
+        "beginner": "Francium is element 87. Remember the symbol Fr, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Francium: configuration [Rn] 7s1, oxidation [1], and the headline measurements.",
+        "advanced": "Go deeper on Francium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 88,
+      "symbol": "Ra",
+      "name": "Radium",
+      "atomicWeight": 226.0,
+      "weightKind": "standard",
+      "categoryId": "alkaline-earth",
+      "categoryLabel": "Alk. earth",
+      "tags": [],
+      "block": "s",
+      "period": 7,
+      "group": 2,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 7s2",
+      "electronConfigFull": "[Rn] 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        18,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        2
+      ],
+      "primaryOxidation": 2,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Radium is a alk. earth in period 7.",
+        "intermediate": "Solid alk. earth; [Rn] 7s2.",
+        "advanced": "Z=88, [Rn] 7s2, group 2."
+      },
+      "curriculum": {
+        "beginner": "Radium is element 88. Remember the symbol Ra, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Radium: configuration [Rn] 7s2, oxidation [2], and the headline measurements.",
+        "advanced": "Go deeper on Radium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 89,
+      "symbol": "Ac",
+      "name": "Actinium",
+      "atomicWeight": 227.0,
+      "weightKind": "standard",
+      "categoryId": "actinide",
+      "categoryLabel": "Actinide",
+      "tags": [],
+      "block": "d",
+      "period": 7,
+      "group": 3,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 6d1 7s2",
+      "electronConfigFull": "[Rn] 6d1 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        18,
+        9,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Actinium is a actinide in period 7.",
+        "intermediate": "Solid actinide; [Rn] 6d1 7s2.",
+        "advanced": "Z=89, [Rn] 6d1 7s2, group 3."
+      },
+      "curriculum": {
+        "beginner": "Actinium is element 89. Remember the symbol Ac, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Actinium: configuration [Rn] 6d1 7s2, oxidation [3], and the headline measurements.",
+        "advanced": "Go deeper on Actinium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 90,
+      "symbol": "Th",
+      "name": "Thorium",
+      "atomicWeight": 232.04,
+      "weightKind": "standard",
+      "categoryId": "actinide",
+      "categoryLabel": "Actinide",
+      "tags": [],
+      "block": "f",
+      "period": 7,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 6d2 7s2",
+      "electronConfigFull": "[Rn] 6d2 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        18,
+        10,
+        2
+      ],
+      "oxidationStates": [
+        4
+      ],
+      "primaryOxidation": 4,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Thorium is a actinide in period 7.",
+        "intermediate": "Solid actinide; [Rn] 6d2 7s2.",
+        "advanced": "Z=90, [Rn] 6d2 7s2, group n/a."
+      },
+      "curriculum": {
+        "beginner": "Thorium is element 90. Remember the symbol Th, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Thorium: configuration [Rn] 6d2 7s2, oxidation [4], and the headline measurements.",
+        "advanced": "Go deeper on Thorium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 91,
+      "symbol": "Pa",
+      "name": "Protactinium",
+      "atomicWeight": 231.04,
+      "weightKind": "standard",
+      "categoryId": "actinide",
+      "categoryLabel": "Actinide",
+      "tags": [],
+      "block": "f",
+      "period": 7,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f2 6d1 7s2",
+      "electronConfigFull": "[Rn] 5f2 6d1 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        20,
+        9,
+        2
+      ],
+      "oxidationStates": [
+        5
+      ],
+      "primaryOxidation": 5,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Protactinium is a actinide in period 7.",
+        "intermediate": "Solid actinide; [Rn] 5f2 6d1 7s2.",
+        "advanced": "Z=91, [Rn] 5f2 6d1 7s2, group n/a."
+      },
+      "curriculum": {
+        "beginner": "Protactinium is element 91. Remember the symbol Pa, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Protactinium: configuration [Rn] 5f2 6d1 7s2, oxidation [5], and the headline measurements.",
+        "advanced": "Go deeper on Protactinium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 92,
+      "symbol": "U",
+      "name": "Uranium",
+      "atomicWeight": 238.03,
+      "weightKind": "standard",
+      "categoryId": "actinide",
+      "categoryLabel": "Actinide",
+      "tags": [],
+      "block": "f",
+      "period": 7,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f3 6d1 7s2",
+      "electronConfigFull": "[Rn] 5f3 6d1 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        21,
+        9,
+        2
+      ],
+      "oxidationStates": [
+        6,
+        4
+      ],
+      "primaryOxidation": 6,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Uranium is a actinide in period 7.",
+        "intermediate": "Solid actinide; [Rn] 5f3 6d1 7s2.",
+        "advanced": "Z=92, [Rn] 5f3 6d1 7s2, group n/a."
+      },
+      "curriculum": {
+        "beginner": "Uranium is element 92. Remember the symbol U, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Uranium: configuration [Rn] 5f3 6d1 7s2, oxidation [6, 4], and the headline measurements.",
+        "advanced": "Go deeper on Uranium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {
+        "covalentRadiusPm": 196,
+        "paulingEn": 1.38,
+        "ionizationEv": 6.194,
+        "meltingK": 1405,
+        "boilingK": 4404,
+        "density": 19.1
+      },
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 93,
+      "symbol": "Np",
+      "name": "Neptunium",
+      "atomicWeight": 237.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "actinide",
+      "categoryLabel": "Actinide",
+      "tags": [],
+      "block": "f",
+      "period": 7,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f4 6d1 7s2",
+      "electronConfigFull": "[Rn] 5f4 6d1 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        22,
+        9,
+        2
+      ],
+      "oxidationStates": [
+        5
+      ],
+      "primaryOxidation": 5,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Neptunium is a actinide in period 7.",
+        "intermediate": "Solid actinide; [Rn] 5f4 6d1 7s2.",
+        "advanced": "Z=93, [Rn] 5f4 6d1 7s2, group n/a."
+      },
+      "curriculum": {
+        "beginner": "Neptunium is element 93. Remember the symbol Np, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Neptunium: configuration [Rn] 5f4 6d1 7s2, oxidation [5], and the headline measurements.",
+        "advanced": "Go deeper on Neptunium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 94,
+      "symbol": "Pu",
+      "name": "Plutonium",
+      "atomicWeight": 244.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "actinide",
+      "categoryLabel": "Actinide",
+      "tags": [],
+      "block": "f",
+      "period": 7,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f6 7s2",
+      "electronConfigFull": "[Rn] 5f6 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        24,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        4
+      ],
+      "primaryOxidation": 4,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Plutonium is a actinide in period 7.",
+        "intermediate": "Solid actinide; [Rn] 5f6 7s2.",
+        "advanced": "Z=94, [Rn] 5f6 7s2, group n/a."
+      },
+      "curriculum": {
+        "beginner": "Plutonium is element 94. Remember the symbol Pu, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Plutonium: configuration [Rn] 5f6 7s2, oxidation [4], and the headline measurements.",
+        "advanced": "Go deeper on Plutonium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 95,
+      "symbol": "Am",
+      "name": "Americium",
+      "atomicWeight": 243.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "actinide",
+      "categoryLabel": "Actinide",
+      "tags": [],
+      "block": "f",
+      "period": 7,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f7 7s2",
+      "electronConfigFull": "[Rn] 5f7 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        25,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Americium is a actinide in period 7.",
+        "intermediate": "Solid actinide; [Rn] 5f7 7s2.",
+        "advanced": "Z=95, [Rn] 5f7 7s2, group n/a."
+      },
+      "curriculum": {
+        "beginner": "Americium is element 95. Remember the symbol Am, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Americium: configuration [Rn] 5f7 7s2, oxidation [3], and the headline measurements.",
+        "advanced": "Go deeper on Americium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 96,
+      "symbol": "Cm",
+      "name": "Curium",
+      "atomicWeight": 247.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "actinide",
+      "categoryLabel": "Actinide",
+      "tags": [],
+      "block": "f",
+      "period": 7,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f7 6d1 7s2",
+      "electronConfigFull": "[Rn] 5f7 6d1 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        25,
+        9,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Curium is a actinide in period 7.",
+        "intermediate": "Solid actinide; [Rn] 5f7 6d1 7s2.",
+        "advanced": "Z=96, [Rn] 5f7 6d1 7s2, group n/a."
+      },
+      "curriculum": {
+        "beginner": "Curium is element 96. Remember the symbol Cm, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Curium: configuration [Rn] 5f7 6d1 7s2, oxidation [3], and the headline measurements.",
+        "advanced": "Go deeper on Curium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 97,
+      "symbol": "Bk",
+      "name": "Berkelium",
+      "atomicWeight": 247.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "actinide",
+      "categoryLabel": "Actinide",
+      "tags": [],
+      "block": "f",
+      "period": 7,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f9 7s2",
+      "electronConfigFull": "[Rn] 5f9 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        27,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Berkelium is a actinide in period 7.",
+        "intermediate": "Solid actinide; [Rn] 5f9 7s2.",
+        "advanced": "Z=97, [Rn] 5f9 7s2, group n/a."
+      },
+      "curriculum": {
+        "beginner": "Berkelium is element 97. Remember the symbol Bk, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Berkelium: configuration [Rn] 5f9 7s2, oxidation [3], and the headline measurements.",
+        "advanced": "Go deeper on Berkelium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 98,
+      "symbol": "Cf",
+      "name": "Californium",
+      "atomicWeight": 251.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "actinide",
+      "categoryLabel": "Actinide",
+      "tags": [],
+      "block": "f",
+      "period": 7,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f10 7s2",
+      "electronConfigFull": "[Rn] 5f10 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        28,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Californium is a actinide in period 7.",
+        "intermediate": "Solid actinide; [Rn] 5f10 7s2.",
+        "advanced": "Z=98, [Rn] 5f10 7s2, group n/a."
+      },
+      "curriculum": {
+        "beginner": "Californium is element 98. Remember the symbol Cf, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Californium: configuration [Rn] 5f10 7s2, oxidation [3], and the headline measurements.",
+        "advanced": "Go deeper on Californium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 99,
+      "symbol": "Es",
+      "name": "Einsteinium",
+      "atomicWeight": 252.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "actinide",
+      "categoryLabel": "Actinide",
+      "tags": [],
+      "block": "f",
+      "period": 7,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f11 7s2",
+      "electronConfigFull": "[Rn] 5f11 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        29,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Einsteinium is a actinide in period 7.",
+        "intermediate": "Solid actinide; [Rn] 5f11 7s2.",
+        "advanced": "Z=99, [Rn] 5f11 7s2, group n/a."
+      },
+      "curriculum": {
+        "beginner": "Einsteinium is element 99. Remember the symbol Es, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Einsteinium: configuration [Rn] 5f11 7s2, oxidation [3], and the headline measurements.",
+        "advanced": "Go deeper on Einsteinium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 100,
+      "symbol": "Fm",
+      "name": "Fermium",
+      "atomicWeight": 257.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "actinide",
+      "categoryLabel": "Actinide",
+      "tags": [],
+      "block": "f",
+      "period": 7,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f12 7s2",
+      "electronConfigFull": "[Rn] 5f12 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        30,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Fermium is a actinide in period 7.",
+        "intermediate": "Solid actinide; [Rn] 5f12 7s2.",
+        "advanced": "Z=100, [Rn] 5f12 7s2, group n/a."
+      },
+      "curriculum": {
+        "beginner": "Fermium is element 100. Remember the symbol Fm, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Fermium: configuration [Rn] 5f12 7s2, oxidation [3], and the headline measurements.",
+        "advanced": "Go deeper on Fermium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 101,
+      "symbol": "Md",
+      "name": "Mendelevium",
+      "atomicWeight": 258.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "actinide",
+      "categoryLabel": "Actinide",
+      "tags": [],
+      "block": "f",
+      "period": 7,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f13 7s2",
+      "electronConfigFull": "[Rn] 5f13 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        31,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Mendelevium is a actinide in period 7.",
+        "intermediate": "Solid actinide; [Rn] 5f13 7s2.",
+        "advanced": "Z=101, [Rn] 5f13 7s2, group n/a."
+      },
+      "curriculum": {
+        "beginner": "Mendelevium is element 101. Remember the symbol Md, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Mendelevium: configuration [Rn] 5f13 7s2, oxidation [3], and the headline measurements.",
+        "advanced": "Go deeper on Mendelevium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 102,
+      "symbol": "No",
+      "name": "Nobelium",
+      "atomicWeight": 259.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "actinide",
+      "categoryLabel": "Actinide",
+      "tags": [],
+      "block": "f",
+      "period": 7,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f14 7s2",
+      "electronConfigFull": "[Rn] 5f14 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        32,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        2
+      ],
+      "primaryOxidation": 2,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Nobelium is a actinide in period 7.",
+        "intermediate": "Solid actinide; [Rn] 5f14 7s2.",
+        "advanced": "Z=102, [Rn] 5f14 7s2, group n/a."
+      },
+      "curriculum": {
+        "beginner": "Nobelium is element 102. Remember the symbol No, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Nobelium: configuration [Rn] 5f14 7s2, oxidation [2], and the headline measurements.",
+        "advanced": "Go deeper on Nobelium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 103,
+      "symbol": "Lr",
+      "name": "Lawrencium",
+      "atomicWeight": 266.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "actinide",
+      "categoryLabel": "Actinide",
+      "tags": [],
+      "block": "d",
+      "period": 7,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f14 7s2 7p1",
+      "electronConfigFull": "[Rn] 5f14 7s2 7p1",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        32,
+        8,
+        3
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Lawrencium is a actinide in period 7.",
+        "intermediate": "Solid actinide; [Rn] 5f14 7s2 7p1.",
+        "advanced": "Z=103, [Rn] 5f14 7s2 7p1, group n/a."
+      },
+      "curriculum": {
+        "beginner": "Lawrencium is element 103. Remember the symbol Lr, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Lawrencium: configuration [Rn] 5f14 7s2 7p1, oxidation [3], and the headline measurements.",
+        "advanced": "Go deeper on Lawrencium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 104,
+      "symbol": "Rf",
+      "name": "Rutherfordium",
+      "atomicWeight": 267.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 7,
+      "group": 4,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f14 6d2 7s2",
+      "electronConfigFull": "[Rn] 5f14 6d2 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        32,
+        10,
+        2
+      ],
+      "oxidationStates": [
+        4
+      ],
+      "primaryOxidation": 4,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Rutherfordium is a transition metal in period 7.",
+        "intermediate": "Solid transition metal; [Rn] 5f14 6d2 7s2.",
+        "advanced": "Z=104, [Rn] 5f14 6d2 7s2, group 4."
+      },
+      "curriculum": {
+        "beginner": "Rutherfordium is element 104. Remember the symbol Rf, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Rutherfordium: configuration [Rn] 5f14 6d2 7s2, oxidation [4], and the headline measurements.",
+        "advanced": "Go deeper on Rutherfordium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 105,
+      "symbol": "Db",
+      "name": "Dubnium",
+      "atomicWeight": 268.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 7,
+      "group": 5,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f14 6d3 7s2",
+      "electronConfigFull": "[Rn] 5f14 6d3 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        32,
+        11,
+        2
+      ],
+      "oxidationStates": [
+        5
+      ],
+      "primaryOxidation": 5,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Dubnium is a transition metal in period 7.",
+        "intermediate": "Solid transition metal; [Rn] 5f14 6d3 7s2.",
+        "advanced": "Z=105, [Rn] 5f14 6d3 7s2, group 5."
+      },
+      "curriculum": {
+        "beginner": "Dubnium is element 105. Remember the symbol Db, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Dubnium: configuration [Rn] 5f14 6d3 7s2, oxidation [5], and the headline measurements.",
+        "advanced": "Go deeper on Dubnium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 106,
+      "symbol": "Sg",
+      "name": "Seaborgium",
+      "atomicWeight": 269.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 7,
+      "group": 6,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f14 6d4 7s2",
+      "electronConfigFull": "[Rn] 5f14 6d4 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        32,
+        12,
+        2
+      ],
+      "oxidationStates": [
+        6
+      ],
+      "primaryOxidation": 6,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Seaborgium is a transition metal in period 7.",
+        "intermediate": "Solid transition metal; [Rn] 5f14 6d4 7s2.",
+        "advanced": "Z=106, [Rn] 5f14 6d4 7s2, group 6."
+      },
+      "curriculum": {
+        "beginner": "Seaborgium is element 106. Remember the symbol Sg, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Seaborgium: configuration [Rn] 5f14 6d4 7s2, oxidation [6], and the headline measurements.",
+        "advanced": "Go deeper on Seaborgium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 107,
+      "symbol": "Bh",
+      "name": "Bohrium",
+      "atomicWeight": 270.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 7,
+      "group": 7,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f14 6d5 7s2",
+      "electronConfigFull": "[Rn] 5f14 6d5 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        32,
+        13,
+        2
+      ],
+      "oxidationStates": [
+        7
+      ],
+      "primaryOxidation": 7,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Bohrium is a transition metal in period 7.",
+        "intermediate": "Solid transition metal; [Rn] 5f14 6d5 7s2.",
+        "advanced": "Z=107, [Rn] 5f14 6d5 7s2, group 7."
+      },
+      "curriculum": {
+        "beginner": "Bohrium is element 107. Remember the symbol Bh, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Bohrium: configuration [Rn] 5f14 6d5 7s2, oxidation [7], and the headline measurements.",
+        "advanced": "Go deeper on Bohrium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 108,
+      "symbol": "Hs",
+      "name": "Hassium",
+      "atomicWeight": 271.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 7,
+      "group": 8,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f14 6d6 7s2",
+      "electronConfigFull": "[Rn] 5f14 6d6 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        32,
+        14,
+        2
+      ],
+      "oxidationStates": [
+        8
+      ],
+      "primaryOxidation": 8,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Hassium is a transition metal in period 7.",
+        "intermediate": "Solid transition metal; [Rn] 5f14 6d6 7s2.",
+        "advanced": "Z=108, [Rn] 5f14 6d6 7s2, group 8."
+      },
+      "curriculum": {
+        "beginner": "Hassium is element 108. Remember the symbol Hs, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Hassium: configuration [Rn] 5f14 6d6 7s2, oxidation [8], and the headline measurements.",
+        "advanced": "Go deeper on Hassium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 109,
+      "symbol": "Mt",
+      "name": "Meitnerium",
+      "atomicWeight": 278.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 7,
+      "group": 9,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f14 6d7 7s2",
+      "electronConfigFull": "[Rn] 5f14 6d7 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        32,
+        15,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Meitnerium is a transition metal in period 7.",
+        "intermediate": "Solid transition metal; [Rn] 5f14 6d7 7s2.",
+        "advanced": "Z=109, [Rn] 5f14 6d7 7s2, group 9."
+      },
+      "curriculum": {
+        "beginner": "Meitnerium is element 109. Remember the symbol Mt, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Meitnerium: configuration [Rn] 5f14 6d7 7s2, oxidation [3], and the headline measurements.",
+        "advanced": "Go deeper on Meitnerium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 110,
+      "symbol": "Ds",
+      "name": "Darmstadtium",
+      "atomicWeight": 281.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 7,
+      "group": 10,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f14 6d9 7s1",
+      "electronConfigFull": "[Rn] 5f14 6d9 7s1",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        32,
+        17,
+        1
+      ],
+      "oxidationStates": [
+        6
+      ],
+      "primaryOxidation": 6,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Darmstadtium is a transition metal in period 7.",
+        "intermediate": "Solid transition metal; [Rn] 5f14 6d9 7s1.",
+        "advanced": "Z=110, [Rn] 5f14 6d9 7s1, group 10."
+      },
+      "curriculum": {
+        "beginner": "Darmstadtium is element 110. Remember the symbol Ds, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Darmstadtium: configuration [Rn] 5f14 6d9 7s1, oxidation [6], and the headline measurements.",
+        "advanced": "Go deeper on Darmstadtium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 111,
+      "symbol": "Rg",
+      "name": "Roentgenium",
+      "atomicWeight": 282.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 7,
+      "group": 11,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f14 6d10 7s1",
+      "electronConfigFull": "[Rn] 5f14 6d10 7s1",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        32,
+        18,
+        1
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Roentgenium is a transition metal in period 7.",
+        "intermediate": "Solid transition metal; [Rn] 5f14 6d10 7s1.",
+        "advanced": "Z=111, [Rn] 5f14 6d10 7s1, group 11."
+      },
+      "curriculum": {
+        "beginner": "Roentgenium is element 111. Remember the symbol Rg, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Roentgenium: configuration [Rn] 5f14 6d10 7s1, oxidation [3], and the headline measurements.",
+        "advanced": "Go deeper on Roentgenium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 112,
+      "symbol": "Cn",
+      "name": "Copernicium",
+      "atomicWeight": 285.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 7,
+      "group": 12,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f14 6d10 7s2",
+      "electronConfigFull": "[Rn] 5f14 6d10 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        32,
+        18,
+        2
+      ],
+      "oxidationStates": [
+        2
+      ],
+      "primaryOxidation": 2,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Copernicium is a transition metal in period 7.",
+        "intermediate": "Solid transition metal; [Rn] 5f14 6d10 7s2.",
+        "advanced": "Z=112, [Rn] 5f14 6d10 7s2, group 12."
+      },
+      "curriculum": {
+        "beginner": "Copernicium is element 112. Remember the symbol Cn, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Copernicium: configuration [Rn] 5f14 6d10 7s2, oxidation [2], and the headline measurements.",
+        "advanced": "Go deeper on Copernicium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 113,
+      "symbol": "Nh",
+      "name": "Nihonium",
+      "atomicWeight": 286.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "post-transition",
+      "categoryLabel": "Post-transition",
+      "tags": [],
+      "block": "p",
+      "period": 7,
+      "group": 13,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f14 6d10 7s2 7p1",
+      "electronConfigFull": "[Rn] 5f14 6d10 7s2 7p1",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        32,
+        18,
+        3
+      ],
+      "oxidationStates": [
+        1
+      ],
+      "primaryOxidation": 1,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Nihonium is a post-transition in period 7.",
+        "intermediate": "Solid post-transition; [Rn] 5f14 6d10 7s2 7p1.",
+        "advanced": "Z=113, [Rn] 5f14 6d10 7s2 7p1, group 13."
+      },
+      "curriculum": {
+        "beginner": "Nihonium is element 113. Remember the symbol Nh, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Nihonium: configuration [Rn] 5f14 6d10 7s2 7p1, oxidation [1], and the headline measurements.",
+        "advanced": "Go deeper on Nihonium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 114,
+      "symbol": "Fl",
+      "name": "Flerovium",
+      "atomicWeight": 289.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "post-transition",
+      "categoryLabel": "Post-transition",
+      "tags": [],
+      "block": "p",
+      "period": 7,
+      "group": 14,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f14 6d10 7s2 7p2",
+      "electronConfigFull": "[Rn] 5f14 6d10 7s2 7p2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        32,
+        18,
+        4
+      ],
+      "oxidationStates": [
+        2
+      ],
+      "primaryOxidation": 2,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Flerovium is a post-transition in period 7.",
+        "intermediate": "Solid post-transition; [Rn] 5f14 6d10 7s2 7p2.",
+        "advanced": "Z=114, [Rn] 5f14 6d10 7s2 7p2, group 14."
+      },
+      "curriculum": {
+        "beginner": "Flerovium is element 114. Remember the symbol Fl, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Flerovium: configuration [Rn] 5f14 6d10 7s2 7p2, oxidation [2], and the headline measurements.",
+        "advanced": "Go deeper on Flerovium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 115,
+      "symbol": "Mc",
+      "name": "Moscovium",
+      "atomicWeight": 290.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "post-transition",
+      "categoryLabel": "Post-transition",
+      "tags": [],
+      "block": "p",
+      "period": 7,
+      "group": 15,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f14 6d10 7s2 7p3",
+      "electronConfigFull": "[Rn] 5f14 6d10 7s2 7p3",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        32,
+        18,
+        5
+      ],
+      "oxidationStates": [
+        1
+      ],
+      "primaryOxidation": 1,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Moscovium is a post-transition in period 7.",
+        "intermediate": "Solid post-transition; [Rn] 5f14 6d10 7s2 7p3.",
+        "advanced": "Z=115, [Rn] 5f14 6d10 7s2 7p3, group 15."
+      },
+      "curriculum": {
+        "beginner": "Moscovium is element 115. Remember the symbol Mc, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Moscovium: configuration [Rn] 5f14 6d10 7s2 7p3, oxidation [1], and the headline measurements.",
+        "advanced": "Go deeper on Moscovium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 116,
+      "symbol": "Lv",
+      "name": "Livermorium",
+      "atomicWeight": 293.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "post-transition",
+      "categoryLabel": "Post-transition",
+      "tags": [],
+      "block": "p",
+      "period": 7,
+      "group": 16,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f14 6d10 7s2 7p4",
+      "electronConfigFull": "[Rn] 5f14 6d10 7s2 7p4",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        32,
+        18,
+        6
+      ],
+      "oxidationStates": [
+        2
+      ],
+      "primaryOxidation": 2,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Livermorium is a post-transition in period 7.",
+        "intermediate": "Solid post-transition; [Rn] 5f14 6d10 7s2 7p4.",
+        "advanced": "Z=116, [Rn] 5f14 6d10 7s2 7p4, group 16."
+      },
+      "curriculum": {
+        "beginner": "Livermorium is element 116. Remember the symbol Lv, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Livermorium: configuration [Rn] 5f14 6d10 7s2 7p4, oxidation [2], and the headline measurements.",
+        "advanced": "Go deeper on Livermorium: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 117,
+      "symbol": "Ts",
+      "name": "Tennessine",
+      "atomicWeight": 294.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "reactive-nonmetal",
+      "categoryLabel": "Halogen",
+      "tags": [
+        "halogen"
+      ],
+      "block": "p",
+      "period": 7,
+      "group": 17,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f14 6d10 7s2 7p5",
+      "electronConfigFull": "[Rn] 5f14 6d10 7s2 7p5",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        32,
+        18,
+        7
+      ],
+      "oxidationStates": [
+        -1
+      ],
+      "primaryOxidation": -1,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Tennessine is a halogen in period 7.",
+        "intermediate": "Solid halogen; [Rn] 5f14 6d10 7s2 7p5.",
+        "advanced": "Z=117, [Rn] 5f14 6d10 7s2 7p5, group 17."
+      },
+      "curriculum": {
+        "beginner": "Tennessine is element 117. Remember the symbol Ts, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Tennessine: configuration [Rn] 5f14 6d10 7s2 7p5, oxidation [-1], and the headline measurements.",
+        "advanced": "Go deeper on Tennessine: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 118,
+      "symbol": "Og",
+      "name": "Oganesson",
+      "atomicWeight": 294.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "noble-gas",
+      "categoryLabel": "Noble gas",
+      "tags": [],
+      "block": "p",
+      "period": 7,
+      "group": 18,
+      "standardState": "gas",
+      "electronConfig": "[Rn] 5f14 6d10 7s2 7p6",
+      "electronConfigFull": "[Rn] 5f14 6d10 7s2 7p6",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        32,
+        18,
+        8
+      ],
+      "oxidationStates": [],
+      "primaryOxidation": null,
+      "lattice": null,
+      "sourceId": "compiled-v1",
+      "summary": {
+        "beginner": "Oganesson is a noble gas in period 7.",
+        "intermediate": "Gas noble gas; [Rn] 5f14 6d10 7s2 7p6.",
+        "advanced": "Z=118, [Rn] 5f14 6d10 7s2 7p6, group 18."
+      },
+      "curriculum": {
+        "beginner": "Oganesson is element 118. Remember the symbol Og, where it sits, and one everyday use.",
+        "intermediate": "Course facts for Oganesson: configuration [Rn] 5f14 6d10 7s2 7p6, oxidation [], and the headline measurements.",
+        "advanced": "Go deeper on Oganesson: why neighbors differ, isotopes, and any spectral assignments in Spectra."
+      },
+      "properties": {},
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    }
+  ]
+}

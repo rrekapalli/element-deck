@@ -1,0 +1,56 @@
+name: element_deck
+description: Periodic-table explorer that teaches every element.
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.13.5
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  provider: ^6.1.5
+  go_router: ^16.2.4
+  drift: ^2.28.2
+  drift_flutter: ^0.2.7
+  sqlite3: ^2.9.4
+  sqlite3_flutter_libs: ^0.5.39
+  path_provider: ^2.1.5
+  path: ^1.9.1
+  firebase_core: ^4.2.1
+  firebase_auth: ^6.1.2
+  cloud_firestore: ^6.1.0
+  firebase_storage: ^13.0.4
+  cloud_functions: ^6.0.3
+  google_sign_in: ^6.2.2
+  in_app_purchase: ^3.2.3
+  crypto: ^3.0.7
+  pdf: ^3.11.3
+  printing: ^5.14.2
+  share_plus: ^12.0.1
+  audioplayers: ^6.5.1
+  collection: ^1.19.1
+  intl: any
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  drift_dev: ^2.28.2
+  build_runner: ^2.8.0
+
+flutter:
+  uses-material-design: true
+  generate: true
+  assets:
+    - assets/catalog/
+    - assets/help/
+  fonts:
+    - family: Plus Jakarta Sans
+      fonts:
+        - asset: assets/fonts/PlusJakartaSans.ttf
+    - family: JetBrains Mono
+      fonts:
+        - asset: assets/fonts/JetBrainsMono.ttf

@@ -73,10 +73,10 @@ The learner should be able to leave the neon screen knowing:
 Sonification rule:
 
 ```text
-audibleHz = lineFrequencyHz / transposeDivisor
+audibleHz = lineFrequencyHz / 1e12
 ```
 
-The divisor is a power of ten chosen so the visible window (roughly 400–750 THz) lands inside about 200–800 Hz. The button shows both the scientific frequency and the word "sonified." Advanced can show the audible frequency. Beginner shows "Play the color as a tone."
+512.25 THz is heard as 512.25 Hz. The button shows both the scientific frequency and the word "sonified." Advanced can show the audible frequency. Beginner shows "Play the color as a tone."
 
 Emission and absorption use the same line list, presented differently. Absorption does not invent Fraunhofer lines we did not store.
 

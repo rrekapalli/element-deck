@@ -122,7 +122,7 @@ Benchmark: screen 4. The bench.
 4. **Wavelength scrubber.** Moves the selection along the plotted lines. It does not invent lines between the dataset's lines.
 5. **Listen.** Plays the selected line's frequency **sonified** into the audible range. The button text keeps the real frequency and the word sonified. Respect the mute switch in App settings. If the OS is silent, show the tone as available and do not blast audio.
 6. **Gas discharge.** A glow swatch in the characteristic color, the voltage flavor as teaching copy where we have it ("1.2 kV glow"), and a sentence on the color. Color here is the element's emission color, which can differ from the family color used on tiles.
-7. **Astrophysical match.** A sourced note (stellar nucleosynthesis, a nebula, a Fraunhofer line) when we have one. Match percentages ship only with a defined method.
+7. **Astrophysical match.** A sourced note (stellar nucleosynthesis, a nebula, a Fraunhofer line) when we have one. Match percentages do not ship.
 8. **Isotopes and decay.** Z and proton count, then isotopes: mass number, neutron count, mass, spin, abundance or half-life, and a stability chip (stable, trace radioisotope, synthetic). The benchmark's neon list is the pattern.
 9. **Footer pin.** Dataset name, version, resolving power note if we show one. Resolution copy must match the dataset, not the PNG.
 

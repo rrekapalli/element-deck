@@ -6,6 +6,16 @@ The app is a Flutter client for phone, tablet, web, and desktop. Firebase stores
 
 The concept screens still show an older wordmark, ATOMIQ. The product name is Element Deck.
 
-**Status:** inception. Concept screens are in the repo. Application code is not.
+**Status:** Flutter app in this repo. Preview catalog (H, C, Si, Ne, Ti) is bundled. The 118-element pack is `assets/catalog/core.json` and `catalog/output/catalog.sqlite` for Firebase Storage.
 
-Read [Docs/README.md](Docs/README.md) for the working notes, starting with [vision](Docs/vision.md) and [product brief](Docs/product-brief.md).
+```bash
+flutter pub get
+flutter test
+flutter run
+# Full pack without the store (debug only):
+flutter run --dart-define=DEBUG_ENTITLEMENT=true
+```
+
+Firebase: deploy rules and `firebase/functions`, upload `catalog/output/catalog.sqlite` to `packs/core/1.0.0/catalog.sqlite`, and seed `packages` / `contentPacks` from `firebase/seed/packages.json`. Configure `google-services` / `GoogleService-Info` and `firebase_options.dart` for a real project. Preview works without Firebase.
+
+Read [Docs/README.md](Docs/README.md) for the product notes.

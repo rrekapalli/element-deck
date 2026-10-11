@@ -82,7 +82,7 @@ The app teaches measured science. It must not dress an illustration up as a meas
 | Curriculum blurb | Labeled as a teaching summary, separate from the measurement grid |
 | Spectral sonification | The UI says the tone is **transposed** into hearing range. 512 THz is not a speaker frequency |
 | Simulate Reaction | An illustration of a known reaction for this element, with reactants named. It is not a general solver and not a lab result |
-| Fraunhofer / match scores | Only if the method is defined and cited. Otherwise the row does not ship |
+| Fraunhofer / match scores | Do not ship a match percentage |
 | Category color | Means the IUPAC-style family. Theme never repaints it |
 
 ## Settings, in one glance

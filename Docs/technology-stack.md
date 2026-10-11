@@ -33,7 +33,7 @@ The web app is the Flutter web build. It is not a second UI toolkit.
 | Content-pack cache | SQLite in the app documents directory | The downloaded pack, opened read-only |
 | Learner | SQLite in the app documents directory | Preferences, bookmarks, recents, comparisons, progress, and a copy of the active entitlements |
 
-On phones and desktops these are ordinary SQLite files. On web the same schema uses SQLite compiled to WebAssembly. The exact Flutter package is chosen at scaffold time.
+SQLite access is **Drift**. On phones and desktops that is a native SQLite file. On web it is Drift's SQLite WASM. One schema for every target.
 
 Preferences, including theme, live in the learner database.
 

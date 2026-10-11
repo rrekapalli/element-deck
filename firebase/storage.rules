@@ -1,0 +1,14 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    function hasCore() {
+      return request.auth != null
+        && firestore.exists(/databases/(default)/documents/users/$(request.auth.uid))
+        && firestore.get(/databases/(default)/documents/users/$(request.auth.uid)).data.packageIds.hasAny(['element-deck', 'classroom']);
+    }
+    match /packs/core/{version}/{file} {
+      allow read: if hasCore();
+      allow write: if false;
+    }
+  }
+}

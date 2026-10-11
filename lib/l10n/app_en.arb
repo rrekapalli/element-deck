@@ -1,0 +1,22 @@
+{
+  "@@locale": "en",
+  "appName": "Element Deck",
+  "explorerEyebrow": "PERIODIC EXPLORER",
+  "roomTable": "Table",
+  "roomDetails": "Details",
+  "roomCompare": "Compare",
+  "roomSpectra": "Spectra",
+  "settings": "Settings",
+  "appSettings": "App settings",
+  "accountSettings": "Account settings",
+  "help": "Help",
+  "about": "About",
+  "searchHint": "Search element by name, symbol, or number",
+  "depthBeginner": "Beginner",
+  "depthIntermediate": "Intermediate",
+  "depthAdvanced": "Advanced",
+  "notReported": "Not reported",
+  "inTheFullPack": "In the full pack",
+  "signInWithGoogle": "Sign in with Google",
+  "onThisDevice": "On this device"
+}
