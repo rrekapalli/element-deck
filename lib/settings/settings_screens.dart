@@ -12,6 +12,7 @@ import '../packs/pack_service.dart';
 import '../providers/catalog_controller.dart';
 import '../providers/settings_controller.dart';
 import '../providers/theme_controller.dart';
+import '../theme/app_brand.dart';
 import '../theme/app_theme.dart';
 import '../widgets/depth_control.dart';
 
@@ -391,14 +392,23 @@ class AboutPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('About')),
-      body: const Padding(
-        padding: EdgeInsets.all(16),
-        child: Text(
-          'Element Deck 0.1.0\n\n'
-          'Element Deck explains published elemental data for learning. '
-          'It is not a lab measurement, a specification for engineering or medicine, '
-          'or a substitute for the cited dataset.',
-        ),
+      body: ListView(
+        padding: const EdgeInsets.all(24),
+        children: const [
+          Center(child: AppMark(size: 96)),
+          SizedBox(height: 16),
+          Text(
+            'Element Deck',
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
+          ),
+          SizedBox(height: 16),
+          Text(
+            'Element Deck explains published elemental data for learning. '
+            'It is not a lab measurement, a specification for engineering or medicine, '
+            'or a substitute for the cited dataset.',
+          ),
+        ],
       ),
     );
   }

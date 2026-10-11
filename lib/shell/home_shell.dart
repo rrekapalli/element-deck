@@ -9,6 +9,7 @@ import '../rooms/details_room.dart';
 import '../rooms/spectra_room.dart';
 import '../rooms/table_room.dart';
 import '../settings/settings_screens.dart';
+import '../theme/app_brand.dart';
 import '../theme/element_deck_ui.dart';
 
 class HomeShell extends StatefulWidget {
@@ -27,19 +28,7 @@ class _HomeShellState extends State<HomeShell> {
   Widget build(BuildContext context) {
     final catalog = context.watch<CatalogController>();
     if (catalog.loading) {
-      return const Scaffold(
-        backgroundColor: Color(0xFF080C14),
-        body: Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              CircularProgressIndicator(),
-              SizedBox(height: 12),
-              Text('Loading table…', style: TextStyle(color: Colors.white70)),
-            ],
-          ),
-        ),
-      );
+      return const AppSplash(caption: 'Loading table…');
     }
     if (catalog.error != null && catalog.pack.elements.isEmpty) {
       return Scaffold(body: Center(child: Text(catalog.error!)));
@@ -106,13 +95,19 @@ class _HomeShellState extends State<HomeShell> {
     }
     return Scaffold(
       appBar: AppBar(
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        title: Row(
           children: [
-            const Text('Element Deck'),
-            Text(
-              'PERIODIC EXPLORER · ${titles[widget.index]}',
-              style: Theme.of(context).textTheme.labelSmall,
+            const AppMark(size: 36),
+            const SizedBox(width: 10),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text('Element Deck'),
+                Text(
+                  'PERIODIC EXPLORER · ${titles[widget.index]}',
+                  style: Theme.of(context).textTheme.labelSmall,
+                ),
+              ],
             ),
           ],
         ),
@@ -192,6 +187,8 @@ class _TitleBar extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
         child: Row(
           children: [
+            const AppMark(size: 32),
+            const SizedBox(width: 10),
             const Text('Element Deck', style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18)),
             const SizedBox(width: 16),
             Text(title),

@@ -289,30 +289,76 @@ class _StripPainter extends CustomPainter {
   final List<SpectralLine> lines;
   final SpectralLine? selected;
 
+  static const _stops = <double>[0, 0.13, 0.27, 0.4, 0.52, 0.64, 0.78, 1];
+  static const _colors = <Color>[
+    Color(0xFF5B21B6),
+    Color(0xFF1D4ED8),
+    Color(0xFF0284C7),
+    Color(0xFF16A34A),
+    Color(0xFFFACC15),
+    Color(0xFFF97316),
+    Color(0xFFDC2626),
+    Color(0xFF7F1D1D),
+  ];
+
   @override
   void paint(Canvas canvas, Size size) {
-    final bg = Paint()..color = const Color(0xFF0B1220);
+    if (size.width <= 0 || size.height <= 0) return;
+    final bounds = Offset.zero & size;
+    final clip = RRect.fromRectAndRadius(bounds, const Radius.circular(12));
+    canvas.save();
+    canvas.clipRRect(clip);
+    const steps = 72;
+    for (var i = 0; i < steps; i++) {
+      final t = i / steps;
+      final x = t * size.width;
+      canvas.drawRect(
+        Rect.fromLTWH(x, 0, size.width / steps + 0.6, size.height),
+        Paint()..color = _at(t),
+      );
+    }
+    canvas.restore();
     canvas.drawRRect(
-      RRect.fromRectAndRadius(Offset.zero & size, const Radius.circular(12)),
-      bg,
+      clip,
+      Paint()
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 1
+        ..color = const Color(0x660B1B33),
     );
-    if (lines.isEmpty || size.width <= 0) return;
     for (final line in lines) {
       final x = (line.nm - _visMin) / (_visMax - _visMin) * size.width;
       final chosen = line.id == selected?.id;
-      final color = _lineColor(line.nm);
-      final glow = Paint()
-        ..color = color.withValues(alpha: chosen ? 0.55 : 0.28)
-        ..strokeWidth = chosen ? 8 : 5
-        ..strokeCap = StrokeCap.round
-        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 2);
-      final core = Paint()
-        ..color = chosen ? Colors.white : color
-        ..strokeWidth = chosen ? 2.5 : 1.8
-        ..strokeCap = StrokeCap.round;
-      canvas.drawLine(Offset(x, 10), Offset(x, size.height - 10), glow);
-      canvas.drawLine(Offset(x, 8), Offset(x, size.height - 8), core);
+      final ink = _lineColor(line.nm);
+      canvas.drawLine(
+        Offset(x, 8),
+        Offset(x, size.height - 8),
+        Paint()
+          ..color = const Color(0xE60B1B33)
+          ..strokeWidth = chosen ? 5 : 3
+          ..strokeCap = StrokeCap.round,
+      );
+      canvas.drawLine(
+        Offset(x, 8),
+        Offset(x, size.height - 8),
+        Paint()
+          ..color = chosen ? Colors.white : ink
+          ..strokeWidth = chosen ? 2.4 : 1.6
+          ..strokeCap = StrokeCap.round,
+      );
     }
+  }
+
+  Color _at(double t) {
+    for (var i = 0; i < _stops.length - 1; i++) {
+      final a = _stops[i];
+      final b = _stops[i + 1];
+      if (t <= b) {
+        final span = b - a;
+        final u = span == 0 ? 0.0 : ((t - a) / span).clamp(0.0, 1.0);
+        return Color.lerp(_colors[i], _colors[i + 1], u)!;
+      }
+    }
+    return _colors.last;
   }
 
   @override

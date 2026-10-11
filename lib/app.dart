@@ -14,6 +14,7 @@ import 'providers/selection_controller.dart';
 import 'providers/settings_controller.dart';
 import 'providers/theme_controller.dart';
 import 'shell/home_shell.dart';
+import 'theme/app_brand.dart';
 
 class ElementDeckApp extends StatefulWidget {
   const ElementDeckApp({
@@ -119,30 +120,17 @@ class _ElementDeckAppState extends State<ElementDeckApp> {
   Widget build(BuildContext context) {
     if (!_ready) {
       return MaterialApp(
+        title: 'Element Deck',
         theme: ThemeData(
           useMaterial3: true,
-          brightness: Brightness.light,
-          colorScheme: ColorScheme.fromSeed(
-            seedColor: const Color(0xFF1D4ED8),
-            brightness: Brightness.light,
+          brightness: Brightness.dark,
+          scaffoldBackgroundColor: AppBrand.canvas,
+          colorScheme: const ColorScheme.dark(
+            surface: AppBrand.canvas,
+            primary: AppBrand.action,
           ),
         ),
-        home: const Scaffold(
-          backgroundColor: Color(0xFFEFF5FC),
-          body: Center(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                CircularProgressIndicator(),
-                SizedBox(height: 16),
-                Text(
-                  'Element Deck',
-                  style: TextStyle(color: Color(0xFF0B1B33), fontSize: 18),
-                ),
-              ],
-            ),
-          ),
-        ),
+        home: const AppSplash(caption: 'Opening the table…'),
       );
     }
     return MultiProvider(
