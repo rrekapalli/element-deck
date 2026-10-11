@@ -36,7 +36,7 @@ class ElementDossier extends StatelessWidget {
                 padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
                 child: ElementHeader(element: element),
               ),
-              if (pinned != null) pinned!,
+              ?pinned,
             ],
           ),
         ),

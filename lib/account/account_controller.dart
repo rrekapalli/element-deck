@@ -22,6 +22,7 @@ class AccountController extends ChangeNotifier {
   bool firebaseReady = false;
   String? lastError;
   String? packVersion;
+  bool _googleInitialized = false;
 
   bool get hasCore =>
       packages.contains('element-deck') ||
@@ -56,28 +57,47 @@ class AccountController extends ChangeNotifier {
     try {
       if (kIsWeb) {
         await FirebaseAuth.instance.signInWithPopup(GoogleAuthProvider());
-      } else {
-        final google = GoogleSignIn();
-        final account = await google.signIn();
-        if (account == null) return;
-        final auth = await account.authentication;
-        final cred = GoogleAuthProvider.credential(
-          accessToken: auth.accessToken,
-          idToken: auth.idToken,
-        );
-        await FirebaseAuth.instance.signInWithCredential(cred);
+        return;
       }
+      await _initGoogleSignIn();
+      final google = GoogleSignIn.instance;
+      if (!google.supportsAuthenticate()) {
+        lastError = 'Google sign-in is not available on this device.';
+        notifyListeners();
+        return;
+      }
+      final account = await google.authenticate();
+      final idToken = account.authentication.idToken;
+      if (idToken == null) {
+        lastError = 'Google did not return an ID token.';
+        notifyListeners();
+        return;
+      }
+      final cred = GoogleAuthProvider.credential(idToken: idToken);
+      await FirebaseAuth.instance.signInWithCredential(cred);
+    } on GoogleSignInException catch (e) {
+      if (e.code == GoogleSignInExceptionCode.canceled) return;
+      lastError = e.description ?? '$e';
+      notifyListeners();
     } catch (e) {
       lastError = '$e';
       notifyListeners();
     }
   }
 
+  Future<void> _initGoogleSignIn() async {
+    if (_googleInitialized) return;
+    await GoogleSignIn.instance.initialize();
+    _googleInitialized = true;
+  }
+
   Future<void> signOut() async {
     await FirebaseAuth.instance.signOut();
-    try {
-      await GoogleSignIn().signOut();
-    } catch (_) {}
+    if (_googleInitialized) {
+      try {
+        await GoogleSignIn.instance.signOut();
+      } catch (_) {}
+    }
     user = null;
     notifyListeners();
   }

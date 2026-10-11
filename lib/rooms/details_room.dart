@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../models/catalog.dart';
+import '../models/orbital_force.dart';
 import '../models/periodic_layout.dart';
 import '../providers/selection_controller.dart';
 import '../providers/settings_controller.dart';

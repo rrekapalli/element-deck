@@ -46,7 +46,7 @@ class CatalogCache {
           ],
         });
       } finally {
-        db.dispose();
+        db.close();
       }
     } catch (_) {
       return null;
