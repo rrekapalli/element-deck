@@ -67,6 +67,20 @@ void main() {
         greaterThan(120),
         reason: 'history Z=${e.z}',
       );
+      expect(e.trivia.length, greaterThanOrEqualTo(5), reason: 'trivia Z=${e.z}');
+      for (final story in e.trivia) {
+        expect(story.title.trim().length, greaterThan(8), reason: 'trivia title Z=${e.z}');
+        expect(
+          story.summary.trim().length,
+          greaterThan(40),
+          reason: 'trivia summary Z=${e.z}',
+        );
+        expect(
+          story.story.trim().length,
+          greaterThan(200),
+          reason: 'trivia story Z=${e.z} ${story.title}',
+        );
+      }
       expect(e.applications, isNotEmpty, reason: 'apps Z=${e.z}');
       expect(e.discovery, isNotNull, reason: 'discovery Z=${e.z}');
     }

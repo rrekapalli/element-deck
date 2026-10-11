@@ -91,7 +91,7 @@ class _SpectraRoomState extends State<SpectraRoom> {
           ),
           const SizedBox(height: 12),
           SizedBox(
-            height: 96,
+            height: 120,
             child: LayoutBuilder(
               builder: (context, constraints) {
                 return GestureDetector(
@@ -107,7 +107,14 @@ class _SpectraRoomState extends State<SpectraRoom> {
                           setState(() => selected = _nearest(visible, nm));
                         },
                   child: CustomPaint(
-                    painter: _StripPainter(visible, selected),
+                    painter: _StripPainter(
+                      lines: visible,
+                      selected: selected,
+                      emission: mode == 'emission',
+                      emptyLabel: lines.isEmpty
+                          ? 'No catalogued lines'
+                          : 'No lines in 380–780 nm',
+                    ),
                     child: const SizedBox.expand(),
                   ),
                 );
@@ -285,10 +292,17 @@ Color _lineColor(double nm) {
 }
 
 class _StripPainter extends CustomPainter {
-  _StripPainter(this.lines, this.selected);
+  _StripPainter({
+    required this.lines,
+    required this.selected,
+    required this.emission,
+    required this.emptyLabel,
+  });
 
   final List<SpectralLine> lines;
   final SpectralLine? selected;
+  final bool emission;
+  final String emptyLabel;
 
   static const _stops = <double>[0, 0.13, 0.27, 0.4, 0.52, 0.64, 0.78, 1];
   static const _colors = <Color>[
@@ -309,14 +323,18 @@ class _StripPainter extends CustomPainter {
     final clip = RRect.fromRectAndRadius(bounds, const Radius.circular(12));
     canvas.save();
     canvas.clipRRect(clip);
-    const steps = 72;
-    for (var i = 0; i < steps; i++) {
-      final t = i / steps;
-      final x = t * size.width;
-      canvas.drawRect(
-        Rect.fromLTWH(x, 0, size.width / steps + 0.6, size.height),
-        Paint()..color = _at(t),
-      );
+    if (lines.isEmpty) {
+      canvas.drawRect(bounds, Paint()..color = const Color(0xFFE8EEF6));
+      _axis(canvas, size, const Color(0xFF64748B));
+      _centerLabel(canvas, size, emptyLabel, const Color(0xFF3E5674));
+    } else if (emission) {
+      canvas.drawRect(bounds, Paint()..color = const Color(0xFF0B1220));
+      _axis(canvas, size, const Color(0xFF94A3B8));
+      _marks(canvas, size, bright: true);
+    } else {
+      _rainbow(canvas, size);
+      _axis(canvas, size, const Color(0xFF0B1B33));
+      _marks(canvas, size, bright: false);
     }
     canvas.restore();
     canvas.drawRRect(
@@ -326,27 +344,110 @@ class _StripPainter extends CustomPainter {
         ..strokeWidth = 1
         ..color = const Color(0x660B1B33),
     );
-    for (final line in lines) {
+  }
+
+  void _rainbow(Canvas canvas, Size size) {
+    const steps = 72;
+    for (var i = 0; i < steps; i++) {
+      final t = i / steps;
+      canvas.drawRect(
+        Rect.fromLTWH(t * size.width, 0, size.width / steps + 0.6, size.height),
+        Paint()..color = _at(t),
+      );
+    }
+  }
+
+  void _marks(Canvas canvas, Size size, {required bool bright}) {
+    final ordered = [...lines]..sort((a, b) => a.nm.compareTo(b.nm));
+    final labelAll = ordered.length <= 5;
+    var lastRight = -100.0;
+    for (final line in ordered) {
       final x = (line.nm - _visMin) / (_visMax - _visMin) * size.width;
       final chosen = line.id == selected?.id;
       final ink = _lineColor(line.nm);
-      canvas.drawLine(
-        Offset(x, 8),
-        Offset(x, size.height - 8),
-        Paint()
-          ..color = const Color(0xE60B1B33)
-          ..strokeWidth = chosen ? 5 : 3
-          ..strokeCap = StrokeCap.round,
-      );
-      canvas.drawLine(
-        Offset(x, 8),
-        Offset(x, size.height - 8),
-        Paint()
-          ..color = chosen ? Colors.white : ink
-          ..strokeWidth = chosen ? 2.4 : 1.6
-          ..strokeCap = StrokeCap.round,
-      );
+      final top = 10.0;
+      final bottom = size.height - 22;
+      if (bright) {
+        canvas.drawLine(
+          Offset(x, top),
+          Offset(x, bottom),
+          Paint()
+            ..color = ink.withValues(alpha: 0.45)
+            ..strokeWidth = chosen ? 12 : 8
+            ..strokeCap = StrokeCap.round,
+        );
+        canvas.drawLine(
+          Offset(x, top),
+          Offset(x, bottom),
+          Paint()
+            ..color = ink
+            ..strokeWidth = chosen ? 4 : 2.5
+            ..strokeCap = StrokeCap.round,
+        );
+        canvas.drawLine(
+          Offset(x, top),
+          Offset(x, bottom),
+          Paint()
+            ..color = Colors.white
+            ..strokeWidth = chosen ? 1.6 : 1
+            ..strokeCap = StrokeCap.round,
+        );
+      } else {
+        canvas.drawLine(
+          Offset(x, 6),
+          Offset(x, size.height - 20),
+          Paint()
+            ..color = const Color(0xFF0B1220)
+            ..strokeWidth = chosen ? 7 : 4
+            ..strokeCap = StrokeCap.butt,
+        );
+      }
+      if (!chosen && !labelAll) continue;
+      final label = line.nm.toStringAsFixed(0);
+      final tp = TextPainter(
+        text: TextSpan(
+          text: label,
+          style: TextStyle(
+            color: bright ? Colors.white : const Color(0xFF0B1B33),
+            fontSize: 10,
+            fontWeight: FontWeight.w700,
+          ),
+        ),
+        textDirection: TextDirection.ltr,
+      )..layout();
+      final left = (x - tp.width / 2).clamp(4.0, size.width - tp.width - 4);
+      if (!chosen && left < lastRight + 4) continue;
+      tp.paint(canvas, Offset(left, size.height - 16));
+      lastRight = left + tp.width;
     }
+  }
+
+  void _axis(Canvas canvas, Size size, Color color) {
+    final paint = Paint()
+      ..color = color
+      ..strokeWidth = 1;
+    for (final nm in [400, 500, 600, 700]) {
+      final x = (nm - _visMin) / (_visMax - _visMin) * size.width;
+      canvas.drawLine(Offset(x, 6), Offset(x, 12), paint);
+    }
+  }
+
+  void _centerLabel(Canvas canvas, Size size, String text, Color color) {
+    final tp = TextPainter(
+      text: TextSpan(
+        text: text,
+        style: TextStyle(
+          color: color,
+          fontSize: 13,
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+      textDirection: TextDirection.ltr,
+    )..layout(maxWidth: size.width - 24);
+    tp.paint(
+      canvas,
+      Offset((size.width - tp.width) / 2, (size.height - tp.height) / 2 - 6),
+    );
   }
 
   Color _at(double t) {

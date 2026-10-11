@@ -11,6 +11,7 @@ sys.path.insert(0, str(ROOT))
 from enrich import DISCOVERY as ENRICH_DISCOVERY
 from enrich import apps_for, curriculum, extra_props, summaries
 from history import HISTORY
+from trivia import TRIVIA
 from spectral_lines import LINES as EXTRA_LINES
 
 # z, symbol, name, mass, cat, block, period, group, state, shells, config, ox, lattice
@@ -399,6 +400,7 @@ def parse_all() -> list[dict]:
         year, people, text = ENRICH_DISCOVERY[z]
         el["discovery"] = {"year": year, "people": people, "text": text}
         el["history"] = HISTORY[z]
+        el["trivia"] = TRIVIA[z]
         el["applications"] = apps_for(z, name)
         el["spectralLines"] = _spectral_lines(z, symbol)
         el["isotopes"] = ISOTOPES.get(z) or default_isotopes(z, mass)

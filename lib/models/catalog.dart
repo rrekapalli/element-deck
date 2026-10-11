@@ -66,6 +66,7 @@ class ElementRecord {
     required this.sourceId,
     required this.summary,
     required this.history,
+    required this.trivia,
     required this.curriculum,
     required this.properties,
     required this.discovery,
@@ -98,6 +99,7 @@ class ElementRecord {
   final String sourceId;
   final DepthText summary;
   final String history;
+  final List<TriviaStory> trivia;
   final DepthText curriculum;
   final ElementProperties properties;
   final Discovery? discovery;
@@ -141,6 +143,9 @@ class ElementRecord {
       sourceId: json['sourceId'] as String? ?? 'compiled-v1',
       summary: DepthText.fromJson(json['summary'] as Map<String, dynamic>),
       history: json['history'] as String? ?? '',
+      trivia: (json['trivia'] as List<dynamic>? ?? [])
+          .map((e) => TriviaStory.fromJson(e as Map<String, dynamic>))
+          .toList(),
       curriculum: DepthText.fromJson(
         json['curriculum'] as Map<String, dynamic>,
       ),
@@ -168,6 +173,26 @@ class ElementRecord {
           : ReactionIllustration.fromJson(
               json['reaction'] as Map<String, dynamic>,
             ),
+    );
+  }
+}
+
+class TriviaStory {
+  TriviaStory({
+    required this.title,
+    required this.summary,
+    required this.story,
+  });
+
+  final String title;
+  final String summary;
+  final String story;
+
+  factory TriviaStory.fromJson(Map<String, dynamic> json) {
+    return TriviaStory(
+      title: json['title'] as String? ?? '',
+      summary: json['summary'] as String? ?? '',
+      story: json['story'] as String? ?? '',
     );
   }
 }

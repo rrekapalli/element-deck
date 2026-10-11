@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../models/catalog.dart';
-import '../models/orbital_force.dart';
 import '../models/periodic_layout.dart';
 import '../providers/selection_controller.dart';
 import '../providers/settings_controller.dart';
@@ -11,8 +10,6 @@ import '../theme/element_spectrum.dart';
 import '../widgets/electron_force_graph.dart';
 import '../widgets/element_header.dart';
 
-enum _DossierTab { details, history, data }
-
 class DetailsRoom extends StatefulWidget {
   const DetailsRoom({super.key});
 
@@ -20,19 +17,33 @@ class DetailsRoom extends StatefulWidget {
   State<DetailsRoom> createState() => _DetailsRoomState();
 }
 
-class _DetailsRoomState extends State<DetailsRoom> {
-  _DossierTab _tab = _DossierTab.details;
+class _DetailsRoomState extends State<DetailsRoom>
+    with SingleTickerProviderStateMixin {
+  static const _labels = ['Details', 'Data', 'History', 'Trivia'];
+
+  late final TabController _tabs;
   final _scroll = ScrollController();
+  int _index = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabs = TabController(length: _labels.length, vsync: this);
+    _tabs.addListener(_onTab);
+  }
+
+  void _onTab() {
+    if (_tabs.index == _index) return;
+    setState(() => _index = _tabs.index);
+    if (_scroll.hasClients) _scroll.jumpTo(0);
+  }
 
   @override
   void dispose() {
+    _tabs.removeListener(_onTab);
+    _tabs.dispose();
     _scroll.dispose();
     super.dispose();
-  }
-
-  void _selectTab(_DossierTab tab) {
-    setState(() => _tab = tab);
-    if (_scroll.hasClients) _scroll.jumpTo(0);
   }
 
   @override
@@ -60,18 +71,20 @@ class _DetailsRoomState extends State<DetailsRoom> {
     }
     return ElementDossier(
       element: e,
+      pinned: TabBar(
+        controller: _tabs,
+        dividerColor: Colors.transparent,
+        tabs: [for (final label in _labels) Tab(text: label)],
+      ),
       child: ListView(
         controller: _scroll,
         padding: const EdgeInsets.fromLTRB(16, 12, 16, 32),
         children: [
-          _DossierTabs(tab: _tab, onChanged: _selectTab),
-          const SizedBox(height: 8),
-          Text(_caption(_tab), style: Theme.of(context).textTheme.bodySmall),
-          const SizedBox(height: 12),
-          ...switch (_tab) {
-            _DossierTab.details => _details(context, e, settings),
-            _DossierTab.history => _history(context, e),
-            _DossierTab.data => _data(context, e, settings),
+          ...switch (_index) {
+            0 => _details(context, e, settings),
+            1 => _data(context, e, settings),
+            2 => _history(context, e),
+            _ => _trivia(context, e),
           },
         ],
       ),
@@ -144,6 +157,43 @@ class _DetailsRoomState extends State<DetailsRoom> {
         const SizedBox(height: 12),
         _Discovery(e.discovery!),
       ],
+    ];
+  }
+
+  List<Widget> _trivia(BuildContext context, ElementRecord e) {
+    if (e.trivia.isEmpty) {
+      return const [Text('Trivia for this element is not in the pack yet.')];
+    }
+    final titleStyle = Theme.of(context).textTheme.titleMedium;
+    return [
+      for (final story in e.trivia)
+        Padding(
+          padding: const EdgeInsets.only(bottom: 10),
+          child: Card(
+            margin: EdgeInsets.zero,
+            clipBehavior: Clip.antiAlias,
+            child: InkWell(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute<void>(
+                    builder: (_) => _TriviaStoryPage(element: e, story: story),
+                  ),
+                );
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(story.title, style: titleStyle),
+                    const SizedBox(height: 6),
+                    Text(story.summary),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
     ];
   }
 
@@ -274,17 +324,6 @@ class _DetailsRoomState extends State<DetailsRoom> {
   }
 }
 
-String _caption(_DossierTab tab) {
-  return switch (tab) {
-    _DossierTab.details =>
-      'What it is, how the electrons sit, and where you meet it.',
-    _DossierTab.history =>
-      'Who found it, how it was named, and how it entered science.',
-    _DossierTab.data =>
-      'Compiled scientific values for this element. Units follow App Config.',
-  };
-}
-
 String _percent(double? abundance) {
   if (abundance == null) return 'abundance not reported';
   final pct = abundance * 100;
@@ -330,53 +369,32 @@ String _density(double value) {
   return '${_trim(value)} g/cm³';
 }
 
-class _DossierTabs extends StatelessWidget {
-  const _DossierTabs({required this.tab, required this.onChanged});
+class _TriviaStoryPage extends StatelessWidget {
+  const _TriviaStoryPage({required this.element, required this.story});
 
-  final _DossierTab tab;
-  final ValueChanged<_DossierTab> onChanged;
+  final ElementRecord element;
+  final TriviaStory story;
 
   @override
   Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    const tabs = _DossierTab.values;
-    const labels = ['Details', 'History', 'Data'];
-    return Container(
-      padding: const EdgeInsets.all(4),
-      decoration: BoxDecoration(
-        color: scheme.surface,
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: scheme.outline.withValues(alpha: 0.4)),
-      ),
-      child: Row(
+    final paragraphs = story.story
+        .split(RegExp(r'\n\s*\n'))
+        .map((p) => p.trim())
+        .where((p) => p.isNotEmpty);
+    return Scaffold(
+      appBar: AppBar(title: Text(story.title)),
+      body: ListView(
+        padding: const EdgeInsets.fromLTRB(20, 16, 20, 32),
         children: [
-          for (var i = 0; i < tabs.length; i++)
-            Expanded(
-              child: InkWell(
-                onTap: () => onChanged(tabs[i]),
-                borderRadius: BorderRadius.circular(8),
-                child: Container(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  decoration: BoxDecoration(
-                    color: tab == tabs[i]
-                        ? scheme.primary.withValues(alpha: 0.2)
-                        : Colors.transparent,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Text(
-                    labels[i],
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 13,
-                      color: tab == tabs[i]
-                          ? scheme.primary
-                          : scheme.onSurface.withValues(alpha: 0.7),
-                    ),
-                  ),
-                ),
-              ),
-            ),
+          Text(
+            '${element.z}  ${element.name}',
+            style: Theme.of(context).textTheme.labelLarge,
+          ),
+          const SizedBox(height: 16),
+          for (final paragraph in paragraphs) ...[
+            Text(paragraph),
+            const SizedBox(height: 12),
+          ],
         ],
       ),
     );

@@ -1,7 +1,7 @@
 name: element_deck
 description: Periodic-table explorer that teaches every element.
 publish_to: 'none'
-version: 0.6.0+6
+version: 0.8.0+8
 
 environment:
   sdk: ^3.13.5

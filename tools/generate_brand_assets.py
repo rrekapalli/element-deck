@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Raster Element Deck mark, PWA icons, and iOS Add-to-Home-Screen splashes.
 
-The in-app mark is drawn in lib/theme/app_brand.dart. Keep the tile inset and
-the hydrogen cell in step with that painter.
+The in-app mark is drawn in lib/theme/app_brand.dart. Keep the electron tile
+in step with that painter.
 """
 
 from __future__ import annotations
@@ -10,14 +10,18 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+import math
+
 from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parents[1]
 CANVAS = (8, 12, 20)
 TILE = (15, 23, 42)
 ACTION = (56, 189, 248)
+GOLD = (228, 184, 74)
 MUTED = (148, 163, 184)
 TEXT = (248, 250, 252)
+VERSION = "1.1"
 
 SANS = ROOT / "assets" / "fonts" / "PlusJakartaSans.ttf"
 MONO = ROOT / "assets" / "fonts" / "JetBrainsMono.ttf"
@@ -61,29 +65,58 @@ def mark(size: int, inset_ratio: float = 0.16) -> Image.Image:
     width = max(2, size // 40)
     draw.rounded_rectangle(box, radius=radius, fill=TILE, outline=ACTION, width=width)
 
-    z_font = font(MONO, int(cell * 0.16))
-    z_box = draw.textbbox((0, 0), "1", font=z_font)
+    z_font = font(MONO, max(6, int(cell * 0.14)))
     draw.text(
-        (box[0] + int(cell * 0.1), box[1] + int(cell * 0.08)),
-        "1",
+        (box[0] + int(cell * 0.08), box[1] + int(cell * 0.07)),
+        VERSION,
         font=z_font,
         fill=MUTED,
     )
 
-    h_font = font(SANS, int(cell * 0.52))
-    h_box = draw.textbbox((0, 0), "H", font=h_font)
-    h_w = h_box[2] - h_box[0]
-    h_h = h_box[3] - h_box[1]
+    e_font = font(SANS, int(cell * 0.5))
+    e_box = draw.textbbox((0, 0), "e", font=e_font)
+    e_w = e_box[2] - e_box[0]
+    e_h = e_box[3] - e_box[1]
     draw.text(
         (
-            (box[0] + box[2] - h_w) / 2 - h_box[0],
-            (box[1] + box[3] - h_h) / 2 - h_box[1] + cell * 0.04,
+            (box[0] + box[2] - e_w) / 2 - e_box[0],
+            (box[1] + box[3] - e_h) / 2 - e_box[1] + cell * 0.04,
         ),
-        "H",
-        font=h_font,
+        "e",
+        font=e_font,
         fill=ACTION,
     )
-    del z_box
+
+    cx = (box[0] + box[2]) / 2
+    cy = (box[1] + box[3]) / 2 + cell * 0.04
+    rx = cell * 0.36
+    ry = cell * 0.24
+    tilt = -0.32
+    orbit_w = max(2, size // 55)
+    points: list[tuple[float, float]] = []
+    for i in range(72):
+        a = i * math.tau / 72
+        x = rx * math.cos(a)
+        y = ry * math.sin(a)
+        xr = x * math.cos(tilt) - y * math.sin(tilt)
+        yr = x * math.sin(tilt) + y * math.cos(tilt)
+        points.append((cx + xr, cy + yr))
+    draw.line(points + [points[0]], fill=GOLD, width=orbit_w)
+
+    t = -0.85
+    ex = rx * math.cos(t)
+    ey = ry * math.sin(t)
+    star = (
+        cx + ex * math.cos(tilt) - ey * math.sin(tilt),
+        cy + ex * math.sin(tilt) + ey * math.cos(tilt),
+    )
+    star_r = max(2.0, cell * 0.055)
+    star_pts: list[tuple[float, float]] = []
+    for i in range(8):
+        r = star_r if i % 2 == 0 else star_r * 0.38
+        a = -math.pi / 2 + i * math.pi / 4
+        star_pts.append((star[0] + r * math.cos(a), star[1] + r * math.sin(a)))
+    draw.polygon(star_pts, fill=GOLD)
     return image
 
 
@@ -178,6 +211,18 @@ def main() -> None:
         logical = float(item["size"].split("x")[0])
         scale = int(item["scale"].replace("x", ""))
         save(mark(int(round(logical * scale)), 0.12), iconset / name)
+
+    macset = ROOT / "macos" / "Runner" / "Assets.xcassets" / "AppIcon.appiconset"
+    for name, px in (
+        ("app_icon_16.png", 16),
+        ("app_icon_32.png", 32),
+        ("app_icon_64.png", 64),
+        ("app_icon_128.png", 128),
+        ("app_icon_256.png", 256),
+        ("app_icon_512.png", 512),
+        ("app_icon_1024.png", 1024),
+    ):
+        save(mark(px, 0.12), macset / name)
 
     patch_index(startup_links())
     print("wrote brand icons and", len(DEVICES) * 2, "startup images")

@@ -7,11 +7,19 @@ import '../theme/app_theme.dart';
 import '../theme/element_spectrum.dart';
 
 /// Pins [ElementHeader] and lets [child] scroll beneath it.
+///
+/// [pinned] stays with the header. Details uses it for the tab bar.
 class ElementDossier extends StatelessWidget {
-  const ElementDossier({super.key, required this.element, required this.child});
+  const ElementDossier({
+    super.key,
+    required this.element,
+    required this.child,
+    this.pinned,
+  });
 
   final ElementRecord element;
   final Widget child;
+  final Widget? pinned;
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +29,15 @@ class ElementDossier extends StatelessWidget {
       children: [
         Material(
           color: theme.scaffoldBackgroundColor,
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
-            child: ElementHeader(element: element),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
+                child: ElementHeader(element: element),
+              ),
+              if (pinned != null) pinned!,
+            ],
           ),
         ),
         Divider(
