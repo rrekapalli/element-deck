@@ -5,7 +5,6 @@ import '../providers/catalog_controller.dart';
 import '../providers/selection_controller.dart';
 import '../theme/element_deck_ui.dart';
 import '../theme/element_spectrum.dart';
-import '../widgets/depth_control.dart';
 import '../widgets/element_tile.dart';
 import '../widgets/periodic_table.dart';
 
@@ -40,8 +39,6 @@ class TableRoom extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          const DepthControl(),
-          const SizedBox(height: 8),
           const _SearchAndChips(),
           const SizedBox(height: 8),
           Expanded(

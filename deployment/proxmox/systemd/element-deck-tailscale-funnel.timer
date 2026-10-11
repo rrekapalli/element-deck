@@ -1,0 +1,14 @@
+[Unit]
+Description=Re-check Element Deck Funnel and re-apply if it dropped
+
+[Timer]
+OnBootSec=30s
+OnCalendar=*-*-* *:00/2:00
+OnUnitInactiveSec=2min
+AccuracySec=20s
+Persistent=true
+RandomizedDelaySec=10s
+Unit=element-deck-tailscale-funnel.service
+
+[Install]
+WantedBy=timers.target

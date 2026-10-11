@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../data/learner_database.dart';
@@ -9,8 +8,8 @@ class ThemeController extends ChangeNotifier {
 
   final LearnerDatabase _db;
 
-  ThemeMode mode = ThemeMode.dark;
-  ColorThemeId colorTheme = ColorThemeId.obsidianOrbit;
+  ThemeMode mode = ThemeMode.light;
+  ColorThemeId colorTheme = ColorThemeId.blue;
   Color customSeed = const Color(0xFF38BDF8);
   bool glass = AppTheme.defaultGlass();
   bool reduceGlow = false;
@@ -31,37 +30,33 @@ class ThemeController extends ChangeNotifier {
   }
 
   ThemeData get light => AppTheme.build(
-        chrome: ChromePalette.resolve(
-          id: ColorThemeId.chalk,
-          brightness: Brightness.light,
-          customSeed: customSeed,
-        ),
-        brightness: Brightness.light,
-        glass: glass,
-      );
+    chrome: ChromePalette.resolve(
+      id: colorTheme,
+      brightness: Brightness.light,
+      customSeed: customSeed,
+    ),
+    brightness: Brightness.light,
+    glass: glass,
+  );
 
-  ThemeData get dark => AppTheme.build(
-        chrome: chrome,
-        brightness: Brightness.dark,
-        glass: glass,
-      );
+  ThemeData get dark =>
+      AppTheme.build(chrome: chrome, brightness: Brightness.dark, glass: glass);
 
   Future<void> load() async {
-    final modeName = await _db.pref('appearance.themeMode') ?? 'dark';
+    final modeName = await _db.pref('appearance.themeMode') ?? 'light';
     mode = ThemeMode.values.firstWhere(
       (m) => m.name == modeName,
-      orElse: () => ThemeMode.dark,
+      orElse: () => ThemeMode.light,
     );
-    final themeName =
-        await _db.pref('appearance.colorTheme') ?? 'obsidianOrbit';
+    final themeName = await _db.pref('appearance.colorTheme') ?? 'blue';
     colorTheme = ColorThemeId.values.firstWhere(
       (m) => m.name == themeName,
-      orElse: () => ColorThemeId.obsidianOrbit,
+      orElse: () => ColorThemeId.blue,
     );
     final seed = await _db.pref('appearance.customSeed');
     if (seed != null) customSeed = Color(int.parse(seed));
-    glass = (await _db.pref('appearance.frostedGlass')) == 'true' ||
-        ((await _db.pref('appearance.frostedGlass')) == null && !kIsWeb);
+    final glassPref = await _db.pref('appearance.frostedGlass');
+    glass = glassPref == null || glassPref == 'true';
     reduceGlow = (await _db.pref('appearance.reduceGlow')) == 'true';
     notifyListeners();
   }

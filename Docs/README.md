@@ -20,6 +20,8 @@ Read these in order if you are new to the project:
 12. [Market landscape](./market-landscape.md) — adjacent periodic-table products
 13. [Use cases](./use-cases/README.md) — student, educator, enthusiast, classroom
 14. [Open questions](./open-questions.md) — what still needs refinement
+15. [PWA on the LXC](./pwa-lxc.md) — host the web app on Proxmox for phones and tablets
+16. [Google Play](./play-store.md) — signed AAB and Play Console upload
 
 Visual source, already in the repo:
 

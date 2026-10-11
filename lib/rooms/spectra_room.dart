@@ -133,7 +133,7 @@ class _SpectraRoomState extends State<SpectraRoom> {
                   ? (settings.depth == 'beginner'
                       ? 'Play the color as a tone'
                       : 'Listen to spectral frequency (${(selected!.frequencyHz / 1e12).toStringAsFixed(2)} THz sonified)')
-                  : 'Sound is off in App settings',
+                  : 'Sound is off in App Config',
             ),
           ),
         ],

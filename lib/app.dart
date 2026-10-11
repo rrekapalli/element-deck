@@ -119,16 +119,26 @@ class _ElementDeckAppState extends State<ElementDeckApp> {
   Widget build(BuildContext context) {
     if (!_ready) {
       return MaterialApp(
-        theme: ThemeData.dark(),
+        theme: ThemeData(
+          useMaterial3: true,
+          brightness: Brightness.light,
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: const Color(0xFF1D4ED8),
+            brightness: Brightness.light,
+          ),
+        ),
         home: const Scaffold(
-          backgroundColor: Color(0xFF080C14),
+          backgroundColor: Color(0xFFEFF5FC),
           body: Center(
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
                 CircularProgressIndicator(),
                 SizedBox(height: 16),
-                Text('Element Deck', style: TextStyle(color: Colors.white, fontSize: 18)),
+                Text(
+                  'Element Deck',
+                  style: TextStyle(color: Color(0xFF0B1B33), fontSize: 18),
+                ),
               ],
             ),
           ),

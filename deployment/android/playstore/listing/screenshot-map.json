@@ -1,0 +1,13 @@
+{
+  "sourceDir": "deployment/android/playstore/listing/source-screenshots",
+  "phoneTarget": { "width": 1080, "height": 1920 },
+  "tabletTarget": { "width": 1600, "height": 2560 },
+  "icon": "web/icons/Icon-512.png",
+  "featureGraphic": "deployment/android/playstore/listing/feature-graphic.png",
+  "locales": {
+    "en-US": {
+      "phone": ["01-table.png", "02-details.png", "03-compare.png", "04-spectra.png"],
+      "tablet": ["01-table-tablet.png", "02-details-tablet.png"]
+    }
+  }
+}

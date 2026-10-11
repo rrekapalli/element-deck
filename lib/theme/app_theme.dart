@@ -1,16 +1,16 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-enum ColorThemeId { obsidianOrbit, deepSea, graphite, chalk, custom }
+enum ColorThemeId { blue, obsidianOrbit, deepSea, graphite, chalk, custom }
 
 extension ColorThemeIdX on ColorThemeId {
   String get label => switch (this) {
-        ColorThemeId.obsidianOrbit => 'Obsidian Orbit',
-        ColorThemeId.deepSea => 'Deep Sea',
-        ColorThemeId.graphite => 'Graphite',
-        ColorThemeId.chalk => 'Chalk',
-        ColorThemeId.custom => 'Custom',
-      };
+    ColorThemeId.blue => 'Blue',
+    ColorThemeId.obsidianOrbit => 'Obsidian Orbit',
+    ColorThemeId.deepSea => 'Deep Sea',
+    ColorThemeId.graphite => 'Graphite',
+    ColorThemeId.chalk => 'Chalk',
+    ColorThemeId.custom => 'Custom',
+  };
 
   bool get isLightPreset => this == ColorThemeId.chalk;
 }
@@ -43,20 +43,11 @@ class ChromePalette {
     required Brightness brightness,
     required Color customSeed,
   }) {
-    if (id == ColorThemeId.chalk || brightness == Brightness.light) {
-      return const ChromePalette(
-        canvas: Color(0xFFF4F6FA),
-        surface: Color(0xFFFFFFFF),
-        raised: Color(0xFFE8EEF6),
-        border: Color(0xFFC5D0DC),
-        text: Color(0xFF0B1326),
-        muted: Color(0xFF4B5870),
-        faint: Color(0xFF6B778C),
-        action: Color(0xFF0369A1),
-        onAction: Color(0xFFFFFFFF),
-      );
+    if (brightness == Brightness.light) {
+      return _light(id, customSeed);
     }
     final action = switch (id) {
+      ColorThemeId.blue => const Color(0xFF38BDF8),
       ColorThemeId.deepSea => const Color(0xFF2DD4BF),
       ColorThemeId.graphite => const Color(0xFF94A3B8),
       ColorThemeId.custom => customSeed,
@@ -77,6 +68,51 @@ class ChromePalette {
       faint: const Color(0xFF64748B),
       action: action,
       onAction: const Color(0xFF080C14),
+    );
+  }
+
+  static const _paper = ChromePalette(
+    canvas: Color(0xFFF4F6FA),
+    surface: Color(0xFFFFFFFF),
+    raised: Color(0xFFE8EEF6),
+    border: Color(0xFFC5D0DC),
+    text: Color(0xFF0B1326),
+    muted: Color(0xFF4B5870),
+    faint: Color(0xFF6B778C),
+    action: Color(0xFF0369A1),
+    onAction: Color(0xFFFFFFFF),
+  );
+
+  static ChromePalette _light(ColorThemeId id, Color customSeed) {
+    if (id == ColorThemeId.blue) {
+      return const ChromePalette(
+        canvas: Color(0xFFEFF5FC),
+        surface: Color(0xFFF7FBFF),
+        raised: Color(0xFFE3EEF9),
+        border: Color(0xFFC5D7EB),
+        text: Color(0xFF0B1B33),
+        muted: Color(0xFF3E5674),
+        faint: Color(0xFF6B7F99),
+        action: Color(0xFF1D4ED8),
+        onAction: Color(0xFFFFFFFF),
+      );
+    }
+    final action = switch (id) {
+      ColorThemeId.deepSea => const Color(0xFF0F766E),
+      ColorThemeId.graphite => const Color(0xFF475569),
+      ColorThemeId.custom => customSeed,
+      _ => _paper.action,
+    };
+    return ChromePalette(
+      canvas: _paper.canvas,
+      surface: _paper.surface,
+      raised: _paper.raised,
+      border: _paper.border,
+      text: _paper.text,
+      muted: _paper.muted,
+      faint: _paper.faint,
+      action: action,
+      onAction: _paper.onAction,
     );
   }
 }
@@ -106,14 +142,16 @@ class AppTheme {
       scaffoldBackgroundColor: chrome.canvas,
       fontFamily: 'Plus Jakarta Sans',
       textTheme: ThemeData(brightness: brightness).textTheme.apply(
-            fontFamily: 'Plus Jakarta Sans',
-            bodyColor: chrome.text,
-            displayColor: chrome.text,
-          ),
+        fontFamily: 'Plus Jakarta Sans',
+        bodyColor: chrome.text,
+        displayColor: chrome.text,
+      ),
     );
     return base.copyWith(
       appBarTheme: AppBarTheme(
-        backgroundColor: glass ? chrome.surface.withValues(alpha: 0.7) : chrome.surface,
+        backgroundColor: glass
+            ? chrome.surface.withValues(alpha: 0.7)
+            : chrome.surface,
         foregroundColor: chrome.text,
         elevation: 0,
       ),
@@ -143,11 +181,16 @@ class AppTheme {
     );
   }
 
-  static bool defaultGlass() => !kIsWeb;
+  static bool defaultGlass() => true;
 }
 
 class Mono {
-  static TextStyle of(BuildContext context, {double size = 13, FontWeight? weight, Color? color}) {
+  static TextStyle of(
+    BuildContext context, {
+    double size = 13,
+    FontWeight? weight,
+    Color? color,
+  }) {
     return TextStyle(
       fontFamily: 'JetBrains Mono',
       fontSize: size,

@@ -19,3 +19,23 @@ flutter run --dart-define=DEBUG_ENTITLEMENT=true
 Firebase: deploy rules and `firebase/functions`, upload `catalog/output/catalog.sqlite` to `packs/core/1.0.0/catalog.sqlite`, and seed `packages` / `contentPacks` from `firebase/seed/packages.json`. Configure `google-services` / `GoogleService-Info` and `firebase_options.dart` for a real project. Preview works without Firebase.
 
 Read [Docs/README.md](Docs/README.md) for the product notes.
+
+## Host the PWA
+
+The web build deploys to an nginx LXC (VMID 7018) with Tailscale Funnel, same pattern as the other apps. Copy `.env.example` to `.env`, then from PowerShell:
+
+```powershell
+.\deploy.ps1
+```
+
+Open `https://elementdeck.tailce422e.ts.net/` on a phone or tablet. Details are in [Docs/pwa-lxc.md](Docs/pwa-lxc.md).
+
+## Google Play
+
+```powershell
+.\deployment\android\playstore\scripts\create-upload-keystore.ps1
+.\deployment\android\playstore\scripts\build-release-aab.ps1
+```
+
+Package name `com.vislesha.element_deck`. Details are in [Docs/play-store.md](Docs/play-store.md).
+

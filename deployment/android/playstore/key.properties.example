@@ -1,0 +1,9 @@
+# Gradle reads android/key.properties, not this file.
+# Generate both with:
+#   .\deployment\android\playstore\scripts\create-upload-keystore.ps1
+#   ./deployment/android/playstore/scripts/create-upload-keystore.sh
+
+storePassword=CHANGE_ME
+keyPassword=CHANGE_ME
+keyAlias=upload
+storeFile=upload-keystore.jks

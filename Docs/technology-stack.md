@@ -87,7 +87,8 @@ Off until a privacy note exists. The purchases collection is the commercial reco
 | Artifact | Where it lives |
 | --- | --- |
 | App binaries | The stores, or a direct install |
-| Web shell | Static hosting |
+| Web shell | Static nginx on LXC 7018 (`elementdeck.<tailnet>`). See [pwa-lxc.md](./pwa-lxc.md) |
+| Android release | Play internal track via `deployment/android/playstore/`. See [play-store.md](./play-store.md) |
 | Content pack | Firebase Storage |
 | Purchases | Firestore |
 | Cached pack and learner data | The device |

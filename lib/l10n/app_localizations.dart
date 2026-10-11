@@ -139,7 +139,7 @@ abstract class AppLocalizations {
   /// No description provided for @appSettings.
   ///
   /// In en, this message translates to:
-  /// **'App settings'**
+  /// **'App Config'**
   String get appSettings;
 
   /// No description provided for @accountSettings.

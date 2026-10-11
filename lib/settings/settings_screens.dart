@@ -13,6 +13,7 @@ import '../providers/catalog_controller.dart';
 import '../providers/settings_controller.dart';
 import '../providers/theme_controller.dart';
 import '../theme/app_theme.dart';
+import '../widgets/depth_control.dart';
 
 class SettingsHub extends StatelessWidget {
   const SettingsHub({super.key});
@@ -39,7 +40,8 @@ class SettingsHub extends StatelessWidget {
         ),
         ListTile(
           leading: const Icon(Icons.tune),
-          title: const Text('App settings'),
+          title: const Text('App Config'),
+          subtitle: const Text('Learning mode, units, appearance'),
           onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const AppSettingsPage())),
         ),
         ListTile(
@@ -76,10 +78,20 @@ class AppSettingsPage extends StatelessWidget {
     final theme = context.watch<ThemeController>();
     final settings = context.watch<SettingsController>();
     return Scaffold(
-      appBar: AppBar(title: const Text('App settings')),
+      appBar: AppBar(title: const Text('App Config')),
       body: ListView(
+        padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
         children: [
-          const ListTile(title: Text('Appearance')),
+          const ListTile(
+            contentPadding: EdgeInsets.zero,
+            title: Text('Learning mode'),
+            subtitle: Text(
+              'Beginner, Intermediate, and Advanced apply to Table, Details, Compare, and Spectra.',
+            ),
+          ),
+          const DepthControl(),
+          const Divider(),
+          const ListTile(contentPadding: EdgeInsets.zero, title: Text('Appearance')),
           SegmentedButton<ThemeMode>(
             segments: const [
               ButtonSegment(value: ThemeMode.light, label: Text('Light')),
@@ -113,8 +125,8 @@ class AppSettingsPage extends StatelessWidget {
             onChanged: theme.setReduceGlow,
           ),
           const Divider(),
-          const ListTile(title: Text('Learning')),
           ListTile(
+            contentPadding: EdgeInsets.zero,
             title: const Text('Persona'),
             trailing: DropdownButton<String>(
               value: settings.persona,
@@ -126,20 +138,8 @@ class AppSettingsPage extends StatelessWidget {
               onChanged: (v) => settings.setPersona(v!),
             ),
           ),
-          ListTile(
-            title: const Text('Starting depth'),
-            trailing: DropdownButton<String>(
-              value: settings.depth,
-              items: const [
-                DropdownMenuItem(value: 'beginner', child: Text('Beginner')),
-                DropdownMenuItem(value: 'intermediate', child: Text('Intermediate')),
-                DropdownMenuItem(value: 'advanced', child: Text('Advanced')),
-              ],
-              onChanged: (v) => settings.setDepth(v!),
-            ),
-          ),
           const Divider(),
-          const ListTile(title: Text('Units')),
+          const ListTile(contentPadding: EdgeInsets.zero, title: Text('Units')),
           SwitchListTile(
             title: const Text('Temperature in °C'),
             value: settings.temperature == 'C',
@@ -322,7 +322,7 @@ class HelpPage extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         children: const [
           Text('Table', style: TextStyle(fontWeight: FontWeight.bold)),
-          Text('Search, chips, registry, element of the day, depth.'),
+          Text('Periodic table, search, and family chips. Learning mode is in App Config.'),
           SizedBox(height: 12),
           Text('Details', style: TextStyle(fontWeight: FontWeight.bold)),
           Text('Dossier, curriculum, simulate reaction when curated.'),

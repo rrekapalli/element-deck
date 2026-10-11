@@ -31,7 +31,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settings => 'Settings';
 
   @override
-  String get appSettings => 'App settings';
+  String get appSettings => 'App Config';
 
   @override
   String get accountSettings => 'Account settings';

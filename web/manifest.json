@@ -1,12 +1,12 @@
 {
-    "name": "element_deck",
-    "short_name": "element_deck",
+    "name": "Element Deck",
+    "short_name": "Element Deck",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
-    "orientation": "portrait-primary",
+    "background_color": "#0B1020",
+    "theme_color": "#0B1020",
+    "description": "A periodic-table explorer that teaches every element.",
+    "orientation": "any",
     "prefer_related_applications": false,
     "icons": [
         {

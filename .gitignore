@@ -44,5 +44,13 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
+# Deploy secrets and built PWA/Play artifacts
+.env
+.env.release
+deployment/android/playstore/.env.release
+deployment/android/playstore/secrets/*
+!deployment/android/playstore/secrets/README.md
+**/play-service-account*.json
+
 # Widget Preview related
 .widget_preview/

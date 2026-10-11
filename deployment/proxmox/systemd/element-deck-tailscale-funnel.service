@@ -1,0 +1,14 @@
+[Unit]
+Description=Element Deck Tailscale Funnel (public HTTPS to nginx :80)
+After=network-online.target tailscaled.service nginx.service
+Wants=network-online.target
+Requires=tailscaled.service
+PartOf=tailscaled.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/element-deck-ensure-funnel.sh
+TimeoutStartSec=120
+
+[Install]
+WantedBy=multi-user.target

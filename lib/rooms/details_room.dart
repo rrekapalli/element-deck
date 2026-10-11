@@ -7,7 +7,6 @@ import '../providers/selection_controller.dart';
 import '../providers/settings_controller.dart';
 import '../theme/app_theme.dart';
 import '../theme/element_spectrum.dart';
-import '../widgets/depth_control.dart';
 import '../widgets/electron_force_graph.dart';
 
 class DetailsRoom extends StatelessWidget {
@@ -23,7 +22,6 @@ class DetailsRoom extends StatelessWidget {
       return ListView(
         padding: const EdgeInsets.fromLTRB(16, 8, 16, 32),
         children: [
-          const DepthControl(),
           const SizedBox(height: 24),
           Text(
             id == null ? 'Element ${sel.currentZ}' : '${id.z}  ${id.name}',
@@ -48,8 +46,6 @@ class DetailsRoom extends StatelessWidget {
             'Stable isotope · ${e.isotopes.first.a}${e.symbol}  (${(e.isotopes.first.abundance ?? 0) * 100}%)',
             style: Theme.of(context).textTheme.labelSmall,
           ),
-        const DepthControl(),
-        const SizedBox(height: 12),
         Row(
           children: [
             Text(
@@ -116,7 +112,6 @@ class DetailsRoom extends StatelessWidget {
         _Curriculum(
           element: e,
           depth: settings.depth,
-          onPick: settings.setDepth,
         ),
         if (e.reaction != null) ...[
           const SizedBox(height: 16),
@@ -327,12 +322,10 @@ class _Curriculum extends StatelessWidget {
   const _Curriculum({
     required this.element,
     required this.depth,
-    required this.onPick,
   });
 
   final ElementRecord element;
   final String depth;
-  final ValueChanged<String> onPick;
 
   @override
   Widget build(BuildContext context) {
@@ -343,16 +336,16 @@ class _Curriculum extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Curriculum & Depth Profiles',
+              'Curriculum',
               style: Theme.of(context).textTheme.titleMedium,
             ),
-            for (final d in ['beginner', 'intermediate', 'advanced'])
-              ListTile(
-                selected: d == depth,
-                title: Text(d[0].toUpperCase() + d.substring(1)),
-                subtitle: Text(element.curriculum.at(d)),
-                onTap: () => onPick(d),
-              ),
+            const SizedBox(height: 8),
+            Text(
+              '${depth[0].toUpperCase()}${depth.substring(1)} · set in App Config',
+              style: Theme.of(context).textTheme.labelMedium,
+            ),
+            const SizedBox(height: 8),
+            Text(element.curriculum.at(depth)),
           ],
         ),
       ),

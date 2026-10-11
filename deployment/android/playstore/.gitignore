@@ -1,0 +1,9 @@
+.env.release
+secrets/*
+*.jks
+*.keystore
+key.properties
+artifacts/*
+!artifacts/.gitignore
+listing/metadata/android/*/images/
+**/play-service-account*.json
