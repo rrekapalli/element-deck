@@ -36,7 +36,7 @@ load_element_deck_env() {
 
     CONTAINER_NAME="$(strip_cr "${ELEMENT_DECK_CONTAINER_NAME:-elementdeck}")"
     CONTAINER_ALIASES="$(strip_cr "${ELEMENT_DECK_CONTAINER_ALIASES:-element-deck}")"
-    FIXED_VMID="$(strip_cr "${ELEMENT_DECK_VMID:-7018}")"
+    FIXED_VMID="$(strip_cr "${ELEMENT_DECK_VMID:-6101}")"
     DOMAIN="$(strip_cr "${ELEMENT_DECK_HOST:-elementdeck.tailce422e.ts.net}")"
     UI_PORT="$(strip_cr "${UI_PORT:-80}")"
     CLONE_TEMPLATE="$(strip_cr "${ELEMENT_DECK_CLONE_TEMPLATE:-moneytree-lxc-frontend-base}")"

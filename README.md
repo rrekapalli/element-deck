@@ -22,7 +22,7 @@ Read [Docs/README.md](Docs/README.md) for the product notes.
 
 ## Host the PWA
 
-The web build deploys to an nginx LXC (VMID 7018) with Tailscale Funnel, same pattern as the other apps. Copy `.env.example` to `.env`, then from PowerShell:
+The web build deploys to an nginx LXC (VMID 6101) with Tailscale Funnel, same pattern as the other apps. Copy `.env.example` to `.env`, then from PowerShell:
 
 ```powershell
 .\deploy.ps1

@@ -65,6 +65,7 @@ class ElementRecord {
     required this.lattice,
     required this.sourceId,
     required this.summary,
+    required this.history,
     required this.curriculum,
     required this.properties,
     required this.discovery,
@@ -96,6 +97,7 @@ class ElementRecord {
   final String? lattice;
   final String sourceId;
   final DepthText summary;
+  final String history;
   final DepthText curriculum;
   final ElementProperties properties;
   final Discovery? discovery;
@@ -138,6 +140,7 @@ class ElementRecord {
       lattice: json['lattice'] as String?,
       sourceId: json['sourceId'] as String? ?? 'compiled-v1',
       summary: DepthText.fromJson(json['summary'] as Map<String, dynamic>),
+      history: json['history'] as String? ?? '',
       curriculum: DepthText.fromJson(
         json['curriculum'] as Map<String, dynamic>,
       ),

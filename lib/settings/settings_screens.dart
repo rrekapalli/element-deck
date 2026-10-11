@@ -36,34 +36,52 @@ class SettingsHub extends StatelessWidget {
         ListTile(
           leading: const Icon(Icons.manage_accounts),
           title: const Text('Account settings'),
-          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const AccountSettingsPage())),
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const AccountSettingsPage()),
+          ),
         ),
         ListTile(
           leading: const Icon(Icons.tune),
           title: const Text('App Config'),
           subtitle: const Text('Learning mode, units, appearance'),
-          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const AppSettingsPage())),
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const AppSettingsPage()),
+          ),
         ),
         ListTile(
           leading: const Icon(Icons.school_outlined),
           title: const Text('Classroom'),
           subtitle: const Text('After Element Deck restores on another device'),
-          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const ClassroomPage())),
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const ClassroomPage()),
+          ),
         ),
         ListTile(
           leading: const Icon(Icons.monitor_heart_outlined),
           title: const Text('App Health'),
-          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const AppHealthPage())),
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const AppHealthPage()),
+          ),
         ),
         ListTile(
           leading: const Icon(Icons.help_outline),
           title: const Text('Help'),
-          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const HelpPage())),
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const HelpPage()),
+          ),
         ),
         ListTile(
           leading: const Icon(Icons.info_outline),
           title: const Text('About'),
-          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const AboutPage())),
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const AboutPage()),
+          ),
         ),
       ],
     );
@@ -86,12 +104,15 @@ class AppSettingsPage extends StatelessWidget {
             contentPadding: EdgeInsets.zero,
             title: Text('Learning mode'),
             subtitle: Text(
-              'Beginner, Intermediate, and Advanced apply to Table, Details, Compare, and Spectra.',
+              'Beginner, Intermediate, and Advanced change how Spectra explains a line.',
             ),
           ),
           const DepthControl(),
           const Divider(),
-          const ListTile(contentPadding: EdgeInsets.zero, title: Text('Appearance')),
+          const ListTile(
+            contentPadding: EdgeInsets.zero,
+            title: Text('Appearance'),
+          ),
           SegmentedButton<ThemeMode>(
             segments: const [
               ButtonSegment(value: ThemeMode.light, label: Text('Light')),
@@ -133,7 +154,10 @@ class AppSettingsPage extends StatelessWidget {
               items: const [
                 DropdownMenuItem(value: 'student', child: Text('Student')),
                 DropdownMenuItem(value: 'educator', child: Text('Educator')),
-                DropdownMenuItem(value: 'enthusiast', child: Text('Enthusiast')),
+                DropdownMenuItem(
+                  value: 'enthusiast',
+                  child: Text('Enthusiast'),
+                ),
               ],
               onChanged: (v) => settings.setPersona(v!),
             ),
@@ -193,7 +217,9 @@ class AccountSettingsPage extends StatelessWidget {
           if (account.user == null)
             ListTile(
               title: const Text('Not signed in'),
-              subtitle: const Text('Sign in to buy, restore, and download the pack.'),
+              subtitle: const Text(
+                'Sign in to buy, restore, and download the pack.',
+              ),
               trailing: FilledButton(
                 onPressed: account.signInGoogle,
                 child: const Text('Sign in with Google'),
@@ -207,7 +233,9 @@ class AccountSettingsPage extends StatelessWidget {
           ListTile(
             title: const Text('Packages'),
             subtitle: Text(
-              account.packages.isEmpty ? 'Preview only' : account.packages.join(', '),
+              account.packages.isEmpty
+                  ? 'Preview only'
+                  : account.packages.join(', '),
             ),
           ),
           ListTile(
@@ -224,7 +252,9 @@ class AccountSettingsPage extends StatelessWidget {
             onTap: () async {
               await pack.downloadIfEntitled();
               if (context.mounted) {
-                await context.read<CatalogController>().reload(hasCoreEntitlement: account.hasCore);
+                await context.read<CatalogController>().reload(
+                  hasCoreEntitlement: account.hasCore,
+                );
               }
             },
           ),
@@ -238,10 +268,7 @@ class AccountSettingsPage extends StatelessWidget {
             },
           ),
           if (account.user != null)
-            ListTile(
-              title: const Text('Sign out'),
-              onTap: account.signOut,
-            ),
+            ListTile(title: const Text('Sign out'), onTap: account.signOut),
           ListTile(
             title: const Text('Erase this device'),
             onTap: () async {
@@ -253,12 +280,18 @@ class AccountSettingsPage extends StatelessWidget {
                     title: const Text('Erase this device'),
                     content: TextField(
                       controller: c,
-                      decoration: const InputDecoration(hintText: 'Type DELETE'),
+                      decoration: const InputDecoration(
+                        hintText: 'Type DELETE',
+                      ),
                     ),
                     actions: [
-                      TextButton(onPressed: () => Navigator.pop(context, false), child: const Text('Cancel')),
+                      TextButton(
+                        onPressed: () => Navigator.pop(context, false),
+                        child: const Text('Cancel'),
+                      ),
                       FilledButton(
-                        onPressed: () => Navigator.pop(context, c.text == 'DELETE'),
+                        onPressed: () =>
+                            Navigator.pop(context, c.text == 'DELETE'),
                         child: const Text('Erase'),
                       ),
                     ],
@@ -268,7 +301,8 @@ class AccountSettingsPage extends StatelessWidget {
               if (ok == true) await account.eraseDevice();
             },
           ),
-          if (account.lastError != null) ListTile(title: Text(account.lastError!)),
+          if (account.lastError != null)
+            ListTile(title: Text(account.lastError!)),
           if (billing.message != null) ListTile(title: Text(billing.message!)),
         ],
       ),
@@ -289,17 +323,25 @@ class AppHealthPage extends StatelessWidget {
         children: [
           ListTile(
             title: const Text('On-device catalog'),
-            subtitle: Text('${catalog.pack.elements.length} elements · ${catalog.pack.version}'),
+            subtitle: Text(
+              '${catalog.pack.elements.length} elements · ${catalog.pack.version}',
+            ),
           ),
           ListTile(
             title: const Text('Content pack cache'),
             subtitle: Text(
-              catalog.isPreview ? 'using bundled file' : 'loaded ${catalog.pack.version}',
+              catalog.isPreview
+                  ? 'using bundled file'
+                  : 'loaded ${catalog.pack.version}',
             ),
           ),
           ListTile(
             title: const Text('Firebase'),
-            subtitle: Text(account.firebaseReady ? 'configured' : 'not configured · preview still works'),
+            subtitle: Text(
+              account.firebaseReady
+                  ? 'configured'
+                  : 'not configured · preview still works',
+            ),
           ),
           ListTile(
             title: const Text('Purchases'),
@@ -322,7 +364,9 @@ class HelpPage extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         children: const [
           Text('Table', style: TextStyle(fontWeight: FontWeight.bold)),
-          Text('Periodic table, search, and family chips. Learning mode is in App Config.'),
+          Text(
+            'Periodic table, search, and family chips. Learning mode is in App Config.',
+          ),
           SizedBox(height: 12),
           Text('Details', style: TextStyle(fontWeight: FontWeight.bold)),
           Text('Dossier, curriculum, simulate reaction when curated.'),
@@ -331,7 +375,9 @@ class HelpPage extends StatelessWidget {
           Text('Pairs, computed deltas, PDF dossier.'),
           SizedBox(height: 12),
           Text('Spectra', style: TextStyle(fontWeight: FontWeight.bold)),
-          Text('Lines, sonification (divided by 10^12), isotopes. No match percentages.'),
+          Text(
+            'Lines, sonification (divided by 10^12), isotopes. No match percentages.',
+          ),
         ],
       ),
     );
@@ -384,7 +430,10 @@ class _ClassroomPageState extends State<ClassroomPage> {
                 : 'Buy Classroom after Element Deck. Join codes for minors wait on terms. Each learner still needs Element Deck.',
           ),
           const SizedBox(height: 12),
-          TextField(controller: name, decoration: const InputDecoration(labelText: 'Class name')),
+          TextField(
+            controller: name,
+            decoration: const InputDecoration(labelText: 'Class name'),
+          ),
           const SizedBox(height: 8),
           FilledButton(
             onPressed: () => room.create(
@@ -395,15 +444,26 @@ class _ClassroomPageState extends State<ClassroomPage> {
             child: const Text('Create class'),
           ),
           const SizedBox(height: 16),
-          TextField(controller: code, decoration: const InputDecoration(labelText: 'Join code')),
-          TextButton(onPressed: () => room.join(code.text), child: const Text('Join')),
+          TextField(
+            controller: code,
+            decoration: const InputDecoration(labelText: 'Join code'),
+          ),
+          TextButton(
+            onPressed: () => room.join(code.text),
+            child: const Text('Join'),
+          ),
           if (room.current != null) ...[
             ListTile(
               title: Text(room.current!.name),
-              subtitle: Text('Code ${room.current!.joinCode} · depth ${room.current!.suggestedDepth}'),
+              subtitle: Text(
+                'Code ${room.current!.joinCode} · depth ${room.current!.suggestedDepth}',
+              ),
             ),
             Text('Pinned Z: ${room.current!.pinned.join(", ")}'),
-            TextButton(onPressed: room.leave, child: const Text('Show all elements')),
+            TextButton(
+              onPressed: room.leave,
+              child: const Text('Show all elements'),
+            ),
           ],
           if (room.error != null) Text(room.error!),
         ],

@@ -1,5 +1,5 @@
 #!/bin/bash
-# Health check for the Element Deck PWA LXC (VMID 7018).
+# Health check for the Element Deck PWA LXC (VMID 6101).
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

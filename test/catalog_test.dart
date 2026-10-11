@@ -32,12 +32,41 @@ void main() {
       jsonDecode(file.readAsStringSync()) as Map<String, dynamic>,
     );
     for (final e in pack.elements) {
-      expect(e.summary.beginner.length, greaterThan(80), reason: 'summary beginner Z=${e.z}');
-      expect(e.summary.intermediate.length, greaterThan(80), reason: 'summary intermediate Z=${e.z}');
-      expect(e.summary.advanced.length, greaterThan(80), reason: 'summary advanced Z=${e.z}');
-      expect(e.curriculum.beginner.length, greaterThan(60), reason: 'curriculum beginner Z=${e.z}');
-      expect(e.curriculum.intermediate.length, greaterThan(60), reason: 'curriculum intermediate Z=${e.z}');
-      expect(e.curriculum.advanced.length, greaterThan(80), reason: 'curriculum advanced Z=${e.z}');
+      expect(
+        e.summary.beginner.length,
+        greaterThan(80),
+        reason: 'summary beginner Z=${e.z}',
+      );
+      expect(
+        e.summary.intermediate.length,
+        greaterThan(80),
+        reason: 'summary intermediate Z=${e.z}',
+      );
+      expect(
+        e.summary.advanced.length,
+        greaterThan(80),
+        reason: 'summary advanced Z=${e.z}',
+      );
+      expect(
+        e.curriculum.beginner.length,
+        greaterThan(60),
+        reason: 'curriculum beginner Z=${e.z}',
+      );
+      expect(
+        e.curriculum.intermediate.length,
+        greaterThan(60),
+        reason: 'curriculum intermediate Z=${e.z}',
+      );
+      expect(
+        e.curriculum.advanced.length,
+        greaterThan(80),
+        reason: 'curriculum advanced Z=${e.z}',
+      );
+      expect(
+        e.history.trim().length,
+        greaterThan(120),
+        reason: 'history Z=${e.z}',
+      );
       expect(e.applications, isNotEmpty, reason: 'apps Z=${e.z}');
       expect(e.discovery, isNotNull, reason: 'discovery Z=${e.z}');
     }

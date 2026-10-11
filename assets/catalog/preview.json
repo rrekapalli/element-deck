@@ -94,6 +94,7 @@
         "people": "Henry Cavendish",
         "text": "Isolated as inflammable air; later named hydrogen by Lavoisier."
       },
+      "history": "In 1766 Henry Cavendish collected a gas from metals and acids and called it inflammable air. He showed that burning it produced water. Antoine Lavoisier later named it hydrogen, from the Greek for water-former, and listed it as an element.\n\nThe common isotope, protium, is a single proton. Deuterium was identified in 1931 and tritium in 1934. In 1913 the Balmer lines of hydrogen became the first spectrum explained by Bohr\u2019s model of the atom.",
       "applications": [
         {
           "title": "Stars",
@@ -228,6 +229,7 @@
         "people": "Ancient",
         "text": "Known as charcoal, soot, and diamond long before it was an element."
       },
+      "history": "Charcoal, soot, and diamond were known long before anyone called them one element. In 1772 Lavoisier burned a diamond in oxygen and obtained the same gas as from burning charcoal, which tied the forms together. The name carbon is from the Latin carbo, coal.\n\nThe nineteenth century sorted the allotropes. Graphite, diamond, and later fullerenes and graphene are the same element in different networks, and organic chemistry is the chemistry of its chains.",
       "applications": [
         {
           "title": "Life",
@@ -338,6 +340,7 @@
         "people": "Ramsay and Travers",
         "text": "Isolated from liquefied air after argon and krypton."
       },
+      "history": "William Ramsay and Morris Travers isolated neon in 1898 by fractional distillation of liquid air, after they had already found argon, krypton, and xenon. A new crimson glow in a discharge tube told them the fraction was a new gas. They named it neon, from the Greek neos, new.\n\nGeorges Claude turned that glow into commercial lighting in the 1910s. Neon signs made the element a public word, even when later tubes used other gases for other colors.",
       "applications": [
         {
           "title": "Lighting",
@@ -485,6 +488,7 @@
         "people": "J\u00f6ns Jacob Berzelius",
         "text": "Isolated from silica after earlier work by Gay-Lussac and Thenard."
       },
+      "history": "Silica, as flint, quartz, and glass, is ancient. In 1824 J\u00f6ns Jacob Berzelius isolated reasonably pure silicon by reducing potassium fluorosilicate. The name, which he gave, is from the Latin silex, flint. Gay-Lussac and Th\u00e9nard had prepared an impure form earlier.\n\nSilicon was a chemical footnote until the twentieth century. Zone refining and the transistor turned the element into the semiconductor of electronics, while silica remained the network of glass and rock.",
       "applications": [
         {
           "title": "Electronics",
@@ -593,6 +597,7 @@
         "people": "William Gregor",
         "text": "Found in Cornish ilmenite; Klaproth named it after the Titans."
       },
+      "history": "William Gregor, a Cornish clergyman, found a new metal oxide in the black sand menachanite in 1791. Martin Heinrich Klaproth rediscovered it in a Hungarian ore in 1795 and named it titanium, for the Titans. Matthew Hunter isolated a pure ductile metal only in 1910.\n\nThe Kroll process of the 1940s made titanium a structural metal. Its oxide, already used as a white pigment, is still the form most people meet.",
       "applications": [
         {
           "title": "Aerospace",

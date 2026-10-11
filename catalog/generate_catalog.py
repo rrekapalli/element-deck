@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 from enrich import DISCOVERY as ENRICH_DISCOVERY
 from enrich import apps_for, curriculum, extra_props, summaries
+from history import HISTORY
 
 # z, symbol, name, mass, cat, block, period, group, state, shells, config, ox, lattice
 # cat: alkali, alkaline, transition, post-transition, metalloid, nonmetal, halogen, noble, lanthanide, actinide
@@ -375,6 +376,7 @@ def parse_all() -> list[dict]:
         el["properties"] = extra_props(z)
         year, people, text = ENRICH_DISCOVERY[z]
         el["discovery"] = {"year": year, "people": people, "text": text}
+        el["history"] = HISTORY[z]
         el["applications"] = apps_for(z, name)
         el["spectralLines"] = [
             {

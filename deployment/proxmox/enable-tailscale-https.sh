@@ -19,7 +19,7 @@ source "${SCRIPT_DIR}/lib/tailscale-funnel.sh"
 load_element_deck_env "$SCRIPT_DIR"
 init_proxmox_mode
 
-VMID="${FIXED_VMID:-7018}"
+VMID="${FIXED_VMID:-6101}"
 
 log_info "Enabling Tailscale HTTPS serve on ${CONTAINER_NAME} (VMID ${VMID})"
 log_info "Disabling Funnel (Serve and Funnel cannot share the same port)..."

@@ -1,5 +1,5 @@
 #!/bin/bash
-# Deploy the Element Deck Flutter PWA (static) to nginx on LXC VMID 7018.
+# Deploy the Element Deck Flutter PWA (static) to nginx on LXC VMID 6101.
 # Usage: ./deploy-ui.sh [--recreate] [path/to/pwa-dist.zip]
 
 set -euo pipefail

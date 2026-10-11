@@ -1,5 +1,5 @@
 #!/bin/bash
-# Build and deploy the Element Deck Flutter PWA to Proxmox LXC VMID 7018.
+# Build and deploy the Element Deck Flutter PWA to Proxmox LXC VMID 6101.
 #
 # Usage:
 #   bash ./deploy.sh
@@ -31,7 +31,7 @@ show_help() {
     cat <<'EOF'
 Usage: ./deploy.sh [OPTIONS]
 
-Build the Flutter PWA and deploy it to the Element Deck Proxmox LXC (VMID 7018).
+Build the Flutter PWA and deploy it to the Element Deck Proxmox LXC (VMID 6101).
 
 Each build (unless --skip-build / --skip-version-bump) bumps pubspec.yaml:
   Default:        keep major, increment minor, reset patch, increment build (+N)

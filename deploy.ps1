@@ -22,7 +22,7 @@ function Show-Help {
     @"
 Usage: .\deploy.ps1 [OPTIONS]
 
-Build the Flutter PWA with Windows Flutter, then deploy to Proxmox LXC 7018 via WSL.
+Build the Flutter PWA with Windows Flutter, then deploy to Proxmox LXC 6101 via WSL.
 
 OPTIONS:
   -Major N          Set major version for this build

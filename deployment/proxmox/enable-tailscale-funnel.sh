@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Publish LXC 7018 nginx (:80) to the public internet via Tailscale Funnel.
+# Publish LXC 6101 nginx (:80) to the public internet via Tailscale Funnel.
 # Phones and tablets do not need Tailscale installed.
 #
 # Prerequisites (Tailscale admin):
@@ -26,7 +26,7 @@ init_proxmox_mode
 ELEMENT_DECK_PUBLIC_VIA_FUNNEL=true
 export ELEMENT_DECK_FUNNEL_FORCE_REAPPLY=1
 
-VMID="${FIXED_VMID:-7018}"
+VMID="${FIXED_VMID:-6101}"
 ensure_element_deck_tailscale_funnel "$VMID" "$SCRIPT_DIR" || exit 1
 wait_element_deck_funnel_public "${DOMAIN}" || true
 

@@ -6,13 +6,13 @@ There is no API container. Firebase stays in Google Cloud. The LXC only serves t
 
 | | |
 | --- | --- |
-| VMID | **7018** |
+| VMID | **6101** |
 | Hostname | `elementdeck` |
 | URL | `https://elementdeck.tailce422e.ts.net/` |
 | Template | `moneytree-lxc-frontend-base` (VMID **9002**) |
 | Web root | `/var/www/element-deck` |
 
-7018 is free next to the other personal-app containers (7001–7005, 7012, 7014, 7016, 7201–7203). Change `ELEMENT_DECK_VMID` in `deployment/proxmox/deployment.conf` if that id is taken.
+The container id is `ELEMENT_DECK_VMID` in `deployment/proxmox/deployment.conf` (6101 on the local Proxmox host).
 
 ## Once
 
@@ -28,7 +28,7 @@ From the repo root in PowerShell:
 .\deploy.ps1
 ```
 
-That bumps `pubspec.yaml`, runs `flutter build web`, zips `deployment/artifacts/pwa-dist.zip`, and deploys it to VMID 7018.
+That bumps `pubspec.yaml`, runs `flutter build web`, zips `deployment/artifacts/pwa-dist.zip`, and deploys it to VMID 6101.
 
 From Git Bash or WSL:
 
@@ -40,7 +40,7 @@ Other flags:
 
 ```powershell
 .\deploy.ps1 -SkipBuild          # redeploy the zip you already built
-.\deploy.ps1 -Recreate           # destroy VMID 7018 and clone it again
+.\deploy.ps1 -Recreate           # destroy VMID 6101 and clone it again
 .\deploy.ps1 -Major 1
 ```
 
@@ -82,6 +82,6 @@ bash deployment/proxmox/enable-tailscale-funnel.sh
 
 `deploy.ps1` builds on Windows Flutter, then calls `deploy.sh --skip-build` in WSL. `deploy.sh` calls `deployment/prepare-artifacts.sh` (unless skipped) and `deployment/proxmox/deploy-ui.sh`.
 
-`deploy-ui.sh` clones VMID 7018 if it is missing, unpacks the zip into nginx, joins Tailscale, and enables Funnel. A Windows-built zip is repacked when its paths use backslashes, so Linux `unzip` can read it.
+`deploy-ui.sh` clones VMID 6101 if it is missing, unpacks the zip into nginx, joins Tailscale, and enables Funnel. A Windows-built zip is repacked when its paths use backslashes, so Linux `unzip` can read it.
 
 The web build uses `--no-web-resources-cdn` so CanvasKit is inside the zip. A device does not have to reach gstatic. Service-worker and `index.html` responses are not cached by nginx. Hashed assets are.
