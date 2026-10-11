@@ -110,10 +110,7 @@ class ElementRecord {
 
   String summaryFor(String depth) => summary.at(depth);
 
-  String configFor({required bool shorthand, required String depth}) {
-    if (depth == 'beginner') {
-      return shellCounts.join(', ');
-    }
+  String configFor({required bool shorthand}) {
     return shorthand ? electronConfig : electronConfigFull;
   }
 
@@ -141,7 +138,9 @@ class ElementRecord {
       lattice: json['lattice'] as String?,
       sourceId: json['sourceId'] as String? ?? 'compiled-v1',
       summary: DepthText.fromJson(json['summary'] as Map<String, dynamic>),
-      curriculum: DepthText.fromJson(json['curriculum'] as Map<String, dynamic>),
+      curriculum: DepthText.fromJson(
+        json['curriculum'] as Map<String, dynamic>,
+      ),
       properties: ElementProperties.fromJson(
         json['properties'] as Map<String, dynamic>? ?? {},
       ),
@@ -392,8 +391,7 @@ class TrendNote {
   final String essay;
   final List<int> swaps;
 
-  bool matches(int a, int b) =>
-      (zA == a && zB == b) || (zA == b && zB == a);
+  bool matches(int a, int b) => (zA == a && zB == b) || (zA == b && zB == a);
 
   factory TrendNote.fromJson(Map<String, dynamic> json) {
     return TrendNote(

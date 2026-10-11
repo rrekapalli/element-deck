@@ -9,6 +9,7 @@ import '../providers/settings_controller.dart';
 import '../theme/app_theme.dart';
 import '../theme/element_spectrum.dart';
 import '../widgets/depth_control.dart';
+import '../widgets/electron_force_graph.dart';
 
 class DetailsRoom extends StatelessWidget {
   const DetailsRoom({super.key});
@@ -57,17 +58,18 @@ class DetailsRoom extends StatelessWidget {
           children: [
             Text(
               e.symbol,
-              style: Theme.of(context).textTheme.displayMedium?.copyWith(
-                    color: accent,
-                    fontWeight: FontWeight.w800,
-                  ),
+              style: Theme.of(context).textTheme.displayMedium
+                  ?.copyWith(color: accent, fontWeight: FontWeight.w800),
             ),
             const SizedBox(width: 16),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('${e.z}  ${e.name}', style: Theme.of(context).textTheme.headlineSmall),
+                  Text(
+                    '${e.z}  ${e.name}',
+                    style: Theme.of(context).textTheme.headlineSmall,
+                  ),
                   Text(
                     '${e.atomicWeight} u · ${e.weightKind}',
                     style: Mono.of(context, size: 12),
@@ -79,13 +81,22 @@ class DetailsRoom extends StatelessWidget {
               ),
             ),
             IconButton(
-              icon: Icon(sel.bookmarks.contains(e.z) ? Icons.bookmark : Icons.bookmark_border),
+              icon: Icon(
+                sel.bookmarks.contains(e.z)
+                    ? Icons.bookmark
+                    : Icons.bookmark_border,
+              ),
               onPressed: () => sel.toggleBookmark(e.z),
             ),
           ],
         ),
         const SizedBox(height: 12),
-        _ShellDiagram(element: e, depth: settings.depth),
+        _ShellDiagram(
+          element: e,
+          shorthand: settings.configShorthand,
+          reducedMotion: settings.reducedMotion,
+          energyUnit: settings.energy,
+        ),
         const SizedBox(height: 12),
         _Metrics(element: e, settings: settings),
         const SizedBox(height: 12),
@@ -96,12 +107,19 @@ class DetailsRoom extends StatelessWidget {
         ],
         if (e.applications.isNotEmpty) ...[
           const SizedBox(height: 12),
-          Text('Primary technological applications', style: Theme.of(context).textTheme.titleMedium),
+          Text(
+            'Primary technological applications',
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
           for (final a in e.applications)
             ListTile(title: Text(a.title), subtitle: Text(a.body)),
         ],
         const SizedBox(height: 12),
-        _Curriculum(element: e, depth: settings.depth, onPick: settings.setDepth),
+        _Curriculum(
+          element: e,
+          depth: settings.depth,
+          onPick: settings.setDepth,
+        ),
         if (e.reaction != null) ...[
           const SizedBox(height: 16),
           FilledButton(
@@ -124,9 +142,15 @@ class DetailsRoom extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Illustration of a known reaction', style: Theme.of(context).textTheme.titleLarge),
+              Text(
+                'Illustration of a known reaction',
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
               const SizedBox(height: 8),
-              Text('${r.reactants}  →  ${r.products}', style: Mono.of(context, size: 16)),
+              Text(
+                '${r.reactants}  →  ${r.products}',
+                style: Mono.of(context, size: 16),
+              ),
               Text(r.conditions),
               const SizedBox(height: 8),
               Text(r.blurbs.at(depth)),
@@ -139,29 +163,36 @@ class DetailsRoom extends StatelessWidget {
 }
 
 class _ShellDiagram extends StatelessWidget {
-  const _ShellDiagram({required this.element, required this.depth});
+  const _ShellDiagram({
+    required this.element,
+    required this.shorthand,
+    required this.reducedMotion,
+    required this.energyUnit,
+  });
 
   final ElementRecord element;
-  final String depth;
+  final bool shorthand;
+  final bool reducedMotion;
+  final String energyUnit;
 
   @override
   Widget build(BuildContext context) {
     return Card(
       child: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.fromLTRB(12, 16, 12, 16),
         child: Column(
           children: [
-            SizedBox(
-              height: 140,
-              child: CustomPaint(
-                painter: _OrbitPainter(element.shellCounts, ElementSpectrum.of(element.categoryId)),
-                child: Center(
-                  child: Text(element.symbol, style: Theme.of(context).textTheme.titleLarge),
-                ),
-              ),
+            ElectronForceGraph(
+              atomicNumber: element.z,
+              symbol: element.symbol,
+              configuration: element.electronConfigFull,
+              accent: ElementSpectrum.of(element.categoryId),
+              reducedMotion: reducedMotion,
+              energyUnit: energyUnit,
             ),
+            const SizedBox(height: 8),
             Text(
-              element.configFor(shorthand: true, depth: depth),
+              element.configFor(shorthand: shorthand),
               style: Mono.of(context, size: 13),
             ),
           ],
@@ -169,29 +200,6 @@ class _ShellDiagram extends StatelessWidget {
       ),
     );
   }
-}
-
-class _OrbitPainter extends CustomPainter {
-  _OrbitPainter(this.shells, this.color);
-
-  final List<int> shells;
-  final Color color;
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final c = Offset(size.width / 2, size.height / 2);
-    final paint = Paint()
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 1
-      ..color = color.withValues(alpha: 0.5);
-    for (var i = 0; i < shells.length; i++) {
-      final r = 18.0 + i * 18;
-      canvas.drawCircle(c, r, paint);
-    }
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
 
 class _Metrics extends StatelessWidget {
@@ -209,17 +217,42 @@ class _Metrics extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Quantum Metrics', style: Theme.of(context).textTheme.titleMedium),
+            Text(
+              'Quantum Metrics',
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
             const SizedBox(height: 8),
             Wrap(
               spacing: 16,
               runSpacing: 12,
               children: [
-                _kv(context, 'Configuration', element.configFor(shorthand: settings.configShorthand, depth: settings.depth)),
-                _kv(context, 'Oxidation', element.oxidationStates.map((e) => e > 0 ? '+$e' : '$e').join(', ')),
-                _kv(context, 'Radius', p.covalentRadiusPm == null ? null : settings.lengthValue(p.covalentRadiusPm!)),
+                _kv(
+                  context,
+                  'Configuration',
+                  element.configFor(shorthand: settings.configShorthand),
+                ),
+                _kv(
+                  context,
+                  'Oxidation',
+                  element.oxidationStates
+                      .map((e) => e > 0 ? '+$e' : '$e')
+                      .join(', '),
+                ),
+                _kv(
+                  context,
+                  'Radius',
+                  p.covalentRadiusPm == null
+                      ? null
+                      : settings.lengthValue(p.covalentRadiusPm!),
+                ),
                 _kv(context, 'Electronegativity', p.paulingEn?.toString()),
-                _kv(context, 'Ionization', p.ionizationEv == null ? null : settings.energyValue(p.ionizationEv!)),
+                _kv(
+                  context,
+                  'Ionization',
+                  p.ionizationEv == null
+                      ? null
+                      : settings.energyValue(p.ionizationEv!),
+                ),
               ].map((e) => SizedBox(width: 150, child: e)).toList(),
             ),
           ],
@@ -232,8 +265,14 @@ class _Metrics extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(k.toUpperCase(), style: Mono.of(context, size: 9, color: Theme.of(context).hintColor)),
-        Text(val ?? 'Not reported', style: Mono.of(context, size: 14, weight: FontWeight.w600)),
+        Text(
+          k.toUpperCase(),
+          style: Mono.of(context, size: 9, color: Theme.of(context).hintColor),
+        ),
+        Text(
+          val ?? 'Not reported',
+          style: Mono.of(context, size: 14, weight: FontWeight.w600),
+        ),
       ],
     );
   }
@@ -254,9 +293,14 @@ class _Phase extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Thermal Phase Profile', style: Theme.of(context).textTheme.titleMedium),
-            if (p.meltingK != null) Text('Melting  ${settings.temp(p.meltingK!)}'),
-            if (p.boilingK != null) Text('Boiling  ${settings.temp(p.boilingK!)}'),
+            Text(
+              'Thermal Phase Profile',
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            if (p.meltingK != null)
+              Text('Melting  ${settings.temp(p.meltingK!)}'),
+            if (p.boilingK != null)
+              Text('Boiling  ${settings.temp(p.boilingK!)}'),
             if (element.lattice != null) Text('Lattice  ${element.lattice}'),
             if (p.density != null) Text('Density  ${p.density} g/cm³'),
           ],
@@ -300,7 +344,10 @@ class _Curriculum extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Curriculum & Depth Profiles', style: Theme.of(context).textTheme.titleMedium),
+            Text(
+              'Curriculum & Depth Profiles',
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
             for (final d in ['beginner', 'intermediate', 'advanced'])
               ListTile(
                 selected: d == depth,

@@ -91,27 +91,48 @@ class _ElementDeckAppState extends State<ElementDeckApp> {
   }
 
   Future<void> _boot() async {
-    await theme.load();
-    await settings.load();
-    await account.load();
-    if (widget.firebaseReady) {
-      await account.attachFirebase();
-      await purchases.init();
+    try {
+      await catalog.load(hasCoreEntitlement: false);
+    } catch (e, st) {
+      debugPrint('Catalog boot failed: $e\n$st');
     }
-    await catalog.load(hasCoreEntitlement: account.hasCore);
-    if (account.hasCore) {
-      await packs.downloadIfEntitled();
-      await catalog.reload(hasCoreEntitlement: account.hasCore);
+    if (mounted) setState(() => _ready = true);
+    try {
+      await theme.load().timeout(const Duration(seconds: 8));
+      await settings.load().timeout(const Duration(seconds: 8));
+      await account.load().timeout(const Duration(seconds: 8));
+      if (widget.firebaseReady) {
+        await account.attachFirebase();
+        await purchases.init();
+      }
+      if (account.hasCore) {
+        await packs.downloadIfEntitled();
+        await catalog.reload(hasCoreEntitlement: account.hasCore);
+      }
+      await selection.load();
+    } catch (e, st) {
+      debugPrint('Prefs boot failed: $e\n$st');
     }
-    await selection.load();
-    setState(() => _ready = true);
   }
 
   @override
   Widget build(BuildContext context) {
     if (!_ready) {
-      return const MaterialApp(
-        home: Scaffold(body: Center(child: CircularProgressIndicator())),
+      return MaterialApp(
+        theme: ThemeData.dark(),
+        home: const Scaffold(
+          backgroundColor: Color(0xFF080C14),
+          body: Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                CircularProgressIndicator(),
+                SizedBox(height: 16),
+                Text('Element Deck', style: TextStyle(color: Colors.white, fontSize: 18)),
+              ],
+            ),
+          ),
+        ),
       );
     }
     return MultiProvider(

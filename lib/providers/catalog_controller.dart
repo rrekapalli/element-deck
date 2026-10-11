@@ -10,7 +10,15 @@ class CatalogController extends ChangeNotifier {
   bool loading = true;
   String? error;
 
-  CatalogPack get pack => store.requirePack;
+  CatalogPack get pack =>
+      store.pack ??
+      CatalogPack(
+        id: 'preview',
+        version: '0',
+        sciencePins: const [],
+        elements: const [],
+        trendNotes: const [],
+      );
 
   bool get isPreview => pack.id == 'preview';
 

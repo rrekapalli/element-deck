@@ -27,7 +27,19 @@ class _HomeShellState extends State<HomeShell> {
   Widget build(BuildContext context) {
     final catalog = context.watch<CatalogController>();
     if (catalog.loading) {
-      return const Scaffold(body: Center(child: CircularProgressIndicator()));
+      return const Scaffold(
+        backgroundColor: Color(0xFF080C14),
+        body: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              CircularProgressIndicator(),
+              SizedBox(height: 12),
+              Text('Loading table…', style: TextStyle(color: Colors.white70)),
+            ],
+          ),
+        ),
+      );
     }
     if (catalog.error != null && catalog.pack.elements.isEmpty) {
       return Scaffold(body: Center(child: Text(catalog.error!)));
