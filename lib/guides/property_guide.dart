@@ -3,11 +3,12 @@ import 'electron_guides.dart';
 import 'identity_guides.dart';
 import 'nuclear_guides.dart';
 import 'physical_guides.dart';
+import 'spectra_primer.dart';
 import 'spectrum_guides.dart';
 
-/// A teaching article about one property on the Data tab.
+/// A teaching article about one property, or about spectra in general.
 ///
-/// The article explains the property. It is not a measurement of the
+/// The article explains the subject. It is not a measurement of the
 /// element that was on screen when the reader opened it.
 class PropertyGuide {
   const PropertyGuide({
@@ -16,6 +17,7 @@ class PropertyGuide {
     required this.group,
     required this.lede,
     required this.sections,
+    this.closing,
   });
 
   final String id;
@@ -28,6 +30,9 @@ class PropertyGuide {
   final String lede;
 
   final List<GuideSection> sections;
+
+  /// Footnote under the article. Data-tab articles use the page default.
+  final String? closing;
 }
 
 class GuideSection {
@@ -92,6 +97,9 @@ abstract final class GuideId {
   static const discharge = 'discharge';
   static const astrophysics = 'astrophysics';
 
+  /// Shared spectra article, opened from the Spectra Details tab.
+  static const spectrum = 'spectra-primer';
+
   static const all = <String>[
     atomicNumber,
     symbol,
@@ -133,6 +141,7 @@ abstract final class GuideId {
     transition,
     discharge,
     astrophysics,
+    spectrum,
   ];
 }
 
@@ -144,6 +153,7 @@ abstract final class PropertyGuides {
     ...physicalGuides,
     ...nuclearGuides,
     ...spectrumGuides,
+    spectraPrimer,
   ];
 
   static final byId = <String, PropertyGuide>{

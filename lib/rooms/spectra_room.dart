@@ -26,7 +26,6 @@ class _SpectraRoomState extends State<SpectraRoom>
   final sonify = Sonify();
   late final TabController _tabs;
   final _scroll = ScrollController();
-  final _essayKey = GlobalKey();
   int _index = 0;
 
   @override
@@ -176,7 +175,16 @@ class _SpectraRoomState extends State<SpectraRoom>
                 ListTile(
                   dense: true,
                   contentPadding: EdgeInsets.zero,
+                  minLeadingWidth: 20,
+                  horizontalTitleGap: 12,
                   selected: selected?.id == line.id,
+                  leading: ExcludeSemantics(
+                    child: _SpectralTick(
+                      nm: line.nm,
+                      bright: selected?.id == line.id,
+                      emission: mode == 'emission',
+                    ),
+                  ),
                   title: Text(
                     '${line.nm.toStringAsFixed(2)} nm',
                     style: Mono.of(context, size: 14, weight: FontWeight.w700),
@@ -277,9 +285,7 @@ class _SpectraRoomState extends State<SpectraRoom>
             ...spectraDetailChildren(
               context: context,
               element: e,
-              reducedMotion: settings.reducedMotion,
               packVersion: catalog.pack.version,
-              essayKey: _essayKey,
             ),
         ],
       ),
@@ -348,18 +354,6 @@ class _StripPainter extends CustomPainter {
   final bool emission;
   final String emptyLabel;
 
-  static const _stops = <double>[0, 0.13, 0.27, 0.4, 0.52, 0.64, 0.78, 1];
-  static const _colors = <Color>[
-    Color(0xFF5B21B6),
-    Color(0xFF1D4ED8),
-    Color(0xFF0284C7),
-    Color(0xFF16A34A),
-    Color(0xFFFACC15),
-    Color(0xFFF97316),
-    Color(0xFFDC2626),
-    Color(0xFF7F1D1D),
-  ];
-
   @override
   void paint(Canvas canvas, Size size) {
     if (size.width <= 0 || size.height <= 0) return;
@@ -396,7 +390,7 @@ class _StripPainter extends CustomPainter {
       final t = i / steps;
       canvas.drawRect(
         Rect.fromLTWH(t * size.width, 0, size.width / steps + 0.6, size.height),
-        Paint()..color = _at(t),
+        Paint()..color = _spectrumAt(t),
       );
     }
   }
@@ -494,19 +488,153 @@ class _StripPainter extends CustomPainter {
     );
   }
 
-  Color _at(double t) {
-    for (var i = 0; i < _stops.length - 1; i++) {
-      final a = _stops[i];
-      final b = _stops[i + 1];
-      if (t <= b) {
-        final span = b - a;
-        final u = span == 0 ? 0.0 : ((t - a) / span).clamp(0.0, 1.0);
-        return Color.lerp(_colors[i], _colors[i + 1], u)!;
-      }
+  @override
+  bool shouldRepaint(covariant _StripPainter oldDelegate) => true;
+}
+
+/// A short sample of the same vertical mark drawn on the spectrum strip.
+class _SpectralTick extends StatelessWidget {
+  const _SpectralTick({
+    required this.nm,
+    required this.bright,
+    required this.emission,
+  });
+
+  final double nm;
+  final bool bright;
+  final bool emission;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 20,
+      height: 34,
+      child: CustomPaint(
+        painter: _SpectralTickPainter(
+          nm: nm,
+          bright: bright,
+          emission: emission,
+        ),
+      ),
+    );
+  }
+}
+
+class _SpectralTickPainter extends CustomPainter {
+  _SpectralTickPainter({
+    required this.nm,
+    required this.bright,
+    required this.emission,
+  });
+
+  final double nm;
+  final bool bright;
+  final bool emission;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    if (size.width <= 0 || size.height <= 0) return;
+    final plate = RRect.fromRectAndRadius(
+      Offset.zero & size,
+      const Radius.circular(5),
+    );
+    final visible = nm >= _visMin && nm <= _visMax;
+    canvas.save();
+    canvas.clipRRect(plate);
+    if (emission || !visible) {
+      canvas.drawRect(Offset.zero & size, Paint()..color = const Color(0xFF0B1220));
+      _emission(canvas, size, visible: visible);
+    } else {
+      _rainbow(canvas, size);
+      final x = size.width / 2;
+      canvas.drawLine(
+        Offset(x, 3),
+        Offset(x, size.height - 3),
+        Paint()
+          ..color = const Color(0xFF0B1220)
+          ..strokeWidth = bright ? 4.5 : 3,
+      );
     }
-    return _colors.last;
+    canvas.restore();
+    canvas.drawRRect(
+      plate,
+      Paint()
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = bright ? 1.4 : 1
+        ..color = bright
+            ? _lineColor(nm).withValues(alpha: visible ? 0.9 : 0.45)
+            : const Color(0x55FFFFFF),
+    );
+  }
+
+  void _emission(Canvas canvas, Size size, {required bool visible}) {
+    final ink = _lineColor(nm);
+    final x = size.width / 2;
+    final top = 5.0;
+    final bottom = size.height - 5;
+    final strength = visible ? 1.0 : 0.62;
+    canvas.drawLine(
+      Offset(x, top),
+      Offset(x, bottom),
+      Paint()
+        ..color = ink.withValues(alpha: 0.42 * strength)
+        ..strokeWidth = bright ? 10 : 7
+        ..strokeCap = StrokeCap.round,
+    );
+    canvas.drawLine(
+      Offset(x, top),
+      Offset(x, bottom),
+      Paint()
+        ..color = ink.withValues(alpha: strength)
+        ..strokeWidth = bright ? 3.2 : 2.2
+        ..strokeCap = StrokeCap.round,
+    );
+    canvas.drawLine(
+      Offset(x, top),
+      Offset(x, bottom),
+      Paint()
+        ..color = Colors.white.withValues(alpha: visible ? 0.92 : 0.4)
+        ..strokeWidth = bright ? 1.15 : 0.8
+        ..strokeCap = StrokeCap.round,
+    );
+  }
+
+  void _rainbow(Canvas canvas, Size size) {
+    const steps = 16;
+    for (var i = 0; i < steps; i++) {
+      final t = i / steps;
+      canvas.drawRect(
+        Rect.fromLTWH(t * size.width, 0, size.width / steps + 0.6, size.height),
+        Paint()..color = _spectrumAt(t),
+      );
+    }
   }
 
   @override
-  bool shouldRepaint(covariant _StripPainter oldDelegate) => true;
+  bool shouldRepaint(covariant _SpectralTickPainter old) =>
+      old.nm != nm || old.bright != bright || old.emission != emission;
+}
+
+Color _spectrumAt(double t) {
+  const stops = <double>[0, 0.13, 0.27, 0.4, 0.52, 0.64, 0.78, 1];
+  const colors = <Color>[
+    Color(0xFF5B21B6),
+    Color(0xFF1D4ED8),
+    Color(0xFF0284C7),
+    Color(0xFF16A34A),
+    Color(0xFFFACC15),
+    Color(0xFFF97316),
+    Color(0xFFDC2626),
+    Color(0xFF7F1D1D),
+  ];
+  for (var i = 0; i < stops.length - 1; i++) {
+    final a = stops[i];
+    final b = stops[i + 1];
+    if (t <= b) {
+      final span = b - a;
+      final u = span == 0 ? 0.0 : ((t - a) / span).clamp(0.0, 1.0);
+      return Color.lerp(colors[i], colors[i + 1], u)!;
+    }
+  }
+  return colors.last;
 }

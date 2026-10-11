@@ -48,7 +48,9 @@ The footer names the pack version and reminds you that the noble-gas tile color 
 
 ## Details tab
 
-The second tab, **Details**, is a reading page: a primer on spectra, then an essay for this element when one is written. **Jump to {element}** scrolls to that essay. Line values on this tab can open the same property articles as the Data tab in Details.
+The second tab, **Details**, is the reading for this element: its spectrum essay, the lines the pack stores, the discharge color, and the astrophysical note when the pack has them.
+
+**What a spectrum is** opens the shared reference. That article is the same for every element, on its own page, the same kind of page a label on the Data tab opens. It explains how a spectrum is made, recorded, and read.
 
 ## Try this
 

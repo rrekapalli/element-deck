@@ -55,10 +55,11 @@ class PropertyGuidePage extends StatelessWidget {
                 ],
                 const SizedBox(height: 12),
                 Text(
-                  'Teaching reference. The figure beside this label comes from '
-                  'the bundled dataset and is shown in the units chosen in App '
-                  'Config. This article explains the property. It is not a new '
-                  'measurement of the element.',
+                  guide.closing ??
+                      'Teaching reference. The figure beside this label comes from '
+                          'the bundled dataset and is shown in the units chosen in App '
+                          'Config. This article explains the property. It is not a new '
+                          'measurement of the element.',
                   style: theme.textTheme.bodySmall?.copyWith(
                     color: muted,
                     height: 1.45,

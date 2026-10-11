@@ -46,7 +46,7 @@ void main() {
     expect(spectraPrimer.lede.length, greaterThan(80));
   });
 
-  testWidgets('Details renders the primer and the selected element', (
+  testWidgets('Details keeps the element essay and opens the shared primer', (
     tester,
   ) async {
     final pack = CatalogPack.fromJson(
@@ -64,9 +64,7 @@ void main() {
                 children: spectraDetailChildren(
                   context: context,
                   element: hydrogen,
-                  reducedMotion: true,
                   packVersion: pack.version,
-                  essayKey: GlobalKey(),
                 ),
               );
             },
@@ -76,10 +74,19 @@ void main() {
     );
 
     expect(find.text('What a spectrum is'), findsOneWidget);
-    expect(find.text('Jump to Hydrogen'), findsOneWidget);
-
-    await tester.scrollUntilVisible(find.text('Hydrogen spectrum'), 400);
+    expect(find.text('Jump to Hydrogen'), findsNothing);
+    expect(find.text('Light sorted by wavelength'), findsNothing);
     expect(find.text('Hydrogen spectrum'), findsOneWidget);
+
+    await tester.tap(find.text('What a spectrum is'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Light sorted by wavelength'), findsOneWidget);
+    expect(find.text(spectraPrimer.lede), findsOneWidget);
+    expect(find.text('SPECTRA  ·  REFERENCE'), findsOneWidget);
+
+    await tester.pageBack();
+    await tester.pumpAndSettle();
 
     await tester.scrollUntilVisible(find.text('The series'), 400);
     expect(find.text('The series'), findsOneWidget);

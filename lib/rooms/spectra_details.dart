@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
+import '../guides/property_guide.dart';
 import '../guides/spectra_detail.dart';
 import '../models/catalog.dart';
+import '../widgets/property_label.dart';
 
 List<Widget> spectraDetailChildren({
   required BuildContext context,
   required ElementRecord element,
-  required bool reducedMotion,
   required String packVersion,
-  required GlobalKey essayKey,
 }) {
   final theme = Theme.of(context);
   final muted = theme.colorScheme.onSurface.withValues(alpha: 0.65);
@@ -19,51 +19,28 @@ List<Widget> spectraDetailChildren({
 
   return [
     Text(
-      'SPECTRA  ·  REFERENCE',
+      'SHARED REFERENCE',
       style: theme.textTheme.labelSmall?.copyWith(
         letterSpacing: 1.2,
         color: muted,
       ),
     ),
-    Align(
-      alignment: Alignment.centerLeft,
-      child: TextButton(
-        onPressed: () {
-          final target = essayKey.currentContext;
-          if (target == null) return;
-          Scrollable.ensureVisible(
-            target,
-            duration: reducedMotion
-                ? Duration.zero
-                : const Duration(milliseconds: 350),
-            curve: Curves.easeOut,
-            alignment: 0.02,
-          );
-        },
-        child: Text('Jump to ${element.name}'),
-      ),
-    ),
-    Text(spectraPrimer.title, style: theme.textTheme.headlineSmall),
     const SizedBox(height: 8),
-    Text(
-      spectraPrimer.lede,
-      style: theme.textTheme.titleMedium?.copyWith(height: 1.4),
+    PropertyLabel(
+      label: spectraPrimer.title,
+      guideId: GuideId.spectrum,
+      style: theme.textTheme.titleMedium,
     ),
-    for (final section in spectraPrimer.sections) ...[
-      const SizedBox(height: 18),
-      Text(section.heading, style: theme.textTheme.titleMedium),
-      const SizedBox(height: 8),
-      for (final paragraph in section.paragraphs) ...[
-        Text(paragraph, style: body),
-        const SizedBox(height: 12),
-      ],
-    ],
+    const SizedBox(height: 6),
+    Text(
+      'The same account for every element. Tap to open it.',
+      style: theme.textTheme.bodySmall?.copyWith(color: muted, height: 1.35),
+    ),
     const SizedBox(height: 8),
     Divider(color: theme.colorScheme.outline.withValues(alpha: 0.35)),
     const SizedBox(height: 16),
     Text(
       '${element.name} spectrum',
-      key: essayKey,
       style: theme.textTheme.headlineSmall,
     ),
     const SizedBox(height: 8),
