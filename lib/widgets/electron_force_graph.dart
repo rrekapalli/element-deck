@@ -10,12 +10,15 @@ String _diagramCaption(String depth) {
   return switch (depth) {
     'beginner' =>
       'Each ring is a shell of electrons. The center is the nucleus. '
-          'Drag an electron and it is pulled back.',
+          'Drag an electron and it is pulled back. '
+          'A dotted circle is an empty seat.',
     'advanced' =>
       'Each ring is a subshell. A line joins the two electrons in one orbital. '
+          'A dotted circle is an empty seat. '
           'Pull is the Slater binding energy, and ring radius follows 1/sqrt(E).',
     _ =>
-      'Each ring is a subshell. A line joins the two electrons in one orbital.',
+      'Each ring is a subshell. A line joins the two electrons in one orbital. '
+          'A dotted circle is an empty seat.',
   };
 }
 
@@ -485,6 +488,27 @@ class _ElectronPainter extends CustomPainter {
       }
     }
 
+    final byLabel = {for (final ring in rings) ring.label: ring};
+    final hole = Paint()
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 1
+      ..strokeCap = StrokeCap.round
+      ..color = accent;
+    for (final vacancy in sim.cloud.vacancies) {
+      final ring = byLabel[vacancy.label];
+      if (ring == null) continue;
+      _paintDottedCircle(
+        canvas,
+        center +
+            Offset(
+              math.cos(vacancy.angle) * ring.radius,
+              math.sin(vacancy.angle) * ring.radius,
+            ),
+        sim.nodeRadius,
+        hole,
+      );
+    }
+
     final node = Paint()..color = accent;
     final nodeStroke = Paint()
       ..style = PaintingStyle.stroke
@@ -498,6 +522,21 @@ class _ElectronPainter extends CustomPainter {
     }
 
     if (labelRings) _paintLabels(canvas, center, rings);
+  }
+
+  /// 1px dotted ring, same size as a filled electron, for an empty seat.
+  void _paintDottedCircle(Canvas canvas, Offset at, double radius, Paint paint) {
+    const dots = 8;
+    final step = 2 * math.pi / dots;
+    for (var i = 0; i < dots; i++) {
+      canvas.drawArc(
+        Rect.fromCircle(center: at, radius: radius),
+        i * step,
+        step * 0.42,
+        false,
+        paint,
+      );
+    }
   }
 
   void _paintLabels(Canvas canvas, Offset center, List<OrbitRing> rings) {

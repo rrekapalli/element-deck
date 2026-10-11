@@ -62,11 +62,30 @@ class OrbitRing {
   final int n;
 }
 
+/// An empty electron seat on a subshell that is not full.
+///
+/// Drawn on the ring; it is not part of the force simulation.
+class OrbitalVacancy {
+  const OrbitalVacancy({required this.label, required this.angle});
+
+  final String label;
+
+  /// Home angle on the ring, radians. Matches where that electron would sit.
+  final double angle;
+}
+
 class ElectronCloud {
-  ElectronCloud({required this.z, required this.electrons});
+  ElectronCloud({
+    required this.z,
+    required this.electrons,
+    this.vacancies = const [],
+  });
 
   final int z;
   final List<OrbitalElectron> electrons;
+
+  /// Missing electrons in subshells that have started filling and are not full.
+  final List<OrbitalVacancy> vacancies;
 
   static const nobleGasCores = <String, String>{
     'He': '1s2',
@@ -102,6 +121,7 @@ class ElectronCloud {
     final bindings = <double>[for (final s in subs) _slaterBinding(z, s, subs)];
 
     final electrons = <OrbitalElectron>[];
+    final vacancies = <OrbitalVacancy>[];
     for (var i = 0; i < subs.length; i++) {
       final s = subs[i];
       final orbitals = 2 * s.l + 1;
@@ -133,12 +153,20 @@ class ElectronCloud {
               partner: first,
             ),
           );
+        } else {
+          // Hund leaves this orbital half full. The second seat stays empty.
+          vacancies.add(OrbitalVacancy(label: s.label, angle: base + 0.28));
         }
+      }
+      for (var o = singles; o < orbitals; o++) {
+        final base = phase + 2 * math.pi * o / orbitals;
+        vacancies.add(OrbitalVacancy(label: s.label, angle: base - 0.28));
+        vacancies.add(OrbitalVacancy(label: s.label, angle: base + 0.28));
       }
     }
 
     if (electrons.isEmpty) return null;
-    return ElectronCloud(z: z, electrons: electrons);
+    return ElectronCloud(z: z, electrons: electrons, vacancies: vacancies);
   }
 
   double bindingOf(String label) {

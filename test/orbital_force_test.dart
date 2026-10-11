@@ -186,6 +186,33 @@ void main() {
     }
   });
 
+  test('a partial subshell shows an empty seat for each missing electron', () {
+    final scandium = ElectronCloud.fromConfiguration(
+      z: 21,
+      configuration: '[Ar] 3d1 4s2',
+    )!;
+    expect(scandium.electrons, hasLength(21));
+    expect(
+      scandium.vacancies.where((v) => v.label == '3d'),
+      hasLength(9),
+    );
+    expect(scandium.vacancies.where((v) => v.label == '4s'), isEmpty);
+    expect(scandium.vacancies.where((v) => v.label == '3p'), isEmpty);
+
+    final nitrogen = ElectronCloud.fromConfiguration(
+      z: 7,
+      configuration: '[He] 2s2 2p3',
+    )!;
+    expect(nitrogen.vacancies.where((v) => v.label == '2p'), hasLength(3));
+    expect(nitrogen.vacancies.where((v) => v.label == '2s'), isEmpty);
+
+    final neon = ElectronCloud.fromConfiguration(
+      z: 10,
+      configuration: '[He] 2s2 2p6',
+    )!;
+    expect(neon.vacancies, isEmpty);
+  });
+
   test('nitrogen leaves three unpaired 2p electrons', () {
     final cloud = ElectronCloud.fromConfiguration(
       z: 7,
