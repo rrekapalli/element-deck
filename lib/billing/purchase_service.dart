@@ -3,8 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:in_app_purchase/in_app_purchase.dart';
 
 import '../account/account_controller.dart';
-
-const storeProductIds = {'element-deck', 'classroom'};
+import 'pack_ids.dart';
 
 class PurchaseService {
   PurchaseService(this.account);
@@ -18,7 +17,8 @@ class PurchaseService {
   Future<void> init() async {
     if (kIsWeb) {
       storeAvailable = false;
-      message = 'Buy on Android or iOS. Web can sign in and download a pack you already own.';
+      message =
+          'Buy on Android or iOS. Web can sign in and download a pack you already own.';
       return;
     }
     storeAvailable = await _iap.isAvailable();
@@ -28,7 +28,19 @@ class PurchaseService {
     _iap.purchaseStream.listen(_onPurchase);
   }
 
+  String priceLabel(String productId) {
+    for (final p in products) {
+      if (p.id == productId) return p.price;
+    }
+    return '₹199';
+  }
+
   Future<void> buy(String productId) async {
+    if (kIsWeb) {
+      message =
+          'Buy on Android or iOS. Then sign in here to download the pack.';
+      return;
+    }
     ProductDetails? product;
     for (final p in products) {
       if (p.id == productId) product = p;

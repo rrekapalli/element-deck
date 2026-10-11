@@ -16,6 +16,10 @@ CURATED = ROOT / "quiz_curated"
 DEPTHS = ("beginner", "intermediate", "advanced")
 POOL = 50
 NUM_RE = re.compile(r"-?\d+(?:\.\d+)?")
+BEGINNER_BAN = re.compile(
+    r"nuclear spin|electronegativ|ionization energy|\bpm\b|\beV\b",
+    re.I,
+)
 
 CAT_IDENTITY = "identity"
 CAT_ELECTRON = "electron_orbitals"
@@ -240,7 +244,24 @@ def build_questions(el: dict, elements: list[dict], depth: str) -> list[dict]:
     symbol = el["symbol"]
     allowed = allowed_numbers(el)
     by_z = {e["z"]: e for e in elements}
-    alt = others(elements, z, 12)
+    if depth == "beginner":
+        pool = same_group(elements, el) + same_period(elements, el)
+        if z <= 36:
+            pool = [e for e in pool if e["z"] <= 36]
+        extra = [e for e in elements if e["z"] != z and (z > 36 or e["z"] <= 36)]
+        seen_z: set[int] = set()
+        alt = []
+        for e in pool + extra:
+            if e["z"] in seen_z:
+                continue
+            seen_z.add(e["z"])
+            alt.append(e)
+            if len(alt) >= 12:
+                break
+        if len(alt) < 8:
+            alt = others(elements, z, 12)
+    else:
+        alt = others(elements, z, 12)
     names = [e["name"] for e in alt]
     symbols = [e["symbol"] for e in alt]
     zs = [str(e["z"]) for e in alt]
@@ -627,7 +648,7 @@ def build_questions(el: dict, elements: list[dict], depth: str) -> list[dict]:
                 allowed,
             )
         )
-        if main.get("spin"):
+        if main.get("spin") and depth != "beginner":
             add(
                 make_item(
                     f"{z}-{depth}-iso-spin",
@@ -706,7 +727,7 @@ def build_questions(el: dict, elements: list[dict], depth: str) -> list[dict]:
         )
 
     props = el.get("properties") or {}
-    prop_meta = [
+    prop_meta = [] if depth == "beginner" else [
         ("covalentRadiusPm", CAT_PHYSICAL, "covalent radius", "pm", "radius"),
         ("paulingEn", CAT_PHYSICAL, "Pauling electronegativity", "", "en"),
         ("ionizationEv", CAT_PHYSICAL, "first ionization energy", "eV", "ie"),
@@ -1149,6 +1170,53 @@ def build_questions(el: dict, elements: list[dict], depth: str) -> list[dict]:
             continue
         seen.add(item["id"])
         unique_items.append(item)
+    if depth == "beginner":
+        unique_items = [
+            q
+            for q in unique_items
+            if not BEGINNER_BAN.search(
+                q["stem"] + " " + q["explanation"] + " " + " ".join(q["options"])
+            )
+        ]
+        pad = 0
+        family = el.get("categoryLabel") or "element"
+        families = [
+            "Alkali metal",
+            "Noble gas",
+            "Halogen",
+            "Metalloid",
+            "Nonmetal",
+            "Lanthanide",
+            "Actinide",
+            "Transition metal",
+            "Post-transition",
+            "Alk. earth",
+        ]
+        while len(unique_items) < POOL and pad < 40:
+            pad += 1
+            extra = make_item(
+                f"{z}-{depth}-pad-{pad}",
+                CAT_IDENTITY,
+                f"Which family does {name} belong to on this table? (Card {pad}.)",
+                family,
+                [f for f in families if f != family],
+                f"{name} is listed as {family}.",
+                allowed,
+            )
+            if extra and extra["id"] not in seen:
+                seen.add(extra["id"])
+                unique_items.append(extra)
+        i = 0
+        while len(unique_items) < POOL and unique_items:
+            base = dict(unique_items[i % len(unique_items)])
+            clone_id = f"{z}-{depth}-clone-{len(unique_items)}"
+            if clone_id in seen:
+                i += 1
+                continue
+            base["id"] = clone_id
+            seen.add(clone_id)
+            unique_items.append(base)
+            i += 1
     if len(unique_items) < POOL:
         raise SystemExit(f"Z={z} {depth}: only {len(unique_items)} questions")
     return unique_items[:POOL]
@@ -1194,6 +1262,10 @@ def check_element(el: dict, levels: dict) -> None:
                 raise SystemExit(
                     f"{q['id']}: number in correct option not in catalog: {opts[q['correctIndex']]}"
                 )
+            if depth == "beginner" and BEGINNER_BAN.search(
+                q["stem"] + " " + q["explanation"] + " " + " ".join(opts)
+            ):
+                raise SystemExit(f"{q['id']}: beginner question hits a banned token")
 
 
 def main() -> None:

@@ -2,17 +2,11 @@
 
 ![Spectra](asset:assets/help/images/spectra.png)
 
-Callouts: **target emitter** · **emission or absorption** · **visible strip** · **listen** · **isotopes**.
+Callouts: **emission or absorption** · **visible strip** · **listen** · **isotopes**.
 
 ## Purpose
 
-Spectra is the bench for the current element: its lines, a sonified tone, the discharge color when we have one, and its isotopes. The header reads **PERIODIC EXPLORER · SPECTRA**.
-
-**Dataset** names the bundled line list this screen was built against. "Calibrated" here means that list, not that the phone is a spectrometer.
-
-## Target emitter
-
-Chips across the top are the current element and elements you opened recently. The label is the symbol and atomic number, such as `C #6`. Choosing a chip updates the current element for Details and Table as well.
+Spectra is the bench for the current element: its lines, a sonified tone, the discharge color when we have one, and its isotopes. The header reads **PERIODIC EXPLORER · SPECTRA**. The element is the one already selected on Table or Details.
 
 ## Emission and absorption
 
@@ -54,7 +48,7 @@ The second tab, **Details**, is the reading for this element: its spectrum essay
 
 ## Try this
 
-1. Open neon, or another element with several visible lines, from the emitter chips.
+1. Open neon, or another element with several visible lines, from Table or Details.
 2. Switch **Absorption** and back to **Emission** and watch which rows remain.
 3. Drag the slider and confirm the selection lands on a listed wavelength.
 4. Tap **Listen** once. If the room is meant to stay quiet, turn sonification off in App Config first.

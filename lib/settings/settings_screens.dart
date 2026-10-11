@@ -5,8 +5,8 @@ import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
 
 import '../account/account_controller.dart';
+import '../billing/pack_ids.dart';
 import '../billing/purchase_service.dart';
-import '../classroom/classroom_controller.dart';
 import '../data/learner_database.dart';
 import '../help/help_catalog.dart';
 import '../help/help_screen.dart';
@@ -51,15 +51,6 @@ class SettingsHub extends StatelessWidget {
           onTap: () => Navigator.push(
             context,
             MaterialPageRoute(builder: (_) => const AppSettingsPage()),
-          ),
-        ),
-        ListTile(
-          leading: const Icon(Icons.school_outlined),
-          title: const Text('Classroom'),
-          subtitle: const Text('After Element Deck restores on another device'),
-          onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(builder: (_) => const ClassroomPage()),
           ),
         ),
         ListTile(
@@ -108,7 +99,7 @@ class AppSettingsPage extends StatelessWidget {
             contentPadding: EdgeInsets.zero,
             title: Text('Learning mode'),
             subtitle: Text(
-              'Beginner, Intermediate, and Advanced change how Spectra explains a line.',
+              'Beginner is Classes 8–10. Intermediate is Classes 11–12 and JEE. Advanced is undergraduate.',
             ),
           ),
           const DepthControl(),
@@ -242,14 +233,24 @@ class AccountSettingsPage extends StatelessWidget {
             title: const Text('Packages'),
             subtitle: Text(
               account.packages.isEmpty
-                  ? 'Preview only'
+                  ? 'Preview only · five elements at all three courses'
                   : account.packages.join(', '),
             ),
           ),
-          ListTile(
-            title: const Text('Buy Element Deck'),
-            onTap: () => billing.buy('element-deck'),
-          ),
+          for (final id in storeProductIds)
+            ListTile(
+              title: Text(packTitles[id] ?? id),
+              subtitle: Text(
+                account.packages.contains(id) ||
+                        account.packages.contains(packLegacy)
+                    ? 'Owned'
+                    : 'Buy · ${billing.priceLabel(id)}',
+              ),
+              onTap: account.packages.contains(id) ||
+                      account.packages.contains(packLegacy)
+                  ? null
+                  : () => billing.buy(id),
+            ),
           ListTile(
             title: const Text('Restore purchases'),
             onTap: billing.restore,
@@ -388,78 +389,6 @@ class AboutPage extends StatelessWidget {
             'It is not a lab measurement, a specification for engineering or medicine, '
             'or a substitute for the cited dataset.',
           ),
-        ],
-      ),
-    );
-  }
-}
-
-class ClassroomPage extends StatefulWidget {
-  const ClassroomPage({super.key});
-
-  @override
-  State<ClassroomPage> createState() => _ClassroomPageState();
-}
-
-class _ClassroomPageState extends State<ClassroomPage> {
-  final name = TextEditingController(text: 'Week 1');
-  final code = TextEditingController();
-
-  @override
-  Widget build(BuildContext context) {
-    final room = context.watch<ClassroomController>();
-    final account = context.watch<AccountController>();
-    return Scaffold(
-      appBar: helpAppBar(
-        context,
-        title: 'Classroom',
-        topicId: HelpCatalog.classroom,
-      ),
-      body: ListView(
-        padding: const EdgeInsets.all(16),
-        children: [
-          Text(
-            account.hasClassroom
-                ? 'Classroom package is active on this account.'
-                : 'Buy Classroom after Element Deck. Join codes for minors wait on terms. Each learner still needs Element Deck.',
-          ),
-          const SizedBox(height: 12),
-          TextField(
-            controller: name,
-            decoration: const InputDecoration(labelText: 'Class name'),
-          ),
-          const SizedBox(height: 8),
-          FilledButton(
-            onPressed: () => room.create(
-              name: name.text,
-              pinned: const [1, 6, 10, 14, 22],
-              depth: 'intermediate',
-            ),
-            child: const Text('Create class'),
-          ),
-          const SizedBox(height: 16),
-          TextField(
-            controller: code,
-            decoration: const InputDecoration(labelText: 'Join code'),
-          ),
-          TextButton(
-            onPressed: () => room.join(code.text),
-            child: const Text('Join'),
-          ),
-          if (room.current != null) ...[
-            ListTile(
-              title: Text(room.current!.name),
-              subtitle: Text(
-                'Code ${room.current!.joinCode} · depth ${room.current!.suggestedDepth}',
-              ),
-            ),
-            Text('Pinned Z: ${room.current!.pinned.join(", ")}'),
-            TextButton(
-              onPressed: room.leave,
-              child: const Text('Show all elements'),
-            ),
-          ],
-          if (room.error != null) Text(room.error!),
         ],
       ),
     );

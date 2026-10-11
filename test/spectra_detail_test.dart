@@ -65,6 +65,7 @@ void main() {
                   context: context,
                   element: hydrogen,
                   packVersion: pack.version,
+                  depth: 'advanced',
                 ),
               );
             },

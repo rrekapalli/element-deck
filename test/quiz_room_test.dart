@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:drift/native.dart';
+import 'package:element_deck/account/account_controller.dart';
 import 'package:element_deck/data/catalog_store.dart';
 import 'package:element_deck/data/learner_database.dart';
 import 'package:element_deck/models/catalog.dart';
@@ -49,6 +50,7 @@ void main() {
       selection,
       store: _MemoryStore(bank),
     )..focusZ = 1;
+    final account = AccountController(db, store);
 
     final router = GoRouter(
       routes: [
@@ -71,6 +73,7 @@ void main() {
           ChangeNotifierProvider.value(value: settings),
           ChangeNotifierProvider.value(value: selection),
           ChangeNotifierProvider.value(value: quiz),
+          ChangeNotifierProvider.value(value: account),
         ],
         child: MaterialApp.router(routerConfig: router),
       ),

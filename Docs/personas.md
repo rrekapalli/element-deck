@@ -37,7 +37,7 @@ FIND → READ → COMPARE → SEE THE LIGHT → RETURN
 | Details curriculum card | Student sees the three profiles as a guide. Educator sees them as the lever. Enthusiast can collapse the card |
 | Compare empty state | Student: a suggested congener in the same group. Educator: last class pair. Enthusiast: last saved pair |
 | Spectra lead | Student: glow and color name first. Advanced sections remain one scroll away |
-| Settings | Educator sees Classroom once Pro exists. The appearance controls are identical |
+| Settings | Appearance controls are identical for every persona |
 
 A student can open Advanced. An enthusiast can switch to Beginner to see what a younger reader would get. Persona only picks the default path through the same rooms.
 
@@ -60,7 +60,7 @@ Open the app
   → preview catalog, no account
   → persona Student, depth Intermediate
 
-Sign in and buy Element Deck
+Sign in and buy a course pack
   → download the content pack
   → persona and depth follow this device, then copy to the account
 
@@ -71,8 +71,6 @@ Settings → Learning
 
 Changing persona later does not rewrite bookmarks. It changes defaults from then on.
 
-## Classroom is not a fourth persona
+## Educator uses the same packs
 
-A class is the Classroom package: a shared Firebase list of elements and a suggested depth. Each learner still uses the same app and can move the depth control. The educator does not get a private build of the table. The package does not have to ship in the first store build.
-
-See [use-cases/classroom.md](./use-cases/classroom.md).
+There is no separate Classroom product. An educator uses the same three course packs and the same rooms.

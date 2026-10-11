@@ -193,6 +193,29 @@ void main() {
     expect(line.audibleHz, closeTo(line.frequencyHz / 1e12, 0.01));
   });
 
+  test('table index lists 118 elements', () {
+    final file = File('assets/catalog/index.json');
+    final pack = CatalogPack.fromJson(
+      jsonDecode(file.readAsStringSync()) as Map<String, dynamic>,
+    );
+    expect(pack.elements, hasLength(118));
+    expect(pack.byZ(1)!.symbol, 'H');
+    expect(pack.byZ(118)!.symbol, 'Og');
+  });
+
+  test('forms exist only for multi-form syllabus elements', () {
+    final file = File('assets/catalog/core.json');
+    final pack = CatalogPack.fromJson(
+      jsonDecode(file.readAsStringSync()) as Map<String, dynamic>,
+    );
+    expect(pack.byZ(6)!.forms.map((f) => f.name), containsAll(['Diamond', 'Graphite']));
+    expect(pack.byZ(8)!.forms, isNotEmpty);
+    expect(pack.byZ(15)!.forms, isNotEmpty);
+    expect(pack.byZ(16)!.forms, isNotEmpty);
+    expect(pack.byZ(50)!.forms, isNotEmpty);
+    expect(pack.byZ(11)!.forms, isEmpty);
+  });
+
   test('periodic table places 118 unique elements', () {
     expect(PeriodicLayout.elements, hasLength(118));
     expect(PeriodicLayout.cells.map((c) => c.z).toSet(), hasLength(118));

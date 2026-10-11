@@ -61,16 +61,15 @@ A **package** is what a person buys. A **purchase** is the record that they did.
 | Package | Unlocks |
 | --- | --- |
 | Preview | Free. The five bundled elements. No purchase record |
-| Element Deck | The full content pack. Four rooms, three depths, on every device signed in to that account |
-| Classroom | Element Deck, plus a class list and a suggested depth |
+| Beginner, Intermediate, Advanced | Independent course packs. One sqlite file; the client shows owned depths |
 
-Prices are open. The ids are not: `preview`, `element-deck`, `classroom`.
+The ids are `pack-beginner`, `pack-intermediate`, `pack-advanced`. A legacy `element-deck` receipt unlocks all three.
 
 Firestore holds:
 
 | Collection | Document |
 | --- | --- |
-| `packages/{packageId}` | Title, which pack ids it includes, whether it includes a class |
+| `packages/{packageId}` | Title, which pack ids it includes |
 | `purchases/{purchaseId}` | `uid`, `packageId`, store, store product id, store transaction id, `active` / `refunded` / `expired`, purchased time, verified time |
 | `users/{uid}` | Email, display name, persona. Written at sign-in |
 
@@ -85,7 +84,7 @@ Sign-in is Firebase Auth with Google. Element Deck does not collect a password. 
 | Data | After it is on the device | Before that |
 | --- | --- | --- |
 | Preview elements | Always, from the app binary | — |
-| Full content pack | Yes, from the SQLite cache | Needs the network once, and an active Element Deck or Classroom purchase |
+| Full content pack | Yes, from the SQLite cache | Needs the network once, and an active course pack |
 | Theme, depth, bookmarks, pairs | Yes, learner SQLite | — |
 | New purchase or restore | No | Needs the store and Firebase |
 | A newer pack | Keeps the cached pack | Downloads when online |
@@ -100,10 +99,6 @@ Preferences, bookmarks, recents, and saved comparisons stay in the learner SQLit
 
 Erase on this device clears the local learner database and the pack cache. Delete account removes the Firestore user documents and the purchase records only through the store's refund path plus our status update. A purchase is not deleted by "erase this device."
 
-## Classroom
-
-Classroom is the package above, not a separate backend. The class list is Firestore: name, owner uid, join code, pinned atomic numbers, suggested depth. Each member still downloads the same content pack. See [use-cases/classroom.md](./use-cases/classroom.md).
-
 ## Client modules
 
 | Module | Responsibility |
@@ -113,7 +108,7 @@ Classroom is the package above, not a separate backend. The class list is Firest
 | Packs | Download, checksum, swap the cache |
 | Purchases | Read entitlements, start a store purchase, restore |
 | Learner | Preferences, bookmarks, recents, comparisons |
-| Rooms | Table, Details, Compare, Spectra |
+| Rooms | Table, Details, Spectra, Quiz |
 | Theme | Presets, glass, family colors |
 | Account | Firebase Auth, export, erase |
 
@@ -127,7 +122,6 @@ Query the local catalog SQLite. The full index exists only after the pack is cac
 - Purchases store the Firebase uid, the email on the auth profile, the package id, and the store transaction id. That is the record of who bought what.
 - A user can read their own purchases. They cannot list someone else's.
 - Export of learner data does not include other buyers.
-- Classroom rosters wait on the terms in [use-cases/classroom.md](./use-cases/classroom.md) before a minor can join.
 
 ## Relationship to RxFolio
 

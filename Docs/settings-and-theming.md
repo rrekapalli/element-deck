@@ -33,7 +33,7 @@ Purpose: who is signed in, which package they own, appearance, the content pack,
 
 | State | Shows |
 | --- | --- |
-| Signed in | Name, email, and the packages they own (`Element Deck`, `Classroom`) |
+| Signed in | Name, email, and the course packs they own |
 | Signed out | **Sign in with Google**. Preview elements still open. Buying and the full pack need an account |
 
 ### Rows
@@ -153,7 +153,7 @@ Sonification off removes the tone and keeps the Listen row visible as "Sound is 
 ### What is not in App settings
 
 - Category colors. Those are data.
-- A "simple mode" that deletes Spectra or Compare. Depth already changes vocabulary. Rooms stay.
+- A "simple mode" that deletes Spectra. Depth already changes vocabulary. Rooms stay.
 - Backend AI, heuristics, or an on-device model. v1 has no parser and no tutor. Do not reserve three mysterious switches.
 
 ## App Health
@@ -177,13 +177,12 @@ Help articles, English first:
 | Article | Covers |
 | --- | --- |
 | Table | Search, family chips, periodic table, registry |
-| Details | Identity, Details / Data / History / Trivia, simulate |
-| Compare | Pair, computed deltas, trend, PDF |
+| Details | Identity, Details / Data / History / Uses / Neighbors, simulate |
+| Neighbors | Pair, computed deltas, trend, PDF |
 | Spectra | Emitter, strip, sonification, isotopes |
 | Settings | This hub |
 | Account settings | Sign-in, packages, restore, erase |
 | App Config | Learning mode, appearance, units, sound |
-| Classroom | Class name, join code, pinned elements |
 | App Health | Catalog, pack cache, Firebase, purchases |
 | About | Disclaimer |
 

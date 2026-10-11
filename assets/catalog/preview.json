@@ -1,8 +1,8 @@
 {
   "id": "preview",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "sciencePins": [
-    "compiled-v1.3",
+    "compiled-v1.4",
     "NIST ASD"
   ],
   "trendNotes": [
@@ -10,41 +10,121 @@
       "zA": 6,
       "zB": 14,
       "label": "Group 14",
-      "essay": "Descending from Carbon (C) to Silicon (Si) exhibits the classic inner-core shielding effect. The additional 3s\u00b23p\u00b2 shell increases the atomic radius significantly (+58%), causing valence electrons to experience a diminished effective nuclear charge (Z_eff). C\u2013C bonds drastically outlast weaker Si\u2013Si bonds. Silicon's network is an intrinsic semiconductor.",
       "swaps": [
         32,
         8
-      ]
+      ],
+      "essay": "Carbon is smaller and bonds to itself more strongly than silicon. Silicon is the larger neighbor used in chips.",
+      "essays": {
+        "beginner": "Carbon is smaller and holds onto itself more tightly. Silicon is the larger neighbor in the same column, and it is the element in computer chips.",
+        "intermediate": "Descending from carbon to silicon adds a shell. Radius rises, electronegativity falls, and C\u2013C bonds outlast Si\u2013Si bonds. Silicon's network is a semiconductor.",
+        "advanced": "The extra 3s2 3p2 shell increases radius and lowers Z_eff at the valence edge. Bond enthalpy drops from C\u2013C to Si\u2013Si, and the diamond-cubic network of silicon is an intrinsic semiconductor."
+      }
     },
     {
       "zA": 9,
       "zB": 17,
       "label": "Group 17",
-      "essay": "Fluorine to chlorine is the textbook halogen step: both want one electron, but fluorine is a much fiercer oxidizer because it is smaller and more electronegative. Chlorine still disinfects and forms a wide oxo-anion ladder (ClO\u207b to ClO\u2084\u207b) that fluorine barely copies.",
       "swaps": [
         35,
         8
-      ]
+      ],
+      "essay": "Fluorine is a fiercer oxidizer than chlorine because it is smaller.",
+      "essays": {
+        "beginner": "Fluorine and chlorine both sit in the halogen column. Fluorine is smaller and more eager to join other elements. Chlorine is the gas used to treat water.",
+        "intermediate": "Both want one electron. Fluorine is smaller and more electronegative, so it is the stronger oxidizer. Chlorine still forms a wide oxo-anion ladder.",
+        "advanced": "The F\u2013F bond is weak and the atom is small, so fluorine oxidizes almost everything. Chlorine's oxoacid ladder is a size-and-oxidation-state story fluorine barely copies."
+      }
     },
     {
       "zA": 3,
       "zB": 11,
       "label": "Group 1",
-      "essay": "Lithium to sodium keeps the ns\u00b9 pattern, but sodium\u2019s extra shell makes the atom larger and easier to oxidize. Lithium\u2019s small Li\u207a ion polarizes anions and dominates battery electrochemistry; sodium remains the everyday salt cation.",
       "swaps": [
         19,
         12
-      ]
+      ],
+      "essay": "Sodium is larger and easier to oxidize than lithium.",
+      "essays": {
+        "beginner": "Lithium and sodium are both soft metals that react with water. Sodium is the metal in table salt. Lithium is the metal in rechargeable batteries.",
+        "intermediate": "Both are ns1. Sodium's extra shell makes the atom larger and easier to oxidize. Lithium is diagonally related to magnesium.",
+        "advanced": "Li+ is small and polarizing; Na+ is the everyday aqueous cation. The first ionization enthalpy falls down the group as the valence electron sits farther out."
+      }
+    },
+    {
+      "zA": 11,
+      "zB": 19,
+      "label": "Group 1",
+      "swaps": [
+        3,
+        12
+      ],
+      "essay": "Potassium is larger and more reactive than sodium.",
+      "essays": {
+        "beginner": "Sodium and potassium are both alkali metals. Potassium is larger, and it reacts even more readily with water.",
+        "intermediate": "Down group 1, radius rises and ionization enthalpy falls. Potassium is more reactive than sodium in water.",
+        "advanced": "The 4s electron of potassium is held more weakly than sodium's 3s electron. Flame colours differ because the resonance lines sit at different wavelengths."
+      }
+    },
+    {
+      "zA": 8,
+      "zB": 16,
+      "label": "Group 16",
+      "swaps": [
+        34,
+        7
+      ],
+      "essay": "Oxygen is a gas of O2; sulfur is a yellow solid of S8 rings.",
+      "essays": {
+        "beginner": "Oxygen is the gas you breathe. Sulfur is a yellow solid in the same column. Both like to join two other atoms in many compounds.",
+        "intermediate": "Oxygen is O2; sulfur prefers S8 rings. Down the group, catenation grows and the \u20132 state is still common.",
+        "advanced": "The small size and high electronegativity of oxygen shut down catenation that sulfur shows freely. Multiple bonding is easier for oxygen than for sulfur."
+      }
+    },
+    {
+      "zA": 3,
+      "zB": 12,
+      "label": "Diagonal",
+      "swaps": [
+        11,
+        4
+      ],
+      "essay": "Lithium is diagonally related to magnesium.",
+      "essays": {
+        "beginner": "Lithium sits above sodium, but in some ways it behaves like magnesium, the metal one step down and one step across.",
+        "intermediate": "The Li\u2013Mg diagonal pair is a Class 11 fact: similar charge density and covalent character in some compounds.",
+        "advanced": "Similar polarizing power of Li+ and Mg2+ produces the diagonal relationship: nitrides, carbonates that decompose, and organometallic chemistry."
+      }
+    },
+    {
+      "zA": 7,
+      "zB": 15,
+      "label": "Group 15",
+      "swaps": [
+        33,
+        8
+      ],
+      "essay": "Nitrogen is a triple-bonded gas; phosphorus is a solid that burns more readily.",
+      "essays": {
+        "beginner": "Nitrogen is most of the air and is hard to break apart. Phosphorus is a solid in the same column, and some forms of it burn easily.",
+        "intermediate": "N2 has a triple bond, so it is inert at room temperature. Phosphorus has weaker P\u2013P bonds and several allotropes.",
+        "advanced": "The N\u2261N bond enthalpy is why air is a nitrogen reservoir. Phosphorus lacks a stable P2 triple-bond allotrope at room temperature and catenates instead."
+      }
     },
     {
       "zA": 10,
       "zB": 18,
       "label": "Group 18",
-      "essay": "Neon and argon are both closed-shell gases, but argon is denser and far more abundant in air. Neither forms ordinary molecules; argon\u2019s chemistry, like krypton\u2019s, is a specialist topic, while neon is the lighting benchmark.",
       "swaps": [
         36,
         2
-      ]
+      ],
+      "essay": "Neon and argon are closed-shell gases. Argon is denser and more abundant in air.",
+      "essays": {
+        "beginner": "Neon and argon almost never join other elements. Neon glows orange-red in a tube. Argon is a larger part of air.",
+        "intermediate": "Both are closed-shell gases. Argon is denser and far more abundant in air than neon.",
+        "advanced": "Closed np6 shells suppress ordinary molecules. Argon's chemistry, like krypton's, is a specialist topic; neon is the lighting benchmark."
+      }
     }
   ],
   "elements": [
@@ -201,6 +281,11 @@
           "frequencyHz": 456805720119461.2
         }
       ],
+      "spectraNote": {
+        "beginner": "Hydrogen can give off coloured light when its atoms are excited. This pack stores 6 teaching lines for the strip.",
+        "intermediate": "The stored lines are a teaching subset of Hydrogen's spectrum. Wavelength, energy, and the colour name sit on the strip.",
+        "advanced": "Assignments, when stored, are electron jumps in Hydrogen. They are catalogued data, not a measurement this device just made."
+      },
       "isotopes": [
         {
           "a": 1,
@@ -407,6 +492,29 @@
           "frequencyHz": 421340873060490.2
         }
       ],
+      "spectraNote": {
+        "beginner": "Carbon can give off coloured light when its atoms are excited. This pack stores 7 teaching lines for the strip.",
+        "intermediate": "The stored lines are a teaching subset of Carbon's spectrum. Wavelength, energy, and the colour name sit on the strip.",
+        "advanced": "Assignments, when stored, are electron jumps in Carbon. They are catalogued data, not a measurement this device just made."
+      },
+      "forms": [
+        {
+          "name": "Diamond",
+          "note": {
+            "beginner": "In diamond every carbon atom is tied to four neighbors. The network is hard and does not conduct electricity.",
+            "intermediate": "Diamond is a covalent network of tetrahedral carbon. Each atom is sp3, and the wide gap makes the solid an insulator.",
+            "advanced": "The diamond lattice is a giant covalent solid. High bond enthalpy and a large band gap follow from the tetrahedral network."
+          }
+        },
+        {
+          "name": "Graphite",
+          "note": {
+            "beginner": "In graphite the atoms sit in sheets that slide. A pencil mark is one of those sheets left on paper.",
+            "intermediate": "Graphite is stacked hexagonal sheets. Delocalized electrons in a sheet make it a conductor along the layers.",
+            "advanced": "sp2 sheets with weak stacking forces explain cleavage, lubrication, and in-plane conductivity."
+          }
+        }
+      ],
       "isotopes": [
         {
           "a": 12,
@@ -478,7 +586,7 @@
         "advanced": "Neon (Z = 10) has the ground-state configuration [He] 2s2 2p6. The emission spectrum is dense in the red and orange, which is why a pure neon discharge does not look white.\n\nCompounds are a specialist topic. The closed shell is the classroom fact.\n\nOxidation states are not listed for this entry. Neighbors differ because each added proton changes how tightly the electrons are held as the shells fill.\n\nThe picture estimates how tightly each subshell is held, using Slater's rules. Ring radius follows 1/sqrt(E), so a tightly held inner shell sits closer to the nucleus. These are compiled teaching values, not a measurement this device just made."
       },
       "curriculum": {
-        "beginner": "Learn Neon: say the name, write Ne, find Z=10 on the table, note the family (Noble gas), and connect it to one real use \u2014 orange-red discharge tubes.",
+        "beginner": "Find Neon (Ne, Z=10) on the table and note its family (Noble gas). If it is made only in a laboratory, treat it as a short card, not a classroom chemical.",
         "intermediate": "Course pass on Neon: electron configuration [He] 2s2 2p6, Oxidation states are not listed for this entry. It sits in group 18. Compare one physical number (melting point, ionization energy, or radius) with a neighbor. closed p\u2076 shell; no stable molecules.",
         "advanced": "Go further on Neon: justify periodic trends with Z_eff and shells; read isotopes and any spectral lines as catalogued data; many visible emission lines; sonified as THz/10\u00b9\u00b2 If a reaction illustration exists, treat it as a known equation, not a simulation of your lab."
       },
@@ -612,6 +720,11 @@
           "frequencyHz": 413780790040302.5
         }
       ],
+      "spectraNote": {
+        "beginner": "Neon can give off coloured light when its atoms are excited. This pack stores 8 teaching lines for the strip.",
+        "intermediate": "The stored lines are a teaching subset of Neon's spectrum. Wavelength, energy, and the colour name sit on the strip.",
+        "advanced": "Assignments, when stored, are electron jumps in Neon. They are catalogued data, not a measurement this device just made."
+      },
       "isotopes": [
         {
           "a": 20,
@@ -840,6 +953,11 @@
           "frequencyHz": 403842470532767.5
         }
       ],
+      "spectraNote": {
+        "beginner": "Silicon can give off coloured light when its atoms are excited. This pack stores 8 teaching lines for the strip.",
+        "intermediate": "The stored lines are a teaching subset of Silicon's spectrum. Wavelength, energy, and the colour name sit on the strip.",
+        "advanced": "Assignments, when stored, are electron jumps in Silicon. They are catalogued data, not a measurement this device just made."
+      },
       "isotopes": [
         {
           "a": 28,
@@ -908,7 +1026,7 @@
         "advanced": "Titanium (Z = 22) has the ground-state configuration [Ar] 3d2 4s2. The passivating TiO2 film is why the metal survives seawater and the body.\n\nIn compounds the +4 state is d0, which is also why the pigment is white rather than colored.\n\nOxidation states in this dossier are +4, +3, +2. The one courses meet most often is +4. Neighbors differ because each added proton changes how tightly the electrons are held as the shells fill.\n\nThe picture estimates how tightly each subshell is held, using Slater's rules. Ring radius follows 1/sqrt(E), so a tightly held inner shell sits closer to the nucleus. These are compiled teaching values, not a measurement this device just made."
       },
       "curriculum": {
-        "beginner": "Learn Titanium: say the name, write Ti, find Z=22 on the table, note the family (Transition metal), and connect it to one real use \u2014 aircraft and white pigment (TiO\u2082).",
+        "beginner": "Find Titanium (Ti, Z=22) on the table and note its family (Transition metal). If it is made only in a laboratory, treat it as a short card, not a classroom chemical.",
         "intermediate": "Course pass on Titanium: electron configuration [Ar] 3d2 4s2, Typical oxidation states: +4, +3, +2. It sits in group 4. Compare one physical number (melting point, ionization energy, or radius) with a neighbor. light, strong, corrosion-resistant.",
         "advanced": "Go further on Titanium: justify periodic trends with Z_eff and shells; read isotopes and any spectral lines as catalogued data; passivating oxide; +4 dominates If a reaction illustration exists, treat it as a known equation, not a simulation of your lab."
       },
@@ -1047,6 +1165,11 @@
           "frequencyHz": 577301093780088.6
         }
       ],
+      "spectraNote": {
+        "beginner": "Titanium can give off coloured light when its atoms are excited. This pack stores 8 teaching lines for the strip.",
+        "intermediate": "The stored lines are a teaching subset of Titanium's spectrum. Wavelength, energy, and the colour name sit on the strip.",
+        "advanced": "Assignments, when stored, are electron jumps in Titanium. They are catalogued data, not a measurement this device just made."
+      },
       "isotopes": [
         {
           "a": 46,

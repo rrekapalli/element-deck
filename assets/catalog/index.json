@@ -1,0 +1,6398 @@
+{
+  "id": "index",
+  "version": "1.4.0",
+  "sciencePins": [
+    "compiled-v1.4",
+    "NIST ASD"
+  ],
+  "trendNotes": [],
+  "elements": [
+    {
+      "z": 1,
+      "symbol": "H",
+      "name": "Hydrogen",
+      "atomicWeight": 1.008,
+      "weightKind": "standard",
+      "categoryId": "reactive-nonmetal",
+      "categoryLabel": "Nonmetal",
+      "tags": [],
+      "block": "s",
+      "period": 1,
+      "group": 1,
+      "standardState": "gas",
+      "electronConfig": "1s1",
+      "electronConfigFull": "1s1",
+      "shellCounts": [
+        1
+      ],
+      "oxidationStates": [
+        1
+      ],
+      "primaryOxidation": 1,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 31,
+        "paulingEn": 2.2,
+        "ionizationEv": 13.598,
+        "meltingK": 13.99,
+        "boilingK": 20.27,
+        "density": 8.4e-05
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 2,
+      "symbol": "He",
+      "name": "Helium",
+      "atomicWeight": 4.0026,
+      "weightKind": "standard",
+      "categoryId": "noble-gas",
+      "categoryLabel": "Noble gas",
+      "tags": [],
+      "block": "s",
+      "period": 1,
+      "group": 18,
+      "standardState": "gas",
+      "electronConfig": "1s2",
+      "electronConfigFull": "1s2",
+      "shellCounts": [
+        2
+      ],
+      "oxidationStates": [],
+      "primaryOxidation": null,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 28,
+        "ionizationEv": 24.587,
+        "meltingK": 0.95,
+        "boilingK": 4.22,
+        "density": 0.0001785
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 3,
+      "symbol": "Li",
+      "name": "Lithium",
+      "atomicWeight": 6.94,
+      "weightKind": "standard",
+      "categoryId": "alkali-metal",
+      "categoryLabel": "Alkali metal",
+      "tags": [],
+      "block": "s",
+      "period": 2,
+      "group": 1,
+      "standardState": "solid",
+      "electronConfig": "[He] 2s1",
+      "electronConfigFull": "[He] 2s1",
+      "shellCounts": [
+        2,
+        1
+      ],
+      "oxidationStates": [
+        1
+      ],
+      "primaryOxidation": 1,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 128,
+        "paulingEn": 0.98,
+        "ionizationEv": 5.392,
+        "meltingK": 453.65,
+        "boilingK": 1603,
+        "density": 0.534
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 4,
+      "symbol": "Be",
+      "name": "Beryllium",
+      "atomicWeight": 9.0122,
+      "weightKind": "standard",
+      "categoryId": "alkaline-earth",
+      "categoryLabel": "Alk. earth",
+      "tags": [],
+      "block": "s",
+      "period": 2,
+      "group": 2,
+      "standardState": "solid",
+      "electronConfig": "[He] 2s2",
+      "electronConfigFull": "[He] 2s2",
+      "shellCounts": [
+        2,
+        2
+      ],
+      "oxidationStates": [
+        2
+      ],
+      "primaryOxidation": 2,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 96,
+        "paulingEn": 1.57,
+        "ionizationEv": 9.323,
+        "meltingK": 1560,
+        "boilingK": 2742,
+        "density": 1.85
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 5,
+      "symbol": "B",
+      "name": "Boron",
+      "atomicWeight": 10.81,
+      "weightKind": "standard",
+      "categoryId": "metalloid",
+      "categoryLabel": "Metalloid",
+      "tags": [],
+      "block": "p",
+      "period": 2,
+      "group": 13,
+      "standardState": "solid",
+      "electronConfig": "[He] 2s2 2p1",
+      "electronConfigFull": "[He] 2s2 2p1",
+      "shellCounts": [
+        2,
+        3
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 84,
+        "paulingEn": 2.04,
+        "ionizationEv": 8.298,
+        "meltingK": 2349,
+        "boilingK": 4200,
+        "density": 2.34
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 6,
+      "symbol": "C",
+      "name": "Carbon",
+      "atomicWeight": 12.011,
+      "weightKind": "standard",
+      "categoryId": "reactive-nonmetal",
+      "categoryLabel": "Nonmetal",
+      "tags": [],
+      "block": "p",
+      "period": 2,
+      "group": 14,
+      "standardState": "solid",
+      "electronConfig": "[He] 2s2 2p2",
+      "electronConfigFull": "[He] 2s2 2p2",
+      "shellCounts": [
+        2,
+        4
+      ],
+      "oxidationStates": [
+        4,
+        2,
+        -4
+      ],
+      "primaryOxidation": 4,
+      "lattice": "Hexagonal (graphite)",
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 76,
+        "paulingEn": 2.55,
+        "ionizationEv": 11.26,
+        "meltingK": 3823,
+        "boilingK": 4098,
+        "density": 2.267
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 7,
+      "symbol": "N",
+      "name": "Nitrogen",
+      "atomicWeight": 14.007,
+      "weightKind": "standard",
+      "categoryId": "reactive-nonmetal",
+      "categoryLabel": "Nonmetal",
+      "tags": [],
+      "block": "p",
+      "period": 2,
+      "group": 15,
+      "standardState": "gas",
+      "electronConfig": "[He] 2s2 2p3",
+      "electronConfigFull": "[He] 2s2 2p3",
+      "shellCounts": [
+        2,
+        5
+      ],
+      "oxidationStates": [
+        -3,
+        3,
+        5
+      ],
+      "primaryOxidation": -3,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 71,
+        "paulingEn": 3.04,
+        "ionizationEv": 14.534,
+        "meltingK": 63.15,
+        "boilingK": 77.355,
+        "density": 0.001251
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 8,
+      "symbol": "O",
+      "name": "Oxygen",
+      "atomicWeight": 15.999,
+      "weightKind": "standard",
+      "categoryId": "reactive-nonmetal",
+      "categoryLabel": "Nonmetal",
+      "tags": [],
+      "block": "p",
+      "period": 2,
+      "group": 16,
+      "standardState": "gas",
+      "electronConfig": "[He] 2s2 2p4",
+      "electronConfigFull": "[He] 2s2 2p4",
+      "shellCounts": [
+        2,
+        6
+      ],
+      "oxidationStates": [
+        -2
+      ],
+      "primaryOxidation": -2,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 66,
+        "paulingEn": 3.44,
+        "ionizationEv": 13.618,
+        "meltingK": 54.36,
+        "boilingK": 90.188,
+        "density": 0.001429
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 9,
+      "symbol": "F",
+      "name": "Fluorine",
+      "atomicWeight": 18.998,
+      "weightKind": "standard",
+      "categoryId": "reactive-nonmetal",
+      "categoryLabel": "Halogen",
+      "tags": [
+        "halogen"
+      ],
+      "block": "p",
+      "period": 2,
+      "group": 17,
+      "standardState": "gas",
+      "electronConfig": "[He] 2s2 2p5",
+      "electronConfigFull": "[He] 2s2 2p5",
+      "shellCounts": [
+        2,
+        7
+      ],
+      "oxidationStates": [
+        -1
+      ],
+      "primaryOxidation": -1,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 57,
+        "paulingEn": 3.98,
+        "ionizationEv": 17.423,
+        "meltingK": 53.48,
+        "boilingK": 85.03,
+        "density": 0.001696
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 10,
+      "symbol": "Ne",
+      "name": "Neon",
+      "atomicWeight": 20.18,
+      "weightKind": "standard",
+      "categoryId": "noble-gas",
+      "categoryLabel": "Noble gas",
+      "tags": [],
+      "block": "p",
+      "period": 2,
+      "group": 18,
+      "standardState": "gas",
+      "electronConfig": "[He] 2s2 2p6",
+      "electronConfigFull": "[He] 2s2 2p6",
+      "shellCounts": [
+        2,
+        8
+      ],
+      "oxidationStates": [],
+      "primaryOxidation": null,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 58,
+        "ionizationEv": 21.565,
+        "meltingK": 24.56,
+        "boilingK": 27.07,
+        "density": 0.0009
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 11,
+      "symbol": "Na",
+      "name": "Sodium",
+      "atomicWeight": 22.99,
+      "weightKind": "standard",
+      "categoryId": "alkali-metal",
+      "categoryLabel": "Alkali metal",
+      "tags": [],
+      "block": "s",
+      "period": 3,
+      "group": 1,
+      "standardState": "solid",
+      "electronConfig": "[Ne] 3s1",
+      "electronConfigFull": "[Ne] 3s1",
+      "shellCounts": [
+        2,
+        8,
+        1
+      ],
+      "oxidationStates": [
+        1
+      ],
+      "primaryOxidation": 1,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 166,
+        "paulingEn": 0.93,
+        "ionizationEv": 5.139,
+        "meltingK": 370.87,
+        "boilingK": 1156,
+        "density": 0.968
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 12,
+      "symbol": "Mg",
+      "name": "Magnesium",
+      "atomicWeight": 24.305,
+      "weightKind": "standard",
+      "categoryId": "alkaline-earth",
+      "categoryLabel": "Alk. earth",
+      "tags": [],
+      "block": "s",
+      "period": 3,
+      "group": 2,
+      "standardState": "solid",
+      "electronConfig": "[Ne] 3s2",
+      "electronConfigFull": "[Ne] 3s2",
+      "shellCounts": [
+        2,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        2
+      ],
+      "primaryOxidation": 2,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 141,
+        "paulingEn": 1.31,
+        "ionizationEv": 7.646,
+        "meltingK": 923,
+        "boilingK": 1363,
+        "density": 1.738
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 13,
+      "symbol": "Al",
+      "name": "Aluminium",
+      "atomicWeight": 26.982,
+      "weightKind": "standard",
+      "categoryId": "post-transition",
+      "categoryLabel": "Post-transition",
+      "tags": [],
+      "block": "p",
+      "period": 3,
+      "group": 13,
+      "standardState": "solid",
+      "electronConfig": "[Ne] 3s2 3p1",
+      "electronConfigFull": "[Ne] 3s2 3p1",
+      "shellCounts": [
+        2,
+        8,
+        3
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": "FCC",
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 121,
+        "paulingEn": 1.61,
+        "ionizationEv": 5.986,
+        "meltingK": 933.47,
+        "boilingK": 2792,
+        "density": 2.7
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 14,
+      "symbol": "Si",
+      "name": "Silicon",
+      "atomicWeight": 28.085,
+      "weightKind": "standard",
+      "categoryId": "metalloid",
+      "categoryLabel": "Metalloid",
+      "tags": [],
+      "block": "p",
+      "period": 3,
+      "group": 14,
+      "standardState": "solid",
+      "electronConfig": "[Ne] 3s2 3p2",
+      "electronConfigFull": "[Ne] 3s2 3p2",
+      "shellCounts": [
+        2,
+        8,
+        4
+      ],
+      "oxidationStates": [
+        4
+      ],
+      "primaryOxidation": 4,
+      "lattice": "Diamond cubic",
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 111,
+        "paulingEn": 1.9,
+        "ionizationEv": 8.152,
+        "meltingK": 1687,
+        "boilingK": 3538,
+        "density": 2.329
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 15,
+      "symbol": "P",
+      "name": "Phosphorus",
+      "atomicWeight": 30.974,
+      "weightKind": "standard",
+      "categoryId": "reactive-nonmetal",
+      "categoryLabel": "Nonmetal",
+      "tags": [],
+      "block": "p",
+      "period": 3,
+      "group": 15,
+      "standardState": "solid",
+      "electronConfig": "[Ne] 3s2 3p3",
+      "electronConfigFull": "[Ne] 3s2 3p3",
+      "shellCounts": [
+        2,
+        8,
+        5
+      ],
+      "oxidationStates": [
+        -3,
+        3,
+        5
+      ],
+      "primaryOxidation": -3,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 107,
+        "paulingEn": 2.19,
+        "ionizationEv": 10.487,
+        "meltingK": 317.3,
+        "boilingK": 553.5,
+        "density": 1.823
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 16,
+      "symbol": "S",
+      "name": "Sulfur",
+      "atomicWeight": 32.06,
+      "weightKind": "standard",
+      "categoryId": "reactive-nonmetal",
+      "categoryLabel": "Nonmetal",
+      "tags": [],
+      "block": "p",
+      "period": 3,
+      "group": 16,
+      "standardState": "solid",
+      "electronConfig": "[Ne] 3s2 3p4",
+      "electronConfigFull": "[Ne] 3s2 3p4",
+      "shellCounts": [
+        2,
+        8,
+        6
+      ],
+      "oxidationStates": [
+        -2,
+        4,
+        6
+      ],
+      "primaryOxidation": -2,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 105,
+        "paulingEn": 2.58,
+        "ionizationEv": 10.36,
+        "meltingK": 388.36,
+        "boilingK": 717.8,
+        "density": 2.067
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 17,
+      "symbol": "Cl",
+      "name": "Chlorine",
+      "atomicWeight": 35.45,
+      "weightKind": "standard",
+      "categoryId": "reactive-nonmetal",
+      "categoryLabel": "Halogen",
+      "tags": [
+        "halogen"
+      ],
+      "block": "p",
+      "period": 3,
+      "group": 17,
+      "standardState": "gas",
+      "electronConfig": "[Ne] 3s2 3p5",
+      "electronConfigFull": "[Ne] 3s2 3p5",
+      "shellCounts": [
+        2,
+        8,
+        7
+      ],
+      "oxidationStates": [
+        -1,
+        1,
+        5,
+        7
+      ],
+      "primaryOxidation": -1,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 102,
+        "paulingEn": 3.16,
+        "ionizationEv": 12.968,
+        "meltingK": 171.6,
+        "boilingK": 239.11,
+        "density": 0.0032
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 18,
+      "symbol": "Ar",
+      "name": "Argon",
+      "atomicWeight": 39.948,
+      "weightKind": "standard",
+      "categoryId": "noble-gas",
+      "categoryLabel": "Noble gas",
+      "tags": [],
+      "block": "p",
+      "period": 3,
+      "group": 18,
+      "standardState": "gas",
+      "electronConfig": "[Ne] 3s2 3p6",
+      "electronConfigFull": "[Ne] 3s2 3p6",
+      "shellCounts": [
+        2,
+        8,
+        8
+      ],
+      "oxidationStates": [],
+      "primaryOxidation": null,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 106,
+        "ionizationEv": 15.76,
+        "meltingK": 83.81,
+        "boilingK": 87.3,
+        "density": 0.001784
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 19,
+      "symbol": "K",
+      "name": "Potassium",
+      "atomicWeight": 39.098,
+      "weightKind": "standard",
+      "categoryId": "alkali-metal",
+      "categoryLabel": "Alkali metal",
+      "tags": [],
+      "block": "s",
+      "period": 4,
+      "group": 1,
+      "standardState": "solid",
+      "electronConfig": "[Ar] 4s1",
+      "electronConfigFull": "[Ar] 4s1",
+      "shellCounts": [
+        2,
+        8,
+        8,
+        1
+      ],
+      "oxidationStates": [
+        1
+      ],
+      "primaryOxidation": 1,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 203,
+        "paulingEn": 0.82,
+        "ionizationEv": 4.341,
+        "meltingK": 336.7,
+        "boilingK": 1032,
+        "density": 0.89
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 20,
+      "symbol": "Ca",
+      "name": "Calcium",
+      "atomicWeight": 40.078,
+      "weightKind": "standard",
+      "categoryId": "alkaline-earth",
+      "categoryLabel": "Alk. earth",
+      "tags": [],
+      "block": "s",
+      "period": 4,
+      "group": 2,
+      "standardState": "solid",
+      "electronConfig": "[Ar] 4s2",
+      "electronConfigFull": "[Ar] 4s2",
+      "shellCounts": [
+        2,
+        8,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        2
+      ],
+      "primaryOxidation": 2,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 176,
+        "paulingEn": 1.0,
+        "ionizationEv": 6.113,
+        "meltingK": 1115,
+        "boilingK": 1757,
+        "density": 1.54
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 21,
+      "symbol": "Sc",
+      "name": "Scandium",
+      "atomicWeight": 44.956,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 4,
+      "group": 3,
+      "standardState": "solid",
+      "electronConfig": "[Ar] 3d1 4s2",
+      "electronConfigFull": "[Ar] 3d1 4s2",
+      "shellCounts": [
+        2,
+        8,
+        9,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 170,
+        "paulingEn": 1.36,
+        "ionizationEv": 6.561,
+        "meltingK": 1814,
+        "boilingK": 3109,
+        "density": 2.99
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 22,
+      "symbol": "Ti",
+      "name": "Titanium",
+      "atomicWeight": 47.867,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 4,
+      "group": 4,
+      "standardState": "solid",
+      "electronConfig": "[Ar] 3d2 4s2",
+      "electronConfigFull": "[Ar] 3d2 4s2",
+      "shellCounts": [
+        2,
+        8,
+        10,
+        2
+      ],
+      "oxidationStates": [
+        4,
+        3,
+        2
+      ],
+      "primaryOxidation": 4,
+      "lattice": "Hexagonal (HCP)",
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 160,
+        "paulingEn": 1.54,
+        "ionizationEv": 6.828,
+        "meltingK": 1941,
+        "boilingK": 3560,
+        "density": 4.506
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 23,
+      "symbol": "V",
+      "name": "Vanadium",
+      "atomicWeight": 50.942,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 4,
+      "group": 5,
+      "standardState": "solid",
+      "electronConfig": "[Ar] 3d3 4s2",
+      "electronConfigFull": "[Ar] 3d3 4s2",
+      "shellCounts": [
+        2,
+        8,
+        11,
+        2
+      ],
+      "oxidationStates": [
+        5,
+        4,
+        3
+      ],
+      "primaryOxidation": 5,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 153,
+        "paulingEn": 1.63,
+        "ionizationEv": 6.746,
+        "meltingK": 2183,
+        "boilingK": 3680,
+        "density": 6.11
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 24,
+      "symbol": "Cr",
+      "name": "Chromium",
+      "atomicWeight": 51.996,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 4,
+      "group": 6,
+      "standardState": "solid",
+      "electronConfig": "[Ar] 3d5 4s1",
+      "electronConfigFull": "[Ar] 3d5 4s1",
+      "shellCounts": [
+        2,
+        8,
+        13,
+        1
+      ],
+      "oxidationStates": [
+        6,
+        3,
+        2
+      ],
+      "primaryOxidation": 6,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 139,
+        "paulingEn": 1.66,
+        "ionizationEv": 6.767,
+        "meltingK": 2180,
+        "boilingK": 2944,
+        "density": 7.15
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 25,
+      "symbol": "Mn",
+      "name": "Manganese",
+      "atomicWeight": 54.938,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 4,
+      "group": 7,
+      "standardState": "solid",
+      "electronConfig": "[Ar] 3d5 4s2",
+      "electronConfigFull": "[Ar] 3d5 4s2",
+      "shellCounts": [
+        2,
+        8,
+        13,
+        2
+      ],
+      "oxidationStates": [
+        7,
+        4,
+        2
+      ],
+      "primaryOxidation": 7,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 139,
+        "paulingEn": 1.55,
+        "ionizationEv": 7.434,
+        "meltingK": 1519,
+        "boilingK": 2334,
+        "density": 7.47
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 26,
+      "symbol": "Fe",
+      "name": "Iron",
+      "atomicWeight": 55.845,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 4,
+      "group": 8,
+      "standardState": "solid",
+      "electronConfig": "[Ar] 3d6 4s2",
+      "electronConfigFull": "[Ar] 3d6 4s2",
+      "shellCounts": [
+        2,
+        8,
+        14,
+        2
+      ],
+      "oxidationStates": [
+        3,
+        2
+      ],
+      "primaryOxidation": 3,
+      "lattice": "BCC",
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 132,
+        "paulingEn": 1.83,
+        "ionizationEv": 7.902,
+        "meltingK": 1811,
+        "boilingK": 3134,
+        "density": 7.874
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 27,
+      "symbol": "Co",
+      "name": "Cobalt",
+      "atomicWeight": 58.933,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 4,
+      "group": 9,
+      "standardState": "solid",
+      "electronConfig": "[Ar] 3d7 4s2",
+      "electronConfigFull": "[Ar] 3d7 4s2",
+      "shellCounts": [
+        2,
+        8,
+        15,
+        2
+      ],
+      "oxidationStates": [
+        3,
+        2
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 126,
+        "paulingEn": 1.88,
+        "ionizationEv": 7.881,
+        "meltingK": 1768,
+        "boilingK": 3200,
+        "density": 8.9
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 28,
+      "symbol": "Ni",
+      "name": "Nickel",
+      "atomicWeight": 58.693,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 4,
+      "group": 10,
+      "standardState": "solid",
+      "electronConfig": "[Ar] 3d8 4s2",
+      "electronConfigFull": "[Ar] 3d8 4s2",
+      "shellCounts": [
+        2,
+        8,
+        16,
+        2
+      ],
+      "oxidationStates": [
+        2
+      ],
+      "primaryOxidation": 2,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 124,
+        "paulingEn": 1.91,
+        "ionizationEv": 7.64,
+        "meltingK": 1728,
+        "boilingK": 3186,
+        "density": 8.908
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 29,
+      "symbol": "Cu",
+      "name": "Copper",
+      "atomicWeight": 63.546,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 4,
+      "group": 11,
+      "standardState": "solid",
+      "electronConfig": "[Ar] 3d10 4s1",
+      "electronConfigFull": "[Ar] 3d10 4s1",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        1
+      ],
+      "oxidationStates": [
+        2,
+        1
+      ],
+      "primaryOxidation": 2,
+      "lattice": "FCC",
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 132,
+        "paulingEn": 1.9,
+        "ionizationEv": 7.726,
+        "meltingK": 1357.8,
+        "boilingK": 2835,
+        "density": 8.96
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 30,
+      "symbol": "Zn",
+      "name": "Zinc",
+      "atomicWeight": 65.38,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 4,
+      "group": 12,
+      "standardState": "solid",
+      "electronConfig": "[Ar] 3d10 4s2",
+      "electronConfigFull": "[Ar] 3d10 4s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        2
+      ],
+      "oxidationStates": [
+        2
+      ],
+      "primaryOxidation": 2,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 122,
+        "paulingEn": 1.65,
+        "ionizationEv": 9.394,
+        "meltingK": 692.68,
+        "boilingK": 1180,
+        "density": 7.14
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 31,
+      "symbol": "Ga",
+      "name": "Gallium",
+      "atomicWeight": 69.723,
+      "weightKind": "standard",
+      "categoryId": "post-transition",
+      "categoryLabel": "Post-transition",
+      "tags": [],
+      "block": "p",
+      "period": 4,
+      "group": 13,
+      "standardState": "solid",
+      "electronConfig": "[Ar] 3d10 4s2 4p1",
+      "electronConfigFull": "[Ar] 3d10 4s2 4p1",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        3
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 122,
+        "paulingEn": 1.81,
+        "ionizationEv": 5.999,
+        "meltingK": 302.91,
+        "boilingK": 2673,
+        "density": 5.91
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 32,
+      "symbol": "Ge",
+      "name": "Germanium",
+      "atomicWeight": 72.63,
+      "weightKind": "standard",
+      "categoryId": "metalloid",
+      "categoryLabel": "Metalloid",
+      "tags": [],
+      "block": "p",
+      "period": 4,
+      "group": 14,
+      "standardState": "solid",
+      "electronConfig": "[Ar] 3d10 4s2 4p2",
+      "electronConfigFull": "[Ar] 3d10 4s2 4p2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        4
+      ],
+      "oxidationStates": [
+        4
+      ],
+      "primaryOxidation": 4,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 120,
+        "paulingEn": 2.01,
+        "ionizationEv": 7.899,
+        "meltingK": 1211.4,
+        "boilingK": 3106,
+        "density": 5.323
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 33,
+      "symbol": "As",
+      "name": "Arsenic",
+      "atomicWeight": 74.922,
+      "weightKind": "standard",
+      "categoryId": "metalloid",
+      "categoryLabel": "Metalloid",
+      "tags": [],
+      "block": "p",
+      "period": 4,
+      "group": 15,
+      "standardState": "solid",
+      "electronConfig": "[Ar] 3d10 4s2 4p3",
+      "electronConfigFull": "[Ar] 3d10 4s2 4p3",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        5
+      ],
+      "oxidationStates": [
+        -3,
+        3,
+        5
+      ],
+      "primaryOxidation": -3,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 119,
+        "paulingEn": 2.18,
+        "ionizationEv": 9.789,
+        "meltingK": 1090,
+        "boilingK": 887,
+        "density": 5.727
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 34,
+      "symbol": "Se",
+      "name": "Selenium",
+      "atomicWeight": 78.971,
+      "weightKind": "standard",
+      "categoryId": "reactive-nonmetal",
+      "categoryLabel": "Nonmetal",
+      "tags": [],
+      "block": "p",
+      "period": 4,
+      "group": 16,
+      "standardState": "solid",
+      "electronConfig": "[Ar] 3d10 4s2 4p4",
+      "electronConfigFull": "[Ar] 3d10 4s2 4p4",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        6
+      ],
+      "oxidationStates": [
+        -2,
+        4,
+        6
+      ],
+      "primaryOxidation": -2,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 120,
+        "paulingEn": 2.55,
+        "ionizationEv": 9.752,
+        "meltingK": 494,
+        "boilingK": 958,
+        "density": 4.81
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 35,
+      "symbol": "Br",
+      "name": "Bromine",
+      "atomicWeight": 79.904,
+      "weightKind": "standard",
+      "categoryId": "reactive-nonmetal",
+      "categoryLabel": "Halogen",
+      "tags": [
+        "halogen"
+      ],
+      "block": "p",
+      "period": 4,
+      "group": 17,
+      "standardState": "liquid",
+      "electronConfig": "[Ar] 3d10 4s2 4p5",
+      "electronConfigFull": "[Ar] 3d10 4s2 4p5",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        7
+      ],
+      "oxidationStates": [
+        -1
+      ],
+      "primaryOxidation": -1,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 120,
+        "paulingEn": 2.96,
+        "ionizationEv": 11.814,
+        "meltingK": 265.8,
+        "boilingK": 332.0,
+        "density": 3.12
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 36,
+      "symbol": "Kr",
+      "name": "Krypton",
+      "atomicWeight": 83.798,
+      "weightKind": "standard",
+      "categoryId": "noble-gas",
+      "categoryLabel": "Noble gas",
+      "tags": [],
+      "block": "p",
+      "period": 4,
+      "group": 18,
+      "standardState": "gas",
+      "electronConfig": "[Ar] 3d10 4s2 4p6",
+      "electronConfigFull": "[Ar] 3d10 4s2 4p6",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        8
+      ],
+      "oxidationStates": [],
+      "primaryOxidation": null,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 116,
+        "paulingEn": 3.0,
+        "ionizationEv": 14.0,
+        "meltingK": 115.78,
+        "boilingK": 119.93,
+        "density": 0.003749
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 37,
+      "symbol": "Rb",
+      "name": "Rubidium",
+      "atomicWeight": 85.468,
+      "weightKind": "standard",
+      "categoryId": "alkali-metal",
+      "categoryLabel": "Alkali metal",
+      "tags": [],
+      "block": "s",
+      "period": 5,
+      "group": 1,
+      "standardState": "solid",
+      "electronConfig": "[Kr] 5s1",
+      "electronConfigFull": "[Kr] 5s1",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        8,
+        1
+      ],
+      "oxidationStates": [
+        1
+      ],
+      "primaryOxidation": 1,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 220,
+        "paulingEn": 0.82,
+        "ionizationEv": 4.177,
+        "meltingK": 312.46,
+        "boilingK": 961,
+        "density": 1.53
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 38,
+      "symbol": "Sr",
+      "name": "Strontium",
+      "atomicWeight": 87.62,
+      "weightKind": "standard",
+      "categoryId": "alkaline-earth",
+      "categoryLabel": "Alk. earth",
+      "tags": [],
+      "block": "s",
+      "period": 5,
+      "group": 2,
+      "standardState": "solid",
+      "electronConfig": "[Kr] 5s2",
+      "electronConfigFull": "[Kr] 5s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        2
+      ],
+      "primaryOxidation": 2,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 195,
+        "paulingEn": 0.95,
+        "ionizationEv": 5.695,
+        "meltingK": 1050,
+        "boilingK": 1655,
+        "density": 2.64
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 39,
+      "symbol": "Y",
+      "name": "Yttrium",
+      "atomicWeight": 88.906,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 5,
+      "group": 3,
+      "standardState": "solid",
+      "electronConfig": "[Kr] 4d1 5s2",
+      "electronConfigFull": "[Kr] 4d1 5s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        9,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 190,
+        "paulingEn": 1.22,
+        "ionizationEv": 6.217,
+        "meltingK": 1799,
+        "boilingK": 3609,
+        "density": 4.47
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 40,
+      "symbol": "Zr",
+      "name": "Zirconium",
+      "atomicWeight": 91.224,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 5,
+      "group": 4,
+      "standardState": "solid",
+      "electronConfig": "[Kr] 4d2 5s2",
+      "electronConfigFull": "[Kr] 4d2 5s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        10,
+        2
+      ],
+      "oxidationStates": [
+        4
+      ],
+      "primaryOxidation": 4,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 175,
+        "paulingEn": 1.33,
+        "ionizationEv": 6.634,
+        "meltingK": 2128,
+        "boilingK": 4682,
+        "density": 6.52
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 41,
+      "symbol": "Nb",
+      "name": "Niobium",
+      "atomicWeight": 92.906,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 5,
+      "group": 5,
+      "standardState": "solid",
+      "electronConfig": "[Kr] 4d4 5s1",
+      "electronConfigFull": "[Kr] 4d4 5s1",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        12,
+        1
+      ],
+      "oxidationStates": [
+        5
+      ],
+      "primaryOxidation": 5,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 164,
+        "paulingEn": 1.6,
+        "ionizationEv": 6.759,
+        "meltingK": 2750,
+        "boilingK": 5017,
+        "density": 8.57
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 42,
+      "symbol": "Mo",
+      "name": "Molybdenum",
+      "atomicWeight": 95.95,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 5,
+      "group": 6,
+      "standardState": "solid",
+      "electronConfig": "[Kr] 4d5 5s1",
+      "electronConfigFull": "[Kr] 4d5 5s1",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        13,
+        1
+      ],
+      "oxidationStates": [
+        6
+      ],
+      "primaryOxidation": 6,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 154,
+        "paulingEn": 2.16,
+        "ionizationEv": 7.092,
+        "meltingK": 2896,
+        "boilingK": 4912,
+        "density": 10.28
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 43,
+      "symbol": "Tc",
+      "name": "Technetium",
+      "atomicWeight": 98.0,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 5,
+      "group": 7,
+      "standardState": "solid",
+      "electronConfig": "[Kr] 4d5 5s2",
+      "electronConfigFull": "[Kr] 4d5 5s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        13,
+        2
+      ],
+      "oxidationStates": [
+        7
+      ],
+      "primaryOxidation": 7,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 147,
+        "paulingEn": 1.9,
+        "ionizationEv": 7.28,
+        "meltingK": 2430,
+        "boilingK": 4538,
+        "density": 11
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 44,
+      "symbol": "Ru",
+      "name": "Ruthenium",
+      "atomicWeight": 101.07,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 5,
+      "group": 8,
+      "standardState": "solid",
+      "electronConfig": "[Kr] 4d7 5s1",
+      "electronConfigFull": "[Kr] 4d7 5s1",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        15,
+        1
+      ],
+      "oxidationStates": [
+        4,
+        3
+      ],
+      "primaryOxidation": 4,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 146,
+        "paulingEn": 2.2,
+        "ionizationEv": 7.361,
+        "meltingK": 2607,
+        "boilingK": 4423,
+        "density": 12.45
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 45,
+      "symbol": "Rh",
+      "name": "Rhodium",
+      "atomicWeight": 102.91,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 5,
+      "group": 9,
+      "standardState": "solid",
+      "electronConfig": "[Kr] 4d8 5s1",
+      "electronConfigFull": "[Kr] 4d8 5s1",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        16,
+        1
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 142,
+        "paulingEn": 2.28,
+        "ionizationEv": 7.459,
+        "meltingK": 2237,
+        "boilingK": 3968,
+        "density": 12.41
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 46,
+      "symbol": "Pd",
+      "name": "Palladium",
+      "atomicWeight": 106.42,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 5,
+      "group": 10,
+      "standardState": "solid",
+      "electronConfig": "[Kr] 4d10",
+      "electronConfigFull": "[Kr] 4d10",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        18
+      ],
+      "oxidationStates": [
+        2,
+        4
+      ],
+      "primaryOxidation": 2,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 139,
+        "paulingEn": 2.2,
+        "ionizationEv": 8.337,
+        "meltingK": 1828.1,
+        "boilingK": 3236,
+        "density": 12.02
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 47,
+      "symbol": "Ag",
+      "name": "Silver",
+      "atomicWeight": 107.87,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 5,
+      "group": 11,
+      "standardState": "solid",
+      "electronConfig": "[Kr] 4d10 5s1",
+      "electronConfigFull": "[Kr] 4d10 5s1",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        18,
+        1
+      ],
+      "oxidationStates": [
+        1
+      ],
+      "primaryOxidation": 1,
+      "lattice": "FCC",
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 145,
+        "paulingEn": 1.93,
+        "ionizationEv": 7.576,
+        "meltingK": 1234.9,
+        "boilingK": 2435,
+        "density": 10.49
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 48,
+      "symbol": "Cd",
+      "name": "Cadmium",
+      "atomicWeight": 112.41,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 5,
+      "group": 12,
+      "standardState": "solid",
+      "electronConfig": "[Kr] 4d10 5s2",
+      "electronConfigFull": "[Kr] 4d10 5s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        18,
+        2
+      ],
+      "oxidationStates": [
+        2
+      ],
+      "primaryOxidation": 2,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 144,
+        "paulingEn": 1.69,
+        "ionizationEv": 8.994,
+        "meltingK": 594.22,
+        "boilingK": 1040,
+        "density": 8.65
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 49,
+      "symbol": "In",
+      "name": "Indium",
+      "atomicWeight": 114.82,
+      "weightKind": "standard",
+      "categoryId": "post-transition",
+      "categoryLabel": "Post-transition",
+      "tags": [],
+      "block": "p",
+      "period": 5,
+      "group": 13,
+      "standardState": "solid",
+      "electronConfig": "[Kr] 4d10 5s2 5p1",
+      "electronConfigFull": "[Kr] 4d10 5s2 5p1",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        18,
+        3
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 142,
+        "paulingEn": 1.78,
+        "ionizationEv": 5.786,
+        "meltingK": 429.75,
+        "boilingK": 2345,
+        "density": 7.31
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 50,
+      "symbol": "Sn",
+      "name": "Tin",
+      "atomicWeight": 118.71,
+      "weightKind": "standard",
+      "categoryId": "post-transition",
+      "categoryLabel": "Post-transition",
+      "tags": [],
+      "block": "p",
+      "period": 5,
+      "group": 14,
+      "standardState": "solid",
+      "electronConfig": "[Kr] 4d10 5s2 5p2",
+      "electronConfigFull": "[Kr] 4d10 5s2 5p2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        18,
+        4
+      ],
+      "oxidationStates": [
+        4,
+        2
+      ],
+      "primaryOxidation": 4,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 139,
+        "paulingEn": 1.96,
+        "ionizationEv": 7.344,
+        "meltingK": 505.08,
+        "boilingK": 2875,
+        "density": 7.287
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 51,
+      "symbol": "Sb",
+      "name": "Antimony",
+      "atomicWeight": 121.76,
+      "weightKind": "standard",
+      "categoryId": "metalloid",
+      "categoryLabel": "Metalloid",
+      "tags": [],
+      "block": "p",
+      "period": 5,
+      "group": 15,
+      "standardState": "solid",
+      "electronConfig": "[Kr] 4d10 5s2 5p3",
+      "electronConfigFull": "[Kr] 4d10 5s2 5p3",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        18,
+        5
+      ],
+      "oxidationStates": [
+        -3,
+        3,
+        5
+      ],
+      "primaryOxidation": -3,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 139,
+        "paulingEn": 2.05,
+        "ionizationEv": 8.608,
+        "meltingK": 903.78,
+        "boilingK": 1860,
+        "density": 6.697
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 52,
+      "symbol": "Te",
+      "name": "Tellurium",
+      "atomicWeight": 127.6,
+      "weightKind": "standard",
+      "categoryId": "metalloid",
+      "categoryLabel": "Metalloid",
+      "tags": [],
+      "block": "p",
+      "period": 5,
+      "group": 16,
+      "standardState": "solid",
+      "electronConfig": "[Kr] 4d10 5s2 5p4",
+      "electronConfigFull": "[Kr] 4d10 5s2 5p4",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        18,
+        6
+      ],
+      "oxidationStates": [
+        -2,
+        4,
+        6
+      ],
+      "primaryOxidation": -2,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 138,
+        "paulingEn": 2.1,
+        "ionizationEv": 9.01,
+        "meltingK": 722.66,
+        "boilingK": 1261,
+        "density": 6.24
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 53,
+      "symbol": "I",
+      "name": "Iodine",
+      "atomicWeight": 126.9,
+      "weightKind": "standard",
+      "categoryId": "reactive-nonmetal",
+      "categoryLabel": "Halogen",
+      "tags": [
+        "halogen"
+      ],
+      "block": "p",
+      "period": 5,
+      "group": 17,
+      "standardState": "solid",
+      "electronConfig": "[Kr] 4d10 5s2 5p5",
+      "electronConfigFull": "[Kr] 4d10 5s2 5p5",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        18,
+        7
+      ],
+      "oxidationStates": [
+        -1
+      ],
+      "primaryOxidation": -1,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 139,
+        "paulingEn": 2.66,
+        "ionizationEv": 10.451,
+        "meltingK": 386.85,
+        "boilingK": 457.4,
+        "density": 4.933
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 54,
+      "symbol": "Xe",
+      "name": "Xenon",
+      "atomicWeight": 131.29,
+      "weightKind": "standard",
+      "categoryId": "noble-gas",
+      "categoryLabel": "Noble gas",
+      "tags": [],
+      "block": "p",
+      "period": 5,
+      "group": 18,
+      "standardState": "gas",
+      "electronConfig": "[Kr] 4d10 5s2 5p6",
+      "electronConfigFull": "[Kr] 4d10 5s2 5p6",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        18,
+        8
+      ],
+      "oxidationStates": [],
+      "primaryOxidation": null,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 140,
+        "paulingEn": 2.6,
+        "ionizationEv": 12.13,
+        "meltingK": 161.4,
+        "boilingK": 165.05,
+        "density": 0.005894
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 55,
+      "symbol": "Cs",
+      "name": "Caesium",
+      "atomicWeight": 132.91,
+      "weightKind": "standard",
+      "categoryId": "alkali-metal",
+      "categoryLabel": "Alkali metal",
+      "tags": [],
+      "block": "s",
+      "period": 6,
+      "group": 1,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 6s1",
+      "electronConfigFull": "[Xe] 6s1",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        18,
+        8,
+        1
+      ],
+      "oxidationStates": [
+        1
+      ],
+      "primaryOxidation": 1,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 244,
+        "paulingEn": 0.79,
+        "ionizationEv": 3.894,
+        "meltingK": 301.59,
+        "boilingK": 944,
+        "density": 1.93
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 56,
+      "symbol": "Ba",
+      "name": "Barium",
+      "atomicWeight": 137.33,
+      "weightKind": "standard",
+      "categoryId": "alkaline-earth",
+      "categoryLabel": "Alk. earth",
+      "tags": [],
+      "block": "s",
+      "period": 6,
+      "group": 2,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 6s2",
+      "electronConfigFull": "[Xe] 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        18,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        2
+      ],
+      "primaryOxidation": 2,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 215,
+        "paulingEn": 0.89,
+        "ionizationEv": 5.212,
+        "meltingK": 1000,
+        "boilingK": 2170,
+        "density": 3.62
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 57,
+      "symbol": "La",
+      "name": "Lanthanum",
+      "atomicWeight": 138.91,
+      "weightKind": "standard",
+      "categoryId": "lanthanide",
+      "categoryLabel": "Lanthanide",
+      "tags": [],
+      "block": "d",
+      "period": 6,
+      "group": 3,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 5d1 6s2",
+      "electronConfigFull": "[Xe] 5d1 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        18,
+        9,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 207,
+        "paulingEn": 1.1,
+        "ionizationEv": 5.577,
+        "meltingK": 1193,
+        "boilingK": 3737,
+        "density": 6.15
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 58,
+      "symbol": "Ce",
+      "name": "Cerium",
+      "atomicWeight": 140.12,
+      "weightKind": "standard",
+      "categoryId": "lanthanide",
+      "categoryLabel": "Lanthanide",
+      "tags": [],
+      "block": "f",
+      "period": 6,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f1 5d1 6s2",
+      "electronConfigFull": "[Xe] 4f1 5d1 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        19,
+        9,
+        2
+      ],
+      "oxidationStates": [
+        3,
+        4
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 204,
+        "paulingEn": 1.12,
+        "ionizationEv": 5.539,
+        "meltingK": 1068,
+        "boilingK": 3716,
+        "density": 6.77
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 59,
+      "symbol": "Pr",
+      "name": "Praseodymium",
+      "atomicWeight": 140.91,
+      "weightKind": "standard",
+      "categoryId": "lanthanide",
+      "categoryLabel": "Lanthanide",
+      "tags": [],
+      "block": "f",
+      "period": 6,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f3 6s2",
+      "electronConfigFull": "[Xe] 4f3 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        21,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 203,
+        "paulingEn": 1.13,
+        "ionizationEv": 5.473,
+        "meltingK": 1208,
+        "boilingK": 3403,
+        "density": 6.77
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 60,
+      "symbol": "Nd",
+      "name": "Neodymium",
+      "atomicWeight": 144.24,
+      "weightKind": "standard",
+      "categoryId": "lanthanide",
+      "categoryLabel": "Lanthanide",
+      "tags": [],
+      "block": "f",
+      "period": 6,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f4 6s2",
+      "electronConfigFull": "[Xe] 4f4 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        22,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 201,
+        "paulingEn": 1.14,
+        "ionizationEv": 5.525,
+        "meltingK": 1297,
+        "boilingK": 3347,
+        "density": 7.01
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 61,
+      "symbol": "Pm",
+      "name": "Promethium",
+      "atomicWeight": 145.0,
+      "weightKind": "standard",
+      "categoryId": "lanthanide",
+      "categoryLabel": "Lanthanide",
+      "tags": [],
+      "block": "f",
+      "period": 6,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f5 6s2",
+      "electronConfigFull": "[Xe] 4f5 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        23,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 199,
+        "paulingEn": 1.13,
+        "ionizationEv": 5.582,
+        "meltingK": 1315,
+        "boilingK": 3273,
+        "density": 7.26
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 62,
+      "symbol": "Sm",
+      "name": "Samarium",
+      "atomicWeight": 150.36,
+      "weightKind": "standard",
+      "categoryId": "lanthanide",
+      "categoryLabel": "Lanthanide",
+      "tags": [],
+      "block": "f",
+      "period": 6,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f6 6s2",
+      "electronConfigFull": "[Xe] 4f6 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        24,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 198,
+        "paulingEn": 1.17,
+        "ionizationEv": 5.644,
+        "meltingK": 1345,
+        "boilingK": 2067,
+        "density": 7.52
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 63,
+      "symbol": "Eu",
+      "name": "Europium",
+      "atomicWeight": 151.96,
+      "weightKind": "standard",
+      "categoryId": "lanthanide",
+      "categoryLabel": "Lanthanide",
+      "tags": [],
+      "block": "f",
+      "period": 6,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f7 6s2",
+      "electronConfigFull": "[Xe] 4f7 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        25,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        3,
+        2
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 198,
+        "paulingEn": 1.2,
+        "ionizationEv": 5.67,
+        "meltingK": 1099,
+        "boilingK": 1802,
+        "density": 5.24
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 64,
+      "symbol": "Gd",
+      "name": "Gadolinium",
+      "atomicWeight": 157.25,
+      "weightKind": "standard",
+      "categoryId": "lanthanide",
+      "categoryLabel": "Lanthanide",
+      "tags": [],
+      "block": "f",
+      "period": 6,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f7 5d1 6s2",
+      "electronConfigFull": "[Xe] 4f7 5d1 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        25,
+        9,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 196,
+        "paulingEn": 1.2,
+        "ionizationEv": 6.15,
+        "meltingK": 1585,
+        "boilingK": 3546,
+        "density": 7.9
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 65,
+      "symbol": "Tb",
+      "name": "Terbium",
+      "atomicWeight": 158.93,
+      "weightKind": "standard",
+      "categoryId": "lanthanide",
+      "categoryLabel": "Lanthanide",
+      "tags": [],
+      "block": "f",
+      "period": 6,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f9 6s2",
+      "electronConfigFull": "[Xe] 4f9 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        27,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 194,
+        "paulingEn": 1.2,
+        "ionizationEv": 5.864,
+        "meltingK": 1629,
+        "boilingK": 3503,
+        "density": 8.23
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 66,
+      "symbol": "Dy",
+      "name": "Dysprosium",
+      "atomicWeight": 162.5,
+      "weightKind": "standard",
+      "categoryId": "lanthanide",
+      "categoryLabel": "Lanthanide",
+      "tags": [],
+      "block": "f",
+      "period": 6,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f10 6s2",
+      "electronConfigFull": "[Xe] 4f10 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        28,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 192,
+        "paulingEn": 1.22,
+        "ionizationEv": 5.939,
+        "meltingK": 1680,
+        "boilingK": 2840,
+        "density": 8.55
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 67,
+      "symbol": "Ho",
+      "name": "Holmium",
+      "atomicWeight": 164.93,
+      "weightKind": "standard",
+      "categoryId": "lanthanide",
+      "categoryLabel": "Lanthanide",
+      "tags": [],
+      "block": "f",
+      "period": 6,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f11 6s2",
+      "electronConfigFull": "[Xe] 4f11 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        29,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 192,
+        "paulingEn": 1.23,
+        "ionizationEv": 6.022,
+        "meltingK": 1734,
+        "boilingK": 2873,
+        "density": 8.8
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 68,
+      "symbol": "Er",
+      "name": "Erbium",
+      "atomicWeight": 167.26,
+      "weightKind": "standard",
+      "categoryId": "lanthanide",
+      "categoryLabel": "Lanthanide",
+      "tags": [],
+      "block": "f",
+      "period": 6,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f12 6s2",
+      "electronConfigFull": "[Xe] 4f12 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        30,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 189,
+        "paulingEn": 1.24,
+        "ionizationEv": 6.108,
+        "meltingK": 1802,
+        "boilingK": 3141,
+        "density": 9.07
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 69,
+      "symbol": "Tm",
+      "name": "Thulium",
+      "atomicWeight": 168.93,
+      "weightKind": "standard",
+      "categoryId": "lanthanide",
+      "categoryLabel": "Lanthanide",
+      "tags": [],
+      "block": "f",
+      "period": 6,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f13 6s2",
+      "electronConfigFull": "[Xe] 4f13 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        31,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 190,
+        "paulingEn": 1.25,
+        "ionizationEv": 6.184,
+        "meltingK": 1818,
+        "boilingK": 2223,
+        "density": 9.32
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 70,
+      "symbol": "Yb",
+      "name": "Ytterbium",
+      "atomicWeight": 173.05,
+      "weightKind": "standard",
+      "categoryId": "lanthanide",
+      "categoryLabel": "Lanthanide",
+      "tags": [],
+      "block": "f",
+      "period": 6,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f14 6s2",
+      "electronConfigFull": "[Xe] 4f14 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        3,
+        2
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 187,
+        "paulingEn": 1.1,
+        "ionizationEv": 6.254,
+        "meltingK": 1097,
+        "boilingK": 1469,
+        "density": 6.9
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 71,
+      "symbol": "Lu",
+      "name": "Lutetium",
+      "atomicWeight": 174.97,
+      "weightKind": "standard",
+      "categoryId": "lanthanide",
+      "categoryLabel": "Lanthanide",
+      "tags": [],
+      "block": "d",
+      "period": 6,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f14 5d1 6s2",
+      "electronConfigFull": "[Xe] 4f14 5d1 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        9,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 187,
+        "paulingEn": 1.27,
+        "ionizationEv": 5.426,
+        "meltingK": 1925,
+        "boilingK": 3675,
+        "density": 9.84
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 72,
+      "symbol": "Hf",
+      "name": "Hafnium",
+      "atomicWeight": 178.49,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 6,
+      "group": 4,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f14 5d2 6s2",
+      "electronConfigFull": "[Xe] 4f14 5d2 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        10,
+        2
+      ],
+      "oxidationStates": [
+        4
+      ],
+      "primaryOxidation": 4,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 175,
+        "paulingEn": 1.3,
+        "ionizationEv": 6.825,
+        "meltingK": 2506,
+        "boilingK": 4876,
+        "density": 13.31
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 73,
+      "symbol": "Ta",
+      "name": "Tantalum",
+      "atomicWeight": 180.95,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 6,
+      "group": 5,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f14 5d3 6s2",
+      "electronConfigFull": "[Xe] 4f14 5d3 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        11,
+        2
+      ],
+      "oxidationStates": [
+        5
+      ],
+      "primaryOxidation": 5,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 170,
+        "paulingEn": 1.5,
+        "ionizationEv": 7.549,
+        "meltingK": 3290,
+        "boilingK": 5731,
+        "density": 16.65
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 74,
+      "symbol": "W",
+      "name": "Tungsten",
+      "atomicWeight": 183.84,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 6,
+      "group": 6,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f14 5d4 6s2",
+      "electronConfigFull": "[Xe] 4f14 5d4 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        12,
+        2
+      ],
+      "oxidationStates": [
+        6
+      ],
+      "primaryOxidation": 6,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 162,
+        "paulingEn": 2.36,
+        "ionizationEv": 7.864,
+        "meltingK": 3695,
+        "boilingK": 5828,
+        "density": 19.25
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 75,
+      "symbol": "Re",
+      "name": "Rhenium",
+      "atomicWeight": 186.21,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 6,
+      "group": 7,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f14 5d5 6s2",
+      "electronConfigFull": "[Xe] 4f14 5d5 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        13,
+        2
+      ],
+      "oxidationStates": [
+        7
+      ],
+      "primaryOxidation": 7,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 151,
+        "paulingEn": 1.9,
+        "ionizationEv": 7.833,
+        "meltingK": 3459,
+        "boilingK": 5869,
+        "density": 21.02
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 76,
+      "symbol": "Os",
+      "name": "Osmium",
+      "atomicWeight": 190.23,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 6,
+      "group": 8,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f14 5d6 6s2",
+      "electronConfigFull": "[Xe] 4f14 5d6 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        14,
+        2
+      ],
+      "oxidationStates": [
+        4,
+        8
+      ],
+      "primaryOxidation": 4,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 144,
+        "paulingEn": 2.2,
+        "ionizationEv": 8.438,
+        "meltingK": 3306,
+        "boilingK": 5285,
+        "density": 22.59
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 77,
+      "symbol": "Ir",
+      "name": "Iridium",
+      "atomicWeight": 192.22,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 6,
+      "group": 9,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f14 5d7 6s2",
+      "electronConfigFull": "[Xe] 4f14 5d7 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        15,
+        2
+      ],
+      "oxidationStates": [
+        4,
+        3
+      ],
+      "primaryOxidation": 4,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 141,
+        "paulingEn": 2.2,
+        "ionizationEv": 8.967,
+        "meltingK": 2719,
+        "boilingK": 4403,
+        "density": 22.56
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 78,
+      "symbol": "Pt",
+      "name": "Platinum",
+      "atomicWeight": 195.08,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 6,
+      "group": 10,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f14 5d9 6s1",
+      "electronConfigFull": "[Xe] 4f14 5d9 6s1",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        17,
+        1
+      ],
+      "oxidationStates": [
+        2,
+        4
+      ],
+      "primaryOxidation": 2,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 136,
+        "paulingEn": 2.28,
+        "ionizationEv": 8.959,
+        "meltingK": 2041.4,
+        "boilingK": 4098,
+        "density": 21.45
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 79,
+      "symbol": "Au",
+      "name": "Gold",
+      "atomicWeight": 196.97,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 6,
+      "group": 11,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f14 5d10 6s1",
+      "electronConfigFull": "[Xe] 4f14 5d10 6s1",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        18,
+        1
+      ],
+      "oxidationStates": [
+        3,
+        1
+      ],
+      "primaryOxidation": 3,
+      "lattice": "FCC",
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 136,
+        "paulingEn": 2.54,
+        "ionizationEv": 9.226,
+        "meltingK": 1337.3,
+        "boilingK": 3129,
+        "density": 19.32
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 80,
+      "symbol": "Hg",
+      "name": "Mercury",
+      "atomicWeight": 200.59,
+      "weightKind": "standard",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 6,
+      "group": 12,
+      "standardState": "liquid",
+      "electronConfig": "[Xe] 4f14 5d10 6s2",
+      "electronConfigFull": "[Xe] 4f14 5d10 6s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        18,
+        2
+      ],
+      "oxidationStates": [
+        2,
+        1
+      ],
+      "primaryOxidation": 2,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 132,
+        "paulingEn": 2.0,
+        "ionizationEv": 10.438,
+        "meltingK": 234.32,
+        "boilingK": 629.88,
+        "density": 13.534
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 81,
+      "symbol": "Tl",
+      "name": "Thallium",
+      "atomicWeight": 204.38,
+      "weightKind": "standard",
+      "categoryId": "post-transition",
+      "categoryLabel": "Post-transition",
+      "tags": [],
+      "block": "p",
+      "period": 6,
+      "group": 13,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f14 5d10 6s2 6p1",
+      "electronConfigFull": "[Xe] 4f14 5d10 6s2 6p1",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        18,
+        3
+      ],
+      "oxidationStates": [
+        1,
+        3
+      ],
+      "primaryOxidation": 1,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 145,
+        "paulingEn": 1.62,
+        "ionizationEv": 6.108,
+        "meltingK": 577,
+        "boilingK": 1746,
+        "density": 11.85
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 82,
+      "symbol": "Pb",
+      "name": "Lead",
+      "atomicWeight": 207.2,
+      "weightKind": "standard",
+      "categoryId": "post-transition",
+      "categoryLabel": "Post-transition",
+      "tags": [],
+      "block": "p",
+      "period": 6,
+      "group": 14,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f14 5d10 6s2 6p2",
+      "electronConfigFull": "[Xe] 4f14 5d10 6s2 6p2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        18,
+        4
+      ],
+      "oxidationStates": [
+        2,
+        4
+      ],
+      "primaryOxidation": 2,
+      "lattice": "FCC",
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 146,
+        "paulingEn": 2.33,
+        "ionizationEv": 7.417,
+        "meltingK": 600.61,
+        "boilingK": 2022,
+        "density": 11.34
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 83,
+      "symbol": "Bi",
+      "name": "Bismuth",
+      "atomicWeight": 208.98,
+      "weightKind": "standard",
+      "categoryId": "post-transition",
+      "categoryLabel": "Post-transition",
+      "tags": [],
+      "block": "p",
+      "period": 6,
+      "group": 15,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f14 5d10 6s2 6p3",
+      "electronConfigFull": "[Xe] 4f14 5d10 6s2 6p3",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        18,
+        5
+      ],
+      "oxidationStates": [
+        3,
+        5
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 148,
+        "paulingEn": 2.02,
+        "ionizationEv": 7.286,
+        "meltingK": 544.7,
+        "boilingK": 1837,
+        "density": 9.78
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 84,
+      "symbol": "Po",
+      "name": "Polonium",
+      "atomicWeight": 209.0,
+      "weightKind": "standard",
+      "categoryId": "post-transition",
+      "categoryLabel": "Post-transition",
+      "tags": [],
+      "block": "p",
+      "period": 6,
+      "group": 16,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f14 5d10 6s2 6p4",
+      "electronConfigFull": "[Xe] 4f14 5d10 6s2 6p4",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        18,
+        6
+      ],
+      "oxidationStates": [
+        2,
+        4
+      ],
+      "primaryOxidation": 2,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 140,
+        "paulingEn": 2.0,
+        "ionizationEv": 8.417,
+        "meltingK": 527,
+        "boilingK": 1235,
+        "density": 9.2
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 85,
+      "symbol": "At",
+      "name": "Astatine",
+      "atomicWeight": 210.0,
+      "weightKind": "standard",
+      "categoryId": "reactive-nonmetal",
+      "categoryLabel": "Halogen",
+      "tags": [
+        "halogen"
+      ],
+      "block": "p",
+      "period": 6,
+      "group": 17,
+      "standardState": "solid",
+      "electronConfig": "[Xe] 4f14 5d10 6s2 6p5",
+      "electronConfigFull": "[Xe] 4f14 5d10 6s2 6p5",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        18,
+        7
+      ],
+      "oxidationStates": [
+        -1
+      ],
+      "primaryOxidation": -1,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 150,
+        "paulingEn": 2.2,
+        "ionizationEv": 9.5,
+        "meltingK": 575,
+        "boilingK": 610,
+        "density": 7
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 86,
+      "symbol": "Rn",
+      "name": "Radon",
+      "atomicWeight": 222.0,
+      "weightKind": "standard",
+      "categoryId": "noble-gas",
+      "categoryLabel": "Noble gas",
+      "tags": [],
+      "block": "p",
+      "period": 6,
+      "group": 18,
+      "standardState": "gas",
+      "electronConfig": "[Xe] 4f14 5d10 6s2 6p6",
+      "electronConfigFull": "[Xe] 4f14 5d10 6s2 6p6",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        18,
+        8
+      ],
+      "oxidationStates": [],
+      "primaryOxidation": null,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 150,
+        "paulingEn": 2.2,
+        "ionizationEv": 10.748,
+        "meltingK": 202,
+        "boilingK": 211.5,
+        "density": 0.00973
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 87,
+      "symbol": "Fr",
+      "name": "Francium",
+      "atomicWeight": 223.0,
+      "weightKind": "standard",
+      "categoryId": "alkali-metal",
+      "categoryLabel": "Alkali metal",
+      "tags": [],
+      "block": "s",
+      "period": 7,
+      "group": 1,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 7s1",
+      "electronConfigFull": "[Rn] 7s1",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        18,
+        8,
+        1
+      ],
+      "oxidationStates": [
+        1
+      ],
+      "primaryOxidation": 1,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 260,
+        "paulingEn": 0.7,
+        "ionizationEv": 4.073,
+        "meltingK": 300,
+        "boilingK": 950,
+        "density": 1.87
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 88,
+      "symbol": "Ra",
+      "name": "Radium",
+      "atomicWeight": 226.0,
+      "weightKind": "standard",
+      "categoryId": "alkaline-earth",
+      "categoryLabel": "Alk. earth",
+      "tags": [],
+      "block": "s",
+      "period": 7,
+      "group": 2,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 7s2",
+      "electronConfigFull": "[Rn] 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        18,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        2
+      ],
+      "primaryOxidation": 2,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 221,
+        "paulingEn": 0.9,
+        "ionizationEv": 5.279,
+        "meltingK": 973,
+        "boilingK": 2010,
+        "density": 5.5
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 89,
+      "symbol": "Ac",
+      "name": "Actinium",
+      "atomicWeight": 227.0,
+      "weightKind": "standard",
+      "categoryId": "actinide",
+      "categoryLabel": "Actinide",
+      "tags": [],
+      "block": "d",
+      "period": 7,
+      "group": 3,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 6d1 7s2",
+      "electronConfigFull": "[Rn] 6d1 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        18,
+        9,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 215,
+        "paulingEn": 1.1,
+        "ionizationEv": 5.17,
+        "meltingK": 1323,
+        "boilingK": 3471,
+        "density": 10.07
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 90,
+      "symbol": "Th",
+      "name": "Thorium",
+      "atomicWeight": 232.04,
+      "weightKind": "standard",
+      "categoryId": "actinide",
+      "categoryLabel": "Actinide",
+      "tags": [],
+      "block": "f",
+      "period": 7,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 6d2 7s2",
+      "electronConfigFull": "[Rn] 6d2 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        18,
+        10,
+        2
+      ],
+      "oxidationStates": [
+        4
+      ],
+      "primaryOxidation": 4,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 206,
+        "paulingEn": 1.3,
+        "ionizationEv": 6.307,
+        "meltingK": 2023,
+        "boilingK": 5061,
+        "density": 11.72
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 91,
+      "symbol": "Pa",
+      "name": "Protactinium",
+      "atomicWeight": 231.04,
+      "weightKind": "standard",
+      "categoryId": "actinide",
+      "categoryLabel": "Actinide",
+      "tags": [],
+      "block": "f",
+      "period": 7,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f2 6d1 7s2",
+      "electronConfigFull": "[Rn] 5f2 6d1 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        20,
+        9,
+        2
+      ],
+      "oxidationStates": [
+        5
+      ],
+      "primaryOxidation": 5,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 200,
+        "paulingEn": 1.5,
+        "ionizationEv": 5.89,
+        "meltingK": 1841,
+        "boilingK": 4300,
+        "density": 15.37
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 92,
+      "symbol": "U",
+      "name": "Uranium",
+      "atomicWeight": 238.03,
+      "weightKind": "standard",
+      "categoryId": "actinide",
+      "categoryLabel": "Actinide",
+      "tags": [],
+      "block": "f",
+      "period": 7,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f3 6d1 7s2",
+      "electronConfigFull": "[Rn] 5f3 6d1 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        21,
+        9,
+        2
+      ],
+      "oxidationStates": [
+        6,
+        4
+      ],
+      "primaryOxidation": 6,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 196,
+        "paulingEn": 1.38,
+        "ionizationEv": 6.194,
+        "meltingK": 1405.3,
+        "boilingK": 4404,
+        "density": 19.1
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 93,
+      "symbol": "Np",
+      "name": "Neptunium",
+      "atomicWeight": 237.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "actinide",
+      "categoryLabel": "Actinide",
+      "tags": [],
+      "block": "f",
+      "period": 7,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f4 6d1 7s2",
+      "electronConfigFull": "[Rn] 5f4 6d1 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        22,
+        9,
+        2
+      ],
+      "oxidationStates": [
+        5
+      ],
+      "primaryOxidation": 5,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 190,
+        "paulingEn": 1.36,
+        "ionizationEv": 6.266,
+        "meltingK": 912,
+        "boilingK": 4447,
+        "density": 20.2
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 94,
+      "symbol": "Pu",
+      "name": "Plutonium",
+      "atomicWeight": 244.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "actinide",
+      "categoryLabel": "Actinide",
+      "tags": [],
+      "block": "f",
+      "period": 7,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f6 7s2",
+      "electronConfigFull": "[Rn] 5f6 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        24,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        4
+      ],
+      "primaryOxidation": 4,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 187,
+        "paulingEn": 1.28,
+        "ionizationEv": 6.06,
+        "meltingK": 912.5,
+        "boilingK": 3501,
+        "density": 19.86
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 95,
+      "symbol": "Am",
+      "name": "Americium",
+      "atomicWeight": 243.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "actinide",
+      "categoryLabel": "Actinide",
+      "tags": [],
+      "block": "f",
+      "period": 7,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f7 7s2",
+      "electronConfigFull": "[Rn] 5f7 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        25,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 180,
+        "paulingEn": 1.3,
+        "ionizationEv": 5.993,
+        "meltingK": 1449,
+        "boilingK": 2880,
+        "density": 12
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 96,
+      "symbol": "Cm",
+      "name": "Curium",
+      "atomicWeight": 247.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "actinide",
+      "categoryLabel": "Actinide",
+      "tags": [],
+      "block": "f",
+      "period": 7,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f7 6d1 7s2",
+      "electronConfigFull": "[Rn] 5f7 6d1 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        25,
+        9,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 169,
+        "paulingEn": 1.3,
+        "ionizationEv": 6.02,
+        "meltingK": 1613,
+        "boilingK": 3383,
+        "density": 13.51
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 97,
+      "symbol": "Bk",
+      "name": "Berkelium",
+      "atomicWeight": 247.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "actinide",
+      "categoryLabel": "Actinide",
+      "tags": [],
+      "block": "f",
+      "period": 7,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f9 7s2",
+      "electronConfigFull": "[Rn] 5f9 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        27,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 168,
+        "paulingEn": 1.3,
+        "ionizationEv": 6.23,
+        "meltingK": 1259,
+        "boilingK": 2900,
+        "density": 14.78
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 98,
+      "symbol": "Cf",
+      "name": "Californium",
+      "atomicWeight": 251.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "actinide",
+      "categoryLabel": "Actinide",
+      "tags": [],
+      "block": "f",
+      "period": 7,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f10 7s2",
+      "electronConfigFull": "[Rn] 5f10 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        28,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 168,
+        "paulingEn": 1.3,
+        "ionizationEv": 6.3,
+        "meltingK": 1173,
+        "boilingK": 1743,
+        "density": 15.1
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 99,
+      "symbol": "Es",
+      "name": "Einsteinium",
+      "atomicWeight": 252.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "actinide",
+      "categoryLabel": "Actinide",
+      "tags": [],
+      "block": "f",
+      "period": 7,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f11 7s2",
+      "electronConfigFull": "[Rn] 5f11 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        29,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 165,
+        "paulingEn": 1.3,
+        "ionizationEv": 6.42,
+        "meltingK": 1133,
+        "boilingK": 1269,
+        "density": 8.84
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 100,
+      "symbol": "Fm",
+      "name": "Fermium",
+      "atomicWeight": 257.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "actinide",
+      "categoryLabel": "Actinide",
+      "tags": [],
+      "block": "f",
+      "period": 7,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f12 7s2",
+      "electronConfigFull": "[Rn] 5f12 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        30,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 167,
+        "paulingEn": 1.3,
+        "ionizationEv": 6.5,
+        "meltingK": 1800
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 101,
+      "symbol": "Md",
+      "name": "Mendelevium",
+      "atomicWeight": 258.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "actinide",
+      "categoryLabel": "Actinide",
+      "tags": [],
+      "block": "f",
+      "period": 7,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f13 7s2",
+      "electronConfigFull": "[Rn] 5f13 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        31,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 173,
+        "paulingEn": 1.3,
+        "ionizationEv": 6.58,
+        "meltingK": 1100
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 102,
+      "symbol": "No",
+      "name": "Nobelium",
+      "atomicWeight": 259.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "actinide",
+      "categoryLabel": "Actinide",
+      "tags": [],
+      "block": "f",
+      "period": 7,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f14 7s2",
+      "electronConfigFull": "[Rn] 5f14 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        32,
+        8,
+        2
+      ],
+      "oxidationStates": [
+        2
+      ],
+      "primaryOxidation": 2,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 176,
+        "paulingEn": 1.3,
+        "ionizationEv": 6.65,
+        "meltingK": 1100
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 103,
+      "symbol": "Lr",
+      "name": "Lawrencium",
+      "atomicWeight": 266.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "actinide",
+      "categoryLabel": "Actinide",
+      "tags": [],
+      "block": "d",
+      "period": 7,
+      "group": null,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f14 7s2 7p1",
+      "electronConfigFull": "[Rn] 5f14 7s2 7p1",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        32,
+        8,
+        3
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 161,
+        "paulingEn": 1.3,
+        "ionizationEv": 4.9,
+        "meltingK": 1900
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 104,
+      "symbol": "Rf",
+      "name": "Rutherfordium",
+      "atomicWeight": 267.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 7,
+      "group": 4,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f14 6d2 7s2",
+      "electronConfigFull": "[Rn] 5f14 6d2 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        32,
+        10,
+        2
+      ],
+      "oxidationStates": [
+        4
+      ],
+      "primaryOxidation": 4,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 157,
+        "ionizationEv": 6.0,
+        "meltingK": 2400
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 105,
+      "symbol": "Db",
+      "name": "Dubnium",
+      "atomicWeight": 268.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 7,
+      "group": 5,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f14 6d3 7s2",
+      "electronConfigFull": "[Rn] 5f14 6d3 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        32,
+        11,
+        2
+      ],
+      "oxidationStates": [
+        5
+      ],
+      "primaryOxidation": 5,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 149,
+        "ionizationEv": 6.8
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 106,
+      "symbol": "Sg",
+      "name": "Seaborgium",
+      "atomicWeight": 269.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 7,
+      "group": 6,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f14 6d4 7s2",
+      "electronConfigFull": "[Rn] 5f14 6d4 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        32,
+        12,
+        2
+      ],
+      "oxidationStates": [
+        6
+      ],
+      "primaryOxidation": 6,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 143,
+        "ionizationEv": 7.8
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 107,
+      "symbol": "Bh",
+      "name": "Bohrium",
+      "atomicWeight": 270.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 7,
+      "group": 7,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f14 6d5 7s2",
+      "electronConfigFull": "[Rn] 5f14 6d5 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        32,
+        13,
+        2
+      ],
+      "oxidationStates": [
+        7
+      ],
+      "primaryOxidation": 7,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 141,
+        "ionizationEv": 7.7
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 108,
+      "symbol": "Hs",
+      "name": "Hassium",
+      "atomicWeight": 271.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 7,
+      "group": 8,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f14 6d6 7s2",
+      "electronConfigFull": "[Rn] 5f14 6d6 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        32,
+        14,
+        2
+      ],
+      "oxidationStates": [
+        8
+      ],
+      "primaryOxidation": 8,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 134,
+        "ionizationEv": 7.6
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 109,
+      "symbol": "Mt",
+      "name": "Meitnerium",
+      "atomicWeight": 278.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 7,
+      "group": 9,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f14 6d7 7s2",
+      "electronConfigFull": "[Rn] 5f14 6d7 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        32,
+        15,
+        2
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 129,
+        "ionizationEv": 8.3
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 110,
+      "symbol": "Ds",
+      "name": "Darmstadtium",
+      "atomicWeight": 281.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 7,
+      "group": 10,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f14 6d9 7s1",
+      "electronConfigFull": "[Rn] 5f14 6d9 7s1",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        32,
+        17,
+        1
+      ],
+      "oxidationStates": [
+        6
+      ],
+      "primaryOxidation": 6,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 128,
+        "ionizationEv": 9.9
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 111,
+      "symbol": "Rg",
+      "name": "Roentgenium",
+      "atomicWeight": 282.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 7,
+      "group": 11,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f14 6d10 7s1",
+      "electronConfigFull": "[Rn] 5f14 6d10 7s1",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        32,
+        18,
+        1
+      ],
+      "oxidationStates": [
+        3
+      ],
+      "primaryOxidation": 3,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 121,
+        "ionizationEv": 10.6
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 112,
+      "symbol": "Cn",
+      "name": "Copernicium",
+      "atomicWeight": 285.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "transition-metal",
+      "categoryLabel": "Transition metal",
+      "tags": [],
+      "block": "d",
+      "period": 7,
+      "group": 12,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f14 6d10 7s2",
+      "electronConfigFull": "[Rn] 5f14 6d10 7s2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        32,
+        18,
+        2
+      ],
+      "oxidationStates": [
+        2
+      ],
+      "primaryOxidation": 2,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 122,
+        "ionizationEv": 11.4
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 113,
+      "symbol": "Nh",
+      "name": "Nihonium",
+      "atomicWeight": 286.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "post-transition",
+      "categoryLabel": "Post-transition",
+      "tags": [],
+      "block": "p",
+      "period": 7,
+      "group": 13,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f14 6d10 7s2 7p1",
+      "electronConfigFull": "[Rn] 5f14 6d10 7s2 7p1",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        32,
+        18,
+        3
+      ],
+      "oxidationStates": [
+        1
+      ],
+      "primaryOxidation": 1,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 136,
+        "ionizationEv": 7.3,
+        "meltingK": 700,
+        "boilingK": 1400
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 114,
+      "symbol": "Fl",
+      "name": "Flerovium",
+      "atomicWeight": 289.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "post-transition",
+      "categoryLabel": "Post-transition",
+      "tags": [],
+      "block": "p",
+      "period": 7,
+      "group": 14,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f14 6d10 7s2 7p2",
+      "electronConfigFull": "[Rn] 5f14 6d10 7s2 7p2",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        32,
+        18,
+        4
+      ],
+      "oxidationStates": [
+        2
+      ],
+      "primaryOxidation": 2,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 143,
+        "ionizationEv": 8.5,
+        "meltingK": 340,
+        "boilingK": 420
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 115,
+      "symbol": "Mc",
+      "name": "Moscovium",
+      "atomicWeight": 290.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "post-transition",
+      "categoryLabel": "Post-transition",
+      "tags": [],
+      "block": "p",
+      "period": 7,
+      "group": 15,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f14 6d10 7s2 7p3",
+      "electronConfigFull": "[Rn] 5f14 6d10 7s2 7p3",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        32,
+        18,
+        5
+      ],
+      "oxidationStates": [
+        1
+      ],
+      "primaryOxidation": 1,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 162,
+        "ionizationEv": 5.9,
+        "meltingK": 670,
+        "boilingK": 1400
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 116,
+      "symbol": "Lv",
+      "name": "Livermorium",
+      "atomicWeight": 293.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "post-transition",
+      "categoryLabel": "Post-transition",
+      "tags": [],
+      "block": "p",
+      "period": 7,
+      "group": 16,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f14 6d10 7s2 7p4",
+      "electronConfigFull": "[Rn] 5f14 6d10 7s2 7p4",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        32,
+        18,
+        6
+      ],
+      "oxidationStates": [
+        2
+      ],
+      "primaryOxidation": 2,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 175,
+        "ionizationEv": 7.5,
+        "meltingK": 709,
+        "boilingK": 1085
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 117,
+      "symbol": "Ts",
+      "name": "Tennessine",
+      "atomicWeight": 294.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "reactive-nonmetal",
+      "categoryLabel": "Halogen",
+      "tags": [
+        "halogen"
+      ],
+      "block": "p",
+      "period": 7,
+      "group": 17,
+      "standardState": "solid",
+      "electronConfig": "[Rn] 5f14 6d10 7s2 7p5",
+      "electronConfigFull": "[Rn] 5f14 6d10 7s2 7p5",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        32,
+        18,
+        7
+      ],
+      "oxidationStates": [
+        -1
+      ],
+      "primaryOxidation": -1,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 165,
+        "ionizationEv": 7.7,
+        "meltingK": 723,
+        "boilingK": 883
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    },
+    {
+      "z": 118,
+      "symbol": "Og",
+      "name": "Oganesson",
+      "atomicWeight": 294.0,
+      "weightKind": "representative-isotope",
+      "categoryId": "noble-gas",
+      "categoryLabel": "Noble gas",
+      "tags": [],
+      "block": "p",
+      "period": 7,
+      "group": 18,
+      "standardState": "gas",
+      "electronConfig": "[Rn] 5f14 6d10 7s2 7p6",
+      "electronConfigFull": "[Rn] 5f14 6d10 7s2 7p6",
+      "shellCounts": [
+        2,
+        8,
+        18,
+        32,
+        32,
+        18,
+        8
+      ],
+      "oxidationStates": [],
+      "primaryOxidation": null,
+      "lattice": null,
+      "sourceId": "compiled-v1.3",
+      "summary": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "curriculum": {
+        "beginner": "",
+        "intermediate": "",
+        "advanced": ""
+      },
+      "properties": {
+        "covalentRadiusPm": 157,
+        "ionizationEv": 8.5,
+        "meltingK": 325,
+        "boilingK": 450
+      },
+      "history": "",
+      "howDiscovered": "",
+      "cosmicOrigin": "",
+      "trivia": [],
+      "applications": [],
+      "spectralLines": [],
+      "isotopes": []
+    }
+  ]
+}

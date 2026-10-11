@@ -1,6 +1,6 @@
 # Element Deck
 
-A periodic-table explorer that teaches every element at three depths — Beginner, Intermediate, and Advanced — in five rooms: **Table**, **Details**, **Compare**, **Spectra**, and **Quiz**.
+A periodic-table explorer that teaches every element at three courses — Beginner, Intermediate, and Advanced — in four rooms: **Table**, **Details**, **Spectra**, and **Quiz**. Neighbors is a tab on Details. Each course is a separate in-app purchase.
 
 The app is a Flutter client for phone, tablet, web, and desktop. Firebase stores the full content pack and who bought which package. The app caches that pack in SQLite and reads it locally. There is no custom API. Settings, appearance, and the wide layout follow the same product shape as [RxFolio](https://github.com/rrekapalli/Hi-Doc).
 
@@ -16,7 +16,7 @@ flutter run
 flutter run --dart-define=DEBUG_ENTITLEMENT=true
 ```
 
-Firebase: deploy rules and `firebase/functions`, upload `catalog/output/catalog.sqlite` to `packs/core/1.0.0/catalog.sqlite`, and seed `packages` / `contentPacks` from `firebase/seed/packages.json`. Configure `google-services` / `GoogleService-Info` and `firebase_options.dart` for a real project. Preview works without Firebase.
+Firebase: deploy rules and `firebase/functions`, upload `catalog/output/catalog.sqlite` to `packs/core/1.4.0/catalog.sqlite`, and seed `packages` / `contentPacks` from `firebase/seed/packages.json`. Configure `google-services` / `GoogleService-Info` and `firebase_options.dart` for a real project. Preview works without Firebase.
 
 Read [Docs/README.md](Docs/README.md) for the product notes.
 

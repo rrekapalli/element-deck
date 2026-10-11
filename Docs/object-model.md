@@ -167,10 +167,9 @@ Learner rows point at Z, never at a pack version, so a corrected radius does not
 
 | Field | Notes |
 | --- | --- |
-| id | `preview`, `element-deck`, `classroom` |
-| title | Element Deck, Classroom |
-| packIds | `element-deck` and `classroom` include `core`. Preview includes none |
-| includesClassroom | True only for `classroom` |
+| id | `preview`, `pack-beginner`, `pack-intermediate`, `pack-advanced` |
+| title | Beginner, Intermediate, Advanced |
+| packIds | Course packs include `core`. Preview includes none |
 | storeProductIds | Play and App Store ids |
 
 ### Purchase
@@ -228,18 +227,6 @@ The learner database stores the last verified package ids and the cached pack ve
 
 Theme and glass are rows in the learner database and sync with the other preferences when signed in. A "this device only" lock can keep a classroom tablet on Chalk. See [open-questions.md](./open-questions.md).
 
-## Classroom
-
-The Classroom package. The class list is Firestore. The science is the same content pack every other buyer downloads.
-
-| Type | Role |
-| --- | --- |
-| Classroom | Name, owner uid, join code |
-| Membership | Uid, role `educator` or `learner` |
-| Assignment | Optional pinned Z list, suggested depth, title, due date optional |
-
-Assignments suggest. They do not lock depth and they do not hide rooms. They do not by themselves grant the content pack. Whether a Classroom purchase covers every joined learner, or each learner buys Element Deck, is open. See [open-questions.md](./open-questions.md).
-
 ## Relationships
 
 ```text
@@ -249,7 +236,6 @@ Element ── optional Discovery, Lattice, ReactionIllustration, AstrophysicalN
 TrendNote ── two Elements
 Purchase ── User × Package
 ContentPack ── included by Package
-Assignment ── Classroom × many Elements
 Bookmark, Recent ── User × Element
 SavedComparison ── User × two Elements
 ```

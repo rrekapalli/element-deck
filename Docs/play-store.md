@@ -2,10 +2,13 @@
 
 Signed release AABs for `com.vislesha.element_deck`, following the same keystore and Play Developer API flow as RxFolio. The scripts live in `deployment/android/playstore/`.
 
-In-app product ids the client already queries:
+In-app product ids the client queries:
 
-- `element-deck`
-- `classroom`
+- `pack-beginner`
+- `pack-intermediate`
+- `pack-advanced`
+
+Create those as one-time products in Play Console before a purchase test. Set the price to ₹199. The app shows the store's price string. A legacy `element-deck` receipt still unlocks all three courses.
 
 Create those as one-time products in Play Console before a purchase test. The PWA does not sell them. Web tells the person to buy on Android or iOS.
 

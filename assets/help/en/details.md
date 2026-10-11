@@ -2,7 +2,7 @@
 
 ![Details](asset:assets/help/images/details.png)
 
-Callouts: **identity header** · **bookmark** · **Details, Data, History, Uses**.
+Callouts: **identity header** · **bookmark** · **Details, Data, History, Uses, Neighbors**.
 
 ## Purpose
 
@@ -26,11 +26,11 @@ An element that is not in the on-device catalog shows its name and the note **In
 
 The first tab is a reading page for this element. The wording follows **Learning mode** in App Config:
 
-- **Beginner** is an introduction, the kind of explanation a class meets when an element is new.
-- **Intermediate** adds the period, the configuration, and the oxidation states.
-- **Advanced** is written for later secondary school: configuration, oxidation, and why the numbers look that way.
+- **Beginner** is Classes 8–10: name, shells, valency in words, and one use. Carbon’s forms (diamond, graphite) sit here when the element has more than one form.
+- **Intermediate** is Classes 11–12 and JEE: configuration, oxidation states, and named exceptions.
+- **Advanced** is undergraduate: why the numbers look that way.
 
-Only the first two sentences sit above the electron picture. The rest of the explanation is below it.
+Only the first two sentences sit above the electron picture. The rest of the explanation is below it. A **Forms** block appears only for elements with more than one form.
 
 - A shell diagram of the electrons. **Reduced motion** in App Config turns off extra motion in that diagram. Beginner hides the energy numbers on that diagram.
 - **Simulate Reaction**, when a known reaction is curated. It opens an illustration: reactants, products, conditions, and a teaching note at the current learning mode. It is an illustration of a published reaction, not a lab procedure to run.

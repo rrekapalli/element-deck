@@ -10,27 +10,35 @@ import '../providers/settings_controller.dart';
 import '../theme/app_theme.dart';
 import '../theme/element_spectrum.dart';
 
-class CompareRoom extends StatelessWidget {
-  const CompareRoom({super.key});
+class NeighborsPane extends StatelessWidget {
+  const NeighborsPane({super.key, required this.element});
+
+  final ElementRecord element;
 
   @override
   Widget build(BuildContext context) {
     final catalog = context.watch<CatalogController>();
     final sel = context.watch<SelectionController>();
     final settings = context.watch<SettingsController>();
-    final a = catalog.pack.byZ(sel.compareA);
-    final b = catalog.pack.byZ(sel.compareB);
+    var aZ = sel.compareA;
+    var bZ = sel.compareB;
+    if (aZ != element.z && bZ != element.z) {
+      aZ = element.z;
+      bZ = sel.suggestedNeighbor(element.z);
+    }
+    final a = catalog.pack.byZ(aZ);
+    final b = catalog.pack.byZ(bZ);
     if (a == null || b == null) {
-      return const Center(child: Text('Pick two elements that are in this catalog.'));
+      return const Text('Pick two elements that are in this catalog.');
     }
     TrendNote? note;
     for (final n in catalog.pack.trendNotes) {
       if (n.matches(a.z, b.z)) note = n;
     }
-    return ListView(
-      padding: const EdgeInsets.fromLTRB(16, 8, 16, 32),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Congener analytics', style: Theme.of(context).textTheme.labelSmall),
+        Text('Neighbors', style: Theme.of(context).textTheme.labelSmall),
         const SizedBox(height: 8),
         Row(
           children: [
@@ -52,7 +60,7 @@ class CompareRoom extends StatelessWidget {
         const SizedBox(height: 12),
         Text('Group trend breakdown', style: Theme.of(context).textTheme.titleMedium),
         Text(
-          note?.essay ?? 'No written trend for this pair yet.',
+          note?.essayFor(settings.depth) ?? 'No written trend for this pair yet.',
           style: Theme.of(context).textTheme.bodyMedium,
         ),
         const SizedBox(height: 12),
@@ -129,9 +137,9 @@ class CompareRoom extends StatelessWidget {
             pw.Text('Element Deck comparison'),
             pw.Text('${a.symbol} vs ${b.symbol}'),
             pw.SizedBox(height: 12),
-            pw.Text(note?.essay ?? 'No written trend for this pair yet.'),
+            pw.Text(note?.essayFor(settings.depth) ?? 'No written trend for this pair yet.'),
             pw.SizedBox(height: 12),
-            pw.Text('Teaching copy. Not a lab measurement. Dataset compiled-v1.'),
+            pw.Text('Teaching copy. Not a lab measurement. Dataset compiled-v1.4.'),
           ],
         ),
       ),

@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import re
 
+from syllabus import BANNED_BEGINNER as _BANNED_BEGINNER
 from teaching_facts import FACTS
 
 
@@ -194,12 +195,6 @@ def _advanced(el: dict, fact: dict) -> str:
         "These are compiled teaching values, not a measurement this device just made."
     )
     return "\n\n".join(parts)
-
-
-_BANNED_BEGINNER = re.compile(
-    r"oxidation|configuration|subshell|electronegativ|slater|Z_eff|\d[spdf]",
-    re.IGNORECASE,
-)
 
 
 def summaries(el: dict) -> dict:

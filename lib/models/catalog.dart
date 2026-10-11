@@ -89,6 +89,8 @@ class ElementRecord {
     required this.glow,
     required this.astro,
     required this.reaction,
+    this.spectraNote,
+    this.forms = const [],
   });
 
   final int z;
@@ -128,8 +130,12 @@ class ElementRecord {
   final GlowNote? glow;
   final String? astro;
   final ReactionIllustration? reaction;
+  final DepthText? spectraNote;
+  final List<ElementForm> forms;
 
   bool get isHalogen => tags.contains('halogen');
+
+  bool get hasLesson => summary.beginner.trim().isNotEmpty;
 
   String summaryFor(String depth) => summary.at(depth);
 
@@ -160,7 +166,9 @@ class ElementRecord {
       primaryOxidation: json['primaryOxidation'] as int?,
       lattice: json['lattice'] as String?,
       sourceId: json['sourceId'] as String? ?? 'compiled-v1',
-      summary: DepthText.fromJson(json['summary'] as Map<String, dynamic>),
+      summary: DepthText.fromJson(
+        json['summary'] as Map<String, dynamic>? ?? const {},
+      ),
       history: json['history'] as String? ?? '',
       howDiscovered: json['howDiscovered'] as String? ?? '',
       cosmicOrigin: json['cosmicOrigin'] as String? ?? '',
@@ -168,7 +176,7 @@ class ElementRecord {
           .map((e) => TriviaStory.fromJson(e as Map<String, dynamic>))
           .toList(),
       curriculum: DepthText.fromJson(
-        json['curriculum'] as Map<String, dynamic>,
+        json['curriculum'] as Map<String, dynamic>? ?? const {},
       ),
       properties: ElementProperties.fromJson(
         json['properties'] as Map<String, dynamic>? ?? {},
@@ -197,6 +205,26 @@ class ElementRecord {
           : ReactionIllustration.fromJson(
               json['reaction'] as Map<String, dynamic>,
             ),
+      spectraNote: json['spectraNote'] is Map<String, dynamic>
+          ? DepthText.fromJson(json['spectraNote'] as Map<String, dynamic>)
+          : null,
+      forms: (json['forms'] as List<dynamic>? ?? [])
+          .map((e) => ElementForm.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+  }
+}
+
+class ElementForm {
+  ElementForm({required this.name, required this.note});
+
+  final String name;
+  final DepthText note;
+
+  factory ElementForm.fromJson(Map<String, dynamic> json) {
+    return ElementForm(
+      name: json['name'] as String? ?? '',
+      note: DepthText.fromJson(json['note'] as Map<String, dynamic>? ?? const {}),
     );
   }
 }
@@ -448,23 +476,44 @@ class TrendNote {
     required this.label,
     required this.essay,
     required this.swaps,
-  });
+    DepthText? essays,
+  }) : essays = essays ??
+            DepthText(
+              beginner: essay,
+              intermediate: essay,
+              advanced: essay,
+            );
 
   final int zA;
   final int zB;
   final String label;
   final String essay;
+  final DepthText essays;
   final List<int> swaps;
 
   bool matches(int a, int b) => (zA == a && zB == b) || (zA == b && zB == a);
 
+  String essayFor(String depth) {
+    final text = essays.at(depth).trim();
+    return text.isEmpty ? essay : text;
+  }
+
   factory TrendNote.fromJson(Map<String, dynamic> json) {
+    final fallback = json['essay'] as String? ?? '';
+    final essaysJson = json['essays'] as Map<String, dynamic>?;
     return TrendNote(
       zA: json['zA'] as int,
       zB: json['zB'] as int,
       label: json['label'] as String,
-      essay: json['essay'] as String,
+      essay: fallback,
       swaps: (json['swaps'] as List<dynamic>? ?? []).cast<int>(),
+      essays: essaysJson == null
+          ? DepthText(
+              beginner: fallback,
+              intermediate: fallback,
+              advanced: fallback,
+            )
+          : DepthText.fromJson(essaysJson),
     );
   }
 }

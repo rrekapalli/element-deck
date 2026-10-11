@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:drift/native.dart';
+import 'package:element_deck/account/account_controller.dart';
 import 'package:element_deck/data/catalog_store.dart';
 import 'package:element_deck/data/learner_database.dart';
 import 'package:element_deck/models/catalog.dart';
@@ -27,6 +28,7 @@ void main() {
     addTearDown(db.close);
     final settings = SettingsController(db);
     final selection = SelectionController(db, catalog)..currentZ = 24;
+    final account = AccountController(db, store);
 
     await tester.pumpWidget(
       MultiProvider(
@@ -34,6 +36,7 @@ void main() {
           ChangeNotifierProvider.value(value: catalog),
           ChangeNotifierProvider.value(value: settings),
           ChangeNotifierProvider.value(value: selection),
+          ChangeNotifierProvider.value(value: account),
         ],
         child: const MaterialApp(home: Scaffold(body: DetailsRoom())),
       ),

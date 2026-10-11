@@ -408,18 +408,29 @@ def summaries(el: dict) -> dict:
 
 
 def curriculum(el: dict) -> dict:
+    from syllabus import JEE_NOTES, SYLLABUS_Z
+
     z = el["z"]
     name, sym = el["name"], el["symbol"]
     hook, mid, adv = HOOKS[z]
-    return {
-        "beginner": (
+    jee = JEE_NOTES.get(z)
+    intermediate_extra = f" {jee}" if jee else ""
+    if z in SYLLABUS_Z:
+        beginner = (
             f"Learn {name}: say the name, write {sym}, find Z={z} on the table, note the family "
             f"({el['categoryLabel']}), and connect it to one real use — {hook}."
-        ),
+        )
+    else:
+        beginner = (
+            f"Find {name} ({sym}, Z={z}) on the table and note its family ({el['categoryLabel']}). "
+            "If it is made only in a laboratory, treat it as a short card, not a classroom chemical."
+        )
+    return {
+        "beginner": beginner,
         "intermediate": (
             f"Course pass on {name}: electron configuration {el['electronConfig']}, "
             f"{_ox_text(el)} {_group_text(el)} Compare one physical number (melting point, "
-            f"ionization energy, or radius) with a neighbor. {mid}."
+            f"ionization energy, or radius) with a neighbor. {mid}.{intermediate_extra}"
         ),
         "advanced": (
             f"Go further on {name}: justify periodic trends with Z_eff and shells; read isotopes "

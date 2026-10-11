@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../account/account_controller.dart';
 import '../guides/property_guide.dart';
 import '../models/catalog.dart';
 import '../models/orbital_force.dart';
@@ -9,9 +10,11 @@ import '../providers/selection_controller.dart';
 import '../providers/settings_controller.dart';
 import '../theme/app_theme.dart';
 import '../theme/element_spectrum.dart';
+import '../widgets/course_paywall.dart';
 import '../widgets/electron_force_graph.dart';
 import '../widgets/element_header.dart';
 import '../widgets/property_label.dart';
+import 'neighbors_pane.dart';
 
 class DetailsRoom extends StatefulWidget {
   const DetailsRoom({super.key});
@@ -22,7 +25,7 @@ class DetailsRoom extends StatefulWidget {
 
 class _DetailsRoomState extends State<DetailsRoom>
     with SingleTickerProviderStateMixin {
-  static const _labels = ['Details', 'Data', 'History', 'Uses'];
+  static const _labels = ['Details', 'Data', 'History', 'Uses', 'Neighbors'];
 
   late final TabController _tabs;
   final _scroll = ScrollController();
@@ -53,6 +56,14 @@ class _DetailsRoomState extends State<DetailsRoom>
   Widget build(BuildContext context) {
     final sel = context.watch<SelectionController>();
     final settings = context.watch<SettingsController>();
+    final account = context.watch<AccountController>();
+    if (sel.neighborsRequested) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (!mounted) return;
+        if (_tabs.index != 4) _tabs.animateTo(4);
+        context.read<SelectionController>().clearNeighborsRequest();
+      });
+    }
     final e = sel.current;
     if (e == null) {
       final id = PeriodicLayout.element(sel.currentZ);
@@ -84,10 +95,11 @@ class _DetailsRoomState extends State<DetailsRoom>
         padding: const EdgeInsets.fromLTRB(16, 12, 16, 32),
         children: [
           ...switch (_index) {
-            0 => _details(context, e, settings),
+            0 => _details(context, e, settings, account),
             1 => _data(context, e, settings),
             2 => _history(context, e),
-            _ => _uses(context, e),
+            3 => _uses(context, e),
+            _ => [NeighborsPane(element: e)],
           },
         ],
       ),
@@ -98,7 +110,20 @@ class _DetailsRoomState extends State<DetailsRoom>
     BuildContext context,
     ElementRecord e,
     SettingsController settings,
+    AccountController account,
   ) {
+    if (!e.hasLesson && !account.hasCore) {
+      return [
+        CoursePaywall(
+          depth: settings.depth,
+          message:
+              'The table is free. This dossier is in a course pack. Hydrogen, carbon, silicon, neon, and titanium stay open as a sample.',
+        ),
+      ];
+    }
+    if (account.hasCore && !account.ownsDepth(settings.depth)) {
+      return [CoursePaywall(depth: settings.depth)];
+    }
     final reading = _reading(e.summaryFor(settings.depth));
     final prose = Theme.of(context).textTheme.bodyLarge?.copyWith(height: 1.45);
     return [
@@ -110,6 +135,15 @@ class _DetailsRoomState extends State<DetailsRoom>
         energyUnit: settings.energy,
         depth: settings.depth,
       ),
+      if (e.forms.isNotEmpty) ...[
+        const SizedBox(height: 16),
+        Text('Forms', style: Theme.of(context).textTheme.titleMedium),
+        for (final form in e.forms) ...[
+          const SizedBox(height: 8),
+          Text(form.name, style: Theme.of(context).textTheme.titleSmall),
+          Text(form.note.at(settings.depth), style: prose),
+        ],
+      ],
       for (final paragraph in reading.body) ...[
         const SizedBox(height: 12),
         Text(paragraph, style: prose),

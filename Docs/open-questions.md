@@ -5,12 +5,11 @@ Refinement list. Do not block the concept on answers. Do not write application c
 ## Product
 
 - The product name is **Element Deck**. The concept PNGs still say ATOMIQ; that wordmark is retired. Closed.
-- Five rooms (Table, Details, Compare, Spectra, Quiz) and three depths are the product. Closed.
+- Four rooms (Table, Details, Spectra, Quiz) and three depths are the product. Closed.
 - The preview opens with no account and no network. The full pack is a purchase plus a download, then offline from the cache. Closed.
-- Packages are `preview`, `element-deck`, and `classroom`. Prices are open. Closed as the set.
+- Packages are `preview`, `pack-beginner`, `pack-intermediate`, and `pack-advanced`. Each course is ₹199. Closed.
 - A purchase is recorded in Firestore only after a Cloud Function accepts the store receipt. The client cannot grant itself a package. Closed.
-- v1 has no chat tutor and no general reaction solver. Quiz is a fifth room with on-device XP and streak. Closed.
-- Classroom is later, and not for minors until the terms exist. Closed as sequencing. The terms themselves are open.
+- v1 has no chat tutor and no general reaction solver. Quiz is a room with on-device XP and streak. Closed.
 - Store-listing collision check for "Element Deck" before release. Open.
 
 ## Science content
@@ -41,7 +40,7 @@ Refinement list. Do not block the concept on answers. Do not write application c
 - Purchases store uid, package id, store, transaction id, status, and time. Closed.
 - Preview of H, C, Si, Ne, Ti stays in the app binary. Closed.
 - Web and desktop can sign in and download a pack the account already owns. Selling on web and desktop waits. Android and iOS use the stores. Closed.
-- Each learner buys Element Deck. A Classroom purchase does not silently cover a roster until terms exist. Closed.
+- Each learner buys the course packs they need. Owning one pack does not include the others. Closed.
 - SQLite access is **Drift**, with the web build on Drift's SQLite WASM. One schema for phone, desktop, and web. Closed.
 - Catalog corrections ship as a new pack version, not as an app update, unless the shell changed. Closed.
 

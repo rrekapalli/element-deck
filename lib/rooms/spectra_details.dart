@@ -9,6 +9,7 @@ List<Widget> spectraDetailChildren({
   required BuildContext context,
   required ElementRecord element,
   required String packVersion,
+  String depth = 'intermediate',
 }) {
   final theme = Theme.of(context);
   final muted = theme.colorScheme.onSurface.withValues(alpha: 0.65);
@@ -52,7 +53,13 @@ List<Widget> spectraDetailChildren({
       ),
     ),
     const SizedBox(height: 12),
-    if (essay == null)
+    if (depth != 'advanced')
+      Text(
+        element.spectraNote?.at(depth) ??
+            'The long spectrum essay opens in Advanced.',
+        style: body,
+      )
+    else if (essay == null)
       Text(
         'A spectrum essay for ${element.name} is not written yet.',
         style: body,

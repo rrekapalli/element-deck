@@ -2,7 +2,7 @@
 
 Depth is how Element Deck teaches. The element does not change. The leading facts, the vocabulary, and the captions do.
 
-The control is the segmented **Complexity** on Table and Details: **Beginner**, **Intermediate**, **Advanced**. Compare and Spectra read the same value. App settings stores the default. The in-room control updates that default, so the next launch opens where the learner left off.
+The control is the segmented **Complexity**: **Beginner**, **Intermediate**, **Advanced**. Captions name Classes 8–10, Classes 11–12 and JEE, and Undergraduate. Spectra and the Neighbors tab on Details read the same value. App settings stores the default. An unowned course opens a buy row instead of switching.
 
 The concept screens are drawn at Intermediate, with Advanced visible on Spectra's line assignment and isotope table.
 
@@ -16,7 +16,7 @@ The concept screens are drawn at Intermediate, with Advanced visible on Spectra'
 | Diagram | Colored shells | Bohr-style diagram, as on the titanium screen | Diagram plus the configuration called out beside it |
 | Metrics | State at room temperature, one size word, one use | Radius, electronegativity, ionization, melting, boiling, density, lattice | Those, with units switchable and uncertainties when the dataset has them |
 | Spectra | Color name and glow | The strip, wavelength, "visible red" | Transition assignment, energy in eV and joules, isotope spins |
-| Compare | Larger / smaller, metal / nonmetal, one sentence | The differential bars | The bars plus the trend-break essay |
+| Neighbors | Larger / smaller, metal / nonmetal, one sentence | The differential bars | The bars plus the trend-break essay |
 | Caption tone | Short sentences, no naked symbols without a gloss | Course vocabulary, symbols allowed | Compact, mono, source-first |
 
 Switching depth never navigates away and never discards the scroll position if the section still exists.
@@ -41,7 +41,7 @@ A daily door, not a streak.
 
 No points for opening it. No guilt for ignoring it.
 
-## Compare as a lesson
+## Neighbors as a lesson
 
 The teaching pair in the concept is **carbon and silicon**, Group 14. The lesson to preserve:
 
@@ -95,7 +95,7 @@ This is not an AI feature.
 
 ## Quiz
 
-Quiz is the only scored room. Table, Details, Compare, and Spectra still do not grade the learner. Opening Advanced is not a level-up. Bookmarks and recents are memory, not a grade.
+Quiz is the only scored room. Table, Details, and Spectra still do not grade the learner. Opening Advanced is not a level-up. Bookmarks and recents are memory, not a grade.
 
 The Quiz pool is 50 questions for the focused element at the current depth. A correct answer is worth 20 XP. A day streak counts consecutive local calendar days with at least one answer. Tiers count finished pools (all 50 answered), not XP: Observer, Student, Scholar, Fellow, Master.
 
@@ -107,7 +107,7 @@ Outside Quiz, v1 does not score the learner. See [open-questions.md](./open-ques
 
 ## Educator use of depth
 
-On a wide screen the depth control stays visible while the dossier is projected. Switching it is the lesson. Students on phones follow along on the same element; their own depth control is local unless a class assignment suggests a depth. The suggestion is a default they can override. See [use-cases/classroom.md](./use-cases/classroom.md).
+On a wide screen the depth control stays visible while the dossier is projected. Switching it is the lesson among courses the account owns.
 
 ## Language of explanations
 

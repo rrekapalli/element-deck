@@ -1,7 +1,10 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
+import '../account/account_controller.dart';
 import '../models/catalog.dart';
 import '../providers/selection_controller.dart';
 import '../providers/settings_controller.dart';
@@ -9,6 +12,7 @@ import '../quiz/quiz_controller.dart';
 import '../quiz/quiz_models.dart';
 import '../theme/ambient_background.dart';
 import '../theme/element_spectrum.dart';
+import '../widgets/course_paywall.dart';
 
 class QuizRoom extends StatefulWidget {
   const QuizRoom({super.key, this.controller});
@@ -45,6 +49,7 @@ class _QuizRoomState extends State<QuizRoom> {
   Widget build(BuildContext context) {
     final quiz = context.watch<QuizController>();
     final settings = context.watch<SettingsController>();
+    final account = context.watch<AccountController>();
     final key = '${quiz.focusZ}|${settings.depth}';
     if (quiz.focusZ > 0 && _syncing != key && !quiz.loading) {
       _syncing = key;
@@ -73,8 +78,16 @@ class _QuizRoomState extends State<QuizRoom> {
           style: Theme.of(context).textTheme.labelSmall,
         ),
         const SizedBox(height: 12),
-        if (quiz.element == null)
+        if (account.hasCore && !account.ownsDepth(settings.depth))
+          CoursePaywall(depth: settings.depth)
+        else if (quiz.element == null)
           const Text('This element is not in the on-device catalog.')
+        else if (!quiz.element!.hasLesson && !account.hasCore)
+          CoursePaywall(
+            depth: settings.depth,
+            message:
+                'Quiz pools ship with each course pack. The five preview elements stay free.',
+          )
         else ...[
           _ProgressLine(quiz: quiz),
           const SizedBox(height: 12),
@@ -232,6 +245,13 @@ class _ElementCard extends StatelessWidget {
       'advanced' => element.electronConfigFull,
       _ => element.electronConfig,
     };
+    Widget spoiler(Widget child) {
+      return ImageFiltered(
+        imageFilter: ImageFilter.blur(sigmaX: 14, sigmaY: 14),
+        child: ExcludeSemantics(child: child),
+      );
+    }
+
     return Container(
       padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
@@ -243,21 +263,23 @@ class _ElementCard extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Container(
-            width: 72,
-            height: 72,
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: accent.withValues(alpha: 0.5)),
-              color: accent.withValues(alpha: 0.12),
-            ),
-            child: Text(
-              element.symbol,
-              style: TextStyle(
-                fontSize: 28,
-                fontWeight: FontWeight.w800,
-                color: accent,
+          spoiler(
+            Container(
+              width: 72,
+              height: 72,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: accent.withValues(alpha: 0.5)),
+                color: accent.withValues(alpha: 0.12),
+              ),
+              child: Text(
+                element.symbol,
+                style: TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.w800,
+                  color: accent,
+                ),
               ),
             ),
           ),
@@ -266,9 +288,11 @@ class _ElementCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  '${element.z.toString().padLeft(2, '0')}  ·  ${element.atomicWeight}',
-                  style: Theme.of(context).textTheme.labelSmall,
+                spoiler(
+                  Text(
+                    '${element.z.toString().padLeft(2, '0')}  ·  ${element.atomicWeight}',
+                    style: Theme.of(context).textTheme.labelSmall,
+                  ),
                 ),
                 Text(
                   element.name,
@@ -276,16 +300,20 @@ class _ElementCard extends StatelessWidget {
                     fontWeight: FontWeight.w700,
                   ),
                 ),
-                Text(
-                  '${element.categoryLabel}  ·  ${element.block.toUpperCase()}-BLOCK  Period ${element.period}'
-                  '${element.group != null ? '  ·  Grp ${element.group}' : ''}',
-                  style: Theme.of(context).textTheme.labelSmall,
+                spoiler(
+                  Text(
+                    '${element.categoryLabel}  ·  ${element.block.toUpperCase()}-BLOCK  Period ${element.period}'
+                    '${element.group != null ? '  ·  Grp ${element.group}' : ''}',
+                    style: Theme.of(context).textTheme.labelSmall,
+                  ),
                 ),
                 const SizedBox(height: 4),
-                Text(
-                  cfg,
-                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    fontFamily: 'JetBrains Mono',
+                spoiler(
+                  Text(
+                    cfg,
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                      fontFamily: 'JetBrains Mono',
+                    ),
                   ),
                 ),
               ],
@@ -294,15 +322,17 @@ class _ElementCard extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(99),
-                  color: accent.withValues(alpha: 0.16),
-                ),
-                child: Text(
-                  element.standardState,
-                  style: TextStyle(color: accent, fontSize: 11),
+              spoiler(
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(99),
+                    color: accent.withValues(alpha: 0.16),
+                  ),
+                  child: Text(
+                    element.standardState,
+                    style: TextStyle(color: accent, fontSize: 11),
+                  ),
                 ),
               ),
               const SizedBox(height: 8),

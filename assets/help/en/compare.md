@@ -1,16 +1,16 @@
-# Compare
+# Neighbors
 
-![Compare](asset:assets/help/images/compare.png)
+![Neighbors](asset:assets/help/images/compare.png)
 
 Callouts: **element A** · **element B** · **metric rows** · **trend** · **PDF**.
 
 ## Purpose
 
-Compare puts two elements side by side and states the difference in numbers. The header reads **PERIODIC EXPLORER · COMPARE**.
+**Neighbors** is a tab on **Details**. It puts the open element beside a neighbor and states the difference in numbers. The rooms stay Table, Details, Spectra, and Quiz.
 
-Opening Compare keeps the pair already chosen. The first time through, the pair is carbon and silicon, a Group 14 step the pack has a written trend for.
+The first pair the catalog writes in full is carbon and silicon, a Group 14 step. Opening carbon lands on silicon unless you already chose another pair.
 
-Both elements have to be in the on-device catalog. Otherwise the page asks you to pick two elements that are.
+Both elements have to be in the on-device catalog. Otherwise the tab asks you to pick two elements that are.
 
 ## The pair
 
@@ -28,30 +28,15 @@ Tap either card to choose a different element from the catalog. The other side s
 - Melting point
 - Density
 
-Each row shows A on the left, B on the right, and a computed percent change, such as larger, higher, or denser. The percent is calculated from the stored numbers. It is not a sentence typed in by hand.
+Each row shows A on the left, B on the right, and a computed percent change. **Not reported** means the pack has no value for that side.
 
-**Not reported** means the pack has no value for that side. A percent is omitted in that case.
-
-Temperature, energy, and length follow **App Config**, the same as Details.
+Temperature, energy, and length follow **App Config**.
 
 ## Group trend
 
-**Group trend breakdown** is a short essay for this pair when one has been written. A pair without an essay still shows the metric rows and says **No written trend for this pair yet**.
+**Group trend breakdown** is a short essay for this pair when one has been written, at the current learning mode. A pair without an essay still shows the metric rows and says **No written trend for this pair yet**.
 
-When the essay names other elements, chips such as **Compare with Ge** swap the right-hand element in one tap.
-
-## Export
-
-**Export Comparison Dossier (PDF)** saves the current pair on this device and opens the system print or share sheet with a short dossier: the two symbols, the trend text, and a reminder that the page is teaching copy.
-
-The PDF is generated on the device. It is not a laboratory report.
-
-## Try this
-
-1. Leave the opening pair as carbon versus silicon and read the percent on atomic radius.
-2. Tap the silicon card and switch it to germanium.
-3. Use a **Compare with** chip if one is shown.
-4. Export the PDF and confirm both symbols appear on the page.
+Old links of the form `/compare/6/14` open this tab.
 
 ---
 

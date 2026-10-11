@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
+import '../billing/pack_ids.dart';
 import '../data/catalog_store.dart';
 import '../data/learner_database.dart';
 
@@ -10,6 +11,8 @@ const _debugEntitlementFlag = bool.fromEnvironment('DEBUG_ENTITLEMENT');
 
 /// Compile-time fixture entitlement. Release builds ignore the flag.
 bool get debugEntitlement => _debugEntitlementFlag && !kReleaseMode;
+
+const _allPacks = {packBeginner, packIntermediate, packAdvanced};
 
 class AccountController extends ChangeNotifier {
   AccountController(this._db, this._store);
@@ -25,17 +28,31 @@ class AccountController extends ChangeNotifier {
   bool _googleInitialized = false;
 
   bool get hasCore =>
-      packages.contains('element-deck') ||
-      packages.contains('classroom') ||
+      packages.contains(packBeginner) ||
+      packages.contains(packIntermediate) ||
+      packages.contains(packAdvanced) ||
+      packages.contains(packLegacy) ||
       debugEntitlement;
 
-  bool get hasClassroom => packages.contains('classroom') || debugEntitlement;
+  bool ownsDepth(String depth) {
+    if (debugEntitlement || packages.contains(packLegacy)) return true;
+    return packages.contains(packIdForDepth(depth));
+  }
+
+  String? get highestOwnedDepth {
+    if (ownsDepth('advanced')) return 'advanced';
+    if (ownsDepth('intermediate')) return 'intermediate';
+    if (ownsDepth('beginner')) return 'beginner';
+    return null;
+  }
 
   Future<void> load() async {
     packages = await _db.activePackages();
     if (debugEntitlement) {
-      packages = {...packages, 'element-deck'};
-      await _db.setEntitlement('element-deck', 'active');
+      packages = {...packages, ..._allPacks};
+      for (final id in _allPacks) {
+        await _db.setEntitlement(id, 'active');
+      }
     }
     notifyListeners();
   }
@@ -113,7 +130,7 @@ class AccountController extends ChangeNotifier {
   Future<void> refreshPurchases() async {
     if (user == null) {
       if (debugEntitlement) {
-        packages = {'element-deck'};
+        packages = {..._allPacks};
       }
       notifyListeners();
       return;
@@ -129,7 +146,7 @@ class AccountController extends ChangeNotifier {
         packages.add(data['packageId'] as String);
       }
     }
-    if (debugEntitlement) packages.add('element-deck');
+    if (debugEntitlement) packages.addAll(_allPacks);
     await _db.eraseEntitlementsExcept(packages);
     for (final id in packages) {
       await _db.setEntitlement(id, 'active');
@@ -143,7 +160,7 @@ class AccountController extends ChangeNotifier {
   Future<void> eraseDevice() async {
     await _db.erase();
     await _store.deleteCache();
-    packages = debugEntitlement ? {'element-deck'} : {};
+    packages = debugEntitlement ? {..._allPacks} : {};
     notifyListeners();
   }
 }

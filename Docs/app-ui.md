@@ -7,8 +7,8 @@ Visuals:
 | Room | Benchmark |
 | --- | --- |
 | Table | [screen1/screen.png](./concept-images/screen1/screen.png) |
-| Compare | [screen2/screen.png](./concept-images/screen2/screen.png) |
 | Details | [screen3/screen.png](./concept-images/screen3/screen.png) |
+| Neighbors | [screen2/screen.png](./concept-images/screen2/screen.png) |
 | Spectra | [screen4/screen.png](./concept-images/screen4/screen.png) |
 
 Tokens and component rules: [design-system.md](./design-system.md).
@@ -24,18 +24,18 @@ Tokens and component rules: [design-system.md](./design-system.md).
 │              room body               │
 │                                      │
 ├──────────────────────────────────────┤
-│  TABLE  DETAILS  COMPARE  SPECTRA  QUIZ │
+│  TABLE  DETAILS  SPECTRA  QUIZ     │
 └─────────────────────────────────────────┘
 ```
 
 | Chrome | Behavior |
 | --- | --- |
 | Wordmark | Element Deck. Always. |
-| Eyebrow | `PERIODIC EXPLORER · TABLE` (or DETAILS, COMPARE, SPECTRA, QUIZ) |
+| Eyebrow | `PERIODIC EXPLORER · TABLE` (or DETAILS, SPECTRA, QUIZ) |
 | Help | **?** opens the guide for this room. **Previous** and **Next** walk the other rooms and the settings pages. Family filtering stays on the Table chips |
 | Me | Opens **Settings**. It is not a science room |
-| Bottom nav | Phone only. Five destinations. Re-tapping the active destination scrolls that room to the top |
-| Selection | One current element for Details and Spectra. Two current elements for Compare. Quiz focus is a separate Z (today's element by default). Table selection updates the current element |
+| Bottom nav | Phone only. Four destinations. Re-tapping the active destination scrolls that room to the top |
+| Selection | One current element for Details, Spectra, and the Neighbors tab. Quiz focus is a separate Z (today's element by default). Table selection updates the current element |
 
 The profile glyph on the concept screens is **Me**, the door to Settings, Account, and App settings. See [settings-and-theming.md](./settings-and-theming.md).
 
@@ -53,9 +53,9 @@ Details
   → always shows the current element
   → if none yet, the element of the day
 
-Compare
-  → element A and element B
-  → entering from Details seeds A with the current element and suggests a congener for B
+Neighbors (Details tab)
+  → element A is the current element
+  → B is the written course pair when one exists, otherwise the next element down the group
 
 Spectra
   → the current element as the target emitter
@@ -76,7 +76,7 @@ Top to bottom:
 4. **Category chips.** All, then the families (reactive nonmetals, noble gases, alkali, alkaline earth, transition, post-transition, metalloids, lanthanides, actinides, halogens as a filter that can overlap a family). Every chip shows how many elements it selects, as in All (118) and Reactive Nonmetals (13). Halogen counts the tag, so it overlaps the reactive-nonmetal family.
 5. **Registry.** Cards in a two-column grid on the phone benchmark. Each card: Z, mass, symbol in the family color, name, category, standard state, a short configuration or shell summary appropriate to the depth.
 6. **View toggle.** List/registry versus **matrix**. The benchmark is the registry ("Atomic Registry · 12 shown" when a filter or search is narrowing). Matrix is the classic 18-column table, pan and zoom, lanthanide and actinide rows called out. Minimum cell about 64×74 px when zoomed; the phone matrix scrolls. It does not shrink 118 cells under a thumb.
-7. **Sparkline.** A small trend for the current filter or period, such as the ionization-energy curve on the benchmark (H, He, Li, Ne called out). It is a teaching hint into Compare, not a dashboard widget.
+7. **Sparkline.** A small trend for the current filter or period, such as the ionization-energy curve on the benchmark (H, He, Li, Ne called out). It is a teaching hint into Neighbors, not a dashboard widget.
 
 Empty search: say what failed ("No element matches 'xyz'") and offer to clear filters. Do not invent a closest element silently. A near symbol (`Na` vs `Ne`) can be offered as an explicit suggestion.
 
@@ -112,9 +112,9 @@ Three prose cards, in this order:
 2. **How it was discovered.** The year (or Antiquity), the people, and a short account of the material, the operation, and the evidence. Ancient elements say so, and describe the smelt or the recognition that the substance was already simple.
 3. **Formed in the Universe.** The nuclear paths thought to have assembled the element before the Earth existed: Big Bang fusion, stellar burning, cosmic-ray spallation, or neutron capture. Elements with no surviving primordial stock say which decay chain or laboratory reaction produces the atoms that exist now.
 
-## Compare
+## Neighbors
 
-Benchmark: screen 2. Two elements, one argument.
+Benchmark: screen 2. A Details tab. Two elements, one argument.
 
 1. **Mode label.** Congener analytics, group and period context, differential mode.
 2. **Pair.** Element A and element B, each with Z, symbol, name, category, block, mass. Swap either side. A versus mark sits between them.
@@ -150,7 +150,7 @@ A fifth room. Practice on today's element, at the current learning mode, from a 
 
 1. **Learning mode.** Quiz uses the app setting from App Config, not a control on this room. The pool is the 50 questions for that depth. Progress is stored per element and depth.
 2. **Streak and XP.** Consecutive local days with at least one answer, and `20 ×` correct answers across every pool. Both stay on the device. Table's element-of-the-day card does not show them.
-3. **Element card.** Today's element (or another focus): Z, symbol, name, family, configuration at this depth, and a tier name from how many pools are finished (Observer, Student, Scholar, Fellow, Master).
+3. **Element card.** Today's element (or another focus): the **name** is clear. Z, symbol, family, configuration, and state are blurred so they do not give away quiz answers. A tier name from how many pools are finished (Observer, Student, Scholar, Fellow, Master).
 4. **Question.** Stem, four choices, then a lock: the correct option is marked, a short explanation (and an equation only when the catalog has one). **Previous** and **Next** walk all 50 items without requiring an answer. Finishing all 50 still shows a completion card; the items remain browsable.
 5. **Notes, bookmark, report.** Notes and reports are local. Bookmark is the same element bookmark as Details.
 6. **Active element bank.** Category bars for this pool.
@@ -167,7 +167,7 @@ Deep link: `/quiz` opens today; `/quiz/22` focuses titanium.
 | Bookmark | Toggles on the current element. Filled state is visible on the card and the dossier |
 | Search | Available on Table. Wide shell also exposes it in the title bar |
 | Deep link | `elementdeck://element/22` and the web path `/e/22` open Details for titanium. `/e/22/spectra`, `/compare/6/14`, `/quiz`, and `/quiz/22` open those rooms |
-| Help | **?** on the room header, and again on each settings page. The article matches the page you opened it from. **Previous** and **Next** walk Table, Details, Compare, Spectra, Quiz, then Settings and its pages |
+| Help | **?** on the room header, and again on each settings page. The article matches the page you opened it from. **Previous** and **Next** walk Table, Details, Neighbors, Spectra, Quiz, then Settings and its pages |
 | On device | Preview elements ship in the app. The full pack is read from the local cache after download. Bookmarks and theme are local, and copy to Firebase when signed in |
 | Reduced motion | No pulsing glows, no scrubber inertia. See App settings |
 | Text scale | Layouts survive the OS text scale. Mono values may wrap; they do not truncate a unit |

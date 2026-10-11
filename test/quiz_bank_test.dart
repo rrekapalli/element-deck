@@ -24,6 +24,15 @@ void main() {
           expect(q.correctIndex, inInclusiveRange(0, 3), reason: q.id);
           expect(q.explanation.trim(), isNotEmpty, reason: q.id);
           expect(q.stem.trim(), isNotEmpty, reason: q.id);
+          if (depth == 'beginner') {
+            final blob = '${q.stem} ${q.options.join(' ')} ${q.explanation}';
+            expect(blob, isNot(contains('nuclear spin')), reason: q.id);
+            expect(blob.toLowerCase(), isNot(contains('electronegativ')), reason: q.id);
+            expect(blob, isNot(contains(' eV')), reason: q.id);
+            if (z == 1) {
+              expect(blob, isNot(contains('copernicium')), reason: q.id);
+            }
+          }
         }
       }
     }

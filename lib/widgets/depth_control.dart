@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../account/account_controller.dart';
+import '../billing/pack_ids.dart';
 import '../providers/settings_controller.dart';
 import '../theme/ambient_background.dart';
 import '../theme/app_theme.dart';
+import 'course_paywall.dart';
 
 class DepthControl extends StatelessWidget {
   const DepthControl({super.key});
@@ -11,15 +14,11 @@ class DepthControl extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final settings = context.watch<SettingsController>();
+    final account = context.watch<AccountController>();
     final chrome = context.watchThemeChrome(context);
     const depths = ['beginner', 'intermediate', 'advanced'];
     const labels = ['Beginner', 'Intermediate', 'Advanced'];
-    final caption = switch (settings.depth) {
-      'beginner' =>
-        'Mode: Beginner · everyday words, for a first introduction.',
-      'advanced' => 'Mode: Advanced · configuration, oxidation, and why the numbers look that way.',
-      _ => 'Mode: Intermediate · period, configuration, and oxidation.',
-    };
+    final caption = packCaptions[settings.depth] ?? packCaptions['intermediate']!;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -35,7 +34,20 @@ class DepthControl extends StatelessWidget {
               for (var i = 0; i < depths.length; i++)
                 Expanded(
                   child: InkWell(
-                    onTap: () => settings.setDepth(depths[i]),
+                    onTap: () {
+                      final depth = depths[i];
+                      if (account.ownsDepth(depth) || !account.hasCore) {
+                        settings.setDepth(depth);
+                        return;
+                      }
+                      showModalBottomSheet<void>(
+                        context: context,
+                        builder: (_) => Padding(
+                          padding: const EdgeInsets.all(16),
+                          child: CoursePaywall(depth: depth),
+                        ),
+                      );
+                    },
                     child: Container(
                       padding: const EdgeInsets.symmetric(vertical: 10),
                       decoration: BoxDecoration(
@@ -70,7 +82,6 @@ class DepthControl extends StatelessWidget {
 
 extension on BuildContext {
   ChromePalette watchThemeChrome(BuildContext context) {
-    // Avoid circular import by reading Theme.
     final cs = Theme.of(this).colorScheme;
     return ChromePalette(
       canvas:

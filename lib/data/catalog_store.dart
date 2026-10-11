@@ -31,22 +31,34 @@ class CatalogStore {
         fromCache = true;
         return;
       }
+      pack = await _loadAsset('assets/catalog/core.json');
+      fromCache = false;
+      return;
     }
-    pack = await _loadBundled();
+    pack = await _loadFree();
     fromCache = false;
   }
 
-  Future<CatalogPack> _loadBundled() async {
+  Future<CatalogPack> _loadFree() async {
     try {
-      final data = await rootBundle.load('assets/catalog/catalog.sqlite');
-      await _cache.writeSqlite(data.buffer.asUint8List());
-      final sqliteJson = await _cache.readSqliteJson();
-      if (sqliteJson != null) {
-        cachePath = _cache.sqlitePath;
-        return CatalogPack.fromJson(jsonDecode(sqliteJson) as Map<String, dynamic>);
+      final index = await _loadAsset('assets/catalog/index.json');
+      final preview = await _loadAsset('assets/catalog/preview.json');
+      final byZ = {for (final e in index.elements) e.z: e};
+      for (final e in preview.elements) {
+        byZ[e.z] = e;
       }
-    } catch (_) {}
-    return _loadAsset('assets/catalog/core.json');
+      final merged = byZ.values.toList()
+        ..sort((a, b) => a.z.compareTo(b.z));
+      return CatalogPack(
+        id: 'preview',
+        version: preview.version,
+        sciencePins: preview.sciencePins,
+        elements: merged,
+        trendNotes: preview.trendNotes,
+      );
+    } catch (_) {
+      return _loadAsset('assets/catalog/preview.json');
+    }
   }
 
   Future<CatalogPack> _loadAsset(String asset) async {
@@ -74,6 +86,6 @@ class CatalogStore {
     await _cache.deleteFiles();
     fromCache = false;
     cachePath = null;
-    pack = await _loadBundled();
+    pack = await _loadFree();
   }
 }

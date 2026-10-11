@@ -22,7 +22,7 @@ Nothing remembers the depth they were reading at, the pair they were comparing, 
 
 ## Product
 
-**Element Deck** is a periodic explorer. The learner opens an element, chooses a depth, and moves among five rooms: **Table**, **Details**, **Compare**, **Spectra**, and **Quiz**.
+**Element Deck** is a periodic explorer. The learner opens an element, chooses a depth, and moves among four rooms: **Table**, **Details**, **Spectra**, and **Quiz**. Neighbors is a tab on Details.
 
 The app shell is Flutter. A small preview catalog (hydrogen, carbon, silicon, neon, titanium) ships inside it so the rooms can open immediately. The **full content pack** — all 118 elements — is a SQLite file in Firebase Storage. After a person buys a package, the app downloads that file and reads it locally.
 
@@ -48,7 +48,6 @@ Personas weight copy, the default depth, and the home hint. They do not fork the
 | --- | --- | --- |
 | Table | Find an element and see its family | [screen 1](./concept-images/screen1/screen.png) |
 | Details | Read the dossier at the current depth | [screen 3](./concept-images/screen3/screen.png) |
-| Compare | Hold two elements against each other | [screen 2](./concept-images/screen2/screen.png) |
 | Spectra | See and hear the light; read isotopes | [screen 4](./concept-images/screen4/screen.png) |
 
 Phone: bottom navigation, one room at a time. Tablet and web: nav rail, list plus bench. See [app-ui.md](./app-ui.md) and [wide-layout.md](./wide-layout.md).
@@ -57,11 +56,11 @@ Phone: bottom navigation, one room at a time. Tablet and web: nav rail, list plu
 
 Complexity is global, visible, and switchable on Table and Details. It is also the default in App settings.
 
-| Depth | What leads | Who it fits |
-| --- | --- | --- |
-| Beginner | Shell count, everyday state, uses, plain oxidation | First chemistry course |
-| Intermediate | Noble-gas configuration, oxidation states, lattice, the headline measurements | Upper secondary. This is the depth drawn on the concept screens |
-| Advanced | Term symbols, spectral assignments, isotopes and decay, trend-break reasoning | Early university and serious enthusiasts |
+| Depth | What leads | Who it fits | Product |
+| --- | --- | --- | --- |
+| Beginner | Shell count, everyday state, uses, valency in words | CBSE Classes 8–10 | `pack-beginner`, ₹199 |
+| Intermediate | Noble-gas configuration, oxidation states, trends, JEE exceptions on the element | Classes 11–12 and JEE | `pack-intermediate`, ₹199 |
+| Advanced | Z_eff, spectral assignments, isotopes and decay, trend-break reasoning | Undergraduate periodic-table study | `pack-advanced`, ₹199 |
 
 Rules for what each depth shows are in [learning.md](./learning.md).
 
@@ -103,9 +102,10 @@ The shell is free to install. The preview of five elements is free to use. The f
 
 | Package | Price | Includes |
 | --- | --- | --- |
-| Preview | Free | H, C, Si, Ne, Ti, bundled in the app. No account |
-| Element Deck | Open | The full content pack from Firebase. All four rooms, all three depths, restored on any device signed in to that account |
-| Classroom | Open | Element Deck, plus a class list and a suggested depth |
+| Preview | Free | H, C, Si, Ne, Ti, all three courses, bundled in the app. No account |
+| Beginner | ₹199 (store price) | Classes 8–10 writing and quiz for all 118 elements |
+| Intermediate | ₹199 (store price) | Classes 11–12 and JEE writing and quiz |
+| Advanced | ₹199 (store price) | Undergraduate writing and quiz |
 
 A purchase row in Firestore is the record: Firebase uid, email, package id, store, transaction id, status, and time. The store charges the buyer. Firebase does not invent the charge. Details are in [architecture.md](./architecture.md#packages-and-purchases).
 
@@ -114,14 +114,14 @@ A purchase row in Firestore is the record: Firebase uid, email, package id, stor
 In:
 
 - All 118 elements, with the property set the concept screens already imply
-- Table (registry and matrix), Details, Compare, Spectra
-- Beginner, Intermediate, Advanced
+- Table (registry and matrix), Details, Spectra, Quiz
+- Beginner, Intermediate, Advanced as separate purchases
 - Phone shell and wide shell
 - Settings, App settings, Account settings, theming
 - English UI
 - Preview catalog in the app. Full content pack in Firebase Storage, cached in SQLite after download
 - Firebase Auth, Firestore purchases, and receipt verification
-- Google Play and App Store products for Element Deck and Classroom
+- Google Play and App Store products `pack-beginner`, `pack-intermediate`, `pack-advanced`
 
 Out of v1:
 
@@ -131,7 +131,7 @@ Out of v1:
 - Quizzes and spaced repetition
 - A second science domain (compounds, orbitals-only lab)
 
-Classroom is a package on the same Firebase project. It does not have to be in the first store build. See [open-questions.md](./open-questions.md).
+The three course packs are independent purchases on the same Firebase project.
 
 ## Non-goals for inception
 

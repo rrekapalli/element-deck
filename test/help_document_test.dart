@@ -56,7 +56,6 @@ Body copy.
       [
         HelpCatalog.table,
         HelpCatalog.details,
-        HelpCatalog.compare,
         HelpCatalog.spectra,
         HelpCatalog.quiz,
       ],

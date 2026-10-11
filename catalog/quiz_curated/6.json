@@ -12,6 +12,19 @@
       ],
       "correctIndex": 0,
       "explanation": "Carbon atoms share electrons with other carbon atoms, which is how organic chains form. Graphite in a pencil is one solid form of carbon."
+    },
+    {
+      "id": "6-beginner-forms",
+      "category": "engineering_uses",
+      "stem": "Diamond and graphite are both carbon. What is the difference?",
+      "options": [
+        "The same atoms joined in different networks: diamond is a rigid net, graphite is sheets",
+        "Diamond is a metal and graphite is a gas",
+        "They are different elements in the same group",
+        "Graphite has more protons than diamond"
+      ],
+      "correctIndex": 0,
+      "explanation": "Allotropes are forms of one element. Diamond is hard because each carbon atom has four neighbors. Graphite is soft because its atoms sit in sliding sheets."
     }
   ],
   "intermediate": [

@@ -38,4 +38,4 @@ Students follow on `/e/22` (or whatever Z). Their depth is their own unless a cl
 - Build slides from screenshots, unless they want the PDF.
 - Create accounts for students. Everyone installs the same static app. A class list, if it comes later, waits on terms before any minor is invited.
 
-See [classroom.md](./classroom.md) for the roster that comes after the personal explorer.
+Each learner buys the course pack they need. There is no separate Classroom product in this build.

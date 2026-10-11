@@ -4,7 +4,12 @@ service firebase.storage {
     function hasCore() {
       return request.auth != null
         && firestore.exists(/databases/(default)/documents/users/$(request.auth.uid))
-        && firestore.get(/databases/(default)/documents/users/$(request.auth.uid)).data.packageIds.hasAny(['element-deck', 'classroom']);
+        && firestore.get(/databases/(default)/documents/users/$(request.auth.uid)).data.packageIds.hasAny([
+          'pack-beginner',
+          'pack-intermediate',
+          'pack-advanced',
+          'element-deck'
+        ]);
     }
     match /packs/core/{version}/{file} {
       allow read: if hasCore();

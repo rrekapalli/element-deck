@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 
 import 'account/account_controller.dart';
 import 'billing/purchase_service.dart';
-import 'classroom/classroom_controller.dart';
 import 'data/catalog_store.dart';
 import 'data/learner_database.dart';
 import 'l10n/app_localizations.dart';
@@ -46,7 +45,6 @@ class _ElementDeckAppState extends State<ElementDeckApp>
   late final AccountController account;
   late final PackService packs;
   late final PurchaseService purchases;
-  late final ClassroomController classroom;
   late final QuizController quiz;
   late final GoRouter router;
   var _ready = false;
@@ -64,7 +62,6 @@ class _ElementDeckAppState extends State<ElementDeckApp>
     account = AccountController(widget.db, widget.store);
     packs = PackService(widget.store, account);
     purchases = PurchaseService(account);
-    classroom = ClassroomController(account);
     quiz = QuizController(widget.db, catalog, selection);
     router = GoRouter(
       routes: [
@@ -86,7 +83,7 @@ class _ElementDeckAppState extends State<ElementDeckApp>
           pageBuilder: (context, state) {
             final z = int.tryParse(state.pathParameters['z'] ?? '') ?? 1;
             _queue(() => selection.select(z));
-            return const NoTransitionPage(child: HomeShell(index: 3));
+            return const NoTransitionPage(child: HomeShell(index: 2));
           },
         ),
         GoRoute(
@@ -94,15 +91,15 @@ class _ElementDeckAppState extends State<ElementDeckApp>
           pageBuilder: (context, state) {
             final a = int.tryParse(state.pathParameters['a'] ?? '') ?? 6;
             final b = int.tryParse(state.pathParameters['b'] ?? '') ?? 14;
-            _queue(() => selection.setPair(a, b));
-            return const NoTransitionPage(child: HomeShell(index: 2));
+            _queue(() => selection.openNeighbors(a: a, b: b));
+            return const NoTransitionPage(child: HomeShell(index: 1));
           },
         ),
         GoRoute(
           path: '/quiz',
           pageBuilder: (context, state) {
             _queue(quiz.focusToday);
-            return const NoTransitionPage(child: HomeShell(index: 4));
+            return const NoTransitionPage(child: HomeShell(index: 3));
           },
         ),
         GoRoute(
@@ -116,7 +113,7 @@ class _ElementDeckAppState extends State<ElementDeckApp>
                 quiz.focusToday();
               }
             });
-            return const NoTransitionPage(child: HomeShell(index: 4));
+            return const NoTransitionPage(child: HomeShell(index: 3));
           },
         ),
       ],
@@ -164,6 +161,12 @@ class _ElementDeckAppState extends State<ElementDeckApp>
         await catalog.reload(hasCoreEntitlement: account.hasCore);
       }
       await selection.load();
+      final owned = account.highestOwnedDepth;
+      if (owned != null && !account.ownsDepth(settings.depth)) {
+        await settings.setDepth(owned);
+      } else if (!account.hasCore && settings.depth != 'beginner') {
+        await settings.setDepth('beginner');
+      }
     } catch (e, st) {
       debugPrint('Prefs boot failed: $e\n$st');
     }
@@ -201,7 +204,6 @@ class _ElementDeckAppState extends State<ElementDeckApp>
         ChangeNotifierProvider.value(value: account),
         Provider.value(value: packs),
         Provider.value(value: purchases),
-        ChangeNotifierProvider.value(value: classroom),
         ChangeNotifierProvider.value(value: quiz),
       ],
       child: Consumer<ThemeController>(

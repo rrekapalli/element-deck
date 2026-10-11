@@ -13,6 +13,8 @@ class SelectionController extends ChangeNotifier {
   int currentZ = 22;
   int compareA = 6;
   int compareB = 14;
+  int detailsTab = 0;
+  bool neighborsRequested = false;
   String search = '';
   String categoryFilter = 'all';
   Set<int> bookmarks = {};
@@ -34,12 +36,33 @@ class SelectionController extends ChangeNotifier {
   ElementRecord? get current => pack.byZ(currentZ);
 
   Future<void> select(int z, {bool openDetails = false}) async {
-    if (currentZ == z) return;
-    currentZ = z;
-    await _db.setPref('selection.z', '$z');
-    await _db.touchRecent(z);
-    recents = await _db.recentZs();
+    if (currentZ != z) {
+      currentZ = z;
+      await _db.setPref('selection.z', '$z');
+      await _db.touchRecent(z);
+      recents = await _db.recentZs();
+      if (compareA != z && compareB != z) {
+        compareA = z;
+        compareB = suggestedNeighbor(z);
+      }
+    }
     notifyListeners();
+  }
+
+  int suggestedNeighbor(int z) {
+    final e = pack.byZ(z);
+    if (e == null) return z == 6 ? 14 : 6;
+    for (final n in pack.trendNotes) {
+      if (n.zA == z) return n.zB;
+      if (n.zB == z) return n.zA;
+    }
+    if (e.group != null) {
+      final below = pack.elements.where((o) => o.group == e.group && o.z > z);
+      if (below.isNotEmpty) return below.first.z;
+      final above = pack.elements.where((o) => o.group == e.group && o.z < z);
+      if (above.isNotEmpty) return above.last.z;
+    }
+    return z == 1 ? 2 : z - 1;
   }
 
   Future<void> setPair(int a, int b) async {
@@ -47,6 +70,20 @@ class SelectionController extends ChangeNotifier {
     compareA = a;
     compareB = b;
     notifyListeners();
+  }
+
+  void openNeighbors({required int a, required int b}) {
+    compareA = a;
+    compareB = b;
+    currentZ = a;
+    detailsTab = 4;
+    neighborsRequested = true;
+    notifyListeners();
+  }
+
+  void clearNeighborsRequest() {
+    if (!neighborsRequested) return;
+    neighborsRequested = false;
   }
 
   Future<void> toggleBookmark(int z) async {

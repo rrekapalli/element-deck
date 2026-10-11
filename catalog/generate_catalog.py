@@ -16,6 +16,7 @@ from history import HISTORY
 from origin import COSMIC_ORIGIN
 from trivia import TRIVIA
 from spectral_lines import LINES as EXTRA_LINES
+from syllabus import FORMS, TRENDS, spectra_note
 
 # z, symbol, name, mass, cat, block, period, group, state, shells, config, ox, lattice
 # cat: alkali, alkaline, transition, post-transition, metalloid, nonmetal, halogen, noble, lanthanide, actinide
@@ -176,39 +177,6 @@ LATTICE = {
     79: "FCC",
     82: "FCC",
 }
-
-# radius, EN, IE already in PROPS. Fill remaining with None via lookup miss.
-
-TRENDS = [
-    {
-        "zA": 6,
-        "zB": 14,
-        "label": "Group 14",
-        "essay": "Descending from Carbon (C) to Silicon (Si) exhibits the classic inner-core shielding effect. The additional 3s²3p² shell increases the atomic radius significantly (+58%), causing valence electrons to experience a diminished effective nuclear charge (Z_eff). C–C bonds drastically outlast weaker Si–Si bonds. Silicon's network is an intrinsic semiconductor.",
-        "swaps": [32, 8],
-    },
-    {
-        "zA": 9,
-        "zB": 17,
-        "label": "Group 17",
-        "essay": "Fluorine to chlorine is the textbook halogen step: both want one electron, but fluorine is a much fiercer oxidizer because it is smaller and more electronegative. Chlorine still disinfects and forms a wide oxo-anion ladder (ClO⁻ to ClO₄⁻) that fluorine barely copies.",
-        "swaps": [35, 8],
-    },
-    {
-        "zA": 3,
-        "zB": 11,
-        "label": "Group 1",
-        "essay": "Lithium to sodium keeps the ns¹ pattern, but sodium’s extra shell makes the atom larger and easier to oxidize. Lithium’s small Li⁺ ion polarizes anions and dominates battery electrochemistry; sodium remains the everyday salt cation.",
-        "swaps": [19, 12],
-    },
-    {
-        "zA": 10,
-        "zB": 18,
-        "label": "Group 18",
-        "essay": "Neon and argon are both closed-shell gases, but argon is denser and far more abundant in air. Neither forms ordinary molecules; argon’s chemistry, like krypton’s, is a specialist topic, while neon is the lighting benchmark.",
-        "swaps": [36, 2],
-    },
-]
 
 REACTIONS = {
     1: {
@@ -456,6 +424,9 @@ def parse_all() -> list[dict]:
         el["trivia"] = TRIVIA[z]
         el["applications"] = apps_for(z, name)
         el["spectralLines"] = _spectral_lines(z, symbol)
+        el["spectraNote"] = spectra_note(el)
+        if z in FORMS:
+            el["forms"] = FORMS[z]
         el["isotopes"] = ISOTOPES.get(z) or default_isotopes(z, mass)
         if z in GLOW:
             el["glow"] = GLOW[z]
@@ -474,8 +445,8 @@ def main() -> None:
         el["sample"] = sample_for(el["z"], el["name"], el["standardState"])
     pack = {
         "id": "core",
-        "version": "1.3.0",
-        "sciencePins": ["compiled-v1.3", "NIST ASD"],
+        "version": "1.4.0",
+        "sciencePins": ["compiled-v1.4", "NIST ASD"],
         "trendNotes": TRENDS,
         "elements": elements,
     }
@@ -486,10 +457,54 @@ def main() -> None:
         "elements": [e for e in elements if e["z"] in preview_z],
         "trendNotes": TRENDS,
     }
+    empty = {"beginner": "", "intermediate": "", "advanced": ""}
+    index_elements = []
+    for e in elements:
+        index_elements.append(
+            {
+                "z": e["z"],
+                "symbol": e["symbol"],
+                "name": e["name"],
+                "atomicWeight": e["atomicWeight"],
+                "weightKind": e["weightKind"],
+                "categoryId": e["categoryId"],
+                "categoryLabel": e["categoryLabel"],
+                "tags": e["tags"],
+                "block": e["block"],
+                "period": e["period"],
+                "group": e["group"],
+                "standardState": e["standardState"],
+                "electronConfig": e["electronConfig"],
+                "electronConfigFull": e["electronConfigFull"],
+                "shellCounts": e["shellCounts"],
+                "oxidationStates": e["oxidationStates"],
+                "primaryOxidation": e["primaryOxidation"],
+                "lattice": e["lattice"],
+                "sourceId": e["sourceId"],
+                "summary": empty,
+                "curriculum": empty,
+                "properties": e["properties"],
+                "history": "",
+                "howDiscovered": "",
+                "cosmicOrigin": "",
+                "trivia": [],
+                "applications": [],
+                "spectralLines": [],
+                "isotopes": [],
+            }
+        )
+    index = {
+        "id": "index",
+        "version": pack["version"],
+        "sciencePins": pack["sciencePins"],
+        "trendNotes": [],
+        "elements": index_elements,
+    }
     out = Path(__file__).resolve().parents[1] / "assets" / "catalog"
     out.mkdir(parents=True, exist_ok=True)
     (out / "core.json").write_text(json.dumps(pack, indent=2), encoding="utf-8")
     (out / "preview.json").write_text(json.dumps(preview, indent=2), encoding="utf-8")
+    (out / "index.json").write_text(json.dumps(index, indent=2), encoding="utf-8")
     print("wrote", len(elements), "elements")
 
 

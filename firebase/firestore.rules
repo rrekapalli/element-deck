@@ -26,15 +26,5 @@ service cloud.firestore {
         allow read, write: if signedIn() && request.auth.uid == uid;
       }
     }
-
-    match /classrooms/{id} {
-      allow read: if signedIn();
-      allow create: if signedIn();
-      allow update, delete: if signedIn() && resource.data.ownerUid == request.auth.uid;
-      match /members/{uid} {
-        allow read: if signedIn();
-        allow write: if signedIn() && request.auth.uid == uid;
-      }
-    }
   }
 }

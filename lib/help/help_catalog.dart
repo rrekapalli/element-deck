@@ -12,31 +12,29 @@ class HelpCatalog {
 
   static const table = 'table';
   static const details = 'details';
-  static const compare = 'compare';
+  static const neighbors = 'compare';
   static const spectra = 'spectra';
   static const quiz = 'quiz';
   static const settings = 'settings';
   static const accountSettings = 'account_settings';
   static const appSettings = 'app_settings';
-  static const classroom = 'classroom';
   static const appHealth = 'app_health';
   static const about = 'about';
 
   static const List<HelpTopic> guideOrder = [
     HelpTopic(id: table, title: 'Table'),
     HelpTopic(id: details, title: 'Details'),
-    HelpTopic(id: compare, title: 'Compare'),
+    HelpTopic(id: neighbors, title: 'Neighbors'),
     HelpTopic(id: spectra, title: 'Spectra'),
     HelpTopic(id: quiz, title: 'Quiz'),
     HelpTopic(id: settings, title: 'Settings'),
     HelpTopic(id: accountSettings, title: 'Account settings'),
     HelpTopic(id: appSettings, title: 'App Config'),
-    HelpTopic(id: classroom, title: 'Classroom'),
     HelpTopic(id: appHealth, title: 'App Health'),
     HelpTopic(id: about, title: 'About'),
   ];
 
-  static const roomTopics = [table, details, compare, spectra, quiz];
+  static const roomTopics = [table, details, spectra, quiz];
 
   static final Map<String, HelpTopic> _byId = {
     for (final topic in guideOrder) topic.id: topic,

@@ -1,32 +1,38 @@
 {
   "packages": {
-    "element-deck": {
-      "title": "Element Deck",
+    "pack-beginner": {
+      "title": "Beginner (Classes 8–10)",
       "packIds": ["core"],
-      "includesClassroom": false,
       "storeProductIds": {
-        "google_play": "element-deck",
-        "app_store": "element-deck"
+        "google_play": "pack-beginner",
+        "app_store": "pack-beginner"
       }
     },
-    "classroom": {
-      "title": "Classroom",
+    "pack-intermediate": {
+      "title": "Intermediate (Classes 11–12 and JEE)",
       "packIds": ["core"],
-      "includesClassroom": true,
       "storeProductIds": {
-        "google_play": "classroom",
-        "app_store": "classroom"
+        "google_play": "pack-intermediate",
+        "app_store": "pack-intermediate"
+      }
+    },
+    "pack-advanced": {
+      "title": "Advanced (Undergraduate)",
+      "packIds": ["core"],
+      "storeProductIds": {
+        "google_play": "pack-advanced",
+        "app_store": "pack-advanced"
       }
     }
   },
   "contentPacks": {
     "core": {
-      "version": "1.0.0",
-      "storagePath": "packs/core/1.0.0/catalog.sqlite",
-      "sha256": "17072ce0b2837fe9aaca86cd7364256b72cf70af88f06cbee6bb15fb03cce95f",
-      "bytes": 184320,
+      "version": "1.4.0",
+      "storagePath": "packs/core/1.4.0/catalog.sqlite",
+      "sha256": "9b61f426bf5c4e5d93ce0794eae52615c6bc36fec8740f02c3baa5469ea87412",
+      "bytes": 1462272,
       "publishedAt": "2026-10-11",
-      "sciencePins": ["compiled-v1"]
+      "sciencePins": ["compiled-v1.4", "NIST ASD"]
     }
   }
 }

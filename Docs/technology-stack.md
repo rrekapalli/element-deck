@@ -60,7 +60,7 @@ The catalog source in the repo is compiled into that SQLite file and uploaded. D
 
 | Store | Role |
 | --- | --- |
-| Google Play Billing | Sells `element-deck` and `classroom` on Android |
+| Google Play Billing | Sells `pack-beginner`, `pack-intermediate`, and `pack-advanced` on Android |
 | App Store | Sells the same product ids on iOS |
 | Firebase | Records uid, package id, store, transaction id, status, time |
 

@@ -78,39 +78,6 @@ class _SpectraRoomState extends State<SpectraRoom>
         padding: const EdgeInsets.fromLTRB(16, 12, 16, 32),
         children: [
           if (_index == 0) ...[
-            Row(
-              children: [
-                Text(
-                  'TARGET EMITTER',
-                  style: Theme.of(context).textTheme.labelSmall,
-                ),
-                const Spacer(),
-                Text(
-                  'Dataset ${catalog.pack.sciencePins.join(", ")}',
-                  style: Theme.of(context).textTheme.labelSmall,
-                ),
-              ],
-            ),
-            const SizedBox(height: 8),
-            SizedBox(
-              height: 40,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  for (final z in {e.z, ...sel.recents}.take(8))
-                    if (catalog.pack.byZ(z) != null)
-                      Padding(
-                        padding: const EdgeInsets.only(right: 8),
-                        child: ChoiceChip(
-                          selected: z == e.z,
-                          label: Text('${catalog.pack.byZ(z)!.symbol} #$z'),
-                          onSelected: (_) => sel.select(z),
-                        ),
-                      ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 12),
             SegmentedButton<String>(
               segments: const [
                 ButtonSegment(value: 'emission', label: Text('Emission')),
@@ -120,6 +87,10 @@ class _SpectraRoomState extends State<SpectraRoom>
               onSelectionChanged: (s) => setState(() => mode = s.first),
             ),
             const SizedBox(height: 12),
+            if (e.spectraNote != null) ...[
+              Text(e.spectraNote!.at(settings.depth)),
+              const SizedBox(height: 12),
+            ],
             SizedBox(
               height: 120,
               child: LayoutBuilder(
@@ -286,6 +257,7 @@ class _SpectraRoomState extends State<SpectraRoom>
               context: context,
               element: e,
               packVersion: catalog.pack.version,
+              depth: settings.depth,
             ),
         ],
       ),

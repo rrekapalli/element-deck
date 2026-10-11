@@ -25,8 +25,8 @@ Name the gate `ElementDeckUi.isWideShell` when the app exists. Do not copy RxFol
 │        │                                                   │
 │ Table  │                                                   │
 │ Details│                 room body                         │
-│ Compare│                                                   │
 │ Spectra│                                                   │
+│ Quiz   │                                                   │
 │        │                                                   │
 │        │                                                   │
 │ Settings                                                  │
@@ -38,7 +38,7 @@ Name the gate `ElementDeckUi.isWideShell` when the app exists. Do not copy RxFol
 | Region | Contents |
 | --- | --- |
 | Title bar | Wordmark, active room, search field, Help |
-| Nav rail | The five rooms. **Settings** pinned at the bottom |
+| Nav rail | The four rooms. **Settings** pinned at the bottom |
 | Body | Room-specific, below |
 | Footer | Persona and "On this device", plus the product name |
 
@@ -50,20 +50,20 @@ Sheets that are modal on the phone (a reaction illustration, erase-data confirm)
 
 ## Per-room body
 
-The periodic table is the product, so Table does not use a 30% "chat list." RxFolio's master–detail split fits Details, Compare's saved list, and Spectra's emitter list. Table wants the matrix to dominate.
+The periodic table is the product, so Table does not use a 30% "chat list." RxFolio's master–detail split fits Details and Spectra's emitter list. Table wants the matrix to dominate.
 
 | Room | Left | Right |
 | --- | --- | --- |
-| Table | About 320 px: search results if the query is active, otherwise element of the day, depth control, category chips, the sparkline | The matrix, filling the rest. Selecting a cell opens a **docked inspector** over the lower right or as a third column when width ≥ 1200: symbol, mass, category, one-line summary, Open dossier, Compare |
-| Details | Registry list of elements, filtered, with the current row selected. About 30% | The full dossier. No bottom sheet |
-| Compare | Saved pairs and the fast swaps. About 30% | The two elements **side by side**, metrics in a single grid, trend essay under them. Export stays visible |
+| Table | About 320 px: search results if the query is active, otherwise element of the day, depth control, category chips, the sparkline | The matrix, filling the rest. Selecting a cell opens a **docked inspector** over the lower right or as a third column when width ≥ 1200: symbol, mass, category, one-line summary, Open dossier |
+| Details | Registry list of elements, filtered, with the current row selected. About 30% | The full dossier, including the Neighbors tab. No bottom sheet |
 | Spectra | Emitter list (recent, bookmarked, search). About 30% | The bench: strip, selected line, listen, glow, astrophysics, isotopes |
+| Quiz | Today's element and depth | The question card |
 
 At width ≥ 1200, Details may show the orbital diagram in a sticky header while the metrics scroll.
 
 Depth stays in the left column on Table and Details so a projected screen can change it without hunting the scroll.
 
-## Classroom projection
+## Projection
 
 An educator's tablet or a browser on a projector is this shell, zoomed by the OS or the browser, not a separate "presentation mode" in v1.
 
@@ -82,7 +82,7 @@ The web build is the same Flutter app.
 
 - Installable (manifest, icons, standalone display).
 - Glass defaults off. Appearance can turn it on.
-- Deep links: `/e/{z}`, `/e/{z}/spectra`, `/compare/{zA}/{zB}`.
+- Deep links: `/e/{z}`, `/e/{z}/spectra`, `/compare/{zA}/{zB}` (Neighbors tab on Details).
 - The preview catalog loads with the app. First paint of those five elements does not wait on a network.
 - The full pack downloads from Firebase after purchase, then search and the rooms use the cache offline.
 - Sign-in and restore purchases need the network.

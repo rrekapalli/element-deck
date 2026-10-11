@@ -4,6 +4,13 @@ const {initializeApp} = require("firebase-admin/app");
 
 initializeApp();
 
+const ALLOWED = new Set([
+  "pack-beginner",
+  "pack-intermediate",
+  "pack-advanced",
+  "element-deck",
+]);
+
 /**
  * Verify a Play / App Store receipt and write purchases/{id}.
  * The client cannot create purchase documents.
@@ -20,7 +27,7 @@ exports.verifyReceipt = onCall(async (request) => {
   const productId = request.data.productId;
   const purchaseId = request.data.purchaseId || `${uid}_${productId}`;
   const source = request.data.source || "unknown";
-  if (productId !== "element-deck" && productId !== "classroom") {
+  if (!ALLOWED.has(productId)) {
     throw new HttpsError("invalid-argument", "Unknown product.");
   }
   const db = getFirestore();

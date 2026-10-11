@@ -2,13 +2,13 @@
 
 ![Settings](asset:assets/help/images/settings.png)
 
-Callouts: **who is on this device** · **Account settings** · **App Config** · **Classroom** · **App Health**.
+Callouts: **who is on this device** · **Account settings** · **App Config** · **App Health**.
 
 ## Purpose
 
-Settings is the door behind the person icon (or **Settings** at the bottom of the rail on a wide screen). Account, appearance, classroom, and the content pack live here. The four science rooms stay in the bottom navigation.
+Settings is the door behind the person icon (or **Settings** at the bottom of the rail on a wide screen). Account, appearance, and the content packs live here. The science rooms stay in the bottom navigation.
 
-Switching the current element happens on **Table**, **Details**, **Compare**, or **Spectra**, not on this page.
+Switching the current element happens on **Table**, **Details**, or **Spectra**, not on this page.
 
 **?** on the Settings bar opens this article. **Help** in the list opens it as well.
 
@@ -25,7 +25,6 @@ Sign-in is Google. Element Deck does not collect a password.
 
 - **Account settings** — purchases, restore, the content pack, export, sign out, and erase.
 - **App Config** — learning mode, appearance, persona, units, sound, and motion.
-- **Classroom** — a class name and a join code, after Element Deck is on the account.
 - **App Health** — catalog, pack cache, Firebase, and purchases.
 - **Help** — this guide. **Previous** and **Next** at the bottom walk the other pages.
 - **About** — what the app is, and the educational disclaimer.
