@@ -22,7 +22,7 @@ class DetailsRoom extends StatefulWidget {
 
 class _DetailsRoomState extends State<DetailsRoom>
     with SingleTickerProviderStateMixin {
-  static const _labels = ['Details', 'Data', 'History', 'Trivia'];
+  static const _labels = ['Details', 'Data', 'History', 'Uses'];
 
   late final TabController _tabs;
   final _scroll = ScrollController();
@@ -87,7 +87,7 @@ class _DetailsRoomState extends State<DetailsRoom>
             0 => _details(context, e, settings),
             1 => _data(context, e, settings),
             2 => _history(context, e),
-            _ => _trivia(context, e),
+            _ => _uses(context, e),
           },
         ],
       ),
@@ -99,28 +99,25 @@ class _DetailsRoomState extends State<DetailsRoom>
     ElementRecord e,
     SettingsController settings,
   ) {
+    final reading = _reading(e.summaryFor(settings.depth));
+    final prose = Theme.of(context).textTheme.bodyLarge?.copyWith(height: 1.45);
     return [
-      Text(e.summary.intermediate),
+      Text(reading.lede, style: prose),
       const SizedBox(height: 12),
       _ShellDiagram(
         element: e,
         reducedMotion: settings.reducedMotion,
         energyUnit: settings.energy,
+        depth: settings.depth,
       ),
-      if (e.applications.isNotEmpty) ...[
+      for (final paragraph in reading.body) ...[
         const SizedBox(height: 12),
-        Text('Uses', style: Theme.of(context).textTheme.titleMedium),
-        for (final a in e.applications)
-          ListTile(
-            contentPadding: EdgeInsets.zero,
-            title: Text(a.title),
-            subtitle: Text(a.body),
-          ),
+        Text(paragraph, style: prose),
       ],
       if (e.reaction != null) ...[
         const SizedBox(height: 8),
         FilledButton(
-          onPressed: () => _showReaction(context, e),
+          onPressed: () => _showReaction(context, e, settings.depth),
           child: const Text('Simulate Reaction'),
         ),
       ],
@@ -144,6 +141,39 @@ class _DetailsRoomState extends State<DetailsRoom>
       if (origin.isNotEmpty) ...[
         const SizedBox(height: 12),
         _NarrativeCard(title: 'Formed in the Universe', body: origin),
+      ],
+      const SizedBox(height: 20),
+      Text('Trivia', style: Theme.of(context).textTheme.titleMedium),
+      const SizedBox(height: 4),
+      Text(
+        'Short stories from the history of this element.',
+        style: Theme.of(context).textTheme.bodySmall?.copyWith(
+          color: Theme.of(context).colorScheme.onSurface
+              .withValues(alpha: 0.65),
+          height: 1.35,
+        ),
+      ),
+      const SizedBox(height: 10),
+      ..._trivia(context, e),
+    ];
+  }
+
+  List<Widget> _uses(BuildContext context, ElementRecord e) {
+    if (e.applications.isEmpty) {
+      return const [Text('Uses for this element are not in the pack yet.')];
+    }
+    final muted = Theme.of(context).colorScheme.onSurface
+        .withValues(alpha: 0.65);
+    return [
+      Text(
+        'Ways people use ${e.name}.',
+        style: Theme.of(context).textTheme.bodySmall
+            ?.copyWith(color: muted, height: 1.35),
+      ),
+      const SizedBox(height: 12),
+      for (final use in e.applications) ...[
+        _UseCard(use: use),
+        const SizedBox(height: 12),
       ],
     ];
   }
@@ -307,7 +337,7 @@ class _DetailsRoomState extends State<DetailsRoom>
     ];
   }
 
-  void _showReaction(BuildContext context, ElementRecord e) {
+  void _showReaction(BuildContext context, ElementRecord e, String depth) {
     final r = e.reaction!;
     showModalBottomSheet<void>(
       context: context,
@@ -329,13 +359,30 @@ class _DetailsRoomState extends State<DetailsRoom>
               ),
               Text(r.conditions),
               const SizedBox(height: 8),
-              Text(r.blurbs.intermediate),
+              Text(r.blurbs.at(depth)),
             ],
           ),
         );
       },
     );
   }
+}
+
+class _Reading {
+  const _Reading(this.lede, this.body);
+
+  final String lede;
+  final List<String> body;
+}
+
+_Reading _reading(String text) {
+  final parts = text
+      .split(RegExp(r'\n\s*\n'))
+      .map((part) => part.trim())
+      .where((part) => part.isNotEmpty)
+      .toList();
+  if (parts.isEmpty) return const _Reading('', []);
+  return _Reading(parts.first, parts.skip(1).toList());
 }
 
 String _percent(double? abundance) {
@@ -350,6 +397,28 @@ String _ox(int value) {
   if (value > 0) return '+$value';
   if (value < 0) return '−${value.abs()}';
   return '0';
+}
+
+String _shellPlain(List<int> counts) {
+  const names = [
+    'first',
+    'second',
+    'third',
+    'fourth',
+    'fifth',
+    'sixth',
+    'seventh',
+  ];
+  String shell(int index) => index < names.length ? names[index] : 'next';
+  if (counts.length == 1) {
+    final n = counts.first;
+    final word = n == 1 ? 'electron' : 'electrons';
+    return '$n $word in the first shell';
+  }
+  return [
+    for (var i = 0; i < counts.length; i++)
+      '${counts[i]} in the ${shell(i)} shell',
+  ].join(', ');
 }
 
 String _shells(List<int> counts) {
@@ -420,17 +489,23 @@ class _ShellDiagram extends StatelessWidget {
     required this.element,
     required this.reducedMotion,
     required this.energyUnit,
+    required this.depth,
   });
 
   final ElementRecord element;
   final bool reducedMotion;
   final String energyUnit;
+  final String depth;
 
   @override
   Widget build(BuildContext context) {
+    final beginner = depth == 'beginner';
     final full = ElectronCloud.expandedConfiguration(
       element.electronConfigFull,
     );
+    final value = beginner
+        ? _shellPlain(element.shellCounts)
+        : (depth == 'advanced' ? full : element.electronConfig);
     return Card(
       child: Padding(
         padding: const EdgeInsets.fromLTRB(12, 16, 12, 16),
@@ -444,20 +519,73 @@ class _ShellDiagram extends StatelessWidget {
               accent: ElementSpectrum.of(element.categoryId),
               reducedMotion: reducedMotion,
               energyUnit: energyUnit,
+              depth: depth,
             ),
             const SizedBox(height: 16),
             Text(
-              'Configuration',
+              beginner ? 'Electrons' : 'Configuration',
               style: Theme.of(context).textTheme.titleSmall
                   ?.copyWith(fontWeight: FontWeight.w700),
             ),
             const SizedBox(height: 4),
             Text(
-              full,
-              style: Mono.of(context, size: 14, weight: FontWeight.w600),
+              value,
+              style: beginner
+                  ? Theme.of(context).textTheme.bodyMedium
+                  : Mono.of(context, size: 14, weight: FontWeight.w600),
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class _UseCard extends StatelessWidget {
+  const _UseCard({required this.use});
+
+  final ApplicationNote use;
+
+  @override
+  Widget build(BuildContext context) {
+    final muted = Theme.of(context).colorScheme.onSurface
+        .withValues(alpha: 0.65);
+    final image = use.image;
+    return Card(
+      margin: EdgeInsets.zero,
+      clipBehavior: Clip.antiAlias,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          if (image != null && image.isNotEmpty)
+            Image.asset(
+              image,
+              height: 180,
+              width: double.infinity,
+              fit: BoxFit.cover,
+              errorBuilder: (context, error, stackTrace) =>
+                  const SizedBox.shrink(),
+            ),
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(use.title, style: Theme.of(context).textTheme.titleMedium),
+                const SizedBox(height: 6),
+                Text(use.body, style: const TextStyle(height: 1.4)),
+                if (use.credit != null && use.credit!.trim().isNotEmpty) ...[
+                  const SizedBox(height: 8),
+                  Text(
+                    use.credit!,
+                    style: Theme.of(context).textTheme.labelSmall
+                        ?.copyWith(color: muted),
+                  ),
+                ],
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

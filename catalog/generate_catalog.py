@@ -442,7 +442,7 @@ def parse_all() -> list[dict]:
             "oxidationStates": oxs,
             "primaryOxidation": primary,
             "lattice": LATTICE.get(z),
-            "sourceId": "compiled-v1.1",
+            "sourceId": "compiled-v1.2",
         }
         el["summary"] = summaries(el)
         el["curriculum"] = curriculum(el)
@@ -471,8 +471,8 @@ def main() -> None:
     assert len(elements) == 118, len(elements)
     pack = {
         "id": "core",
-        "version": "1.1.0",
-        "sciencePins": ["compiled-v1.1", "NIST ASD"],
+        "version": "1.2.0",
+        "sciencePins": ["compiled-v1.2", "NIST ASD"],
         "trendNotes": TRENDS,
         "elements": elements,
     }

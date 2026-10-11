@@ -2,7 +2,7 @@
 
 ![Details](asset:assets/help/images/details.png)
 
-Callouts: **identity header** · **bookmark** · **Details, Data, History, Trivia**.
+Callouts: **identity header** · **bookmark** · **Details, Data, History, Uses**.
 
 ## Purpose
 
@@ -24,12 +24,16 @@ An element that is not in the on-device catalog shows its name and the note **In
 
 ## Details tab
 
-The first tab is a reading page for this element:
+The first tab is a reading page for this element. The wording follows **Learning mode** in App Config:
 
-- A short summary.
-- A shell diagram of the electrons. **Reduced motion** in App Config turns off extra motion in that diagram.
-- **Uses**, when the pack has them. Each row is one use, with a short explanation.
-- **Simulate Reaction**, when a known reaction is curated. It opens an illustration: reactants, products, conditions, and a teaching note. It is an illustration of a published reaction, not a lab procedure to run.
+- **Beginner** is an introduction, the kind of explanation a class meets when an element is new.
+- **Intermediate** adds the period, the configuration, and the oxidation states.
+- **Advanced** is written for later secondary school: configuration, oxidation, and why the numbers look that way.
+
+Only the first two sentences sit above the electron picture. The rest of the explanation is below it.
+
+- A shell diagram of the electrons. **Reduced motion** in App Config turns off extra motion in that diagram. Beginner hides the energy numbers on that diagram.
+- **Simulate Reaction**, when a known reaction is curated. It opens an illustration: reactants, products, conditions, and a teaching note at the current learning mode. It is an illustration of a published reaction, not a lab procedure to run.
 
 ## Data tab
 
@@ -45,16 +49,20 @@ Missing values say **Not reported**. They are not filled in with a guess.
 
 **History** is a narrative for this element, plus a discovery card when the pack has a year, the people, and a short genesis note. If the pack has no history yet, the page says so.
 
-## Trivia tab
+**Trivia** is at the bottom of the same tab. Each card is a short story. Tap a card to read it.
 
-**Trivia** lists short stories. Tap a card to read the full story. If this element has no trivia in the pack, the page says so.
+## Uses tab
+
+**Uses** lists what people do with this element. A card may include a photograph when a public-domain or CC0 picture is part of the pack. The credit line under the picture names the source. A use with no picture is text only.
 
 ## Try this
 
-1. Open carbon from Table, then switch **Details**, **Data**, **History**, and **Trivia**.
-2. On **Data**, tap **Electronegativity** and read the property article. Back returns to the dossier.
-3. Bookmark the element and confirm the icon fills.
-4. If **Simulate Reaction** is shown, open it, read the equation, and dismiss the sheet.
+1. Open carbon from Table, then switch **Details**, **Data**, **History**, and **Uses**.
+2. On **Details**, change **Learning mode** and read the sentences above the picture again.
+3. On **Data**, tap **Electronegativity** and read the property article. Back returns to the dossier.
+4. On **History**, scroll to **Trivia** and open a story.
+5. Bookmark the element and confirm the icon fills.
+6. If **Simulate Reaction** is shown, open it, read the equation, and dismiss the sheet.
 
 ---
 

@@ -293,15 +293,28 @@ class Discovery {
 }
 
 class ApplicationNote {
-  ApplicationNote({required this.title, required this.body});
+  ApplicationNote({
+    required this.title,
+    required this.body,
+    this.image,
+    this.credit,
+  });
 
   final String title;
   final String body;
+
+  /// Bundled asset, such as `assets/uses/sun.jpg`. Absent when no photo is shipped.
+  final String? image;
+
+  /// Short rights line for [image], for example a public-domain credit.
+  final String? credit;
 
   factory ApplicationNote.fromJson(Map<String, dynamic> json) {
     return ApplicationNote(
       title: json['title'] as String,
       body: json['body'] as String,
+      image: json['image'] as String?,
+      credit: json['credit'] as String?,
     );
   }
 }

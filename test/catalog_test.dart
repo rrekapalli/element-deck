@@ -88,9 +88,17 @@ void main() {
         greaterThan(200),
         reason: 'cosmic origin Z=${e.z}',
       );
-      expect(e.trivia.length, greaterThanOrEqualTo(5), reason: 'trivia Z=${e.z}');
+      expect(
+        e.trivia.length,
+        greaterThanOrEqualTo(5),
+        reason: 'trivia Z=${e.z}',
+      );
       for (final story in e.trivia) {
-        expect(story.title.trim().length, greaterThan(8), reason: 'trivia title Z=${e.z}');
+        expect(
+          story.title.trim().length,
+          greaterThan(8),
+          reason: 'trivia title Z=${e.z}',
+        );
         expect(
           story.summary.trim().length,
           greaterThan(40),
@@ -103,6 +111,33 @@ void main() {
         );
       }
       expect(e.applications, isNotEmpty, reason: 'apps Z=${e.z}');
+      expect(
+        e.applications.length,
+        greaterThanOrEqualTo(3),
+        reason: 'uses Z=${e.z}',
+      );
+      for (final use in e.applications) {
+        expect(
+          use.body.trim().length,
+          greaterThan(80),
+          reason: 'use Z=${e.z} ${use.title}',
+        );
+        final image = use.image;
+        if (image != null) {
+          expect(image, startsWith('assets/uses/'), reason: use.title);
+          expect(File(image).existsSync(), isTrue, reason: image);
+        }
+      }
+      expect(
+        e.summary.beginner,
+        isNot(contains('configuration')),
+        reason: 'Z=${e.z}',
+      );
+      expect(
+        e.summary.beginner,
+        isNot(contains('oxidation')),
+        reason: 'Z=${e.z}',
+      );
       expect(e.discovery, isNotNull, reason: 'discovery Z=${e.z}');
     }
   });

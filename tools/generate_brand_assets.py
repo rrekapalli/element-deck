@@ -1,30 +1,29 @@
 #!/usr/bin/env python3
 """Raster Element Deck mark, PWA icons, and iOS Add-to-Home-Screen splashes.
 
-The in-app mark is drawn in lib/theme/app_brand.dart. Keep the electron tile
-in step with that painter.
+The in-app mark is drawn in lib/theme/app_brand.dart. Keep the glass electron
+tile in step with that painter: transparent canvas, frosted plate, capital E,
+a 1px dotted orbit, and one electron.
 """
 
 from __future__ import annotations
 
 import json
+import math
+import random
 from pathlib import Path
 
-import math
-
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 ROOT = Path(__file__).resolve().parents[1]
 CANVAS = (8, 12, 20)
-TILE = (15, 23, 42)
-ACTION = (56, 189, 248)
-GOLD = (228, 184, 74)
+ACTION = (56, 189, 248, 255)
+GOLD = (228, 184, 74, 255)
+INK = (11, 27, 51, 255)
 MUTED = (148, 163, 184)
 TEXT = (248, 250, 252)
-VERSION = "1.1"
 
 SANS = ROOT / "assets" / "fonts" / "PlusJakartaSans.ttf"
-MONO = ROOT / "assets" / "fonts" / "JetBrainsMono.ttf"
 
 # (pixel width, pixel height, media query without orientation)
 DEVICES = [
@@ -55,69 +54,142 @@ def font(path: Path, size: int) -> ImageFont.FreeTypeFont | ImageFont.ImageFont:
     return ImageFont.load_default()
 
 
-def mark(size: int, inset_ratio: float = 0.16) -> Image.Image:
-    image = Image.new("RGB", (size, size), CANVAS)
-    draw = ImageDraw.Draw(image)
-    inset = int(size * inset_ratio)
+def _plate(size: int, inset_ratio: float) -> tuple[list[int], int, int]:
+    inset = max(0, int(round(size * inset_ratio)))
     box = [inset, inset, size - inset - 1, size - inset - 1]
     cell = box[2] - box[0]
-    radius = max(4, int(cell * 0.18))
-    width = max(2, size // 40)
-    draw.rounded_rectangle(box, radius=radius, fill=TILE, outline=ACTION, width=width)
+    radius = max(1, int(cell * 0.22))
+    return box, cell, radius
 
-    z_font = font(MONO, max(6, int(cell * 0.14)))
-    draw.text(
-        (box[0] + int(cell * 0.08), box[1] + int(cell * 0.07)),
-        VERSION,
-        font=z_font,
-        fill=MUTED,
+
+def _orbit_dots(
+    cx: float,
+    cy: float,
+    rx: float,
+    ry: float,
+    tilt: float,
+    gap: float,
+) -> list[tuple[float, float]]:
+    samples = max(240, int((rx + ry) * 8))
+    points: list[tuple[float, float]] = []
+    traveled = gap
+    previous: tuple[float, float] | None = None
+    for i in range(samples + 1):
+        angle = i * math.tau / samples
+        x = rx * math.cos(angle)
+        y = ry * math.sin(angle)
+        rotated = (
+            cx + x * math.cos(tilt) - y * math.sin(tilt),
+            cy + x * math.sin(tilt) + y * math.cos(tilt),
+        )
+        if previous is not None:
+            traveled += math.hypot(rotated[0] - previous[0], rotated[1] - previous[1])
+            if traveled >= gap:
+                points.append(rotated)
+                traveled = 0.0
+        previous = rotated
+    return points
+
+
+def _electron(cx: float, cy: float, rx: float, ry: float, tilt: float) -> tuple[float, float]:
+    # Upper-right of the ellipse, on the orbit, clear of the top highlight.
+    angle = -0.55
+    x = rx * math.cos(angle)
+    y = ry * math.sin(angle)
+    return (
+        cx + x * math.cos(tilt) - y * math.sin(tilt),
+        cy + x * math.sin(tilt) + y * math.cos(tilt),
     )
 
-    e_font = font(SANS, int(cell * 0.5))
-    e_box = draw.textbbox((0, 0), "e", font=e_font)
-    e_w = e_box[2] - e_box[0]
-    e_h = e_box[3] - e_box[1]
-    draw.text(
-        (
-            (box[0] + box[2] - e_w) / 2 - e_box[0],
-            (box[1] + box[3] - e_h) / 2 - e_box[1] + cell * 0.04,
-        ),
-        "e",
-        font=e_font,
-        fill=ACTION,
+
+def mark(size: int, inset_ratio: float = 0.08) -> Image.Image:
+    """Transparent frosted-glass tile. The orbit is a 1px dotted line."""
+    image = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+    box, cell, radius = _plate(size, inset_ratio)
+    mask = Image.new("L", (size, size), 0)
+    ImageDraw.Draw(mask).rounded_rectangle(box, radius=radius, fill=255)
+
+    column = Image.new("RGBA", (1, size))
+    column_px = column.load()
+    assert column_px is not None
+    for y in range(size):
+        t = y / max(1, size - 1)
+        column_px[0, y] = (
+            int(248 * (1 - t) + 210 * t),
+            int(252 * (1 - t) + 228 * t),
+            int(255 * (1 - t) + 242 * t),
+            int(158 * (1 - t) + 86 * t),
+        )
+    plate = Image.composite(column.resize((size, size)), image, mask)
+
+    sheen = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+    hw = cell * 0.78
+    hh = cell * 0.34
+    hx = (box[0] + box[2]) / 2 - hw / 2
+    hy = box[1] - hh * 0.35
+    ImageDraw.Draw(sheen).ellipse([hx, hy, hx + hw, hy + hh], fill=(255, 255, 255, 48))
+    sheen = sheen.filter(ImageFilter.GaussianBlur(radius=max(1, size // 64)))
+    plate = Image.alpha_composite(
+        plate,
+        Image.composite(sheen, Image.new("RGBA", (size, size), (0, 0, 0, 0)), mask),
     )
+
+    if cell >= 24:
+        rng = random.Random(7)
+        grain = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+        grain_px = grain.load()
+        assert grain_px is not None
+        for _ in range(max(1, (cell * cell) // 70)):
+            x = rng.randint(box[0], box[2])
+            y = rng.randint(box[1], box[3])
+            grain_px[x, y] = (255, 255, 255, rng.randint(8, 22))
+        plate = Image.alpha_composite(
+            plate,
+            Image.composite(grain, Image.new("RGBA", (size, size), (0, 0, 0, 0)), mask),
+        )
+
+    draw = ImageDraw.Draw(plate)
+    draw.rounded_rectangle(box, radius=radius, outline=(255, 255, 255, 210), width=1)
 
     cx = (box[0] + box[2]) / 2
-    cy = (box[1] + box[3]) / 2 + cell * 0.04
-    rx = cell * 0.36
-    ry = cell * 0.24
-    tilt = -0.32
-    orbit_w = max(2, size // 55)
-    points: list[tuple[float, float]] = []
-    for i in range(72):
-        a = i * math.tau / 72
-        x = rx * math.cos(a)
-        y = ry * math.sin(a)
-        xr = x * math.cos(tilt) - y * math.sin(tilt)
-        yr = x * math.sin(tilt) + y * math.cos(tilt)
-        points.append((cx + xr, cy + yr))
-    draw.line(points + [points[0]], fill=GOLD, width=orbit_w)
+    cy = (box[1] + box[3]) / 2
+    rx = cell * 0.34
+    ry = cell * 0.21
+    tilt = -0.42
+    electron = _electron(cx, cy, rx, ry, tilt)
+    electron_r = max(1.6, cell * 0.026)
+    gap = 2.0 if cell < 40 else 3.0
+    pixels = plate.load()
+    assert pixels is not None
+    for x, y in _orbit_dots(cx, cy, rx, ry, tilt, gap):
+        if math.hypot(x - electron[0], y - electron[1]) < electron_r + 1.5:
+            continue
+        ix, iy = int(round(x)), int(round(y))
+        if 0 <= ix < size and 0 <= iy < size:
+            pixels[ix, iy] = ACTION
 
-    t = -0.85
-    ex = rx * math.cos(t)
-    ey = ry * math.sin(t)
-    star = (
-        cx + ex * math.cos(tilt) - ey * math.sin(tilt),
-        cy + ex * math.sin(tilt) + ey * math.cos(tilt),
+    symbol = "E"
+    symbol_font = font(SANS, int(cell * 0.50))
+    bounds = draw.textbbox((0, 0), symbol, font=symbol_font)
+    draw.text(
+        (
+            (box[0] + box[2] - (bounds[2] - bounds[0])) / 2 - bounds[0],
+            (box[1] + box[3] - (bounds[3] - bounds[1])) / 2 - bounds[1],
+        ),
+        symbol,
+        font=symbol_font,
+        fill=INK,
     )
-    star_r = max(2.0, cell * 0.055)
-    star_pts: list[tuple[float, float]] = []
-    for i in range(8):
-        r = star_r if i % 2 == 0 else star_r * 0.38
-        a = -math.pi / 2 + i * math.pi / 4
-        star_pts.append((star[0] + r * math.cos(a), star[1] + r * math.sin(a)))
-    draw.polygon(star_pts, fill=GOLD)
-    return image
+    draw.ellipse(
+        [
+            electron[0] - electron_r,
+            electron[1] - electron_r,
+            electron[0] + electron_r,
+            electron[1] + electron_r,
+        ],
+        fill=GOLD,
+    )
+    return plate
 
 
 def splash(width: int, height: int) -> Image.Image:
@@ -126,7 +198,7 @@ def splash(width: int, height: int) -> Image.Image:
     tile = mark(side)
     x = (width - side) // 2
     y = (height - side) // 2 - int(height * 0.04)
-    image.paste(tile, (x, y))
+    image.paste(tile, (x, y), tile)
     draw = ImageDraw.Draw(image)
     name_font = font(SANS, max(18, int(min(width, height) * 0.028)))
     eye_font = font(SANS, max(12, int(min(width, height) * 0.014)))
@@ -170,37 +242,40 @@ def _fmt(value: float) -> str:
 
 def splash_mark_svg(size: float = 104) -> str:
     """Inline mark for the HTML splash. Same layout as mark() and AppMark."""
-    inset = size * 0.16
+    inset = size * 0.08
     cell = size - inset * 2
-    radius = cell * 0.18
-    stroke = min(8.0, max(1.5, size * 0.025))
-    version_size = cell * 0.14
-    version_x = inset + cell * 0.08
-    version_y = inset + cell * 0.07
-    center = inset + cell / 2
-    symbol_y = center + cell * 0.05
-    orbit_y = center + cell * 0.04
-    rx = cell * 0.36
-    ry = cell * 0.24
-    orbit_stroke = min(5.0, max(1.2, size * 0.018))
-    tilt = math.degrees(-0.32)
-    t = -0.85
-    ex = rx * math.cos(t)
-    ey = ry * math.sin(t)
-    star_r = cell * 0.055
-    star: list[str] = []
-    for i in range(8):
-        r = star_r if i % 2 == 0 else star_r * 0.38
-        a = -math.pi / 2 + i * math.pi / 4
-        star.append(f"{_fmt(ex + r * math.cos(a))},{_fmt(ey + r * math.sin(a))}")
-    points = " ".join(star)
+    radius = cell * 0.22
+    center = size / 2
+    rx = cell * 0.34
+    ry = cell * 0.21
+    tilt = math.degrees(-0.42)
+    # Local ellipse space; the group rotate applies the orbit tilt once.
+    ex = rx * math.cos(-0.55)
+    ey = ry * math.sin(-0.55)
+    electron_r = max(1.6, cell * 0.026)
+    hw = cell * 0.78
+    hh = cell * 0.34
     return f"""    <svg width="{_fmt(size)}" height="{_fmt(size)}" viewBox="0 0 {_fmt(size)} {_fmt(size)}" aria-hidden="true">
-      <rect x="{_fmt(inset)}" y="{_fmt(inset)}" width="{_fmt(cell)}" height="{_fmt(cell)}" rx="{_fmt(radius)}" fill="#0F172A" stroke="#38BDF8" stroke-width="{_fmt(stroke)}"/>
-      <text x="{_fmt(version_x)}" y="{_fmt(version_y)}" fill="#94A3B8" font-size="{_fmt(version_size)}" font-weight="600" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" dominant-baseline="hanging">{VERSION}</text>
-      <text x="{_fmt(center)}" y="{_fmt(symbol_y)}" text-anchor="middle" dominant-baseline="central" fill="#38BDF8" font-size="{_fmt(cell * 0.5)}" font-weight="800" font-style="italic" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif">e</text>
-      <g transform="translate({_fmt(center)} {_fmt(orbit_y)}) rotate({_fmt(tilt)})">
-        <ellipse cx="0" cy="0" rx="{_fmt(rx)}" ry="{_fmt(ry)}" fill="none" stroke="#E4B84A" stroke-width="{_fmt(orbit_stroke)}"/>
-        <polygon fill="#E4B84A" points="{points}"/>
+      <defs>
+        <clipPath id="deck-glass">
+          <rect x="{_fmt(inset)}" y="{_fmt(inset)}" width="{_fmt(cell)}" height="{_fmt(cell)}" rx="{_fmt(radius)}"/>
+        </clipPath>
+        <linearGradient id="deck-frost" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#F8FCFF" stop-opacity="0.62"/>
+          <stop offset="1" stop-color="#D2E4F2" stop-opacity="0.34"/>
+        </linearGradient>
+      </defs>
+      <g clip-path="url(#deck-glass)">
+        <rect x="{_fmt(inset)}" y="{_fmt(inset)}" width="{_fmt(cell)}" height="{_fmt(cell)}" fill="url(#deck-frost)"/>
+        <ellipse cx="{_fmt(center)}" cy="{_fmt(inset + hh * 0.15)}" rx="{_fmt(hw / 2)}" ry="{_fmt(hh / 2)}" fill="#FFFFFF" fill-opacity="0.19"/>
+      </g>
+      <rect x="{_fmt(inset)}" y="{_fmt(inset)}" width="{_fmt(cell)}" height="{_fmt(cell)}" rx="{_fmt(radius)}" fill="none" stroke="#FFFFFF" stroke-opacity="0.82" stroke-width="1"/>
+      <g transform="translate({_fmt(center)} {_fmt(center)}) rotate({_fmt(tilt)})">
+        <ellipse cx="0" cy="0" rx="{_fmt(rx)}" ry="{_fmt(ry)}" fill="none" stroke="#38BDF8" stroke-width="1" stroke-dasharray="1 2"/>
+      </g>
+      <text x="{_fmt(center)}" y="{_fmt(center)}" text-anchor="middle" dominant-baseline="central" fill="#0B1B33" font-size="{_fmt(cell * 0.5)}" font-weight="400" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif">E</text>
+      <g transform="translate({_fmt(center)} {_fmt(center)}) rotate({_fmt(tilt)})">
+        <circle cx="{_fmt(ex)}" cy="{_fmt(ey)}" r="{_fmt(electron_r)}" fill="#E4B84A"/>
       </g>
     </svg>"""
 
@@ -233,14 +308,28 @@ def patch_index(links: str) -> None:
     path.write_text(text, encoding="utf-8")
 
 
+def write_ico(path: Path) -> None:
+    """PNG-compressed ICO so the glass alpha survives on Windows."""
+    sizes = (16, 24, 32, 48, 64, 128, 256)
+    frames = [mark(size) for size in sizes]
+    path.parent.mkdir(parents=True, exist_ok=True)
+    frames[-1].save(
+        path,
+        format="ICO",
+        sizes=[(size, size) for size in sizes],
+        append_images=frames[:-1],
+    )
+
+
 def main() -> None:
     web_icons = ROOT / "web" / "icons"
     save(mark(192), web_icons / "Icon-192.png")
     save(mark(512), web_icons / "Icon-512.png")
-    save(mark(192, 0.22), web_icons / "Icon-maskable-192.png")
-    save(mark(512, 0.22), web_icons / "Icon-maskable-512.png")
-    save(mark(180, 0.14), web_icons / "apple-touch-icon.png")
-    save(mark(64, 0.1), ROOT / "web" / "favicon.png")
+    # Maskable icons are cropped by the OS, so the plate fills the canvas.
+    save(mark(192, 0.04), web_icons / "Icon-maskable-192.png")
+    save(mark(512, 0.04), web_icons / "Icon-maskable-512.png")
+    save(mark(180), web_icons / "apple-touch-icon.png")
+    save(mark(64), ROOT / "web" / "favicon.png")
 
     splash_dir = ROOT / "web" / "splash"
     for width, height, _media in DEVICES:
@@ -254,7 +343,7 @@ def main() -> None:
         ("mipmap-xxhdpi", 144),
         ("mipmap-xxxhdpi", 192),
     ):
-        save(mark(px, 0.12), ROOT / "android" / "app" / "src" / "main" / "res" / folder / "ic_launcher.png")
+        save(mark(px), ROOT / "android" / "app" / "src" / "main" / "res" / folder / "ic_launcher.png")
 
     iconset = ROOT / "ios" / "Runner" / "Assets.xcassets" / "AppIcon.appiconset"
     spec = json.loads((iconset / "Contents.json").read_text(encoding="utf-8"))
@@ -266,7 +355,7 @@ def main() -> None:
         seen.add(name)
         logical = float(item["size"].split("x")[0])
         scale = int(item["scale"].replace("x", ""))
-        save(mark(int(round(logical * scale)), 0.12), iconset / name)
+        save(mark(int(round(logical * scale))), iconset / name)
 
     macset = ROOT / "macos" / "Runner" / "Assets.xcassets" / "AppIcon.appiconset"
     for name, px in (
@@ -278,7 +367,9 @@ def main() -> None:
         ("app_icon_512.png", 512),
         ("app_icon_1024.png", 1024),
     ):
-        save(mark(px, 0.12), macset / name)
+        save(mark(px), macset / name)
+
+    write_ico(ROOT / "windows" / "runner" / "resources" / "app_icon.ico")
 
     patch_index(startup_links())
     print("wrote brand icons and", len(DEVICES) * 2, "startup images")

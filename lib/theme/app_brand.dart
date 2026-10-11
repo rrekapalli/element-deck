@@ -1,4 +1,5 @@
 import 'dart:math' as math;
+import 'dart:ui' show ImageFilter, PointMode;
 
 import 'package:flutter/material.dart';
 
@@ -6,16 +7,16 @@ import 'package:flutter/material.dart';
 /// follow the in-app color preset.
 abstract final class AppBrand {
   static const canvas = Color(0xFF080C14);
-  static const tile = Color(0xFF0F172A);
   static const action = Color(0xFF38BDF8);
   static const gold = Color(0xFFE4B84A);
   static const muted = Color(0xFF94A3B8);
   static const text = Color(0xFFF8FAFC);
-  static const markVersion = '1.1';
+  static const ink = Color(0xFF0B1B33);
 }
 
-/// The Element Deck mark: an electron tile. Used on the splash, the shell, and
-/// About. Raster copies for the home screen are generated from the same layout.
+/// The Element Deck mark: a frosted glass plate, a capital E, a one-pixel
+/// dotted orbit, and a single electron. Raster home-screen copies are
+/// generated from the same layout.
 class AppMark extends StatelessWidget {
   const AppMark({super.key, this.size = 96});
 
@@ -23,9 +24,34 @@ class AppMark extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomPaint(
-      size: Size.square(size),
-      painter: const _AppMarkPainter(),
+    final inset = size * 0.08;
+    final plate = size - inset * 2;
+    final radius = plate * 0.22;
+    final blur = (size * 0.08).clamp(1.5, 16.0);
+    return SizedBox(
+      width: size,
+      height: size,
+      child: Stack(
+        children: [
+          Positioned(
+            left: inset,
+            top: inset,
+            width: plate,
+            height: plate,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(radius),
+              child: BackdropFilter(
+                filter: ImageFilter.blur(sigmaX: blur, sigmaY: blur),
+                child: const SizedBox.expand(),
+              ),
+            ),
+          ),
+          CustomPaint(
+            size: Size.square(size),
+            painter: const _AppMarkPainter(),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -36,96 +62,127 @@ class _AppMarkPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final side = size.shortestSide;
-    final inset = side * 0.16;
-    final rect = Rect.fromLTWH(
-      inset,
-      inset,
-      side - inset * 2,
-      side - inset * 2,
-    );
-    final radius = Radius.circular(rect.width * 0.18);
+    final inset = side * 0.08;
+    final rect = Rect.fromLTWH(inset, inset, side - inset * 2, side - inset * 2);
+    final radius = Radius.circular(rect.width * 0.22);
     final rrect = RRect.fromRectAndRadius(rect, radius);
 
-    canvas.drawRRect(rrect, Paint()..color = AppBrand.tile);
+    canvas.save();
+    canvas.clipRRect(rrect);
+    canvas.drawRect(
+      rect,
+      Paint()
+        ..shader = const LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [Color(0x9EF8FCFF), Color(0x56D2E4F2)],
+        ).createShader(rect),
+    );
+    final sheenHeight = rect.height * 0.34;
+    canvas.drawOval(
+      Rect.fromCenter(
+        center: Offset(rect.center.dx, rect.top + sheenHeight * 0.15),
+        width: rect.width * 0.78,
+        height: sheenHeight,
+      ),
+      Paint()
+        ..color = const Color(0x30FFFFFF)
+        ..maskFilter = MaskFilter.blur(BlurStyle.normal, (side / 64).clamp(0.8, 12)),
+    );
+    if (rect.width >= 24) {
+      final grain = Paint()..color = const Color(0x16FFFFFF);
+      final rng = math.Random(7);
+      final count = math.max(1, (rect.width * rect.height) ~/ 70);
+      for (var i = 0; i < count; i++) {
+        canvas.drawRect(
+          Rect.fromLTWH(
+            rect.left + rng.nextDouble() * rect.width,
+            rect.top + rng.nextDouble() * rect.height,
+            1,
+            1,
+          ),
+          grain,
+        );
+      }
+    }
+    canvas.restore();
+
     canvas.drawRRect(
       rrect,
       Paint()
-        ..color = AppBrand.action
+        ..color = const Color(0xD2FFFFFF)
         ..style = PaintingStyle.stroke
-        ..strokeWidth = (side * 0.025).clamp(1.5, 8),
+        ..strokeWidth = 1,
     );
 
-    final version = TextPainter(
-      text: TextSpan(
-        text: AppBrand.markVersion,
-        style: TextStyle(
-          color: AppBrand.muted,
-          fontSize: rect.width * 0.14,
-          fontFamily: 'JetBrains Mono',
-          fontWeight: FontWeight.w600,
-          height: 1,
-        ),
-      ),
-      textDirection: TextDirection.ltr,
-    )..layout();
-    version.paint(
-      canvas,
-      Offset(rect.left + rect.width * 0.08, rect.top + rect.height * 0.07),
+    const tilt = -0.42;
+    final rx = rect.width * 0.34;
+    final ry = rect.height * 0.21;
+    final electron = _rotate(Offset(rx * math.cos(-0.55), ry * math.sin(-0.55)), tilt);
+    final electronRadius = math.max(1.6, rect.width * 0.026);
+    final gap = rect.width < 40 ? 2.0 : 3.0;
+    final dots = <Offset>[];
+    final samples = math.max(240, ((rx + ry) * 8).round());
+    var traveled = gap;
+    Offset? previous;
+    for (var i = 0; i <= samples; i++) {
+      final angle = i * math.pi * 2 / samples;
+      final point = _rotate(Offset(rx * math.cos(angle), ry * math.sin(angle)), tilt);
+      if (previous != null) {
+        traveled += (point - previous).distance;
+        if (traveled >= gap) {
+          if ((point - electron).distance >= electronRadius + 1.5) {
+            dots.add(rect.center + point);
+          }
+          traveled = 0;
+        }
+      }
+      previous = point;
+    }
+    canvas.drawPoints(
+      PointMode.points,
+      dots,
+      Paint()
+        ..color = AppBrand.action
+        ..strokeWidth = 1
+        ..strokeCap = StrokeCap.round,
     );
 
     final symbol = TextPainter(
       text: TextSpan(
-        text: 'e',
+        text: 'E',
         style: TextStyle(
-          color: AppBrand.action,
+          color: AppBrand.ink,
           fontSize: rect.width * 0.5,
-          fontWeight: FontWeight.w800,
+          fontWeight: FontWeight.w400,
           fontFamily: 'Plus Jakarta Sans',
           height: 1,
-          fontStyle: FontStyle.italic,
         ),
       ),
       textDirection: TextDirection.ltr,
     )..layout();
-    final symbolOrigin = Offset(
-      rect.center.dx - symbol.width / 2,
-      rect.center.dy - symbol.height / 2 + rect.height * 0.05,
+    symbol.paint(
+      canvas,
+      Offset(
+        rect.center.dx - symbol.width / 2,
+        rect.center.dy - symbol.height / 2,
+      ),
     );
-    symbol.paint(canvas, symbolOrigin);
 
-    final orbitCenter = Offset(rect.center.dx, rect.center.dy + rect.height * 0.04);
-    final rx = rect.width * 0.36;
-    final ry = rect.height * 0.24;
-    canvas.save();
-    canvas.translate(orbitCenter.dx, orbitCenter.dy);
-    canvas.rotate(-0.32);
-    canvas.drawOval(
-      Rect.fromCenter(center: Offset.zero, width: rx * 2, height: ry * 2),
-      Paint()
-        ..color = AppBrand.gold
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = (side * 0.018).clamp(1.2, 5),
+    canvas.drawCircle(
+      rect.center + electron,
+      electronRadius,
+      Paint()..color = AppBrand.gold,
     );
-    const t = -0.85;
-    final electron = Offset(rx * math.cos(t), ry * math.sin(t));
-    _drawStar(canvas, electron, rect.width * 0.055, AppBrand.gold);
-    canvas.restore();
   }
 
-  void _drawStar(Canvas canvas, Offset center, double radius, Color color) {
-    final path = Path();
-    for (var i = 0; i < 8; i++) {
-      final r = i.isEven ? radius : radius * 0.38;
-      final a = -math.pi / 2 + i * math.pi / 4;
-      final point = Offset(center.dx + r * math.cos(a), center.dy + r * math.sin(a));
-      if (i == 0) {
-        path.moveTo(point.dx, point.dy);
-      } else {
-        path.lineTo(point.dx, point.dy);
-      }
-    }
-    path.close();
-    canvas.drawPath(path, Paint()..color = color);
+  Offset _rotate(Offset point, double tilt) {
+    final cosT = math.cos(tilt);
+    final sinT = math.sin(tilt);
+    return Offset(
+      point.dx * cosT - point.dy * sinT,
+      point.dx * sinT + point.dy * cosT,
+    );
   }
 
   @override

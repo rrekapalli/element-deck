@@ -402,32 +402,9 @@ def _group_text(el: dict) -> str:
 
 
 def summaries(el: dict) -> dict:
-    z = el["z"]
-    name, sym = el["name"], el["symbol"]
-    hook, mid, adv = HOOKS[z]
-    state = el["standardState"]
-    fam = el["categoryLabel"].lower()
-    period = el["period"]
-    return {
-        "beginner": (
-            f"{name} ({sym}) is element {z}. At everyday conditions it is a {state} {fam} "
-            f"in period {period}. Beginners should remember the symbol, where it sits on the table, "
-            f"and that people meet it as: {hook}."
-        ),
-        "intermediate": (
-            f"{name} is a {fam} in period {period}, {_group_text(el).lower()} "
-            f"Its ground-state configuration is {el['electronConfig']}, with shell counts "
-            f"{', '.join(str(s) for s in el['shellCounts'])}. {_ox_text(el)} "
-            f"Classroom focus: {mid}."
-        ),
-        "advanced": (
-            f"Advanced reading for {name} (Z={z}, {el['atomicWeight']} u, {el['weightKind']}): "
-            f"{el['electronConfigFull']}. {adv} "
-            f"Numbers in this dossier are compiled teaching values with unit and dataset pin, "
-            f"not a measurement this device just made. Neighbors differ because of shell filling"
-            f"{', relativity, and nuclear stability' if z >= 72 else ''}."
-        ),
-    }
+    from teaching import summaries as teaching_summaries
+
+    return teaching_summaries(el)
 
 
 def curriculum(el: dict) -> dict:
@@ -452,35 +429,7 @@ def curriculum(el: dict) -> dict:
     }
 
 
-def applications(z: int, name: str, hook: str) -> list[dict]:
-    use, _, _ = HOOKS[z]
-    return [
-        {"title": "Where you meet it", "body": use[0].upper() + use[1:] + "."},
-        {"title": "Classroom caution", "body": f"Element Deck describes published chemistry of {name}. It is not a protocol for handling the element."},
-    ]
-
-
-DEFAULT_APPS_EXTRA: dict[int, list[tuple[str, str]]] = {
-    1: [("Stars", "The proton–proton chain that lights the Sun."), ("Feedstock", "Ammonia and hydrogenation.")],
-    6: [("Life", "Backbone of organic molecules."), ("Materials", "Graphite, diamond, and carbon fiber.")],
-    7: [("Atmosphere", "Most of dry air is N₂."), ("Fertilizer", "Ammonia from Haber–Bosch.")],
-    8: [("Respiration", "Electron acceptor in aerobic life."), ("Steelmaking", "Oxidizer in the blast furnace.")],
-    10: [("Lighting", "Neon discharge tubes."), ("Cryogenics", "Inert refrigerant.")],
-    11: [("Salt", "NaCl in food and industry."), ("Soap", "Sodium salts of fatty acids.")],
-    13: [("Transport", "Airframes and foil."), ("Power", "High-voltage lines.")],
-    14: [("Electronics", "The elemental semiconductor of chips."), ("Glass", "Silica networks.")],
-    17: [("Water", "Disinfection."), ("Polymers", "Vinyl chloride for PVC.")],
-    22: [("Aerospace", "High strength-to-weight frames."), ("Pigment", "TiO₂ white."), ("Implants", "Bio-inert metal.")],
-    26: [("Infrastructure", "Steel."), ("Biology", "Heme iron.")],
-    29: [("Electrical", "Wiring."), ("Architecture", "Roofing and alloys.")],
-    47: [("Electronics", "Highest electrical conductivity."), ("Currency", "Coinage metal.")],
-    79: [("Electronics", "Corrosion-free contacts."), ("Monetary", "Bullion.")],
-    82: [("Storage", "Lead–acid batteries."), ("Shielding", "X-ray rooms.")],
-    92: [("Energy", "Fission fuel."), ("Dating", "U–Pb geochronology.")],
-}
-
-
 def apps_for(z: int, name: str) -> list[dict]:
-    base = applications(z, name, HOOKS[z][0])
-    extra = [{"title": t, "body": b} for t, b in DEFAULT_APPS_EXTRA.get(z, [])]
-    return extra + base if extra else base
+    from uses_catalog import apps_for as uses_for
+
+    return uses_for(z, name)

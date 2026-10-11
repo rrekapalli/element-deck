@@ -6,6 +6,19 @@ import 'package:flutter/scheduler.dart';
 
 import '../models/orbital_force.dart';
 
+String _diagramCaption(String depth) {
+  return switch (depth) {
+    'beginner' =>
+      'Each ring is a shell of electrons. The center is the nucleus. '
+          'Drag an electron and it is pulled back.',
+    'advanced' =>
+      'Each ring is a subshell. A line joins the two electrons in one orbital. '
+          'Pull is the Slater binding energy, and ring radius follows 1/sqrt(E).',
+    _ =>
+      'Each ring is a subshell. A line joins the two electrons in one orbital.',
+  };
+}
+
 /// Force-directed electron configuration.
 ///
 /// Orbit lines sit at the radius implied by each subshell's binding energy.
@@ -19,6 +32,7 @@ class ElectronForceGraph extends StatefulWidget {
     required this.accent,
     required this.reducedMotion,
     required this.energyUnit,
+    this.depth = 'advanced',
   });
 
   final int atomicNumber;
@@ -29,6 +43,9 @@ class ElectronForceGraph extends StatefulWidget {
 
   /// `eV` or `kJ/mol`, matching App settings.
   final String energyUnit;
+
+  /// `beginner`, `intermediate`, or `advanced`. Beginner hides subshell labels.
+  final String depth;
 
   @override
   State<ElectronForceGraph> createState() => _ElectronForceGraphState();
@@ -154,16 +171,17 @@ class _ElectronForceGraphState extends State<ElectronForceGraph>
                   : _stage(context, sim, Size(width, canvas)),
             ),
             if (sim != null) ...[
-              const SizedBox(height: 8),
-              _EnergyLegend(
-                sim: sim,
-                unit: widget.energyUnit,
-                color: theme.hintColor,
-              ),
+              if (widget.depth != 'beginner') ...[
+                const SizedBox(height: 8),
+                _EnergyLegend(
+                  sim: sim,
+                  unit: widget.energyUnit,
+                  color: theme.hintColor,
+                ),
+              ],
               const SizedBox(height: 6),
               Text(
-                'Each ring is a subshell. A line joins the two electrons in one orbital. '
-                'Pull is the Slater binding energy, and ring radius follows 1/sqrt(E).',
+                _diagramCaption(widget.depth),
                 textAlign: TextAlign.center,
                 style: theme.textTheme.bodySmall?.copyWith(
                   color: theme.hintColor,
@@ -212,7 +230,8 @@ class _ElectronForceGraphState extends State<ElectronForceGraph>
                     ),
                     haloColor: theme.colorScheme.surface,
                     drawLinks: true,
-                    labelRings: sim.rings.length <= 7,
+                    labelRings:
+                        widget.depth != 'beginner' && sim.rings.length <= 7,
                     generation: _generation,
                   ),
                 ),

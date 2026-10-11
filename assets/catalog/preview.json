@@ -1,8 +1,8 @@
 {
   "id": "preview",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "sciencePins": [
-    "compiled-v1.1",
+    "compiled-v1.2",
     "NIST ASD"
   ],
   "trendNotes": [
@@ -71,11 +71,11 @@
       ],
       "primaryOxidation": 1,
       "lattice": null,
-      "sourceId": "compiled-v1.1",
+      "sourceId": "compiled-v1.2",
       "summary": {
-        "beginner": "Hydrogen (H) is element 1. At everyday conditions it is a gas nonmetal in period 1. Beginners should remember the symbol, where it sits on the table, and that people meet it as: makes water and fuels stars.",
-        "intermediate": "Hydrogen is a nonmetal in period 1, it sits in group 1. Its ground-state configuration is 1s1, with shell counts 1. Typical oxidation states: +1. Classroom focus: H\u2013H single bond; proton is the nucleus.",
-        "advanced": "Advanced reading for Hydrogen (Z=1, 1.008 u, standard): 1s1. Balmer lines; isotopes protium, deuterium, tritium Numbers in this dossier are compiled teaching values with unit and dataset pin, not a measurement this device just made. Neighbors differ because of shell filling."
+        "beginner": "Hydrogen is the lightest element, and it is number 1 on the periodic table. You meet it in water, and it is the fuel that makes the Sun shine.\n\nIts symbol is H. At room temperature hydrogen is a gas, so a sample fills its container. It is a nonmetal. It does not look or act like iron or copper. On the periodic table it is in row 1, column 1. In class those are called period 1 and group 1.\n\nA hydrogen atom is the simplest atom there is: one proton in the center and one electron around it. When hydrogen joins oxygen it makes water, and stars shine by turning hydrogen into helium.\n\nThe picture shows the electrons around the nucleus. Each ring is a shell, a layer of electrons. A neutral hydrogen atom has 1 electron, the same number as its protons.",
+        "intermediate": "Hydrogen is a nonmetal gas in period 1 and group 1. Its atom is one proton and one electron, written 1s1.\n\nThe electron configuration is 1s1. Every electron is in the first shell: 1 electron. In compounds the oxidation state to learn is +1.\n\nIn water and in most acids the oxidation state is +1. A metal hydride is the exception, where hydrogen is the negative ion H-.\n\nThe rings in the picture are subshells, the smaller groups of electrons inside a shell. A line joins the two electrons that share one orbital.",
+        "advanced": "Hydrogen (Z = 1) has the ground-state configuration 1s1. The common nucleus is a single proton, so the Balmer series was the first spectrum a simple atomic model could explain.\n\nProtium and deuterium are stable, and tritium is radioactive.\n\nIn compounds the oxidation state to learn is +1. Neighbors differ because each added proton changes how tightly the electrons are held as the shells fill.\n\nThe picture estimates how tightly each subshell is held, using Slater's rules. Ring radius follows 1/sqrt(E), so a tightly held inner shell sits closer to the nucleus. These are compiled teaching values, not a measurement this device just made."
       },
       "curriculum": {
         "beginner": "Learn Hydrogen: say the name, write H, find Z=1 on the table, note the family (Nonmetal), and connect it to one real use \u2014 makes water and fuels stars.",
@@ -127,20 +127,22 @@
       ],
       "applications": [
         {
+          "title": "Water",
+          "body": "Hydrogen is one of the two elements in water. Two hydrogen atoms join one oxygen atom to make the liquid in rain, rivers, and every drink.",
+          "image": "assets/uses/water.jpg",
+          "credit": "CC0"
+        },
+        {
           "title": "Stars",
-          "body": "The proton\u2013proton chain that lights the Sun."
+          "body": "The Sun is mostly hydrogen. Stars shine because hydrogen nuclei fuse into helium and release energy.",
+          "image": "assets/uses/sun.jpg",
+          "credit": "NASA / SDO, public domain"
         },
         {
-          "title": "Feedstock",
-          "body": "Ammonia and hydrogenation."
-        },
-        {
-          "title": "Where you meet it",
-          "body": "Makes water and fuels stars."
-        },
-        {
-          "title": "Classroom caution",
-          "body": "Element Deck describes published chemistry of Hydrogen. It is not a protocol for handling the element."
+          "title": "Industry",
+          "body": "Factories combine hydrogen with nitrogen to make ammonia, the starting point for most fertilizer. Hydrogen is also added to oils, and it burns easily enough to be a fuel.",
+          "image": "assets/uses/ammonia.jpg",
+          "credit": "Public domain"
         }
       ],
       "spectralLines": [
@@ -262,11 +264,11 @@
       ],
       "primaryOxidation": 4,
       "lattice": "Hexagonal (graphite)",
-      "sourceId": "compiled-v1.1",
+      "sourceId": "compiled-v1.2",
       "summary": {
-        "beginner": "Carbon (C) is element 6. At everyday conditions it is a solid nonmetal in period 2. Beginners should remember the symbol, where it sits on the table, and that people meet it as: backbone of living molecules.",
-        "intermediate": "Carbon is a nonmetal in period 2, it sits in group 14. Its ground-state configuration is [He] 2s2 2p2, with shell counts 2, 4. Typical oxidation states: +4, +2, -4. Classroom focus: catenation; diamond vs graphite.",
-        "advanced": "Advanced reading for Carbon (Z=6, 12.011 u, standard): [He] 2s2 2p2. sp\u00b2 vs sp\u00b3; C\u2013C bond energy dwarfs Si\u2013Si Numbers in this dossier are compiled teaching values with unit and dataset pin, not a measurement this device just made. Neighbors differ because of shell filling."
+        "beginner": "Carbon is element 6, and living things are built from it. The same element is charcoal, the graphite in a pencil, and diamond.\n\nIts symbol is C. At room temperature carbon is a solid. It is a nonmetal. It does not look or act like iron or copper. On the periodic table it is in row 2, column 14. In class those are called period 2 and group 14.\n\nCarbon atoms join to each other in long chains and rings, which is why so many different molecules can be made from it. Diamond is hard because every atom is tied tightly to four neighbors. Graphite is soft because the atoms form sheets that slide.\n\nThe picture shows the electrons around the nucleus. Each ring is a shell, a layer of electrons. A neutral carbon atom has 6 electrons, the same number as its protons.",
+        "intermediate": "Carbon is a solid nonmetal in period 2 and group 14. Carbon's chemistry is catenation: atoms linking to one another in chains, rings, and networks.\n\nThe electron configuration is [He] 2s2 2p2. As shell counts, from the nucleus outward, that is 2, 4. Oxidation states in this dossier are +4, +2, --4. The one courses meet most often is +4.\n\nDiamond is a 3D network of single bonds. Graphite is sheets of atoms with delocalized electrons, which is why it conducts electricity along a sheet and marks a page.\n\nThe rings in the picture are subshells, the smaller groups of electrons inside a shell. A line joins the two electrons that share one orbital.",
+        "advanced": "Carbon (Z = 6) has the ground-state configuration [He] 2s2 2p2. The contrast is sp3 in diamond against sp2 in graphite, graphene, and most organic molecules.\n\nA C-C single bond is much stronger than the Si-Si bond below it, which is why carbon, not silicon, is the backbone of life.\n\nOxidation states in this dossier are +4, +2, --4. The one courses meet most often is +4. Neighbors differ because each added proton changes how tightly the electrons are held as the shells fill.\n\nThe picture estimates how tightly each subshell is held, using Slater's rules. Ring radius follows 1/sqrt(E), so a tightly held inner shell sits closer to the nucleus. These are compiled teaching values, not a measurement this device just made."
       },
       "curriculum": {
         "beginner": "Learn Carbon: say the name, write C, find Z=6 on the table, note the family (Nonmetal), and connect it to one real use \u2014 backbone of living molecules.",
@@ -318,20 +320,20 @@
       ],
       "applications": [
         {
-          "title": "Life",
-          "body": "Backbone of organic molecules."
+          "title": "Living things",
+          "body": "Proteins, fats, DNA, and sugars are built on chains and rings of carbon. No other element forms that variety of stable molecules."
         },
         {
-          "title": "Materials",
-          "body": "Graphite, diamond, and carbon fiber."
+          "title": "Diamond and graphite",
+          "body": "Diamond is a hard form of carbon used to cut and to sparkle. Graphite is the soft form in pencil lead and in some lubricants.",
+          "image": "assets/uses/diamond.jpg",
+          "credit": "Public domain"
         },
         {
-          "title": "Where you meet it",
-          "body": "Backbone of living molecules."
-        },
-        {
-          "title": "Classroom caution",
-          "body": "Element Deck describes published chemistry of Carbon. It is not a protocol for handling the element."
+          "title": "Fuel and steel",
+          "body": "Coal, charcoal, and the carbon in oil are fuels and, in a blast furnace, the ingredient that pulls oxygen away from iron ore.",
+          "image": "assets/uses/graphite.jpg",
+          "credit": "U.S. government, public domain"
         }
       ],
       "spectralLines": [
@@ -457,11 +459,11 @@
       "oxidationStates": [],
       "primaryOxidation": null,
       "lattice": null,
-      "sourceId": "compiled-v1.1",
+      "sourceId": "compiled-v1.2",
       "summary": {
-        "beginner": "Neon (Ne) is element 10. At everyday conditions it is a gas noble gas in period 2. Beginners should remember the symbol, where it sits on the table, and that people meet it as: orange-red discharge tubes.",
-        "intermediate": "Neon is a noble gas in period 2, it sits in group 18. Its ground-state configuration is [He] 2s2 2p6, with shell counts 2, 8. Oxidation states are not listed for this entry. Classroom focus: closed p\u2076 shell; no stable molecules.",
-        "advanced": "Advanced reading for Neon (Z=10, 20.18 u, standard): [He] 2s2 2p6. many visible emission lines; sonified as THz/10\u00b9\u00b2 Numbers in this dossier are compiled teaching values with unit and dataset pin, not a measurement this device just made. Neighbors differ because of shell filling."
+        "beginner": "Neon is element 10, a gas that does not form ordinary compounds. When electricity passes through it, it glows the orange-red of a classic neon sign.\n\nIts symbol is Ne. At room temperature neon is a gas, so a sample fills its container. It is a noble gas. Left alone, it almost never joins other elements to make compounds. On the periodic table it is in row 2, column 18. In class those are called period 2 and group 18.\n\nNeon's outer shell is full, eight electrons in the second shell, so it has no reason to react. The glow is the atom giving light back after the electric current bumps its electrons.\n\nThe picture shows the electrons around the nucleus. Each ring is a shell, a layer of electrons. A neutral neon atom has 10 electrons, the same number as its protons.",
+        "intermediate": "Neon is a noble gas in period 2 and group 18. A closed 2s2 2p6 shell is why neon has no stable molecules.\n\nThe electron configuration is [He] 2s2 2p6. As shell counts, from the nucleus outward, that is 2, 8. Oxidation states are not listed for this entry.\n\nThe familiar orange-red is a mix of many visible emission lines, not a single wavelength. Liquid neon is also used as a cold, inert refrigerant.\n\nThe rings in the picture are subshells, the smaller groups of electrons inside a shell. A line joins the two electrons that share one orbital.",
+        "advanced": "Neon (Z = 10) has the ground-state configuration [He] 2s2 2p6. The emission spectrum is dense in the red and orange, which is why a pure neon discharge does not look white.\n\nCompounds are a specialist topic. The closed shell is the classroom fact.\n\nOxidation states are not listed for this entry. Neighbors differ because each added proton changes how tightly the electrons are held as the shells fill.\n\nThe picture estimates how tightly each subshell is held, using Slater's rules. Ring radius follows 1/sqrt(E), so a tightly held inner shell sits closer to the nucleus. These are compiled teaching values, not a measurement this device just made."
       },
       "curriculum": {
         "beginner": "Learn Neon: say the name, write Ne, find Z=10 on the table, note the family (Noble gas), and connect it to one real use \u2014 orange-red discharge tubes.",
@@ -512,20 +514,16 @@
       ],
       "applications": [
         {
-          "title": "Lighting",
-          "body": "Neon discharge tubes."
+          "title": "Signs",
+          "body": "A classic neon sign is a glass tube of neon with a current through it. The gas glows orange-red."
         },
         {
-          "title": "Cryogenics",
-          "body": "Inert refrigerant."
+          "title": "Other colors",
+          "body": "Many signs that people call neon are actually other gases or tinted glass. Pure neon is the orange-red one."
         },
         {
-          "title": "Where you meet it",
-          "body": "Orange-red discharge tubes."
-        },
-        {
-          "title": "Classroom caution",
-          "body": "Element Deck describes published chemistry of Neon. It is not a protocol for handling the element."
+          "title": "A cold liquid",
+          "body": "Liquid neon is an inert refrigerant, colder than liquid nitrogen and less expensive than liquid helium for some jobs."
         }
       ],
       "spectralLines": [
@@ -678,11 +676,11 @@
       ],
       "primaryOxidation": 4,
       "lattice": "Diamond cubic",
-      "sourceId": "compiled-v1.1",
+      "sourceId": "compiled-v1.2",
       "summary": {
-        "beginner": "Silicon (Si) is element 14. At everyday conditions it is a solid metalloid in period 3. Beginners should remember the symbol, where it sits on the table, and that people meet it as: chips and glass.",
-        "intermediate": "Silicon is a metalloid in period 3, it sits in group 14. Its ground-state configuration is [Ne] 3s2 3p2, with shell counts 2, 8, 4. Typical oxidation states: +4. Classroom focus: diamond-cubic semiconductor.",
-        "advanced": "Advanced reading for Silicon (Z=14, 28.085 u, standard): [Ne] 3s2 3p2. band gap ~1.1 eV; weaker catenation than carbon Numbers in this dossier are compiled teaching values with unit and dataset pin, not a measurement this device just made. Neighbors differ because of shell filling."
+        "beginner": "Silicon is element 14, the element computer chips are made from. You also meet it in sand and glass, joined with oxygen.\n\nIts symbol is Si. At room temperature silicon is a solid. It is a metalloid, between the metals and the nonmetals in the way it behaves. On the periodic table it is in row 3, column 14. In class those are called period 3 and group 14.\n\nPure silicon is a shiny gray solid that conducts electricity only a little, which is exactly what a chip needs. Sand is silicon dioxide, a network of silicon and oxygen, not the pure element.\n\nThe picture shows the electrons around the nucleus. Each ring is a shell, a layer of electrons. A neutral silicon atom has 14 electrons, the same number as its protons.",
+        "intermediate": "Silicon is a solid metalloid in period 3 and group 14. Elemental silicon is a semiconductor with the same diamond-like network that carbon uses in diamond.\n\nThe electron configuration is [Ne] 3s2 3p2. As shell counts, from the nucleus outward, that is 2, 8, 4. In compounds the oxidation state to learn is +4.\n\nThe band gap is about 1.1 eV, small enough for electronics and large enough that the pure solid is not a metal. Silicon-silicon bonds are weaker than carbon-carbon bonds, so silicon does not form the long chains life is built from.\n\nThe rings in the picture are subshells, the smaller groups of electrons inside a shell. A line joins the two electrons that share one orbital.",
+        "advanced": "Silicon (Z = 14) has the ground-state configuration [Ne] 3s2 3p2. Doping with group 13 or group 15 atoms turns that modest conductivity into the n-type and p-type silicon of a transistor.\n\nSilica, SiO2, is a covalent network, which is why quartz and glass do not behave like a pile of small molecules.\n\nIn compounds the oxidation state to learn is +4. Neighbors differ because each added proton changes how tightly the electrons are held as the shells fill.\n\nThe picture estimates how tightly each subshell is held, using Slater's rules. Ring radius follows 1/sqrt(E), so a tightly held inner shell sits closer to the nucleus. These are compiled teaching values, not a measurement this device just made."
       },
       "curriculum": {
         "beginner": "Learn Silicon: say the name, write Si, find Z=14 on the table, note the family (Metalloid), and connect it to one real use \u2014 chips and glass.",
@@ -734,20 +732,20 @@
       ],
       "applications": [
         {
-          "title": "Electronics",
-          "body": "The elemental semiconductor of chips."
+          "title": "Computer chips",
+          "body": "Nearly every computer chip is a slice of silicon, altered in tiny regions so it can switch electrical signals.",
+          "image": "assets/uses/wafer.jpg",
+          "credit": "Public domain"
         },
         {
-          "title": "Glass",
-          "body": "Silica networks."
+          "title": "Sand and glass",
+          "body": "Sand is mostly silicon dioxide, silicon joined to oxygen. Melted with other ingredients, that sand becomes the glass in windows and bottles.",
+          "image": "assets/uses/sand.jpg",
+          "credit": "Public domain"
         },
         {
-          "title": "Where you meet it",
-          "body": "Chips and glass."
-        },
-        {
-          "title": "Classroom caution",
-          "body": "Element Deck describes published chemistry of Silicon. It is not a protocol for handling the element."
+          "title": "Solar cells",
+          "body": "A solar panel is also silicon, made so that sunlight knocks electrons loose and produces a current."
         }
       ],
       "spectralLines": [
@@ -879,11 +877,11 @@
       ],
       "primaryOxidation": 4,
       "lattice": "Hexagonal (HCP)",
-      "sourceId": "compiled-v1.1",
+      "sourceId": "compiled-v1.2",
       "summary": {
-        "beginner": "Titanium (Ti) is element 22. At everyday conditions it is a solid transition metal in period 4. Beginners should remember the symbol, where it sits on the table, and that people meet it as: aircraft and white pigment (TiO\u2082).",
-        "intermediate": "Titanium is a transition metal in period 4, it sits in group 4. Its ground-state configuration is [Ar] 3d2 4s2, with shell counts 2, 8, 10, 2. Typical oxidation states: +4, +3, +2. Classroom focus: light, strong, corrosion-resistant.",
-        "advanced": "Advanced reading for Titanium (Z=22, 47.867 u, standard): [Ar] 3d2 4s2. passivating oxide; +4 dominates Numbers in this dossier are compiled teaching values with unit and dataset pin, not a measurement this device just made. Neighbors differ because of shell filling."
+        "beginner": "Titanium is element 22, a strong metal that is light for its strength. Airplanes use it, and a white compound of it colors a lot of white paint.\n\nIts symbol is Ti. At room temperature titanium is a solid. It is a transition metal, from the wide middle block of the table. On the periodic table it is in row 4, column 4. In class those are called period 4 and group 4.\n\nThe metal resists corrosion because a tough oxide coat forms on the surface. The white in paint is not the metal. It is titanium dioxide, a powder.\n\nThe picture shows the electrons around the nucleus. Each ring is a shell, a layer of electrons. A neutral titanium atom has 22 electrons, the same number as its protons.",
+        "intermediate": "Titanium is a solid transition metal in period 4 and group 4. Titanium is light, strong, and protected by a passivating oxide, and the usual oxidation state is +4.\n\nThe electron configuration is [Ar] 3d2 4s2. As shell counts, from the nucleus outward, that is 2, 8, 10, 2. Oxidation states in this dossier are +4, +3, +2. The one courses meet most often is +4.\n\nTiO2 is the white pigment. Lower oxidation states exist, but +4 dominates ores and products. The metal's strength-to-weight ratio is why aerospace uses it.\n\nThe rings in the picture are subshells, the smaller groups of electrons inside a shell. A line joins the two electrons that share one orbital.",
+        "advanced": "Titanium (Z = 22) has the ground-state configuration [Ar] 3d2 4s2. The passivating TiO2 film is why the metal survives seawater and the body.\n\nIn compounds the +4 state is d0, which is also why the pigment is white rather than colored.\n\nOxidation states in this dossier are +4, +3, +2. The one courses meet most often is +4. Neighbors differ because each added proton changes how tightly the electrons are held as the shells fill.\n\nThe picture estimates how tightly each subshell is held, using Slater's rules. Ring radius follows 1/sqrt(E), so a tightly held inner shell sits closer to the nucleus. These are compiled teaching values, not a measurement this device just made."
       },
       "curriculum": {
         "beginner": "Learn Titanium: say the name, write Ti, find Z=22 on the table, note the family (Transition metal), and connect it to one real use \u2014 aircraft and white pigment (TiO\u2082).",
@@ -935,24 +933,20 @@
       ],
       "applications": [
         {
-          "title": "Aerospace",
-          "body": "High strength-to-weight frames."
+          "title": "Aircraft",
+          "body": "Titanium is as strong as many steels and much lighter, and it resists seawater. Airframes and engine parts use it.",
+          "image": "assets/uses/aircraft.jpg",
+          "credit": "NASA, public domain"
         },
         {
-          "title": "Pigment",
-          "body": "TiO\u2082 white."
+          "title": "White paint",
+          "body": "The white in a lot of paint, plastic, and toothpaste is titanium dioxide, a powder, not the metal.",
+          "image": "assets/uses/toothpaste.jpg",
+          "credit": "Public domain"
         },
         {
           "title": "Implants",
-          "body": "Bio-inert metal."
-        },
-        {
-          "title": "Where you meet it",
-          "body": "Aircraft and white pigment (TiO\u2082)."
-        },
-        {
-          "title": "Classroom caution",
-          "body": "Element Deck describes published chemistry of Titanium. It is not a protocol for handling the element."
+          "body": "Hip joints and bone screws are sometimes titanium because the body tolerates the metal and the oxide on its surface."
         }
       ],
       "spectralLines": [

@@ -51,5 +51,11 @@ void main() {
     await tester.scrollUntilVisible(find.text('Formed in the Universe'), 400);
     expect(find.text('Formed in the Universe'), findsOneWidget);
     expect(find.textContaining('chromium-52'), findsOneWidget);
+
+    await tester.scrollUntilVisible(
+      find.text('Red Crystals from Siberia'),
+      400,
+    );
+    expect(find.text('Red Crystals from Siberia'), findsOneWidget);
   });
 }

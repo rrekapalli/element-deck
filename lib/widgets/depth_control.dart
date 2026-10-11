@@ -15,9 +15,10 @@ class DepthControl extends StatelessWidget {
     const depths = ['beginner', 'intermediate', 'advanced'];
     const labels = ['Beginner', 'Intermediate', 'Advanced'];
     final caption = switch (settings.depth) {
-      'beginner' => 'Mode: Beginner · shells, everyday state, uses.',
-      'advanced' => 'Mode: Advanced · quantum metrics, lines, isotopes.',
-      _ => 'Mode: Intermediate · mass, shells, oxidation. Switch to Beginner or Advanced.',
+      'beginner' =>
+        'Mode: Beginner · everyday words, for a first introduction.',
+      'advanced' => 'Mode: Advanced · configuration, oxidation, and why the numbers look that way.',
+      _ => 'Mode: Intermediate · period, configuration, and oxidation.',
     };
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
