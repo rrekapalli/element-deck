@@ -10,11 +10,13 @@ Table, Details, Compare, and Spectra do not keep score. Quiz does, on this devic
 
 ## Learning mode
 
-The Beginner / Intermediate / Advanced control is the same one used on Table and Details. Each mode has its own 50 questions. Switching mode loads that pool and leaves the other pools' answers in place.
+Quiz uses the app learning mode from **App Config** (Beginner, Intermediate, or Advanced). This room does not have its own mode switch. Each mode has its own 50 questions. Changing the mode in settings loads that pool and leaves the other pools' answers in place.
 
 ## Answering
 
-Each item has four choices. After you pick one, the correct option is marked and a short explanation appears. An equation line appears only when the catalog already has that reaction or value. **Next question** moves to the first unanswered item.
+Each item has four choices. After you pick one, the correct option is marked and a short explanation appears. An equation line appears only when the catalog already has that reaction or value.
+
+**Previous** and **Next** move through all 50 questions. You can skip a question and come back. Answering is not required to move.
 
 A correct answer is worth **20 XP**. XP is twenty times the number of correct answers across every element and mode. A wrong answer records the miss and adds no XP. You cannot retake the same item to change the score.
 

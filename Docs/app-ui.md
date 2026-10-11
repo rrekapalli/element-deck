@@ -148,10 +148,10 @@ Beginner still lands here. The strip and the glow lead. Assignments and nuclear 
 
 A fifth room. Practice on today's element, at the current learning mode, from a 50-question pool.
 
-1. **Complexity.** The same Beginner / Intermediate / Advanced control. Changing it loads that depth's pool. Progress is stored per element and depth.
+1. **Learning mode.** Quiz uses the app setting from App Config, not a control on this room. The pool is the 50 questions for that depth. Progress is stored per element and depth.
 2. **Streak and XP.** Consecutive local days with at least one answer, and `20 ×` correct answers across every pool. Both stay on the device. Table's element-of-the-day card does not show them.
 3. **Element card.** Today's element (or another focus): Z, symbol, name, family, configuration at this depth, and a tier name from how many pools are finished (Observer, Student, Scholar, Fellow, Master).
-4. **Question.** Stem, four choices, then a lock: the correct option is marked, a short explanation (and an equation only when the catalog has one). **Next question** advances. Finishing all 50 shows a completion card.
+4. **Question.** Stem, four choices, then a lock: the correct option is marked, a short explanation (and an equation only when the catalog has one). **Previous** and **Next** walk all 50 items without requiring an answer. Finishing all 50 still shows a completion card; the items remain browsable.
 5. **Notes, bookmark, report.** Notes and reports are local. Bookmark is the same element bookmark as Details.
 6. **Active element bank.** Category bars for this pool.
 7. **Switch focus.** Chips for today, the Details element, and recents. They change Quiz only.

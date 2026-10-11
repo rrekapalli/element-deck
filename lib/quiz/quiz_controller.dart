@@ -82,7 +82,10 @@ class QuizController extends ChangeNotifier {
   Future<void> open({required int z, required String depth}) async {
     if (z <= 0) return;
     final key = '$z|$depth';
-    if (_openKey == key && (loading || bank != null)) return;
+    if (_openKey == key && !loading && pool.isNotEmpty) {
+      if (this.depth != depth) this.depth = depth;
+      return;
+    }
     _openKey = key;
     focusZ = z;
     this.depth = depth;
@@ -92,18 +95,23 @@ class QuizController extends ChangeNotifier {
     notifyListeners();
     try {
       bank = await _store.load(z);
-      pool = bank!.poolFor(depth);
+      pool = List.of(bank!.poolFor(depth));
       if (pool.length > poolSize) {
         pool = pool.take(poolSize).toList();
+      }
+      if (pool.isEmpty) {
+        throw StateError('empty quiz pool');
       }
       answered = await _db.quizAnswersFor(z, depth);
       note = await _db.quizNote(z);
       index = _firstUnanswered();
+      _syncPicked();
       await refreshStats();
     } catch (e) {
       error = 'Quiz bank unavailable for Z=$z';
       pool = const [];
       bank = null;
+      _openKey = null;
     }
     loading = false;
     notifyListeners();
@@ -116,9 +124,21 @@ class QuizController extends ChangeNotifier {
     return pool.isEmpty ? 0 : pool.length - 1;
   }
 
+  bool get hasPrevious => index > 0;
+  bool get hasNext => index < pool.length - 1;
+
+  void _syncPicked() {
+    final q = current;
+    if (q == null || !answered.containsKey(q.id)) {
+      picked = null;
+      return;
+    }
+    picked = answered[q.id] == true ? q.correctIndex : null;
+  }
+
   Future<void> choose(int option) async {
     final q = current;
-    if (q == null || complete) return;
+    if (q == null) return;
     if (answered.containsKey(q.id)) return;
     if (picked != null) return;
     picked = option;
@@ -136,13 +156,23 @@ class QuizController extends ChangeNotifier {
   }
 
   void next() {
+    if (!hasNext) return;
+    index++;
+    _syncPicked();
+    notifyListeners();
+  }
+
+  void previous() {
+    if (!hasPrevious) return;
+    index--;
+    _syncPicked();
+    notifyListeners();
+  }
+
+  void goTo(int i) {
     if (pool.isEmpty) return;
-    picked = null;
-    if (complete) {
-      notifyListeners();
-      return;
-    }
-    index = _firstUnanswered();
+    index = i.clamp(0, pool.length - 1);
+    _syncPicked();
     notifyListeners();
   }
 

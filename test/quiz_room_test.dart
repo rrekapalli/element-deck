@@ -88,7 +88,13 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.textContaining('Correct!'), findsOneWidget);
-    expect(find.textContaining('Next question'), findsOneWidget);
+    expect(find.textContaining('Next'), findsWidgets);
     expect(quiz.xp, 20);
+
+    final firstStem = q.stem;
+    await tester.tap(find.widgetWithText(FilledButton, 'Next (1 / 50)'));
+    await tester.pumpAndSettle();
+    expect(find.text(firstStem), findsNothing);
+    expect(quiz.index, 1);
   });
 }

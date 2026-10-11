@@ -99,6 +99,20 @@ void main() {
     expect(quiz.streak, 1);
   });
 
+  test('previous and next walk the whole pool without answering', () async {
+    await quiz.open(z: 1, depth: 'beginner');
+    final first = quiz.current!.id;
+    expect(quiz.hasPrevious, isFalse);
+    quiz.next();
+    expect(quiz.current!.id, isNot(first));
+    expect(quiz.index, 1);
+    quiz.previous();
+    expect(quiz.current!.id, first);
+    quiz.goTo(quiz.pool.length - 1);
+    expect(quiz.hasNext, isFalse);
+    expect(quiz.index, quiz.pool.length - 1);
+  });
+
   test('tier names follow finished pool counts', () {
     expect(quizTierName(0), 'Observer');
     expect(quizTierName(1), 'Student');

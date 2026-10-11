@@ -9,7 +9,6 @@ import '../quiz/quiz_controller.dart';
 import '../quiz/quiz_models.dart';
 import '../theme/ambient_background.dart';
 import '../theme/element_spectrum.dart';
-import '../widgets/depth_control.dart';
 
 class QuizRoom extends StatefulWidget {
   const QuizRoom({super.key, this.controller});
@@ -58,29 +57,45 @@ class _QuizRoomState extends State<QuizRoom> {
       });
     }
 
+    final mode = switch (settings.depth) {
+      'beginner' => 'Beginner',
+      'advanced' => 'Advanced',
+      _ => 'Intermediate',
+    };
     final body = ListView(
       controller: widget.controller,
       padding: const EdgeInsets.fromLTRB(16, 8, 16, 32),
       children: [
-        const DepthControl(),
-        const SizedBox(height: 12),
         _StatsRow(quiz: quiz),
+        const SizedBox(height: 4),
+        Text(
+          '$mode pool · change learning mode in App Config',
+          style: Theme.of(context).textTheme.labelSmall,
+        ),
         const SizedBox(height: 12),
-        if (quiz.loading)
-          const Padding(
-            padding: EdgeInsets.only(top: 48),
-            child: Center(child: CircularProgressIndicator()),
-          )
-        else if (quiz.error != null)
-          Text(quiz.error!)
-        else if (quiz.element == null)
+        if (quiz.element == null)
           const Text('This element is not in the on-device catalog.')
         else ...[
           _ProgressLine(quiz: quiz),
           const SizedBox(height: 12),
           _ElementCard(element: quiz.element!, quiz: quiz, depth: settings.depth),
           const SizedBox(height: 16),
-          if (quiz.complete) _CompleteCard(quiz: quiz) else _QuestionBlock(quiz: quiz),
+          if (quiz.loading)
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 32),
+              child: Center(child: CircularProgressIndicator()),
+            )
+          else if (quiz.error != null)
+            Text(quiz.error!)
+          else if (quiz.current == null)
+            const Text('No questions in this pool.')
+          else ...[
+            if (quiz.complete) ...[
+              _CompleteCard(quiz: quiz),
+              const SizedBox(height: 16),
+            ],
+            _QuestionBlock(quiz: quiz),
+          ],
           const SizedBox(height: 16),
           _ToolsRow(quiz: quiz),
           const SizedBox(height: 20),
@@ -150,27 +165,35 @@ class _ProgressLine extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final total = quiz.pool.isEmpty ? QuizController.poolSize : quiz.pool.length;
-    final n = quiz.complete
-        ? total
-        : (quiz.answered.containsKey(quiz.current?.id) ? quiz.answeredCount : quiz.index + 1);
+    final n = quiz.pool.isEmpty ? 0 : quiz.index + 1;
     final pct = total == 0 ? 0.0 : quiz.answeredCount / total;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           children: [
-            Text(
-              quiz.complete
-                  ? 'Pool complete ($total / $total)'
-                  : 'Question $n / $total',
-              style: Theme.of(context).textTheme.labelMedium,
+            IconButton(
+              tooltip: 'Previous question',
+              onPressed: quiz.hasPrevious ? quiz.previous : null,
+              icon: const Icon(Icons.chevron_left),
             ),
-            const Spacer(),
-            Text(
-              '${(pct * 100).round()}% completed',
-              style: Theme.of(context).textTheme.labelMedium,
+            Expanded(
+              child: Text(
+                'Question $n / $total',
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.labelMedium,
+              ),
+            ),
+            IconButton(
+              tooltip: 'Next question',
+              onPressed: quiz.hasNext ? quiz.next : null,
+              icon: const Icon(Icons.chevron_right),
             ),
           ],
+        ),
+        Text(
+          '${(pct * 100).round()}% answered',
+          style: Theme.of(context).textTheme.labelMedium,
         ),
         const SizedBox(height: 8),
         ClipRRect(
@@ -357,25 +380,45 @@ class _QuestionBlock extends StatelessWidget {
         if (locked) ...[
           const SizedBox(height: 8),
           _ExplainCard(
-            correct: chosen == q.correctIndex || already == true,
+            correct: already == true ||
+                (chosen != null && chosen == q.correctIndex),
             question: q,
           ),
-          const SizedBox(height: 12),
-          FilledButton(
-            onPressed: quiz.next,
-            style: FilledButton.styleFrom(
-              minimumSize: const Size.fromHeight(48),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
+        ],
+        const SizedBox(height: 12),
+        Row(
+          children: [
+            Expanded(
+              child: OutlinedButton(
+                onPressed: quiz.hasPrevious ? quiz.previous : null,
+                style: OutlinedButton.styleFrom(
+                  minimumSize: const Size.fromHeight(48),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+                child: const Text('Previous'),
               ),
             ),
-            child: Text(
-              quiz.answeredCount >= quiz.pool.length
-                  ? 'See results'
-                  : 'Next question (${quiz.answeredCount} / ${quiz.pool.length})',
+            const SizedBox(width: 12),
+            Expanded(
+              child: FilledButton(
+                onPressed: quiz.hasNext ? quiz.next : null,
+                style: FilledButton.styleFrom(
+                  minimumSize: const Size.fromHeight(48),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+                child: Text(
+                  quiz.hasNext
+                      ? 'Next (${quiz.index + 1} / ${quiz.pool.length})'
+                      : 'Last question',
+                ),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ],
     );
   }
